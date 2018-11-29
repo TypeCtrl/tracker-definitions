@@ -1,0 +1,147 @@
+{
+  "site": "eotforum",
+  "name": "EoT-Forum",
+  "description": "A German gerneral tracker",
+  "language": "de-de",
+  "links": ["http://eot-forum.net"],
+  "caps": {
+    "categories": {
+      "14": "Movies/SD",
+      "15": "Movies/SD",
+      "16": "Movies/HD",
+      "17": "Movies/3D",
+      "18": "Movies/DVD",
+      "19": "Movies",
+      "20": "Movies",
+      "21": "XXX",
+      "23": "TV/SD",
+      "24": "TV/SD",
+      "25": "TV/HD",
+      "26": "TV/SD",
+      "27": "TV",
+      "28": "TV",
+      "29": "TV/Sport",
+      "31": "TV/Documentary",
+      "32": "TV/Documentary",
+      "33": "TV/Documentary",
+      "34": "TV/Documentary",
+      "35": "TV/Documentary",
+      "36": "TV/Documentary",
+      "38": "Audio",
+      "39": "Audio/MP3",
+      "40": "Audio/Lossless",
+      "41": "Audio",
+      "42": "Audio/Video",
+      "43": "Audio/Audiobook",
+      "45": "PC/Games",
+      "46": "PC/Mac",
+      "47": "Console/PS4",
+      "48": "Console/Xbox",
+      "49": "Console/NDS",
+      "50": "PC/Games",
+      "51": "Console",
+      "53": "PC",
+      "54": "PC/Mac",
+      "55": "PC",
+      "56": "PC/Phone-Android",
+      "57": "PC/Phone-IOS",
+      "58": "PC/Phone-Other",
+      "60": "Books",
+      "61": "Other",
+      "62": "TV/Anime",
+      "63": "Other",
+      "64": "XXX",
+      "66": "Other",
+      "67": "TV/Documentary",
+      "68": "Movies/HD"
+    }
+  },
+  "login": {
+    "path": "index.php?page=login",
+    "method": "post",
+    "inputs": {
+      "uid": "{{ .Config.username }}",
+      "pwd": "{{ .Config.password }}",
+      "rememberme": "forever",
+      "submit": "Login"
+    },
+    "error": [
+      { "selector": "td.lista[align=\"center\"][colspan=\"2\"] > span" }
+    ],
+    "test": { "path": "index.php", "selector": "img[alt=\"Ratio\"]" }
+  },
+  "ratio": { "path": "index.php", "selector": "img[alt=\"Ratio\"] + font" },
+  "search": {
+    "path": "index.php",
+    "inputs": {
+      "page": "torrents",
+      "search": "{{ .Query.Keywords }}",
+      "options": "0",
+      "active": "0",
+      "gold": "0"
+    },
+    "rows": {
+      "selector": "table.lista > tbody > tr:has(a[href^=\"index.php?page=torrent-details&id=\"])",
+      "dateheaders": {
+        "selector": ":has(td.header > b)",
+        "filters": [
+          { "name": "replace", "args": ["Torrents vom ", ""] },
+          { "name": "replace", "args": ["Januar", "January"] },
+          { "name": "replace", "args": ["Februar", "February"] },
+          { "name": "replace", "args": ["March", "März"] },
+          { "name": "replace", "args": ["Mai", "May"] },
+          { "name": "replace", "args": ["Juni", "June"] },
+          { "name": "replace", "args": ["Juli", "July"] },
+          { "name": "replace", "args": ["Oktober", "October"] },
+          { "name": "replace", "args": ["Dezember", "December"] },
+          { "name": "dateparse", "args": "02.January.2006" }
+        ]
+      }
+    },
+    "fields": {
+      "download": {
+        "selector": "a[href^=\"download.php?id=\"]",
+        "attribute": "href"
+      },
+      "title": {
+        "selector": "a[href^=\"index.php?page=torrent-details&id=\"]",
+        "attribute": "title",
+        "filters": [{ "name": "replace", "args": ["Details anzeigen: ", ""] }]
+      },
+      "category": {
+        "selector": "a[href^=\"index.php?page=torrents&category=\"]",
+        "attribute": "href",
+        "filters": [{ "name": "querystring", "args": "category" }]
+      },
+      "comments": { "selector": "a[href*=\"#comments\"]", "attribute": "href" },
+      "size": { "selector": "td:nth-child(3)" },
+      "grabs": {
+        "selector": "td:nth-child(5) > font:nth-child(3)",
+        "filters": [{ "name": "replace", "args": ["---", "0"] }]
+      },
+      "seeders": { "selector": "td:nth-child(5) > font:nth-child(1)" },
+      "leechers": { "selector": "td:nth-child(5) > font:nth-child(2)" },
+      "downloadvolumefactor": {
+        "case": {
+          "img[alt=\"gold\"]": "0",
+          "img[alt=\"silver\"]": "0.5",
+          "*": "1"
+        }
+      },
+      "uploadvolumefactor": {
+        "case": {
+          "img[alt=\"2x Upload Multiplier\"]": "2",
+          "img[alt=\"3x Upload Multiplier\"]": "3",
+          "img[alt=\"4x Upload Multiplier\"]": "4",
+          "img[alt=\"5x Upload Multiplier\"]": "5",
+          "img[alt=\"6x Upload Multiplier\"]": "6",
+          "img[alt=\"7x Upload Multiplier\"]": "7",
+          "img[alt=\"8x Upload Multiplier\"]": "8",
+          "img[alt=\"9x Upload Multiplier\"]": "9",
+          "img[alt=\"10x Upload Multiplier\"]": "10",
+          "*": "1"
+        }
+      }
+    }
+  }
+}

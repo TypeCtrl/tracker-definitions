@@ -1,0 +1,82 @@
+export const definition: any = {
+  site: 'anidex',
+  name: 'Anidex',
+  description:
+    'Anidex is a Public torrent tracker and indexer, primarily for English fansub groups of anime',
+  language: 'en-us',
+  encoding: 'UTF-8',
+  type: 'public',
+  links: ['https://anidex.info/'],
+  caps: {
+    categorymappings: [
+      { id: 1, cat: 'TV/Anime', desc: 'Anime - Sub' },
+      { id: 2, cat: 'TV/Anime', desc: 'Anime - Raw' },
+      { id: 3, cat: 'TV/Anime', desc: 'Anime - Dub' },
+      { id: 4, cat: 'TV/Anime', desc: 'LA - Sub' },
+      { id: 5, cat: 'TV/Anime', desc: 'LA - Raw' },
+      { id: 6, cat: 'TV/Anime', desc: 'Light Novel' },
+      { id: 7, cat: 'TV/Anime', desc: 'Manga - TLed' },
+      { id: 8, cat: 'TV/Anime', desc: 'Manga - Raw' },
+      { id: 9, cat: 'TV/Anime', desc: '♫ - Lossy' },
+      { id: 10, cat: 'TV/Anime', desc: '♫ - Lossless' },
+      { id: 11, cat: 'TV/Anime', desc: '♫ - Video' },
+      { id: 12, cat: 'TV/Anime', desc: 'Games' },
+      { id: 13, cat: 'TV/Anime', desc: 'Applications' },
+      { id: 14, cat: 'TV/Anime', desc: 'Pictures' },
+      { id: 15, cat: 'TV/Anime', desc: 'Adult Video' },
+      { id: 16, cat: 'TV/Anime', desc: 'Other' },
+    ],
+    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+  },
+  settings: [
+    { name: 'cat-id', type: 'text', label: 'Category Id' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Category Id Note',
+      default:
+        'You can filter your searches by using any of the following category numbers (comma delimited):<br>1 :Anime - Sub<br>2 :Anime - Raw<br>3 :Anime - Dub<br>4 :LA - Sub<br>5 :LA - Raw<br>6 :Light Novel<br>7 :Manga - TLed<br>8 :Manga - Raw<br>9 :♫ - Lossy<br>10 :♫ - Lossless<br>11 :♫ - Video<br>12 :Games<br>13 :Applications<br>14 :Pictures<br>15 :Adult Video<br>16 :Other',
+    },
+    { name: 'lang-id', type: 'text', label: 'Language Id' },
+  ],
+  search: {
+    paths: [
+      {
+        path:
+          '?{{if .Config.cat-id}}id={{.Config.cat-id }}&{{else}}{{end}}{{if .Config.lang-id}}lang_id={{.Config.lang-id}}&{{else}}{{end}}q={{if .Keywords}}{{.Keywords}}{{else}}{{end}}',
+      },
+    ],
+    rows: { selector: 'div.table-responsive > table > tbody > tr' },
+    fields: {
+      category: {
+        selector: 'a[href^="/?id="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'id' }],
+      },
+      title: {
+        selector: 'td:nth-child(3) > a.torrent > span.span-1440',
+        filters: [{ name: 're_replace', args: ['(\\[[A-Z0-9]*\\])\\.', '.'] }],
+      },
+      details: {
+        selector: 'td:nth-child(3) > a.torrent',
+        attribute: 'href',
+      },
+      download: { selector: 'td:nth-child(5) > a', attribute: 'href' },
+      magnet: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
+      size: { selector: 'td:nth-child(7)' },
+      date: {
+        selector: 'td:nth-child(8)',
+        attribute: 'title',
+        filters: [
+          { name: 'replace', args: ['UTC', '+00:00'] },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
+      },
+      seeders: { selector: 'td:nth-child(9)' },
+      leechers: { selector: 'td:nth-child(10)' },
+      grabs: { selector: 'td:nth-child(11)' },
+      downloadvolumefactor: { text: '0' },
+      uploadvolumefactor: { text: '1' },
+    },
+  },
+};

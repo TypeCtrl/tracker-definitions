@@ -1,0 +1,87 @@
+{
+  "site": "hdme",
+  "name": "HDME",
+  "language": "en-us",
+  "links": ["https://hdme.eu"],
+  "caps": {
+    "categories": {
+      "24": "TV/Anime",
+      "25": "PC/0day",
+      "26": "Movies/BluRay",
+      "28": "Audio/Lossless",
+      "29": "Other",
+      "30": "Movies/HD",
+      "31": "Movies/HD",
+      "32": "Movies/HD",
+      "33": "Audio/Video",
+      "34": "TV",
+      "36": "TV/Sport",
+      "37": "TV/HD",
+      "38": "TV/HD",
+      "39": "TV/HD",
+      "40": "XXX",
+      "41": "Movies/HD",
+      "44": "Movies/HD",
+      "45": "Movies/HD",
+      "47": "Movies/HD",
+      "48": "Movies/HD",
+      "49": "PC/Phone-Other",
+      "50": "Movies/HD",
+      "53": "Movies/HD",
+      "54": "Movies/HD",
+      "55": "Movies/HD",
+      "56": "Movies/HD",
+      "57": "Movies"
+    }
+  },
+  "login": {
+    "path": "/takelogin.php",
+    "method": "post",
+    "form": "form",
+    "inputs": {
+      "username": "{{ .Config.username }}",
+      "password": "{{ .Config.password }}"
+    },
+    "error": [
+      { "selector": "td.embedded", "message": { "selector": "td.text" } }
+    ],
+    "test": { "path": "/my.php" }
+  },
+  "ratio": {
+    "path": "/my.php",
+    "selector": "span.smallfont > font",
+    "filters": [
+      { "name": "regexp", "args": "Ratio:(.+?)Uploaded" },
+      { "name": "replace", "args": [",", ""] }
+    ]
+  },
+  "search": {
+    "path": "/browse.php",
+    "inputs": {
+      "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
+      "search": "{{ .Keywords }}",
+      "incldead": "1",
+      "blah": "0"
+    },
+    "rows": {
+      "selector": "table[width=\"100%\"] > tbody > tr:has(td.bottom[background=\"_images/bg_torrent.jpg\"])"
+    },
+    "fields": {
+      "category": {
+        "selector": "td:nth-child(2) a",
+        "attribute": "href",
+        "filters": [{ "name": "querystring", "args": "cat" }]
+      },
+      "title": { "selector": "td:nth-child(3) > a", "attribute": "title" },
+      "comments": { "selector": "td:nth-child(3) > a", "attribute": "href" },
+      "download": { "selector": "td:nth-child(11) > a", "attribute": "href" },
+      "size": { "selector": "td:nth-child(6)", "remove": "br" },
+      "date": {
+        "selector": "td:nth-child(3)",
+        "filters": [{ "name": "regexp", "args": "Added: (.+?)\n" }]
+      },
+      "seeders": { "selector": "td:nth-child(8)" },
+      "leechers": { "selector": "td:nth-child(9)" }
+    }
+  }
+}

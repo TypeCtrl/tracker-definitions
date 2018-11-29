@@ -1,0 +1,189 @@
+{
+  "site": "yggtorrent",
+  "name": "YGGtorrent",
+  "language": "fr-fr",
+  "encoding": "UTF-8",
+  "links": ["https://yggtorrent.is"],
+  "caps": {
+    "categories": {
+      "2139": "Other",
+      "2140": "Other",
+      "2141": "Other",
+      "2142": "Other",
+      "2143": "Other",
+      "2144": "PC",
+      "2145": "Other",
+      "2147": "Audio",
+      "2148": "Audio",
+      "2149": "Audio",
+      "2150": "Audio",
+      "2151": "Audio/Audiobook",
+      "2152": "Books/Comics",
+      "2153": "Books/Comics",
+      "2154": "Books/Ebook",
+      "2155": "Books",
+      "2156": "Books/Magazines",
+      "2157": "Other/Misc",
+      "2158": "Other/Misc",
+      "2159": "PC/Games",
+      "2160": "PC/Games",
+      "2161": "PC/Games",
+      "2162": "Console",
+      "2163": "Console",
+      "2164": "Console",
+      "2165": "PC/Phone-Other",
+      "2166": "PC/Games",
+      "2167": "Other",
+      "2168": "Other/Misc",
+      "2169": "Other/Misc",
+      "2170": "Other/Misc",
+      "2171": "PC",
+      "2172": "PC/Mac",
+      "2173": "PC",
+      "2174": "PC/Phone-Other",
+      "2175": "PC/Phone-Other",
+      "2176": "PC",
+      "2177": "PC",
+      "2178": "Movies",
+      "2179": "TV/Anime",
+      "2180": "Audio/Video",
+      "2181": "TV/Documentary",
+      "2182": "TV",
+      "2183": "Movies",
+      "2184": "TV",
+      "2185": "Movies/Other",
+      "2186": "TV/Sport",
+      "2187": "Audio/Video",
+      "2188": "XXX",
+      "2189": "XXX",
+      "2190": "XXX/Other",
+      "2191": "XXX/Imageset",
+      "filmvidéo/animation": "Movies",
+      "filmvidéo/animation-série": "TV/Anime",
+      "filmvidéo/concert": "Audio/Video",
+      "filmvidéo/documentaire": "TV/Documentary",
+      "filmvidéo/emission-tv": "TV",
+      "filmvidéo/film": "Movies",
+      "filmvidéo/série-tv": "TV",
+      "filmvidéo/spectacle": "Movies/Other",
+      "filmvidéo/sport": "TV/Sport",
+      "filmvidéo/vidéo-clips": "Audio/Video",
+      "audio/karaoké": "Audio",
+      "audio/musique": "Audio",
+      "audio/podcast-radio": "Audio",
+      "audio/samples": "Audio",
+      "application/autre": "PC",
+      "application/formation": "PC",
+      "application/linux": "PC",
+      "application/macos": "PC/Mac",
+      "application/smartphone": "PC/Phone-Other",
+      "application/tablette": "PC/Phone-Other",
+      "application/windows": "PC",
+      "jeu-vidéo/autre": "Other",
+      "jeu-vidéo/linux": "PC/Games",
+      "jeu-vidéo/macos": "PC/Games",
+      "jeu-vidéo/microsoft": "Console",
+      "jeu-vidéo/nintendo": "Console",
+      "jeu-vidéo/smartphone": "PC/Phone-Other",
+      "jeu-vidéo/sony": "Console",
+      "jeu-vidéo/tablette": "PC/Games",
+      "jeu-vidéo/windows": "PC/Games",
+      "ebook/audio": "Audio/Audiobook",
+      "ebook/bds": "Books/Comics",
+      "ebook/comics": "Books/Comics",
+      "ebook/livres": "Books/Ebook",
+      "ebook/mangas": "Books",
+      "ebook/presse": "Books/Magazines",
+      "emulation/emulateurs": "Other/Misc",
+      "emulation/roms": "Other/Misc",
+      "gps/applications": "Other/Misc",
+      "gps/cartes": "Other/Misc",
+      "gps/divers": "Other/Misc",
+      "xxx/films": "XXX",
+      "xxx/hentai": "XXX/Other",
+      "xxx/images": "XXX/Imageset"
+    },
+    "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
+  },
+  "settings": [
+    {
+      "name": "username",
+      "type": "text",
+      "label": "Username (email or username)"
+    },
+    { "name": "password", "type": "password", "label": "Password" }
+  ],
+  "login": {
+    "path": "/user/login",
+    "method": "post",
+    "inputs": {
+      "id": "{{ .Config.username }}",
+      "pass": "{{ .Config.password }}",
+      "submit": ""
+    },
+    "headers": {
+      "[:authority]": "yggtorrent.com",
+      "[:method]": "post",
+      "[:path]": "/",
+      "[:scheme]": "https"
+    },
+    "error": [
+      {
+        "selector": "div#top_panel > div > ul > li:nth-child(1) > a.text:contains(\"S'identifier\")"
+      }
+    ],
+    "test": { "path": "/", "selector": "a[href$=\"/user/logout\"]" }
+  },
+  "search": {
+    "path": "/engine/search?name={{ .Keywords}}&do=search",
+    "rows": { "selector": "section#\\#torrents > div > table > tbody > tr" },
+    "fields": {
+      "date": {
+        "selector": "td:nth-child(5)",
+        "filters": [
+          { "name": "regexp", "args": "^[0-9]+ (.+)$" },
+          { "name": "replace", "args": [" jours", " days"] },
+          { "name": "replace", "args": [" jour", " day"] },
+          { "name": "replace", "args": [" heures", " hours"] },
+          { "name": "replace", "args": [" heure", " hour"] },
+          { "name": "replace", "args": [" semaines", " weeks"] },
+          { "name": "replace", "args": [" semaine", " week"] },
+          { "name": "replace", "args": [" mois", " month"] },
+          { "name": "replace", "args": [" ans", " years"] },
+          { "name": "replace", "args": [" an", " year"] },
+          { "name": "append", "args": " ago" }
+        ]
+      },
+      "title": { "selector": "td:nth-child(2) > a" },
+      "details": { "selector": "td:nth-child(2) > a", "attribute": "href" },
+      "category": { "selector": "td:nth-child(1) > div.hidden:nth-child(1)" },
+      "comments": {
+        "optional": true,
+        "selector": "td:nth-child(2) > a",
+        "attribute": "href"
+      },
+      "download": {
+        "selector": "td:nth-child(2) > a",
+        "attribute": "href",
+        "filters": [
+          { "name": "regexp", "args": ".+/([^/]+)" },
+          { "name": "regexp", "args": "^([0-9]+)-.*" },
+          { "name": "prepend", "args": "/engine/download_torrent?id=" }
+        ]
+      },
+      "size": {
+        "selector": "td:nth-child(6)",
+        "filters": [
+          { "name": "replace", "args": ["Ko", "kib"] },
+          { "name": "replace", "args": ["Mo", "mib"] },
+          { "name": "replace", "args": ["Go", "gib"] },
+          { "name": "replace", "args": ["To", "tib"] }
+        ]
+      },
+      "seeders": { "selector": "td:nth-child(8)" },
+      "leechers": { "selector": "td:nth-child(9)" },
+      "downloadvolumefactor": { "text": "1" },
+      "uploadvolumefactor": { "text": "1" }
+    }
+  }
+}

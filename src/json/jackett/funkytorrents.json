@@ -1,0 +1,104 @@
+{
+  "site": "funkytorrents",
+  "name": "FunkyTorrents",
+  "description": "FunkyTorrents (FT) is a Private Torrent Tracker for MUSIC",
+  "language": "en-us",
+  "type": "private",
+  "encoding": "UTF-8",
+  "links": ["http://funkytorrents.com"],
+  "caps": {
+    "categories": {
+      "1": "PC",
+      "2": "Books",
+      "3": "Movies",
+      "4": "Audio",
+      "5": "Audio/Video",
+      "6": "Audio",
+      "7": "Audio",
+      "8": "Audio",
+      "9": "Audio",
+      "10": "Audio",
+      "11": "Audio",
+      "12": "Audio",
+      "13": "Audio",
+      "14": "Audio",
+      "15": "Audio",
+      "16": "Audio",
+      "17": "Audio",
+      "18": "Audio",
+      "19": "Audio",
+      "20": "Audio",
+      "21": "Audio",
+      "22": "Audio",
+      "23": "Audio",
+      "24": "Audio",
+      "25": "Audio",
+      "26": "Audio",
+      "28": "Audio",
+      "29": "Audio",
+      "30": "Audio",
+      "31": "Audio",
+      "32": "Audio",
+      "33": "Audio",
+      "34": "Audio",
+      "35": "Audio",
+      "36": "Audio",
+      "37": "Audio",
+      "3010": "Audio/MP3",
+      "3040": "Audio/Lossless"
+    },
+    "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
+  },
+  "login": {
+    "path": "takelogin.php",
+    "method": "post",
+    "inputs": {
+      "username": "{{ .Config.username }}",
+      "password": "{{ .Config.password }}"
+    },
+    "error": [{ "selector": "td.embedded:has(h2:contains(\"failed\"))" }],
+    "test": { "path": "browse.php" }
+  },
+  "search": {
+    "paths": [{ "path": "/browse.php" }],
+    "inputs": { "search": "{{ .Query.Keywords }}", "incldead": 1 },
+    "rows": {
+      "selector": "table.mainouter > tbody > tr > td.outer > table > tbody > tr.mouse_out"
+    },
+    "fields": {
+      "description": { "optional": true, "selector": "td:nth-child(2) > font" },
+      "title": { "selector": "td:nth-child(2)", "remove": "font" },
+      "category": {
+        "optional": true,
+        "case": {
+          "a[href=\"/browse.php?ext=1&bitrate=Lossless\"]": "3040",
+          "a[href=\"/browse.php?ext=1&format=MP3\"]": "3010"
+        }
+      },
+      "details": {
+        "selector": "a[href^=\"details.php?id=\"]",
+        "attribute": "href"
+      },
+      "download": {
+        "selector": "a[href^=\"download.php\"]",
+        "attribute": "href"
+      },
+      "files": { "selector": "td:nth-child(5)" },
+      "size": { "selector": "td:nth-child(8)" },
+      "seeders": { "selector": "td:nth-child(10)" },
+      "leechers": { "selector": "td:nth-child(11)" },
+      "date": {
+        "selector": "td:nth-child(7)",
+        "filters": [
+          { "name": "append", "args": " +0000" },
+          { "name": "dateparse", "args": "2006-01-0215:04:05 -0700" }
+        ]
+      },
+      "grabs": { "selector": "td:nth-child(9)" },
+      "downloadvolumefactor": {
+        "case": { "img[alt=\"Free Leech\"]": "0", "*": "1" }
+      },
+      "uploadvolumefactor": { "case": { "*": "1" } }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[submodule "upstream/jackett"]
+	path = upstream/jackett
+	url = git@github.com:Jackett/Jackett.git
+[submodule "upstream/cardigann"]
+	path = upstream/cardigann
+	url = git@github.com:cardigann/cardigann.git
