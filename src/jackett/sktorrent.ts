@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'sktorrent',
   name: 'SkTorrent',
-  description: 'SkTorrent is a CZECH/SLOVAK Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description:
+    'SkTorrent is a CZECH/SLOVAK Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'cs-cz',
   type: 'semi-private',
   encoding: 'windows-1250',
@@ -96,7 +98,10 @@ export const definition: any = {
       },
       size: {
         selector: 'td:nth-child(3)',
-        filters: [{ name: 'split', args: ['|', 0] }, { name: 'regexp', args: 'Velkost (.+?) ?$' }],
+        filters: [
+          { name: 'split', args: ['|', 0] },
+          { name: 'regexp', args: 'Velkost (.+?) ?$' },
+        ],
       },
       date: {
         selector: 'td:nth-child(3)',

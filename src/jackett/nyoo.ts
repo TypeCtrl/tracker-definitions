@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'nyoo',
   name: 'Nyoo',
-  description: 'Nyoo is a mirror for Nyaa-Pantsu, a Public site for Asian ANIME',
+  description:
+    'Nyoo is a mirror for Nyaa-Pantsu, a Public site for Asian ANIME',
   language: 'en-en',
   type: 'public',
   encoding: 'UTF-8',

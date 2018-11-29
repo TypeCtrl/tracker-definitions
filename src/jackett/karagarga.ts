@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'karagarga',
   name: 'Karagarga',
-  description: 'Tracker for non-hollywood, rare and obscure movies, music and literature.',
+  description:
+    'Tracker for non-hollywood, rare and obscure movies, music and literature.',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',
@@ -89,7 +91,9 @@ export const definition: any = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
-    keywordsfilters: [{ name: 're_replace', args: ['(?<=^| )(?!-|\\+)[^ ]+(?= |$)', '+$&'] }],
+    keywordsfilters: [
+      { name: 're_replace', args: ['(?<=^| )(?!-|\\+)[^ ]+(?= |$)', '+$&'] },
+    ],
     inputs: {
       $raw: '{{range .Categories}}genre={{.}}&{{end}}',
       search: '{{ .Keywords }}',
@@ -108,7 +112,9 @@ export const definition: any = {
       download: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
+        filters: [
+          { name: 'replace', args: ['details.php?id=', 'download.php?id='] },
+        ],
       },
       details: {
         selector: 'a[href^="details.php?id="]',

@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'audiobooktorrents',
   name: 'Audiobook Torrents',
-  description: 'Audiobook Torrents (ABT) is a Private Torrent Tracker for AUDIOBOOKS',
+  description:
+    'Audiobook Torrents (ABT) is a Private Torrent Tracker for AUDIOBOOKS',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',

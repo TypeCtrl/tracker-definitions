@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'nethd',
   name: 'NetHD',
   description: 'A vietnamese tracker',
@@ -39,7 +40,8 @@ export const definition: any = {
     paths: [{ path: '/torrents.php', method: 'post' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
       search_mode: 0,
       spstate: 0,

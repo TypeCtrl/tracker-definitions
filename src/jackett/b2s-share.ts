@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'b2s-share',
   name: 'B2S-Share',
-  description: 'B2S-Share is a Brazilian Private site for TV / MOVIES / GENERAL',
+  description:
+    'B2S-Share is a Brazilian Private site for TV / MOVIES / GENERAL',
   language: 'pt-br',
   type: 'private',
   encoding: 'iso-8859-1',
@@ -214,7 +216,10 @@ export const definition: any = {
         filters: [
           {
             name: 're_replace',
-            args: ['^(.*)[ ]([Ss][0-9]{2}[Ee][0-9]{2,3}).*(?:(?:\\((.*?)\\)))(.*$)', '$3 $2 $4'],
+            args: [
+              '^(.*)[ ]([Ss][0-9]{2}[Ee][0-9]{2,3}).*(?:(?:\\((.*?)\\)))(.*$)',
+              '$3 $2 $4',
+            ],
           },
           {
             name: 're_replace',
@@ -243,7 +248,10 @@ export const definition: any = {
       },
       date: {
         selector: 'td:nth-child(2) > span',
-        filters: [{ name: 'replace', args: ['(', ''] }, { name: 'replace', args: [')', ''] }],
+        filters: [
+          { name: 'replace', args: ['(', ''] },
+          { name: 'replace', args: [')', ''] },
+        ],
       },
       size: { selector: 'td:nth-child(3)' },
       grabs: { selector: 'td:nth-child(4) > font > b' },

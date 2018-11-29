@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'empornium',
   name: 'Empornium',
   description: 'A porn tracker',

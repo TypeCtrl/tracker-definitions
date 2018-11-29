@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ptfiles',
   name: 'PTFiles',
   description: 'PTFiles (PTF) is a Private site for TV / MOVIES / GENERAL',
@@ -61,7 +62,8 @@ export const definition: any = {
       onlyname2: true,
     },
     rows: {
-      selector: 'table#tortable > tbody > tr.rowhead, table#tablethree > tbody > tr.rowhead',
+      selector:
+        'table#tortable > tbody > tr.rowhead, table#tablethree > tbody > tr.rowhead',
     },
     fields: {
       download: { selector: 'a[href^="dl.php/"]', attribute: 'href' },
@@ -69,7 +71,10 @@ export const definition: any = {
       category: {
         selector: 'td[onclick*="browse.php?cat="]',
         attribute: 'onclick',
-        filters: [{ name: 'querystring', args: 'cat' }, { name: 'trim', args: "'" }],
+        filters: [
+          { name: 'querystring', args: 'cat' },
+          { name: 'trim', args: "'" },
+        ],
       },
       details: { selector: 'a.torrentlink', attribute: 'href' },
       imdb: {
@@ -102,7 +107,8 @@ export const definition: any = {
       uploadvolumefactor: { case: { '*': '1' } },
       description: {
         selector: 'td:nth-child(2) > span:has(span > small)',
-        remove: 'span:nth-child(1), span.tool, a[title^="Search all"], br ~ b > small',
+        remove:
+          'span:nth-child(1), span.tool, a[title^="Search all"], br ~ b > small',
         filters: [{ name: 'trim', args: '/' }],
       },
     },

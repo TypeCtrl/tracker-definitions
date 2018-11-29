@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'totheglory',
   name: 'ToTheGlory',
   description: 'A chinese tracker',
@@ -57,7 +58,8 @@ export const definition: any = {
   search: {
     paths: [{ path: '/browse.php' }],
     inputs: {
-      search_field: '{{range .Categories}}分类:`{{.}}` {{end}}{{ .Query.Keywords }}',
+      search_field:
+        '{{range .Categories}}分类:`{{.}}` {{end}}{{ .Query.Keywords }}',
       c: 'M',
     },
     rows: { selector: 'table#torrent_table > tbody > tr[id]' },
@@ -83,7 +85,10 @@ export const definition: any = {
       },
       leechers: {
         selector: 'td:nth-child(9)',
-        filters: [{ name: 'split', args: ['/', 1] }, { name: 'replace', args: ['\n', ''] }],
+        filters: [
+          { name: 'split', args: ['/', 1] },
+          { name: 'replace', args: ['\n', ''] },
+        ],
       },
       grabs: {
         selector: 'td:nth-child(8)',

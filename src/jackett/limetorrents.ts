@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'limetorrents',
   name: 'LimeTorrents',
-  description: 'LimeTorrents is a Public general torrent index with mostly verified torrents',
+  description:
+    'LimeTorrents is a Public general torrent index with mostly verified torrents',
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',
@@ -41,7 +43,8 @@ export const definition: any = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}search/all/{{ .Keywords}}/{{else}}/index.php?page=latest100{{end}}',
+        path:
+          '{{if .Keywords}}search/all/{{ .Keywords}}/{{else}}/index.php?page=latest100{{end}}',
       },
     ],
     keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
@@ -70,7 +73,10 @@ export const definition: any = {
       category: {
         optional: true,
         selector: 'td:nth-child(2)',
-        filters: [{ name: 'split', args: ['-', 1] }, { name: 'replace', args: [' in ', ''] }],
+        filters: [
+          { name: 'split', args: ['-', 1] },
+          { name: 'replace', args: [' in ', ''] },
+        ],
       },
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },

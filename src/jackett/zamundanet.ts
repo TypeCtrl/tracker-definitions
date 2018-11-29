@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'zamundanet',
   name: 'Zamunda.net',
-  description: 'Zumunda is a BULGARIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'Zumunda is a BULGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'bg-bg',
   type: 'private',
   encoding: 'windows-1251',
@@ -55,7 +57,10 @@ export const definition: any = {
         filters: [
           {
             name: 're_replace',
-            args: ['^(.*?)download\\.php\\/[0-9]{1,10}\\/|\\.torrent(?=[^.]*$)', ''],
+            args: [
+              '^(.*?)download\\.php\\/[0-9]{1,10}\\/|\\.torrent(?=[^.]*$)',
+              '',
+            ],
           },
         ],
       },

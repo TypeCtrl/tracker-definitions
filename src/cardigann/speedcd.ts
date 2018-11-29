@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'speedcd',
   name: 'speed.cd',
   description: 'TV Series anyone?',
@@ -37,7 +38,8 @@ export const definition: any = {
   },
   ratio: {
     path: '/browse.php',
-    selector: 'body > div.cHead > table.sts > tbody > tr > td:nth-child(1) > div:nth-child(2)',
+    selector:
+      'body > div.cHead > table.sts > tbody > tr > td:nth-child(1) > div:nth-child(2)',
     filters: [{ name: 'regexp', args: '(\\ \\d{1,2}\\.\\d{2}\\ )' }],
   },
   login: {

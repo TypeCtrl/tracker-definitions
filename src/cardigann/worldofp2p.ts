@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'worldofp2p',
   name: 'WorldOfP2P',
   description: 'A general tracker',
@@ -86,7 +87,8 @@ export const definition: any = {
       searchin: 'title',
     },
     rows: {
-      selector: 'table.browsewidth100 > tbody > tr:has(a[href^="download.php?torrent="])',
+      selector:
+        'table.browsewidth100 > tbody > tr:has(a[href^="download.php?torrent="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

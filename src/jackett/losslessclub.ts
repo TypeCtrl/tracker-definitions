@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'losslessclub',
   name: 'LosslessClub',
   description: 'LosslessClub is a Romanian Private site for High Quality Music',
@@ -54,7 +55,10 @@ export const definition: any = {
       date: {
         selector: 'td:nth-child(7)',
         remove: 'a, i',
-        filters: [{ name: 'replace', args: ['by', ''] }, { name: 'dateparse', args: '2/01/06' }],
+        filters: [
+          { name: 'replace', args: ['by', ''] },
+          { name: 'dateparse', args: '2/01/06' },
+        ],
       },
       downloadvolumefactor: { case: { '*': '1' } },
       uploadvolumefactor: { case: { '*': '1' } },

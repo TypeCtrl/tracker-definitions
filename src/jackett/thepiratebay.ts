@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'thepiratebay',
   name: 'The Pirate Bay',
-  description: 'Pirate Bay (TPB) is the galaxy’s most resilient Public BitTorrent site',
+  description:
+    'Pirate Bay (TPB) is the galaxy’s most resilient Public BitTorrent site',
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',
@@ -172,7 +174,8 @@ export const definition: any = {
       },
       date: {
         optional: true,
-        selector: 'td:nth-child(2) font.detDesc:not(:contains("ago")):not(:contains(":"))',
+        selector:
+          'td:nth-child(2) font.detDesc:not(:contains("ago")):not(:contains(":"))',
         filters: [
           { name: 'regexp', args: 'Uploaded (.+?),' },
           { name: 'replace', args: [' ', ' '] },

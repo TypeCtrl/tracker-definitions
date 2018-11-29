@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'aox',
   name: 'AOX',
-  description: 'AOX (Chippu) is a Private Torrent Tracker for ASIAN MOVIES / TV',
+  description:
+    'AOX (Chippu) is a Private Torrent Tracker for ASIAN MOVIES / TV',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',

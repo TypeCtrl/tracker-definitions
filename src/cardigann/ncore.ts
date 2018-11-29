@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ncore',
   name: 'NCore',
   language: 'en-us',
@@ -65,7 +66,9 @@ export const definition: any = {
       download: {
         selector: '.torrent_txt > a, .torrent_txt2 > a',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['action=details', 'action=download'] }],
+        filters: [
+          { name: 'replace', args: ['action=details', 'action=download'] },
+        ],
       },
       size: { selector: '.box_meret2' },
       date: { selector: '.box_feltoltve2', remove: 'i, br' },

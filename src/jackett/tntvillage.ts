@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'tntvillage',
   name: 'TNTVillage',
   description: 'TNTVillage is an ITALIAN Public site for TV / MOVIES / GENERAL',

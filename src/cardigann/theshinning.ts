@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'theshinning',
   name: 'The Shinning',
   description: 'A German gerneral tracker',
@@ -97,7 +98,10 @@ export const definition: any = {
       details: { selector: 'div.title_wrap > a', attribute: 'href' },
       size: {
         selector: 'div.bro_right_ad > b',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       grabs: { selector: 'div.bro_right_ae > b' },
       seeders: { selector: 'div.bro_box1_aa > b' },

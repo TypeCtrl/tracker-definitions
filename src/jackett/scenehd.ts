@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'scenehd',
   name: 'SceneHD',
   description: 'SceneHD is Private site for HD TV / MOVIES',
@@ -93,7 +94,10 @@ export const definition: any = {
       },
       leechers: {
         selector: 'td:nth-child(10)',
-        filters: [{ name: 'split', args: ['/', 1] }, { name: 'split', args: [' ', 0] }],
+        filters: [
+          { name: 'split', args: ['/', 1] },
+          { name: 'split', args: [' ', 0] },
+        ],
       },
       downloadvolumefactor: { case: { 'a.freetorrent': '0', '*': '1' } },
       uploadvolumefactor: { case: { '*': '1' } },

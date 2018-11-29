@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ztracker',
   name: 'Ztracker',
-  description: 'Ztracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'Ztracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-hu',
   type: 'semi-private',
   encoding: 'ISO-8859-2',
@@ -63,7 +65,8 @@ export const definition: any = {
       search_type: 't_name',
     },
     rows: {
-      selector: 'table[border="1"] > tbody > tr:has(a[href*="details.php?id="])',
+      selector:
+        'table[border="1"] > tbody > tr:has(a[href*="details.php?id="])',
     },
     fields: {
       title: {

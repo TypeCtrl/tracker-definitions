@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'gigatorrents',
   name: 'GigaTorrents',
-  description: 'Giga Torrents is a Hungarian Private site for TV / MOVIES / GENERAL',
+  description:
+    'Giga Torrents is a Hungarian Private site for TV / MOVIES / GENERAL',
   language: 'hu-hu',
   type: 'private',
   encoding: 'UTF-8',
@@ -78,7 +80,9 @@ export const definition: any = {
       download: {
         selector: 'a[href^="/details.php?id="]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
+        filters: [
+          { name: 'replace', args: ['details.php?id=', 'download.php?id='] },
+        ],
       },
       title: { selector: 'a[href^="/details.php?id="]' },
       details: {
@@ -126,7 +130,9 @@ export const definition: any = {
       date: {
         selector: 'td:nth-child(2)',
         remove: 'a',
-        filters: [{ name: 'regexp', args: 'Feltöltve:\\s*([\\d-]+\\s*[\\d:]+)' }],
+        filters: [
+          { name: 'regexp', args: 'Feltöltve:\\s*([\\d-]+\\s*[\\d:]+)' },
+        ],
       },
       size: { selector: 'td:nth-child(6)', remove: 'span' },
     },

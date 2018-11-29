@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: '1337x',
   name: '1337x',
-  description: '1337X is a Public torrent site that offers verified torrent downloads',
+  description:
+    '1337X is a Public torrent site that offers verified torrent downloads',
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',
@@ -103,19 +105,24 @@ export const definition: any = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}/search/{{ .Keywords}}/1/{{else}}/trending{{end}}',
+        path:
+          '{{if .Keywords}}/search/{{ .Keywords}}/1/{{else}}/trending{{end}}',
       },
       { path: '{{if .Keywords}}/search/{{ .Keywords}}/2/{{else}}{{end}}' },
       { path: '{{if .Keywords}}/search/{{ .Keywords}}/3/{{else}}{{end}}' },
       { path: '{{if .Keywords}}/search/{{ .Keywords}}/4/{{else}}{{end}}' },
       { path: '{{if .Keywords}}/search/{{ .Keywords}}/5/{{else}}{{end}}' },
     ],
-    keywordsfilters: [{ name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] }],
+    keywordsfilters: [
+      { name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] },
+    ],
     rows: { selector: 'tr:has(a[href^="/torrent/"])' },
     fields: {
       title: {
         selector: 'td[class^="coll-1"] a[href^="/torrent/"]',
-        filters: [{ name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] }],
+        filters: [
+          { name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] },
+        ],
       },
       category: {
         optional: true,

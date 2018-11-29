@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'manicomioshare',
   name: 'Manicomio Share',
-  description: 'Manicomio Share is a Brazilian Private site for TV / MOVIES / GENERAL',
+  description:
+    'Manicomio Share is a Brazilian Private site for TV / MOVIES / GENERAL',
   language: 'pt-br',
   type: 'private',
   encoding: 'iso-8859-1',

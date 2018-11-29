@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'downloadville',
   name: 'Downloadville',
-  description: 'Downloadville is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description:
+    'Downloadville is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fr-fr',
   type: 'private',
   encoding: 'UTF-8',

@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'mononokebt',
   name: 'Mononoké-BT',
   description: 'Mononoke-BT is a FRENCH Private Torrent Tracker for ANIME',
@@ -17,7 +18,9 @@ export const definition: any = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [{ selector: 'td.embedded:has(h2:contains("l\'authentification"))' }],
+    error: [
+      { selector: 'td.embedded:has(h2:contains("l\'authentification"))' },
+    ],
     test: { path: 'browse2.php' },
   },
   search: {
@@ -27,7 +30,8 @@ export const definition: any = {
       incldead: 1,
     },
     rows: {
-      selector: 'table#torrentstable > tbody > tr:has(a[href^="details.php?id="])',
+      selector:
+        'table#torrentstable > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       download: {

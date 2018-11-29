@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'danishbits',
   name: 'DanishBits',
   language: 'da-dk',
@@ -56,7 +57,8 @@ export const definition: any = {
   search: {
     path: '/torrents.php',
     inputs: {
-      $raw: 'action=newbrowse&search={{ .Query.Keywords }}&pre_type=torrents&type=',
+      $raw:
+        'action=newbrowse&search={{ .Query.Keywords }}&pre_type=torrents&type=',
     },
     rows: { selector: 'table#torrent_table tr.torrent' },
     fields: {

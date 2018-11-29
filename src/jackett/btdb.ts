@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'btdb',
   name: 'BTDB',
   description:
@@ -27,7 +28,8 @@ export const definition: any = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}q/{{ .Keywords}}/?sort=time{{else}}q/test/{{end}}',
+        path:
+          '{{if .Keywords}}q/{{ .Keywords}}/?sort=time{{else}}q/test/{{end}}',
       },
       { path: '{{if .Keywords}}q/{{ .Keywords}}/2?sort=time{{else}}{{end}}' },
       { path: '{{if .Keywords}}q/{{ .Keywords}}/3?sort=time{{else}}{{end}}' },

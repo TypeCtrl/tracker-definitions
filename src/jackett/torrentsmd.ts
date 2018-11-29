@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentsmd',
   name: 'Torrents.Md',
-  description: 'Torrents.Md is a Moldovan Private site for TV / MOVIES / GENERAL',
+  description:
+    'Torrents.Md is a Moldovan Private site for TV / MOVIES / GENERAL',
   language: 'ru-mo',
   type: 'private',
   encoding: 'UTF-8',
@@ -40,10 +42,13 @@ export const definition: any = {
     test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '{{if .Query.Keywords}}search.php{{else}}browse.php{{end}}' }],
+    paths: [
+      { path: '{{if .Query.Keywords}}search.php{{else}}browse.php{{end}}' },
+    ],
     inputs: { search_str: '{{ .Query.Keywords }}' },
     rows: {
-      selector: 'table.tableTorrents > tbody > tr:has(a[href^="/details.php?id="])',
+      selector:
+        'table.tableTorrents > tbody > tr:has(a[href^="/details.php?id="])',
     },
     fields: {
       title: { selector: 'a[href^="/details.php?id="]' },

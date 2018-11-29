@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'mvgroupmain',
   name: 'MVGroup Main',
   description:
@@ -151,11 +152,15 @@ export const definition: any = {
     fields: {
       title: {
         optional: true,
-        selector: 'td.doubleindent, td.singleindent a[href^="/index.php?showtopic="]',
+        selector:
+          'td.doubleindent, td.singleindent a[href^="/index.php?showtopic="]',
         filters: [
           {
             name: 're_replace',
-            args: ['^BBC (.*)', '{{ if .Config.dropbbc }}{{ else }}BBC {{ end }}$1'],
+            args: [
+              '^BBC (.*)',
+              '{{ if .Config.dropbbc }}{{ else }}BBC {{ end }}$1',
+            ],
           },
           {
             name: 'append',

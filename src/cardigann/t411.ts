@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 't411',
   name: 'Torrent411',
   language: 'fr-fr',

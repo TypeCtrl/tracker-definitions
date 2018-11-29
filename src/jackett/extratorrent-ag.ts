@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'extratorrent-ag',
   name: 'ExtraTorrent.ag',
   description:
@@ -1022,7 +1023,9 @@ export const definition: any = {
   },
   settings: [],
   search: {
-    paths: [{ path: '{{if .Keywords}}search/?search={{ .Keywords}}{{else}}{{end}}' }],
+    paths: [
+      { path: '{{if .Keywords}}search/?search={{ .Keywords}}{{else}}{{end}}' },
+    ],
     rows: { selector: 'tr[class^="tl"]' },
     fields: {
       title: { selector: 'td.tli a' },

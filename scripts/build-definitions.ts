@@ -18,7 +18,6 @@ const SOURCES = [
 const PRETTIER_TYPESCRIPT: prettier.Options = {
   parser: 'typescript',
   trailingComma: 'all',
-  printWidth: 100,
   bracketSpacing: true,
   semi: true,
   singleQuote: true,
@@ -52,7 +51,8 @@ for (const src of SOURCES) {
 
     // write module
     const defExp = `
-      export const definition: any = ${formattedJson};
+      import { TopLevel } from '../definition-interface';
+      export const definition: TopLevel = ${formattedJson};
     `;
     fs.writeFileSync(
       path.join(moduleOutDir, name + '.ts'),

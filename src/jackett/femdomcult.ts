@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'femdomcult',
   name: 'Femdomcult',
   description: 'A porn tracker',

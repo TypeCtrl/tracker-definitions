@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'retroflix',
   name: 'RetroFlix',
-  description: 'Private Torrent Tracker for Classic Movies / TV / General Releases.',
+  description:
+    'Private Torrent Tracker for Classic Movies / TV / General Releases.',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',
@@ -34,7 +36,8 @@ export const definition: any = {
   search: {
     paths: [{ path: 'torrents.php', method: 'get' }],
     inputs: {
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
       search_mode: 0,

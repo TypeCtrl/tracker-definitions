@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'Bittorrentfiles',
   name: 'Bittorrentfiles',
   description: 'Bittorrentfiles is a Private GERMAN tracker',
@@ -108,7 +109,10 @@ export const definition: any = {
       grabs: { selector: 'td:nth-child(4)' },
       size: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: { selector: 'td:nth-child(2) > a' },
       leechers: { selector: 'td:nth-child(3)' },

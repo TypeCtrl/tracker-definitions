@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'thetorrents',
   name: 'The-Torrents',
-  description: 'The-Torrents is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description:
+    'The-Torrents is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-ro',
   type: 'private',
   encoding: 'UTF-8',
@@ -71,7 +73,8 @@ export const definition: any = {
     },
     error: [
       {
-        selector: 'table.main > tbody > tr > td.embedded td.text:contains("incorrect")',
+        selector:
+          'table.main > tbody > tr > td.embedded td.text:contains("incorrect")',
       },
     ],
     test: { path: '/browse.php' },

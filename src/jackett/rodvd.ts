@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'rodvd',
   name: 'RoDVD',
-  description: 'RoDVD (Cinefiles) is a ROMANIAN Private Torrent Tracker for DVD-R / HD MOVIES',
+  description:
+    'RoDVD (Cinefiles) is a ROMANIAN Private Torrent Tracker for DVD-R / HD MOVIES',
   language: 'ro-ro',
   type: 'private',
   encoding: 'windows-1252',
@@ -66,7 +68,8 @@ export const definition: any = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
       key: 9,
     },
     rows: {

@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'hdhome',
   name: 'HDHome',
-  description: 'HDHome (HDBiger) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
+  description:
+    'HDHome (HDBiger) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-cn',
   type: 'private',
   encoding: 'UTF-8',
@@ -83,7 +85,8 @@ export const definition: any = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: '1',
       spstate: '0',
       inclbookmarked: '0',

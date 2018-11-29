@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ccfbits',
   name: 'CCFBits',
-  description: 'CCFBits is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
+  description:
+    'CCFBits is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-cn',
   type: 'private',
   encoding: 'UTF-8',
@@ -57,7 +59,8 @@ export const definition: any = {
       sort: 'added',
     },
     rows: {
-      selector: 'table[border="1"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
+      selector:
+        'table[border="1"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       title: {

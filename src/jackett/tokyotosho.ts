@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'tokyotosho',
   name: 'Tokyo Toshokan',
   description: 'A BitTorrent Library for Japanese Media',
@@ -27,7 +28,9 @@ export const definition: any = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   search: {
-    paths: [{ path: '{{if .Query.Keywords }}search.php{{else}}index.php{{end}}' }],
+    paths: [
+      { path: '{{if .Query.Keywords }}search.php{{else}}index.php{{end}}' },
+    ],
     inputs: {
       terms: '{{ .Query.Keywords }}',
       type: '{{ .Config.type-id }}',
@@ -48,7 +51,10 @@ export const definition: any = {
       },
       size: {
         selector: 'td:nth-child(4)',
-        filters: [{ name: 'split', args: ['|', 1] }, { name: 'regexp', args: 'Size: (.+?) ?$' }],
+        filters: [
+          { name: 'split', args: ['|', 1] },
+          { name: 'regexp', args: 'Size: (.+?) ?$' },
+        ],
       },
       date: {
         selector: 'td:nth-child(4)',

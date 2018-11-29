@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'worldwidetorrents',
   name: 'World Wide Torrents',
   description: 'World Wide Torrents is a Public site for TV / MOVIES / GENERAL',
@@ -152,7 +153,8 @@ export const definition: any = {
       },
     ],
     rows: {
-      selector: 'tr:not(:has(script)):has(a[title][href^="torrents-details.php?id="])',
+      selector:
+        'tr:not(:has(script)):has(a[title][href^="torrents-details.php?id="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'blubits',
   name: 'Blu-bits',
   description: 'A HD tracker',
@@ -48,7 +49,8 @@ export const definition: any = {
     },
     error: [
       {
-        selector: 'table.lista > tbody > tr > td.lista > span[style="color:#FF0000;"]',
+        selector:
+          'table.lista > tbody > tr > td.lista > span[style="color:#FF0000;"]',
       },
     ],
     test: { path: 'index.php', selector: 'ul#navlist' },
@@ -56,7 +58,10 @@ export const definition: any = {
   ratio: {
     path: 'index.php',
     selector: 'ul#navlist > li:contains("Ratio: ")',
-    filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: ['---', '0'] }],
+    filters: [
+      { name: 'split', args: [' ', 1] },
+      { name: 'replace', args: ['---', '0'] },
+    ],
   },
   search: {
     path: 'index.php',

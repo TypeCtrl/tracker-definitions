@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'tbplus',
   name: 'TBPlus',
   description: 'TBPlus is a Spanish site of general content',
@@ -116,7 +117,8 @@ export const definition: any = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector: '#mcol .block-content-l table table.lista > tbody > tr:not(:first-child)',
+      selector:
+        '#mcol .block-content-l table table.lista > tbody > tr:not(:first-child)',
     },
     fields: {
       category: {

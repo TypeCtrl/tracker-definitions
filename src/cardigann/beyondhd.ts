@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'beyondhd',
   name: 'BeyondHD',
   language: 'en-us',
@@ -55,7 +56,10 @@ export const definition: any = {
       date: {
         selector: 'td:nth-child(4) span:last-child',
         remove: 'i, br',
-        filters: [{ name: 'split', args: ['|', 1] }, { name: 'trim', args: '.' }],
+        filters: [
+          { name: 'split', args: ['|', 1] },
+          { name: 'trim', args: '.' },
+        ],
       },
       seeders: { selector: 'td:nth-child(10)' },
       leechers: { selector: 'td:nth-child(11)' },

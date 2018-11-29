@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torlock',
   name: 'Torlock',
   description:
@@ -63,7 +64,8 @@ export const definition: any = {
         categorymappings: ['EBOOKS'],
       },
       {
-        path: '{{if .Keywords}}/unknown/torrents/{{ .Keywords }}.html{{else}}/unknown.html{{end}}',
+        path:
+          '{{if .Keywords}}/unknown/torrents/{{ .Keywords }}.html{{else}}/unknown.html{{end}}',
         categorymappings: ['OTHER'],
       },
       {
@@ -82,7 +84,10 @@ export const definition: any = {
         categorymappings: ['IMAGES'],
       },
     ],
-    keywordsfilters: [{ name: 'tolower' }, { name: 're_replace', args: ['[^a-zA-Z0-9]+', '-'] }],
+    keywordsfilters: [
+      { name: 'tolower' },
+      { name: 're_replace', args: ['[^a-zA-Z0-9]+', '-'] },
+    ],
     rows: {
       selector: 'table > tbody > tr:has(td:has(div:has(a[href^="/torrent/"])))',
       filters: [{ name: 'andmatch' }],
@@ -104,7 +109,9 @@ export const definition: any = {
       },
       date: {
         selector: 'td:nth-child(2)',
-        filters: [{ name: 're_replace', args: ['(day|hour|min)s?$', '$0s ago'] }],
+        filters: [
+          { name: 're_replace', args: ['(day|hour|min)s?$', '$0s ago'] },
+        ],
       },
       size: { selector: 'td:nth-child(3)' },
       seeders: { selector: 'td:nth-child(4)' },

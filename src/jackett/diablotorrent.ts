@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'diablotorrent',
   name: 'Diablo Torrent',
-  description: ' Diablo Torrent is a Hungarian Private site for TV / MOVIES / GENERAL',
+  description:
+    ' Diablo Torrent is a Hungarian Private site for TV / MOVIES / GENERAL',
   language: 'hu-hu',
   type: 'private',
   encoding: 'UTF-8',

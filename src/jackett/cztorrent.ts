@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'cztorrent',
   name: 'CzTorrent',
-  description: 'CzTorrent is a Czech Semi-Private site for TV / MOVIES / GENERAL',
+  description:
+    'CzTorrent is a Czech Semi-Private site for TV / MOVIES / GENERAL',
   language: 'cs-cz',
   type: 'semi-private',
   encoding: 'UTF-8',

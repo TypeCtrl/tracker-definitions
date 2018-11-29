@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'isohunt2',
   name: 'Isohunt2',
-  description: 'Isohunt2 is a Public torrent search engine for MOVIES / TV / GENERAL',
+  description:
+    'Isohunt2 is a Public torrent search engine for MOVIES / TV / GENERAL',
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',
@@ -72,7 +74,9 @@ export const definition: any = {
       },
       size: {
         selector: 'td.size-row',
-        filters: [{ name: 're_replace', args: ['(\\d+).(?=\\d{3}(\\D|$))', '$1'] }],
+        filters: [
+          { name: 're_replace', args: ['(\\d+).(?=\\d{3}(\\D|$))', '$1'] },
+        ],
       },
       seeders: { selector: 'td.sn' },
       date: { selector: 'td.date-row' },

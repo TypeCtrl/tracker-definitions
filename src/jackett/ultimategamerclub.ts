@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ultimategamerclub',
   name: 'Ultimate Gamer Club',
   description: 'Ultimate Gamer (UGC) is a Private Torrent Tracker for GAMES',

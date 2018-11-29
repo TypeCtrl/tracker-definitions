@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'inperil',
   name: 'inPeril',
-  description: 'InPeril is a LATVIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'InPeril is a LATVIAN Private Torrent Tracker for 0DAY / GENERAL',
   type: 'private',
   language: 'lv-lv',
   encoding: 'UTF-8',

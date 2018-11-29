@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'shareisland',
   name: 'Shareisland',
   description: 'A general italian tracker',
@@ -110,15 +111,24 @@ export const definition: any = {
           },
           {
             name: 're_replace',
-            args: ["(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b", 'S0$1$2'],
+            args: [
+              "(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b",
+              'S0$1$2',
+            ],
           },
           {
             name: 're_replace',
-            args: ["(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b", 'S$1$2'],
+            args: [
+              "(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b",
+              'S$1$2',
+            ],
           },
           {
             name: 're_replace',
-            args: ['(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))', 'E$1$2'],
+            args: [
+              '(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))',
+              'E$1$2',
+            ],
           },
           {
             name: 're_replace',
@@ -131,7 +141,8 @@ export const definition: any = {
         ],
       },
       category: {
-        selector: 'td:nth-child(1) a[href^="index.php?page=torrents&category="]',
+        selector:
+          'td:nth-child(1) a[href^="index.php?page=torrents&category="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },

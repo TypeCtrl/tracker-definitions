@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'alphareign',
   name: 'AlphaReign',
   description: 'A DHT only tracker',
@@ -24,7 +25,9 @@ export const definition: any = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [{ path: '/login', selector: 'div.auth-form > div > div.alert-danger' }],
+    error: [
+      { path: '/login', selector: 'div.auth-form > div > div.alert-danger' },
+    ],
     test: { path: 'settings', selector: 'a[href="/logout"]' },
   },
   ratio: { text: '∞' },

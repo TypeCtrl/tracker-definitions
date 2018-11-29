@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'wihd',
   name: 'World-In-HD',
   description: 'Your world in HD',
@@ -147,28 +148,43 @@ export const definition: any = {
           ':contains("Films"):contains("1080p")': '565af82b1fd35761568b4572',
           ':contains("Films"):contains("720p")': '565af82b1fd35761568b4574',
           ':contains("Films"):contains("HDTV")': '565af82b1fd35761568b4576',
-          ':contains("Films"):contains("Bluray Remux")': '565af82b1fd35761568b457a',
-          ':contains("Films"):contains("Bluray 3D")': '565af82b1fd35761568b457c',
-          ':contains("Films"):contains("Bluray Remux 4K")': '59e488174a23a800358b4567',
-          ':contains("Films"):contains("Bluray 4K")': '59e67c0ed5b6a3e689dd1e1f',
+          ':contains("Films"):contains("Bluray Remux")':
+            '565af82b1fd35761568b457a',
+          ':contains("Films"):contains("Bluray 3D")':
+            '565af82b1fd35761568b457c',
+          ':contains("Films"):contains("Bluray Remux 4K")':
+            '59e488174a23a800358b4567',
+          ':contains("Films"):contains("Bluray 4K")':
+            '59e67c0ed5b6a3e689dd1e1f',
           ':contains("Films"):contains("Bluray")': '565af82b1fd35761568b4578',
           ':contains("Films"):contains("WEB-DL")': '5a64af02ee30983a7e596aed',
           ':contains("Séries"):contains("1080p")': '565af82d1fd35761568b4587',
           ':contains("Séries"):contains("720p")': '565af82d1fd35761568b4589',
           ':contains("Séries"):contains("HDTV")': '565af82d1fd35761568b458b',
-          ':contains("Séries"):contains("Bluray Remux")': '565af82d1fd35761568b458f',
-          ':contains("Séries"):contains("Bluray 3D")': '565af82d1fd35761568b4591',
+          ':contains("Séries"):contains("Bluray Remux")':
+            '565af82d1fd35761568b458f',
+          ':contains("Séries"):contains("Bluray 3D")':
+            '565af82d1fd35761568b4591',
           ':contains("Séries"):contains("Bluray")': '565af82d1fd35761568b458d',
-          ':contains("Animations"):contains("1080p")': '565af82d1fd35761568b459c',
-          ':contains("Animations"):contains("720p")': '565af82d1fd35761568b459e',
-          ':contains("Animations"):contains("HDTV")': '565af82d1fd35761568b45a0',
-          ':contains("Animations"):contains("Bluray Remux")': '565af82d1fd35761568b45a4',
-          ':contains("Animations"):contains("Bluray 3D")': '565af82d1fd35761568b45a6',
-          ':contains("Animations"):contains("Bluray")': '565af82d1fd35761568b45a2',
-          ':contains("Divers"):contains("Logiciels")': '565af82d1fd35761568b45af',
+          ':contains("Animations"):contains("1080p")':
+            '565af82d1fd35761568b459c',
+          ':contains("Animations"):contains("720p")':
+            '565af82d1fd35761568b459e',
+          ':contains("Animations"):contains("HDTV")':
+            '565af82d1fd35761568b45a0',
+          ':contains("Animations"):contains("Bluray Remux")':
+            '565af82d1fd35761568b45a4',
+          ':contains("Animations"):contains("Bluray 3D")':
+            '565af82d1fd35761568b45a6',
+          ':contains("Animations"):contains("Bluray")':
+            '565af82d1fd35761568b45a2',
+          ':contains("Divers"):contains("Logiciels")':
+            '565af82d1fd35761568b45af',
           ':contains("Divers"):contains("Clips")': '565af82d1fd35761568b45b1',
-          ':contains("Divers"):contains("Pistes audios")': '565af82d1fd35761568b45b3',
-          ':contains("Divers"):contains("Documentaires")': '565af82d1fd35761568b45b5',
+          ':contains("Divers"):contains("Pistes audios")':
+            '565af82d1fd35761568b45b3',
+          ':contains("Divers"):contains("Documentaires")':
+            '565af82d1fd35761568b45b5',
           ':contains("Divers"):contains("Bluray")': '565af82d1fd35761568b45b7',
           ':contains("Divers"):contains("1080p")': '59591f0807fd301b6eaa7a8f',
           ':contains("Divers"):contains("720p")': '595cd82e07fd301b6eaa7a90',

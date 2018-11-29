@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'prostylex',
   name: 'ProStyleX',
   description: 'ProStyleX is a Public torrent site for 0Day and General',

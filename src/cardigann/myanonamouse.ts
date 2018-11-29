@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'myanonamouse',
   name: 'MyAnonamouse',
   description: 'Friendliness, Warmth and Sharing',
@@ -111,7 +112,8 @@ export const definition: any = {
         'tor[text]={{ .Query.Keywords }}&tor[srchIn][title]=true&tor[srchIn][author]=true&tor[searchType]=all&tor[searchIn]=torrents&tor[cat][]=0&tor[browseFlagsHideVsShow]=0&tor[startDate]=&tor[endDate]=&tor[hash]=&tor[sortType]=default&tor[startNumber]=0',
     },
     rows: {
-      selector: 'table.newTorTable > tbody > tr:nth-child(n+2):has(a.directDownload)',
+      selector:
+        'table.newTorTable > tbody > tr:nth-child(n+2):has(a.directDownload)',
     },
     fields: {
       category: {
@@ -124,7 +126,8 @@ export const definition: any = {
         selector: 'td:nth-child(3) span.torRowDesc, a.author',
       },
       details: {
-        selector: 'td:nth-child(3) > span.torFileTypes a, span.torRowDesc, a.author',
+        selector:
+          'td:nth-child(3) > span.torFileTypes a, span.torRowDesc, a.author',
       },
       comments: { selector: 'td:nth-child(3) > a', attribute: 'href' },
       download: { selector: 'td:nth-child(4) > a', attribute: 'href' },

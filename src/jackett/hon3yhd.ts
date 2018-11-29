@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'hon3yhd',
   name: 'Hon3y HD',
-  description: 'Hon3yHD is an INDIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description:
+    'Hon3yHD is an INDIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',

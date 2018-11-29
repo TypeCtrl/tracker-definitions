@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'btnext',
   name: 'BTNext',
-  description: 'BTNext (BTNT) is a PORTUGUESE Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'BTNext (BTNT) is a PORTUGUESE Private Torrent Tracker for 0DAY / GENERAL',
   language: 'pt-pt',
   type: 'private',
   encoding: 'UTF-8',
@@ -115,11 +117,13 @@ export const definition: any = {
     },
     error: [
       {
-        selector: 'div.error:not(:contains("Não existem resultados encontrados."))',
+        selector:
+          'div.error:not(:contains("Não existem resultados encontrados."))',
       },
     ],
     rows: {
-      selector: 'table#torrents_table_classic > tbody > tr:has(td.torrent_name)',
+      selector:
+        'table#torrents_table_classic > tbody > tr:has(td.torrent_name)',
     },
     fields: {
       title: { selector: 'a[href*="?p=torrents&pid=10&action=details"]' },

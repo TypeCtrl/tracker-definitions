@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'norbits',
   name: 'Norbits',
   language: 'nb-no',
@@ -35,7 +36,8 @@ export const definition: any = {
   search: {
     path: '/browse.php',
     inputs: {
-      $raw: '{{range .Categories}}main_cat[]={{.}}&{{end}}search={{ .Query.Keywords }}',
+      $raw:
+        '{{range .Categories}}main_cat[]={{.}}&{{end}}search={{ .Query.Keywords }}',
     },
     rows: { selector: 'table#torrentTable tbody tr:nth-child(n+2)' },
     fields: {

@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'linkomanija',
   name: 'LinkoManija',
-  description: 'LinkoManija is an ITALIAN Private site for TV / MOVIES / GENERAL',
+  description:
+    'LinkoManija is an ITALIAN Private site for TV / MOVIES / GENERAL',
   language: 'lt-lt',
   type: 'private',
   encoding: 'UTF-8',

@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'icetorrent',
   name: 'ICE Torrent',
-  description: 'ICE Torrent is a ratioless ROMANIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'ICE Torrent is a ratioless ROMANIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ro-ro',
   type: 'private',
   encoding: 'UTF-8',
@@ -70,12 +72,14 @@ export const definition: any = {
     ],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
       search_by: '{{ if .Query.IMDBID }}imdb{{else}}name{{end}}',
     },
     rows: {
-      selector: 'table.torrenttable > tbody > tr:has(a[title][href^="details.php?id="])',
+      selector:
+        'table.torrenttable > tbody > tr:has(a[title][href^="details.php?id="])',
     },
     fields: {
       title: {
@@ -130,7 +134,8 @@ export const definition: any = {
       uploadvolumefactor: { case: { '*': '1' } },
       description: {
         selector: 'td:has(a[title][href^="details.php?id="])',
-        remove: 'a[title][href^="details.php?id="], div, font:contains("Added on")',
+        remove:
+          'a[title][href^="details.php?id="], div, font:contains("Added on")',
       },
     },
   },

@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentsectorcrew',
   name: 'Torrent Sector Crew',
   description: 'A German general tracker',
@@ -119,7 +120,10 @@ export const definition: any = {
       },
       size: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: {
         selector: 'td:nth-child(7)',

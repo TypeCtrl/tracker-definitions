@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'RGU',
   name: 'RGU',
   description: 'RGU is a Private site for MOVIES / TV / GENERAL',
@@ -53,7 +54,8 @@ export const definition: any = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default: "For best results, change the 'Torrents per page' setting to 100 on your profile.",
+      default:
+        "For best results, change the 'Torrents per page' setting to 100 on your profile.",
     },
   ],
   login: {
@@ -93,7 +95,10 @@ export const definition: any = {
       title: {
         selector: 'td:nth-of-type(2) a',
         attribute: 'onmouseover',
-        filters: [{ name: 'split', args: ['>', '1'] }, { name: 'replace', args: ['</b', ''] }],
+        filters: [
+          { name: 'split', args: ['>', '1'] },
+          { name: 'replace', args: ['</b', ''] },
+        ],
       },
       details: {
         selector: 'td:nth-of-type(2) > a[onmouseover]',

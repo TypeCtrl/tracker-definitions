@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'hdspain',
   name: 'HD-Spain',
   description: 'HD-Spain is a SPANISH site for HD content',
@@ -33,7 +34,9 @@ export const definition: any = {
   },
   search: {
     path: 'index.php',
-    keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],
+    keywordsfilters: [
+      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
+    ],
     inputs: {
       sec: 'listado',
       ord: 9,

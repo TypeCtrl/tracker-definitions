@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'scenereactor',
   name: 'SceneReactor',
   description: 'A general tracker',

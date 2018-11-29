@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'acidlounge',
   name: 'Acid-Lounge',
-  description: 'Acid Lounge (A-L) is a Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'Acid Lounge (A-L) is a Private Torrent Tracker for 0DAY / GENERAL',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',

@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ourbits',
   name: 'Ourbits',
-  description: 'Ourbits (HDPter) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
+  description:
+    'Ourbits (HDPter) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'zh-cn',
   type: 'private',
   encoding: 'UTF-8',
@@ -46,7 +48,8 @@ export const definition: any = {
     paths: [{ path: '/torrents.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: '1',
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
     },

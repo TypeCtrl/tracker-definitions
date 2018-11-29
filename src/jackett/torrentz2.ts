@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentz2',
   name: 'Torrentz2',
   description:
@@ -95,7 +96,8 @@ export const definition: any = {
         ],
       },
       download: {
-        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
+        text:
+          '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
       },
       magfile: {
         text: '{{ .Result.title }}',
@@ -114,7 +116,10 @@ export const definition: any = {
         optional: true,
         selector: 'dt',
         remove: 'a',
-        filters: [{ name: 're_replace', args: ['[^a-zA-Z\\s]+', ''] }, { name: 'trim' }],
+        filters: [
+          { name: 're_replace', args: ['[^a-zA-Z\\s]+', ''] },
+          { name: 'trim' },
+        ],
       },
       date: { selector: 'dd span:nth-child(2)', attribute: 'title' },
       size: { selector: 'dd span:nth-child(3)' },

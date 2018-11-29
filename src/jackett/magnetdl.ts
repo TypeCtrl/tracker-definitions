@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'magnetdl',
   name: 'MagnetDL',
   description: 'MagnetDL is a Public torrent Magnet Links search engine',
@@ -30,7 +31,10 @@ export const definition: any = {
         'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
       ],
     },
-    keywordsfilters: [{ name: 're_replace', args: [' ', '-'] }, { name: 'tolower' }],
+    keywordsfilters: [
+      { name: 're_replace', args: [' ', '-'] },
+      { name: 'tolower' },
+    ],
     paths: [
       {
         path:

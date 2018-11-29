@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torviet',
   name: 'TorViet',
   description:
@@ -61,7 +62,8 @@ export const definition: any = {
   search: {
     paths: [{ path: '/torrents.php' }],
     inputs: {
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       sltCategory: 0,
       sltSubCategory: 0,
       sltGenre: 0,
@@ -72,7 +74,8 @@ export const definition: any = {
       search_mode: 0,
     },
     rows: {
-      selector: 'div#idtorrent > table.torrents > tbody > tr:has(table.torrentname)',
+      selector:
+        'div#idtorrent > table.torrents > tbody > tr:has(table.torrentname)',
     },
     fields: {
       title: { selector: 'a[class][title]', attribute: 'title' },

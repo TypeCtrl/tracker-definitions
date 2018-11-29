@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'gods',
   name: 'GODS',
   description: 'GODS is a German Private site for TV / MOVIES / GENERAL',
@@ -118,7 +119,10 @@ export const definition: any = {
       size: {
         selector:
           'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(1)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: {
         selector:
@@ -129,7 +133,8 @@ export const definition: any = {
           'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(3) > b:nth-child(3)',
       },
       date: {
-        selector: 'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(6)',
+        selector:
+          'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(6)',
         filters: [
           { name: 'replace', args: [' ', ' '] },
           { name: 'dateparse', args: '02.01.2006 15:04:05' },

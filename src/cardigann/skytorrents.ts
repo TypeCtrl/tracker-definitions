@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'skytorrents',
   name: 'Sky torrents',
   language: 'en-us',
@@ -6,7 +7,8 @@ export const definition: any = {
   links: ['https://www.skytorrents.in/'],
   caps: { categories: { TV: 'TV', Movies: 'Movies' } },
   search: {
-    path: 'search/all/{{if .Query.Keywords}}ed{{else}}ad{{end}}/1/{{ .Query.Keywords}}',
+    path:
+      'search/all/{{if .Query.Keywords}}ed{{else}}ad{{end}}/1/{{ .Query.Keywords}}',
     rows: { selector: 'table > tbody > tr' },
     fields: {
       title: {

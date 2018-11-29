@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'btxpress',
   name: 'BTXpress',
   description: 'HD Tracker Movies/TV',
@@ -7,7 +8,10 @@ export const definition: any = {
   encoding: 'UTF-8',
   links: ['https://btxpress.org/'],
   caps: {
-    categorymappings: [{ id: 1, cat: 'Movies', desc: 'Movies' }, { id: 2, cat: 'TV', desc: 'TV' }],
+    categorymappings: [
+      { id: 1, cat: 'Movies', desc: 'Movies' },
+      { id: 2, cat: 'TV', desc: 'TV' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
@@ -70,7 +74,10 @@ export const definition: any = {
           },
           {
             name: 're_replace',
-            args: ['(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut)', 'minute'],
+            args: [
+              '(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut)',
+              'minute',
+            ],
           },
           {
             name: 're_replace',
@@ -81,7 +88,10 @@ export const definition: any = {
           },
           {
             name: 're_replace',
-            args: ['(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur)', 'hour'],
+            args: [
+              '(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur)',
+              'hour',
+            ],
           },
           {
             name: 're_replace',
@@ -92,7 +102,10 @@ export const definition: any = {
           },
           {
             name: 're_replace',
-            args: ['(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден)', 'day'],
+            args: [
+              '(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден)',
+              'day',
+            ],
           },
           {
             name: 're_replace',

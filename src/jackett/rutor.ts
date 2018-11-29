@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'rutor',
   name: 'RuTor',
   description: 'RuTor is a RUSSIAN Public site for MOVIES / TV / GENERAL',

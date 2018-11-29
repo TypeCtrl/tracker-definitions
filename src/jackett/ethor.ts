@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ethor',
   name: "Ethor.net (Thor's Land)",
   description: 'A French gerneral tracker',
@@ -82,7 +83,8 @@ export const definition: any = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
       advcat: '0',
       incldead: '1',
       stype: 'b',
@@ -115,11 +117,17 @@ export const definition: any = {
         filters: [
           {
             name: 're_replace',
-            args: ['(?i)[\\.\\s\\[\\-]MULTI[\\.\\s\\]\\-]', '.{{ .Config.multilanguage }}.'],
+            args: [
+              '(?i)[\\.\\s\\[\\-]MULTI[\\.\\s\\]\\-]',
+              '.{{ .Config.multilanguage }}.',
+            ],
           },
           {
             name: 're_replace',
-            args: ['(?i)[\\.\\s\\[\\-]VFQ[\\.\\s\\]\\-]', '.{{ .Config.multilanguage }}.'],
+            args: [
+              '(?i)[\\.\\s\\[\\-]VFQ[\\.\\s\\]\\-]',
+              '.{{ .Config.multilanguage }}.',
+            ],
           },
         ],
       },

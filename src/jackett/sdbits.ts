@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'sdbits',
   name: 'SDBits',
   description: 'SDBits is a small tracker that focuses on SD movies and tv.',

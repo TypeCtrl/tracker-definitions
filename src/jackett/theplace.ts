@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'theplace',
   name: 'The Place',
   description: 'Self-improvement E-Learning',
@@ -64,7 +65,8 @@ export const definition: any = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector: 'table[border="0"] > tbody > tr.ttable:has(a[href^="browse.php?cat="])',
+      selector:
+        'table[border="0"] > tbody > tr.ttable:has(a[href^="browse.php?cat="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {
@@ -77,7 +79,9 @@ export const definition: any = {
       download: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
+        filters: [
+          { name: 'replace', args: ['details.php?id=', 'download.php?id='] },
+        ],
       },
       details: {
         selector: 'a[href^="details.php?id="]',

@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'bithdtv',
   name: 'BIT-HDTV',
   description: 'Home of High Definition TV',

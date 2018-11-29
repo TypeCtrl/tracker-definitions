@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'eztv',
   name: 'EZTV',
   language: 'en-us',
@@ -8,7 +9,8 @@ export const definition: any = {
   search: {
     path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}{{else}}/{{end}}',
     rows: {
-      selector: "table.forum_header_border tr[name='hover'].forum_header_border",
+      selector:
+        "table.forum_header_border tr[name='hover'].forum_header_border",
       filters: [{ name: 'andmatch' }],
     },
     fields: {

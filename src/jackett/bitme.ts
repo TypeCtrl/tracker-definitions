@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'bitme',
   name: 'BitMe',
   description: 'BitMe.ORG is an E-Learning torrent tracker',

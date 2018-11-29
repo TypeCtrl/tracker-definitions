@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'funkytorrents',
   name: 'FunkyTorrents',
   description: 'FunkyTorrents (FT) is a Private Torrent Tracker for MUSIC',
@@ -63,7 +64,8 @@ export const definition: any = {
     paths: [{ path: '/browse.php' }],
     inputs: { search: '{{ .Query.Keywords }}', incldead: 1 },
     rows: {
-      selector: 'table.mainouter > tbody > tr > td.outer > table > tbody > tr.mouse_out',
+      selector:
+        'table.mainouter > tbody > tr > td.outer > table > tbody > tr.mouse_out',
     },
     fields: {
       description: { optional: true, selector: 'td:nth-child(2) > font' },

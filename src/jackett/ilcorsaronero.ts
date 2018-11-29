@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ilcorsaronero',
   name: 'Il Corsaro Nero',
-  description: 'Il Corsaro Nero is an ITALIAN Public site for TV / MOVIES / GENERAL',
+  description:
+    'Il Corsaro Nero is an ITALIAN Public site for TV / MOVIES / GENERAL',
   language: 'it-it',
   type: 'public',
   encoding: 'UTF-8',
@@ -114,15 +116,24 @@ export const definition: any = {
           },
           {
             name: 're_replace',
-            args: ["(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b", 'S0$1$2'],
+            args: [
+              "(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b",
+              'S0$1$2',
+            ],
           },
           {
             name: 're_replace',
-            args: ["(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b", 'S$1$2'],
+            args: [
+              "(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b",
+              'S$1$2',
+            ],
           },
           {
             name: 're_replace',
-            args: ['(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))', 'E$1$2'],
+            args: [
+              '(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))',
+              'E$1$2',
+            ],
           },
           {
             name: 're_replace',
@@ -149,7 +160,8 @@ export const definition: any = {
         ],
       },
       download: {
-        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
+        text:
+          '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
       },
       magnet: {
         selector: 'input.downarrow',

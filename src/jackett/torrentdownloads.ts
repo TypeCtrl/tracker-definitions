@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentdownloads',
   name: 'Torrent Downloads',
-  description: 'Torrent Downloads (TD) is a Public torrent site for all kinds of content',
+  description:
+    'Torrent Downloads (TD) is a Public torrent site for all kinds of content',
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',

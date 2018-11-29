@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'tasmanit',
   name: 'Tasmanit',
-  description: 'Tasmanit.es is a AUSTRALIAN / NEW ZEALAND Private Torrent Tracker for AUS / NZ TV',
+  description:
+    'Tasmanit.es is a AUSTRALIAN / NEW ZEALAND Private Torrent Tracker for AUS / NZ TV',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',

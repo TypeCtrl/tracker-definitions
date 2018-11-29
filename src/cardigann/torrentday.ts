@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentday',
   name: 'TorrentDay',
   language: 'en-us',
@@ -61,7 +62,8 @@ export const definition: any = {
       $raw: '{{range .Categories}}{{.}}&{{end}}q={{ .Query.Keywords }}',
     },
     rows: {
-      selector: 'table#torrentTable > tbody > tr:nth-child(n+2):has(td.t_label)',
+      selector:
+        'table#torrentTable > tbody > tr:nth-child(n+2):has(td.t_label)',
     },
     fields: {
       category: {
@@ -76,7 +78,10 @@ export const definition: any = {
       size: { selector: 'td:nth-child(6)' },
       date: {
         selector: 'td:nth-child(2) .t_ctime',
-        filters: [{ name: 'split', args: ['|', -1] }, { name: 'split', args: [' by ', 0] }],
+        filters: [
+          { name: 'split', args: ['|', -1] },
+          { name: 'split', args: [' by ', 0] },
+        ],
       },
       seeders: { selector: 'td.seedersInfo' },
       leechers: { selector: 'td.leechersInfo' },

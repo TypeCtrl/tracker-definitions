@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'zelkaorg',
   name: 'Zelka.org',
-  description: 'Zelka (Zamunda) is a BULGARIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'Zelka (Zamunda) is a BULGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'bg-bg',
   type: 'private',
   encoding: 'windows-1251',
@@ -61,7 +63,8 @@ export const definition: any = {
         attribute: 'href',
       },
       magnet: {
-        selector: 'a:has(img[src^="http://img.zamunda.se/pic/magnet-icon-12w-12h.gif"])',
+        selector:
+          'a:has(img[src^="http://img.zamunda.se/pic/magnet-icon-12w-12h.gif"])',
         attribute: 'href',
       },
       grabs: {

@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'ethor',
   name: "Ethor.net (Thor's Land)",
   description: 'A French gerneral tracker',

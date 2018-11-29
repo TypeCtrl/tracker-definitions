@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'estone',
   name: 'eStone',
-  description: 'eStone (XiDER, BeLoad) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'eStone (XiDER, BeLoad) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-hu',
   type: 'private',
   encoding: 'UTF-8',

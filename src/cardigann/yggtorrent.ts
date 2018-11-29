@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'yggtorrent',
   name: 'YGGtorrent',
   language: 'fr-fr',
@@ -129,7 +130,8 @@ export const definition: any = {
     },
     error: [
       {
-        selector: 'div#top_panel > div > ul > li:nth-child(1) > a.text:contains("S\'identifier")',
+        selector:
+          'div#top_panel > div > ul > li:nth-child(1) > a.text:contains("S\'identifier")',
       },
     ],
     test: { path: '/', selector: 'a[href$="/user/logout"]' },

@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'fullmixmusic',
   name: 'FullMixMusic',
   description: 'FullMixMusic is a HUNGARIAN Private Torrent Tracker for MUSIC',

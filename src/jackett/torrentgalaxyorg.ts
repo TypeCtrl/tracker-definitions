@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentgalaxyorg',
   name: 'TorrentGalaxy.org',
-  description: 'TorrentGalaxy.org (TGx) is a Public site for TV / MOVIES / GENERAL',
+  description:
+    'TorrentGalaxy.org (TGx) is a Public site for TV / MOVIES / GENERAL',
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',

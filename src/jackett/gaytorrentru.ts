@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'gaytorrentru',
   name: 'GAYtorrent.ru',
-  description: 'World largest gay porn library for free with a stunning forum and 24/7 chat.',
+  description:
+    'World largest gay porn library for free with a stunning forum and 24/7 chat.',
   language: 'en-us',
   type: 'private',
   encoding: 'UTF-8',
@@ -88,7 +90,8 @@ export const definition: any = {
       incldead: '{{ .Config.incldead }}',
     },
     rows: {
-      selector: 'table.browse_result > tbody > tr:has(a[href^="details.php?id="])',
+      selector:
+        'table.browse_result > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       category: {

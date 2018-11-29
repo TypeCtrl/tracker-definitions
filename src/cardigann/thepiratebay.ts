@@ -1,9 +1,14 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'thepiratebay',
   name: 'The Pirate Bay',
   language: 'en-us',
   encoding: 'UTF-8',
-  links: ['https://thepiratebay.org/', 'https://thepiratesbay.pw/', 'https://tproxy.pro/'],
+  links: [
+    'https://thepiratebay.org/',
+    'https://thepiratesbay.pw/',
+    'https://tproxy.pro/',
+  ],
   caps: {
     categories: {
       '201': 'Movies',
@@ -19,7 +24,8 @@ export const definition: any = {
     },
   },
   search: {
-    path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}/0/99/0{{else}}/recent{{end}}',
+    path:
+      '{{if .Query.Keywords}}search/{{ .Query.Keywords}}/0/99/0{{else}}/recent{{end}}',
     rows: { selector: '#searchResult tbody tr:has(td.vertTh)' },
     fields: {
       category: {

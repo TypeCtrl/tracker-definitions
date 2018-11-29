@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'hdtorrentsit',
   name: 'HDTorrents.it',
   description: 'HDTorrents.it is an ITALIAN Private site for TV / MOVIES',
@@ -8,7 +9,10 @@ export const definition: any = {
   links: ['http://hdtorrents.xyz/'],
   legacylinks: ['http://hdtorrents.it/'],
   caps: {
-    categorymappings: [{ id: 2040, cat: 'Movies/HD' }, { id: 5040, cat: 'TV/HD' }],
+    categorymappings: [
+      { id: 2040, cat: 'Movies/HD' },
+      { id: 5040, cat: 'TV/HD' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],

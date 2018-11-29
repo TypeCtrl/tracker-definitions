@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: '2fast4you',
   name: '2 Fast 4 You',
-  description: '2 Fast 4 You is a FRENCH Private site for TV / MOVIES / GENERAL',
+  description:
+    '2 Fast 4 You is a FRENCH Private site for TV / MOVIES / GENERAL',
   language: 'fr-fr',
   type: 'private',
   encoding: 'UTF-8',

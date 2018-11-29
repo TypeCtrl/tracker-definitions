@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentland',
   name: 'Torrentland',
   description: 'Torrentland is a SPANISH site for General content',
@@ -65,7 +66,8 @@ export const definition: any = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector: '#Mcol table.table-inverse ~ table.table-inverse > tbody > tr:not(:first-child)',
+      selector:
+        '#Mcol table.table-inverse ~ table.table-inverse > tbody > tr:not(:first-child)',
     },
     fields: {
       category: {

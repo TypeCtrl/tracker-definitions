@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'speedtorrentreloaded',
   name: 'SpeedTorrent Reloaded',
   description:
@@ -107,7 +108,10 @@ export const definition: any = {
       size: {
         selector:
           'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(1)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: {
         selector:
@@ -118,7 +122,8 @@ export const definition: any = {
           'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) > b:nth-child(3)',
       },
       date: {
-        selector: 'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(5)',
+        selector:
+          'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(5)',
         filters: [
           { name: 'append', args: ' +2:00' },
           { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },

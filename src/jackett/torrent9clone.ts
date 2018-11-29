@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrent9clone',
   name: 'Torrent9 clone (torrents9.ch)',
   description: 'Torrent9 is a FRENCH Public site for TV / MOVIES / GENERAL',

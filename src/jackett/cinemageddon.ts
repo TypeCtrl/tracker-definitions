@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'cinemageddon',
   name: 'Cinemageddon',
   description: 'B-movie tracker',
@@ -49,7 +50,8 @@ export const definition: any = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector: 'table.torrenttable > tbody > tr:has(a[href^="browse.php?cat="])',
+      selector:
+        'table.torrenttable > tbody > tr:has(a[href^="browse.php?cat="])',
     },
     fields: {
       category: { text: 1 },
@@ -57,7 +59,9 @@ export const definition: any = {
       download: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
+        filters: [
+          { name: 'replace', args: ['details.php?id=', 'download.php?id='] },
+        ],
       },
       details: {
         selector: 'a[href^="details.php?id="]',

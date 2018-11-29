@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'sukebei-pantsu',
   name: 'Sukebei-pantsu',
-  description: 'Sukebei-pantsu is a Public site dedicated to Adult Asian content',
+  description:
+    'Sukebei-pantsu is a Public site dedicated to Adult Asian content',
   language: 'en-en',
   type: 'public',
   encoding: 'UTF-8',

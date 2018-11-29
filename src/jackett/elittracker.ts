@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'elittracker',
   name: 'Elit Tracker',
-  description: 'Elit Tracker (ET) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description:
+    'Elit Tracker (ET) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-hu',
   type: 'private',
   encoding: 'iso-8859-2',

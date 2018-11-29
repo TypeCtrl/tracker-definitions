@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'RockBox',
   name: 'RockBox Rock/Metal Tracker',
   description:
@@ -33,7 +34,8 @@ export const definition: any = {
   search: {
     paths: [{ path: 'torrents.php', method: 'get' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
     },
     rows: {
       selector:

@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'megabliz',
   name: 'Mega-Bliz',
   description: 'Mega-Bliz is a Semi-Private site for MOVIES / TV / GENERAL',
@@ -90,7 +91,10 @@ export const definition: any = {
       title: {
         selector: 'td:nth-of-type(2) a',
         attribute: 'onmouseover',
-        filters: [{ name: 'split', args: ['>', '1'] }, { name: 'replace', args: ['</b', ''] }],
+        filters: [
+          { name: 'split', args: ['>', '1'] },
+          { name: 'replace', args: ['</b', ''] },
+        ],
       },
       details: { selector: 'td:nth-of-type(2) a', attribute: 'href' },
       download: { selector: 'td:nth-of-type(3) a', attribute: 'href' },

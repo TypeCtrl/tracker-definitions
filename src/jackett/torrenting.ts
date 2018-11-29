@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrenting',
   name: 'Torrenting',
   description: 'Torrenting (TT) is a Private site for MOVIES / TV / GENERAL',
@@ -47,7 +48,8 @@ export const definition: any = {
     paths: [{ path: 't' }],
     inputs: {
       $raw: '{{range .Categories}}{{.}}=&{{end}}',
-      q: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      q:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
     },
     rows: {

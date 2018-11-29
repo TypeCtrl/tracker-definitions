@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'magico',
   name: 'Magico',
-  description: 'Magico (Trellas) is a GREEK Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description:
+    'Magico (Trellas) is a GREEK Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'el-gr',
   type: 'private',
   encoding: 'UTF-8',
@@ -138,7 +140,9 @@ export const definition: any = {
     fields: {
       title: {
         selector: 'a[href*="?p=torrents"][href*="&action=details"]',
-        filters: [{ name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] }],
+        filters: [
+          { name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] },
+        ],
       },
       category: {
         selector: 'a[href*="?p=torrents"][href*="&cid="]',

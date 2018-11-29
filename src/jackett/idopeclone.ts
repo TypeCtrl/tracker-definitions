@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'idopeclone',
   name: 'IdopeClone',
   description: 'This Clone of iDope is a Public torrent search engine',
@@ -67,7 +68,10 @@ export const definition: any = {
       magnet: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
       date: {
         selector: 'div.seedbar span:nth-child(4)',
-        filters: [{ name: 'replace', args: ['Age: ', ''] }, { name: 'timeago' }],
+        filters: [
+          { name: 'replace', args: ['Age: ', ''] },
+          { name: 'timeago' },
+        ],
       },
       files: {
         selector: 'div.seedbar span:nth-child(5)',

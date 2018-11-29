@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'elitetorrent-biz',
   name: 'EliteTorrent.biz',
-  description: 'EliteTorrent.biz is a Public torrent site for TV, movies and documentaries',
+  description:
+    'EliteTorrent.biz is a Public torrent site for TV, movies and documentaries',
   language: 'es-es',
   type: 'public',
   encoding: 'UTF-8',

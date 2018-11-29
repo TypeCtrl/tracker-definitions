@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'dragonworldreloaded',
   name: 'Dragonworld Reloaded',
-  description: 'Dragonworld Reloaded is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description:
+    'Dragonworld Reloaded is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'de-de',
   type: 'private',
   encoding: 'UTF-8',
@@ -221,7 +223,10 @@ export const definition: any = {
       banner: { selector: 'div[id^="details"] img', attribute: 'src' },
       size: {
         selector: 'div.selection_unter_ad',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       grabs: {
         selector: 'div.selection_unter_ae',
@@ -233,11 +238,17 @@ export const definition: any = {
       },
       seeders: {
         selector: 'div.selection_unter_aa',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       leechers: {
         selector: 'div.selection_unter_aaa',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       downloadvolumefactor: {
         case: { ':root:has(div.onlyup)': '0', '*': '1' },

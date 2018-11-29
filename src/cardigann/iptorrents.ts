@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'iptorrents',
   name: 'IPTorrents',
   description: '#1 Private Tracker',
@@ -80,7 +81,10 @@ export const definition: any = {
       size: { selector: 'td:nth-child(6)' },
       date: {
         selector: 'td:nth-child(2) .t_ctime',
-        filters: [{ name: 'split', args: ['|', -1] }, { name: 'split', args: [' by ', 0] }],
+        filters: [
+          { name: 'split', args: ['|', -1] },
+          { name: 'split', args: [' by ', 0] },
+        ],
       },
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },

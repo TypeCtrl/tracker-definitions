@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'elitehd',
   name: 'EliteHD',
-  description: 'EliteHD (HDClub) is a RUSSIAN Private Torrent Tracker for HD MOVIES / TV / GENERAL',
+  description:
+    'EliteHD (HDClub) is a RUSSIAN Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'ru-ru',
   type: 'private',
   encoding: 'windows-1251',

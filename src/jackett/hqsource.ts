@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'hqsource',
   name: 'HQSource',
-  description: 'HQSource (HQS) is a POLISH Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description:
+    'HQSource (HQS) is a POLISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'pl-pl',
   type: 'private',
   encoding: 'ISO-8859-2',

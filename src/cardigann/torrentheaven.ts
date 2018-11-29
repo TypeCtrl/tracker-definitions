@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'torrentheaven',
   name: 'TorrentHeaven',
   description: 'A German general tracker',
@@ -74,25 +75,32 @@ export const definition: any = {
       details: 'title',
     },
     rows: {
-      selector: 'table.torrenttable > tbody > tr:not(:has(td.torrenttableheader))',
+      selector:
+        'table.torrenttable > tbody > tr:not(:has(td.torrenttableheader))',
     },
     fields: {
       title: {
-        selector: 'a[href^="index.php?strWebValue=torrent&strWebAction=details"]',
+        selector:
+          'a[href^="index.php?strWebValue=torrent&strWebAction=details"]',
         attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: "^return buildTable\\('(.*?)',\\s+" }],
+        filters: [
+          { name: 'regexp', args: "^return buildTable\\('(.*?)',\\s+" },
+        ],
       },
       category: {
-        selector: 'a[href^="index.php?strWebValue=torrent&strWebAction=search&dir="]',
+        selector:
+          'a[href^="index.php?strWebValue=torrent&strWebAction=search&dir="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'dir' }],
       },
       comments: {
-        selector: 'a[href^="index.php?strWebValue=torrent&strWebAction=details"]',
+        selector:
+          'a[href^="index.php?strWebValue=torrent&strWebAction=details"]',
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="index.php?strWebValue=torrent&strWebAction=downloadssl&id="]',
+        selector:
+          'a[href^="index.php?strWebValue=torrent&strWebAction=downloadssl&id="]',
         attribute: 'href',
       },
       size: { selector: 'td.column2:nth-child(4)' },

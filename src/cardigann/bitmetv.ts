@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'bitmetv',
   name: 'BitMeTV',
   language: 'en-us',
@@ -29,7 +30,10 @@ export const definition: any = {
       date: {
         selector: 'td:nth-child(2) > font[size="1"]',
         remove: 'br',
-        ffilters: [{ name: 'split', args: ['|', 1] }, { name: 'trim', args: '.' }],
+        ffilters: [
+          { name: 'split', args: ['|', 1] },
+          { name: 'trim', args: '.' },
+        ],
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },

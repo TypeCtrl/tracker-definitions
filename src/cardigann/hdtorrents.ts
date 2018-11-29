@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'hdtorrents',
   name: 'HD-Torrents',
   language: 'en-us',
@@ -52,7 +53,8 @@ export const definition: any = {
       active: 1,
     },
     rows: {
-      selector: 'table.mainblockcontenttt tr:nth-child(n+3):has(td.mainblockcontent)',
+      selector:
+        'table.mainblockcontenttt tr:nth-child(n+3):has(td.mainblockcontent)',
       remove: 'tr:has(td.listas)',
     },
     fields: {

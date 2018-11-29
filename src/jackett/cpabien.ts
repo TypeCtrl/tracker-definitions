@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'cpasbien',
   name: 'cpasbien',
   description: 'cpasbien is a FRENCH Public site for TV / MOVIES / GENERAL',
@@ -41,7 +42,8 @@ export const definition: any = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}derniers/{{end}}',
+        path:
+          '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}derniers/{{end}}',
       },
     ],
     rows: { selector: 'table.table-corps tbody tr td' },

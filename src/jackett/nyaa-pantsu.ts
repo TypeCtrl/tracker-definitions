@@ -1,4 +1,5 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'nyaa-pantsu',
   name: 'Nyaa-pantsu',
   description: 'Nyaa-pantsu is a Public site for dedicated to Asian ANIME',

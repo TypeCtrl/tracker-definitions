@@ -1,7 +1,9 @@
-export const definition: any = {
+import { TopLevel } from '../definition-interface';
+export const definition: TopLevel = {
   site: 'arabafenice',
   name: 'ArabaFenice',
-  description: 'Araba Fenice (Phoenix) is an ITALIAN Private site for TV / MOVIES / GENERAL',
+  description:
+    'Araba Fenice (Phoenix) is an ITALIAN Private site for TV / MOVIES / GENERAL',
   language: 'it-it',
   type: 'private',
   encoding: 'UTF-8',
@@ -101,7 +103,8 @@ export const definition: any = {
       },
     ],
     inputs: {
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      search:
+        '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
       page: 'torrents',
       category: '{{range .Categories}}{{.}};{{end}}',
       options: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
@@ -130,15 +133,24 @@ export const definition: any = {
           },
           {
             name: 're_replace',
-            args: ["(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b", 'S0$1$2'],
+            args: [
+              "(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b",
+              'S0$1$2',
+            ],
           },
           {
             name: 're_replace',
-            args: ["(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b", 'S$1$2'],
+            args: [
+              "(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b",
+              'S$1$2',
+            ],
           },
           {
             name: 're_replace',
-            args: ['(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))', 'E$1$2'],
+            args: [
+              '(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))',
+              'E$1$2',
+            ],
           },
           {
             name: 're_replace',
