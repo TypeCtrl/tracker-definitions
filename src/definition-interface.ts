@@ -8,6 +8,7 @@ export interface TopLevel {
   type?: string;
   encoding?: string;
   links: string[];
+  certificates?: string[];
   caps: Caps;
   settings?: Setting[];
   download?: Download;
@@ -28,7 +29,8 @@ export interface Caps {
 export interface Categorymapping {
   id: number | string | boolean;
   cat: string;
-  desc: string;
+  desc?: string;
+  default?: boolean;
 }
 
 export interface Modes {
@@ -41,6 +43,7 @@ export interface Modes {
 
 export interface Download {
   before?: Login;
+  method?: string;
   selector?: string;
   filters?: DownloadFilter[];
   attribute?: string;
@@ -48,12 +51,12 @@ export interface Download {
 
 export interface DownloadFilter {
   name: string;
-  args?: string;
+  args?: string | (string | number)[];
 }
 
 export interface Login {
   path?: string;
-  method: string;
+  method?: string;
   submitpath?: string;
   inputs?: { [key: string]: string | number };
   captcha?: Captcha;
@@ -63,7 +66,11 @@ export interface Login {
   form?: string;
   cookies?: string[];
   selectorinputs?: {
-    securitytoken: {
+    getUnique?: {
+      selector: string;
+      attribute: string;
+    }
+    securitytoken?: {
       selector: string;
       filters: FilterElement[];
     };
@@ -77,19 +84,21 @@ export interface Captcha {
 }
 
 export interface Error {
-  selector: string;
+  path?: string;
+  selector?: string;
   message?: Selector;
 }
 
 export interface Test {
-  path: string;
+  path?: string;
   select?: string;
   selector?: string;
 }
 
 export interface Ratio {
+  text?: string | number;
   path?: string;
-  selector: string;
+  selector?: string | null;
   attribute?: string;
   filters?: DownloadFilter[];
 }
@@ -97,13 +106,14 @@ export interface Ratio {
 export interface Search {
   path?: string;
   method?: string;
-  inputs?: { [key: string]: string | number | boolean };
+  inputs?: { [key: string]: string | number | boolean | null };
   error?: Error[];
   preprocessingfilters?: FilterElement[];
   keywordsfilters?: KeywordsfilterElement[];
   rows: Rows;
   fields: Fields;
   paths?: Path[];
+  headers?: { [key: string]: string | string[] };
 }
 
 export interface Fields {
@@ -142,7 +152,8 @@ export interface Fields {
 
 export interface Selector {
   selector?: string;
-  filters?: FilterElement[];
+  filters?: FilterElement[] | null;
+  ffilters?: FilterElement[];
   optional?: boolean;
   attribute?: string;
   case?: { [key: string]: string | number };
@@ -169,12 +180,13 @@ export interface Minimum {
 
 export interface SiteDate {
   selector: string;
+  optional?: boolean;
   filters: DownloadFilter[];
 }
 
 export interface KeywordsfilterElement {
   name: string;
-  args?: (string| number)[] | string;
+  args?: (string | number)[] | string;
 }
 
 export interface Uploadvolumefactor {
@@ -188,14 +200,15 @@ export interface Uploadvolumefactor {
 
 export interface Path {
   path: string;
-  inputs?: { [key: string]: string };
+  inputs?: { [key: string]: string | number };
   method?: string;
   followredirect?: boolean;
-  categorymappings?: string[];
+  categorymappings?: (string | number)[];
 }
 
 export interface Rows {
   selector: string;
+  remove?: string;
   filters?: RowsFilter[];
   after?: number;
   dateheaders?: SiteDate;
