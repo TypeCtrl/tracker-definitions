@@ -1,3 +1,5 @@
+// tslint:disable:type-literal-delimiter
+
 export interface TopLevel {
   site: string;
   name: string;
@@ -10,6 +12,7 @@ export interface TopLevel {
   settings?: Setting[];
   download?: Download;
   search: Search;
+  test?: Test;
   login?: Login;
   ratio?: Ratio;
   legacylinks?: string[];
@@ -19,23 +22,26 @@ export interface TopLevel {
 export interface Caps {
   categorymappings?: Categorymapping[];
   modes?: Modes;
-  categories?: {[key: string]: string};
+  categories?: { [key: string]: string };
 }
 
 export interface Categorymapping {
-  id: number | string;
+  id: number | string | boolean;
   cat: string;
   desc: string;
 }
 
 export interface Modes {
-  search: string[];
+  search?: string[];
+  searchstr?: string[];
+  'music-search'?: string[];
   'tv-search'?: string[];
   'movie-search'?: string[];
 }
 
 export interface Download {
-  selector: string;
+  before?: Login;
+  selector?: string;
   filters?: DownloadFilter[];
   attribute?: string;
 }
@@ -49,11 +55,13 @@ export interface Login {
   path?: string;
   method: string;
   submitpath?: string;
-  inputs: { [key: string]: string | number };
+  inputs?: { [key: string]: string | number };
+  captcha?: Captcha;
   error?: Error[];
   test?: Test;
-  headers?: {[key: string]: string};
+  headers?: { [key: string]: string };
   form?: string;
+  cookies?: string[];
   selectorinputs?: {
     securitytoken: {
       selector: string;
@@ -62,18 +70,20 @@ export interface Login {
   };
 }
 
-export interface Error {
+export interface Captcha {
+  type: 'image';
   selector: string;
-  message?: Description;
+  input: string;
 }
 
-export interface Description {
+export interface Error {
   selector: string;
-  remove?: string;
+  message?: Selector;
 }
 
 export interface Test {
   path: string;
+  select?: string;
   selector?: string;
 }
 
@@ -86,7 +96,10 @@ export interface Ratio {
 
 export interface Search {
   path?: string;
-  inputs?: {[key: string]: string | number};
+  method?: string;
+  inputs?: { [key: string]: string | number | boolean };
+  error?: Error[];
+  preprocessingfilters?: FilterElement[];
   keywordsfilters?: KeywordsfilterElement[];
   rows: Rows;
   fields: Fields;
@@ -94,28 +107,37 @@ export interface Search {
 }
 
 export interface Fields {
-  // TODO these are all the same
-  download: Selector;
-  title: Selector;
-  category: Category;
-  details?: Comments;
-  date?: DateClass;
-  size: Size;
-  seeders: Ers;
-  leechers?: Ers;
-  downloadvolumefactor?: Downloadvolumefactor;
-  uploadvolumefactor?: Uploadvolumefactor;
-  comments?: Comments;
-  description?: Description;
-  banner?: Selector;
-  files?: Selector;
-  grabs?: Grabs;
-  imdb?: Selector;
-  minimumratio?: Minimum;
-  minimumseedtime?: Minimum;
-  magnet?: Comments;
-  site_date?: SiteDate;
-  _id?: Ratio;
+  [key: string]: Selector;
+  // // TODO these are all the same
+  // download: Selector;
+  // _title_original: Selector;
+  // title: Selector;
+  // category?: Selector;
+  // details?: Selector;
+  // is_anime?: Selector;
+  // title_anime?: Selector;
+  // title_normal?: Selector;
+  // date?: Selector;
+  // size: Selector;
+  // seeders?: Selector;
+  // title_phase1?: Selector;
+  // title_multilang?: Selector;
+  // leechers?: Selector;
+  // 'title-attribute'?: Selector;
+  // 'title-text'?: Selector;
+  // downloadvolumefactor?: Selector;
+  // uploadvolumefactor?: Uploadvolumefactor;
+  // comments?: Selector;
+  // description?: Selector;
+  // banner?: Selector;
+  // files?: Selector;
+  // grabs?: Selector;
+  // imdb?: Selector;
+  // minimumratio?: Minimum;
+  // minimumseedtime?: Minimum;
+  // magnet?: Selector;
+  // site_date?: SiteDate;
+  // _id?: Ratio;
 }
 
 export interface Selector {
@@ -123,65 +145,22 @@ export interface Selector {
   filters?: FilterElement[];
   optional?: boolean;
   attribute?: string;
-  text?: string;
+  case?: { [key: string]: string | number };
+  text?: string | number;
+  remove?: string;
 }
 
 export interface FilterElement {
-  name: string;
+  name?: string;
   attribute?: string;
-  args: any[] | string;
-}
-
-export interface Category {
-  selector?: string;
-  attribute?: string;
-  filters?: FilterElement[];
-  case?: { [key: string]: string };
-  text?: number | string;
-}
-
-export interface Comments {
-  selector: string;
-  attribute: string;
-}
-
-export interface DateClass {
-  selector?: string;
-  attribute?: string;
-  filters?: DateFilter[];
-  text?: string;
-  remove?: string;
-  ffilters?: any;
+  // TODO: remove object when args fixed
+  args?: (string | number)[] | string | { [key: string]: null };
+  dateparse?: null;
 }
 
 export interface DateFilter {
   name: string;
   args: (string | number)[] | string;
-}
-
-export interface Downloadvolumefactor {
-  text?: string;
-  case?: { [key: string]: string | number };
-  optional?: boolean;
-  selector?: string;
-  attribute?: string;
-  filters?: DownloadvolumefactorFilter[];
-}
-
-export interface DownloadvolumefactorFilter {
-  name: string;
-  args?: (number | string)[];
-}
-
-export interface Grabs {
-  selector: string;
-  filters?: DateFilter[];
-}
-
-export interface Ers {
-  selector?: string;
-  text?: string;
-  optional?: boolean;
 }
 
 export interface Minimum {
@@ -193,15 +172,9 @@ export interface SiteDate {
   filters: DownloadFilter[];
 }
 
-export interface Size {
-  selector: string;
-  filters?: KeywordsfilterElement[];
-  remove?: string;
-}
-
 export interface KeywordsfilterElement {
   name: string;
-  args?: string[];
+  args?: (string| number)[] | string;
 }
 
 export interface Uploadvolumefactor {
@@ -210,18 +183,15 @@ export interface Uploadvolumefactor {
   optional?: boolean;
   selector?: string;
   attribute?: string;
-  filters?: DownloadvolumefactorFilter[];
+  filters?: Selector[];
 }
 
 export interface Path {
   path: string;
-  inputs?: PathInputs;
+  inputs?: { [key: string]: string };
   method?: string;
+  followredirect?: boolean;
   categorymappings?: string[];
-}
-
-export interface PathInputs {
-  Torrent_page: string;
 }
 
 export interface Rows {
@@ -233,12 +203,13 @@ export interface Rows {
 
 export interface RowsFilter {
   name: string;
+  args?: number;
 }
 
 export interface Setting {
   name: string;
   type: string;
   label: string;
-  default?: string | number;
+  default?: string | number | boolean;
   options?: { [key: string]: string };
 }

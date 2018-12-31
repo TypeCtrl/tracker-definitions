@@ -7,16 +7,14 @@ export const definition: TopLevel = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://wwv.cpabien.cm/'],
+  links: ['https://www.cpabien.link/'],
   legacylinks: [
     'http://www.cpasbiens.cc/',
     'http://www.cpabien.cm/',
     'http://cpabien.cm/',
     'http://cpasbiens1.com/',
     'http://cpabien.mx/',
-    'https://www.cpabien.bz/',
     'http://www.cpabien.bz/',
-    'http://www.cpabien.cx/',
     'http://cpabien.org/',
     'http://cpabien.cc/',
     'http://cpabien.co/',
@@ -24,11 +22,16 @@ export const definition: TopLevel = {
     'http://cpabien.club/',
     'http://www.cpabien.io/',
     'https://ww1.cpabien.io/',
-    'https://www.cpasbien.blue/',
     'https://wvw.cpabien.cm/',
     'https://www.cpabien.io/',
-    'https://www.cpabien.cx/',
     'https://www.cpabien9.net/',
+    'https://wwv.cpabien.cm/',
+    'http://www.cpabien.cx/',
+    'https://www.cpasbien.blue/',
+    'https://www.cpabien.cx/',
+    'https://www.cpasbien.re/',
+    'http://www.cpasbien.io/',
+    'https://www.cpabien.bz/',
   ],
   caps: {
     categorymappings: [
@@ -38,15 +41,16 @@ export const definition: TopLevel = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   settings: [],
-  download: { selector: 'div.btn-download a', attribute: 'href' },
+  download: { selector: 'div#telecharger a', attribute: 'href' },
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}derniers/{{end}}',
+        path: 'search.php',
+        method: 'post',
+        inputs: { t: '{{ .Keywords }}' },
       },
     ],
-    rows: { selector: 'table.table-corps tbody tr td' },
+    rows: { selector: 'div.ligne1, div.ligne2' },
     fields: {
       site_date: {
         selector: 'a',

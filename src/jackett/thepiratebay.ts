@@ -137,6 +137,13 @@ export const definition: TopLevel = {
       default: '99',
       options: { '3': 'Time', '8': 'Seeders', '99': 'Default' },
     },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Proxies',
+      default:
+        'The Pirate Bay is currently only reachable via TOR. But you can try to use an unofficial proxy from <a href="https://piratebayproxy.info/" target="_blank">piratebayproxy.info</a>.',
+    },
   ],
   search: {
     paths: [

@@ -1,12 +1,13 @@
 import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'torrent9clone',
-  name: 'Torrent9 clone (torrents9.ch)',
+  name: 'Torrent9 clone (torrents9.pw)',
   description: 'Torrent9 is a FRENCH Public site for TV / MOVIES / GENERAL',
   language: 'fr-fr',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.torrent9.ch/'],
+  links: ['https://www.torrents9.pw/'],
+  legacylinks: ['https://www.torrent9.ch/'],
   caps: {
     categorymappings: [
       { id: 'films', cat: 'Movies', desc: 'Movies' },

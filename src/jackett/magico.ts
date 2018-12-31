@@ -7,7 +7,8 @@ export const definition: TopLevel = {
   language: 'el-gr',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://magico.info/'],
+  links: ['https://magico.one/'],
+  legacylinks: ['https://magico.info/'],
   caps: {
     categorymappings: [
       { id: 1, cat: 'Movies', desc: 'Movies' },

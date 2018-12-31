@@ -61,6 +61,16 @@ export const definition: TopLevel = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'donor',
+      type: 'checkbox',
+      label: "Show donor torrent? (Enable if you're a donor)",
+      default: false,
+    },
+  ],
   login: {
     path: 'index.php?page=login',
     method: 'post',
@@ -82,7 +92,7 @@ export const definition: TopLevel = {
     },
     rows: {
       selector:
-        'table > tbody > tr > td > table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="])',
+        'table > tbody > tr > td > table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]){{if .Config.donor }}{{else}}:not(:has(img[src*="keditbookmarks.png"])){{end}}',
     },
     fields: {
       download: {

@@ -6,8 +6,11 @@ export const definition: TopLevel = {
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://worldwidetorrents.me/'],
-  legacylinks: ['https://worldwidetorrents.eu/'],
+  links: ['https://worldwidetorrents.to/'],
+  legacylinks: [
+    'https://worldwidetorrents.eu/',
+    'https://worldwidetorrents.me/',
+  ],
   caps: {
     categorymappings: [
       { id: 28, cat: 'TV/Anime', desc: 'Anime: Movie' },

@@ -114,7 +114,7 @@ export const definition: TopLevel = {
         remove: 'a',
       },
       date: {
-        selector: 'td > font:has(i.fa-clock-o)',
+        selector: 'td > span:has(i.fa-clock)',
         remove: 'b',
         filters: [
           { name: 'replace', args: [' ', ' '] },

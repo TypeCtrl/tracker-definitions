@@ -106,12 +106,24 @@ export const definition: TopLevel = {
     paths: [
       {
         path:
-          '{{if .Keywords}}/search/{{ .Keywords}}/1/{{else}}/trending{{end}}',
+          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/1/{{else}}/trending{{end}}',
       },
-      { path: '{{if .Keywords}}/search/{{ .Keywords}}/2/{{else}}{{end}}' },
-      { path: '{{if .Keywords}}/search/{{ .Keywords}}/3/{{else}}{{end}}' },
-      { path: '{{if .Keywords}}/search/{{ .Keywords}}/4/{{else}}{{end}}' },
-      { path: '{{if .Keywords}}/search/{{ .Keywords}}/5/{{else}}{{end}}' },
+      {
+        path:
+          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/2/{{else}}{{end}}',
+      },
+      {
+        path:
+          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/3/{{else}}{{end}}',
+      },
+      {
+        path:
+          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/4/{{else}}{{end}}',
+      },
+      {
+        path:
+          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/5/{{else}}{{end}}',
+      },
     ],
     keywordsfilters: [
       { name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] },

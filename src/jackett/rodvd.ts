@@ -7,7 +7,8 @@ export const definition: TopLevel = {
   language: 'ro-ro',
   type: 'private',
   encoding: 'windows-1252',
-  links: ['http://rodvd.net/'],
+  links: ['https://rodvd.net/'],
+  legacylinks: ['http://rodvd.net/'],
   caps: {
     categorymappings: [
       { id: 48, cat: 'Movies/3D', desc: '3D' },
@@ -103,7 +104,7 @@ export const definition: TopLevel = {
         selector: 'a[href*="http://www.imdb.com/title/tt"]',
         attribute: 'href',
       },
-      size: { selector: 'td:nth-child(6)' },
+      size: { selector: 'td:nth-child(4)' },
       seeders: { text: 9999 },
       leechers: { text: 0 },
       banner: {

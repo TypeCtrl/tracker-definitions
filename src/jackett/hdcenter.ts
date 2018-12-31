@@ -80,7 +80,9 @@ export const definition: TopLevel = {
       grabs: { selector: 'td.snatcher_col' },
       seeders: { selector: 'td.seeder_col' },
       leechers: { selector: 'td.leecher_col' },
-      downloadvolumefactor: { case: { 'span.freeleech': '0', '*': '1' } },
+      downloadvolumefactor: {
+        case: { 'span.freeleech_slot': '0', 'span.freeleech': '0', '*': '1' },
+      },
       uploadvolumefactor: { case: { '*': '1' } },
     },
   },

@@ -42,6 +42,7 @@ export const definition: TopLevel = {
       { id: 49, cat: 'XXX/Imageset', desc: 'XXX-IMGSet' },
       { id: 50, cat: 'XXX', desc: 'XXX-Packs' },
       { id: 51, cat: 'XXX', desc: 'XXX-SD' },
+      { id: 60, cat: 'TV/HD', desc: 'TV-RO' },
     ],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },

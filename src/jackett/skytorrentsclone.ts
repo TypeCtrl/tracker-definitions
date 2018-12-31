@@ -7,7 +7,8 @@ export const definition: TopLevel = {
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.skytorrents.lol/'],
+  links: ['https://www.skytorrents.to/'],
+  legacylinks: ['https://www.skytorrents.lol/'],
   caps: {
     categories: {
       album: 'Audio',

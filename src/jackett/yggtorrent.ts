@@ -8,7 +8,7 @@ export const definition: TopLevel = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://ygg.to/'],
+  links: ['https://www2.yggtorrent.gg/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -23,6 +23,9 @@ export const definition: TopLevel = {
     'https://www6.yggtorrent.to/',
     'https://www8.yggtorrent.to/',
     'https://www9.yggtorrent.to/',
+    'https://ygg.to/',
+    'https://www.ygg.to/',
+    'https://ww3.yggtorrent.gg/',
   ],
   caps: {
     categorymappings: [

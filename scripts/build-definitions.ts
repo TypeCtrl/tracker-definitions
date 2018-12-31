@@ -3,6 +3,7 @@ import * as yaml from 'js-yaml';
 import path from 'path';
 import prettier from 'prettier';
 import rimraf from 'rimraf';
+import * as _ from 'lodash';
 
 const SOURCES = [
   {
@@ -43,7 +44,7 @@ for (const src of SOURCES) {
     console.log(name, file);
     const content = fs.readFileSync(path.join(src.dir, file), 'utf8');
     const json = yaml.safeLoad(content, { json: true });
-    sites.push(json.site);
+    sites.push(name);
 
     // write json
     const formattedJson = prettier.format(JSON.stringify(json), { parser: 'json' });
@@ -59,12 +60,21 @@ for (const src of SOURCES) {
       prettier.format(defExp, PRETTIER_TYPESCRIPT),
     );
   }
-  // todo helpers
 
+  // helpers
   const formattedSites = prettier.format(JSON.stringify(sites), { parser: 'json' });
   const siteExp = `export const sites: string[] = ${formattedSites};`;
   fs.writeFileSync(
     path.join(HELPERS_DIR, `${src.name}.ts`),
     prettier.format(siteExp, PRETTIER_TYPESCRIPT),
+  );
+
+  // site export
+  const exportedSites = sites.reduce((pre, cur) => {
+    return `${pre}export {definition as ${src.name[0]}${_.camelCase(cur)}} from './${cur}';`;
+  }, '');
+  fs.writeFileSync(
+    path.join(moduleOutDir, `index.ts`),
+    prettier.format(exportedSites, PRETTIER_TYPESCRIPT),
   );
 }

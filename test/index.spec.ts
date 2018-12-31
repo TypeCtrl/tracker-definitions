@@ -1,11 +1,7 @@
-import { DummyClass } from '../src/index';
+import * as definitions from '../src/index';
 
 describe('Dummy test', () => {
-  it('should be instantiable', () => {
-    expect(new DummyClass()).toBeInstanceOf(DummyClass);
-  });
-
-  it('should have value true', () => {
-    expect(new DummyClass().value).toBeTruthy();
+  it('should have definitions', () => {
+    expect(Object.keys(definitions).length).toBeGreaterThan(100);
   });
 });

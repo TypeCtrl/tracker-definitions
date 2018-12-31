@@ -7,9 +7,8 @@ export const definition: TopLevel = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.gktorrent.me/'],
+  links: ['https://www.gktorrent.net/'],
   legacylinks: [
-    'https://www.gktorrent.org/',
     'https://www.gktorrent.com/',
     'http://www.gktorrent.com/',
     'http://ww1.gktorrent.com/',
@@ -17,8 +16,13 @@ export const definition: TopLevel = {
     'https://ww2.gktorrent.com/',
     'https://ww3.gktorrent.com/',
     'http://www.gktorrent.net/',
-    'https://www.gktorrent.net/',
     'https://ww4.gktorrent.com/',
+    'http://www.gktorrent.co/',
+    'https://www.gktorrent.co/',
+    'https://www.gktorrent.ws/',
+    'https://www.gktorrent.org/',
+    'https://www.gktorrent.me/',
+    'https://www.rantop.org/',
   ],
   caps: {
     categorymappings: [
@@ -37,7 +41,7 @@ export const definition: TopLevel = {
     },
   },
   settings: [],
-  download: { selector: 'a[href^="/get_torrent/"]' },
+  download: { selector: 'a[href*="/get_torrent/"]' },
   search: {
     paths: [
       { path: '{{if .Keywords}}/recherche/{{.Keywords}}{{else}}{{end}}' },

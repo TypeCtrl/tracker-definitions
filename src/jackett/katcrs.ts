@@ -7,13 +7,15 @@ export const definition: TopLevel = {
   language: 'en-us',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://kickasstvshow.xyz/'],
+  followredirect: true,
+  links: ['http://kickasstvshow.host/'],
   legacylinks: [
     'https://kickasskatcr.website/',
     'https://kickasskatcr.stream/',
     'https://kickassextratorrent.xyz/',
     'https://kickassextratorrent.website/',
     'https://kickassextratorrent.club/',
+    'https://kickasstvshow.xyz/',
   ],
   caps: {
     categories: {
