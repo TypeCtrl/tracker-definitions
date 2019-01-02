@@ -4,7 +4,13 @@ export const definition: TopLevel = {
   name: 'MoreThan.TV',
   language: 'en-US',
   links: ['https://www.morethan.tv/'],
-  caps: { categories: { '1': 'Movies', '2': 'TV', '3': 'Other' } },
+  caps: {
+    categorymappings: [
+      { id: '1', cat: 'Movies' },
+      { id: '2', cat: 'TV' },
+      { id: '3', cat: 'Other' },
+    ],
+  },
   login: {
     path: '/login.php',
     form: 'form.auth_form',

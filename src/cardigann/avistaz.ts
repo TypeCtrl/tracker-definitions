@@ -5,11 +5,11 @@ export const definition: TopLevel = {
   language: 'en-US',
   links: ['https://avistaz.to/'],
   caps: {
-    categories: {
-      'TV-Show Torrent': 'TV',
-      'Movie Torrent': 'Movies',
-      'Music Torrent': 'Audio',
-    },
+    categorymappings: [
+      { id: 'TV-Show Torrent', cat: 'TV' },
+      { id: 'Movie Torrent', cat: 'Movies' },
+      { id: 'Music Torrent', cat: 'Audio' },
+    ],
   },
   login: {
     path: '/auth/login',

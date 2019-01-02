@@ -9,13 +9,13 @@ export const definition: TopLevel = {
   links: ['http://www.tntvillage.scambioetico.org/'],
   caps: {
     categorymappings: [
-      { id: 4, cat: 'Movies', desc: 'Movies category' },
-      { id: 2, cat: 'Audio', desc: 'Music videos' },
-      { id: 29, cat: 'TV', desc: 'TV Series' },
-      { id: 7, cat: 'TV/Anime', desc: 'Animes' },
-      { id: 8, cat: 'TV/Anime', desc: 'Cartoons' },
-      { id: 14, cat: 'TV/Documentary', desc: 'Documentaries' },
-      { id: 30, cat: 'Books/Comics', desc: 'Comics' },
+      { id: '4', cat: 'Movies', desc: 'Movies category' },
+      { id: '2', cat: 'Audio', desc: 'Music videos' },
+      { id: '29', cat: 'TV', desc: 'TV Series' },
+      { id: '7', cat: 'TV/Anime', desc: 'Animes' },
+      { id: '8', cat: 'TV/Anime', desc: 'Cartoons' },
+      { id: '14', cat: 'TV/Documentary', desc: 'Documentaries' },
+      { id: '30', cat: 'Books/Comics', desc: 'Comics' },
     ],
     modes: {
       search: ['q'],

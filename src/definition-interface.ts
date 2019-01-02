@@ -43,16 +43,16 @@ export type Categories =
   | 'Console/PSP'
   | 'Console/Wii'
   | 'Console/Xbox'
-  | 'Console/Xbox 360'
+  | 'Console/Xbox360'
   | 'Console/Wiiware/VC'
-  | 'Console/XBOX 360 DLC'
+  | 'Console/XBOX360DLC'
   | 'Console/PS3'
   | 'Console/Other'
   | 'Console/3DS'
   | 'Console/PS Vita'
   | 'Console/PSVita'
   | 'Console/WiiU'
-  | 'Console/Xbox One'
+  | 'Console/XboxOne'
   | 'Console/PS4'
   | 'Movies'
   | 'Movies/Foreign'
@@ -81,11 +81,11 @@ export type Categories =
   | 'PC/Phone-Android'
   | 'TV'
   | 'TV/WEB-DL'
-  | 'TV/FOREIGN'
+  | 'TV/Foreign'
   | 'TV/SD'
   | 'TV/HD'
   | 'TV/UHD'
-  | 'TV/OTHER'
+  | 'TV/Other'
   | 'TV/Sport'
   | 'TV/Anime'
   | 'TV/Documentary'
@@ -131,11 +131,11 @@ export interface TopLevel {
 export interface Caps {
   categorymappings?: Categorymapping[];
   modes?: Modes;
-  categories?: { [key: string]: string };
 }
 
 export interface Categorymapping {
-  id: number | string | boolean;
+  // TODO: should not be boolean if PR is merged
+  id: string;
   cat: Categories;
   desc?: string;
   default?: boolean;

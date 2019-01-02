@@ -16,17 +16,17 @@ export const definition: TopLevel = {
     'https://kat.how/',
   ],
   caps: {
-    categories: {
-      movies: 'Movies',
-      tv: 'TV',
-      music: 'Audio',
-      books: 'Books',
-      Games: 'Console',
-      applications: 'PC',
-      xxx: 'XXX',
-      other: 'Other',
-    },
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    categorymappings: [
+      { id: 'movies', cat: 'Movies' },
+      { id: 'tv', cat: 'TV' },
+      { id: 'music', cat: 'Audio' },
+      { id: 'books', cat: 'Books' },
+      { id: 'Games', cat: 'Console' },
+      { id: 'applications', cat: 'PC' },
+      { id: 'xxx', cat: 'XXX' },
+      { id: 'other', cat: 'Other' },
+    ],
   },
   settings: [],
   search: {

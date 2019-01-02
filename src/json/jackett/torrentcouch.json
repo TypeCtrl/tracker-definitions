@@ -8,7 +8,7 @@
   "links": ["https://torrentcouch.net/"],
   "legacylinks": ["https://torrentcouch.com/"],
   "caps": {
-    "categorymappings": [{ "id": 1, "cat": "TV", "desc": "TV" }],
+    "categorymappings": [{ "id": "1", "cat": "TV", "desc": "TV" }],
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
   },
   "settings": [],

@@ -8,8 +8,8 @@ export const definition: TopLevel = {
   encoding: 'ISO-8859-15',
   links: ['http://mononoke-bt.org/'],
   caps: {
-    categories: { '1': 'TV/Anime' },
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    categorymappings: [{ id: '1', cat: 'TV/Anime' }],
   },
   login: {
     path: 'takelogin.php',

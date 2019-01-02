@@ -5,7 +5,7 @@ export const definition: TopLevel = {
   language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://eztv.ag/'],
-  caps: { categories: { '1': 'TV' } },
+  caps: { categorymappings: [{ id: '1', cat: 'TV' }] },
   search: {
     path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}{{else}}/{{end}}',
     rows: {

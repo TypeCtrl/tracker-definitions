@@ -5,7 +5,7 @@ export const definition: TopLevel = {
   description: 'TV Series anyone?',
   language: 'en-US',
   links: ['https://freshon.tv/'],
-  caps: { categories: { '1': 'TV' } },
+  caps: { categorymappings: [{ id: '1', cat: 'TV' }] },
   login: {
     path: '/login.php',
     form: 'form',

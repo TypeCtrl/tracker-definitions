@@ -35,15 +35,15 @@
   ],
   "caps": {
     "categorymappings": [
-      { "id": 10, "cat": "XXX", "desc": "Adult Art" },
-      { "id": 11, "cat": "XXX", "desc": "Adult Anime" },
-      { "id": 12, "cat": "XXX", "desc": "Doujinshi" },
-      { "id": 13, "cat": "XXX", "desc": "Adult Games" },
-      { "id": 14, "cat": "XXX", "desc": "Adult Manga" },
-      { "id": 15, "cat": "XXX", "desc": "Adult Pictures" },
-      { "id": 20, "cat": "XXX", "desc": "Adult Real Life" },
-      { "id": 21, "cat": "XXX", "desc": "Adult Photobooks and Pictures" },
-      { "id": 22, "cat": "XXX", "desc": "Adult Videos" }
+      { "id": "10", "cat": "XXX", "desc": "Adult Art" },
+      { "id": "11", "cat": "XXX", "desc": "Adult Anime" },
+      { "id": "12", "cat": "XXX", "desc": "Doujinshi" },
+      { "id": "13", "cat": "XXX", "desc": "Adult Games" },
+      { "id": "14", "cat": "XXX", "desc": "Adult Manga" },
+      { "id": "15", "cat": "XXX", "desc": "Adult Pictures" },
+      { "id": "20", "cat": "XXX", "desc": "Adult Real Life" },
+      { "id": "21", "cat": "XXX", "desc": "Adult Photobooks and Pictures" },
+      { "id": "22", "cat": "XXX", "desc": "Adult Videos" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q"] }
   },

@@ -8,14 +8,14 @@
   "links": ["https://www.torrentdownloads.me/"],
   "caps": {
     "categorymappings": [
-      { "id": 8, "cat": "TV", "desc": "TV Shows" },
-      { "id": 4, "cat": "Movies", "desc": "Movies" },
-      { "id": 5, "cat": "Audio", "desc": "Music" },
-      { "id": 3, "cat": "PC/Games", "desc": "Games" },
-      { "id": 7, "cat": "PC", "desc": "Software" },
-      { "id": 1, "cat": "TV/Anime", "desc": "Anime" },
-      { "id": 2, "cat": "Books", "desc": "Books" },
-      { "id": 9, "cat": "Other", "desc": "Other" }
+      { "id": "8", "cat": "TV", "desc": "TV Shows" },
+      { "id": "4", "cat": "Movies", "desc": "Movies" },
+      { "id": "5", "cat": "Audio", "desc": "Music" },
+      { "id": "3", "cat": "PC/Games", "desc": "Games" },
+      { "id": "7", "cat": "PC", "desc": "Software" },
+      { "id": "1", "cat": "TV/Anime", "desc": "Anime" },
+      { "id": "2", "cat": "Books", "desc": "Books" },
+      { "id": "9", "cat": "Other", "desc": "Other" }
     ],
     "modes": { "search": ["q"] }
   },

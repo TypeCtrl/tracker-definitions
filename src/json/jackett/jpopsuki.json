@@ -8,16 +8,16 @@
   "links": ["https://jpopsuki.eu/"],
   "caps": {
     "categorymappings": [
-      { "id": 1, "cat": "Audio", "desc": "Album" },
-      { "id": 2, "cat": "Audio", "desc": "Single" },
-      { "id": 3, "cat": "Movies", "desc": "PV" },
-      { "id": 4, "cat": "Movies/DVD", "desc": "DVD" },
-      { "id": 5, "cat": "TV", "desc": "TV-Music" },
-      { "id": 6, "cat": "TV", "desc": "TV-Variety" },
-      { "id": 7, "cat": "TV", "desc": "TV-Drama" },
-      { "id": 8, "cat": "Other", "desc": "Fansubs" },
-      { "id": 9, "cat": "Other", "desc": "Pictures" },
-      { "id": 10, "cat": "Other/Misc", "desc": "Misc" }
+      { "id": "1", "cat": "Audio", "desc": "Album" },
+      { "id": "2", "cat": "Audio", "desc": "Single" },
+      { "id": "3", "cat": "Movies", "desc": "PV" },
+      { "id": "4", "cat": "Movies/DVD", "desc": "DVD" },
+      { "id": "5", "cat": "TV", "desc": "TV-Music" },
+      { "id": "6", "cat": "TV", "desc": "TV-Variety" },
+      { "id": "7", "cat": "TV", "desc": "TV-Drama" },
+      { "id": "8", "cat": "Other", "desc": "Fansubs" },
+      { "id": "9", "cat": "Other", "desc": "Pictures" },
+      { "id": "10", "cat": "Other/Misc", "desc": "Misc" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
   },

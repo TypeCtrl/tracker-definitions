@@ -8,20 +8,20 @@
   "links": ["https://www.magnetdl.com/"],
   "legacylinks": ["http://www.magnetdl.com/"],
   "caps": {
-    "categories": {
-      "TV": "TV",
-      "Movie": "Movies",
-      "Music": "Audio",
-      "E-Book": "Books/Ebook",
-      "Game": "PC/Games",
-      "Software": "PC",
-      "Other": "Other"
-    },
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"]
-    }
+    },
+    "categorymappings": [
+      { "id": "TV", "cat": "TV" },
+      { "id": "Movie", "cat": "Movies" },
+      { "id": "Music", "cat": "Audio" },
+      { "id": "E-Book", "cat": "Books/Ebook" },
+      { "id": "Game", "cat": "PC/Games" },
+      { "id": "Software", "cat": "PC" },
+      { "id": "Other", "cat": "Other" }
+    ]
   },
   "settings": [],
   "search": {

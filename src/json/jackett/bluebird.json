@@ -8,14 +8,14 @@
   "links": ["https://bluebird-hd.org/"],
   "caps": {
     "categorymappings": [
-      { "id": 1, "cat": "Movies", "desc": "Films" },
-      { "id": 2, "cat": "TV/Anime", "desc": "Cartoons" },
-      { "id": 3, "cat": "TV/Documentary", "desc": "documentary" },
-      { "id": 4, "cat": "Audio", "desc": "Show / Music" },
-      { "id": 5, "cat": "TV/Sport", "desc": "Sport" },
-      { "id": 6, "cat": "TV", "desc": "TV series" },
-      { "id": 7, "cat": "XXX", "desc": "erotica" },
-      { "id": 8, "cat": "Other", "desc": "Demo / Misc" }
+      { "id": "1", "cat": "Movies", "desc": "Films" },
+      { "id": "2", "cat": "TV/Anime", "desc": "Cartoons" },
+      { "id": "3", "cat": "TV/Documentary", "desc": "documentary" },
+      { "id": "4", "cat": "Audio", "desc": "Show / Music" },
+      { "id": "5", "cat": "TV/Sport", "desc": "Sport" },
+      { "id": "6", "cat": "TV", "desc": "TV series" },
+      { "id": "7", "cat": "XXX", "desc": "erotica" },
+      { "id": "8", "cat": "Other", "desc": "Demo / Misc" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
   },

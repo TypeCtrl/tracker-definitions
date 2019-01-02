@@ -4,7 +4,7 @@
   "language": "en-US",
   "links": ["http://www.bitmetv.org/"],
   "settings": [{ "name": "cookie", "type": "text", "label": "Cookie" }],
-  "caps": { "categories": { "1": "TV" } },
+  "caps": { "categorymappings": [{ "id": "1", "cat": "TV" }] },
   "login": {
     "method": "cookie",
     "inputs": { "cookie": "{{ .Config.cookie }}" },

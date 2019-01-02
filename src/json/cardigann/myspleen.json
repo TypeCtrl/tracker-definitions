@@ -5,18 +5,18 @@
   "encoding": "UTF-8",
   "links": ["https://www.myspleen.org"],
   "caps": {
-    "categories": {
-      "3": "TV",
-      "20": "Other",
-      "24": "TV",
-      "25": "TV",
-      "26": "TV",
-      "28": "TV",
-      "29": "TV",
-      "30": "TV",
-      "31": "TV",
-      "32": "TV"
-    }
+    "categorymappings": [
+      { "id": "3", "cat": "TV" },
+      { "id": "20", "cat": "Other" },
+      { "id": "24", "cat": "TV" },
+      { "id": "25", "cat": "TV" },
+      { "id": "26", "cat": "TV" },
+      { "id": "28", "cat": "TV" },
+      { "id": "29", "cat": "TV" },
+      { "id": "30", "cat": "TV" },
+      { "id": "31", "cat": "TV" },
+      { "id": "32", "cat": "TV" }
+    ]
   },
   "login": {
     "path": "/takelogin.php",

@@ -8,15 +8,15 @@
   "links": ["https://dxdhd.com/"],
   "caps": {
     "categorymappings": [
-      { "id": 1, "cat": "Movies", "desc": "Movies" },
-      { "id": 2, "cat": "TV", "desc": "TV" },
-      { "id": 3, "cat": "Audio", "desc": "Music" },
-      { "id": 4, "cat": "TV/Anime", "desc": "Anime" },
-      { "id": 5, "cat": "PC/0day", "desc": "Apps" },
-      { "id": 6, "cat": "Books", "desc": "Books" },
-      { "id": 7, "cat": "PC/Games", "desc": "Games" },
-      { "id": 8, "cat": "TV/Sport", "desc": "Sports" },
-      { "id": 9, "cat": "Other", "desc": "Other" }
+      { "id": "1", "cat": "Movies", "desc": "Movies" },
+      { "id": "2", "cat": "TV", "desc": "TV" },
+      { "id": "3", "cat": "Audio", "desc": "Music" },
+      { "id": "4", "cat": "TV/Anime", "desc": "Anime" },
+      { "id": "5", "cat": "PC/0day", "desc": "Apps" },
+      { "id": "6", "cat": "Books", "desc": "Books" },
+      { "id": "7", "cat": "PC/Games", "desc": "Games" },
+      { "id": "8", "cat": "TV/Sport", "desc": "Sports" },
+      { "id": "9", "cat": "Other", "desc": "Other" }
     ],
     "modes": {
       "search": ["q"],

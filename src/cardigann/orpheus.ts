@@ -7,15 +7,15 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['https://orpheus.network/'],
   caps: {
-    categories: {
-      '1': 'Audio',
-      '2': 'PC',
-      '3': 'Books',
-      '4': 'Audio/Audiobook',
-      '5': 'Movies',
-      '6': 'TV',
-      '7': 'Books/Comics',
-    },
+    categorymappings: [
+      { id: '1', cat: 'Audio' },
+      { id: '2', cat: 'PC' },
+      { id: '3', cat: 'Books' },
+      { id: '4', cat: 'Audio/Audiobook' },
+      { id: '5', cat: 'Movies' },
+      { id: '6', cat: 'TV' },
+      { id: '7', cat: 'Books/Comics' },
+    ],
   },
   login: {
     path: 'login.php',

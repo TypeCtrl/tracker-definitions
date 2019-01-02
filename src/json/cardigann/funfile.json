@@ -5,18 +5,18 @@
   "language": "en-US",
   "links": ["https://www.funfile.org/"],
   "caps": {
-    "categories": {
-      "4": "PC/Games",
-      "6": "Audio",
-      "7": "TV",
-      "19": "Movies",
-      "22": "PC",
-      "27": "Books",
-      "31": "PC/Phone-Other",
-      "40": "Other/Misc",
-      "43": "Audio/Audiobook",
-      "44": "TV/Anime"
-    }
+    "categorymappings": [
+      { "id": "4", "cat": "PC/Games" },
+      { "id": "6", "cat": "Audio" },
+      { "id": "7", "cat": "TV" },
+      { "id": "19", "cat": "Movies" },
+      { "id": "22", "cat": "PC" },
+      { "id": "27", "cat": "Books" },
+      { "id": "31", "cat": "PC/Phone-Other" },
+      { "id": "40", "cat": "Other/Misc" },
+      { "id": "43", "cat": "Audio/Audiobook" },
+      { "id": "44", "cat": "TV/Anime" }
+    ]
   },
   "login": {
     "path": "/takelogin.php",

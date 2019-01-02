@@ -9,9 +9,9 @@ export const definition: TopLevel = {
   links: ['https://asiancinema.me/'],
   caps: {
     categorymappings: [
-      { id: 1, cat: 'Movies', desc: 'Movies' },
-      { id: 2, cat: 'TV', desc: 'TV' },
-      { id: 3, cat: 'Audio', desc: 'Music' },
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'TV', desc: 'TV' },
+      { id: '3', cat: 'Audio', desc: 'Music' },
     ],
     modes: {
       search: ['q'],

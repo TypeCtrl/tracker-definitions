@@ -8,7 +8,10 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['https://fullmixmusic.org/'],
   legacylinks: ['http://fullmixmusic.org/'],
-  caps: { categories: { '1': 'Audio' }, modes: { search: ['q'] } },
+  caps: {
+    modes: { search: ['q'] },
+    categorymappings: [{ id: '1', cat: 'Audio' }],
+  },
   login: {
     path: 'login.php',
     method: 'post',

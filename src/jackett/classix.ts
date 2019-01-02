@@ -8,7 +8,7 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['http://classix-unlimited.co.uk/'],
   caps: {
-    categorymappings: [{ id: 1, cat: 'Movies', desc: 'Movies' }],
+    categorymappings: [{ id: '1', cat: 'Movies', desc: 'Movies' }],
     modes: { search: ['q'] },
   },
   login: {

@@ -10,8 +10,8 @@ export const definition: TopLevel = {
   links: ['https://eztv.io/'],
   legacylinks: ['https://eztv.ag/', 'https://eztv.re/'],
   caps: {
-    categories: { '1': 'TV' },
     modes: { 'tv-search': ['q', 'season', 'ep'] },
+    categorymappings: [{ id: '1', cat: 'TV' }],
   },
   settings: [],
   search: {

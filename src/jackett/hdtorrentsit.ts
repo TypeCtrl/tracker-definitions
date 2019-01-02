@@ -10,8 +10,8 @@ export const definition: TopLevel = {
   legacylinks: ['http://hdtorrents.it/'],
   caps: {
     categorymappings: [
-      { id: 2040, cat: 'Movies/HD' },
-      { id: 5040, cat: 'TV/HD' },
+      { id: '2040', cat: 'Movies/HD' },
+      { id: '5040', cat: 'TV/HD' },
     ],
     modes: {
       search: ['q'],

@@ -14,16 +14,16 @@ export const definition: TopLevel = {
     'https://www.limetorrents.me/',
   ],
   caps: {
-    categories: {
-      'TV shows': 'TV',
-      Movies: 'Movies',
-      Music: 'Audio',
-      Games: 'Console',
-      Applications: 'PC/0day',
-      Other: 'Other/Misc',
-      Anime: 'TV/Anime',
-    },
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    categorymappings: [
+      { id: 'TV shows', cat: 'TV' },
+      { id: 'Movies', cat: 'Movies' },
+      { id: 'Music', cat: 'Audio' },
+      { id: 'Games', cat: 'Console' },
+      { id: 'Applications', cat: 'PC/0day' },
+      { id: 'Other', cat: 'Other/Misc' },
+      { id: 'Anime', cat: 'TV/Anime' },
+    ],
   },
   settings: [
     {

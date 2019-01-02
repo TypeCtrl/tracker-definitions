@@ -9,8 +9,8 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['https://shellife.eu/'],
   caps: {
-    categories: { '1': 'Audio' },
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    categorymappings: [{ id: '1', cat: 'Audio' }],
   },
   login: {
     path: 'takelogin.php',

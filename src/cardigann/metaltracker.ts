@@ -9,15 +9,15 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['http://en.metal-tracker.com/'],
   caps: {
-    categories: {
-      Books: 'Audio/Audiobook',
-      Video: 'Audio/Video',
-      Music: 'Audio/MP3',
-    },
     modes: {
       search: ['q'],
       'music-search': ['q', 'album', 'artist', 'label', 'year'],
     },
+    categorymappings: [
+      { id: 'Books', cat: 'Audio/Audiobook' },
+      { id: 'Video', cat: 'Audio/Video' },
+      { id: 'Music', cat: 'Audio/MP3' },
+    ],
   },
   login: {
     path: '/user/login.html',

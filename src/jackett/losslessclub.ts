@@ -8,8 +8,8 @@ export const definition: TopLevel = {
   encoding: 'WINDOWS-1251',
   links: ['https://losslessclub.com/'],
   caps: {
-    categories: { '1': 'Audio/Lossless' },
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    categorymappings: [{ id: '1', cat: 'Audio/Lossless' }],
   },
   login: {
     path: 'takelogin.php',

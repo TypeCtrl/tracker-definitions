@@ -9,7 +9,7 @@ export const definition: TopLevel = {
   links: ['https://exoticaz.to/'],
   legacylinks: ['https://torrents.yourexotic.com/'],
   caps: {
-    categorymappings: [{ id: 1, cat: 'XXX', desc: 'DVDRip' }],
+    categorymappings: [{ id: '1', cat: 'XXX', desc: 'DVDRip' }],
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   login: {

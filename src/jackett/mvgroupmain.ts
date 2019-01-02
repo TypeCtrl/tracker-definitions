@@ -9,7 +9,7 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['http://forums.mvgroup.org/'],
   caps: {
-    categorymappings: [{ id: 1, cat: 'TV', desc: 'TV' }],
+    categorymappings: [{ id: '1', cat: 'TV', desc: 'TV' }],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],

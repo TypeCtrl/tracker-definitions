@@ -8,23 +8,23 @@
   "links": ["https://www.tokyotosho.info/"],
   "settings": [{ "name": "type-id", "type": "text", "label": "Type Id" }],
   "caps": {
-    "categories": {
-      "1": "TV/Anime",
-      "2": "Audio",
-      "3": "Books",
-      "4": "XXX",
-      "5": "Other",
-      "7": "TV/Anime",
-      "8": "TV/Anime",
-      "9": "TV/Anime",
-      "10": "TV/Anime",
-      "11": "TV/Anime",
-      "12": "XXX",
-      "13": "XXX",
-      "14": "XXX",
-      "15": "XXX"
-    },
-    "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
+    "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] },
+    "categorymappings": [
+      { "id": "1", "cat": "TV/Anime" },
+      { "id": "2", "cat": "Audio" },
+      { "id": "3", "cat": "Books" },
+      { "id": "4", "cat": "XXX" },
+      { "id": "5", "cat": "Other" },
+      { "id": "7", "cat": "TV/Anime" },
+      { "id": "8", "cat": "TV/Anime" },
+      { "id": "9", "cat": "TV/Anime" },
+      { "id": "10", "cat": "TV/Anime" },
+      { "id": "11", "cat": "TV/Anime" },
+      { "id": "12", "cat": "XXX" },
+      { "id": "13", "cat": "XXX" },
+      { "id": "14", "cat": "XXX" },
+      { "id": "15", "cat": "XXX" }
+    ]
   },
   "search": {
     "paths": [

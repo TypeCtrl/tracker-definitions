@@ -7,23 +7,23 @@
   "encoding": "UTF-8",
   "links": ["https://btstor.net/"],
   "caps": {
-    "categories": {
-      "anime": "TV/Anime",
-      "books": "Books",
-      "games": "PC/Games",
-      "movies": "Movies",
-      "music": "Audio",
-      "other": "Other",
-      "shows": "TV",
-      "software": "PC",
-      "video": "Movies",
-      "xxx": "XXX"
-    },
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"]
-    }
+    },
+    "categorymappings": [
+      { "id": "anime", "cat": "TV/Anime" },
+      { "id": "books", "cat": "Books" },
+      { "id": "games", "cat": "PC/Games" },
+      { "id": "movies", "cat": "Movies" },
+      { "id": "music", "cat": "Audio" },
+      { "id": "other", "cat": "Other" },
+      { "id": "shows", "cat": "TV" },
+      { "id": "software", "cat": "PC" },
+      { "id": "video", "cat": "Movies" },
+      { "id": "xxx", "cat": "XXX" }
+    ]
   },
   "settings": [],
   "download": { "selector": "#dlt_" },

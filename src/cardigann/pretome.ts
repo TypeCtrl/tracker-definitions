@@ -6,16 +6,16 @@ export const definition: TopLevel = {
   language: 'en-US',
   links: ['https://pretome.info/'],
   caps: {
-    categories: {
-      '4': 'PC/Games',
-      '6': 'Audio',
-      '7': 'TV',
-      '19': 'Movies',
-      '22': 'PC',
-      '27': 'Books',
-      '31': 'Other',
-      '51': 'XXX',
-    },
+    categorymappings: [
+      { id: '4', cat: 'PC/Games' },
+      { id: '6', cat: 'Audio' },
+      { id: '7', cat: 'TV' },
+      { id: '19', cat: 'Movies' },
+      { id: '22', cat: 'PC' },
+      { id: '27', cat: 'Books' },
+      { id: '31', cat: 'Other' },
+      { id: '51', cat: 'XXX' },
+    ],
   },
   settings: [
     { name: 'pin', type: 'text', label: 'Pin' },

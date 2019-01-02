@@ -8,10 +8,10 @@
   "links": ["https://aox.to/"],
   "caps": {
     "categorymappings": [
-      { "id": 13, "cat": "Movies", "desc": "Movie" },
-      { "id": 11, "cat": "TV", "desc": "TV-Show" },
-      { "id": 5, "cat": "TV/Other", "desc": "Variety Show" },
-      { "id": 24, "cat": "XXX", "desc": "Adult" }
+      { "id": "13", "cat": "Movies", "desc": "Movie" },
+      { "id": "11", "cat": "TV", "desc": "TV-Show" },
+      { "id": "5", "cat": "TV/Other", "desc": "Variety Show" },
+      { "id": "24", "cat": "XXX", "desc": "Adult" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
   },

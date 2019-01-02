@@ -5,16 +5,16 @@ export const definition: TopLevel = {
   language: 'nb-NO',
   links: ['http://norbits.net/'],
   caps: {
-    categories: {
-      '1': 'Movies',
-      '2': 'TV',
-      '3': 'PC',
-      '4': 'PC/Games',
-      '5': 'Audio',
-      '6': 'Books/Ebook',
-      '7': 'Audio/Audiobook',
-      '8': 'Audio/Video',
-    },
+    categorymappings: [
+      { id: '1', cat: 'Movies' },
+      { id: '2', cat: 'TV' },
+      { id: '3', cat: 'PC' },
+      { id: '4', cat: 'PC/Games' },
+      { id: '5', cat: 'Audio' },
+      { id: '6', cat: 'Books/Ebook' },
+      { id: '7', cat: 'Audio/Audiobook' },
+      { id: '8', cat: 'Audio/Video' },
+    ],
   },
   ratio: { path: '/index.php', selector: '#ratio' },
   login: {

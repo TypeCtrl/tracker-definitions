@@ -8,21 +8,21 @@
   "links": ["https://www.skytorrents.to/"],
   "legacylinks": ["https://www.skytorrents.lol/"],
   "caps": {
-    "categories": {
-      "album": "Audio",
-      "ebook": "Books",
-      "movie": "Movies",
-      "show": "TV",
-      "audio": "Audio",
-      "doc": "Books",
-      "games": "PC/Games",
-      "software": "PC"
-    },
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"]
-    }
+    },
+    "categorymappings": [
+      { "id": "album", "cat": "Audio" },
+      { "id": "ebook", "cat": "Books" },
+      { "id": "movie", "cat": "Movies" },
+      { "id": "show", "cat": "TV" },
+      { "id": "audio", "cat": "Audio" },
+      { "id": "doc", "cat": "Books" },
+      { "id": "games", "cat": "PC/Games" },
+      { "id": "software", "cat": "PC" }
+    ]
   },
   "settings": [],
   "search": {

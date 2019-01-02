@@ -9,12 +9,12 @@ export const definition: TopLevel = {
   links: ['http://nethd.org/'],
   caps: {
     categorymappings: [
-      { id: 401, cat: 'Movies', desc: 'Movies' },
-      { id: 402, cat: 'Audio', desc: 'Music' },
-      { id: 403, cat: 'PC/Games', desc: 'Game' },
-      { id: 404, cat: 'PC', desc: 'Software' },
-      { id: 405, cat: 'Other', desc: 'Image' },
-      { id: 406, cat: 'Books', desc: 'Book' },
+      { id: '401', cat: 'Movies', desc: 'Movies' },
+      { id: '402', cat: 'Audio', desc: 'Music' },
+      { id: '403', cat: 'PC/Games', desc: 'Game' },
+      { id: '404', cat: 'PC', desc: 'Software' },
+      { id: '405', cat: 'Other', desc: 'Image' },
+      { id: '406', cat: 'Books', desc: 'Book' },
     ],
     modes: {
       search: ['q'],

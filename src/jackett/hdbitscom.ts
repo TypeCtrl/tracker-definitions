@@ -9,11 +9,11 @@ export const definition: TopLevel = {
   links: ['https://www.hd-bits.com'],
   caps: {
     categorymappings: [
-      { id: 1, cat: 'Audio', desc: 'Music' },
-      { id: 2, cat: 'Movies', desc: 'Movies' },
-      { id: 3, cat: 'TV', desc: 'TV-Series' },
-      { id: 4, cat: 'PC', desc: 'Applications' },
-      { id: 5, cat: 'XXX', desc: 'Adult' },
+      { id: '1', cat: 'Audio', desc: 'Music' },
+      { id: '2', cat: 'Movies', desc: 'Movies' },
+      { id: '3', cat: 'TV', desc: 'TV-Series' },
+      { id: '4', cat: 'PC', desc: 'Applications' },
+      { id: '5', cat: 'XXX', desc: 'Adult' },
     ],
     modes: {
       search: ['q'],

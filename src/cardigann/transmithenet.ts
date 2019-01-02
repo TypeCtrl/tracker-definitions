@@ -5,7 +5,13 @@ export const definition: TopLevel = {
   description: 'A TV tracker',
   language: 'en-US',
   links: ['https://transmithe.net'],
-  caps: { categories: { '1': 'TV', '2': 'TV/HD', '3': 'TV/SD' } },
+  caps: {
+    categorymappings: [
+      { id: '1', cat: 'TV' },
+      { id: '2', cat: 'TV/HD' },
+      { id: '3', cat: 'TV/SD' },
+    ],
+  },
   login: {
     path: '/login.php',
     method: 'post',

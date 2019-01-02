@@ -8,7 +8,7 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['http://newstudio.tv'],
   caps: {
-    categorymappings: [{ id: 6, cat: 'TV', desc: 'TV series' }],
+    categorymappings: [{ id: '6', cat: 'TV', desc: 'TV series' }],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {

@@ -20,14 +20,14 @@ export const definition: TopLevel = {
   ],
   caps: {
     categorymappings: [
-      { id: 1, cat: 'Movies/HD', desc: 'BDRiP', default: true },
-      { id: 2, cat: 'Audio', desc: 'Music', default: true },
-      { id: 2, cat: 'PC/Games', desc: 'Games', default: true },
-      { id: 5, cat: 'TV/Anime', desc: 'Anime', default: true },
-      { id: 7, cat: 'PC/0day', desc: 'App', default: true },
-      { id: 15, cat: 'TV', desc: 'TV Series', default: true },
-      { id: 19, cat: 'Movies/SD', desc: 'Screener', default: true },
-      { id: 20, cat: 'Movies/SD', desc: 'Full DVD', default: true },
+      { id: '1', cat: 'Movies/HD', desc: 'BDRiP', default: true },
+      { id: '2', cat: 'Audio', desc: 'Music', default: true },
+      { id: '2', cat: 'PC/Games', desc: 'Games', default: true },
+      { id: '5', cat: 'TV/Anime', desc: 'Anime', default: true },
+      { id: '7', cat: 'PC/0day', desc: 'App', default: true },
+      { id: '15', cat: 'TV', desc: 'TV Series', default: true },
+      { id: '19', cat: 'Movies/SD', desc: 'Screener', default: true },
+      { id: '20', cat: 'Movies/SD', desc: 'Full DVD', default: true },
     ],
     modes: {
       search: ['q'],

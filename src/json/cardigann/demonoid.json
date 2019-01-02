@@ -5,20 +5,20 @@
   "language": "en-US",
   "links": ["http://www.dnoid.me/"],
   "caps": {
-    "categories": {
-      "1": "Movies",
-      "2": "Audio",
-      "3": "TV",
-      "4": "PC/Games",
-      "5": "PC",
-      "6": "Other",
-      "8": "Other",
-      "9": "TV/Anime",
-      "10": "Books",
-      "11": "Books/Comics",
-      "13": "Audio/Video",
-      "17": "Audio/Audiobook"
-    }
+    "categorymappings": [
+      { "id": "1", "cat": "Movies" },
+      { "id": "2", "cat": "Audio" },
+      { "id": "3", "cat": "TV" },
+      { "id": "4", "cat": "PC/Games" },
+      { "id": "5", "cat": "PC" },
+      { "id": "6", "cat": "Other" },
+      { "id": "8", "cat": "Other" },
+      { "id": "9", "cat": "TV/Anime" },
+      { "id": "10", "cat": "Books" },
+      { "id": "11", "cat": "Books/Comics" },
+      { "id": "13", "cat": "Audio/Video" },
+      { "id": "17", "cat": "Audio/Audiobook" }
+    ]
   },
   "login": {
     "path": "/account_handler.php",

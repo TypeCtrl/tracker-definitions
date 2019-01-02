@@ -7,25 +7,25 @@
   "encoding": "WINDOWS-1251",
   "links": ["http://zelka.org/", "http://zamunda.se/"],
   "caps": {
-    "categories": {
-      "5": "Movies/HD",
-      "7": "TV/SD",
-      "9": "XXX",
-      "19": "Movies/SD",
-      "20": "Movies/DVD",
-      "25": "TV/Other",
-      "33": "TV/HD",
-      "35": "Movies/WEBDL",
-      "42": "Movies/BluRay",
-      "46": "Movies/3D",
-      "49": "XXX/Other",
-      "53": "Movies/HD"
-    },
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"]
-    }
+    },
+    "categorymappings": [
+      { "id": "5", "cat": "Movies/HD" },
+      { "id": "7", "cat": "TV/SD" },
+      { "id": "9", "cat": "XXX" },
+      { "id": "19", "cat": "Movies/SD" },
+      { "id": "20", "cat": "Movies/DVD" },
+      { "id": "25", "cat": "TV/Other" },
+      { "id": "33", "cat": "TV/HD" },
+      { "id": "35", "cat": "Movies/WEBDL" },
+      { "id": "42", "cat": "Movies/BluRay" },
+      { "id": "46", "cat": "Movies/3D" },
+      { "id": "49", "cat": "XXX/Other" },
+      { "id": "53", "cat": "Movies/HD" }
+    ]
   },
   "login": {
     "path": "/takelogin.php",

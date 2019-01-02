@@ -48,6 +48,13 @@ function validateJson(json: any): any {
   json.language = lang;
 
   // parse categories
+  if (json.caps.categories) {
+    const mappings = Object.keys(json.caps.categories).map(n => {
+      return { id: n, cat: json.caps.categories[n] };
+    });
+    json.caps.categorymappings = mappings;
+    delete json.caps.categories;
+  }
   if (json.caps.categorymappings) {
     json.caps.categorymappings = json.caps.categorymappings.map(cat => {
       const l = cat.cat.toLowerCase().replace(' ', '');
@@ -56,11 +63,10 @@ function validateJson(json: any): any {
         console.error(cat.cat);
         throw new Error(cat.cat);
       }
+      cat.id = `${cat.id}`;
       cat.cat = f || cat.cat;
       return cat;
     });
-  } else {
-    console.log('ERR', json.site, json.caps)
   }
 
   return json;

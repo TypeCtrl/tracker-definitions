@@ -9,11 +9,11 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['https://rawkbawx.rocks/'],
   caps: {
-    categories: { Music: 'Audio' },
     modes: {
       search: ['q'],
       'music-search': ['q', 'album', 'artist', 'label', 'year'],
     },
+    categorymappings: [{ id: 'Music', cat: 'Audio' }],
   },
   login: {
     path: 'login.php',

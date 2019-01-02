@@ -8,7 +8,7 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['http://rutor.info/'],
   caps: {
-    categorymappings: [{ id: 4, cat: 'TV', desc: 'TV Shows' }],
+    categorymappings: [{ id: '4', cat: 'TV', desc: 'TV Shows' }],
     modes: { search: ['q'] },
   },
   settings: [

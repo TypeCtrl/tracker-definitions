@@ -10,11 +10,11 @@ export const definition: TopLevel = {
   links: ['https://metal.iplay.ro/'],
   legacylinks: ['https://metal.stream.bike/'],
   caps: {
-    categories: { Music: 'Audio' },
     modes: {
       search: ['q'],
       'music-search': ['q', 'album', 'artist', 'label', 'year'],
     },
+    categorymappings: [{ id: 'Music', cat: 'Audio' }],
   },
   login: {
     path: 'login.php',

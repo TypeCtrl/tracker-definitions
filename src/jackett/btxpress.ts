@@ -9,8 +9,8 @@ export const definition: TopLevel = {
   links: ['https://btxpress.org/'],
   caps: {
     categorymappings: [
-      { id: 1, cat: 'Movies', desc: 'Movies' },
-      { id: 2, cat: 'TV', desc: 'TV' },
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'TV', desc: 'TV' },
     ],
     modes: {
       search: ['q'],

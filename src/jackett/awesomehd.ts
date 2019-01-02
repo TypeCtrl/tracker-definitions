@@ -9,8 +9,8 @@ export const definition: TopLevel = {
   links: ['https://awesome-hd.me'],
   caps: {
     categorymappings: [
-      { id: 1, cat: 'Movies/HD', desc: 'Movies' },
-      { id: 2, cat: 'TV/HD', desc: 'TV-Shows' },
+      { id: '1', cat: 'Movies/HD', desc: 'Movies' },
+      { id: '2', cat: 'TV/HD', desc: 'TV-Shows' },
     ],
     modes: { searchstr: ['q'] },
   },

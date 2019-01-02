@@ -9,8 +9,8 @@ export const definition: TopLevel = {
   links: ['https://tenyardtracker.com/'],
   legacylinks: ['http://tenyardtracker.com/'],
   caps: {
-    categories: { '1': 'TV' },
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    categorymappings: [{ id: '1', cat: 'TV' }],
   },
   login: {
     path: 'members.php?action=takelogin',

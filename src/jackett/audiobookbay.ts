@@ -73,7 +73,7 @@ export const definition: TopLevel = {
       { id: 'Sports', cat: 'Audio/Audiobook', desc: 'Sports' },
       { id: 'Suspense', cat: 'Audio/Audiobook', desc: 'Suspense' },
       { id: 'Thriller', cat: 'Audio/Audiobook', desc: 'Thriller' },
-      { id: true, cat: 'Audio/Audiobook', desc: 'True Crime' },
+      { id: 'true', cat: 'Audio/Audiobook', desc: 'True Crime' },
       { id: 'Tutorial', cat: 'Audio/Audiobook', desc: 'Tutorial' },
       { id: 'Westerns', cat: 'Audio/Audiobook', desc: 'Westerns' },
       { id: 'Anthology', cat: 'Audio/Audiobook', desc: 'Anthology' },

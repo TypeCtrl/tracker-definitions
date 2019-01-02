@@ -7,15 +7,15 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['https://alphareign.se'],
   caps: {
-    categories: {
-      Movies: 'Movies',
-      'Movies/HD': 'Movies/HD',
-      'Movies/SD': 'Movies/SD',
-      TV: 'TV',
-      'TV/HD': 'TV/HD',
-      'TV/SD': 'TV/SD',
-      Other: 'Other',
-    },
+    categorymappings: [
+      { id: 'Movies', cat: 'Movies' },
+      { id: 'Movies/HD', cat: 'Movies/HD' },
+      { id: 'Movies/SD', cat: 'Movies/SD' },
+      { id: 'TV', cat: 'TV' },
+      { id: 'TV/HD', cat: 'TV/HD' },
+      { id: 'TV/SD', cat: 'TV/SD' },
+      { id: 'Other', cat: 'Other' },
+    ],
   },
   login: {
     path: '/login',

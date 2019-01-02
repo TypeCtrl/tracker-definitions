@@ -9,22 +9,22 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['https://zooqle.com'],
   caps: {
-    categories: {
-      anime: 'TV/Anime',
-      app: 'PC',
-      book: 'Books',
-      files: 'Other/Misc',
-      game: 'PC/Games',
-      movies: 'Movies',
-      music: 'Audio',
-      other: 'Other',
-      tv: 'TV',
-    },
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
+    categorymappings: [
+      { id: 'anime', cat: 'TV/Anime' },
+      { id: 'app', cat: 'PC' },
+      { id: 'book', cat: 'Books' },
+      { id: 'files', cat: 'Other/Misc' },
+      { id: 'game', cat: 'PC/Games' },
+      { id: 'movies', cat: 'Movies' },
+      { id: 'music', cat: 'Audio' },
+      { id: 'other', cat: 'Other' },
+      { id: 'tv', cat: 'TV' },
+    ],
   },
   settings: [],
   search: {

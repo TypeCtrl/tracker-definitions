@@ -9,18 +9,18 @@
     "https://tproxy.pro/"
   ],
   "caps": {
-    "categories": {
-      "201": "Movies",
-      "202": "Movies/DVD",
-      "203": "Audio/Video",
-      "204": "Movies/Other",
-      "205": "TV",
-      "206": "TV/Other",
-      "207": "Movies/HD",
-      "208": "TV/HD",
-      "209": "Movies/3D",
-      "299": "Movies/Other"
-    }
+    "categorymappings": [
+      { "id": "201", "cat": "Movies" },
+      { "id": "202", "cat": "Movies/DVD" },
+      { "id": "203", "cat": "Audio/Video" },
+      { "id": "204", "cat": "Movies/Other" },
+      { "id": "205", "cat": "TV" },
+      { "id": "206", "cat": "TV/Other" },
+      { "id": "207", "cat": "Movies/HD" },
+      { "id": "208", "cat": "TV/HD" },
+      { "id": "209", "cat": "Movies/3D" },
+      { "id": "299", "cat": "Movies/Other" }
+    ]
   },
   "search": {
     "path": "{{if .Query.Keywords}}search/{{ .Query.Keywords}}/0/99/0{{else}}/recent{{end}}",

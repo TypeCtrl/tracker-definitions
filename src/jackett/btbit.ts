@@ -9,21 +9,21 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['http://en.btbit.org/'],
   caps: {
-    categories: {
-      Movie: 'Movies',
-      Package: 'PC/0day',
-      Other: 'Other',
-      Software: 'PC',
-      Mirror: 'PC/ISO',
-      Music: 'Audio',
-      Picture: 'Other/Misc',
-      Document: 'Books',
-    },
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
+    categorymappings: [
+      { id: 'Movie', cat: 'Movies' },
+      { id: 'Package', cat: 'PC/0day' },
+      { id: 'Other', cat: 'Other' },
+      { id: 'Software', cat: 'PC' },
+      { id: 'Mirror', cat: 'PC/ISO' },
+      { id: 'Music', cat: 'Audio' },
+      { id: 'Picture', cat: 'Other/Misc' },
+      { id: 'Document', cat: 'Books' },
+    ],
   },
   settings: [],
   search: {

@@ -9,9 +9,9 @@ export const definition: TopLevel = {
   links: ['https://blutopia.xyz/'],
   caps: {
     categorymappings: [
-      { id: 1, cat: 'Movies', desc: 'Movies' },
-      { id: 2, cat: 'TV', desc: 'TV' },
-      { id: 3, cat: 'Movies', desc: 'FANRES' },
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'TV', desc: 'TV' },
+      { id: '3', cat: 'Movies', desc: 'FANRES' },
     ],
     modes: {
       search: ['q'],

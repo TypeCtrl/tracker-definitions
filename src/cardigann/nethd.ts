@@ -7,14 +7,14 @@ export const definition: TopLevel = {
   encoding: 'UTF-8',
   links: ['http://nethd.org/'],
   caps: {
-    categories: {
-      '401': 'Movies',
-      '402': 'Audio',
-      '403': 'PC/Games',
-      '404': 'PC',
-      '405': 'Other',
-      '406': 'Books',
-    },
+    categorymappings: [
+      { id: '401', cat: 'Movies' },
+      { id: '402', cat: 'Audio' },
+      { id: '403', cat: 'PC/Games' },
+      { id: '404', cat: 'PC' },
+      { id: '405', cat: 'Other' },
+      { id: '406', cat: 'Books' },
+    ],
   },
   login: {
     path: '/takelogin.php',

@@ -5,27 +5,27 @@
   "language": "en-US",
   "links": ["https://hd-space.org/"],
   "caps": {
-    "categories": {
-      "15": "Movies/BluRay",
-      "16": "Movies/HD",
-      "18": "Movies/HD",
-      "19": "Movies/HD",
-      "21": "TV/HD",
-      "22": "TV/HD",
-      "24": "TV/Documentary",
-      "25": "TV/Documentary",
-      "27": "TV/Anime",
-      "28": "TV/Anime",
-      "30": "Audio/Lossless",
-      "31": "Audio/Video",
-      "33": "XXX",
-      "34": "XXX",
-      "36": "Other",
-      "37": "PC",
-      "38": "Other",
-      "40": "Movies/HD",
-      "41": "Movies/HD"
-    }
+    "categorymappings": [
+      { "id": "15", "cat": "Movies/BluRay" },
+      { "id": "16", "cat": "Movies/HD" },
+      { "id": "18", "cat": "Movies/HD" },
+      { "id": "19", "cat": "Movies/HD" },
+      { "id": "21", "cat": "TV/HD" },
+      { "id": "22", "cat": "TV/HD" },
+      { "id": "24", "cat": "TV/Documentary" },
+      { "id": "25", "cat": "TV/Documentary" },
+      { "id": "27", "cat": "TV/Anime" },
+      { "id": "28", "cat": "TV/Anime" },
+      { "id": "30", "cat": "Audio/Lossless" },
+      { "id": "31", "cat": "Audio/Video" },
+      { "id": "33", "cat": "XXX" },
+      { "id": "34", "cat": "XXX" },
+      { "id": "36", "cat": "Other" },
+      { "id": "37", "cat": "PC" },
+      { "id": "38", "cat": "Other" },
+      { "id": "40", "cat": "Movies/HD" },
+      { "id": "41", "cat": "Movies/HD" }
+    ]
   },
   "ratio": {
     "path": "/index.php?page=torrents",

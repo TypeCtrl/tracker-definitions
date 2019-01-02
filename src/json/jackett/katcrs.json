@@ -16,25 +16,25 @@
     "https://kickasstvshow.xyz/"
   ],
   "caps": {
-    "categories": {
-      "movies": "Movies",
-      "TV": "TV",
-      "Video": "TV/WEB-DL",
-      "Anime": "TV/Anime",
-      "Music": "Audio",
-      "Books": "Books",
-      "Documentary": "TV/Documentary",
-      "Games": "Console",
-      "Apps": "PC",
-      "Applications": "PC",
-      "Other": "Other",
-      "Othero": "XXX"
-    },
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"]
-    }
+    },
+    "categorymappings": [
+      { "id": "movies", "cat": "Movies" },
+      { "id": "TV", "cat": "TV" },
+      { "id": "Video", "cat": "TV/WEB-DL" },
+      { "id": "Anime", "cat": "TV/Anime" },
+      { "id": "Music", "cat": "Audio" },
+      { "id": "Books", "cat": "Books" },
+      { "id": "Documentary", "cat": "TV/Documentary" },
+      { "id": "Games", "cat": "Console" },
+      { "id": "Apps", "cat": "PC" },
+      { "id": "Applications", "cat": "PC" },
+      { "id": "Other", "cat": "Other" },
+      { "id": "Othero", "cat": "XXX" }
+    ]
   },
   "settings": [],
   "search": {

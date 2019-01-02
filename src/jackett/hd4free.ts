@@ -9,13 +9,13 @@ export const definition: TopLevel = {
   links: ['https://hd4.xyz/'],
   caps: {
     categorymappings: [
-      { id: 1, cat: 'Movies', desc: 'Movies' },
-      { id: 2, cat: 'TV', desc: 'TV' },
-      { id: 3, cat: 'Audio', desc: 'Music' },
-      { id: 4, cat: 'Books', desc: 'Books' },
-      { id: 5, cat: 'PC/Mac', desc: 'Apps' },
-      { id: 6, cat: 'Other', desc: 'Other' },
-      { id: 7, cat: 'PC/Games', desc: 'Games' },
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'TV', desc: 'TV' },
+      { id: '3', cat: 'Audio', desc: 'Music' },
+      { id: '4', cat: 'Books', desc: 'Books' },
+      { id: '5', cat: 'PC/Mac', desc: 'Apps' },
+      { id: '6', cat: 'Other', desc: 'Other' },
+      { id: '7', cat: 'PC/Games', desc: 'Games' },
     ],
     modes: {
       search: ['q'],
