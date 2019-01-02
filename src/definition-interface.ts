@@ -145,6 +145,14 @@ export interface Categorymapping {
   default?: boolean;
 }
 
+export interface Setting {
+  name: string;
+  type: string;
+  label: string;
+  default?: string | number | boolean;
+  options?: { [key: string]: string };
+}
+
 export interface Modes {
   search?: string[];
   searchstr?: string[];
@@ -157,13 +165,8 @@ export interface Download {
   before?: Login;
   method?: string;
   selector?: string;
-  filters?: DownloadFilter[];
+  filters?: FilterElement[];
   attribute?: string;
-}
-
-export interface DownloadFilter {
-  name: string;
-  args?: string | (string | number)[];
 }
 
 export interface Login {
@@ -212,7 +215,7 @@ export interface Ratio {
   path?: string;
   selector?: string | null;
   attribute?: string;
-  filters?: DownloadFilter[];
+  filters?: FilterElement[];
 }
 
 export interface Search {
@@ -221,45 +224,11 @@ export interface Search {
   inputs?: { [key: string]: string | number | boolean | null };
   error?: Error[];
   preprocessingfilters?: FilterElement[];
-  keywordsfilters?: KeywordsfilterElement[];
+  keywordsfilters?: FilterElement[];
   rows: Rows;
-  fields: Fields;
+  fields: { [key: string]: Selector };
   paths?: Path[];
   headers?: { [key: string]: string | string[] };
-}
-
-export interface Fields {
-  [key: string]: Selector;
-  // // TODO these are all the same
-  // download: Selector;
-  // _title_original: Selector;
-  // title: Selector;
-  // category?: Selector;
-  // details?: Selector;
-  // is_anime?: Selector;
-  // title_anime?: Selector;
-  // title_normal?: Selector;
-  // date?: Selector;
-  // size: Selector;
-  // seeders?: Selector;
-  // title_phase1?: Selector;
-  // title_multilang?: Selector;
-  // leechers?: Selector;
-  // 'title-attribute'?: Selector;
-  // 'title-text'?: Selector;
-  // downloadvolumefactor?: Selector;
-  // uploadvolumefactor?: Uploadvolumefactor;
-  // comments?: Selector;
-  // description?: Selector;
-  // banner?: Selector;
-  // files?: Selector;
-  // grabs?: Selector;
-  // imdb?: Selector;
-  // minimumratio?: Minimum;
-  // minimumseedtime?: Minimum;
-  // magnet?: Selector;
-  // site_date?: SiteDate;
-  // _id?: Ratio;
 }
 
 export interface Selector {
@@ -276,29 +245,8 @@ export interface Selector {
 export interface FilterElement {
   name?: string;
   attribute?: string;
-  // TODO: remove object when args fixed
-  args?: (string | number)[] | string | { [key: string]: null };
+  args?: (string | number)[] | string | number;
   dateparse?: null;
-}
-
-export interface DateFilter {
-  name: string;
-  args: (string | number)[] | string;
-}
-
-export interface Minimum {
-  text: string;
-}
-
-export interface SiteDate {
-  selector: string;
-  optional?: boolean;
-  filters: DownloadFilter[];
-}
-
-export interface KeywordsfilterElement {
-  name: string;
-  args?: (string | number)[] | string;
 }
 
 export interface Uploadvolumefactor {
@@ -321,20 +269,13 @@ export interface Path {
 export interface Rows {
   selector: string;
   remove?: string;
-  filters?: RowsFilter[];
+  filters?: FilterElement[];
   after?: number;
   dateheaders?: SiteDate;
 }
 
-export interface RowsFilter {
-  name: string;
-  args?: number;
-}
-
-export interface Setting {
-  name: string;
-  type: string;
-  label: string;
-  default?: string | number | boolean;
-  options?: { [key: string]: string };
+export interface SiteDate {
+  selector: string;
+  optional?: boolean;
+  filters: FilterElement[];
 }
