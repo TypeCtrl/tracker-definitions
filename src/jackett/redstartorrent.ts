@@ -85,7 +85,7 @@ export const definition: TrackerDefinition = {
         attribute: 'src',
         filters: [
           { name: 'append', args: 'Language: polish\n<br>' },
-          { name: 'prepend', args: { '[object Object]': null } },
+          { name: 'prepend', args: '{{ .Result.description }}' },
         ],
       },
       imdb: {

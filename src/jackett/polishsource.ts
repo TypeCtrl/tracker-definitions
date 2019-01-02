@@ -83,7 +83,7 @@ export const definition: TrackerDefinition = {
         selector: 'img[src="pic/napisy.png"]',
         filters: [
           { name: 'append', args: 'Subbed\n<br>' },
-          { name: 'prepend', args: { '[object Object]': null } },
+          { name: 'prepend', args: '{{ .Result.description }}' },
         ],
       },
       imdb: {

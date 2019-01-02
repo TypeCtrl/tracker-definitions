@@ -101,12 +101,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       title: {
-        selector: 'a[href^="details.php?id="] > b',
+        selector: 'a[href^="details.php?id="] > b[title*="Torrent neve:"]',
+        optional: true,
         attribute: 'title',
-        filters: [
-          { name: 're_replace', args: ['^Torrent neve: ', ''] },
-          { name: 're_replace', args: ['<br />.*', ''] },
-        ],
+        filters: [{ name: 'regexp', args: 'Torrent neve: (.*?)<' }],
       },
       description: {
         selector: 'a[href^="details.php?id="] > b',
@@ -129,7 +127,8 @@ export const definition: TrackerDefinition = {
       },
       banner: {
         optional: true,
-        selector: 'img[src="pic/borito.png"]',
+        selector:
+          'img[src="pic/borito.png"], a[href^="details.php?id="] > b[title*="Torrent neve:"]',
         attribute: 'title',
         filters: [{ name: 'regexp', args: "src='(.*?)'" }],
       },
