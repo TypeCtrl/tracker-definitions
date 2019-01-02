@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'funfile',
   name: 'FunFile',
   description: 'A general tracker',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://www.funfile.org/'],
   caps: {
     categories: {
@@ -73,4 +73,5 @@ export const definition: TopLevel = {
       },
     },
   },
+  encoding: 'UTF-8',
 };

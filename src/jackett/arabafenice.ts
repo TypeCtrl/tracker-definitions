@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'ArabaFenice',
   description:
     'Araba Fenice (Phoenix) is an ITALIAN Private site for TV / MOVIES / GENERAL',
-  language: 'it-it',
+  language: 'it-IT',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.arabafenice.me/'],

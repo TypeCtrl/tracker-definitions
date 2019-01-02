@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'cinemageddon',
   name: 'Cinemageddon',
   description: 'B-movie tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://cinemageddon.net/'],

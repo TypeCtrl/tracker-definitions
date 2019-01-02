@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'filelist',
   name: 'FileList',
-  language: 'en-us',
+  language: 'en-US',
   links: ['http://filelist.ro/'],
   caps: {
     categories: {
@@ -74,4 +74,5 @@ export const definition: TopLevel = {
       leechers: { selector: '.torrenttable:nth-child(10) span' },
     },
   },
+  encoding: 'UTF-8',
 };

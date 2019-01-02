@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'alphareign',
   name: 'AlphaReign',
   description: 'A DHT only tracker',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://alphareign.se'],
   caps: {

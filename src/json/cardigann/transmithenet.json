@@ -2,7 +2,7 @@
   "site": "transmithenet",
   "name": "Transmithe.net",
   "description": "A TV tracker",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://transmithe.net"],
   "caps": { "categories": { "1": "TV", "2": "TV/HD", "3": "TV/SD" } },
   "login": {
@@ -69,5 +69,6 @@
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

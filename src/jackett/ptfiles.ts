@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'ptfiles',
   name: 'PTFiles',
   description: 'PTFiles (PTF) is a Private site for TV / MOVIES / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['https://ptfiles.net/'],
   caps: {
     categorymappings: [

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hdbitscom',
   name: 'HD-Bits.com',
   description: 'HD tracker',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   type: 'private',
   links: ['https://www.hd-bits.com'],

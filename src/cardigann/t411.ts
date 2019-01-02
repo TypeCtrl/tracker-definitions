@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 't411',
   name: 'Torrent411',
-  language: 'fr-fr',
+  language: 'fr-FR',
   encoding: 'UTF-8',
   links: ['https://t411.li'],
   caps: {

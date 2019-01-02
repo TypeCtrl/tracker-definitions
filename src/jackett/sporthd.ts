@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'sporthd',
   name: 'SportHD',
   description: 'Sports tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://sporthd.org/'],

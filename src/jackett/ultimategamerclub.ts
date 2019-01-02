@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'ultimategamerclub',
   name: 'Ultimate Gamer Club',
   description: 'Ultimate Gamer (UGC) is a Private Torrent Tracker for GAMES',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://ultimategamer.club/'],

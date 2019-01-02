@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'empornium',
   name: 'Empornium',
   description: 'A porn tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.empornium.me/'],

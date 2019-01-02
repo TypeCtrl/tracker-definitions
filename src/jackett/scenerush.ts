@@ -15,7 +15,7 @@ export const definition: TopLevel = {
       { id: 7, cat: 'XXX', desc: 'XXX' },
       { id: 8, cat: 'TV/Anime', desc: 'ANIME' },
       { id: 9, cat: 'Audio', desc: 'Audio' },
-      { id: 11, cat: 'Console/Xbox 360', desc: 'XBOX 360' },
+      { id: 11, cat: 'Console/Xbox360', desc: 'XBOX 360' },
       { id: 12, cat: 'Console/PSP', desc: 'PSP' },
       { id: 13, cat: 'TV/Documentary', desc: 'DOC' },
       { id: 17, cat: 'TV/HD', desc: 'TV-X264' },

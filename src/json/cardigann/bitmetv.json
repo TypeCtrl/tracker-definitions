@@ -1,7 +1,7 @@
 {
   "site": "bitmetv",
   "name": "BitMeTV",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["http://www.bitmetv.org/"],
   "settings": [{ "name": "cookie", "type": "text", "label": "Cookie" }],
   "caps": { "categories": { "1": "TV" } },
@@ -44,5 +44,6 @@
       "downloadvolumefactor": { "case": { "*": "1" } },
       "uploadvolumefactor": { "text": "1" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

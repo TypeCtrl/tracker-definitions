@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'iptorrents',
   name: 'IPTorrents',
   description: '#1 Private Tracker',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://iptorrents.com/'],
   settings: [{ name: 'cookie', type: 'text', label: 'Cookie' }],
   caps: {
@@ -95,4 +95,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { text: '1' },
     },
   },
+  encoding: 'UTF-8',
 };

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'redacted',
   name: 'Redacted',
   description: 'The music tracker',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://redacted.ch'],
   caps: {
     categories: {
@@ -73,4 +73,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { case: { '*': '1' } },
     },
   },
+  encoding: 'UTF-8',
 };

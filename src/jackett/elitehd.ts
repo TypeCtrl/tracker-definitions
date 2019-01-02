@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'EliteHD',
   description:
     'EliteHD (HDClub) is a RUSSIAN Private Torrent Tracker for HD MOVIES / TV / GENERAL',
-  language: 'ru-ru',
+  language: 'ru-RU',
   type: 'private',
-  encoding: 'windows-1251',
+  encoding: 'WINDOWS-1251',
   links: ['https://elitehd.org/'],
   caps: {
     categorymappings: [

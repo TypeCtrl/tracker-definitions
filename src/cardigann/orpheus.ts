@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'orpheus',
   name: 'Orpheus',
   description: 'A music tracker',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://orpheus.network/'],
   caps: {

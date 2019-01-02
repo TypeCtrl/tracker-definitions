@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'theempire',
   name: 'The Empire',
   description: 'Commonwealth television',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://theempire.click'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'BTstor.net',
   description:
     'BTstor.net is a Public BT-Scene clone for MOVIES / TV / GENERAL',
-  language: 'us-en',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://btstor.net/'],

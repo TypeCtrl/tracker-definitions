@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'rutor',
   name: 'RuTor',
   description: 'RuTor is a RUSSIAN Public site for MOVIES / TV / GENERAL',
-  language: 'ru-ru',
+  language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
   links: ['http://rutor.info/'],

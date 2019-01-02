@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'torrentz2',
   name: 'Torrentz2',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://torrentz2.eu/'],

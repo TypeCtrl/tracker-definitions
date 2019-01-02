@@ -2,10 +2,10 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'greekteam',
   name: 'Greek Team',
-  language: 'el-gr',
+  language: 'el-GR',
   description: 'Greek Team is a GREEK Private site for TV / MOVIES / GENERAL',
   type: 'private',
-  encoding: 'windows-1253',
+  encoding: 'WINDOWS-1253',
   links: ['http://www.greek-team.cc/'],
   caps: {
     categorymappings: [

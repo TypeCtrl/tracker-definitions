@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'theplace',
   name: 'The Place',
   description: 'Self-improvement E-Learning',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://theplace.click/'],

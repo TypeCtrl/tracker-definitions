@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Il Corsaro Nero',
   description:
     'Il Corsaro Nero is an ITALIAN Public site for TV / MOVIES / GENERAL',
-  language: 'it-it',
+  language: 'it-IT',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://ilcorsaronero.cc/'],

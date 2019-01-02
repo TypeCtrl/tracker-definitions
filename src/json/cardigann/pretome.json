@@ -2,7 +2,7 @@
   "site": "pretome",
   "name": "PreToMe",
   "description": "a general tracker",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://pretome.info/"],
   "caps": {
     "categories": {
@@ -74,5 +74,6 @@
         "filters": [{ "name": "append", "args": " ago" }]
       }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Freedom-HD',
   description:
     'Freedom-HD (Freedom Paradise) is a ratioless FRENCH Private Torrent Tracker for HD MOVIES / GENERAL',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://freedom-paradise.eu/'],

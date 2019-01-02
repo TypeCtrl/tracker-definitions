@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'AniRena',
   description:
     'AniRena is a Public torrent tracker for the latest anime and Japanese related torrents',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.anirena.com/'],

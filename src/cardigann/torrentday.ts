@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'torrentday',
   name: 'TorrentDay',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://www.torrentday.com/', 'http://td-update.com/'],
   settings: [{ name: 'cookie', type: 'text', label: 'Cookie' }],
   caps: {
@@ -87,4 +87,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td.leechersInfo' },
     },
   },
+  encoding: 'UTF-8',
 };

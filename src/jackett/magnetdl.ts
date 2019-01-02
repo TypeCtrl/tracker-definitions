@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'magnetdl',
   name: 'MagnetDL',
   description: 'MagnetDL is a Public torrent Magnet Links search engine',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.magnetdl.com/'],

@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'ncore',
   name: 'NCore',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://ncore.cc'],
   caps: {
     categories: {
@@ -76,4 +76,5 @@ export const definition: TopLevel = {
       leechers: { selector: '.box_l2 a' },
     },
   },
+  encoding: 'UTF-8',
 };

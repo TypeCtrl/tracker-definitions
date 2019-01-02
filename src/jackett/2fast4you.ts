@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: '2 Fast 4 You',
   description:
     '2 Fast 4 You is a FRENCH Private site for TV / MOVIES / GENERAL',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.2f4y.me/'],

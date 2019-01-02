@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'Speed-Share',
   description:
     'Speed-Share is a Brazilian Private site for TV / MOVIES / GENERAL',
-  language: 'pt-br',
+  language: 'pt-BR',
   type: 'private',
-  encoding: 'utf-8',
+  encoding: 'UTF-8',
   links: ['http://speed-share.org/'],
   caps: {
     categorymappings: [
@@ -89,9 +89,9 @@ export const definition: TopLevel = {
       { id: 50, cat: 'Console/PSP', desc: 'Jogos: PSP' },
       { id: 54, cat: 'Console/NDS', desc: 'Jogos: Nintendo DS' },
       { id: 55, cat: 'Console/Wii', desc: 'Jogos: Wii' },
-      { id: 57, cat: 'Console/Xbox 360', desc: 'Jogos: Xbox 360' },
-      { id: 237, cat: 'Console/PS Vita', desc: 'Jogos: PS Vita' },
-      { id: 238, cat: 'Console/Xbox One', desc: 'Jogos: Xbox One' },
+      { id: 57, cat: 'Console/Xbox360', desc: 'Jogos: Xbox 360' },
+      { id: 237, cat: 'Console/PSVita', desc: 'Jogos: PS Vita' },
+      { id: 238, cat: 'Console/XboxOne', desc: 'Jogos: Xbox One' },
       { id: 53, cat: 'Console/Other', desc: 'Jogos: Outros' },
       {
         id: 131,

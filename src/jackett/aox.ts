@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'AOX',
   description:
     'AOX (Chippu) is a Private Torrent Tracker for ASIAN MOVIES / TV',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://aox.to/'],

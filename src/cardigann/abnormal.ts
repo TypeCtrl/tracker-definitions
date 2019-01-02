@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'abnormal',
   name: 'Abnormal',
-  language: 'fr-fr',
+  language: 'fr-FR',
   links: ['https://abnormal.ws'],
   caps: {
     categories: {
@@ -85,4 +85,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(7)' },
     },
   },
+  encoding: 'UTF-8',
 };

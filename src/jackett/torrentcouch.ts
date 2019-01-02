@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'torrentcouch',
   name: 'TorrentCouch',
   description: 'TorrentCounch is a Public TV tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://torrentcouch.net/'],

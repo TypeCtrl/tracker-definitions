@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'RetroFlix',
   description:
     'Private Torrent Tracker for Classic Movies / TV / General Releases.',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://retroflix.club/'],

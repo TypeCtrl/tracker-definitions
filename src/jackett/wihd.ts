@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'wihd',
   name: 'World-In-HD',
   description: 'Your world in HD',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://world-in-hd.net/'],

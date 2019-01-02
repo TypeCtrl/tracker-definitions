@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'xbytesv2',
   name: 'XbytesV2',
   description: 'xbytesV2 is a SPANISH site for HD content',
-  language: 'es-es',
+  language: 'es-ES',
   type: 'private',
   encoding: 'ISO-8859-1',
   links: ['http://xbytesv2.li'],

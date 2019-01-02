@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'Manicomio Share',
   description:
     'Manicomio Share is a Brazilian Private site for TV / MOVIES / GENERAL',
-  language: 'pt-br',
+  language: 'pt-BR',
   type: 'private',
-  encoding: 'iso-8859-1',
+  encoding: 'ISO-8859-1',
   links: ['https://www.manicomio-share.com'],
   caps: {
     categorymappings: [
@@ -98,11 +98,11 @@ export const definition: TopLevel = {
       { id: 120, cat: 'Console', desc: 'Jogos: PS3' },
       { id: 82, cat: 'Console/PSP', desc: 'Jogos: PSP' },
       { id: 191, cat: 'Console', desc: 'Jogos: PSVita' },
-      { id: 47, cat: 'Console/XBox', desc: 'Jogos: Xbox' },
-      { id: 48, cat: 'Console/XBox 360', desc: 'Jogos: Xbox 360' },
+      { id: 47, cat: 'Console/Xbox', desc: 'Jogos: Xbox' },
+      { id: 48, cat: 'Console/Xbox360', desc: 'Jogos: Xbox 360' },
       { id: 100, cat: 'Console/Wii', desc: 'Jogos: Wii' },
       { id: 187, cat: 'Console/Wii', desc: 'Jogos: Wii-U' },
-      { id: 49, cat: 'Books/EBook', desc: 'Livros: E-books' },
+      { id: 49, cat: 'Books/Ebook', desc: 'Livros: E-books' },
       { id: 50, cat: 'Audio', desc: 'Músicas: Axé' },
       { id: 51, cat: 'Audio', desc: 'Músicas: Blues' },
       { id: 52, cat: 'Audio', desc: 'Músicas: Classica' },

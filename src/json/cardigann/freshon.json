@@ -2,7 +2,7 @@
   "site": "freshon",
   "name": "FreshOnTV",
   "description": "TV Series anyone?",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://freshon.tv/"],
   "caps": { "categories": { "1": "TV" } },
   "login": {
@@ -42,5 +42,6 @@
       "seeders": { "selector": "td.table_seeders a span" },
       "leechers": { "selector": "td.table_leechers a" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

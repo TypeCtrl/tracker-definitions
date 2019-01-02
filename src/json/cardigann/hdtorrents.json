@@ -1,7 +1,7 @@
 {
   "site": "hdtorrents",
   "name": "HD-Torrents",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://hd-torrents.org/"],
   "caps": {
     "categories": {
@@ -72,5 +72,6 @@
       "seeders": { "selector": "td:nth-child(10) b" },
       "leechers": { "selector": "td:nth-child(11) b" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

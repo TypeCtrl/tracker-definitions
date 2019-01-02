@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'hdme',
   name: 'HDME',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://hdme.eu'],
   caps: {
     categories: {
@@ -84,4 +84,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(9)' },
     },
   },
+  encoding: 'UTF-8',
 };

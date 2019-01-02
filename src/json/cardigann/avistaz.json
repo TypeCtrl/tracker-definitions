@@ -1,7 +1,7 @@
 {
   "site": "avistaz",
   "name": "AvistaZ",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://avistaz.to/"],
   "caps": {
     "categories": {
@@ -49,5 +49,6 @@
       "seeders": { "selector": "td:nth-child(7)" },
       "leechers": { "selector": "td:nth-child(8)" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

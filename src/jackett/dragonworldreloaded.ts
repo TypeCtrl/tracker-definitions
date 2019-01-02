@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Dragonworld Reloaded',
   description:
     'Dragonworld Reloaded is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'de-de',
+  language: 'de-DE',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://dragonworld-reloaded.net/'],

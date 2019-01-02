@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'newretro',
   name: 'The New Retro',
   description: 'A German gerneral tracker',
-  language: 'de-de',
+  language: 'de-DE',
   links: ['http://new-retro.ddns.net/'],
   caps: {
     categories: {
@@ -128,4 +128,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { case: { '*': '1' } },
     },
   },
+  encoding: 'UTF-8',
 };

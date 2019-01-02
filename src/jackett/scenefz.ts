@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'scenefz',
   name: 'SceneFZ / u-torrents',
   description: 'Torrent tracker. Tracking over 50.000 torrent files.',
-  language: 'ro-ro',
+  language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.scenefz.me/', 'https://www.u-torrents.ro/'],

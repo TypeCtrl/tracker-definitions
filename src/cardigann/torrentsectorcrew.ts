@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'torrentsectorcrew',
   name: 'Torrent Sector Crew',
   description: 'A German general tracker',
-  language: 'de-de',
+  language: 'de-DE',
   links: ['https://tsctracker.net/'],
   caps: {
     categories: {
@@ -145,4 +145,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { case: { '*': '1' } },
     },
   },
+  encoding: 'UTF-8',
 };

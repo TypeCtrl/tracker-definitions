@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Acid-Lounge',
   description:
     'Acid Lounge (A-L) is a Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.acid-lounge.org.uk/'],

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'racing4everyone',
   name: 'Racing4Everyone (R4E)',
   description: 'Private Torrent Tracker for RACING',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://racing4everyone.eu/'],

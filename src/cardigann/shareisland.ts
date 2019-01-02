@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'shareisland',
   name: 'Shareisland',
   description: 'A general italian tracker',
-  language: 'it-it',
+  language: 'it-IT',
   encoding: 'UTF-8',
   links: ['http://shareisland.org'],
   caps: {

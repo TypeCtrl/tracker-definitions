@@ -1,12 +1,120 @@
 // tslint:disable:type-literal-delimiter
 
+export type SiteType = 'private' | 'semi-private' | 'public';
+export type SiteLanguage =
+  | 'bg-BG'
+  | 'cs-CZ'
+  | 'da-DK'
+  | 'de-DE'
+  | 'el-GR'
+  | 'en-EN'
+  | 'en-US'
+  | 'es-ES'
+  | 'fr-FR'
+  | 'hr-HR'
+  | 'hu-HU'
+  | 'is-IS'
+  | 'it-IT'
+  | 'lt-LT'
+  | 'lv-LV'
+  | 'nb-NO'
+  | 'pl-PL'
+  | 'pt-BR'
+  | 'pt-PT'
+  | 'ro-RO'
+  | 'ru-RU'
+  | 'tr-TR'
+  | 'vi-VN'
+  | 'zh-CN';
+
+export type SiteEncoding =
+  | 'ISO-8859-1'
+  | 'ISO-8859-15'
+  | 'ISO-8859-2'
+  | 'UTF-8'
+  | 'WINDOWS-1250'
+  | 'WINDOWS-1251'
+  | 'WINDOWS-1252'
+  | 'WINDOWS-1253';
+
+export type Categories =
+  | 'Console'
+  | 'Console/NDS'
+  | 'Console/PSP'
+  | 'Console/Wii'
+  | 'Console/Xbox'
+  | 'Console/Xbox 360'
+  | 'Console/Wiiware/VC'
+  | 'Console/XBOX 360 DLC'
+  | 'Console/PS3'
+  | 'Console/Other'
+  | 'Console/3DS'
+  | 'Console/PS Vita'
+  | 'Console/PSVita'
+  | 'Console/WiiU'
+  | 'Console/Xbox One'
+  | 'Console/PS4'
+  | 'Movies'
+  | 'Movies/Foreign'
+  | 'Movies/Other'
+  | 'Movies/SD'
+  | 'Movies/HD'
+  | 'Movies/UHD'
+  | 'Movies/3D'
+  | 'Movies/BluRay'
+  | 'Movies/DVD'
+  | 'Movies/WEBDL'
+  | 'Audio'
+  | 'Audio/MP3'
+  | 'Audio/Video'
+  | 'Audio/Audiobook'
+  | 'Audio/Lossless'
+  | 'Audio/Other'
+  | 'Audio/Foreign'
+  | 'PC'
+  | 'PC/0day'
+  | 'PC/ISO'
+  | 'PC/Mac'
+  | 'PC/Phone-Other'
+  | 'PC/Games'
+  | 'PC/Phone-IOS'
+  | 'PC/Phone-Android'
+  | 'TV'
+  | 'TV/WEB-DL'
+  | 'TV/FOREIGN'
+  | 'TV/SD'
+  | 'TV/HD'
+  | 'TV/UHD'
+  | 'TV/OTHER'
+  | 'TV/Sport'
+  | 'TV/Anime'
+  | 'TV/Documentary'
+  | 'XXX'
+  | 'XXX/DVD'
+  | 'XXX/WMV'
+  | 'XXX/XviD'
+  | 'XXX/x264'
+  | 'XXX/Other'
+  | 'XXX/Imageset'
+  | 'XXX/Packs'
+  | 'Other'
+  | 'Other/Misc'
+  | 'Other/Hashed'
+  | 'Books'
+  | 'Books/Ebook'
+  | 'Books/Comics'
+  | 'Books/Magazines'
+  | 'Books/Technical'
+  | 'Books/Other'
+  | 'Books/Foreign';
+
 export interface TopLevel {
   site: string;
   name: string;
   description?: string;
-  language: string;
-  type?: string;
-  encoding?: string;
+  language: SiteLanguage;
+  type?: SiteType;
+  encoding?: SiteEncoding;
   links: string[];
   certificates?: string[];
   caps: Caps;
@@ -28,7 +136,7 @@ export interface Caps {
 
 export interface Categorymapping {
   id: number | string | boolean;
-  cat: string;
+  cat: Categories;
   desc?: string;
   default?: boolean;
 }
@@ -69,7 +177,7 @@ export interface Login {
     getUnique?: {
       selector: string;
       attribute: string;
-    }
+    };
     securitytoken?: {
       selector: string;
       filters: FilterElement[];

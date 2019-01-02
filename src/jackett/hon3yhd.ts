@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Hon3y HD',
   description:
     'Hon3yHD is an INDIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://hon3yhd.com/'],

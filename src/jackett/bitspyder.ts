@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'bitspyder',
   name: 'Bitspyder',
   description: 'Bitspyder is a Private site for Educational BOOKS / AUDIO',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['http://bitspyder.net/'],
   caps: {
     categorymappings: [

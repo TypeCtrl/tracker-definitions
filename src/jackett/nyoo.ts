@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Nyoo',
   description:
     'Nyoo is a mirror for Nyaa-Pantsu, a Public site for Asian ANIME',
-  language: 'en-en',
+  language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://nyoo.moe'],

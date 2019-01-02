@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'transmithenet',
   name: 'Transmithe.net',
   description: 'A TV tracker',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://transmithe.net'],
   caps: { categories: { '1': 'TV', '2': 'TV/HD', '3': 'TV/SD' } },
   login: {
@@ -71,4 +71,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { case: { '*': '1' } },
     },
   },
+  encoding: 'UTF-8',
 };

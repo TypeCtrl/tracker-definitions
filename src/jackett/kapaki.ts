@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Kapaki',
   description:
     'Kapaki is a GREEK Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'el-gr',
+  language: 'el-GR',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://kapaki.info/'],

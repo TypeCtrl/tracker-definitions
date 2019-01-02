@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Il Corsaro Blu',
   description:
     'Il Corsaro Blu is an ITALIAN Public site for TV / MOVIES / GENERAL',
-  language: 'it-it',
+  language: 'it-IT',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.ilcorsaroblu.org/'],
@@ -23,7 +23,7 @@ export const definition: TopLevel = {
       { id: 14, cat: 'Movies/HD', desc: 'Movie 720p' },
       { id: 13, cat: 'Movies/HD', desc: 'Movie 1080p' },
       { id: 15, cat: 'Movies/3D', desc: 'Movie 3D' },
-      { id: 24, cat: 'TV/OTHER', desc: 'TV Show Standard' },
+      { id: 24, cat: 'TV/Other', desc: 'TV Show Standard' },
       { id: 19, cat: 'TV/HD', desc: 'Tv Show 1080p' },
       { id: 20, cat: 'TV/HD', desc: 'Tv Show 720' },
       { id: 4, cat: 'Other', desc: 'Other' },

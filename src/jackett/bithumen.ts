@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'bithumen',
   name: 'BitHUmen',
   description: 'BitHUmen is a Hungarian Private site for TV / MOVIES / GENERAL',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'private',
   encoding: 'ISO-8859-2',
   links: ['https://bithumen.be/'],

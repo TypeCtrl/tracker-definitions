@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'CzTorrent',
   description:
     'CzTorrent is a Czech Semi-Private site for TV / MOVIES / GENERAL',
-  language: 'cs-cz',
+  language: 'cs-CZ',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://tracker.cztorrent.net/'],

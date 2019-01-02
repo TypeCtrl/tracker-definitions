@@ -1,7 +1,7 @@
 {
   "site": "sceneaccess",
   "name": "sceneaccess",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://sceneaccess.eu/"],
   "caps": {
     "categories": {
@@ -75,5 +75,6 @@
       "seeders": { "selector": "td.ttr_seeders" },
       "leechers": { "selector": "td.ttr_leechers" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

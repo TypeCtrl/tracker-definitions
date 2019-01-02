@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'thegeeks',
   name: 'The Geeks',
   description: 'Technology E-Learning',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://thegeeks.click/'],

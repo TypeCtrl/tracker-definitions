@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'fullmixmusic',
   name: 'FullMixMusic',
   description: 'FullMixMusic is a HUNGARIAN Private Torrent Tracker for MUSIC',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://fullmixmusic.org/'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'FANO.IN',
   description:
     'Fano.in is a LATVIAN Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'lv-lv',
+  language: 'lv-LV',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.fano.in'],

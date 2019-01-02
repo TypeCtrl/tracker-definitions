@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'myspleen',
   name: 'MySpleen',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://www.myspleen.org'],
   caps: {

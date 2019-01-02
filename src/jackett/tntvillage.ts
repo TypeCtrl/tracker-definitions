@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'tntvillage',
   name: 'TNTVillage',
   description: 'TNTVillage is an ITALIAN Public site for TV / MOVIES / GENERAL',
-  language: 'it-it',
+  language: 'it-IT',
   type: 'public',
   encoding: 'UTF-8',
   links: ['http://www.tntvillage.scambioetico.org/'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'KickAssTorrent',
   description:
     'Kickass Torrents (KATcr) is a well-know Public torrent site indexing thousands of torrents verified and commented by a large file-sharing community',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://katcr.co/'],

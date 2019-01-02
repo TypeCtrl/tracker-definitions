@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'worldofp2p',
   name: 'WorldOfP2P',
   description: 'A general tracker',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://worldofp2p.net'],
   caps: {

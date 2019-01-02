@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'sceneaccess',
   name: 'sceneaccess',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://sceneaccess.eu/'],
   caps: {
     categories: {
@@ -77,4 +77,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td.ttr_leechers' },
     },
   },
+  encoding: 'UTF-8',
 };

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'femdomcult',
   name: 'Femdomcult',
   description: 'A porn tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://femdomcult.org/'],

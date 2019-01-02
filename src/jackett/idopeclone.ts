@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'idopeclone',
   name: 'IdopeClone',
   description: 'This Clone of iDope is a Public torrent search engine',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.idope.site/'],

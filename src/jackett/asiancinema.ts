@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'asiancinema',
   name: 'AsianCinema',
   description: 'Tracker Movies/TV/Music',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://asiancinema.me/'],

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'RGU',
   name: 'RGU',
   description: 'RGU is a Private site for MOVIES / TV / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://v2.rgut.uk/'],

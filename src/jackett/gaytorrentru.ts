@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'GAYtorrent.ru',
   description:
     'World largest gay porn library for free with a stunning forum and 24/7 chat.',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.gaytorrent.ru/'],

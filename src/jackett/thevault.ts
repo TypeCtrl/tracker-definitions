@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'thevault',
   name: 'The Vault',
   description: 'Business/Marketing E-Learning',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://thevault.click/'],

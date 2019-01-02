@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'btbit',
   description:
     'btbit is a public magnet search engine for MOVIES / GENERAL. This definition is for the English site.',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['http://en.btbit.org/'],

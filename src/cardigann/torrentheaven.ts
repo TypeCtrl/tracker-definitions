@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'torrentheaven',
   name: 'TorrentHeaven',
   description: 'A German general tracker',
-  language: 'de-de',
+  language: 'de-DE',
   links: ['https://torrentheaven.myfqdn.info/'],
   caps: {
     categories: {
@@ -126,4 +126,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { text: '1' },
     },
   },
+  encoding: 'UTF-8',
 };

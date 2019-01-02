@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'freshon',
   name: 'FreshOnTV',
   description: 'TV Series anyone?',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://freshon.tv/'],
   caps: { categories: { '1': 'TV' } },
   login: {
@@ -44,4 +44,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td.table_leechers a' },
     },
   },
+  encoding: 'UTF-8',
 };

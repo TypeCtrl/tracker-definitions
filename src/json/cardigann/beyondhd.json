@@ -1,7 +1,7 @@
 {
   "site": "beyondhd",
   "name": "BeyondHD",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://beyondhd.xyz/", "https://beyondhd.me/"],
   "settings": [{ "name": "cookie", "type": "text", "label": "Cookie" }],
   "caps": {
@@ -63,5 +63,6 @@
       "seeders": { "selector": "td:nth-child(10)" },
       "leechers": { "selector": "td:nth-child(11)" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

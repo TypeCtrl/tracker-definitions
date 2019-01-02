@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'gktorrent',
   name: 'GkTorrent',
   description: 'GkTorrent is a French Public site for TV / MOVIES / GENERAL',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,

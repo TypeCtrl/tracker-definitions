@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'losslessclub',
   name: 'LosslessClub',
   description: 'LosslessClub is a Romanian Private site for High Quality Music',
-  language: 'ru-ru',
+  language: 'ru-RU',
   type: 'private',
-  encoding: 'windows-1251',
+  encoding: 'WINDOWS-1251',
   links: ['https://losslessclub.com/'],
   caps: {
     categories: { '1': 'Audio/Lossless' },

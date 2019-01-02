@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'GigaTorrents',
   description:
     'Giga Torrents is a Hungarian Private site for TV / MOVIES / GENERAL',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://gigatorrents.ws/'],

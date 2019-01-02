@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'theoccult',
   name: 'The Occult',
   description: 'Cult E-Learning',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://theoccult.click/'],

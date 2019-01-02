@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'scenereactor',
   name: 'SceneReactor',
   description: 'A general tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['http://www.scenereactor.net/'],
   caps: {
     categorymappings: [

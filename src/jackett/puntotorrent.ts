@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'puntorrent',
   name: 'PuntoTorrent',
   description: 'PuntoTorrent is a SPANISH site for General content',
-  language: 'es-es',
+  language: 'es-ES',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://xbt.puntotorrent.ch/'],

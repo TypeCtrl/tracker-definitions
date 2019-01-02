@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'gods',
   name: 'GODS',
   description: 'GODS is a German Private site for TV / MOVIES / GENERAL',
-  language: 'de-de',
+  language: 'de-DE',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['https://gods.lu/'],
   caps: {
     categorymappings: [
@@ -26,7 +26,7 @@ export const definition: TopLevel = {
       { id: 152, cat: 'TV/Documentary', desc: 'HD' },
       { id: 153, cat: 'TV/Documentary', desc: 'SD' },
       { id: 4, cat: 'PC/Games', desc: 'Windows' },
-      { id: 29, cat: 'Console/XBox360', desc: 'XBOX 360' },
+      { id: 29, cat: 'Console/Xbox360', desc: 'XBOX 360' },
       { id: 126, cat: 'Console/Wii', desc: 'Wii' },
       { id: 183, cat: 'Console/Wii', desc: 'Wii U' },
       { id: 128, cat: 'Console/PS3', desc: 'PS3' },

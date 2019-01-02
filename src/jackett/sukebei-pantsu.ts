@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Sukebei-pantsu',
   description:
     'Sukebei-pantsu is a Public site dedicated to Adult Asian content',
-  language: 'en-en',
+  language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://sukebei.pantsu.cat/'],

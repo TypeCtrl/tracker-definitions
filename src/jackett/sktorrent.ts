@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'SkTorrent',
   description:
     'SkTorrent is a CZECH/SLOVAK Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'cs-cz',
+  language: 'cs-CZ',
   type: 'semi-private',
-  encoding: 'windows-1250',
+  encoding: 'WINDOWS-1250',
   links: ['http://sktorrent.eu/'],
   legacylinks: ['http://sktorrent.eu/torrent/'],
   caps: {

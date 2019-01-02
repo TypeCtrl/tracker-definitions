@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'classix',
   name: 'Classix',
   description: 'Classic movie tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://classix-unlimited.co.uk/'],

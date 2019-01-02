@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Zooqle',
   description:
     'Zooqle is a Public torrent index providing a huge database of verified torrents',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://zooqle.com'],

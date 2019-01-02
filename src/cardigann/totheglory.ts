@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'totheglory',
   name: 'ToTheGlory',
   description: 'A chinese tracker',
-  language: 'zh-cn',
+  language: 'zh-CN',
   encoding: 'UTF-8',
   links: ['https://totheglory.im/'],
   caps: {

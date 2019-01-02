@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'beyondhd',
   name: 'BeyondHD',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://beyondhd.xyz/', 'https://beyondhd.me/'],
   settings: [{ name: 'cookie', type: 'text', label: 'Cookie' }],
   caps: {
@@ -65,4 +65,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(11)' },
     },
   },
+  encoding: 'UTF-8',
 };

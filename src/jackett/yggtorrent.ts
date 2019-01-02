@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'YGGtorrent',
   description:
     'YGGTorrent is a FRENCH Semi-Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,

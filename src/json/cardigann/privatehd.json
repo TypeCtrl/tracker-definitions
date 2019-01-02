@@ -1,7 +1,7 @@
 {
   "site": "privatehd",
   "name": "PrivateHD",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://privatehd.to"],
   "caps": {
     "categories": {
@@ -49,5 +49,6 @@
       "seeders": { "selector": "td:nth-child(7)" },
       "leechers": { "selector": "td:nth-child(8)" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

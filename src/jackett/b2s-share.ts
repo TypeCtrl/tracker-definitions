@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'B2S-Share',
   description:
     'B2S-Share is a Brazilian Private site for TV / MOVIES / GENERAL',
-  language: 'pt-br',
+  language: 'pt-BR',
   type: 'private',
-  encoding: 'iso-8859-1',
+  encoding: 'ISO-8859-1',
   links: ['http://www.b2s-share.com/'],
   caps: {
     categorymappings: [
@@ -145,7 +145,7 @@ export const definition: TopLevel = {
       { id: 46, cat: 'Console', desc: 'Jogos PSP' },
       { id: 45, cat: 'Console/Wii', desc: 'Jogos Wii' },
       { id: 49, cat: 'Console/Xbox', desc: 'Jogos XBOX' },
-      { id: 50, cat: 'Console/Xbox 360', desc: 'Jogos XBOX360' },
+      { id: 50, cat: 'Console/Xbox360', desc: 'Jogos XBOX360' },
       { id: 171, cat: 'Console', desc: 'Jogos XBOXONE' },
       { id: 29, cat: 'Audio', desc: 'Musica Discografia' },
       { id: 28, cat: 'Audio', desc: 'Musica Gospel' },

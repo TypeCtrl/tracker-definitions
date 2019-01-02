@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'awesomehd',
   name: 'Awesome-HD',
   description: 'An HD tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://awesome-hd.me'],

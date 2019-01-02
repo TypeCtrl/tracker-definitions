@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'chdbits',
   name: 'CHDBits',
   description: 'A general tracker',
-  language: 'zh-cn',
+  language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://chdbits.co'],

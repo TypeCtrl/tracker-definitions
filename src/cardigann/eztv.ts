@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'eztv',
   name: 'EZTV',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://eztv.ag/'],
   caps: { categories: { '1': 'TV' } },

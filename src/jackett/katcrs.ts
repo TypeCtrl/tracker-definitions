@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'KATcrs',
   description:
     'KATcrs is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,

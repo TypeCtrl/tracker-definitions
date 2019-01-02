@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'torrentleech',
   name: 'TorrentLeech',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://www.torrentleech.org/'],
   caps: {
     categories: {
@@ -86,4 +86,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(8)' },
     },
   },
+  encoding: 'UTF-8',
 };

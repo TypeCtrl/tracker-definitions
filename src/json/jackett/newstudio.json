@@ -2,7 +2,7 @@
   "site": "newstudio",
   "name": "Newstudio",
   "description": "Newstudio is a RUSSIAN Semi-Private site for TV",
-  "language": "ru-ru",
+  "language": "ru-RU",
   "type": "semi-private",
   "encoding": "UTF-8",
   "links": ["http://newstudio.tv"],

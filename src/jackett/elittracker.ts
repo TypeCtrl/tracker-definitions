@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'Elit Tracker',
   description:
     'Elit Tracker (ET) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'private',
-  encoding: 'iso-8859-2',
+  encoding: 'ISO-8859-2',
   links: ['http://elittorent.us/'],
   caps: {
     categorymappings: [

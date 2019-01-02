@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: '420files',
   name: '420files',
   description: 'Tracker Movies/TV/Music',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://420.org/'],

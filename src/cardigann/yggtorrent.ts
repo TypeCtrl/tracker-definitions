@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'yggtorrent',
   name: 'YGGtorrent',
-  language: 'fr-fr',
+  language: 'fr-FR',
   encoding: 'UTF-8',
   links: ['https://yggtorrent.is'],
   caps: {

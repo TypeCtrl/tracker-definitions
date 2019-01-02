@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'GFXPeers',
   description:
     'GFXPeers is a ratio-based torrent tracker for all things graphic design and visual effects',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://gfxpeers.net/'],

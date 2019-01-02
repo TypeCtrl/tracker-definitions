@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hdspace',
   name: 'HD-Space',
   description: 'a HD tracker',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://hd-space.org/'],
   caps: {
     categories: {
@@ -80,4 +80,5 @@ export const definition: TopLevel = {
       date: { selector: 'td:nth-child(5)' },
     },
   },
+  encoding: 'UTF-8',
 };

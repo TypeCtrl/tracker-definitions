@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'trezzor',
   name: 'Trezzor',
   description: 'Trezzor is a CZECH Private site for TV / MOVIES / GENERAL',
-  language: 'cs-cz',
+  language: 'cs-CZ',
   type: 'private',
-  encoding: 'windows-1250',
+  encoding: 'WINDOWS-1250',
   links: ['https://tracker.czech-server.com/'],
   caps: {
     categorymappings: [

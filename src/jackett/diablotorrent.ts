@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Diablo Torrent',
   description:
     ' Diablo Torrent is a Hungarian Private site for TV / MOVIES / GENERAL',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://diablotorrent.net/'],
@@ -45,7 +45,7 @@ export const definition: TopLevel = {
       { id: 16, cat: 'PC/ISO', desc: 'Programok / PC' },
       { id: 24, cat: 'PC/Phone-Other', desc: 'Programok / Mobil' },
       { id: 53, cat: 'PC/0day', desc: 'Programok / Egyéb' },
-      { id: 17, cat: 'XXX/Xvid', desc: 'Pornó / XviD' },
+      { id: 17, cat: 'XXX/XviD', desc: 'Pornó / XviD' },
       { id: 34, cat: 'XXX/DVD', desc: 'Pornó / DVD-R' },
       { id: 35, cat: 'XXX', desc: 'Pornó / HD' },
       { id: 36, cat: 'XXX', desc: 'Pornó / Képek' },

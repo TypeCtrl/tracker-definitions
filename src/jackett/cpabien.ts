@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'cpasbien',
   name: 'cpasbien',
   description: 'cpasbien is a FRENCH Public site for TV / MOVIES / GENERAL',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'The Pirate Bay',
   description:
     'Pirate Bay (TPB) is the galaxy’s most resilient Public BitTorrent site',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://thepiratebay.org/'],

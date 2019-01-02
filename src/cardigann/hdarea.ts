@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'hdarea',
   name: 'HDArea',
-  language: 'en-us',
+  language: 'en-US',
   links: ['http://www.hdarea.co/'],
   caps: {
     categories: {
@@ -62,4 +62,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(7)' },
     },
   },
+  encoding: 'UTF-8',
 };

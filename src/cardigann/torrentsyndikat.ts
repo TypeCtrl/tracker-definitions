@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'torrentsyndikat',
   name: 'Torrent-Syndikat',
   description: 'A German general tracker',
-  language: 'de-de',
+  language: 'de-DE',
   encoding: 'UTF-8',
   links: ['https://torrent-syndikat.org/'],
   caps: {

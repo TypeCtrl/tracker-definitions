@@ -1,7 +1,7 @@
 {
   "site": "torrentday",
   "name": "TorrentDay",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://www.torrentday.com/", "http://td-update.com/"],
   "settings": [{ "name": "cookie", "type": "text", "label": "Cookie" }],
   "caps": {
@@ -84,5 +84,6 @@
       "seeders": { "selector": "td.seedersInfo" },
       "leechers": { "selector": "td.leechersInfo" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

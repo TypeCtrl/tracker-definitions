@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'mteamtp',
   name: 'M-Team - TP',
   description: 'A chinese tracker',
-  language: 'zh-cn',
+  language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://tp.m-team.cc'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Ourbits',
   description:
     'Ourbits (HDPter) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
-  language: 'zh-cn',
+  language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://ourbits.club/'],

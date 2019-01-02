@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'TorrentCCF',
   description:
     'TorrentCCF (TCCF) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
-  language: 'zh-cn',
+  language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://et8.org/'],

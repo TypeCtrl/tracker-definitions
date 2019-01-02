@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'ethor',
   name: "Ethor.net (Thor's Land)",
   description: 'A French gerneral tracker',
-  language: 'fr-fr',
+  language: 'fr-FR',
   links: ['https://ethor.net/'],
   caps: {
     categories: {
@@ -95,4 +95,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { case: { '*': '1' } },
     },
   },
+  encoding: 'UTF-8',
 };

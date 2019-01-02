@@ -2,7 +2,7 @@
   "site": "torrentsectorcrew",
   "name": "Torrent Sector Crew",
   "description": "A German general tracker",
-  "language": "de-de",
+  "language": "de-DE",
   "links": ["https://tsctracker.net/"],
   "caps": {
     "categories": {
@@ -142,5 +142,6 @@
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

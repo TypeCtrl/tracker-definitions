@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'megabliz',
   name: 'Mega-Bliz',
   description: 'Mega-Bliz is a Semi-Private site for MOVIES / TV / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://mega-bliz.nl/'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'ICE Torrent',
   description:
     'ICE Torrent is a ratioless ROMANIAN Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'ro-ro',
+  language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.icetorrent.org'],

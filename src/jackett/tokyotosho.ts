@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'tokyotosho',
   name: 'Tokyo Toshokan',
   description: 'A BitTorrent Library for Japanese Media',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.tokyotosho.info/'],

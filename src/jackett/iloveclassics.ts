@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'iloveclassics',
   name: 'I Love Classics',
   description: 'Classics movie tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://www.iloveclassics.com/'],

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'pretome',
   name: 'PreToMe',
   description: 'a general tracker',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://pretome.info/'],
   caps: {
     categories: {
@@ -76,4 +76,5 @@ export const definition: TopLevel = {
       },
     },
   },
+  encoding: 'UTF-8',
 };

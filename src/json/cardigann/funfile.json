@@ -2,7 +2,7 @@
   "site": "funfile",
   "name": "FunFile",
   "description": "A general tracker",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://www.funfile.org/"],
   "caps": {
     "categories": {
@@ -71,5 +71,6 @@
         "filters": [{ "name": "append", "args": " ago" }]
       }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

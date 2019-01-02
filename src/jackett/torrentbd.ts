@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'torrentbd',
   name: 'TorrentBD',
   description: 'A general tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://www.torrentbd.com/'],

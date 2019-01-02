@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'redtopia',
   name: 'Redtopia',
   description: 'Tracker Music/Podcasts/Audiobooks',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://redtopia.xyz/'],

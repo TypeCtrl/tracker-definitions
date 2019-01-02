@@ -1,7 +1,7 @@
 {
   "site": "morethantv",
   "name": "MoreThan.TV",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://www.morethan.tv/"],
   "caps": { "categories": { "1": "Movies", "2": "TV", "3": "Other" } },
   "login": {
@@ -47,5 +47,6 @@
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "text": "1" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

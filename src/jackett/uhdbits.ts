@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'uhdbits',
   name: 'UHDBits',
   description: 'A vietnamese general tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://uhdbits.org/'],

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'eotforum',
   name: 'EoT-Forum',
   description: 'A German gerneral tracker',
-  language: 'de-de',
+  language: 'de-DE',
   links: ['http://eot-forum.net'],
   caps: {
     categories: {
@@ -144,4 +144,5 @@ export const definition: TopLevel = {
       },
     },
   },
+  encoding: 'UTF-8',
 };

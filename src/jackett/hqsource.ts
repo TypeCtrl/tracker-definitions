@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'HQSource',
   description:
     'HQSource (HQS) is a POLISH Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'pl-pl',
+  language: 'pl-PL',
   type: 'private',
   encoding: 'ISO-8859-2',
   links: ['http://hqsource.org/'],

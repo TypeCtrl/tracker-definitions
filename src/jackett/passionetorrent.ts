@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Passione Torrent',
   description:
     'PassioneTorrent is an ITALIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'it-it',
+  language: 'it-IT',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://www.passionetorrent.info/'],

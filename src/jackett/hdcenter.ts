@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hdcenter',
   name: 'HDCenter',
   description: 'An German HD tracker',
-  language: 'de-de',
+  language: 'de-DE',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://hdcenter.cc/'],

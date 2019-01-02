@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'BTNext',
   description:
     'BTNext (BTNT) is a PORTUGUESE Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'pt-pt',
+  language: 'pt-PT',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://tracker.btnext.com/'],
@@ -17,7 +17,7 @@ export const definition: TopLevel = {
       { id: 93, cat: 'Audio', desc: 'Musica' },
       { id: 1, cat: 'Movies', desc: 'Movies' },
       { id: 70, cat: 'Movies/3D', desc: '3D' },
-      { id: 71, cat: 'Movies/Sd', desc: '480p' },
+      { id: 71, cat: 'Movies/SD', desc: '480p' },
       { id: 72, cat: 'Movies/BluRay', desc: 'BD-R' },
       { id: 31, cat: 'Movies/HD', desc: 'BDRIP/BRRip' },
       { id: 16, cat: 'Movies/SD', desc: 'CAM' },

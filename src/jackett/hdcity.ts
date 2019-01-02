@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hdcity',
   name: 'HDCity',
   description: 'HDCity is a SPANISH site for HD content',
-  language: 'es-es',
+  language: 'es-ES',
   type: 'private',
   encoding: 'ISO-8859-1',
   links: ['https://hdcity.li/'],

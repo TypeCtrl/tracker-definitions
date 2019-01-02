@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'LinkoManija',
   description:
     'LinkoManija is an LITHUANIAN Private site for TV / MOVIES / GENERAL',
-  language: 'lt-lt',
+  language: 'lt-LT',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.linkomanija.net'],

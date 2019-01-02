@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'blubits',
   name: 'Blu-bits',
   description: 'A HD tracker',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://blu-bits.com/'],
   caps: {
     categories: {
@@ -142,4 +142,5 @@ export const definition: TopLevel = {
       },
     },
   },
+  encoding: 'UTF-8',
 };

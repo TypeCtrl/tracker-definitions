@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'demonoid',
   name: 'Demonoid',
   description: 'Demonoid',
-  language: 'en-us',
+  language: 'en-US',
   links: ['http://www.dnoid.me/'],
   caps: {
     categories: {
@@ -83,4 +83,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(10) > font' },
     },
   },
+  encoding: 'UTF-8',
 };

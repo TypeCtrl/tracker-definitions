@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'gay-torrents',
   name: 'Gay-Torrents.net',
   description: 'Gay Torrents Live Free!',
-  language: 'en-us',
+  language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://www.gay-torrents.net/'],

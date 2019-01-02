@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Bithorlo',
   description:
     'Bithorlo (BHO) is a HUNGARIAN Private Torrent Tracker for MOVIES / GENERAL',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'private',
   encoding: 'ISO-8859-2',
   links: ['https://www.bithorlo.info/'],

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'dxdhd',
   name: 'DXDHD',
   description: 'General Tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://dxdhd.com/'],

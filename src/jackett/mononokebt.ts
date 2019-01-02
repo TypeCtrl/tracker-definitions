@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'mononokebt',
   name: 'Mononoké-BT',
   description: 'Mononoke-BT is a FRENCH Private Torrent Tracker for ANIME',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'private',
-  encoding: 'iso-8859-15',
+  encoding: 'ISO-8859-15',
   links: ['http://mononoke-bt.org/'],
   caps: {
     categories: { '1': 'TV/Anime' },

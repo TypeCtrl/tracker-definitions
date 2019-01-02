@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'waffles',
   name: 'Waffles',
   description: 'Music, ebook and software tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://waffles.ch/'],

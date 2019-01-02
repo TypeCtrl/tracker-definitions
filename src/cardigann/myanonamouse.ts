@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'myanonamouse',
   name: 'MyAnonamouse',
   description: 'Friendliness, Warmth and Sharing',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://www.myanonamouse.net/'],
   caps: {
     categories: {
@@ -146,4 +146,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { text: '1' },
     },
   },
+  encoding: 'UTF-8',
 };

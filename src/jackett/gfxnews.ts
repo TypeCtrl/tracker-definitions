@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Gfxnews',
   description:
     'GFXNews is a Private Torrent Tracker for GRAPHICS SOFTWARE / TUTORIALS / ETC',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://forum.gfxnews.org/'],

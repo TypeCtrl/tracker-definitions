@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'MySpleen',
   description:
     'MySpleen is a Private Torrent Tracker for TV / COMEDY / ANIMATION / 80-90’S VHS NOSTALGIA',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.myspleen.org'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Ztracker',
   description:
     'Ztracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'semi-private',
   encoding: 'ISO-8859-2',
   links: ['http://ztracker.org'],

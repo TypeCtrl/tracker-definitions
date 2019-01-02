@@ -2,7 +2,7 @@
   "site": "iptorrents",
   "name": "IPTorrents",
   "description": "#1 Private Tracker",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://iptorrents.com/"],
   "settings": [{ "name": "cookie", "type": "text", "label": "Cookie" }],
   "caps": {
@@ -93,5 +93,6 @@
       },
       "uploadvolumefactor": { "text": "1" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

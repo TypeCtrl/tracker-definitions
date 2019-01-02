@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'ETTV',
   description:
     'ETTV is a Public torrent site for TV / MOVIES, home of the  ETTV, ETHD and DTOne groups.',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.ettv.tv'],
@@ -49,7 +49,7 @@ export const definition: TopLevel = {
       { id: 63, cat: 'PC/Phone-Android', desc: 'Software - Android' },
       { id: 64, cat: 'PC/Mac', desc: 'Software - Mac' },
       { id: 70, cat: 'PC', desc: 'Software - Others' },
-      { id: 62, cat: 'PC/0Day', desc: 'Software - Windows' },
+      { id: 62, cat: 'PC/0day', desc: 'Software - Windows' },
     ],
     modes: {
       search: ['q'],

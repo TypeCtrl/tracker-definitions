@@ -1,7 +1,7 @@
 {
   "site": "ncore",
   "name": "NCore",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://ncore.cc"],
   "caps": {
     "categories": {
@@ -73,5 +73,6 @@
       "seeders": { "selector": ".box_s2 a" },
       "leechers": { "selector": ".box_l2 a" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

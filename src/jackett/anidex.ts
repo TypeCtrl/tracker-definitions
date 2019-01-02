@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Anidex',
   description:
     'Anidex is a Public torrent tracker and indexer, primarily for English fansub groups of anime',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   type: 'public',
   links: ['https://anidex.info/'],

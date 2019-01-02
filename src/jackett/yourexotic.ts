@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'yourexotic',
   name: 'ExoticaZ',
   description: 'a porn tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://exoticaz.to/'],

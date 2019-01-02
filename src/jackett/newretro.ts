@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'newretro',
   name: 'The New Retro',
   description: 'A German gerneral tracker',
-  language: 'de-de',
+  language: 'de-DE',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['https://new-retro.eu/'],
   caps: {
     categorymappings: [

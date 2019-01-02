@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'KickAssTorrent (kat.li)',
   description:
     'kat.li is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://kat.li/'],

@@ -3,8 +3,8 @@ export const definition: TopLevel = {
   site: 'scenetime',
   name: 'SceneTime',
   description: 'A general tracker',
-  language: 'en-us',
-  encoding: 'windows-1252',
+  language: 'en-US',
+  encoding: 'WINDOWS-1252',
   links: ['https://www.scenetime.com/'],
   caps: {
     categories: {

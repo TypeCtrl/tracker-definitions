@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'DataScene',
   description:
     'DataScene (DS) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'ro-ro',
+  language: 'ro-RO',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['http://datascene.net/'],
   caps: {
     categorymappings: [

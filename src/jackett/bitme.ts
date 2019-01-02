@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'bitme',
   name: 'BitMe',
   description: 'BitMe.ORG is an E-Learning torrent tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['http://www.bitme.org/'],
   caps: {
     categorymappings: [

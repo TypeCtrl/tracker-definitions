@@ -2,7 +2,7 @@
   "site": "blubits",
   "name": "Blu-bits",
   "description": "A HD tracker",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://blu-bits.com/"],
   "caps": {
     "categories": {
@@ -140,5 +140,6 @@
         }
       }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

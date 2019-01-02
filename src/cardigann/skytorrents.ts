@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'skytorrents',
   name: 'Sky torrents',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://www.skytorrents.in/'],
   caps: { categories: { TV: 'TV', Movies: 'Movies' } },

@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'TorrentHR',
   description:
     'TorrentHR is a ratioless CROATIAN Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'hr-hr',
+  language: 'hr-HR',
   type: 'private',
-  encoding: 'windows-1250',
+  encoding: 'WINDOWS-1250',
   links: ['https://www.torrenthr.org/'],
   caps: {
     categorymappings: [

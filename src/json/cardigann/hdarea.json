@@ -1,7 +1,7 @@
 {
   "site": "hdarea",
   "name": "HDArea",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["http://www.hdarea.co/"],
   "caps": {
     "categories": {
@@ -62,5 +62,6 @@
       "seeders": { "selector": "td:nth-child(6)" },
       "leechers": { "selector": "td:nth-child(7)" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

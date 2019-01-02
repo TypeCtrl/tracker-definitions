@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Torrent Downloads',
   description:
     'Torrent Downloads (TD) is a Public torrent site for all kinds of content',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.torrentdownloads.me/'],

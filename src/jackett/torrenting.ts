@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'torrenting',
   name: 'Torrenting',
   description: 'Torrenting (TT) is a Private site for MOVIES / TV / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['https://torrenting.com'],
   caps: {
     categorymappings: [

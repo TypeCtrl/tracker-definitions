@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'AsianDVDClub',
   description:
     'AsianDVDClub is an ASIAN Private Torrent Tracker for HD MOVIES / TV',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://asiandvdclub.org/'],

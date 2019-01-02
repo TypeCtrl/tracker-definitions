@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'tenyardtracker',
   name: 'TenYardTracker',
   description: 'An American football tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://tenyardtracker.com/'],

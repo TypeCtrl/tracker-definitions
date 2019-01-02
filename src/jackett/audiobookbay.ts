@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'AudioBookBay',
   description:
     'AudioBook Bay (ABB) is a semi-private Torrent Tracker for AUDIOBOOKS',
-  language: 'en-us',
+  language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://audiobookbay.nl/', 'https://audiobookbay.la/'],

@@ -1,7 +1,7 @@
 {
   "site": "danishbits",
   "name": "DanishBits",
-  "language": "da-dk",
+  "language": "da-DK",
   "links": ["https://danishbits.org"],
   "caps": {
     "categories": {
@@ -82,5 +82,6 @@
       "seeders": { "selector": "td:nth-child(7)" },
       "leechers": { "selector": "td:nth-child(8)" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

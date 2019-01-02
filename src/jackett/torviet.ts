@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'TorViet',
   description:
     'Tor Viet (HDVNBits) is a VIETNAMESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
-  language: 'vi-vn',
+  language: 'vi-VN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://torviet.com'],

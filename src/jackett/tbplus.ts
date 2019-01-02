@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'tbplus',
   name: 'TBPlus',
   description: 'TBPlus is a Spanish site of general content',
-  language: 'es-es',
+  language: 'es-ES',
   type: 'private',
   encoding: 'ISO-8859-1',
   links: ['https://tbplus.li/'],

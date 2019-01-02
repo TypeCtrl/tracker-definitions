@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'nyaa-pantsu',
   name: 'Nyaa-pantsu',
   description: 'Nyaa-pantsu is a Public site for dedicated to Asian ANIME',
-  language: 'en-en',
+  language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://nyaa.pantsu.cat/'],

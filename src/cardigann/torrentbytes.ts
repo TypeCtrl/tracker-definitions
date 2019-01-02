@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'torrentbytes',
   name: 'TorrentBytes',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://torrentbytes.net/'],
   caps: {
     categories: {
@@ -76,4 +76,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(10)' },
     },
   },
+  encoding: 'UTF-8',
 };

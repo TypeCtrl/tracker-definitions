@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Torlock',
   description:
     'Torlock is a torrent search site that lists verified torrents only for TV series and movies',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.torlock2.com/'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Nyaa.si',
   description:
     'Nyaa is a Public torrent site focused on Eastern Asian media including anime, manga, literature and music',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://nyaa.si'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Girotorrent',
   description:
     'Girotorrent is an ITALIAN Private site for TV / MOVIES / GENERAL',
-  language: 'it-it',
+  language: 'it-IT',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://girotorrent.org/'],

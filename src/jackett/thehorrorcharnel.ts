@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'thehorrorcharnel',
   name: 'The Horror Charnel',
   description: 'A Horror, Cult, Sleaze, Sci-Fi & more tracker',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://horrorcharnel.org'],

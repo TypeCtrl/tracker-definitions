@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Union Fansub',
   description:
     'Union Fansub is a SPANISH Semi private torrent site focused on ANIME',
-  language: 'es-es',
+  language: 'es-ES',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://torrent.unionfansub.com/'],
@@ -26,7 +26,7 @@ export const definition: TopLevel = {
       { id: 7, cat: 'TV/Anime', desc: 'Manga' },
       { id: 8, cat: 'TV/Anime', desc: 'Manga/Hentai' },
       { id: 17, cat: 'Books', desc: 'Novelas' },
-      { id: 12, cat: 'TV/OTHER', desc: 'Otros' },
+      { id: 12, cat: 'TV/Other', desc: 'Otros' },
       { id: 11, cat: 'TV', desc: 'Programas' },
     ],
     modes: { search: ['q'] },

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'btxpress',
   name: 'BTXpress',
   description: 'HD Tracker Movies/TV',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://btxpress.org/'],

@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'bitmetv',
   name: 'BitMeTV',
-  language: 'en-us',
+  language: 'en-US',
   links: ['http://www.bitmetv.org/'],
   settings: [{ name: 'cookie', type: 'text', label: 'Cookie' }],
   caps: { categories: { '1': 'TV' } },
@@ -46,4 +46,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { text: '1' },
     },
   },
+  encoding: 'UTF-8',
 };

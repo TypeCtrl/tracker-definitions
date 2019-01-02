@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hdchina',
   name: 'HDChina',
   description: 'A chinese tracker',
-  language: 'zh-cn',
+  language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://hdchina.org/'],

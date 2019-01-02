@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'hdme',
   name: 'HDME',
   description: 'HDME is a Private Torrent Tracker for HD MOVIES / TV / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['https://hdme.eu'],
   caps: {
     categorymappings: [

@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'norbits',
   name: 'Norbits',
-  language: 'nb-no',
+  language: 'nb-NO',
   links: ['http://norbits.net/'],
   caps: {
     categories: {
@@ -72,4 +72,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(11)' },
     },
   },
+  encoding: 'UTF-8',
 };

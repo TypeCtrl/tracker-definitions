@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'trancetraffic',
   name: 'TranceTraffic',
   description: 'TranceTraffic is a Private site for MUSIC',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.trancetraffic.com'],

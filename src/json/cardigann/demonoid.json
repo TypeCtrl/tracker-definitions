@@ -2,7 +2,7 @@
   "site": "demonoid",
   "name": "Demonoid",
   "description": "Demonoid",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["http://www.dnoid.me/"],
   "caps": {
     "categories": {
@@ -78,5 +78,6 @@
       "seeders": { "selector": "td:nth-child(9) > font" },
       "leechers": { "selector": "td:nth-child(10) > font" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

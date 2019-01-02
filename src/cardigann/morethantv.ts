@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'morethantv',
   name: 'MoreThan.TV',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://www.morethan.tv/'],
   caps: { categories: { '1': 'Movies', '2': 'TV', '3': 'Other' } },
   login: {
@@ -49,4 +49,5 @@ export const definition: TopLevel = {
       uploadvolumefactor: { text: '1' },
     },
   },
+  encoding: 'UTF-8',
 };

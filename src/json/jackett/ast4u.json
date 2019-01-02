@@ -2,9 +2,9 @@
   "site": "ast4u",
   "name": "AST4u",
   "description": "AST4u is a GERMAN Private site for TV / MOVIES / ANIME / HENTAI",
-  "language": "de-de",
+  "language": "de-DE",
   "type": "private",
-  "encoding": "iso-8859-1",
+  "encoding": "ISO-8859-1",
   "links": ["https://www.ast4u.me/"],
   "caps": {
     "categorymappings": [

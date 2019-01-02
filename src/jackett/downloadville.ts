@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Downloadville',
   description:
     'Downloadville is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://downloadville.net/'],

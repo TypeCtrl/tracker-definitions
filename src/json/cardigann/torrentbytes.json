@@ -1,7 +1,7 @@
 {
   "site": "torrentbytes",
   "name": "TorrentBytes",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://torrentbytes.net/"],
   "caps": {
     "categories": {
@@ -77,5 +77,6 @@
       "seeders": { "selector": "td:nth-child(9)" },
       "leechers": { "selector": "td:nth-child(10)" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

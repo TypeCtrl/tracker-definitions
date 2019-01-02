@@ -5,7 +5,7 @@ export const definition: TopLevel = {
   description:
     'InPeril is a LATVIAN Private Torrent Tracker for 0DAY / GENERAL',
   type: 'private',
-  language: 'lv-lv',
+  language: 'lv-LV',
   encoding: 'UTF-8',
   links: ['http://www.inperil.net/'],
   caps: {

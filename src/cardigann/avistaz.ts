@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'avistaz',
   name: 'AvistaZ',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://avistaz.to/'],
   caps: {
     categories: {
@@ -51,4 +51,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(8)' },
     },
   },
+  encoding: 'UTF-8',
 };

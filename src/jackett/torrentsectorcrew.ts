@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'torrentsectorcrew',
   name: 'Torrent Sector Crew',
   description: 'A German general tracker',
-  language: 'de-de',
+  language: 'de-DE',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['https://tsctracker.net/'],
   caps: {
     categorymappings: [

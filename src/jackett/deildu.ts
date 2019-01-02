@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'Deildu',
   description:
     'Deildu is an Icelandic Semi-Private site for TV / MOVIES / GENERAL',
-  language: 'is-is',
+  language: 'is-IS',
   type: 'semi-private',
-  encoding: 'iso-8859-1',
+  encoding: 'ISO-8859-1',
   links: ['https://deildu.net/'],
   caps: {
     categorymappings: [

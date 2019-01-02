@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'TorrentGalaxy.org',
   description:
     'TorrentGalaxy.org (TGx) is a Public site for TV / MOVIES / GENERAL',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://torrentgalaxy.org/'],
@@ -40,7 +40,7 @@ export const definition: TopLevel = {
       { id: 33, cat: 'Other', desc: 'Other - Training' },
       { id: 41, cat: 'TV/HD', desc: 'TV - Episodes HD' },
       { id: 5, cat: 'TV/SD', desc: 'TV - Episodes SD' },
-      { id: 6, cat: 'TV/OTHER', desc: 'TV - Packs' },
+      { id: 6, cat: 'TV/Other', desc: 'TV - Packs' },
       { id: 7, cat: 'TV/Sport', desc: 'TV - Sports' },
       { id: 35, cat: 'XXX', desc: 'XXX - HD' },
       { id: 47, cat: 'XXX', desc: 'XXX - Misc' },

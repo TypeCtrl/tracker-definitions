@@ -2,7 +2,7 @@
   "site": "immortalseed",
   "name": "Immortalseed",
   "description": "a general tracker",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://immortalseed.me/"],
   "caps": {
     "categories": {
@@ -73,5 +73,6 @@
         "selector": "td:nth-child(n) > div:has(span[style=\"float: right;\"])"
       }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

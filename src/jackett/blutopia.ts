@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'blutopia',
   name: 'Blutopia',
   description: 'HD Tracker Movies/TV/FANRES',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://blutopia.xyz/'],

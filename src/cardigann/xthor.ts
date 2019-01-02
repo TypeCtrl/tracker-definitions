@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'xthor',
   name: 'Xthor',
-  language: 'fr-fr',
+  language: 'fr-FR',
   links: ['https://xthor.bz/'],
   caps: {
     categories: {
@@ -112,4 +112,5 @@ export const definition: TopLevel = {
       grabs: { selector: 'td:nth-child(7) > a' },
     },
   },
+  encoding: 'UTF-8',
 };

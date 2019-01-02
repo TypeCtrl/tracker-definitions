@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'x-ite.me',
   description:
     'Tracker for LGBTQ movies, TV, books, magazines, anime, PC and XXX.',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://x-ite.me'],

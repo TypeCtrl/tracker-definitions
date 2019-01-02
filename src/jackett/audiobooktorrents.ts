@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Audiobook Torrents',
   description:
     'Audiobook Torrents (ABT) is a Private Torrent Tracker for AUDIOBOOKS',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://abtorrents.me'],

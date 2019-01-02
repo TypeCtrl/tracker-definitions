@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hd4free',
   name: 'hd4free',
   description: 'General Tracker Movies/TV/Apps/Games/Music/Books',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://hd4.xyz/'],

@@ -1,7 +1,7 @@
 {
   "site": "filelist",
   "name": "FileList",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["http://filelist.ro/"],
   "caps": {
     "categories": {
@@ -72,5 +72,6 @@
       "seeders": { "selector": ".torrenttable:nth-child(9) span" },
       "leechers": { "selector": ".torrenttable:nth-child(10) span" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

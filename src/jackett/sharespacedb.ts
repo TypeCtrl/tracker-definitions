@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'sharespacedb',
   name: 'ShareSpaceDB',
   description: 'A French gerneral tracker',
-  language: 'fr-fr',
+  language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://ssdb.me/'],

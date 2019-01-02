@@ -2,7 +2,7 @@
   "site": "hdspace",
   "name": "HD-Space",
   "description": "a HD tracker",
-  "language": "en-us",
+  "language": "en-US",
   "links": ["https://hd-space.org/"],
   "caps": {
     "categories": {
@@ -75,5 +75,6 @@
       "leechers": { "selector": "td:nth-child(9)" },
       "date": { "selector": "td:nth-child(5)" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

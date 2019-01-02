@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'EliteTorrent.biz',
   description:
     'EliteTorrent.biz is a Public torrent site for TV, movies and documentaries',
-  language: 'es-es',
+  language: 'es-ES',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.elitetorrent.biz/'],

@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'eztv',
   name: 'EZTV',
   description: 'EZTV is a Public torrent site for TV shows',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,

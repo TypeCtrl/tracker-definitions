@@ -3,8 +3,8 @@ export const definition: TopLevel = {
   site: 'theshinning',
   name: 'The Shinning',
   description: 'A German gerneral tracker',
-  language: 'de-de',
-  encoding: 'windows-1252',
+  language: 'de-DE',
+  encoding: 'WINDOWS-1252',
   links: ['https://theshinning.org'],
   caps: {
     categories: {

@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'Zelka.org',
   description:
     'Zelka (Zamunda) is a BULGARIAN Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'bg-bg',
+  language: 'bg-BG',
   type: 'private',
-  encoding: 'windows-1251',
+  encoding: 'WINDOWS-1251',
   links: ['http://zelka.org/', 'http://zamunda.se/'],
   caps: {
     categories: {

@@ -2,7 +2,7 @@ import { TopLevel } from '../definition-interface';
 export const definition: TopLevel = {
   site: 'thepiratebay',
   name: 'The Pirate Bay',
-  language: 'en-us',
+  language: 'en-US',
   encoding: 'UTF-8',
   links: [
     'https://thepiratebay.org/',

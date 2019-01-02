@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Insane Tracker',
   description:
     'Insane Tracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
-  language: 'hu-hu',
+  language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://newinsane.info/'],

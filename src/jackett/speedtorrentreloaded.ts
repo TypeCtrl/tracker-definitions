@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'SpeedTorrent Reloaded',
   description:
     'SpeedTorrent Reloaded is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'de-de',
+  language: 'de-DE',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://speedtorrent-tracker.mine.nu/'],
@@ -46,7 +46,7 @@ export const definition: TopLevel = {
       { id: 202, cat: 'TV/Sport', desc: 'Sport' },
       { id: 204, cat: 'XXX', desc: 'XXX-Games' },
       { id: 205, cat: 'Movies/SD', desc: 'International-SD' },
-      { id: 206, cat: 'movies/HD', desc: 'International-HD' },
+      { id: 206, cat: 'Movies/HD', desc: 'International-HD' },
     ],
     modes: {
       search: ['q'],

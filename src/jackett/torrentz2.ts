@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Torrentz2',
   description:
     'Torrentz2 is a Public torrent meta-search engine combining results from dozens of torrent sites',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://torrentz2.eu/'],

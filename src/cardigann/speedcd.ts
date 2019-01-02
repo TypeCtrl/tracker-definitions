@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'speedcd',
   name: 'speed.cd',
   description: 'TV Series anyone?',
-  language: 'en-us',
+  language: 'en-US',
   links: ['http://speed.cd/'],
   caps: {
     categories: {
@@ -76,4 +76,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(7)' },
     },
   },
+  encoding: 'UTF-8',
 };

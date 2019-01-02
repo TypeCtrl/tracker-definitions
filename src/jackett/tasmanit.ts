@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Tasmanit',
   description:
     'Tasmanit.es is a AUSTRALIAN / NEW ZEALAND Private Torrent Tracker for AUS / NZ TV',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://tasmanit.es'],

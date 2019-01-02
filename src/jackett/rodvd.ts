@@ -4,9 +4,9 @@ export const definition: TopLevel = {
   name: 'RoDVD',
   description:
     'RoDVD (Cinefiles) is a ROMANIAN Private Torrent Tracker for DVD-R / HD MOVIES',
-  language: 'ro-ro',
+  language: 'ro-RO',
   type: 'private',
-  encoding: 'windows-1252',
+  encoding: 'WINDOWS-1252',
   links: ['https://rodvd.net/'],
   legacylinks: ['http://rodvd.net/'],
   caps: {

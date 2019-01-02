@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'funkytorrents',
   name: 'FunkyTorrents',
   description: 'FunkyTorrents (FT) is a Private Torrent Tracker for MUSIC',
-  language: 'en-us',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://funkytorrents.com'],

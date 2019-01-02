@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'RockBox Rock/Metal Tracker',
   description:
     'RockBox Semi-Private site dedicated to HEAVY METAL/ROCK MUSIC. This definition is for the English site.',
-  language: 'en-us',
+  language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://rawkbawx.rocks/'],

@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'Metal Tracker',
   description:
     'Metal Tracker is a Semi-Private site dedicated to HEAVY METAL MUSIC. This definition is for the English site.',
-  language: 'en-us',
+  language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://en.metal-tracker.com/'],

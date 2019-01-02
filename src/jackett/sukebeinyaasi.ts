@@ -4,7 +4,7 @@ export const definition: TopLevel = {
   name: 'sukebei.nyaa.si',
   description:
     'sukebei.nyaa is a Public torrent site focused on adult Eastern Asian media including anime, manga, games and JAV',
-  language: 'en-us',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://sukebei.nyaa.si'],

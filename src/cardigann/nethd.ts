@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'nethd',
   name: 'NetHD',
   description: 'A vietnamese tracker',
-  language: 'vi-vn',
+  language: 'vi-VN',
   encoding: 'UTF-8',
   links: ['http://nethd.org/'],
   caps: {

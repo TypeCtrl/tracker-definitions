@@ -3,9 +3,9 @@ export const definition: TopLevel = {
   site: 'bluebirdhd',
   name: 'BlueBird',
   description: 'BlueBird is a RUSSIAN Private Torrent Tracker for HD MOVIES',
-  language: 'ru-ru',
+  language: 'ru-RU',
   type: 'private',
-  encoding: 'windows-1251',
+  encoding: 'WINDOWS-1251',
   links: ['https://bluebird-hd.org/'],
   caps: {
     categorymappings: [

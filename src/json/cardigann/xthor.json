@@ -1,7 +1,7 @@
 {
   "site": "xthor",
   "name": "Xthor",
-  "language": "fr-fr",
+  "language": "fr-FR",
   "links": ["https://xthor.bz/"],
   "caps": {
     "categories": {
@@ -109,5 +109,6 @@
       "uploadvolumefactor": { "case": { "*": "1" } },
       "grabs": { "selector": "td:nth-child(7) > a" }
     }
-  }
+  },
+  "encoding": "UTF-8"
 }

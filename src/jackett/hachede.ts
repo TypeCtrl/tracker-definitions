@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hachede',
   name: 'HacheDe',
   description: 'HacheDe is a SPANISH site for HD content',
-  language: 'es-es',
+  language: 'es-ES',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://hachede.me/'],

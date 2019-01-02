@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'bithdtv',
   name: 'BIT-HDTV',
   description: 'Home of High Definition TV',
-  language: 'en-us',
+  language: 'en-US',
   links: ['https://www.bit-hdtv.com/'],
   settings: [{ name: 'cookie', type: 'text', label: 'Cookie' }],
   caps: {
@@ -48,4 +48,5 @@ export const definition: TopLevel = {
       leechers: { selector: 'td:nth-child(10)' },
     },
   },
+  encoding: 'UTF-8',
 };

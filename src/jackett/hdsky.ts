@@ -3,7 +3,7 @@ export const definition: TopLevel = {
   site: 'hdsky',
   name: 'HDSky',
   description: 'A chinese tracker',
-  language: 'zh-cn',
+  language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://hdsky.me'],
