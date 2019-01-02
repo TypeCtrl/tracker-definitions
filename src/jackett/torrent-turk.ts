@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrent-turk',
   name: 'TOrrent-tuRK',
   description:
@@ -71,12 +72,9 @@ export const definition: TopLevel = {
       search_type: 'name',
       searchin: 'title',
     },
-    error: [
-      { selector: 'div.error:not(:contains("Hiçbir sonuç bulunamadı."))' },
-    ],
+    error: [{ selector: 'div.error:not(:contains("Hiçbir sonuç bulunamadı."))' }],
     rows: {
-      selector:
-        'table#torrents_table_classic > tbody > tr:has(td.torrent_name)',
+      selector: 'table#torrents_table_classic > tbody > tr:has(td.torrent_name)',
     },
     fields: {
       title: { selector: 'a[href*="?p=torrents&pid=10&action=details"]' },

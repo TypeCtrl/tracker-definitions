@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'karagarga',
   name: 'Karagarga',
-  description:
-    'Tracker for non-hollywood, rare and obscure movies, music and literature.',
+  description: 'Tracker for non-hollywood, rare and obscure movies, music and literature.',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -91,9 +91,7 @@ export const definition: TopLevel = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
-    keywordsfilters: [
-      { name: 're_replace', args: ['(?<=^| )(?!-|\\+)[^ ]+(?= |$)', '+$&'] },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: ['(?<=^| )(?!-|\\+)[^ ]+(?= |$)', '+$&'] }],
     inputs: {
       $raw: '{{range .Categories}}genre={{.}}&{{end}}',
       search: '{{ .Keywords }}',
@@ -112,9 +110,7 @@ export const definition: TopLevel = {
       download: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-        filters: [
-          { name: 'replace', args: ['details.php?id=', 'download.php?id='] },
-        ],
+        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
       },
       details: {
         selector: 'a[href^="details.php?id="]',

@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hdbits',
   name: 'HDBits',
   description: 'Best HD Tracker',
@@ -38,8 +39,7 @@ export const definition: TopLevel = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector:
-        'table#torrent-list > tbody > tr:has(a[href^="/details.php?id="])',
+      selector: 'table#torrent-list > tbody > tr:has(a[href^="/details.php?id="])',
     },
     fields: {
       category: {
@@ -66,10 +66,8 @@ export const definition: TopLevel = {
       },
       downloadvolumefactor: {
         case: {
-          'a[title="25% Free Leech: only 75% of the download is counted."]':
-            '0.25',
-          'a[title="50% Free Leech: only half the download is counted."]':
-            '0.5',
+          'a[title="25% Free Leech: only 75% of the download is counted."]': '0.25',
+          'a[title="50% Free Leech: only half the download is counted."]': '0.5',
           'a[title="100% FL: no download is counted."]': '0',
           '*': '1',
         },

@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: '1337x',
   name: '1337x',
-  description:
-    '1337X is a Public torrent site that offers verified torrent downloads',
+  description: '1337X is a Public torrent site that offers verified torrent downloads',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
@@ -105,36 +105,27 @@ export const definition: TopLevel = {
   search: {
     paths: [
       {
-        path:
-          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/1/{{else}}/trending{{end}}',
+        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/1/{{else}}/trending{{end}}',
       },
       {
-        path:
-          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/2/{{else}}{{end}}',
+        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/2/{{else}}{{end}}',
       },
       {
-        path:
-          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/3/{{else}}{{end}}',
+        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/3/{{else}}{{end}}',
       },
       {
-        path:
-          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/4/{{else}}{{end}}',
+        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/4/{{else}}{{end}}',
       },
       {
-        path:
-          '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/5/{{else}}{{end}}',
+        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/5/{{else}}{{end}}',
       },
     ],
-    keywordsfilters: [
-      { name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] },
-    ],
+    keywordsfilters: [{ name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] }],
     rows: { selector: 'tr:has(a[href^="/torrent/"])' },
     fields: {
       title: {
         selector: 'td[class^="coll-1"] a[href^="/torrent/"]',
-        filters: [
-          { name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] },
-        ],
+        filters: [{ name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] }],
       },
       category: {
         optional: true,

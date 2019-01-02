@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'eztv',
   name: 'EZTV',
   description: 'EZTV is a Public torrent site for TV shows',
@@ -18,8 +19,7 @@ export const definition: TopLevel = {
     paths: [{ path: '{{if .Keywords}}search/{{ .Keywords}}{{else}}/{{end}}' }],
     keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
     rows: {
-      selector:
-        "table.forum_header_border tr[name='hover'].forum_header_border",
+      selector: "table.forum_header_border tr[name='hover'].forum_header_border",
       filters: [{ name: 'andmatch' }],
     },
     fields: {

@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'gigatorrents',
   name: 'GigaTorrents',
-  description:
-    'Giga Torrents is a Hungarian Private site for TV / MOVIES / GENERAL',
+  description: 'Giga Torrents is a Hungarian Private site for TV / MOVIES / GENERAL',
   language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',
@@ -80,9 +80,7 @@ export const definition: TopLevel = {
       download: {
         selector: 'a[href^="/details.php?id="]',
         attribute: 'href',
-        filters: [
-          { name: 'replace', args: ['details.php?id=', 'download.php?id='] },
-        ],
+        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
       },
       title: { selector: 'a[href^="/details.php?id="]' },
       details: {
@@ -130,9 +128,7 @@ export const definition: TopLevel = {
       date: {
         selector: 'td:nth-child(2)',
         remove: 'a',
-        filters: [
-          { name: 'regexp', args: 'Feltöltve:\\s*([\\d-]+\\s*[\\d:]+)' },
-        ],
+        filters: [{ name: 'regexp', args: 'Feltöltve:\\s*([\\d-]+\\s*[\\d:]+)' }],
       },
       size: { selector: 'td:nth-child(6)', remove: 'span' },
     },

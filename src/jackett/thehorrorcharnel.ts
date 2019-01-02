@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'thehorrorcharnel',
   name: 'The Horror Charnel',
   description: 'A Horror, Cult, Sleaze, Sci-Fi & more tracker',

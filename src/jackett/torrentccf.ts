@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrentccf',
   name: 'TorrentCCF',
-  description:
-    'TorrentCCF (TCCF) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
+  description: 'TorrentCCF (TCCF) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
@@ -59,8 +59,7 @@ export const definition: TopLevel = {
     paths: [{ path: '/torrents.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search:
-        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: '1',
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
     },

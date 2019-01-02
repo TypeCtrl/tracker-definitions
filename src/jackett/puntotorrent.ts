@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'puntorrent',
   name: 'PuntoTorrent',
   description: 'PuntoTorrent is a SPANISH site for General content',
@@ -111,9 +112,7 @@ export const definition: TopLevel = {
   },
   search: {
     path: 'index.php',
-    keywordsfilters: [
-      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', 'T$1 $2'] },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', 'T$1 $2'] }],
     inputs: {
       page: 'torrents',
       $raw: '&category={{range .Categories}}{{.}};{{end}}',

@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'sporthd',
   name: 'SportHD',
   description: 'Sports tracker',
@@ -106,9 +107,7 @@ export const definition: TopLevel = {
       download: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-        filters: [
-          { name: 'replace', args: ['details.php?id=', 'download.php?id='] },
-        ],
+        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
       },
       details: {
         selector: 'a[href^="details.php?id="]',

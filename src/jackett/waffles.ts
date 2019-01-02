@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'waffles',
   name: 'Waffles',
   description: 'Music, ebook and software tracker',
@@ -113,8 +114,7 @@ export const definition: TopLevel = {
       q: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector:
-        'table#browsetable > tbody > tr:has(a[href^="/details.php?id="])',
+      selector: 'table#browsetable > tbody > tr:has(a[href^="/details.php?id="])',
     },
     fields: {
       category: {

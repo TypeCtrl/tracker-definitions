@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'xiteme',
   name: 'x-ite.me',
-  description:
-    'Tracker for LGBTQ movies, TV, books, magazines, anime, PC and XXX.',
+  description: 'Tracker for LGBTQ movies, TV, books, magazines, anime, PC and XXX.',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -112,9 +112,7 @@ export const definition: TopLevel = {
   },
   search: {
     paths: [{ path: 'torrents-search.php', method: 'get' }],
-    keywordsfilters: [
-      { name: 're_replace', args: ['(?<=^| )(?!-|\\+)[^ ]+(?= |$)', '+$&'] },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: ['(?<=^| )(?!-|\\+)[^ ]+(?= |$)', '+$&'] }],
     inputs: {
       $raw: '{{range .Categories}}&c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
@@ -151,10 +149,7 @@ export const definition: TopLevel = {
         filters: [
           {
             name: 're_replace',
-            args: [
-              '(\\d{2})-(\\d{2})-(\\d{4}) ((?:\\d{2}:?){3})',
-              '$3-$2-$1 $4',
-            ],
+            args: ['(\\d{2})-(\\d{2})-(\\d{4}) ((?:\\d{2}:?){3})', '$3-$2-$1 $4'],
           },
           { name: 'append', args: ' +01:00' },
           { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },

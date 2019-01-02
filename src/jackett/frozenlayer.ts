@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'frozenlayer',
   name: 'Frozen Layer',
   description: 'Frozen Layer is a SPANISH Public torrent site focused on ANIME',

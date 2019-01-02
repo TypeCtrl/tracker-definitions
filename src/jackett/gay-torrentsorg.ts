@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'gay-torrentsorg',
   name: 'gay-torrents.org',
   description: 'Tracker for GAY XXX, movies, TV, books and PC.',
@@ -27,8 +28,7 @@ export const definition: TopLevel = {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
-      default:
-        'You can increase the number of search results in your profile.<br />Default is 15.',
+      default: 'You can increase the number of search results in your profile.<br />Default is 15.',
     },
   ],
   caps: {
@@ -134,10 +134,7 @@ export const definition: TopLevel = {
         filters: [
           {
             name: 're_replace',
-            args: [
-              'on (\\d{2}:\\d{2}) (\\d{2})-([a-zA-Z]{3})-(\\d{4})',
-              '$2 $3 $4 $1',
-            ],
+            args: ['on (\\d{2}:\\d{2}) (\\d{2})-([a-zA-Z]{3})-(\\d{4})', '$2 $3 $4 $1'],
           },
           { name: 'append', args: ' +01:00' },
           { name: 'dateparse', args: '02 Jan 2006 15:04 -07:00' },

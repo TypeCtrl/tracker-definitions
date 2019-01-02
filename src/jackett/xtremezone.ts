@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'xtremezone',
   name: 'Xtreme Zone',
-  description:
-    'XtreMeZone (MYXZ) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'XtreMeZone (MYXZ) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',
   type: 'semi-private',
   encoding: 'UTF-8',

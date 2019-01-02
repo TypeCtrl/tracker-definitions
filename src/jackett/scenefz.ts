@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'scenefz',
   name: 'SceneFZ / u-torrents',
   description: 'Torrent tracker. Tracking over 50.000 torrent files.',
@@ -58,8 +59,7 @@ export const definition: TopLevel = {
     paths: [{ path: '/torrents' }],
     inputs: { q: '{{ .Keywords }}', searchin: 0, cat: 0, dead: 1 },
     rows: {
-      selector:
-        'div.table-responsive > table > tbody > tr:has(a[href^="/torrents?"])',
+      selector: 'div.table-responsive > table > tbody > tr:has(a[href^="/torrents?"])',
     },
     fields: {
       title: { selector: 'a[href^="/torrents/"]' },

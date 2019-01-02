@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'kapaki',
   name: 'Kapaki',
-  description:
-    'Kapaki is a GREEK Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Kapaki is a GREEK Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'el-GR',
   type: 'private',
   encoding: 'UTF-8',
@@ -69,8 +69,7 @@ export const definition: TopLevel = {
     },
     error: [
       {
-        selector:
-          'div#show_error:not(:contains("Ουπς! Λάθος!Δεν βρέθηκαν αποτελέσματα."))',
+        selector: 'div#show_error:not(:contains("Ουπς! Λάθος!Δεν βρέθηκαν αποτελέσματα."))',
       },
     ],
     rows: {

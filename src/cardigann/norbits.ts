@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'norbits',
   name: 'Norbits',
   language: 'nb-NO',
@@ -36,8 +37,7 @@ export const definition: TopLevel = {
   search: {
     path: '/browse.php',
     inputs: {
-      $raw:
-        '{{range .Categories}}main_cat[]={{.}}&{{end}}search={{ .Query.Keywords }}',
+      $raw: '{{range .Categories}}main_cat[]={{.}}&{{end}}search={{ .Query.Keywords }}',
     },
     rows: { selector: 'table#torrentTable tbody tr:nth-child(n+2)' },
     fields: {

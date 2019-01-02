@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrent9clone',
   name: 'Torrent9 clone (torrents9.pw)',
   description: 'Torrent9 is a FRENCH Public site for TV / MOVIES / GENERAL',

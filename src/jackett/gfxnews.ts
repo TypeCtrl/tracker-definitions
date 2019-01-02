@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'gfxnews',
   name: 'Gfxnews',
-  description:
-    'GFXNews is a Private Torrent Tracker for GRAPHICS SOFTWARE / TUTORIALS / ETC',
+  description: 'GFXNews is a Private Torrent Tracker for GRAPHICS SOFTWARE / TUTORIALS / ETC',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -258,8 +258,7 @@ export const definition: TopLevel = {
   search: {
     paths: [{ path: '/tracker.php', method: 'post' }],
     inputs: {
-      $raw:
-        '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
       prev_a: 0,
       prev_dla: 0,
       prev_dlc: 0,

@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: '2fast4you',
   name: '2 Fast 4 You',
-  description:
-    '2 Fast 4 You is a FRENCH Private site for TV / MOVIES / GENERAL',
+  description: '2 Fast 4 You is a FRENCH Private site for TV / MOVIES / GENERAL',
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',

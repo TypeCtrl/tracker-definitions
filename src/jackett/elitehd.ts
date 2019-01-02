@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'elitehd',
   name: 'EliteHD',
-  description:
-    'EliteHD (HDClub) is a RUSSIAN Private Torrent Tracker for HD MOVIES / TV / GENERAL',
+  description: 'EliteHD (HDClub) is a RUSSIAN Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'ru-RU',
   type: 'private',
   encoding: 'WINDOWS-1251',

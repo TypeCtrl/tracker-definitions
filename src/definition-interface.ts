@@ -108,16 +108,26 @@ export type Categories =
   | 'Books/Other'
   | 'Books/Foreign';
 
-export interface TopLevel {
+export interface TrackerDefinition {
   site: string;
   name: string;
-  description?: string;
+  links: string[];
+  caps: {
+    categorymappings?: Categorymapping[];
+    modes?: Modes;
+  };
+  /**
+   * language code
+   * @link https://en.wikipedia.org/wiki/Language_code
+   */
   language: SiteLanguage;
+  description?: string;
   type?: SiteType;
   encoding?: SiteEncoding;
-  links: string[];
+  /**
+   * cardigann - self signed cert to trusted certs
+   */
   certificates?: string[];
-  caps: Caps;
   settings?: Setting[];
   download?: Download;
   search: Search;
@@ -128,13 +138,7 @@ export interface TopLevel {
   followredirect?: boolean;
 }
 
-export interface Caps {
-  categorymappings?: Categorymapping[];
-  modes?: Modes;
-}
-
 export interface Categorymapping {
-  // TODO: should not be boolean if PR is merged
   id: string;
   cat: Categories;
   desc?: string;

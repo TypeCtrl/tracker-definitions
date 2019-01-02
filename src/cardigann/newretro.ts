@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'newretro',
   name: 'The New Retro',
   description: 'A German gerneral tracker',
@@ -49,20 +50,15 @@ export const definition: TopLevel = {
     },
     error: [
       {
-        selector:
-          'table.tableinborder:contains("Anmeldung Gescheitert!") > tbody > tr > td.tablea',
+        selector: 'table.tableinborder:contains("Anmeldung Gescheitert!") > tbody > tr > td.tablea',
       },
     ],
     test: { path: '/usercp.php' },
   },
   ratio: {
     path: '/usercp.php',
-    selector:
-      'div#lmtd table > tbody > tr:contains("Ratio:") > td:nth-child(2)',
-    filters: [
-      { name: 'replace', args: ['.', ''] },
-      { name: 'replace', args: [',', '.'] },
-    ],
+    selector: 'div#lmtd table > tbody > tr:contains("Ratio:") > td:nth-child(2)',
+    filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
   },
   search: {
     path: '/browse.php',
@@ -87,33 +83,26 @@ export const definition: TopLevel = {
         filters: [{ name: 'querystring', args: 'cat' }],
       },
       comments: {
-        selector:
-          'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(4) > a',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(4) > a',
         attribute: 'href',
       },
       size: {
-        selector:
-          'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(1)',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(1)',
       },
       grabs: {
-        selector:
-          'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(3) > b',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(3) > b',
       },
       files: {
-        selector:
-          'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(2)',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(2)',
       },
       seeders: {
-        selector:
-          'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(2) > b:nth-child(1)',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(2) > b:nth-child(1)',
       },
       leechers: {
-        selector:
-          'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(2) > b:nth-child(3)',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(2) > b:nth-child(3)',
       },
       date: {
-        selector:
-          'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(5)',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(5)',
         filters: [
           { name: 'replace', args: [' ', ' '] },
           { name: 'dateparse', args: '02.01.2006 15:04:05' },

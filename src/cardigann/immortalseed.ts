@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'immortalseed',
   name: 'Immortalseed',
   description: 'a general tracker',
@@ -51,8 +52,7 @@ export const definition: TopLevel = {
       search_type: 't_name',
     },
     rows: {
-      selector:
-        'table#sortabletable > tbody > tr:has(div[class="tooltip-content"])',
+      selector: 'table#sortabletable > tbody > tr:has(div[class="tooltip-content"])',
     },
     fields: {
       title: {

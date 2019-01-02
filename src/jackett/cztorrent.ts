@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'cztorrent',
   name: 'CzTorrent',
-  description:
-    'CzTorrent is a Czech Semi-Private site for TV / MOVIES / GENERAL',
+  description: 'CzTorrent is a Czech Semi-Private site for TV / MOVIES / GENERAL',
   language: 'cs-CZ',
   type: 'semi-private',
   encoding: 'UTF-8',

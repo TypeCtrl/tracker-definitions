@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'sukebei-pantsu',
   name: 'Sukebei-pantsu',
-  description:
-    'Sukebei-pantsu is a Public site dedicated to Adult Asian content',
+  description: 'Sukebei-pantsu is a Public site dedicated to Adult Asian content',
   language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',

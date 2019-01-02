@@ -1,19 +1,16 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'skytorrents',
   name: 'Sky torrents',
   language: 'en-US',
   encoding: 'UTF-8',
   links: ['https://www.skytorrents.in/'],
   caps: {
-    categorymappings: [
-      { id: 'TV', cat: 'TV' },
-      { id: 'Movies', cat: 'Movies' },
-    ],
+    categorymappings: [{ id: 'TV', cat: 'TV' }, { id: 'Movies', cat: 'Movies' }],
   },
   search: {
-    path:
-      'search/all/{{if .Query.Keywords}}ed{{else}}ad{{end}}/1/{{ .Query.Keywords}}',
+    path: 'search/all/{{if .Query.Keywords}}ed{{else}}ad{{end}}/1/{{ .Query.Keywords}}',
     rows: { selector: 'table > tbody > tr' },
     fields: {
       title: {

@@ -1,14 +1,11 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'thepiratebay',
   name: 'The Pirate Bay',
   language: 'en-US',
   encoding: 'UTF-8',
-  links: [
-    'https://thepiratebay.org/',
-    'https://thepiratesbay.pw/',
-    'https://tproxy.pro/',
-  ],
+  links: ['https://thepiratebay.org/', 'https://thepiratesbay.pw/', 'https://tproxy.pro/'],
   caps: {
     categorymappings: [
       { id: '201', cat: 'Movies' },
@@ -24,8 +21,7 @@ export const definition: TopLevel = {
     ],
   },
   search: {
-    path:
-      '{{if .Query.Keywords}}search/{{ .Query.Keywords}}/0/99/0{{else}}/recent{{end}}',
+    path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}/0/99/0{{else}}/recent{{end}}',
     rows: { selector: '#searchResult tbody tr:has(td.vertTh)' },
     fields: {
       category: {

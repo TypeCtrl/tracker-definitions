@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'RGU',
   name: 'RGU',
   description: 'RGU is a Private site for MOVIES / TV / GENERAL',
@@ -54,8 +55,7 @@ export const definition: TopLevel = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        "For best results, change the 'Torrents per page' setting to 100 on your profile.",
+      default: "For best results, change the 'Torrents per page' setting to 100 on your profile.",
     },
   ],
   login: {
@@ -95,10 +95,7 @@ export const definition: TopLevel = {
       title: {
         selector: 'td:nth-of-type(2) a',
         attribute: 'onmouseover',
-        filters: [
-          { name: 'split', args: ['>', '1'] },
-          { name: 'replace', args: ['</b', ''] },
-        ],
+        filters: [{ name: 'split', args: ['>', '1'] }, { name: 'replace', args: ['</b', ''] }],
       },
       details: {
         selector: 'td:nth-of-type(2) > a[onmouseover]',

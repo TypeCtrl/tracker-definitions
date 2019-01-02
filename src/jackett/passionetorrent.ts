@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'passionetorrent',
   name: 'Passione Torrent',
-  description:
-    'PassioneTorrent is an ITALIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'PassioneTorrent is an ITALIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'it-IT',
   type: 'private',
   encoding: 'UTF-8',
@@ -81,8 +81,7 @@ export const definition: TopLevel = {
       { name: 'replace', args: ['-', ''] },
     ],
     inputs: {
-      search:
-        '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
       page: 'torrents',
       category: '{{range .Categories}}{{.}};{{end}}',
       options: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',

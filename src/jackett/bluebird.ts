@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'bluebirdhd',
   name: 'BlueBird',
   description: 'BlueBird is a RUSSIAN Private Torrent Tracker for HD MOVIES',

@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'RockBox',
   name: 'RockBox Rock/Metal Tracker',
   description:
@@ -34,8 +35,7 @@ export const definition: TopLevel = {
   search: {
     paths: [{ path: 'torrents.php', method: 'get' }],
     inputs: {
-      search:
-        '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
     },
     rows: {
       selector:

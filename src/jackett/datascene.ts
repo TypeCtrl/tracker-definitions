@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'datascene',
   name: 'DataScene',
-  description:
-    'DataScene (DS) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'DataScene (DS) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',
   type: 'private',
   encoding: 'WINDOWS-1252',
@@ -89,8 +89,7 @@ export const definition: TopLevel = {
       },
       size: { selector: 'td:nth-child(7)' },
       date: {
-        selector:
-          'td:nth-child(2) > right > div:has(font:contains("Uploaded"))',
+        selector: 'td:nth-child(2) > right > div:has(font:contains("Uploaded"))',
         filters: [{ name: 'replace', args: ['Uploaded: ', ''] }],
       },
       seeders: { selector: 'td:nth-child(9)' },

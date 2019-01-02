@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'alphareign',
   name: 'AlphaReign',
   description: 'A DHT only tracker',
@@ -25,9 +26,7 @@ export const definition: TopLevel = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [
-      { path: '/login', selector: 'div.auth-form > div > div.alert-danger' },
-    ],
+    error: [{ path: '/login', selector: 'div.auth-form > div > div.alert-danger' }],
     test: { path: 'settings', selector: 'a[href="/logout"]' },
   },
   ratio: { text: '∞' },

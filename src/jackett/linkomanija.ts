@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'linkomanija',
   name: 'LinkoManija',
-  description:
-    'LinkoManija is an LITHUANIAN Private site for TV / MOVIES / GENERAL',
+  description: 'LinkoManija is an LITHUANIAN Private site for TV / MOVIES / GENERAL',
   language: 'lt-LT',
   type: 'private',
   encoding: 'UTF-8',

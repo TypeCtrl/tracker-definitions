@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'thetorrents',
   name: 'The-Torrents',
-  description:
-    'The-Torrents is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'The-Torrents is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
@@ -73,8 +73,7 @@ export const definition: TopLevel = {
     },
     error: [
       {
-        selector:
-          'table.main > tbody > tr > td.embedded td.text:contains("incorrect")',
+        selector: 'table.main > tbody > tr > td.embedded td.text:contains("incorrect")',
       },
     ],
     test: { path: '/browse.php' },

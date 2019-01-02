@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hyperay',
   name: 'Hyperay',
-  description:
-    'Hyperay is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
+  description: 'Hyperay is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
@@ -51,8 +51,7 @@ export const definition: TopLevel = {
     paths: [{ path: '/torrents.php', method: 'post' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search:
-        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: '1',
       spstate: '0',
       inclbookmarked: '0',
@@ -65,8 +64,7 @@ export const definition: TopLevel = {
     },
     error: [
       {
-        selector:
-          'b:contains("This is a must-read message, please read before other operations!")',
+        selector: 'b:contains("This is a must-read message, please read before other operations!")',
       },
     ],
     fields: {

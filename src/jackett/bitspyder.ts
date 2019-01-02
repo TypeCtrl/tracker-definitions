@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'bitspyder',
   name: 'Bitspyder',
   description: 'Bitspyder is a Private site for Educational BOOKS / AUDIO',
@@ -81,8 +82,7 @@ export const definition: TopLevel = {
         ],
       },
       size: {
-        selector:
-          'td.rowcol:nth-child(6):has(br), font:contains("Size:") + font',
+        selector: 'td.rowcol:nth-child(6):has(br), font:contains("Size:") + font',
       },
       files: { selector: 'a[href*="&filelist=1"]' },
       grabs: {

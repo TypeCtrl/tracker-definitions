@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hachede',
   name: 'HacheDe',
   description: 'HacheDe is a SPANISH site for HD content',
@@ -78,9 +79,7 @@ export const definition: TopLevel = {
   },
   search: {
     path: '/',
-    keywordsfilters: [
-      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],
     inputs: {
       p: 'torrents',
       page: '1',
@@ -114,8 +113,7 @@ export const definition: TopLevel = {
       },
       banner: {
         optional: true,
-        selector:
-          'td.torrent_image div.relativeDiv div:not(.category_image) a, .previewImage a',
+        selector: 'td.torrent_image div.relativeDiv div:not(.category_image) a, .previewImage a',
         attribute: 'href',
       },
       size: { selector: 'td.size a, .torrentInfo a[rel="torrent_size"]' },

@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrentlt',
   name: 'Torrent.LT',
   description: 'Torrent.LT is Private site for TV / MOVIES / GENERAL',

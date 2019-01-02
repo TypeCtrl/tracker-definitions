@@ -23,6 +23,7 @@ const PRETTIER_TYPESCRIPT: prettier.Options = {
   bracketSpacing: true,
   semi: true,
   singleQuote: true,
+  printWidth: 100
 };
 
 const HELPERS_DIR = path.join(__dirname, `../src/helpers`);
@@ -100,8 +101,9 @@ for (const src of SOURCES) {
 
     // write module
     const defExp = `
-      import { TopLevel } from '../definition-interface';
-      export const definition: TopLevel = ${formattedJson};
+      import { TrackerDefinition } from '../definition-interface';
+
+      export const definition: TrackerDefinition = ${formattedJson};
     `;
     fs.writeFileSync(
       path.join(moduleOutDir, name + '.ts'),

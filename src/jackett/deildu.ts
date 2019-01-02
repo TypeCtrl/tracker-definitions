@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'deildu',
   name: 'Deildu',
-  description:
-    'Deildu is an Icelandic Semi-Private site for TV / MOVIES / GENERAL',
+  description: 'Deildu is an Icelandic Semi-Private site for TV / MOVIES / GENERAL',
   language: 'is-IS',
   type: 'semi-private',
   encoding: 'ISO-8859-1',
@@ -46,8 +46,7 @@ export const definition: TopLevel = {
       incldead: '1',
     },
     rows: {
-      selector:
-        'table[class="torrentlist"] > tbody > tr:has(a[href*="details.php?id="])',
+      selector: 'table[class="torrentlist"] > tbody > tr:has(a[href*="details.php?id="])',
       filters: [{ name: 'andmatch', args: 55 }],
     },
     fields: {

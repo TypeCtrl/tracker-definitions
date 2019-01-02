@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'nnm-club',
   name: 'NoName Club',
   description:
@@ -1357,8 +1358,7 @@ export const definition: TopLevel = {
       },
     ],
     inputs: {
-      $raw:
-        '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
       o: 1,
       s: 2,
       tm: -1,
@@ -1372,8 +1372,7 @@ export const definition: TopLevel = {
       submit: 'Поиск',
     },
     rows: {
-      selector:
-        'table.forumline.tablesorter > tbody > tr:has(a[href^="viewtopic.php?t="])',
+      selector: 'table.forumline.tablesorter > tbody > tr:has(a[href^="viewtopic.php?t="])',
     },
     fields: {
       title: {

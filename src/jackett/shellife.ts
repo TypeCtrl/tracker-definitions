@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'shellife',
   name: 'Shellife',
-  description:
-    'Shellife (SL) is a Private Torrent Tracker for NON MAINSTREAM MUSIC',
+  description: 'Shellife (SL) is a Private Torrent Tracker for NON MAINSTREAM MUSIC',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

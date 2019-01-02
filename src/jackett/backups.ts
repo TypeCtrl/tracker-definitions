@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'backups',
   name: 'Back-ups',
-  description:
-    'Back-Ups is a Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Back-Ups is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -59,10 +59,7 @@ export const definition: TopLevel = {
     keywordsfilters: [
       {
         name: 're_replace',
-        args: [
-          '(?:^|\\s)[_\\+\\/\\.\\-\\(\\)]*[\\S]{0,3}[_\\+\\/\\.\\-\\(\\)]*(?:\\s|$)',
-          ' ',
-        ],
+        args: ['(?:^|\\s)[_\\+\\/\\.\\-\\(\\)]*[\\S]{0,3}[_\\+\\/\\.\\-\\(\\)]*(?:\\s|$)', ' '],
       },
     ],
     inputs: {
@@ -73,8 +70,7 @@ export const definition: TopLevel = {
       include_dead_torrents: 'yes',
     },
     rows: {
-      selector:
-        'table#sortabletable > tbody > tr:has(a[href*="/details.php?id="])',
+      selector: 'table#sortabletable > tbody > tr:has(a[href*="/details.php?id="])',
       filters: [{ name: 'andmatch', args: 66 }],
     },
     fields: {

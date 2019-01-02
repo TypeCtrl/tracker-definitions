@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrenting',
   name: 'Torrenting',
   description: 'Torrenting (TT) is a Private site for MOVIES / TV / GENERAL',
@@ -48,8 +49,7 @@ export const definition: TopLevel = {
     paths: [{ path: 't' }],
     inputs: {
       $raw: '{{range .Categories}}{{.}}=&{{end}}',
-      q:
-        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      q: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
     },
     rows: {
@@ -72,10 +72,7 @@ export const definition: TopLevel = {
       },
       date: {
         selector: 'td.torrentNameInfo > div',
-        filters: [
-          { name: 're_replace', args: [' by.*', ''] },
-          { name: 'split', args: ['|', -1] },
-        ],
+        filters: [{ name: 're_replace', args: [' by.*', ''] }, { name: 'split', args: ['|', -1] }],
       },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },

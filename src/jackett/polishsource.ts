@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'polishsource',
   name: 'PolishSource',
-  description:
-    'PolishSource (PS) is a POLISH Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'PolishSource (PS) is a POLISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'pl-PL',
   type: 'private',
   encoding: 'ISO-8859-2',

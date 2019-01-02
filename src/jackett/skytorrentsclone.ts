@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'skytorrentsclone',
   name: 'SkyTorrentsClone',
-  description:
-    'SkyTorrents.lol is a Public SkyTorrents clone for TV / MOVIES / GENERAL',
+  description: 'SkyTorrents.lol is a Public SkyTorrents clone for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
@@ -30,20 +30,16 @@ export const definition: TopLevel = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort=created{{else}}top100{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created{{else}}top100{{end}}',
       },
       {
-        path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=2{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=2{{else}}{{end}}',
       },
       {
-        path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=3{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=3{{else}}{{end}}',
       },
       {
-        path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=4{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=4{{else}}{{end}}',
       },
     ],
     rows: { selector: 'tr.result' },

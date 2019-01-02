@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'mteamtp',
   name: 'M-Team - TP',
   description: 'A chinese tracker',
@@ -99,29 +100,13 @@ export const definition: TopLevel = {
       },
       {
         path: 'adult.php',
-        categorymappings: [
-          410,
-          429,
-          424,
-          430,
-          426,
-          437,
-          431,
-          432,
-          436,
-          425,
-          433,
-          411,
-          412,
-          413,
-        ],
+        categorymappings: [410, 429, 424, 430, 426, 437, 431, 432, 436, 425, 433, 411, 412, 413],
       },
     ],
     method: 'post',
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search:
-        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: '0',
       spstate: '0',
       inclbookmarked: '0',

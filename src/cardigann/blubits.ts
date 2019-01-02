@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'blubits',
   name: 'Blu-bits',
   description: 'A HD tracker',
@@ -49,8 +50,7 @@ export const definition: TopLevel = {
     },
     error: [
       {
-        selector:
-          'table.lista > tbody > tr > td.lista > span[style="color:#FF0000;"]',
+        selector: 'table.lista > tbody > tr > td.lista > span[style="color:#FF0000;"]',
       },
     ],
     test: { path: 'index.php', selector: 'ul#navlist' },
@@ -58,10 +58,7 @@ export const definition: TopLevel = {
   ratio: {
     path: 'index.php',
     selector: 'ul#navlist > li:contains("Ratio: ")',
-    filters: [
-      { name: 'split', args: [' ', 1] },
-      { name: 'replace', args: ['---', '0'] },
-    ],
+    filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: ['---', '0'] }],
   },
   search: {
     path: 'index.php',

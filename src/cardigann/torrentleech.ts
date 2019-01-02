@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrentleech',
   name: 'TorrentLeech',
   language: 'en-US',
@@ -60,8 +61,7 @@ export const definition: TopLevel = {
     filters: [{ name: 'regexp', args: 'Ratio:.(\\d+\\.\\d+)' }],
   },
   search: {
-    path:
-      '/torrents/browse/{{if .Query.Keywords}}index/query/{{ .Query.Keywords}}{{end}}',
+    path: '/torrents/browse/{{if .Query.Keywords}}index/query/{{ .Query.Keywords}}{{end}}',
     inputs: { $raw: '{{range .Categories}}category[]={{.}}&{{end}}' },
     rows: { selector: 'table#torrenttable > tbody > tr' },
     fields: {

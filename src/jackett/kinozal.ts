@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'kinozal',
   name: 'Kinozal',
-  description:
-    'Kinozal is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / MUSIC',
+  description: 'Kinozal is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / MUSIC',
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'WINDOWS-1251',

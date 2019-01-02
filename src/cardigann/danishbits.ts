@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'danishbits',
   name: 'DanishBits',
   language: 'da-DK',
@@ -57,8 +58,7 @@ export const definition: TopLevel = {
   search: {
     path: '/torrents.php',
     inputs: {
-      $raw:
-        'action=newbrowse&search={{ .Query.Keywords }}&pre_type=torrents&type=',
+      $raw: 'action=newbrowse&search={{ .Query.Keywords }}&pre_type=torrents&type=',
     },
     rows: { selector: 'table#torrent_table tr.torrent' },
     fields: {

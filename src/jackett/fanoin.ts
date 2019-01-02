@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'fanoin',
   name: 'FANO.IN',
-  description:
-    'Fano.in is a LATVIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'Fano.in is a LATVIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'lv-LV',
   type: 'private',
   encoding: 'UTF-8',

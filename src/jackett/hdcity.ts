@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hdcity',
   name: 'HDCity',
   description: 'HDCity is a SPANISH site for HD content',
@@ -242,9 +243,7 @@ export const definition: TopLevel = {
   },
   search: {
     path: 'index.php',
-    keywordsfilters: [
-      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],
     inputs: {
       page: 'torrents',
       $raw: '&category={{range .Categories}}{{.}};{{end}}',

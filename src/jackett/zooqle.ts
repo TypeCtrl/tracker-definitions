@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'zooqle',
   name: 'Zooqle',
-  description:
-    'Zooqle is a Public torrent index providing a huge database of verified torrents',
+  description: 'Zooqle is a Public torrent index providing a huge database of verified torrents',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
@@ -43,10 +43,7 @@ export const definition: TopLevel = {
       category: {
         selector: 'td:nth-child(2) > i',
         attribute: 'class',
-        filters: [
-          { name: 'split', args: [' ', 1] },
-          { name: 'replace', args: ['zqf-', ''] },
-        ],
+        filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: ['zqf-', ''] }],
       },
       details: { selector: 'td:nth-child(2) a', attribute: 'href' },
       download: {
@@ -75,19 +72,13 @@ export const definition: TopLevel = {
         optional: true,
         selector: 'td:nth-child(6) div',
         attribute: 'title',
-        filters: [
-          { name: 'split', args: [' ', 1] },
-          { name: 'replace', args: [',', ''] },
-        ],
+        filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: [',', ''] }],
       },
       leechers: {
         optional: true,
         selector: 'td:nth-child(6) div',
         attribute: 'title',
-        filters: [
-          { name: 'split', args: [' ', 4] },
-          { name: 'replace', args: [',', ''] },
-        ],
+        filters: [{ name: 'split', args: [' ', 4] }, { name: 'replace', args: [',', ''] }],
       },
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },

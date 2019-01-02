@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'ilcorsaroblu',
   name: 'Il Corsaro Blu',
-  description:
-    'Il Corsaro Blu is an ITALIAN Public site for TV / MOVIES / GENERAL',
+  description: 'Il Corsaro Blu is an ITALIAN Public site for TV / MOVIES / GENERAL',
   language: 'it-IT',
   type: 'public',
   encoding: 'UTF-8',
@@ -77,24 +77,15 @@ export const definition: TopLevel = {
           },
           {
             name: 're_replace',
-            args: [
-              "(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b",
-              'S0$1$2',
-            ],
+            args: ["(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b", 'S0$1$2'],
           },
           {
             name: 're_replace',
-            args: [
-              "(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b",
-              'S$1$2',
-            ],
+            args: ["(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b", 'S$1$2'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))',
-              'E$1$2',
-            ],
+            args: ['(?i)\\b(?:[\\/\\|]?Episodio\\s?(\\d+)|Puntata\\s?(\\d+))', 'E$1$2'],
           },
           {
             name: 're_replace',

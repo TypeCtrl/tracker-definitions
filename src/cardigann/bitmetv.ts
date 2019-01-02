@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'bitmetv',
   name: 'BitMeTV',
   language: 'en-US',
@@ -30,10 +31,7 @@ export const definition: TopLevel = {
       date: {
         selector: 'td:nth-child(2) > font[size="1"]',
         remove: 'br',
-        ffilters: [
-          { name: 'split', args: ['|', 1] },
-          { name: 'trim', args: '.' },
-        ],
+        ffilters: [{ name: 'split', args: ['|', 1] }, { name: 'trim', args: '.' }],
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },

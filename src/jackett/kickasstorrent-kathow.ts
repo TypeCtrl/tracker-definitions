@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'kickasstorrent-kathow',
   name: 'KickAssTorrent (kat.li)',
-  description:
-    'kat.li is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
+  description: 'kat.li is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',

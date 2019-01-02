@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'diablotorrent',
   name: 'Diablo Torrent',
-  description:
-    ' Diablo Torrent is a Hungarian Private site for TV / MOVIES / GENERAL',
+  description: ' Diablo Torrent is a Hungarian Private site for TV / MOVIES / GENERAL',
   language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',

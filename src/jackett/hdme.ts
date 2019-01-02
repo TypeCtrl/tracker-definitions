@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hdme',
   name: 'HDME',
   description: 'HDME is a Private Torrent Tracker for HD MOVIES / TV / GENERAL',

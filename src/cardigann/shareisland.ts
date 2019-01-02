@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'shareisland',
   name: 'Shareisland',
   description: 'A general italian tracker',
@@ -74,8 +75,7 @@ export const definition: TopLevel = {
       searchin: 'title',
     },
     rows: {
-      selector:
-        'table#torrents_table_classic > tbody > tr:not([id="torrents_table_classic_head"])',
+      selector: 'table#torrents_table_classic > tbody > tr:not([id="torrents_table_classic_head"])',
     },
     fields: {
       title: { selector: 'td.torrent_name > a' },

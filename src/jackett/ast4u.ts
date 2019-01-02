@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'ast4u',
   name: 'AST4u',
-  description:
-    'AST4u is a GERMAN Private site for TV / MOVIES / ANIME / HENTAI',
+  description: 'AST4u is a GERMAN Private site for TV / MOVIES / ANIME / HENTAI',
   language: 'de-DE',
   type: 'private',
   encoding: 'ISO-8859-1',
@@ -109,10 +109,7 @@ export const definition: TopLevel = {
       size: {
         selector:
           'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(1), td:nth-child(7):has(br)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
+        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
       },
       seeders: {
         selector:

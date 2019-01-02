@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrentgalaxyorg',
   name: 'TorrentGalaxy.org',
-  description:
-    'TorrentGalaxy.org (TGx) is a Public site for TV / MOVIES / GENERAL',
+  description: 'TorrentGalaxy.org (TGx) is a Public site for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',

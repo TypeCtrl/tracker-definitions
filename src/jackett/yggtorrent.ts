@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'yggtorrent',
   name: 'YGGtorrent',
-  description:
-    'YGGTorrent is a FRENCH Semi-Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'YGGTorrent is a FRENCH Semi-Private Torrent Tracker for 0DAY / GENERAL',
   language: 'fr-FR',
   type: 'semi-private',
   encoding: 'UTF-8',
@@ -221,10 +221,7 @@ export const definition: TopLevel = {
         filters: [
           {
             name: 're_replace',
-            args: [
-              '[\\.\\s\\[\\-][Vv][Oo][Ss][Tt][Ff][Rr][\\.\\s\\]\\-]',
-              '.ENGLISH.',
-            ],
+            args: ['[\\.\\s\\[\\-][Vv][Oo][Ss][Tt][Ff][Rr][\\.\\s\\]\\-]', '.ENGLISH.'],
           },
         ],
       },

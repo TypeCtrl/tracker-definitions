@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrenthr',
   name: 'TorrentHR',
-  description:
-    'TorrentHR is a ratioless CROATIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'TorrentHR is a ratioless CROATIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hr-HR',
   type: 'private',
   encoding: 'WINDOWS-1250',
@@ -46,9 +46,7 @@ export const definition: TopLevel = {
       password: '{{ .Config.password }}',
       ssl: 'yes',
     },
-    error: [
-      { selector: 'div.glavni:has(div.glavni_naslov:contains("Greška"))' },
-    ],
+    error: [{ selector: 'div.glavni:has(div.glavni_naslov:contains("Greška"))' }],
     test: { path: '/browse.php' },
   },
   search: {
@@ -68,9 +66,7 @@ export const definition: TopLevel = {
         optional: true,
         selector: 'a[href^="details.php?id="][onmousemove]',
         attribute: 'onmousemove',
-        filters: [
-          { name: 'regexp', args: "return overlibImage\\('(.*)','.*'\\);" },
-        ],
+        filters: [{ name: 'regexp', args: "return overlibImage\\('(.*)','.*'\\);" }],
       },
       details: {
         selector: 'a[href^="details.php?id="]',
@@ -88,17 +84,11 @@ export const definition: TopLevel = {
       files: { selector: 'td:nth-child(5)' },
       size: {
         selector: 'td:nth-child(7)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
+        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
       },
       grabs: {
         selector: 'td:nth-child(7)',
-        filters: [
-          { name: 'regexp', args: '([\\d,]+)' },
-          { name: 'replace', args: [',', ''] },
-        ],
+        filters: [{ name: 'regexp', args: '([\\d,]+)' }, { name: 'replace', args: [',', ''] }],
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
@@ -106,9 +96,7 @@ export const definition: TopLevel = {
         optional: true,
         selector: 'a[href^="details.php?id="][onmousemove]',
         attribute: 'onmousemove',
-        filters: [
-          { name: 'regexp', args: "return overlibImage\\('.*','(.*)'\\);" },
-        ],
+        filters: [{ name: 'regexp', args: "return overlibImage\\('.*','(.*)'\\);" }],
       },
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },

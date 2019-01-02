@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'katcrs',
   name: 'KATcrs',
-  description:
-    'KATcrs is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
+  description: 'KATcrs is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
@@ -40,9 +40,7 @@ export const definition: TopLevel = {
   },
   settings: [],
   search: {
-    paths: [
-      { path: '{{ if .Keywords }}search/{{ .Keywords }}/{{else}}new/{{end}}' },
-    ],
+    paths: [{ path: '{{ if .Keywords }}search/{{ .Keywords }}/{{else}}new/{{end}}' }],
     rows: {
       selector: 'table.data tr.odd',
       filters: [{ name: 'andmatch' }],

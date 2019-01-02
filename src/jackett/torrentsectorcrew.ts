@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'torrentsectorcrew',
   name: 'Torrent Sector Crew',
   description: 'A German general tracker',
@@ -120,10 +121,7 @@ export const definition: TopLevel = {
       },
       size: {
         selector: 'td:nth-child(6)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
+        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
       },
       seeders: {
         selector: 'td:nth-child(7)',

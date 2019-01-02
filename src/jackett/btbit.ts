@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'btbit',
   name: 'btbit',
   description:
@@ -29,8 +30,7 @@ export const definition: TopLevel = {
   search: {
     paths: [
       {
-        path:
-          'list/{{if .Keywords}}{{.Keywords}}{{else}}movie{{end}}/1-1-0.html',
+        path: 'list/{{if .Keywords}}{{.Keywords}}{{else}}movie{{end}}/1-1-0.html',
       },
     ],
     rows: { selector: '.rs' },

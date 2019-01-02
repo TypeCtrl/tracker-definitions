@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'arenabg',
   name: 'ArenaBG',
-  description:
-    'ArenaBG is a BULGARIAN Semi-Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'ArenaBG is a BULGARIAN Semi-Private Torrent Tracker for 0DAY / GENERAL',
   language: 'bg-BG',
   type: 'semi-private',
   encoding: 'UTF-8',
@@ -112,9 +112,7 @@ export const definition: TopLevel = {
       category: {
         selector: 'td.category a',
         attribute: 'href',
-        filters: [
-          { name: 're_replace', args: ['/torrents/type:(.+?)/', '$1'] },
-        ],
+        filters: [{ name: 're_replace', args: ['/torrents/type:(.+?)/', '$1'] }],
       },
       download: { selector: 'td.filename div a', attribute: 'href' },
       size: { selector: 'td:nth-child(4)' },
@@ -125,10 +123,7 @@ export const definition: TopLevel = {
       },
       seeders: {
         selector: 'td:nth-child(6)',
-        filters: [
-          { name: 'replace', args: ['-', '0'] },
-          { name: 'replace', args: ['DHT', '0'] },
-        ],
+        filters: [{ name: 'replace', args: ['-', '0'] }, { name: 'replace', args: ['DHT', '0'] }],
       },
       leechers: {
         selector: 'td:nth-child(7)',

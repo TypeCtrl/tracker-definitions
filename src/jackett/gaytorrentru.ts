@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'gaytorrentru',
   name: 'GAYtorrent.ru',
-  description:
-    'World largest gay porn library for free with a stunning forum and 24/7 chat.',
+  description: 'World largest gay porn library for free with a stunning forum and 24/7 chat.',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -90,8 +90,7 @@ export const definition: TopLevel = {
       incldead: '{{ .Config.incldead }}',
     },
     rows: {
-      selector:
-        'table.browse_result > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table.browse_result > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       category: {

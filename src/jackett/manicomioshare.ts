@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'manicomioshare',
   name: 'Manicomio Share',
-  description:
-    'Manicomio Share is a Brazilian Private site for TV / MOVIES / GENERAL',
+  description: 'Manicomio Share is a Brazilian Private site for TV / MOVIES / GENERAL',
   language: 'pt-BR',
   type: 'private',
   encoding: 'ISO-8859-1',

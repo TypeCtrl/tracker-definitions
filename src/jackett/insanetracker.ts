@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'insanetracker',
   name: 'Insane Tracker',
-  description:
-    'Insane Tracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'Insane Tracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',
@@ -60,8 +60,7 @@ export const definition: TopLevel = {
     paths: [{ path: '/browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search:
-        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
+      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
       t: 'all',
     },
     rows: { selector: 'table.torrentable > tbody > tr:has(td.maintd)' },
@@ -93,17 +92,11 @@ export const definition: TopLevel = {
       },
       size: {
         selector: 'td:nth-child(8)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
+        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
       },
       grabs: {
         selector: 'td:nth-child(9) > div:first-child',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'regexp', args: '^([\\d]+)' },
-        ],
+        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'regexp', args: '^([\\d]+)' }],
       },
       seeders: {
         selector: 'td:nth-child(9) > div:first-child',
@@ -114,10 +107,7 @@ export const definition: TopLevel = {
       },
       leechers: {
         selector: 'td:nth-child(9) > div:first-child',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'regexp', args: '([\\d]+)$' },
-        ],
+        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'regexp', args: '([\\d]+)$' }],
       },
       date: {
         selector: 'td.date',
@@ -134,8 +124,7 @@ export const definition: TopLevel = {
       },
       description: {
         selector: 'td.maintd',
-        remove:
-          'div.tortitle, div.markcont, div.tablebuttons, div.tablebigbuttons',
+        remove: 'div.tortitle, div.markcont, div.tablebuttons, div.tablebigbuttons',
       },
     },
   },

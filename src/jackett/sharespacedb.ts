@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'sharespacedb',
   name: 'ShareSpaceDB',
   description: 'A French gerneral tracker',
@@ -134,9 +135,7 @@ export const definition: TopLevel = {
       banner: {
         selector: 'a[onmouseover][href^="torrents-details.php?id="]',
         attribute: 'onmouseover',
-        filters: [
-          { name: 'regexp', args: '<td align=left><img src=(.*?) width' },
-        ],
+        filters: [{ name: 'regexp', args: '<td align=left><img src=(.*?) width' }],
       },
       size: { selector: 'td:nth-child(7)' },
       grabs: { selector: 'td:nth-child(8)' },

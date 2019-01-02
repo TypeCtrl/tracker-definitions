@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'asiandvdclub',
   name: 'AsianDVDClub',
-  description:
-    'AsianDVDClub is an ASIAN Private Torrent Tracker for HD MOVIES / TV',
+  description: 'AsianDVDClub is an ASIAN Private Torrent Tracker for HD MOVIES / TV',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

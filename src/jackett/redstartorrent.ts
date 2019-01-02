@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'rstorrent',
   name: 'RedStarTorrent',
-  description:
-    'Red Star Torrent (RST) is a POLISH Private Torrent Tracker for TV',
+  description: 'Red Star Torrent (RST) is a POLISH Private Torrent Tracker for TV',
   language: 'pl-PL',
   type: 'private',
   encoding: 'ISO-8859-2',
@@ -62,8 +62,7 @@ export const definition: TopLevel = {
       polish: 0,
     },
     rows: {
-      selector:
-        'table[border="1"][cellpadding="5"] > tbody > tr:has(a[href^="/details.php?id="])',
+      selector: 'table[border="1"][cellpadding="5"] > tbody > tr:has(a[href^="/details.php?id="])',
     },
     fields: {
       title: { selector: 'a[href^="/details.php?id="]' },

@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'eotforum',
   name: 'EoT-Forum',
   description: 'A German gerneral tracker',
@@ -80,8 +81,7 @@ export const definition: TopLevel = {
       gold: '0',
     },
     rows: {
-      selector:
-        'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="])',
+      selector: 'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="])',
       dateheaders: {
         selector: ':has(td.header > b)',
         filters: [

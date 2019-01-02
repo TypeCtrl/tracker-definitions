@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'mvgroupforum',
   name: 'MVGroup Forum',
   description:
@@ -152,15 +153,11 @@ export const definition: TopLevel = {
     fields: {
       title: {
         optional: true,
-        selector:
-          'td.doubleindent, td.singleindent a[href^="/index.php?showtopic="]',
+        selector: 'td.doubleindent, td.singleindent a[href^="/index.php?showtopic="]',
         filters: [
           {
             name: 're_replace',
-            args: [
-              '^BBC (.*)',
-              '{{ if .Config.dropbbc }}{{ else }}BBC {{ end }}$1',
-            ],
+            args: ['^BBC (.*)', '{{ if .Config.dropbbc }}{{ else }}BBC {{ end }}$1'],
           },
           {
             name: 'append',

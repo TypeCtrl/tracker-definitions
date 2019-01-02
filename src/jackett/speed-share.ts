@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'speed-share',
   name: 'Speed-Share',
-  description:
-    'Speed-Share is a Brazilian Private site for TV / MOVIES / GENERAL',
+  description: 'Speed-Share is a Brazilian Private site for TV / MOVIES / GENERAL',
   language: 'pt-BR',
   type: 'private',
   encoding: 'UTF-8',
@@ -221,9 +221,7 @@ export const definition: TopLevel = {
       },
       title_anime: {
         selector: 'a[href^="torrents-details.php?id="]',
-        filters: [
-          { name: 're_replace', args: ['(Ep[\\.]?[ ]?(\\d{1,3}))', 'E$2'] },
-        ],
+        filters: [{ name: 're_replace', args: ['(Ep[\\.]?[ ]?(\\d{1,3}))', 'E$2'] }],
       },
       title_normal: {
         selector: 'a[href^="torrents-details.php?id="]',

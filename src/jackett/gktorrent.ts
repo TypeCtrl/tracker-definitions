@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'gktorrent',
   name: 'GkTorrent',
   description: 'GkTorrent is a French Public site for TV / MOVIES / GENERAL',
@@ -43,9 +44,7 @@ export const definition: TopLevel = {
   settings: [],
   download: { selector: 'a[href*="/get_torrent/"]' },
   search: {
-    paths: [
-      { path: '{{if .Keywords}}/recherche/{{.Keywords}}{{else}}{{end}}' },
-    ],
+    paths: [{ path: '{{if .Keywords}}/recherche/{{.Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'div.listing-torrent > table > tbody > tr:has(a)' },
     fields: {
       site_date: {

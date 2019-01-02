@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'yggtorrent',
   name: 'YGGtorrent',
   language: 'fr-FR',
@@ -130,8 +131,7 @@ export const definition: TopLevel = {
     },
     error: [
       {
-        selector:
-          'div#top_panel > div > ul > li:nth-child(1) > a.text:contains("S\'identifier")',
+        selector: 'div#top_panel > div > ul > li:nth-child(1) > a.text:contains("S\'identifier")',
       },
     ],
     test: { path: '/', selector: 'a[href$="/user/logout"]' },

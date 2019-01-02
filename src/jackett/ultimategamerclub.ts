@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'ultimategamerclub',
   name: 'Ultimate Gamer Club',
   description: 'Ultimate Gamer (UGC) is a Private Torrent Tracker for GAMES',

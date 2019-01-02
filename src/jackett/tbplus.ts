@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'tbplus',
   name: 'TBPlus',
   description: 'TBPlus is a Spanish site of general content',
@@ -137,8 +138,7 @@ export const definition: TopLevel = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector:
-        '#mcol .block-content-l table table.lista > tbody > tr:not(:first-child)',
+      selector: '#mcol .block-content-l table table.lista > tbody > tr:not(:first-child)',
     },
     fields: {
       category: {

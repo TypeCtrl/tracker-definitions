@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'demonoid',
   name: 'Demonoid',
   description: 'Demonoid',
@@ -33,11 +34,9 @@ export const definition: TopLevel = {
     },
     error: [
       {
-        selector:
-          "form[id='bb_code_form'] + tbody font[class='red']:nth-child(1)",
+        selector: "form[id='bb_code_form'] + tbody font[class='red']:nth-child(1)",
         message: {
-          selector:
-            "form[id='bb_code_form'] + tbody font[class='red']:nth-child(1)",
+          selector: "form[id='bb_code_form'] + tbody font[class='red']:nth-child(1)",
           remove: 'style, b',
         },
       },

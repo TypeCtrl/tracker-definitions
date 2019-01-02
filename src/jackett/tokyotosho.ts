@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'tokyotosho',
   name: 'Tokyo Toshokan',
   description: 'A BitTorrent Library for Japanese Media',
@@ -28,9 +29,7 @@ export const definition: TopLevel = {
     ],
   },
   search: {
-    paths: [
-      { path: '{{if .Query.Keywords }}search.php{{else}}index.php{{end}}' },
-    ],
+    paths: [{ path: '{{if .Query.Keywords }}search.php{{else}}index.php{{end}}' }],
     inputs: {
       terms: '{{ .Query.Keywords }}',
       type: '{{ .Config.type-id }}',
@@ -51,10 +50,7 @@ export const definition: TopLevel = {
       },
       size: {
         selector: 'td:nth-child(4)',
-        filters: [
-          { name: 'split', args: ['|', 1] },
-          { name: 'regexp', args: 'Size: (.+?) ?$' },
-        ],
+        filters: [{ name: 'split', args: ['|', 1] }, { name: 'regexp', args: 'Size: (.+?) ?$' }],
       },
       date: {
         selector: 'td:nth-child(4)',

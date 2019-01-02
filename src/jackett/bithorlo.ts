@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'bithorlo',
   name: 'Bithorlo',
-  description:
-    'Bithorlo (BHO) is a HUNGARIAN Private Torrent Tracker for MOVIES / GENERAL',
+  description: 'Bithorlo (BHO) is a HUNGARIAN Private Torrent Tracker for MOVIES / GENERAL',
   language: 'hu-HU',
   type: 'private',
   encoding: 'ISO-8859-2',

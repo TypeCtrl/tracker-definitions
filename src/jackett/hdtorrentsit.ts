@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hdtorrentsit',
   name: 'HDTorrents.it',
   description: 'HDTorrents.it is an ITALIAN Private site for TV / MOVIES',
@@ -9,10 +10,7 @@ export const definition: TopLevel = {
   links: ['http://hdtorrents.xyz/'],
   legacylinks: ['http://hdtorrents.it/'],
   caps: {
-    categorymappings: [
-      { id: '2040', cat: 'Movies/HD' },
-      { id: '5040', cat: 'TV/HD' },
-    ],
+    categorymappings: [{ id: '2040', cat: 'Movies/HD' }, { id: '5040', cat: 'TV/HD' }],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -51,17 +49,11 @@ export const definition: TopLevel = {
           { name: 're_replace', args: ['(\\s\\||\\s\\/)', ''] },
           {
             name: 're_replace',
-            args: [
-              "(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b",
-              'S0$1$2',
-            ],
+            args: ["(?i)\\bStagion[ei]\\s?(\\d{1})\\b|\\bSeason'?s?\\s?(\\d{1})\\b", 'S0$1$2'],
           },
           {
             name: 're_replace',
-            args: [
-              "(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b",
-              'S$1$2',
-            ],
+            args: ["(?i)\\bStagion[ei]\\s?(\\d{2,})\\b|\\bSeason'?s?\\s?(\\d{2,})\\b", 'S$1$2'],
           },
           {
             name: 're_replace',
@@ -69,10 +61,7 @@ export const definition: TopLevel = {
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)\\b(?:[\\s\\/\\|]?Episodi[o]?\\s?(\\d+)|Puntata\\s?(\\d+))',
-              'E$1$2',
-            ],
+            args: ['(?i)\\b(?:[\\s\\/\\|]?Episodi[o]?\\s?(\\d+)|Puntata\\s?(\\d+))', 'E$1$2'],
           },
           {
             name: 're_replace',

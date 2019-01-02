@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'ncore',
   name: 'NCore',
   language: 'en-US',
@@ -66,9 +67,7 @@ export const definition: TopLevel = {
       download: {
         selector: '.torrent_txt > a, .torrent_txt2 > a',
         attribute: 'href',
-        filters: [
-          { name: 'replace', args: ['action=details', 'action=download'] },
-        ],
+        filters: [{ name: 'replace', args: ['action=details', 'action=download'] }],
       },
       size: { selector: '.box_meret2' },
       date: { selector: '.box_feltoltve2', remove: 'i, br' },

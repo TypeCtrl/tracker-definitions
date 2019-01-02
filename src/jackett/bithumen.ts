@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'bithumen',
   name: 'BitHUmen',
   description: 'BitHUmen is a Hungarian Private site for TV / MOVIES / GENERAL',
@@ -60,13 +61,11 @@ export const definition: TopLevel = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search:
-        '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
+      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
       incldead: 1,
     },
     rows: {
-      selector:
-        'table#torrenttable > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table#torrenttable > tbody > tr:has(a[href^="details.php?id="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

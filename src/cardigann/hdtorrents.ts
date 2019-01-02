@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hdtorrents',
   name: 'HD-Torrents',
   language: 'en-US',
@@ -53,8 +54,7 @@ export const definition: TopLevel = {
       active: 1,
     },
     rows: {
-      selector:
-        'table.mainblockcontenttt tr:nth-child(n+3):has(td.mainblockcontent)',
+      selector: 'table.mainblockcontenttt tr:nth-child(n+3):has(td.mainblockcontent)',
       remove: 'tr:has(td.listas)',
     },
     fields: {

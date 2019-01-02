@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'unionfansub',
   name: 'Union Fansub',
-  description:
-    'Union Fansub is a SPANISH Semi private torrent site focused on ANIME',
+  description: 'Union Fansub is a SPANISH Semi private torrent site focused on ANIME',
   language: 'es-ES',
   type: 'semi-private',
   encoding: 'UTF-8',

@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'fullmixmusic',
   name: 'FullMixMusic',
   description: 'FullMixMusic is a HUNGARIAN Private Torrent Tracker for MUSIC',

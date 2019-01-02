@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'elittracker',
   name: 'Elit Tracker',
-  description:
-    'Elit Tracker (ET) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'Elit Tracker (ET) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-HU',
   type: 'private',
   encoding: 'ISO-8859-2',

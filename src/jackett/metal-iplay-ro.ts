@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'metaliplayro',
   name: 'Romanian Metal Torrent',
   description:
@@ -51,12 +52,10 @@ export const definition: TopLevel = {
   search: {
     paths: [{ path: 'browse.php', method: 'get' }],
     inputs: {
-      search:
-        '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
     },
     rows: {
-      selector:
-        'table.torrents_table tbody tr:has(a[href^="download2.php?id="])',
+      selector: 'table.torrents_table tbody tr:has(a[href^="download2.php?id="])',
     },
     fields: {
       title: { selector: 'td a[href^="details.php?id="]' },

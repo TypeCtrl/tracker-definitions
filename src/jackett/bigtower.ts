@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'bigtower',
   name: 'BigTower',
   description: 'Big Tower is an ITALIAN Private site for TV / MOVIES / GENERAL',

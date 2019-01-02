@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'worldwidetorrents',
   name: 'World Wide Torrents',
   description: 'World Wide Torrents is a Public site for TV / MOVIES / GENERAL',
@@ -7,10 +8,7 @@ export const definition: TopLevel = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://worldwidetorrents.to/'],
-  legacylinks: [
-    'https://worldwidetorrents.eu/',
-    'https://worldwidetorrents.me/',
-  ],
+  legacylinks: ['https://worldwidetorrents.eu/', 'https://worldwidetorrents.me/'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime: Movie' },
@@ -156,8 +154,7 @@ export const definition: TopLevel = {
       },
     ],
     rows: {
-      selector:
-        'tr:not(:has(script)):has(a[title][href^="torrents-details.php?id="])',
+      selector: 'tr:not(:has(script)):has(a[title][href^="torrents-details.php?id="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

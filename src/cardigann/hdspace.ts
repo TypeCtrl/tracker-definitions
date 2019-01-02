@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'hdspace',
   name: 'HD-Space',
   description: 'a HD tracker',
@@ -30,12 +31,8 @@ export const definition: TopLevel = {
   },
   ratio: {
     path: '/index.php?page=torrents',
-    selector:
-      'table.lista > tbody > tr > td[align="center"]:contains("Ratio:")',
-    filters: [
-      { name: 'regexp', args: 'Ratio: (.+)' },
-      { name: 'replace', args: ['---', '0'] },
-    ],
+    selector: 'table.lista > tbody > tr > td[align="center"]:contains("Ratio:")',
+    filters: [{ name: 'regexp', args: 'Ratio: (.+)' }, { name: 'replace', args: ['---', '0'] }],
   },
   login: {
     path: '/index.php?page=login',
@@ -57,8 +54,7 @@ export const definition: TopLevel = {
     rows: { selector: 'table.lista > tbody > style ~ tr' },
     fields: {
       title: {
-        selector:
-          'td[align="left"] > a[href^="index.php?page=torrent-details"]',
+        selector: 'td[align="left"] > a[href^="index.php?page=torrent-details"]',
       },
       category: {
         selector: 'a[href^="index.php?page=torrents&category="]',
@@ -66,8 +62,7 @@ export const definition: TopLevel = {
         filters: [{ name: 'querystring', args: 'category' }],
       },
       comments: {
-        selector:
-          'td[align="left"] > a[href^="index.php?page=torrent-details"]',
+        selector: 'td[align="left"] > a[href^="index.php?page=torrent-details"]',
         attribute: 'href',
       },
       download: {

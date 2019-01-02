@@ -1,5 +1,6 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'trezzor',
   name: 'Trezzor',
   description: 'Trezzor is a CZECH Private site for TV / MOVIES / GENERAL',
@@ -56,16 +57,12 @@ export const definition: TopLevel = {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
-    error: [
-      { selector: 'div > font:contains("V pripade problemov kontaktujte")' },
-    ],
+    error: [{ selector: 'div > font:contains("V pripade problemov kontaktujte")' }],
     test: { path: 'torrents.php' },
   },
   search: {
     paths: [{ path: 'torrents.php' }],
-    keywordsfilters: [
-      { name: 're_replace', args: ['S(\\d{2})E(\\d{2})', '$1 $2'] },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: ['S(\\d{2})E(\\d{2})', '$1 $2'] }],
     inputs: { search: '{{ .Keywords }}', category: '0', active: '1' },
     rows: { selector: 'tr.torrenty_lista' },
     fields: {

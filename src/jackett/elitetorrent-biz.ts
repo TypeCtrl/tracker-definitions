@@ -1,9 +1,9 @@
-import { TopLevel } from '../definition-interface';
-export const definition: TopLevel = {
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
   site: 'elitetorrent-biz',
   name: 'EliteTorrent.biz',
-  description:
-    'EliteTorrent.biz is a Public torrent site for TV, movies and documentaries',
+  description: 'EliteTorrent.biz is a Public torrent site for TV, movies and documentaries',
   language: 'es-ES',
   type: 'public',
   encoding: 'UTF-8',
@@ -14,10 +14,7 @@ export const definition: TopLevel = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [
-      { id: 'series', cat: 'TV' },
-      { id: 'peliculas', cat: 'Movies' },
-    ],
+    categorymappings: [{ id: 'series', cat: 'TV' }, { id: 'peliculas', cat: 'Movies' }],
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
