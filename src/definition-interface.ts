@@ -131,7 +131,7 @@ export interface Search {
   error?: Error[];
   preprocessingfilters?: FilterElement[];
   keywordsfilters?: FilterElement[];
-  rows: Rows;
+  rows: Selector;
   fields: { [key: string]: Selector };
   paths?: Path[];
   headers?: { [key: string]: string | string[] };
@@ -146,6 +146,8 @@ export interface Selector {
   case?: { [key: string]: string | number };
   text?: string | number;
   remove?: string;
+  after?: number;
+  dateheaders?: Selector;
 }
 
 export interface FilterElement {
@@ -155,33 +157,10 @@ export interface FilterElement {
   dateparse?: null;
 }
 
-export interface Uploadvolumefactor {
-  text?: string;
-  case?: { [key: string]: string | number };
-  optional?: boolean;
-  selector?: string;
-  attribute?: string;
-  filters?: Selector[];
-}
-
 export interface Path {
   path: string;
   inputs?: { [key: string]: string | number };
   method?: string;
   followredirect?: boolean;
   categorymappings?: (string | number)[];
-}
-
-export interface Rows {
-  selector: string;
-  remove?: string;
-  filters?: FilterElement[];
-  after?: number;
-  dateheaders?: SiteDate;
-}
-
-export interface SiteDate {
-  selector: string;
-  optional?: boolean;
-  filters: FilterElement[];
 }
