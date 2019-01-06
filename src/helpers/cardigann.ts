@@ -1,4 +1,4 @@
-export const sites: string[] = [
+export const cardigannSites: string[] = [
   'abnormal',
   'alpharatio',
   'alphareign',

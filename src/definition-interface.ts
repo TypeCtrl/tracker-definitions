@@ -1,31 +1,7 @@
 // tslint:disable:type-literal-delimiter
+import { Categories } from './categories';
 
 export type SiteType = 'private' | 'semi-private' | 'public';
-export type SiteLanguage =
-  | 'bg-BG'
-  | 'cs-CZ'
-  | 'da-DK'
-  | 'de-DE'
-  | 'el-GR'
-  | 'en-EN'
-  | 'en-US'
-  | 'es-ES'
-  | 'fr-FR'
-  | 'hr-HR'
-  | 'hu-HU'
-  | 'is-IS'
-  | 'it-IT'
-  | 'lt-LT'
-  | 'lv-LV'
-  | 'nb-NO'
-  | 'pl-PL'
-  | 'pt-BR'
-  | 'pt-PT'
-  | 'ro-RO'
-  | 'ru-RU'
-  | 'tr-TR'
-  | 'vi-VN'
-  | 'zh-CN';
 
 export type SiteEncoding =
   | 'ISO-8859-1'
@@ -37,78 +13,8 @@ export type SiteEncoding =
   | 'WINDOWS-1252'
   | 'WINDOWS-1253';
 
-export type Categories =
-  | 'Console'
-  | 'Console/NDS'
-  | 'Console/PSP'
-  | 'Console/Wii'
-  | 'Console/Xbox'
-  | 'Console/Xbox360'
-  | 'Console/Wiiware/VC'
-  | 'Console/XBOX360DLC'
-  | 'Console/PS3'
-  | 'Console/Other'
-  | 'Console/3DS'
-  | 'Console/PS Vita'
-  | 'Console/PSVita'
-  | 'Console/WiiU'
-  | 'Console/XboxOne'
-  | 'Console/PS4'
-  | 'Movies'
-  | 'Movies/Foreign'
-  | 'Movies/Other'
-  | 'Movies/SD'
-  | 'Movies/HD'
-  | 'Movies/UHD'
-  | 'Movies/3D'
-  | 'Movies/BluRay'
-  | 'Movies/DVD'
-  | 'Movies/WEBDL'
-  | 'Audio'
-  | 'Audio/MP3'
-  | 'Audio/Video'
-  | 'Audio/Audiobook'
-  | 'Audio/Lossless'
-  | 'Audio/Other'
-  | 'Audio/Foreign'
-  | 'PC'
-  | 'PC/0day'
-  | 'PC/ISO'
-  | 'PC/Mac'
-  | 'PC/Phone-Other'
-  | 'PC/Games'
-  | 'PC/Phone-IOS'
-  | 'PC/Phone-Android'
-  | 'TV'
-  | 'TV/WEB-DL'
-  | 'TV/Foreign'
-  | 'TV/SD'
-  | 'TV/HD'
-  | 'TV/UHD'
-  | 'TV/Other'
-  | 'TV/Sport'
-  | 'TV/Anime'
-  | 'TV/Documentary'
-  | 'XXX'
-  | 'XXX/DVD'
-  | 'XXX/WMV'
-  | 'XXX/XviD'
-  | 'XXX/x264'
-  | 'XXX/Other'
-  | 'XXX/Imageset'
-  | 'XXX/Packs'
-  | 'Other'
-  | 'Other/Misc'
-  | 'Other/Hashed'
-  | 'Books'
-  | 'Books/Ebook'
-  | 'Books/Comics'
-  | 'Books/Magazines'
-  | 'Books/Technical'
-  | 'Books/Other'
-  | 'Books/Foreign';
-
 export interface TrackerDefinition {
+  source: 'jackett' | 'cardigann';
   site: string;
   name: string;
   links: string[];
@@ -120,7 +26,7 @@ export interface TrackerDefinition {
    * language code
    * @link https://en.wikipedia.org/wiki/Language_code
    */
-  language: SiteLanguage;
+  language: string;
   description?: string;
   type?: SiteType;
   encoding?: SiteEncoding;
@@ -132,7 +38,7 @@ export interface TrackerDefinition {
   download?: Download;
   search: Search;
   test?: Test;
-  login?: Login;
+  login?: Req;
   ratio?: Ratio;
   legacylinks?: string[];
   followredirect?: boolean;
@@ -162,16 +68,16 @@ export interface Modes {
 }
 
 export interface Download {
-  before?: Login;
+  before?: Req;
   method?: string;
   selector?: string;
   filters?: FilterElement[];
   attribute?: string;
 }
 
-export interface Login {
+export interface Req {
   path?: string;
-  method?: string;
+  method?: 'cookie' | 'post' | 'form' | 'get';
   submitpath?: string;
   inputs?: { [key: string]: string | number };
   captcha?: Captcha;
@@ -243,7 +149,7 @@ export interface Selector {
 }
 
 export interface FilterElement {
-  name?: string;
+  name?: 'regexp' | 're_replace' | 'querystring' | 'dateparse' | 'replace' | 'trim' | 'split' | 'andmatch' | 'timeago' | 'append' | 'diacritics' | 'prepend' | 'validfilename' | 'toupper' | 'tolower' | 'validfilename' | 'urlencode' | 'strdump' | 'querystring' | 'urldecode' | 'filters';
   attribute?: string;
   args?: (string | number)[] | string | number;
   dateparse?: null;

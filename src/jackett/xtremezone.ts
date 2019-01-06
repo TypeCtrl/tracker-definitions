@@ -113,4 +113,5 @@ export const definition: TrackerDefinition = {
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },
     },
   },
+  source: 'jackett',
 };

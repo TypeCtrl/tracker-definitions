@@ -68,4 +68,5 @@ export const definition: TrackerDefinition = {
       date: { selector: 'td:nth-child(4)' },
     },
   },
+  source: 'jackett',
 };

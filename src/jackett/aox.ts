@@ -101,4 +101,5 @@ export const definition: TrackerDefinition = {
       description: { selector: 'p:has(b:contains("Language:"))' },
     },
   },
+  source: 'jackett',
 };

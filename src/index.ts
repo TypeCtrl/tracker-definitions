@@ -1,2 +1,11 @@
-export * from './jackett';
-export * from './cardigann';
+export * from './helpers/cardigann';
+export * from './helpers/jackett';
+export * from './definition-interface';
+export * from './categories';
+import { definitions as jDefinitions } from './jackett';
+import { definitions as cDefinitions } from './cardigann';
+
+export const definitions = [
+  ...jDefinitions,
+  ...cDefinitions,
+];

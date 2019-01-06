@@ -103,5 +103,6 @@
         "case": { "img[src$=\"pic/sticky2.gif\"]": "1.5", "*": "1" }
       }
     }
-  }
+  },
+  "source": "jackett"
 }

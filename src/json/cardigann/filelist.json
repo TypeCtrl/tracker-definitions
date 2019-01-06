@@ -73,5 +73,6 @@
       "leechers": { "selector": ".torrenttable:nth-child(10) span" }
     }
   },
-  "encoding": "UTF-8"
+  "encoding": "UTF-8",
+  "source": "cardigann"
 }

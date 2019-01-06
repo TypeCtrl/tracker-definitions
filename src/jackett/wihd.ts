@@ -226,4 +226,5 @@ export const definition: TrackerDefinition = {
       date: { text: 'now' },
     },
   },
+  source: 'jackett',
 };

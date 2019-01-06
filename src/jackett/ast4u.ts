@@ -135,4 +135,5 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: { case: { '*': '1' } },
     },
   },
+  source: 'jackett',
 };

@@ -59,4 +59,5 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: { case: { 'i.fa-gem': '2', '*': '1' } },
     },
   },
+  source: 'jackett',
 };

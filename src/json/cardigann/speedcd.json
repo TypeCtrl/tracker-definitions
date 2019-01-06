@@ -74,5 +74,6 @@
       "leechers": { "selector": "td:nth-child(7)" }
     }
   },
-  "encoding": "UTF-8"
+  "encoding": "UTF-8",
+  "source": "cardigann"
 }

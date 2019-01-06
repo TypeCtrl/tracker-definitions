@@ -125,5 +125,6 @@
         "case": { "font[color=\"green\"]": "0", "*": "1" }
       }
     }
-  }
+  },
+  "source": "jackett"
 }

@@ -13,8 +13,7 @@
     "typescript"
   ],
   "source": "src/index.ts",
-  "main": "./jackett-definitions.js",
-  "module": "./jackett-definitions.m.js",
+  "main": "./src/index.js",
   "typings": "./src/index.d.ts",
   "sideEffects": false,
   "scripts": {
@@ -22,9 +21,8 @@
     "lint": "tslint -t stylish -p .",
     "lint:fix": "tslint -p tsconfig.json -t stylish --fix 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && cp -r src/json dist/json",
     "postbuild": "cp package.json dist && cp LICENSE dist && cp README.md dist && rimraf dist/test",
-    "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --coverage --no-cache",
@@ -40,10 +38,10 @@
     "@types/prettier": "1.15.2",
     "@types/rimraf": "2.0.2",
     "jest": "23.6.0",
-    "js-yaml": "3.12.0",
+    "js-yaml": "3.12.1",
     "lodash": "4.17.11",
     "prettier": "1.15.3",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "semantic-release": "15.13.2",
     "travis-deploy-once": "5.0.11",
     "ts-jest": "23.10.5",
@@ -51,8 +49,10 @@
     "tslint": "5.12.0",
     "tslint-config-prettier": "1.17.0",
     "tslint-xo": "0.11.0",
-    "typedoc": "0.13.0",
     "typescript": "3.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "release": {
     "branch": "master"

@@ -90,5 +90,6 @@
         "case": { "span.label:contains(\"2X\")": "2", "*": "1" }
       }
     }
-  }
+  },
+  "source": "cardigann"
 }

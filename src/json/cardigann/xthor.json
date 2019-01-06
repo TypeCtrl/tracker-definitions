@@ -110,5 +110,6 @@
       "grabs": { "selector": "td:nth-child(7) > a" }
     }
   },
-  "encoding": "UTF-8"
+  "encoding": "UTF-8",
+  "source": "cardigann"
 }

@@ -200,4 +200,5 @@ export const definition: TrackerDefinition = {
       },
     },
   },
+  source: 'jackett',
 };

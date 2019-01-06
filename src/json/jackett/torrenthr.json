@@ -124,5 +124,6 @@
         "remove": "a, br, small"
       }
     }
-  }
+  },
+  "source": "jackett"
 }

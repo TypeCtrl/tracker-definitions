@@ -2,13 +2,13 @@ import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
   site: 'torrent9clone',
-  name: 'Torrent9 clone (torrents9.pw)',
+  name: 'Torrent9 clone (torrent9.ch)',
   description: 'Torrent9 is a FRENCH Public site for TV / MOVIES / GENERAL',
   language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.torrents9.pw/'],
-  legacylinks: ['https://www.torrent9.ch/'],
+  links: ['https://www.torrent9.ch/'],
+  legacylinks: ['https://www.torrents9.pw/'],
   caps: {
     categorymappings: [
       { id: 'films', cat: 'Movies', desc: 'Movies' },
@@ -120,4 +120,5 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: { text: '1' },
     },
   },
+  source: 'jackett',
 };

@@ -113,5 +113,6 @@
       "downloadvolumefactor": { "case": { "td.darmowy": 0, "*": 1 } },
       "uploadvolumefactor": { "text": "1" }
     }
-  }
+  },
+  "source": "jackett"
 }

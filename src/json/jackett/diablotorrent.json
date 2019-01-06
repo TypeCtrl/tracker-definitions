@@ -127,5 +127,6 @@
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "case": { "*": "1" } }
     }
-  }
+  },
+  "source": "jackett"
 }

@@ -43,5 +43,6 @@
       "leechers": { "selector": "td.table_leechers a" }
     }
   },
-  "encoding": "UTF-8"
+  "encoding": "UTF-8",
+  "source": "cardigann"
 }

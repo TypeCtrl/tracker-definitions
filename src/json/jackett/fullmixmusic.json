@@ -73,5 +73,6 @@
         }
       }
     }
-  }
+  },
+  "source": "jackett"
 }

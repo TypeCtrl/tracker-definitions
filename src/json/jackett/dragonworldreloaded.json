@@ -216,5 +216,6 @@
       },
       "description": { "selector": "selection_unter_af", "optional": true }
     }
-  }
+  },
+  "source": "jackett"
 }

@@ -118,5 +118,6 @@
         "remove": "a[href^=\"details.php?id=\"]"
       }
     }
-  }
+  },
+  "source": "jackett"
 }

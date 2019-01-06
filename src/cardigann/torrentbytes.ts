@@ -78,4 +78,5 @@ export const definition: TrackerDefinition = {
     },
   },
   encoding: 'UTF-8',
+  source: 'cardigann',
 };

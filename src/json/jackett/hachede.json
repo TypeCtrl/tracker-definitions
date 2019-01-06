@@ -151,5 +151,6 @@
       "minimumratio": { "text": "1.0" },
       "minimumseedtime": { "text": "259200" }
     }
-  }
+  },
+  "source": "jackett"
 }

@@ -65,4 +65,5 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(5) > span:nth-child(2)' },
     },
   },
+  source: 'jackett',
 };

@@ -223,5 +223,6 @@
       "uploadvolumefactor": { "case": { "*": "1" } },
       "date": { "text": "now" }
     }
-  }
+  },
+  "source": "jackett"
 }

@@ -64,5 +64,6 @@
       "leechers": { "selector": "td:nth-child(8)" },
       "date": { "selector": "td:nth-child(4)" }
     }
-  }
+  },
+  "source": "jackett"
 }

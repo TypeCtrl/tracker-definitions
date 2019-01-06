@@ -96,4 +96,5 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(7)' },
     },
   },
+  source: 'cardigann',
 };

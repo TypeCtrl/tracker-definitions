@@ -94,5 +94,6 @@
         }
       }
     }
-  }
+  },
+  "source": "jackett"
 }

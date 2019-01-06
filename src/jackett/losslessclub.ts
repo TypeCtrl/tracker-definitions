@@ -63,4 +63,5 @@ export const definition: TrackerDefinition = {
       description: { selector: 'div.tag_list_browse' },
     },
   },
+  source: 'jackett',
 };

@@ -63,5 +63,6 @@
       "uploadvolumefactor": { "case": { "*": "1" } },
       "description": { "selector": "div.tag_list_browse" }
     }
-  }
+  },
+  "source": "jackett"
 }

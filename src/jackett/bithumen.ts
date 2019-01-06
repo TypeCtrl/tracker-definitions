@@ -129,4 +129,5 @@ export const definition: TrackerDefinition = {
       description: { selector: 'td:nth-child(2) > div' },
     },
   },
+  source: 'jackett',
 };

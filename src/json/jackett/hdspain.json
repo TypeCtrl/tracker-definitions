@@ -102,5 +102,6 @@
         "filters": [{ "name": "replace", "args": ["Freeleech X2", "2"] }]
       }
     }
-  }
+  },
+  "source": "jackett"
 }

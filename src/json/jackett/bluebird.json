@@ -80,5 +80,6 @@
         "case": { "img[src=\"pic/diamond.png\"]": "2", "*": "1" }
       }
     }
-  }
+  },
+  "source": "jackett"
 }

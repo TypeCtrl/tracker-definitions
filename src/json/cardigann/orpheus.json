@@ -78,5 +78,6 @@
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
     }
-  }
+  },
+  "source": "cardigann"
 }

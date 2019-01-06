@@ -154,5 +154,6 @@
       },
       "uploadvolumefactor": { "text": "1" }
     }
-  }
+  },
+  "source": "jackett"
 }

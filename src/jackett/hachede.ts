@@ -154,4 +154,5 @@ export const definition: TrackerDefinition = {
       minimumseedtime: { text: '259200' },
     },
   },
+  source: 'jackett',
 };

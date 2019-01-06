@@ -132,5 +132,6 @@
         "filters": [{ "name": "regexp", "args": "File Size: (.+?)s" }]
       }
     }
-  }
+  },
+  "source": "jackett"
 }

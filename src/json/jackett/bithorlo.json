@@ -87,5 +87,6 @@
         "selector": "a[style=\"font-size: 8pt;cursor: pointer;\"][title]"
       }
     }
-  }
+  },
+  "source": "jackett"
 }

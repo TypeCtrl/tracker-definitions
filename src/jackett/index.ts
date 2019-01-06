@@ -1,206 +1,826 @@
-export { definition as j1337X } from './1337x';
-export { definition as j2Fast4You } from './2fast4you';
-export { definition as j3Dtorrents } from './3dtorrents';
-export { definition as j420Files } from './420files';
-export { definition as jbittorrentfiles } from './bittorrentfiles';
-export { definition as jacidlounge } from './acidlounge';
-export { definition as janidex } from './anidex';
-export { definition as janirena } from './anirena';
-export { definition as jaox } from './aox';
-export { definition as jarabafenice } from './arabafenice';
-export { definition as jarchetorrent } from './archetorrent';
-export { definition as jarenabg } from './arenabg';
-export { definition as jasiancinema } from './asiancinema';
-export { definition as jasiandvdclub } from './asiandvdclub';
-export { definition as jast4U } from './ast4u';
-export { definition as jaudiobookbay } from './audiobookbay';
-export { definition as jaudiobooktorrents } from './audiobooktorrents';
-export { definition as jawesomehd } from './awesomehd';
-export { definition as jb2SShare } from './b2s-share';
-export { definition as jbackups } from './backups';
-export { definition as jbigtorrent } from './bigtorrent';
-export { definition as jbigtower } from './bigtower';
-export { definition as jbithorlo } from './bithorlo';
-export { definition as jbithumen } from './bithumen';
-export { definition as jbitme } from './bitme';
-export { definition as jbitspyder } from './bitspyder';
-export { definition as jbluebird } from './bluebird';
-export { definition as jblutopia } from './blutopia';
-export { definition as jbtbit } from './btbit';
-export { definition as jbtgigs } from './btgigs';
-export { definition as jbtnext } from './btnext';
-export { definition as jbtstornet } from './btstornet';
-export { definition as jbtxpress } from './btxpress';
-export { definition as jcarpathians } from './carpathians';
-export { definition as jccfbits } from './ccfbits';
-export { definition as jchdbits } from './chdbits';
-export { definition as jcinemageddon } from './cinemageddon';
-export { definition as jcinematik } from './cinematik';
-export { definition as jclassix } from './classix';
-export { definition as jcpabien } from './cpabien';
-export { definition as jcztorrent } from './cztorrent';
-export { definition as jdatascene } from './datascene';
-export { definition as jdeildu } from './deildu';
-export { definition as jdesitorrents } from './desitorrents';
-export { definition as jdiablotorrent } from './diablotorrent';
-export { definition as jdownloadville } from './downloadville';
-export { definition as jdragonworldreloaded } from './dragonworldreloaded';
-export { definition as jdreamteam } from './dreamteam';
-export { definition as jdxdhd } from './dxdhd';
-export { definition as jelitehd } from './elitehd';
-export { definition as jelitetorrentBiz } from './elitetorrent-biz';
-export { definition as jelittracker } from './elittracker';
-export { definition as jempornium } from './empornium';
-export { definition as jestone } from './estone';
-export { definition as jethor } from './ethor';
-export { definition as jettv } from './ettv';
-export { definition as jextratorrentAg } from './extratorrent-ag';
-export { definition as jeztv } from './eztv';
-export { definition as jfanoin } from './fanoin';
-export { definition as jfemdomcult } from './femdomcult';
-export { definition as jfreedomhd } from './freedomhd';
-export { definition as jfrozenlayer } from './frozenlayer';
-export { definition as jfullmixmusic } from './fullmixmusic';
-export { definition as jfunkytorrents } from './funkytorrents';
-export { definition as jgayTorrents } from './gay-torrents';
-export { definition as jgayTorrentsorg } from './gay-torrentsorg';
-export { definition as jgaytorrentru } from './gaytorrentru';
-export { definition as jgfxnews } from './gfxnews';
-export { definition as jgfxpeers } from './gfxpeers';
-export { definition as jgigatorrents } from './gigatorrents';
-export { definition as jgirotorrent } from './girotorrent';
-export { definition as jgktorrent } from './gktorrent';
-export { definition as jgods } from './gods';
-export { definition as jgreekteam } from './greekteam';
-export { definition as jhachede } from './hachede';
-export { definition as jhd4Free } from './hd4free';
-export { definition as jhdbits } from './hdbits';
-export { definition as jhdbitscom } from './hdbitscom';
-export { definition as jhdcenter } from './hdcenter';
-export { definition as jhdchina } from './hdchina';
-export { definition as jhdcity } from './hdcity';
-export { definition as jhdhome } from './hdhome';
-export { definition as jhdme } from './hdme';
-export { definition as jhdsky } from './hdsky';
-export { definition as jhdspain } from './hdspain';
-export { definition as jhdtorrentsit } from './hdtorrentsit';
-export { definition as jhon3Yhd } from './hon3yhd';
-export { definition as jhqsource } from './hqsource';
-export { definition as jhyperay } from './hyperay';
-export { definition as jicetorrent } from './icetorrent';
-export { definition as jidopeclone } from './idopeclone';
-export { definition as jilcorsaroblu } from './ilcorsaroblu';
-export { definition as jilcorsaronero } from './ilcorsaronero';
-export { definition as jiloveclassics } from './iloveclassics';
-export { definition as jinperil } from './inperil';
-export { definition as jinsanetracker } from './insanetracker';
-export { definition as jisohunt2 } from './isohunt2';
-export { definition as jjpopsuki } from './jpopsuki';
-export { definition as jkapaki } from './kapaki';
-export { definition as jkaragarga } from './karagarga';
-export { definition as jkatcrs } from './katcrs';
-export { definition as jkickasstorrentKathow } from './kickasstorrent-kathow';
-export { definition as jkickasstorrent } from './kickasstorrent';
-export { definition as jkinozal } from './kinozal';
-export { definition as jlimetorrents } from './limetorrents';
-export { definition as jlinkomanija } from './linkomanija';
-export { definition as jlosslessclub } from './losslessclub';
-export { definition as jmagico } from './magico';
-export { definition as jmagnetdl } from './magnetdl';
-export { definition as jmajomparade } from './majomparade';
-export { definition as jmanicomioshare } from './manicomioshare';
-export { definition as jmegabliz } from './megabliz';
-export { definition as jmetalIplayRo } from './metal-iplay-ro';
-export { definition as jmetaltracker } from './metaltracker';
-export { definition as jmononokebt } from './mononokebt';
-export { definition as jmteamtp } from './mteamtp';
-export { definition as jmvgroupforum } from './mvgroupforum';
-export { definition as jmvgroupmain } from './mvgroupmain';
-export { definition as jmyspleen } from './myspleen';
-export { definition as jnethd } from './nethd';
-export { definition as jnewretro } from './newretro';
-export { definition as jnewstudio } from './newstudio';
-export { definition as jnnmClub } from './nnm-club';
-export { definition as jnyaaPantsu } from './nyaa-pantsu';
-export { definition as jnyaasi } from './nyaasi';
-export { definition as jnyoo } from './nyoo';
-export { definition as jourbits } from './ourbits';
-export { definition as jpassionetorrent } from './passionetorrent';
-export { definition as jpolishsource } from './polishsource';
-export { definition as jprostylex } from './prostylex';
-export { definition as jptfiles } from './ptfiles';
-export { definition as jpuntotorrent } from './puntotorrent';
-export { definition as jracing4Everyone } from './racing4everyone';
-export { definition as jredstartorrent } from './redstartorrent';
-export { definition as jredtopia } from './redtopia';
-export { definition as jretroflix } from './retroflix';
-export { definition as jrgu } from './rgu';
-export { definition as jrockbox } from './rockbox';
-export { definition as jrodvd } from './rodvd';
-export { definition as jrutor } from './rutor';
-export { definition as jscenefz } from './scenefz';
-export { definition as jscenereactor } from './scenereactor';
-export { definition as jscenerush } from './scenerush';
-export { definition as jsdbits } from './sdbits';
-export { definition as jshareisland } from './shareisland';
-export { definition as jsharespacedb } from './sharespacedb';
-export { definition as jshellife } from './shellife';
-export { definition as jsktorrent } from './sktorrent';
-export { definition as jskytorrentsclone } from './skytorrentsclone';
-export { definition as jspeedShare } from './speed-share';
-export { definition as jspeedtorrentreloaded } from './speedtorrentreloaded';
-export { definition as jsporthd } from './sporthd';
-export { definition as jsportscult } from './sportscult';
-export { definition as jsukebeiPantsu } from './sukebei-pantsu';
-export { definition as jsukebeinyaasi } from './sukebeinyaasi';
-export { definition as jtasmanit } from './tasmanit';
-export { definition as jtbplus } from './tbplus';
-export { definition as jtenyardtracker } from './tenyardtracker';
-export { definition as jtheempire } from './theempire';
-export { definition as jthegeeks } from './thegeeks';
-export { definition as jthehorrorcharnel } from './thehorrorcharnel';
-export { definition as jtheoccult } from './theoccult';
-export { definition as jthepiratebay } from './thepiratebay';
-export { definition as jtheplace } from './theplace';
-export { definition as jtheshinning } from './theshinning';
-export { definition as jtheshow } from './theshow';
-export { definition as jthetorrents } from './thetorrents';
-export { definition as jthevault } from './thevault';
-export { definition as jtntvillage } from './tntvillage';
-export { definition as jtokyotosho } from './tokyotosho';
-export { definition as jtorlock } from './torlock';
-export { definition as jtorrentTurk } from './torrent-turk';
-export { definition as jtorrent9 } from './torrent9';
-export { definition as jtorrent9Clone } from './torrent9clone';
-export { definition as jtorrentbd } from './torrentbd';
-export { definition as jtorrentccf } from './torrentccf';
-export { definition as jtorrentcouch } from './torrentcouch';
-export { definition as jtorrentdownloads } from './torrentdownloads';
-export { definition as jtorrentgalaxyorg } from './torrentgalaxyorg';
-export { definition as jtorrenthr } from './torrenthr';
-export { definition as jtorrenting } from './torrenting';
-export { definition as jtorrentland } from './torrentland';
-export { definition as jtorrentlt } from './torrentlt';
-export { definition as jtorrentsectorcrew } from './torrentsectorcrew';
-export { definition as jtorrentseeds } from './torrentseeds';
-export { definition as jtorrentz2 } from './torrentz2';
-export { definition as jtorviet } from './torviet';
-export { definition as jtotheglory } from './totheglory';
-export { definition as jtrancetraffic } from './trancetraffic';
-export { definition as jtrezzor } from './trezzor';
-export { definition as juhdbits } from './uhdbits';
-export { definition as jultimategamerclub } from './ultimategamerclub';
-export { definition as junionfansub } from './unionfansub';
-export { definition as jwaffles } from './waffles';
-export { definition as jwihd } from './wihd';
-export { definition as jworldofp2P } from './worldofp2p';
-export { definition as jworldwidetorrents } from './worldwidetorrents';
-export { definition as jxIteMe } from './x-ite.me';
-export { definition as jxbytes2 } from './xbytes2';
-export { definition as jxtremezone } from './xtremezone';
-export { definition as jyggtorrent } from './yggtorrent';
-export { definition as jyourexotic } from './yourexotic';
-export { definition as jzamundanet } from './zamundanet';
-export { definition as jzelkaorg } from './zelkaorg';
-export { definition as jzooqle } from './zooqle';
-export { definition as jztracker } from './ztracker';
+import { definition as jj1337X } from './1337x';
+export const j1337X = jj1337X;
+
+import { definition as jj2Fast4You } from './2fast4you';
+export const j2Fast4You = jj2Fast4You;
+
+import { definition as jj3Dtorrents } from './3dtorrents';
+export const j3Dtorrents = jj3Dtorrents;
+
+import { definition as jj420Files } from './420files';
+export const j420Files = jj420Files;
+
+import { definition as jjbittorrentfiles } from './bittorrentfiles';
+export const jbittorrentfiles = jjbittorrentfiles;
+
+import { definition as jjacidlounge } from './acidlounge';
+export const jacidlounge = jjacidlounge;
+
+import { definition as jjanidex } from './anidex';
+export const janidex = jjanidex;
+
+import { definition as jjanirena } from './anirena';
+export const janirena = jjanirena;
+
+import { definition as jjaox } from './aox';
+export const jaox = jjaox;
+
+import { definition as jjarabafenice } from './arabafenice';
+export const jarabafenice = jjarabafenice;
+
+import { definition as jjarchetorrent } from './archetorrent';
+export const jarchetorrent = jjarchetorrent;
+
+import { definition as jjarenabg } from './arenabg';
+export const jarenabg = jjarenabg;
+
+import { definition as jjasiancinema } from './asiancinema';
+export const jasiancinema = jjasiancinema;
+
+import { definition as jjasiandvdclub } from './asiandvdclub';
+export const jasiandvdclub = jjasiandvdclub;
+
+import { definition as jjast4U } from './ast4u';
+export const jast4U = jjast4U;
+
+import { definition as jjaudiobookbay } from './audiobookbay';
+export const jaudiobookbay = jjaudiobookbay;
+
+import { definition as jjaudiobooktorrents } from './audiobooktorrents';
+export const jaudiobooktorrents = jjaudiobooktorrents;
+
+import { definition as jjawesomehd } from './awesomehd';
+export const jawesomehd = jjawesomehd;
+
+import { definition as jjb2SShare } from './b2s-share';
+export const jb2SShare = jjb2SShare;
+
+import { definition as jjbackups } from './backups';
+export const jbackups = jjbackups;
+
+import { definition as jjbigtorrent } from './bigtorrent';
+export const jbigtorrent = jjbigtorrent;
+
+import { definition as jjbigtower } from './bigtower';
+export const jbigtower = jjbigtower;
+
+import { definition as jjbithorlo } from './bithorlo';
+export const jbithorlo = jjbithorlo;
+
+import { definition as jjbithumen } from './bithumen';
+export const jbithumen = jjbithumen;
+
+import { definition as jjbitme } from './bitme';
+export const jbitme = jjbitme;
+
+import { definition as jjbitspyder } from './bitspyder';
+export const jbitspyder = jjbitspyder;
+
+import { definition as jjbluebird } from './bluebird';
+export const jbluebird = jjbluebird;
+
+import { definition as jjblutopia } from './blutopia';
+export const jblutopia = jjblutopia;
+
+import { definition as jjbtbit } from './btbit';
+export const jbtbit = jjbtbit;
+
+import { definition as jjbtgigs } from './btgigs';
+export const jbtgigs = jjbtgigs;
+
+import { definition as jjbtnext } from './btnext';
+export const jbtnext = jjbtnext;
+
+import { definition as jjbtstornet } from './btstornet';
+export const jbtstornet = jjbtstornet;
+
+import { definition as jjbtxpress } from './btxpress';
+export const jbtxpress = jjbtxpress;
+
+import { definition as jjcarpathians } from './carpathians';
+export const jcarpathians = jjcarpathians;
+
+import { definition as jjccfbits } from './ccfbits';
+export const jccfbits = jjccfbits;
+
+import { definition as jjchdbits } from './chdbits';
+export const jchdbits = jjchdbits;
+
+import { definition as jjcinemageddon } from './cinemageddon';
+export const jcinemageddon = jjcinemageddon;
+
+import { definition as jjcinematik } from './cinematik';
+export const jcinematik = jjcinematik;
+
+import { definition as jjclassix } from './classix';
+export const jclassix = jjclassix;
+
+import { definition as jjcpabien } from './cpabien';
+export const jcpabien = jjcpabien;
+
+import { definition as jjcztorrent } from './cztorrent';
+export const jcztorrent = jjcztorrent;
+
+import { definition as jjdatascene } from './datascene';
+export const jdatascene = jjdatascene;
+
+import { definition as jjdeildu } from './deildu';
+export const jdeildu = jjdeildu;
+
+import { definition as jjdesitorrents } from './desitorrents';
+export const jdesitorrents = jjdesitorrents;
+
+import { definition as jjdiablotorrent } from './diablotorrent';
+export const jdiablotorrent = jjdiablotorrent;
+
+import { definition as jjdownloadville } from './downloadville';
+export const jdownloadville = jjdownloadville;
+
+import { definition as jjdragonworldreloaded } from './dragonworldreloaded';
+export const jdragonworldreloaded = jjdragonworldreloaded;
+
+import { definition as jjdreamteam } from './dreamteam';
+export const jdreamteam = jjdreamteam;
+
+import { definition as jjdxdhd } from './dxdhd';
+export const jdxdhd = jjdxdhd;
+
+import { definition as jjelitehd } from './elitehd';
+export const jelitehd = jjelitehd;
+
+import { definition as jjelitetorrentBiz } from './elitetorrent-biz';
+export const jelitetorrentBiz = jjelitetorrentBiz;
+
+import { definition as jjelittracker } from './elittracker';
+export const jelittracker = jjelittracker;
+
+import { definition as jjempornium } from './empornium';
+export const jempornium = jjempornium;
+
+import { definition as jjestone } from './estone';
+export const jestone = jjestone;
+
+import { definition as jjethor } from './ethor';
+export const jethor = jjethor;
+
+import { definition as jjettv } from './ettv';
+export const jettv = jjettv;
+
+import { definition as jjextratorrentAg } from './extratorrent-ag';
+export const jextratorrentAg = jjextratorrentAg;
+
+import { definition as jjeztv } from './eztv';
+export const jeztv = jjeztv;
+
+import { definition as jjfanoin } from './fanoin';
+export const jfanoin = jjfanoin;
+
+import { definition as jjfemdomcult } from './femdomcult';
+export const jfemdomcult = jjfemdomcult;
+
+import { definition as jjfreedomhd } from './freedomhd';
+export const jfreedomhd = jjfreedomhd;
+
+import { definition as jjfrozenlayer } from './frozenlayer';
+export const jfrozenlayer = jjfrozenlayer;
+
+import { definition as jjfullmixmusic } from './fullmixmusic';
+export const jfullmixmusic = jjfullmixmusic;
+
+import { definition as jjfunkytorrents } from './funkytorrents';
+export const jfunkytorrents = jjfunkytorrents;
+
+import { definition as jjgayTorrents } from './gay-torrents';
+export const jgayTorrents = jjgayTorrents;
+
+import { definition as jjgayTorrentsorg } from './gay-torrentsorg';
+export const jgayTorrentsorg = jjgayTorrentsorg;
+
+import { definition as jjgaytorrentru } from './gaytorrentru';
+export const jgaytorrentru = jjgaytorrentru;
+
+import { definition as jjgfxnews } from './gfxnews';
+export const jgfxnews = jjgfxnews;
+
+import { definition as jjgfxpeers } from './gfxpeers';
+export const jgfxpeers = jjgfxpeers;
+
+import { definition as jjgigatorrents } from './gigatorrents';
+export const jgigatorrents = jjgigatorrents;
+
+import { definition as jjgirotorrent } from './girotorrent';
+export const jgirotorrent = jjgirotorrent;
+
+import { definition as jjgktorrent } from './gktorrent';
+export const jgktorrent = jjgktorrent;
+
+import { definition as jjgods } from './gods';
+export const jgods = jjgods;
+
+import { definition as jjgreekteam } from './greekteam';
+export const jgreekteam = jjgreekteam;
+
+import { definition as jjhachede } from './hachede';
+export const jhachede = jjhachede;
+
+import { definition as jjhd4Free } from './hd4free';
+export const jhd4Free = jjhd4Free;
+
+import { definition as jjhdbits } from './hdbits';
+export const jhdbits = jjhdbits;
+
+import { definition as jjhdbitscom } from './hdbitscom';
+export const jhdbitscom = jjhdbitscom;
+
+import { definition as jjhdcenter } from './hdcenter';
+export const jhdcenter = jjhdcenter;
+
+import { definition as jjhdchina } from './hdchina';
+export const jhdchina = jjhdchina;
+
+import { definition as jjhdcity } from './hdcity';
+export const jhdcity = jjhdcity;
+
+import { definition as jjhdhome } from './hdhome';
+export const jhdhome = jjhdhome;
+
+import { definition as jjhdme } from './hdme';
+export const jhdme = jjhdme;
+
+import { definition as jjhdsky } from './hdsky';
+export const jhdsky = jjhdsky;
+
+import { definition as jjhdspain } from './hdspain';
+export const jhdspain = jjhdspain;
+
+import { definition as jjhdtorrentsit } from './hdtorrentsit';
+export const jhdtorrentsit = jjhdtorrentsit;
+
+import { definition as jjhon3Yhd } from './hon3yhd';
+export const jhon3Yhd = jjhon3Yhd;
+
+import { definition as jjhqsource } from './hqsource';
+export const jhqsource = jjhqsource;
+
+import { definition as jjhyperay } from './hyperay';
+export const jhyperay = jjhyperay;
+
+import { definition as jjicetorrent } from './icetorrent';
+export const jicetorrent = jjicetorrent;
+
+import { definition as jjidopeclone } from './idopeclone';
+export const jidopeclone = jjidopeclone;
+
+import { definition as jjilcorsaroblu } from './ilcorsaroblu';
+export const jilcorsaroblu = jjilcorsaroblu;
+
+import { definition as jjilcorsaronero } from './ilcorsaronero';
+export const jilcorsaronero = jjilcorsaronero;
+
+import { definition as jjiloveclassics } from './iloveclassics';
+export const jiloveclassics = jjiloveclassics;
+
+import { definition as jjinperil } from './inperil';
+export const jinperil = jjinperil;
+
+import { definition as jjinsanetracker } from './insanetracker';
+export const jinsanetracker = jjinsanetracker;
+
+import { definition as jjisohunt2 } from './isohunt2';
+export const jisohunt2 = jjisohunt2;
+
+import { definition as jjjpopsuki } from './jpopsuki';
+export const jjpopsuki = jjjpopsuki;
+
+import { definition as jjkapaki } from './kapaki';
+export const jkapaki = jjkapaki;
+
+import { definition as jjkaragarga } from './karagarga';
+export const jkaragarga = jjkaragarga;
+
+import { definition as jjkatcrs } from './katcrs';
+export const jkatcrs = jjkatcrs;
+
+import { definition as jjkickasstorrentKathow } from './kickasstorrent-kathow';
+export const jkickasstorrentKathow = jjkickasstorrentKathow;
+
+import { definition as jjkickasstorrent } from './kickasstorrent';
+export const jkickasstorrent = jjkickasstorrent;
+
+import { definition as jjkinozal } from './kinozal';
+export const jkinozal = jjkinozal;
+
+import { definition as jjlimetorrents } from './limetorrents';
+export const jlimetorrents = jjlimetorrents;
+
+import { definition as jjlinkomanija } from './linkomanija';
+export const jlinkomanija = jjlinkomanija;
+
+import { definition as jjlosslessclub } from './losslessclub';
+export const jlosslessclub = jjlosslessclub;
+
+import { definition as jjmagico } from './magico';
+export const jmagico = jjmagico;
+
+import { definition as jjmagnetdl } from './magnetdl';
+export const jmagnetdl = jjmagnetdl;
+
+import { definition as jjmajomparade } from './majomparade';
+export const jmajomparade = jjmajomparade;
+
+import { definition as jjmanicomioshare } from './manicomioshare';
+export const jmanicomioshare = jjmanicomioshare;
+
+import { definition as jjmegabliz } from './megabliz';
+export const jmegabliz = jjmegabliz;
+
+import { definition as jjmetalIplayRo } from './metal-iplay-ro';
+export const jmetalIplayRo = jjmetalIplayRo;
+
+import { definition as jjmetaltracker } from './metaltracker';
+export const jmetaltracker = jjmetaltracker;
+
+import { definition as jjmononokebt } from './mononokebt';
+export const jmononokebt = jjmononokebt;
+
+import { definition as jjmteamtp } from './mteamtp';
+export const jmteamtp = jjmteamtp;
+
+import { definition as jjmvgroupforum } from './mvgroupforum';
+export const jmvgroupforum = jjmvgroupforum;
+
+import { definition as jjmvgroupmain } from './mvgroupmain';
+export const jmvgroupmain = jjmvgroupmain;
+
+import { definition as jjmyspleen } from './myspleen';
+export const jmyspleen = jjmyspleen;
+
+import { definition as jjnethd } from './nethd';
+export const jnethd = jjnethd;
+
+import { definition as jjnewretro } from './newretro';
+export const jnewretro = jjnewretro;
+
+import { definition as jjnewstudio } from './newstudio';
+export const jnewstudio = jjnewstudio;
+
+import { definition as jjnnmClub } from './nnm-club';
+export const jnnmClub = jjnnmClub;
+
+import { definition as jjnyaaPantsu } from './nyaa-pantsu';
+export const jnyaaPantsu = jjnyaaPantsu;
+
+import { definition as jjnyaasi } from './nyaasi';
+export const jnyaasi = jjnyaasi;
+
+import { definition as jjnyoo } from './nyoo';
+export const jnyoo = jjnyoo;
+
+import { definition as jjourbits } from './ourbits';
+export const jourbits = jjourbits;
+
+import { definition as jjpassionetorrent } from './passionetorrent';
+export const jpassionetorrent = jjpassionetorrent;
+
+import { definition as jjpolishsource } from './polishsource';
+export const jpolishsource = jjpolishsource;
+
+import { definition as jjprostylex } from './prostylex';
+export const jprostylex = jjprostylex;
+
+import { definition as jjptfiles } from './ptfiles';
+export const jptfiles = jjptfiles;
+
+import { definition as jjpuntotorrent } from './puntotorrent';
+export const jpuntotorrent = jjpuntotorrent;
+
+import { definition as jjracing4Everyone } from './racing4everyone';
+export const jracing4Everyone = jjracing4Everyone;
+
+import { definition as jjredstartorrent } from './redstartorrent';
+export const jredstartorrent = jjredstartorrent;
+
+import { definition as jjredtopia } from './redtopia';
+export const jredtopia = jjredtopia;
+
+import { definition as jjretroflix } from './retroflix';
+export const jretroflix = jjretroflix;
+
+import { definition as jjrgu } from './rgu';
+export const jrgu = jjrgu;
+
+import { definition as jjrockbox } from './rockbox';
+export const jrockbox = jjrockbox;
+
+import { definition as jjrodvd } from './rodvd';
+export const jrodvd = jjrodvd;
+
+import { definition as jjrutor } from './rutor';
+export const jrutor = jjrutor;
+
+import { definition as jjscenefz } from './scenefz';
+export const jscenefz = jjscenefz;
+
+import { definition as jjscenereactor } from './scenereactor';
+export const jscenereactor = jjscenereactor;
+
+import { definition as jjscenerush } from './scenerush';
+export const jscenerush = jjscenerush;
+
+import { definition as jjsdbits } from './sdbits';
+export const jsdbits = jjsdbits;
+
+import { definition as jjshareisland } from './shareisland';
+export const jshareisland = jjshareisland;
+
+import { definition as jjsharespacedb } from './sharespacedb';
+export const jsharespacedb = jjsharespacedb;
+
+import { definition as jjshellife } from './shellife';
+export const jshellife = jjshellife;
+
+import { definition as jjsktorrent } from './sktorrent';
+export const jsktorrent = jjsktorrent;
+
+import { definition as jjskytorrentsclone } from './skytorrentsclone';
+export const jskytorrentsclone = jjskytorrentsclone;
+
+import { definition as jjspeedShare } from './speed-share';
+export const jspeedShare = jjspeedShare;
+
+import { definition as jjspeedtorrentreloaded } from './speedtorrentreloaded';
+export const jspeedtorrentreloaded = jjspeedtorrentreloaded;
+
+import { definition as jjsporthd } from './sporthd';
+export const jsporthd = jjsporthd;
+
+import { definition as jjsportscult } from './sportscult';
+export const jsportscult = jjsportscult;
+
+import { definition as jjsukebeiPantsu } from './sukebei-pantsu';
+export const jsukebeiPantsu = jjsukebeiPantsu;
+
+import { definition as jjsukebeinyaasi } from './sukebeinyaasi';
+export const jsukebeinyaasi = jjsukebeinyaasi;
+
+import { definition as jjtasmanit } from './tasmanit';
+export const jtasmanit = jjtasmanit;
+
+import { definition as jjtbplus } from './tbplus';
+export const jtbplus = jjtbplus;
+
+import { definition as jjtenyardtracker } from './tenyardtracker';
+export const jtenyardtracker = jjtenyardtracker;
+
+import { definition as jjtheempire } from './theempire';
+export const jtheempire = jjtheempire;
+
+import { definition as jjthegeeks } from './thegeeks';
+export const jthegeeks = jjthegeeks;
+
+import { definition as jjthehorrorcharnel } from './thehorrorcharnel';
+export const jthehorrorcharnel = jjthehorrorcharnel;
+
+import { definition as jjtheoccult } from './theoccult';
+export const jtheoccult = jjtheoccult;
+
+import { definition as jjthepiratebay } from './thepiratebay';
+export const jthepiratebay = jjthepiratebay;
+
+import { definition as jjtheplace } from './theplace';
+export const jtheplace = jjtheplace;
+
+import { definition as jjtheshinning } from './theshinning';
+export const jtheshinning = jjtheshinning;
+
+import { definition as jjtheshow } from './theshow';
+export const jtheshow = jjtheshow;
+
+import { definition as jjthetorrents } from './thetorrents';
+export const jthetorrents = jjthetorrents;
+
+import { definition as jjthevault } from './thevault';
+export const jthevault = jjthevault;
+
+import { definition as jjtntvillage } from './tntvillage';
+export const jtntvillage = jjtntvillage;
+
+import { definition as jjtokyotosho } from './tokyotosho';
+export const jtokyotosho = jjtokyotosho;
+
+import { definition as jjtorlock } from './torlock';
+export const jtorlock = jjtorlock;
+
+import { definition as jjtorrentTurk } from './torrent-turk';
+export const jtorrentTurk = jjtorrentTurk;
+
+import { definition as jjtorrent9 } from './torrent9';
+export const jtorrent9 = jjtorrent9;
+
+import { definition as jjtorrent9Clone } from './torrent9clone';
+export const jtorrent9Clone = jjtorrent9Clone;
+
+import { definition as jjtorrentbd } from './torrentbd';
+export const jtorrentbd = jjtorrentbd;
+
+import { definition as jjtorrentccf } from './torrentccf';
+export const jtorrentccf = jjtorrentccf;
+
+import { definition as jjtorrentcouch } from './torrentcouch';
+export const jtorrentcouch = jjtorrentcouch;
+
+import { definition as jjtorrentdownloads } from './torrentdownloads';
+export const jtorrentdownloads = jjtorrentdownloads;
+
+import { definition as jjtorrentgalaxyorg } from './torrentgalaxyorg';
+export const jtorrentgalaxyorg = jjtorrentgalaxyorg;
+
+import { definition as jjtorrenthr } from './torrenthr';
+export const jtorrenthr = jjtorrenthr;
+
+import { definition as jjtorrenting } from './torrenting';
+export const jtorrenting = jjtorrenting;
+
+import { definition as jjtorrentland } from './torrentland';
+export const jtorrentland = jjtorrentland;
+
+import { definition as jjtorrentlt } from './torrentlt';
+export const jtorrentlt = jjtorrentlt;
+
+import { definition as jjtorrentsectorcrew } from './torrentsectorcrew';
+export const jtorrentsectorcrew = jjtorrentsectorcrew;
+
+import { definition as jjtorrentseeds } from './torrentseeds';
+export const jtorrentseeds = jjtorrentseeds;
+
+import { definition as jjtorrentz2 } from './torrentz2';
+export const jtorrentz2 = jjtorrentz2;
+
+import { definition as jjtorviet } from './torviet';
+export const jtorviet = jjtorviet;
+
+import { definition as jjtotheglory } from './totheglory';
+export const jtotheglory = jjtotheglory;
+
+import { definition as jjtrancetraffic } from './trancetraffic';
+export const jtrancetraffic = jjtrancetraffic;
+
+import { definition as jjtrezzor } from './trezzor';
+export const jtrezzor = jjtrezzor;
+
+import { definition as jjuhdbits } from './uhdbits';
+export const juhdbits = jjuhdbits;
+
+import { definition as jjultimategamerclub } from './ultimategamerclub';
+export const jultimategamerclub = jjultimategamerclub;
+
+import { definition as jjunionfansub } from './unionfansub';
+export const junionfansub = jjunionfansub;
+
+import { definition as jjwaffles } from './waffles';
+export const jwaffles = jjwaffles;
+
+import { definition as jjwihd } from './wihd';
+export const jwihd = jjwihd;
+
+import { definition as jjworldofp2P } from './worldofp2p';
+export const jworldofp2P = jjworldofp2P;
+
+import { definition as jjworldwidetorrents } from './worldwidetorrents';
+export const jworldwidetorrents = jjworldwidetorrents;
+
+import { definition as jjxIteMe } from './x-ite.me';
+export const jxIteMe = jjxIteMe;
+
+import { definition as jjxbytes2 } from './xbytes2';
+export const jxbytes2 = jjxbytes2;
+
+import { definition as jjxtremezone } from './xtremezone';
+export const jxtremezone = jjxtremezone;
+
+import { definition as jjyggtorrent } from './yggtorrent';
+export const jyggtorrent = jjyggtorrent;
+
+import { definition as jjyourexotic } from './yourexotic';
+export const jyourexotic = jjyourexotic;
+
+import { definition as jjzamundanet } from './zamundanet';
+export const jzamundanet = jjzamundanet;
+
+import { definition as jjzelkaorg } from './zelkaorg';
+export const jzelkaorg = jjzelkaorg;
+
+import { definition as jjzooqle } from './zooqle';
+export const jzooqle = jjzooqle;
+
+import { definition as jjztracker } from './ztracker';
+export const jztracker = jjztracker;
+
+export const definitions = [
+  jj1337X,
+  jj2Fast4You,
+  jj3Dtorrents,
+  jj420Files,
+  jjbittorrentfiles,
+  jjacidlounge,
+  jjanidex,
+  jjanirena,
+  jjaox,
+  jjarabafenice,
+  jjarchetorrent,
+  jjarenabg,
+  jjasiancinema,
+  jjasiandvdclub,
+  jjast4U,
+  jjaudiobookbay,
+  jjaudiobooktorrents,
+  jjawesomehd,
+  jjb2SShare,
+  jjbackups,
+  jjbigtorrent,
+  jjbigtower,
+  jjbithorlo,
+  jjbithumen,
+  jjbitme,
+  jjbitspyder,
+  jjbluebird,
+  jjblutopia,
+  jjbtbit,
+  jjbtgigs,
+  jjbtnext,
+  jjbtstornet,
+  jjbtxpress,
+  jjcarpathians,
+  jjccfbits,
+  jjchdbits,
+  jjcinemageddon,
+  jjcinematik,
+  jjclassix,
+  jjcpabien,
+  jjcztorrent,
+  jjdatascene,
+  jjdeildu,
+  jjdesitorrents,
+  jjdiablotorrent,
+  jjdownloadville,
+  jjdragonworldreloaded,
+  jjdreamteam,
+  jjdxdhd,
+  jjelitehd,
+  jjelitetorrentBiz,
+  jjelittracker,
+  jjempornium,
+  jjestone,
+  jjethor,
+  jjettv,
+  jjextratorrentAg,
+  jjeztv,
+  jjfanoin,
+  jjfemdomcult,
+  jjfreedomhd,
+  jjfrozenlayer,
+  jjfullmixmusic,
+  jjfunkytorrents,
+  jjgayTorrents,
+  jjgayTorrentsorg,
+  jjgaytorrentru,
+  jjgfxnews,
+  jjgfxpeers,
+  jjgigatorrents,
+  jjgirotorrent,
+  jjgktorrent,
+  jjgods,
+  jjgreekteam,
+  jjhachede,
+  jjhd4Free,
+  jjhdbits,
+  jjhdbitscom,
+  jjhdcenter,
+  jjhdchina,
+  jjhdcity,
+  jjhdhome,
+  jjhdme,
+  jjhdsky,
+  jjhdspain,
+  jjhdtorrentsit,
+  jjhon3Yhd,
+  jjhqsource,
+  jjhyperay,
+  jjicetorrent,
+  jjidopeclone,
+  jjilcorsaroblu,
+  jjilcorsaronero,
+  jjiloveclassics,
+  jjinperil,
+  jjinsanetracker,
+  jjisohunt2,
+  jjjpopsuki,
+  jjkapaki,
+  jjkaragarga,
+  jjkatcrs,
+  jjkickasstorrentKathow,
+  jjkickasstorrent,
+  jjkinozal,
+  jjlimetorrents,
+  jjlinkomanija,
+  jjlosslessclub,
+  jjmagico,
+  jjmagnetdl,
+  jjmajomparade,
+  jjmanicomioshare,
+  jjmegabliz,
+  jjmetalIplayRo,
+  jjmetaltracker,
+  jjmononokebt,
+  jjmteamtp,
+  jjmvgroupforum,
+  jjmvgroupmain,
+  jjmyspleen,
+  jjnethd,
+  jjnewretro,
+  jjnewstudio,
+  jjnnmClub,
+  jjnyaaPantsu,
+  jjnyaasi,
+  jjnyoo,
+  jjourbits,
+  jjpassionetorrent,
+  jjpolishsource,
+  jjprostylex,
+  jjptfiles,
+  jjpuntotorrent,
+  jjracing4Everyone,
+  jjredstartorrent,
+  jjredtopia,
+  jjretroflix,
+  jjrgu,
+  jjrockbox,
+  jjrodvd,
+  jjrutor,
+  jjscenefz,
+  jjscenereactor,
+  jjscenerush,
+  jjsdbits,
+  jjshareisland,
+  jjsharespacedb,
+  jjshellife,
+  jjsktorrent,
+  jjskytorrentsclone,
+  jjspeedShare,
+  jjspeedtorrentreloaded,
+  jjsporthd,
+  jjsportscult,
+  jjsukebeiPantsu,
+  jjsukebeinyaasi,
+  jjtasmanit,
+  jjtbplus,
+  jjtenyardtracker,
+  jjtheempire,
+  jjthegeeks,
+  jjthehorrorcharnel,
+  jjtheoccult,
+  jjthepiratebay,
+  jjtheplace,
+  jjtheshinning,
+  jjtheshow,
+  jjthetorrents,
+  jjthevault,
+  jjtntvillage,
+  jjtokyotosho,
+  jjtorlock,
+  jjtorrentTurk,
+  jjtorrent9,
+  jjtorrent9Clone,
+  jjtorrentbd,
+  jjtorrentccf,
+  jjtorrentcouch,
+  jjtorrentdownloads,
+  jjtorrentgalaxyorg,
+  jjtorrenthr,
+  jjtorrenting,
+  jjtorrentland,
+  jjtorrentlt,
+  jjtorrentsectorcrew,
+  jjtorrentseeds,
+  jjtorrentz2,
+  jjtorviet,
+  jjtotheglory,
+  jjtrancetraffic,
+  jjtrezzor,
+  jjuhdbits,
+  jjultimategamerclub,
+  jjunionfansub,
+  jjwaffles,
+  jjwihd,
+  jjworldofp2P,
+  jjworldwidetorrents,
+  jjxIteMe,
+  jjxbytes2,
+  jjxtremezone,
+  jjyggtorrent,
+  jjyourexotic,
+  jjzamundanet,
+  jjzelkaorg,
+  jjzooqle,
+  jjztracker,
+];

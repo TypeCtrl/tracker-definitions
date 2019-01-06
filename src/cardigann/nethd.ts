@@ -93,4 +93,5 @@ export const definition: TrackerDefinition = {
       },
     },
   },
+  source: 'cardigann',
 };

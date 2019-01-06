@@ -106,4 +106,5 @@ export const definition: TrackerDefinition = {
       description: { optional: true, selector: 'font[color="#990000"]' },
     },
   },
+  source: 'jackett',
 };

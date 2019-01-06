@@ -97,5 +97,6 @@
       },
       "description": { "selector": "p:has(b:contains(\"Language:\"))" }
     }
-  }
+  },
+  "source": "jackett"
 }

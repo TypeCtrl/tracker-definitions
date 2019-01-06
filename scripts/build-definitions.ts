@@ -92,6 +92,7 @@ for (const src of SOURCES) {
     const content = fs.readFileSync(path.join(src.dir, file), 'utf8');
     const json = yaml.safeLoad(content, { json: true });
     const fixedJson = validateJson(json);
+    fixedJson.source = src.name;
 
     sites.push(name);
 
@@ -113,16 +114,23 @@ for (const src of SOURCES) {
 
   // helpers
   const formattedSites = prettier.format(JSON.stringify(sites), { parser: 'json' });
-  const siteExp = `export const sites: string[] = ${formattedSites};`;
+  const siteExp = `export const ${src.name}Sites: string[] = ${formattedSites};`;
   fs.writeFileSync(
     path.join(HELPERS_DIR, `${src.name}.ts`),
     prettier.format(siteExp, PRETTIER_TYPESCRIPT),
   );
 
   // site export
-  const exportedSites = sites.reduce((pre, cur) => {
-    return `${pre}export {definition as ${src.name[0]}${_.camelCase(cur)}} from './${cur}';`;
+  let exportedSites = sites.reduce((pre, cur) => {
+    const name = `${src.name[0]}${src.name[0]}${_.camelCase(cur)}`;
+    return `${pre}
+      import {definition as ${name}} from './${cur}';
+      export const ${name.substring(1)} = ${name};
+    `;
   }, '');
+  exportedSites += `
+    export const definitions = [${sites.map(n => `${src.name[0]}${src.name[0]}${_.camelCase(n)}`)}];
+  `;
   fs.writeFileSync(
     path.join(moduleOutDir, `index.ts`),
     prettier.format(exportedSites, PRETTIER_TYPESCRIPT),

@@ -90,5 +90,6 @@
       },
       "date": { "text": "now" }
     }
-  }
+  },
+  "source": "jackett"
 }

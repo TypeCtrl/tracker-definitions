@@ -133,5 +133,6 @@
         "remove": "a[title][href^=\"details.php?id=\"], div, font:contains(\"Added on\")"
       }
     }
-  }
+  },
+  "source": "jackett"
 }

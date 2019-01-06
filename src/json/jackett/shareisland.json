@@ -180,5 +180,6 @@
         "filters": [{ "name": "replace", "args": ["x Upload Multiplier", ""] }]
       }
     }
-  }
+  },
+  "source": "jackett"
 }

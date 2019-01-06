@@ -133,4 +133,5 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(6)', remove: 'span' },
     },
   },
+  source: 'jackett',
 };

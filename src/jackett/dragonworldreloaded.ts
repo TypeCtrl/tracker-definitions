@@ -257,4 +257,5 @@ export const definition: TrackerDefinition = {
       description: { selector: 'selection_unter_af', optional: true },
     },
   },
+  source: 'jackett',
 };

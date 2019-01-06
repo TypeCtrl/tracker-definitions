@@ -111,5 +111,6 @@
         "remove": "a, img"
       }
     }
-  }
+  },
+  "source": "jackett"
 }

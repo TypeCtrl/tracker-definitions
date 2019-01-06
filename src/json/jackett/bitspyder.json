@@ -103,5 +103,6 @@
       "uploadvolumefactor": { "case": { "*": "1" } },
       "description": { "optional": true, "selector": "font[color=\"#990000\"]" }
     }
-  }
+  },
+  "source": "jackett"
 }

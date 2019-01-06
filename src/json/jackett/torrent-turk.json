@@ -110,5 +110,6 @@
         "attribute": "data-time"
       }
     }
-  }
+  },
+  "source": "jackett"
 }

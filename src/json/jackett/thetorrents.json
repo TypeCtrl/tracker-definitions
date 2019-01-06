@@ -139,5 +139,6 @@
         "case": { "img[title=\"DoubleUpload\"]": "2", "*": "1" }
       }
     }
-  }
+  },
+  "source": "jackett"
 }
