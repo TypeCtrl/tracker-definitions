@@ -8,9 +8,9 @@
   "keywords": [
     "Torznab",
     "jackett",
+    "cardigann",
     "torrent",
-    "tracker",
-    "typescript"
+    "tracker"
   ],
   "source": "src/index.ts",
   "main": "./src/index.js",
