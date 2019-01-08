@@ -1,4 +1,4 @@
-import * as definitions from '../src/index';
+import { definitions } from '../src/index';
 
 describe('Dummy test', () => {
   it('should have definitions', () => {
