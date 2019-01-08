@@ -114,7 +114,7 @@ for (const src of SOURCES) {
 
   // helpers
   const formattedSites = prettier.format(JSON.stringify(sites), { parser: 'json' });
-  const siteExp = `export const ${src.name}Sites: string[] = ${formattedSites};`;
+  const siteExp = `export const ${src.name}Sites = ${formattedSites};`;
   fs.writeFileSync(
     path.join(HELPERS_DIR, `${src.name}.ts`),
     prettier.format(siteExp, PRETTIER_TYPESCRIPT),

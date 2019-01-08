@@ -1,4 +1,4 @@
-export const jackettSites: string[] = [
+export const jackettSites = [
   '1337x',
   '2fast4you',
   '3dtorrents',
