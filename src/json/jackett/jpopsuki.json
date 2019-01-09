@@ -61,6 +61,7 @@
         "remove": "span, div.tags, a[title=\"View Comments\"]",
         "filters": [
           { "name": "replace", "args": [" ()", ""] },
+          { "name": "replace", "args": ["\t", ""] },
           { "name": "replace", "args": [" / Freeleech!", ""] }
         ]
       },

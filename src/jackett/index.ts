@@ -262,6 +262,9 @@ export const jhon3Yhd = jjhon3Yhd;
 import { definition as jjhqsource } from './hqsource';
 export const jhqsource = jjhqsource;
 
+import { definition as jjhush } from './hush';
+export const jhush = jjhush;
+
 import { definition as jjhyperay } from './hyperay';
 export const jhyperay = jjhyperay;
 
@@ -705,6 +708,7 @@ export const definitions = [
   jjhdtorrentsit,
   jjhon3Yhd,
   jjhqsource,
+  jjhush,
   jjhyperay,
   jjicetorrent,
   jjidopeclone,

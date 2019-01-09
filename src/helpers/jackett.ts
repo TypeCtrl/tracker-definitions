@@ -87,6 +87,7 @@ export const jackettSites = [
   'hdtorrentsit',
   'hon3yhd',
   'hqsource',
+  'hush',
   'hyperay',
   'icetorrent',
   'idopeclone',
