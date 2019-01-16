@@ -219,19 +219,19 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'category' }],
       },
       date: {
-        selector: 'td:nth-of-type(5)',
+        selector: 'td:nth-last-of-type(10)',
         filters: [
           { name: 'append', args: ' -04:00' },
           { name: 'dateparse', args: '02/01/2006 15:04:05 -07:00' },
         ],
       },
-      seeders: { selector: 'td:nth-of-type(7)' },
-      leechers: { selector: 'td:nth-of-type(8)' },
+      seeders: { selector: 'td:nth-last-of-type(8)' },
+      leechers: { selector: 'td:nth-last-of-type(7)' },
       grabs: {
-        selector: 'td:nth-of-type(9)',
+        selector: 'td:nth-last-of-type(6)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
-      size: { selector: 'td:nth-of-type(11)' },
+      size: { selector: 'td:nth-last-of-type(4)' },
       downloadvolumefactor: {
         case: {
           'img[src="images/freeleech.gif"]': '0',
