@@ -17,7 +17,6 @@ export const definition: TrackerDefinition = {
     selector: 'span.smallfont > font[color="1900D1"] + font',
   },
   search: {
-    path: 'https://www.bitmetv.org/browse.php',
     inputs: { search: '{{ .Keywords }}', incldead: '1' },
     rows: {
       selector: 'table[cellpadding="5"] > tbody > tr:has(td.latest)',
@@ -43,6 +42,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { case: { '*': '1' } },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: 'https://www.bitmetv.org/browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

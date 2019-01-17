@@ -30,7 +30,6 @@
   },
   "ratio": { "path": "torrents.php", "selector": "li#stats_ratio > span" },
   "search": {
-    "path": "torrents.php",
     "inputs": {
       "$raw": "{{range .Categories}}filter_cat[{{.}}]=1&{{end}}",
       "searchstr": "{{ .Query.Keywords }}",
@@ -77,7 +76,8 @@
         }
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
-    }
+    },
+    "paths": [{ "path": "torrents.php" }]
   },
   "source": "cardigann"
 }

@@ -67,7 +67,6 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'form[name="jump1"]' },
   },
   search: {
-    path: 'index.php',
     inputs: {
       page: 'torrents',
       $raw: '&category={{range .Categories}}{{.}};{{end}}',
@@ -129,6 +128,7 @@ export const definition: TrackerDefinition = {
         },
       },
     },
+    paths: [{ path: 'index.php' }],
   },
   source: 'jackett',
 };

@@ -44,7 +44,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/usercp.php', selector: 'div#header > div.zepclass' },
   },
   search: {
-    path: '/browse.php?do=search',
     inputs: {
       keywords: '{{ .Query.Keywords }}',
       include_dead_torrents: 'yes',
@@ -75,6 +74,7 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(n) > div:has(span[style="float: right;"])',
       },
     },
+    paths: [{ path: '/browse.php?do=search' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

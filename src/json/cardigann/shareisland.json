@@ -63,7 +63,6 @@
     "selector": "img[title=\"Ratio\"] + span"
   },
   "search": {
-    "path": "/",
     "inputs": {
       "p": "torrents",
       "pid": "32",
@@ -129,7 +128,8 @@
           { "name": "replace", "args": [" alle", ""] }
         ]
       }
-    }
+    },
+    "paths": [{ "path": "/" }]
   },
   "source": "cardigann"
 }

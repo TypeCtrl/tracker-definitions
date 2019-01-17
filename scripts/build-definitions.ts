@@ -48,7 +48,7 @@ function validateJson(json: any): any {
   }
   json.language = lang;
 
-  // parse categories
+  // parse and normalize categories
   if (json.caps.categories) {
     const mappings = Object.keys(json.caps.categories).map(n => {
       return { id: n, cat: json.caps.categories[n] };
@@ -68,6 +68,14 @@ function validateJson(json: any): any {
       cat.cat = f || cat.cat;
       return cat;
     });
+  }
+
+  // parse and normalize search.paths
+  // some are search.path some are search.paths
+  // always return array
+  if (json.search && json.search.path) {
+    json.search.paths = [{ path: json.search.path }];
+    delete json.search.path;
   }
 
   return json;

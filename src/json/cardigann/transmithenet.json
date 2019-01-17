@@ -26,7 +26,6 @@
   },
   "ratio": { "text": "-1" },
   "search": {
-    "path": "/torrents.php",
     "inputs": {
       "searchtext": "{{ .Query.Keywords }}",
       "order_by": "time",
@@ -74,7 +73,8 @@
         "case": { "img[alt=\"Freeleech\"]": "0", "*": "1" }
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
-    }
+    },
+    "paths": [{ "path": "/torrents.php" }]
   },
   "encoding": "UTF-8",
   "source": "cardigann"

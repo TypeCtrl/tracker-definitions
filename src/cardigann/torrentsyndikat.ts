@@ -60,7 +60,6 @@ export const definition: TrackerDefinition = {
     selector: 'i[title="Gesamtratio"] ~ span',
   },
   search: {
-    path: '/browse.php?do=search',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -102,6 +101,7 @@ export const definition: TrackerDefinition = {
         ],
       },
     },
+    paths: [{ path: '/browse.php?do=search' }],
   },
   source: 'cardigann',
 };

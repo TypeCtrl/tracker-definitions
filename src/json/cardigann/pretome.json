@@ -42,7 +42,6 @@
   },
   "ratio": { "text": "∞" },
   "search": {
-    "path": "/browse.php",
     "inputs": {
       "$raw": "{{range .Categories}}cat[]={{.}}&{{end}}",
       "search": "{{ .Query.Keywords }}",
@@ -73,7 +72,8 @@
         "selector": "td:nth-child(6)",
         "filters": [{ "name": "append", "args": " ago" }]
       }
-    }
+    },
+    "paths": [{ "path": "/browse.php" }]
   },
   "encoding": "UTF-8",
   "source": "cardigann"

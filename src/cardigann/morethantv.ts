@@ -29,7 +29,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { text: '∞' },
   search: {
-    path: '/torrents.php',
     inputs: { searchstr: '{{ .Keywords }}' },
     rows: { selector: 'table#torrent_table tr.torrent' },
     fields: {
@@ -55,6 +54,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: '/torrents.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

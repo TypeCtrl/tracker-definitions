@@ -80,7 +80,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/usercp.php?action=default' },
   },
   search: {
-    path: '/browse.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -124,6 +123,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: '/browse.php' }],
   },
   source: 'cardigann',
 };

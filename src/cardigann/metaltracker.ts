@@ -40,7 +40,6 @@ export const definition: TrackerDefinition = {
     },
   },
   search: {
-    path: '/torrents/search.html',
     method: 'post',
     inputs: {
       'SearchTorrentsForm[nameTorrent]': '{{ .Query.Keywords }}',
@@ -66,6 +65,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'Size:\\s+([\\w\\d\\.,]+ \\w\\w)' }],
       },
     },
+    paths: [{ path: '/torrents/search.html' }],
   },
   source: 'cardigann',
 };

@@ -128,7 +128,6 @@
     "test": { "path": "index.php", "selector": "form[name=\"jump1\"]" }
   },
   "search": {
-    "path": "index.php",
     "inputs": {
       "page": "torrents",
       "$raw": "&category={{range .Categories}}{{.}};{{end}}",
@@ -158,7 +157,8 @@
         "selector": "a[href^=\"download.php\"]",
         "attribute": "href"
       }
-    }
+    },
+    "paths": [{ "path": "index.php" }]
   },
   "source": "jackett"
 }

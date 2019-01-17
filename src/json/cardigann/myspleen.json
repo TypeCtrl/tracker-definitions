@@ -37,7 +37,6 @@
     "selector": "span.key:contains(\"Ratio\") + span.value"
   },
   "search": {
-    "path": "/browse.php",
     "method": "post",
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
@@ -74,7 +73,8 @@
         "case": { "span.star": "0", "span.fltime": "0", "*": "1" }
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
-    }
+    },
+    "paths": [{ "path": "/browse.php" }]
   },
   "source": "cardigann"
 }

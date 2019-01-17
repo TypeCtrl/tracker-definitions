@@ -32,7 +32,6 @@ export const definition: TrackerDefinition = {
     selector: 'div.user-info-extend > dl > dt:contains("Ratio:") + dd',
   },
   search: {
-    path: '/torrents.php',
     method: 'post',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
@@ -92,6 +91,7 @@ export const definition: TrackerDefinition = {
         case: { 'span.label:contains("2X")': '2', '*': '1' },
       },
     },
+    paths: [{ path: '/torrents.php' }],
   },
   source: 'cardigann',
 };

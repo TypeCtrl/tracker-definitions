@@ -49,7 +49,6 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'regexp', args: 'Ratio: (.+)$' }],
   },
   search: {
-    path: '/files',
     inputs: {
       query: '{{ .Keywords }}',
       category: 0,
@@ -81,6 +80,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(9) > font' },
       leechers: { selector: 'td:nth-child(10) > font' },
     },
+    paths: [{ path: '/files' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

@@ -34,7 +34,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { path: '/top10.php', selector: 'span.r99' },
   search: {
-    path: '/torrents.php',
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
       searchstr: '{{ .Query.Keywords }}',
@@ -107,6 +106,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'append', args: ' ago' }],
       },
     },
+    paths: [{ path: '/torrents.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

@@ -88,7 +88,6 @@ export const definition: TrackerDefinition = {
     selector: 'div#infobar0 > ul > li:nth-child(1) > font:last-child',
   },
   search: {
-    path: 'torrents-search.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -133,6 +132,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: 'torrents-search.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

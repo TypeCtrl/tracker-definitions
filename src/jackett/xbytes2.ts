@@ -45,7 +45,6 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php' },
   },
   search: {
-    path: 'index.php',
     keywordsfilters: [{ name: 're_replace', args: ['S(\\d{1,2})E(\\d{1,2})', 'S$1/E$2'] }],
     inputs: {
       page: 'torrents',
@@ -125,6 +124,7 @@ export const definition: TrackerDefinition = {
         },
       },
     },
+    paths: [{ path: 'index.php' }],
   },
   source: 'jackett',
 };

@@ -58,7 +58,6 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'regexp', args: '\\((.*?)\\)' }],
   },
   search: {
-    path: '/browse_API.php',
     method: 'post',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
@@ -95,6 +94,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: '/browse_API.php' }],
   },
   source: 'cardigann',
 };

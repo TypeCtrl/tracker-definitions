@@ -55,7 +55,6 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'regexp', args: '分享率 : (.*?)  ' }],
   },
   search: {
-    path: '/browse.php',
     inputs: {
       search_field: '{{range .Categories}}分类:`{{.}}` {{end}}{{ .Query.Keywords }}',
       c: 'M',
@@ -110,6 +109,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: '/browse.php' }],
   },
   source: 'cardigann',
 };

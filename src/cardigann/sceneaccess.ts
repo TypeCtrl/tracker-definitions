@@ -56,7 +56,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/inbox' },
   },
   search: {
-    path: '/all',
     inputs: { $raw: 'search={{ .Query.Keywords }}&method=2' },
     rows: { selector: 'tr.tt_row' },
     fields: {
@@ -77,6 +76,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td.ttr_seeders' },
       leechers: { selector: 'td.ttr_leechers' },
     },
+    paths: [{ path: '/all' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

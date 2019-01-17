@@ -56,7 +56,6 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'replace', args: [',', '.'] }],
   },
   search: {
-    path: '/torrents/search/',
     inputs: {
       $raw: '{{range .Categories}}subcat={{.}}&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -95,6 +94,7 @@ export const definition: TrackerDefinition = {
       },
       grabs: { selector: 'td:nth-child(7)' },
     },
+    paths: [{ path: '/torrents/search/' }],
   },
   source: 'cardigann',
 };

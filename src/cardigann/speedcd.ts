@@ -53,7 +53,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/user/' },
   },
   search: {
-    path: '/browse.php',
     inputs: { search: '{{ .Query.Keywords }}' },
     rows: { selector: '#torrentTable .boxContent > table tbody tr' },
     fields: {
@@ -75,6 +74,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },
     },
+    paths: [{ path: '/browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

@@ -62,7 +62,6 @@
     ]
   },
   "search": {
-    "path": "/browse.php",
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{ .Query.Keywords }}",
@@ -116,7 +115,8 @@
         }
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
-    }
+    },
+    "paths": [{ "path": "/browse.php" }]
   },
   "encoding": "UTF-8",
   "source": "cardigann"

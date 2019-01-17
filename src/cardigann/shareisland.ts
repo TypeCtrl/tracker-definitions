@@ -65,7 +65,6 @@ export const definition: TrackerDefinition = {
     selector: 'img[title="Ratio"] + span',
   },
   search: {
-    path: '/',
     inputs: {
       p: 'torrents',
       pid: '32',
@@ -132,6 +131,7 @@ export const definition: TrackerDefinition = {
         ],
       },
     },
+    paths: [{ path: '/' }],
   },
   source: 'cardigann',
 };

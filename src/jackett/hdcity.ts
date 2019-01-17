@@ -242,7 +242,6 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'form[name="jump1"]' },
   },
   search: {
-    path: 'index.php',
     keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],
     inputs: {
       page: 'torrents',
@@ -306,6 +305,7 @@ export const definition: TrackerDefinition = {
         },
       },
     },
+    paths: [{ path: 'index.php' }],
   },
   source: 'jackett',
 };

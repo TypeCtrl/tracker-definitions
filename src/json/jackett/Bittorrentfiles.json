@@ -80,7 +80,6 @@
     "test": { "path": "browse.php" }
   },
   "search": {
-    "path": "browse.php",
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{ .Query.Keywords }}",
@@ -128,7 +127,8 @@
         "case": { "img[alt=\"OU\"]": "0", "img[alt=\"D/2\"]": "0.5", "*": "1" }
       },
       "uploadvolumefactor": { "case": { "img[alt=\"2xU\"]": "2", "*": "1" } }
-    }
+    },
+    "paths": [{ "path": "browse.php" }]
   },
   "source": "jackett"
 }

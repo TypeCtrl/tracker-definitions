@@ -27,7 +27,6 @@ export const definition: TrackerDefinition = {
     selector: '#stats p:nth-child(3) span:nth-child(1)',
   },
   search: {
-    path: '/browse.php',
     inputs: { search: '{{ .Query.Keywords }}' },
     rows: { selector: 'table#highlight > tbody > tr:not(.colhead)' },
     fields: {
@@ -44,6 +43,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td.table_seeders a span' },
       leechers: { selector: 'td.table_leechers a' },
     },
+    paths: [{ path: '/browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

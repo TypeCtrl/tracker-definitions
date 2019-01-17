@@ -34,7 +34,6 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: '.tcabecera' },
   },
   search: {
-    path: 'index.php',
     keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],
     inputs: {
       sec: 'listado',
@@ -102,6 +101,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['Freeleech X2', '2'] }],
       },
     },
+    paths: [{ path: 'index.php' }],
   },
   source: 'jackett',
 };

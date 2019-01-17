@@ -58,7 +58,6 @@
     "selector": "i[title=\"Gesamtratio\"] ~ span"
   },
   "search": {
-    "path": "/browse.php?do=search",
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{ .Query.Keywords }}",
@@ -99,7 +98,8 @@
           { "name": "replace", "args": [" von", ""] }
         ]
       }
-    }
+    },
+    "paths": [{ "path": "/browse.php?do=search" }]
   },
   "source": "cardigann"
 }

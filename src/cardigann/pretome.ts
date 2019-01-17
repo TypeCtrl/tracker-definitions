@@ -44,7 +44,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { text: '∞' },
   search: {
-    path: '/browse.php',
     inputs: {
       $raw: '{{range .Categories}}cat[]={{.}}&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -76,6 +75,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'append', args: ' ago' }],
       },
     },
+    paths: [{ path: '/browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

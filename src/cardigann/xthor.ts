@@ -61,7 +61,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/usercp.php' },
   },
   search: {
-    path: 'browse.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       searchin: 'title',
@@ -112,6 +111,7 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: { case: { '*': '1' } },
       grabs: { selector: 'td:nth-child(7) > a' },
     },
+    paths: [{ path: 'browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

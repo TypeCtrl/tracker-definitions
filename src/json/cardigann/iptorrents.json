@@ -60,7 +60,6 @@
   },
   "ratio": { "path": "/indexipt.php", "selector": ".c_ratio" },
   "search": {
-    "path": "/t",
     "inputs": {
       "$raw": "{{range .Categories}}{{.}}&{{end}}q={{ .Query.Keywords }}"
     },
@@ -92,7 +91,8 @@
         "case": { "span.t_tag_free_leech": "0", "*": "1" }
       },
       "uploadvolumefactor": { "text": "1" }
-    }
+    },
+    "paths": [{ "path": "/t" }]
   },
   "encoding": "UTF-8",
   "source": "cardigann"

@@ -54,7 +54,6 @@
     "filters": [{ "name": "replace", "args": [",", "."] }]
   },
   "search": {
-    "path": "/torrents/search/",
     "inputs": {
       "$raw": "{{range .Categories}}subcat={{.}}&{{end}}",
       "search": "{{ .Query.Keywords }}"
@@ -94,7 +93,8 @@
         ]
       },
       "grabs": { "selector": "td:nth-child(7)" }
-    }
+    },
+    "paths": [{ "path": "/torrents/search/" }]
   },
   "source": "cardigann"
 }

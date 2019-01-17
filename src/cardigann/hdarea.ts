@@ -37,7 +37,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/messages.php' },
   },
   search: {
-    path: '/torrents.php?search={{ .Query.Keywords}}',
     rows: { selector: 'table.torrents tbody tr.nonstick_outer_bg' },
     fields: {
       category: {
@@ -62,6 +61,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },
     },
+    paths: [{ path: '/torrents.php?search={{ .Query.Keywords}}' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

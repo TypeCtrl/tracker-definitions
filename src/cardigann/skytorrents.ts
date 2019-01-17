@@ -10,7 +10,6 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'TV', cat: 'TV' }, { id: 'Movies', cat: 'Movies' }],
   },
   search: {
-    path: 'search/all/{{if .Query.Keywords}}ed{{else}}ad{{end}}/1/{{ .Query.Keywords}}',
     rows: { selector: 'table > tbody > tr' },
     fields: {
       title: {
@@ -40,6 +39,11 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [
+      {
+        path: 'search/all/{{if .Query.Keywords}}ed{{else}}ad{{end}}/1/{{ .Query.Keywords}}',
+      },
+    ],
   },
   source: 'cardigann',
 };

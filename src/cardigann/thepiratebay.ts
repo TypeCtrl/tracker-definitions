@@ -21,7 +21,6 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}/0/99/0{{else}}/recent{{end}}',
     rows: { selector: '#searchResult tbody tr:has(td.vertTh)' },
     fields: {
       category: {
@@ -48,6 +47,11 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [
+      {
+        path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}/0/99/0{{else}}/recent{{end}}',
+      },
+    ],
   },
   source: 'cardigann',
 };

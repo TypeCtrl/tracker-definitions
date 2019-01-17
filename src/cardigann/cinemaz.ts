@@ -28,7 +28,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/account' },
   },
   search: {
-    path: '/torrents?in=0&search={{ .Query.Keywords}}',
     rows: {
       selector: 'table.table:nth-child(3) > tbody:nth-child(2) > tr',
     },
@@ -51,6 +50,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
     },
+    paths: [{ path: '/torrents?in=0&search={{ .Query.Keywords}}' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

@@ -75,7 +75,6 @@
     "test": { "path": "/?p=home&pid=1", "selector": "div#member_info_bar" }
   },
   "search": {
-    "path": "/",
     "keywordsfilters": [
       { "name": "re_replace", "args": ["S0?(\\d{1,2})E(\\d{1,2})", "$1x$2"] }
     ],
@@ -150,7 +149,8 @@
       },
       "minimumratio": { "text": "1.0" },
       "minimumseedtime": { "text": "259200" }
-    }
+    },
+    "paths": [{ "path": "/" }]
   },
   "source": "jackett"
 }

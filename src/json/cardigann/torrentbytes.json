@@ -53,7 +53,6 @@
     "test": { "path": "https://torrentbytes.net/inbox.php" }
   },
   "search": {
-    "path": "/browse.php",
     "inputs": { "$raw": "search={{ .Query.Keywords }}" },
     "rows": {
       "selector": "html body div#innerwrapper div#mainframe div#content table:not(.main):not(.bottom) tbody tr:not(:first-child)"
@@ -76,7 +75,8 @@
       "date": { "selector": "td:nth-child(5)" },
       "seeders": { "selector": "td:nth-child(9)" },
       "leechers": { "selector": "td:nth-child(10)" }
-    }
+    },
+    "paths": [{ "path": "/browse.php" }]
   },
   "encoding": "UTF-8",
   "source": "cardigann"

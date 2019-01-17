@@ -33,7 +33,6 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    path: 'searchA',
     inputs: { f: '{{ .Query.Keywords }}' },
     rows: {
       selector: 'html body #wrap .results dl:has(a)',
@@ -65,6 +64,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: 'searchA' }],
   },
   source: 'cardigann',
 };

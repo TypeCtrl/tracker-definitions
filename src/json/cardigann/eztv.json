@@ -6,7 +6,6 @@
   "links": ["https://eztv.ag/"],
   "caps": { "categorymappings": [{ "id": "1", "cat": "TV" }] },
   "search": {
-    "path": "{{if .Query.Keywords}}search/{{ .Query.Keywords}}{{else}}/{{end}}",
     "rows": {
       "selector": "table.forum_header_border tr[name='hover'].forum_header_border",
       "filters": [{ "name": "andmatch" }]
@@ -27,7 +26,12 @@
       "seeders": { "selector": "td:nth-child(6)" },
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "text": "1" }
-    }
+    },
+    "paths": [
+      {
+        "path": "{{if .Query.Keywords}}search/{{ .Query.Keywords}}{{else}}/{{end}}"
+      }
+    ]
   },
   "source": "cardigann"
 }

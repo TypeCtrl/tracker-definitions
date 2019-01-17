@@ -52,7 +52,6 @@
   },
   "settings": [],
   "search": {
-    "path": "torrents.php",
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{.Keywords}}",
@@ -95,7 +94,8 @@
       },
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "text": "1" }
-    }
+    },
+    "paths": [{ "path": "torrents.php" }]
   },
   "source": "jackett"
 }

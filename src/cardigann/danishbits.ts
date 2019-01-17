@@ -56,7 +56,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/inbox.php' },
   },
   search: {
-    path: '/torrents.php',
     inputs: {
       $raw: 'action=newbrowse&search={{ .Query.Keywords }}&pre_type=torrents&type=',
     },
@@ -84,6 +83,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
     },
+    paths: [{ path: '/torrents.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

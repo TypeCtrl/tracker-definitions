@@ -106,7 +106,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { path: '/userdetails.php', selector: 'span.RatioTD' },
   search: {
-    path: '/tor/js/loadSearch2.php',
     method: 'post',
     inputs: {
       $raw:
@@ -144,6 +143,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: '/tor/js/loadSearch2.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

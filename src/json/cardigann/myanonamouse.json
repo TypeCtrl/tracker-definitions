@@ -104,7 +104,6 @@
   },
   "ratio": { "path": "/userdetails.php", "selector": "span.RatioTD" },
   "search": {
-    "path": "/tor/js/loadSearch2.php",
     "method": "post",
     "inputs": {
       "$raw": "tor[text]={{ .Query.Keywords }}&tor[srchIn][title]=true&tor[srchIn][author]=true&tor[searchType]=all&tor[searchIn]=torrents&tor[cat][]=0&tor[browseFlagsHideVsShow]=0&tor[startDate]=&tor[endDate]=&tor[hash]=&tor[sortType]=default&tor[startNumber]=0"
@@ -140,7 +139,8 @@
         "case": { "img[alt=\"freeleech\"]": "0", "*": "1" }
       },
       "uploadvolumefactor": { "text": "1" }
-    }
+    },
+    "paths": [{ "path": "/tor/js/loadSearch2.php" }]
   },
   "encoding": "UTF-8",
   "source": "cardigann"

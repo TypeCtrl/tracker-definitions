@@ -84,7 +84,6 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    path: 'browse.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -142,6 +141,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: 'browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

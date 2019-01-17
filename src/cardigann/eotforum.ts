@@ -72,7 +72,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { path: 'index.php', selector: 'img[alt="Ratio"] + font' },
   search: {
-    path: 'index.php',
     inputs: {
       page: 'torrents',
       search: '{{ .Query.Keywords }}',
@@ -143,6 +142,7 @@ export const definition: TrackerDefinition = {
         },
       },
     },
+    paths: [{ path: 'index.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

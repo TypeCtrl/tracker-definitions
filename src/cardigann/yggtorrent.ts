@@ -137,7 +137,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/', selector: 'a[href$="/user/logout"]' },
   },
   search: {
-    path: '/engine/search?name={{ .Keywords}}&do=search',
     rows: { selector: 'section#\\#torrents > div > table > tbody > tr' },
     fields: {
       date: {
@@ -187,6 +186,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '1' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: '/engine/search?name={{ .Keywords}}&do=search' }],
   },
   source: 'cardigann',
 };

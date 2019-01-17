@@ -62,7 +62,6 @@
     ]
   },
   "search": {
-    "path": "index.php",
     "inputs": {
       "search": "{{ .Query.Keywords }}",
       "page": "torrents",
@@ -139,7 +138,8 @@
           "*": "1"
         }
       }
-    }
+    },
+    "paths": [{ "path": "index.php" }]
   },
   "encoding": "UTF-8",
   "source": "cardigann"

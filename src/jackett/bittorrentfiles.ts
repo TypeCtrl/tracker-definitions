@@ -82,7 +82,6 @@ export const definition: TrackerDefinition = {
     test: { path: 'browse.php' },
   },
   search: {
-    path: 'browse.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -128,6 +127,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { 'img[alt="2xU"]': '2', '*': '1' } },
     },
+    paths: [{ path: 'browse.php' }],
   },
   source: 'jackett',
 };

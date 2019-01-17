@@ -62,7 +62,6 @@ export const definition: TrackerDefinition = {
     selector: 'span#ElementRatio',
   },
   search: {
-    path: '/index.php',
     inputs: {
       strWebValue: 'torrent',
       strWebAction: 'search',
@@ -119,6 +118,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: '/index.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

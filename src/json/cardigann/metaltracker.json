@@ -37,7 +37,6 @@
     }
   },
   "search": {
-    "path": "/torrents/search.html",
     "method": "post",
     "inputs": {
       "SearchTorrentsForm[nameTorrent]": "{{ .Query.Keywords }}",
@@ -64,7 +63,8 @@
           { "name": "regexp", "args": "Size:\\s+([\\w\\d\\.,]+ \\w\\w)" }
         ]
       }
-    }
+    },
+    "paths": [{ "path": "/torrents/search.html" }]
   },
   "source": "cardigann"
 }

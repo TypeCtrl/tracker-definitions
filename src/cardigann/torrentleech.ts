@@ -61,7 +61,6 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'regexp', args: 'Ratio:.(\\d+\\.\\d+)' }],
   },
   search: {
-    path: '/torrents/browse/{{if .Query.Keywords}}index/query/{{ .Query.Keywords}}{{end}}',
     inputs: { $raw: '{{range .Categories}}category[]={{.}}&{{end}}' },
     rows: { selector: 'table#torrenttable > tbody > tr' },
     fields: {
@@ -85,6 +84,11 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
     },
+    paths: [
+      {
+        path: '/torrents/browse/{{if .Query.Keywords}}index/query/{{ .Query.Keywords}}{{end}}',
+      },
+    ],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

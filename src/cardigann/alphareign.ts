@@ -31,7 +31,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { text: '∞' },
   search: {
-    path: '/',
     method: 'get',
     inputs: { query: '{{ .Keywords }}' },
     rows: { selector: '.result' },
@@ -67,6 +66,7 @@ export const definition: TrackerDefinition = {
         },
       },
     },
+    paths: [{ path: '/' }],
   },
   source: 'cardigann',
 };

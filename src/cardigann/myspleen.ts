@@ -39,7 +39,6 @@ export const definition: TrackerDefinition = {
     selector: 'span.key:contains("Ratio") + span.value',
   },
   search: {
-    path: '/browse.php',
     method: 'post',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
@@ -77,6 +76,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: '/browse.php' }],
   },
   source: 'cardigann',
 };

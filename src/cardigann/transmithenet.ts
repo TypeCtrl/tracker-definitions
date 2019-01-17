@@ -28,7 +28,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { text: '-1' },
   search: {
-    path: '/torrents.php',
     inputs: {
       searchtext: '{{ .Query.Keywords }}',
       order_by: 'time',
@@ -77,6 +76,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: '/torrents.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

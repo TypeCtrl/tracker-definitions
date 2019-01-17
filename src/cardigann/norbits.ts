@@ -35,7 +35,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/userdetails.php' },
   },
   search: {
-    path: '/browse.php',
     inputs: {
       $raw: '{{range .Categories}}main_cat[]={{.}}&{{end}}search={{ .Query.Keywords }}',
     },
@@ -71,6 +70,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(10)' },
       leechers: { selector: 'td:nth-child(11)' },
     },
+    paths: [{ path: '/browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

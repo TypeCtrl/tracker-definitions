@@ -8,7 +8,6 @@ export const definition: TrackerDefinition = {
   links: ['https://eztv.ag/'],
   caps: { categorymappings: [{ id: '1', cat: 'TV' }] },
   search: {
-    path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}{{else}}/{{end}}',
     rows: {
       selector: "table.forum_header_border tr[name='hover'].forum_header_border",
       filters: [{ name: 'andmatch' }],
@@ -30,6 +29,11 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [
+      {
+        path: '{{if .Query.Keywords}}search/{{ .Query.Keywords}}{{else}}/{{end}}',
+      },
+    ],
   },
   source: 'cardigann',
 };

@@ -31,7 +31,6 @@ export const definition: TrackerDefinition = {
     selector: "#statusbar font:contains('Ratio') + font",
   },
   search: {
-    path: 'torrents.php',
     inputs: { search: '{{ .Keywords }}', cat: 0 },
     rows: { selector: "table[width='800'] tbody tr:not(tr:nth-child(1))" },
     fields: {
@@ -48,6 +47,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
     },
+    paths: [{ path: 'torrents.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

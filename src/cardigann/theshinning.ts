@@ -72,7 +72,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { path: '/browse.php', selector: 'img[title="Ratio"] + i' },
   search: {
-    path: '/browse.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -116,6 +115,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: '/browse.php' }],
   },
   source: 'cardigann',
 };

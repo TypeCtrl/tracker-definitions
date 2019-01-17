@@ -62,7 +62,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { path: '/indexipt.php', selector: '.c_ratio' },
   search: {
-    path: '/t',
     inputs: {
       $raw: '{{range .Categories}}{{.}}&{{end}}q={{ .Query.Keywords }}',
     },
@@ -92,6 +91,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: '/t' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

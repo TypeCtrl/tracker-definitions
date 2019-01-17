@@ -44,7 +44,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/profile.php' },
   },
   search: {
-    path: '/torrents.php',
     inputs: {
       $raw:
         '{{range .Categories}}kivalasztott_tipus[]={{.}}&{{end}}mire={{ .Query.Keywords }}&miben=name&tipus={{if .Categories}}kivalasztottak_kozott{{else}}all_own{{end}}&submit.x=44&submit.y=16&submit=Ok&tags="\n',
@@ -74,6 +73,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: '.box_s2 a' },
       leechers: { selector: '.box_l2 a' },
     },
+    paths: [{ path: '/torrents.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

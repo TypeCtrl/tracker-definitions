@@ -17,7 +17,6 @@
     ]
   },
   "search": {
-    "path": "search.php",
     "inputs": { "q": "{{ .Query.Keywords }}" },
     "rows": { "selector": "table[class=\"data\"] tr[id]" },
     "fields": {
@@ -44,7 +43,8 @@
       "description": { "selector": "td:nth-child(1) > div > div > span" },
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "text": "1" }
-    }
+    },
+    "paths": [{ "path": "search.php" }]
   },
   "source": "cardigann"
 }

@@ -54,7 +54,6 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    path: 'torrents.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{.Keywords}}',
@@ -98,6 +97,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: 'torrents.php' }],
   },
   source: 'jackett',
 };

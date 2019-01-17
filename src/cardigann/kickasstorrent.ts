@@ -19,7 +19,6 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    path: 'search.php',
     inputs: { q: '{{ .Query.Keywords }}' },
     rows: { selector: 'table[class="data"] tr[id]' },
     fields: {
@@ -47,6 +46,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: 'search.php' }],
   },
   source: 'cardigann',
 };

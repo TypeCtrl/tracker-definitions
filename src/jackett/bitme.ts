@@ -63,7 +63,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/browse.php' },
   },
   search: {
-    path: '/browse.php',
     method: 'get',
     inputs: { search: '{{ .Query.Keywords }}', incldead: 1 },
     rows: {
@@ -112,6 +111,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { case: { '*': '1' } },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: '/browse.php' }],
   },
   source: 'jackett',
 };

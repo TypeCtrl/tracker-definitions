@@ -72,7 +72,6 @@ export const definition: TrackerDefinition = {
   ],
   download: { selector: 'a[href^="{{ .Config.downloadlink }}"]' },
   search: {
-    path: 'torrents-search.php',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
@@ -109,6 +108,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: 'torrents-search.php' }],
   },
   source: 'jackett',
 };

@@ -46,7 +46,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/', selector: 'div#statusbar' },
   },
   search: {
-    path: '/browse.php',
     inputs: {
       incldead: '0',
       search: '{{ .Query.Keywords }}',
@@ -87,6 +86,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '1' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: '/browse.php' }],
   },
   source: 'jackett',
 };

@@ -31,7 +31,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { path: 'torrents.php', selector: 'li#stats_ratio > span' },
   search: {
-    path: 'torrents.php',
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
       searchstr: '{{ .Query.Keywords }}',
@@ -73,6 +72,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { case: { '*': '1' } },
       uploadvolumefactor: { case: { '*': '1' } },
     },
+    paths: [{ path: 'torrents.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

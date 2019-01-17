@@ -69,7 +69,6 @@
   ],
   "download": { "selector": "a[href^=\"{{ .Config.downloadlink }}\"]" },
   "search": {
-    "path": "torrents-search.php",
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{ .Keywords }}",
@@ -105,7 +104,8 @@
       "leechers": { "selector": "td:nth-child(7)" },
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "text": "1" }
-    }
+    },
+    "paths": [{ "path": "torrents-search.php" }]
   },
   "source": "jackett"
 }

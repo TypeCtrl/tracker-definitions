@@ -19,7 +19,6 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
-    path: 'index.php',
     keywordsfilters: [
       { name: 're_replace', args: ['S0?(\\d{1,2})', ' $1 '] },
       { name: 're_replace', args: ['E(\\d{2,3})', ' $1 '] },
@@ -51,6 +50,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
+    paths: [{ path: 'index.php' }],
   },
   source: 'jackett',
 };

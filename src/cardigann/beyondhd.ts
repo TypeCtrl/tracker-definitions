@@ -41,7 +41,6 @@ export const definition: TrackerDefinition = {
   },
   ratio: { text: '∞' },
   search: {
-    path: 'browse.php',
     inputs: { search: '{{ .Keywords }}' },
     rows: { selector: 'table.torrenttable.tb_detail tr:nth-child(n+2)' },
     fields: {
@@ -62,6 +61,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(10)' },
       leechers: { selector: 'td:nth-child(11)' },
     },
+    paths: [{ path: 'browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

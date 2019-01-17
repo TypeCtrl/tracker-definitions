@@ -65,7 +65,6 @@
     "test": { "path": "index.php", "selector": "form[name=\"jump1\"]" }
   },
   "search": {
-    "path": "index.php",
     "inputs": {
       "page": "torrents",
       "$raw": "&category={{range .Categories}}{{.}};{{end}}",
@@ -129,7 +128,8 @@
           "*": "1"
         }
       }
-    }
+    },
+    "paths": [{ "path": "index.php" }]
   },
   "source": "jackett"
 }

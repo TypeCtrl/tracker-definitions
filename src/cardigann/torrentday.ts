@@ -58,7 +58,6 @@ export const definition: TrackerDefinition = {
     selector: '#activityDiv span:nth-child(2)',
   },
   search: {
-    path: '/t',
     inputs: {
       $raw: '{{range .Categories}}{{.}}&{{end}}q={{ .Query.Keywords }}',
     },
@@ -83,6 +82,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td.seedersInfo' },
       leechers: { selector: 'td.leechersInfo' },
     },
+    paths: [{ path: '/t' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

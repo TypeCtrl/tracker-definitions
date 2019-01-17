@@ -125,7 +125,6 @@ export interface Ratio {
 }
 
 export interface Search {
-  path?: string;
   method?: string;
   inputs?: { [key: string]: string | number | boolean | null };
   error?: Error[];
@@ -133,7 +132,7 @@ export interface Search {
   keywordsfilters?: FilterElement[];
   rows: Selector;
   fields: { [key: string]: Selector };
-  paths?: Path[];
+  paths: Path[];
   headers?: { [key: string]: string | string[] };
 }
 

@@ -56,7 +56,6 @@
     "filters": [{ "name": "regexp", "args": "\\((.*?)\\)" }]
   },
   "search": {
-    "path": "/browse_API.php",
     "method": "post",
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
@@ -92,7 +91,8 @@
         "case": { "font > b:contains(\"Freeleech\")": "0", "*": "1" }
       },
       "uploadvolumefactor": { "case": { "*": "1" } }
-    }
+    },
+    "paths": [{ "path": "/browse_API.php" }]
   },
   "source": "cardigann"
 }

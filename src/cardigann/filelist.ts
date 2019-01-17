@@ -44,7 +44,6 @@ export const definition: TrackerDefinition = {
     selector: '.statusbar div:nth-child(2) div:nth-child(4) span',
   },
   search: {
-    path: 'browse.php',
     inputs: { search: '{{ .Keywords }}', cat: 0 },
     rows: { selector: '.torrentrow' },
     fields: {
@@ -74,6 +73,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: '.torrenttable:nth-child(9) span' },
       leechers: { selector: '.torrenttable:nth-child(10) span' },
     },
+    paths: [{ path: 'browse.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

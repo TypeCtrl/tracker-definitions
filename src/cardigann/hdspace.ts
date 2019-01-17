@@ -44,7 +44,6 @@ export const definition: TrackerDefinition = {
     test: { path: '/index.php?page=torrents', selector: 'div#menu' },
   },
   search: {
-    path: '/index.php?page=torrents&active=0&options=0&category=15%3B40',
     inputs: {
       $raw: 'category={{range .Categories}}{{.}};{{end}}',
       search: '{{ .Query.Keywords }}',
@@ -74,6 +73,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(9)' },
       date: { selector: 'td:nth-child(5)' },
     },
+    paths: [{ path: '/index.php?page=torrents&active=0&options=0&category=15%3B40' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

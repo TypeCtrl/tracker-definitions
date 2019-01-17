@@ -31,7 +31,6 @@
   },
   "settings": [],
   "search": {
-    "path": "searchA",
     "inputs": { "f": "{{ .Query.Keywords }}" },
     "rows": {
       "selector": "html body #wrap .results dl:has(a)",
@@ -65,7 +64,8 @@
       "leechers": { "selector": "dd span:nth-child(5)" },
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "text": "1" }
-    }
+    },
+    "paths": [{ "path": "searchA" }]
   },
   "source": "cardigann"
 }

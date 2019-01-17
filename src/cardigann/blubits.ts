@@ -61,7 +61,6 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: ['---', '0'] }],
   },
   search: {
-    path: 'index.php',
     inputs: {
       search: '{{ .Query.Keywords }}',
       page: 'torrents',
@@ -138,6 +137,7 @@ export const definition: TrackerDefinition = {
         },
       },
     },
+    paths: [{ path: 'index.php' }],
   },
   encoding: 'UTF-8',
   source: 'cardigann',

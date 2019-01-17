@@ -25,7 +25,6 @@ export const definition: TrackerDefinition = {
     test: { selector: 'div.ratio-bar' },
   },
   search: {
-    path: '/torrents',
     inputs: { in: 1, search: '{{ .Keywords }}', category: 0 },
     rows: { selector: 'div.table-responsive > table > tbody > tr' },
     fields: {
@@ -58,6 +57,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { 'i.fa-gem': '2', '*': '1' } },
     },
+    paths: [{ path: '/torrents' }],
   },
   source: 'jackett',
 };
