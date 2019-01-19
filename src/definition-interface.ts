@@ -124,6 +124,10 @@ export interface Ratio {
   filters?: FilterElement[];
 }
 
+export interface Fields {
+  [key: string]: Selector;
+}
+
 export interface Search {
   method?: string;
   inputs?: { [key: string]: string | number | boolean | null };
@@ -131,7 +135,7 @@ export interface Search {
   preprocessingfilters?: FilterElement[];
   keywordsfilters?: FilterElement[];
   rows: Selector;
-  fields: { [key: string]: Selector };
+  fields: Fields;
   paths: Path[];
   headers?: { [key: string]: string | string[] };
 }

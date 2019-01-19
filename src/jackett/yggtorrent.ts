@@ -145,6 +145,13 @@ export const definition: TrackerDefinition = {
       label: 'Replace VOSTFR with ENGLISH',
       default: false,
     },
+    {
+      name: 'enhancedAnime',
+      type: 'checkbox',
+      label:
+        'Enhance sonarr compatibility with anime by renaming episode (xxx to exxx). Works only if episode is at the end of the query. Can disturb movies search. (back to the future 3 -> back to the future e3)',
+      default: false,
+    },
   ],
   login: {
     method: 'form',
@@ -162,11 +169,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '/engine/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
+          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
       },
       {
         path:
-          '/engine/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
+          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
