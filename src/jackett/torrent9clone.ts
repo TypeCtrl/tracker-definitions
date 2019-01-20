@@ -7,8 +7,13 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www1.torrent9.ch/'],
-  legacylinks: ['https://www.torrents9.pw/', 'https://www.torrent9.ch/'],
+  followredirect: true,
+  links: ['https://www2.torrent9.ch/'],
+  legacylinks: [
+    'https://www.torrents9.pw/',
+    'https://www.torrent9.ch/',
+    'https://www1.torrent9.ch/',
+  ],
   caps: {
     categorymappings: [
       { id: 'films', cat: 'Movies', desc: 'Movies' },
