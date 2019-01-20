@@ -125,6 +125,10 @@ export interface Ratio {
 }
 
 export interface Fields {
+  /**
+   * title is required and parsed first, this sets up the max of how many results there will be
+   */
+  title: Selector;
   [key: string]: Selector;
 }
 
