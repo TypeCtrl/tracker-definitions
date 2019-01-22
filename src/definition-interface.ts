@@ -126,22 +126,39 @@ export interface Ratio {
 
 export interface Fields {
   /**
-   * title is required and parsed first, this sets up the max of how many results there will be
+   * title is required and parsed first
    */
   title: Selector;
   [key: string]: Selector;
 }
 
 export interface Search {
+  /**
+   * path of search page - eg /terms or browse?q=terms
+   */
+  paths: Path[];
+  /**
+   * root html element of search results
+   */
+  rows: RowsSelector;
+  /**
+   * result selections
+   */
+  fields: Fields;
   method?: string;
   inputs?: { [key: string]: string | number | boolean | null };
   error?: Error[];
   preprocessingfilters?: FilterElement[];
   keywordsfilters?: FilterElement[];
-  rows: Selector;
-  fields: Fields;
-  paths: Path[];
   headers?: { [key: string]: string | string[] };
+}
+
+export interface RowsSelector {
+  selector: string;
+  filters?: FilterElement[] | null;
+  after?: number;
+  dateheaders?: Selector;
+  remove?: string;
 }
 
 export interface Selector {
@@ -153,12 +170,31 @@ export interface Selector {
   case?: { [key: string]: string | number };
   text?: string | number;
   remove?: string;
-  after?: number;
-  dateheaders?: Selector;
 }
 
 export interface FilterElement {
-  name?: 'regexp' | 're_replace' | 'querystring' | 'dateparse' | 'replace' | 'trim' | 'split' | 'andmatch' | 'timeago' | 'append' | 'diacritics' | 'prepend' | 'validfilename' | 'toupper' | 'tolower' | 'validfilename' | 'urlencode' | 'strdump' | 'querystring' | 'urldecode' | 'filters';
+  name?:
+    | 'regexp'
+    | 're_replace'
+    | 'querystring'
+    | 'dateparse'
+    | 'replace'
+    | 'trim'
+    | 'split'
+    | 'andmatch'
+    | 'timeago'
+    | 'append'
+    | 'diacritics'
+    | 'prepend'
+    | 'validfilename'
+    | 'toupper'
+    | 'tolower'
+    | 'validfilename'
+    | 'urlencode'
+    | 'strdump'
+    | 'querystring'
+    | 'urldecode'
+    | 'filters';
   attribute?: string;
   args?: (string | number)[] | string | number;
   dateparse?: null;
