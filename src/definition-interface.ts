@@ -1,5 +1,6 @@
 // tslint:disable:type-literal-delimiter
 import { Categories } from './categories';
+import { Filters } from './filters';
 
 export type SiteType = 'private' | 'semi-private' | 'public';
 
@@ -148,6 +149,7 @@ export interface Search {
   method?: string;
   inputs?: { [key: string]: string | number | boolean | null };
   error?: Error[];
+  followredirect?: boolean;
   preprocessingfilters?: FilterElement[];
   keywordsfilters?: FilterElement[];
   headers?: { [key: string]: string | string[] };
@@ -163,7 +165,7 @@ export interface RowsSelector {
 
 export interface Selector {
   selector?: string;
-  filters?: FilterElement[] | null;
+  filters?: Filters[] | null;
   ffilters?: FilterElement[];
   optional?: boolean;
   attribute?: string;
@@ -173,28 +175,7 @@ export interface Selector {
 }
 
 export interface FilterElement {
-  name?:
-    | 'regexp'
-    | 're_replace'
-    | 'querystring'
-    | 'dateparse'
-    | 'replace'
-    | 'trim'
-    | 'split'
-    | 'andmatch'
-    | 'timeago'
-    | 'append'
-    | 'diacritics'
-    | 'prepend'
-    | 'validfilename'
-    | 'toupper'
-    | 'tolower'
-    | 'validfilename'
-    | 'urlencode'
-    | 'strdump'
-    | 'querystring'
-    | 'urldecode'
-    | 'filters';
+  name?: string;
   attribute?: string;
   args?: (string | number)[] | string | number;
   dateparse?: null;

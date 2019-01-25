@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www2.yggtorrent.gg/'],
+  links: ['https://www.yggtorrent.gg/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -26,7 +26,7 @@ export const definition: TrackerDefinition = {
     'https://ygg.to/',
     'https://www.ygg.to/',
     'https://ww3.yggtorrent.gg/',
-    'https://www.yggtorrent.gg/',
+    'https://yggtorrent.gg/',
   ],
   caps: {
     categorymappings: [
@@ -94,6 +94,12 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
+    {
+      name: 'searchanddlurl',
+      label: 'Search and download URL',
+      type: 'text',
+      default: 'www2.yggtorrent.gg',
+    },
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
@@ -163,17 +169,21 @@ export const definition: TrackerDefinition = {
       submit: '',
     },
     error: [{ selector: '#login_msg_pass[style=""][style] > center' }],
-    test: { path: '/', selector: 'a[href$="/user/logout"]' },
+    test: {
+      path: '/',
+      selector: 'div#top_panel:contains("Déconnexion")',
+    },
   },
   search: {
+    followredirect: true,
     paths: [
       {
         path:
-          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
+          'https://{{ .Config.searchanddlurl }}/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
       },
       {
         path:
-          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
+          'https://{{ .Config.searchanddlurl }}/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
@@ -292,7 +302,9 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(1) > a[href$="#comments"]',
         attribute: 'href',
       },
-      download: { text: '/engine/download_torrent?id={{ .Result._id }}' },
+      download: {
+        text: 'https://{{ .Config.searchanddlurl }}/engine/download_torrent?id={{ .Result._id }}',
+      },
       date: {
         selector: 'td:nth-child(5)',
         filters: [
@@ -315,7 +327,7 @@ export const definition: TrackerDefinition = {
       },
       grabs: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(8)', optional: true },
-      leechers: { selector: 'td:nth-child(*)', optional: true },
+      leechers: { selector: 'td:nth-child(9)', optional: true },
       downloadvolumefactor: { text: '1' },
       uploadvolumefactor: { text: '1' },
     },
