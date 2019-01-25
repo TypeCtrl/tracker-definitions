@@ -14,8 +14,10 @@ export type Filters =
   | UrlencodeFilter
   | UrldecodeFilter
   | ToupperFilter
+  | TolowerFilter
   | StrdumpFilter
   | GarbageDateparseFilter
+  | AndmatchFilter
   | SplitFilter;
 
 export interface ReplaceFilter {
@@ -83,6 +85,10 @@ export interface ToupperFilter {
   name: 'toupper';
 }
 
+export interface TolowerFilter {
+  name: 'tolower';
+}
+
 export interface UrlencodeFilter {
   name: 'urlencode';
 }
@@ -98,4 +104,9 @@ export interface DiacriticsFilter {
 
 export interface StrdumpFilter {
   name: 'strdump';
+}
+
+export interface AndmatchFilter {
+  name: 'andmatch';
+  args?: number;
 }

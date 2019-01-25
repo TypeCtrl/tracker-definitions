@@ -72,7 +72,7 @@ export interface Download {
   before?: Req;
   method?: string;
   selector?: string;
-  filters?: FilterElement[];
+  filters?: Filters[];
   attribute?: string;
 }
 
@@ -94,7 +94,7 @@ export interface Req {
     };
     securitytoken?: {
       selector: string;
-      filters: FilterElement[];
+      filters: Filters[];
     };
   };
 }
@@ -122,7 +122,7 @@ export interface Ratio {
   path?: string;
   selector?: string | null;
   attribute?: string;
-  filters?: FilterElement[];
+  filters?: Filters[];
 }
 
 export interface Fields {
@@ -150,14 +150,14 @@ export interface Search {
   inputs?: { [key: string]: string | number | boolean | null };
   error?: Error[];
   followredirect?: boolean;
-  preprocessingfilters?: FilterElement[];
-  keywordsfilters?: FilterElement[];
+  preprocessingfilters?: Filters[];
+  keywordsfilters?: Filters[];
   headers?: { [key: string]: string | string[] };
 }
 
 export interface RowsSelector {
   selector: string;
-  filters?: FilterElement[] | null;
+  filters?: Filters[] | null;
   after?: number;
   dateheaders?: Selector;
   remove?: string;
@@ -166,19 +166,12 @@ export interface RowsSelector {
 export interface Selector {
   selector?: string;
   filters?: Filters[] | null;
-  ffilters?: FilterElement[];
+  ffilters?: Filters[];
   optional?: boolean;
   attribute?: string;
   case?: { [key: string]: string | number };
   text?: string | number;
   remove?: string;
-}
-
-export interface FilterElement {
-  name?: string;
-  attribute?: string;
-  args?: (string | number)[] | string | number;
-  dateparse?: null;
 }
 
 export interface Path {
