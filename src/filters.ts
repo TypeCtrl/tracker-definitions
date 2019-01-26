@@ -64,6 +64,7 @@ export interface DateparseFilter {
  * garbage from bitme.ts
  */
 export interface GarbageDateparseFilter {
+  name?: string;
   dateparse: null;
   args: string;
 }

@@ -26,7 +26,20 @@ export const definition: TrackerDefinition = {
       { id: 'software', cat: 'PC' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'itorrents-links',
+      type: 'checkbox',
+      label: 'Add download links via itorrents.org',
+      default: true,
+    },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'ITorrents Note',
+      default: 'Without the itorrents option only magnet links will be provided.',
+    },
+  ],
   search: {
     paths: [
       {
@@ -47,9 +60,12 @@ export const definition: TrackerDefinition = {
       title: { selector: 'td a' },
       category: { optional: true, selector: 'a.label[href*="type="]' },
       details: { selector: 'td a', attribute: 'href' },
-      download: {
+      'download-itorrents': {
         selector: 'a[href^="//itorrents"]',
         attribute: 'href',
+      },
+      download: {
+        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
       },
       magnet: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
       size: { selector: 'td:nth-child(2)' },

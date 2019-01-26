@@ -118,6 +118,9 @@ export const jclassix = jjclassix;
 import { definition as jjcpabien } from './cpabien';
 export const jcpabien = jjcpabien;
 
+import { definition as jjcpasbienclone } from './cpasbienclone';
+export const jcpasbienclone = jjcpasbienclone;
+
 import { definition as jjcztorrent } from './cztorrent';
 export const jcztorrent = jjcztorrent;
 
@@ -199,6 +202,9 @@ export const jgayTorrentsorg = jjgayTorrentsorg;
 import { definition as jjgaytorrentru } from './gaytorrentru';
 export const jgaytorrentru = jjgaytorrentru;
 
+import { definition as jjgdf76 } from './gdf76';
+export const jgdf76 = jjgdf76;
+
 import { definition as jjgfxnews } from './gfxnews';
 export const jgfxnews = jjgfxnews;
 
@@ -240,6 +246,9 @@ export const jhdchina = jjhdchina;
 
 import { definition as jjhdcity } from './hdcity';
 export const jhdcity = jjhdcity;
+
+import { definition as jjhdforever } from './hdforever';
+export const jhdforever = jjhdforever;
 
 import { definition as jjhdhome } from './hdhome';
 export const jhdhome = jjhdhome;
@@ -660,6 +669,7 @@ export const definitions = [
   jjcinematik,
   jjclassix,
   jjcpabien,
+  jjcpasbienclone,
   jjcztorrent,
   jjdatascene,
   jjdeildu,
@@ -687,6 +697,7 @@ export const definitions = [
   jjgayTorrents,
   jjgayTorrentsorg,
   jjgaytorrentru,
+  jjgdf76,
   jjgfxnews,
   jjgfxpeers,
   jjgigatorrents,
@@ -701,6 +712,7 @@ export const definitions = [
   jjhdcenter,
   jjhdchina,
   jjhdcity,
+  jjhdforever,
   jjhdhome,
   jjhdme,
   jjhdsky,
