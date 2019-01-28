@@ -136,6 +136,9 @@ export const jdesitorrents = jjdesitorrents;
 import { definition as jjdiablotorrent } from './diablotorrent';
 export const jdiablotorrent = jjdiablotorrent;
 
+import { definition as jjdigbt } from './digbt';
+export const jdigbt = jjdigbt;
+
 import { definition as jjdownloadville } from './downloadville';
 export const jdownloadville = jjdownloadville;
 
@@ -568,6 +571,9 @@ export const jtorrentseeds = jjtorrentseeds;
 import { definition as jjtorrentz2 } from './torrentz2';
 export const jtorrentz2 = jjtorrentz2;
 
+import { definition as jjtorrof } from './torrof';
+export const jtorrof = jjtorrof;
+
 import { definition as jjtorviet } from './torviet';
 export const jtorviet = jjtorviet;
 
@@ -675,6 +681,7 @@ export const definitions = [
   jjdeildu,
   jjdesitorrents,
   jjdiablotorrent,
+  jjdigbt,
   jjdownloadville,
   jjdragonworldreloaded,
   jjdreamteam,
@@ -819,6 +826,7 @@ export const definitions = [
   jjtorrentsectorcrew,
   jjtorrentseeds,
   jjtorrentz2,
+  jjtorrof,
   jjtorviet,
   jjtotheglory,
   jjtrancetraffic,

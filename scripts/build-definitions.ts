@@ -1,9 +1,9 @@
 import fs from 'fs';
 import * as yaml from 'js-yaml';
+import { camelCase } from 'lodash';
 import path from 'path';
 import prettier from 'prettier';
 import rimraf from 'rimraf';
-import * as _ from 'lodash';
 import { TORZNAB_CATEGORIES } from '../src/categories';
 
 const SOURCES = [
@@ -130,14 +130,14 @@ for (const src of SOURCES) {
 
   // site export
   let exportedSites = sites.reduce((pre, cur) => {
-    const name = `${src.name[0]}${src.name[0]}${_.camelCase(cur)}`;
+    const name = `${src.name[0]}${src.name[0]}${camelCase(cur)}`;
     return `${pre}
       import {definition as ${name}} from './${cur}';
       export const ${name.substring(1)} = ${name};
     `;
   }, '');
   exportedSites += `
-    export const definitions = [${sites.map(n => `${src.name[0]}${src.name[0]}${_.camelCase(n)}`)}];
+    export const definitions = [${sites.map(n => `${src.name[0]}${src.name[0]}${camelCase(n)}`)}];
   `;
   fs.writeFileSync(
     path.join(moduleOutDir, `index.ts`),

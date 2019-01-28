@@ -8,6 +8,7 @@
     "comment-format": false,
     "no-http-string": false,
     "no-null-keyword": false,
-    "no-unsafe-any": false
+    "no-unsafe-any": false,
+    "typedef": false
   }
 }
