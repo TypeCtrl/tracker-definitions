@@ -88,6 +88,9 @@ export const jbtbit = jjbtbit;
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
 
+import { definition as jjbtkitty } from './btkitty';
+export const jbtkitty = jjbtkitty;
+
 import { definition as jjbtnext } from './btnext';
 export const jbtnext = jjbtnext;
 
@@ -454,6 +457,9 @@ export const jsharespacedb = jjsharespacedb;
 import { definition as jjshellife } from './shellife';
 export const jshellife = jjshellife;
 
+import { definition as jjshokweb } from './shokweb';
+export const jshokweb = jjshokweb;
+
 import { definition as jjsktorrent } from './sktorrent';
 export const jsktorrent = jjsktorrent;
 
@@ -555,6 +561,9 @@ export const jtorrenthr = jjtorrenthr;
 
 import { definition as jjtorrenting } from './torrenting';
 export const jtorrenting = jjtorrenting;
+
+import { definition as jjtorrentkitty } from './torrentkitty';
+export const jtorrentkitty = jjtorrentkitty;
 
 import { definition as jjtorrentland } from './torrentland';
 export const jtorrentland = jjtorrentland;
@@ -665,6 +674,7 @@ export const definitions = [
   jjblutopia,
   jjbtbit,
   jjbtgigs,
+  jjbtkitty,
   jjbtnext,
   jjbtstornet,
   jjbtxpress,
@@ -787,6 +797,7 @@ export const definitions = [
   jjshareisland,
   jjsharespacedb,
   jjshellife,
+  jjshokweb,
   jjsktorrent,
   jjskytorrentsclone,
   jjspeedShare,
@@ -821,6 +832,7 @@ export const definitions = [
   jjtorrentgalaxyorg,
   jjtorrenthr,
   jjtorrenting,
+  jjtorrentkitty,
   jjtorrentland,
   jjtorrentlt,
   jjtorrentsectorcrew,

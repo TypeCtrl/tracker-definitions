@@ -113,7 +113,7 @@ export interface Categorymapping {
 export interface Setting {
   name: string;
   type: string;
-  label: string;
+  label?: string;
   default?: string | number | boolean;
   options?: { [key: string]: string };
 }

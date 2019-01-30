@@ -6,7 +6,7 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://www.gktorrent.net/"],
+  "links": ["https://www.gktorrent.tv/"],
   "legacylinks": [
     "https://www.gktorrent.com/",
     "http://www.gktorrent.com/",
@@ -21,7 +21,8 @@
     "https://www.gktorrent.ws/",
     "https://www.gktorrent.org/",
     "https://www.gktorrent.me/",
-    "https://www.rantop.org/"
+    "https://www.rantop.org/",
+    "https://www.gktorrent.net/"
   ],
   "caps": {
     "categorymappings": [

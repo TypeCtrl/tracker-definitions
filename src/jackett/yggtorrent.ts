@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.yggtorrent.gg/'],
+  links: ['https://www2.yggtorrent.gg/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -27,6 +27,7 @@ export const definition: TrackerDefinition = {
     'https://www.ygg.to/',
     'https://ww3.yggtorrent.gg/',
     'https://yggtorrent.gg/',
+    'https://www.yggtorrent.gg/',
   ],
   caps: {
     categorymappings: [
@@ -94,12 +95,6 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    {
-      name: 'searchanddlurl',
-      label: 'Search and download URL',
-      type: 'text',
-      default: 'www2.yggtorrent.gg',
-    },
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
@@ -179,11 +174,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
+          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
+          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
@@ -302,9 +297,7 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(1) > a[href$="#comments"]',
         attribute: 'href',
       },
-      download: {
-        text: 'https://{{ .Config.searchanddlurl }}/engine/download_torrent?id={{ .Result._id }}',
-      },
+      download: { text: '/engine/download_torrent?id={{ .Result._id }}' },
       date: {
         selector: 'td:nth-child(5)',
         filters: [
