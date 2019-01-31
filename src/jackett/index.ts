@@ -604,6 +604,9 @@ export const jultimategamerclub = jjultimategamerclub;
 import { definition as jjunionfansub } from './unionfansub';
 export const junionfansub = jjunionfansub;
 
+import { definition as jjvanila } from './vanila';
+export const jvanila = jjvanila;
+
 import { definition as jjwaffles } from './waffles';
 export const jwaffles = jjwaffles;
 
@@ -846,6 +849,7 @@ export const definitions = [
   jjuhdbits,
   jjultimategamerclub,
   jjunionfansub,
+  jjvanila,
   jjwaffles,
   jjwihd,
   jjworldofp2P,

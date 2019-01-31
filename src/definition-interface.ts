@@ -246,7 +246,18 @@ export interface Search {
 export interface RowsSelector {
   selector: string;
   filters?: Filters[] | null;
+  /**
+   * optional row merging
+   * Use this if the tracker uses multiple row elements for each torrent (e.g. hidden tooltip or collapsed rows)
+   * The specified number of elements from the rows selector result will be merged into the previous element.
+   * In this example (1) two rows will be merged together.
+   */
   after?: number;
+  /**
+   * optional selector for rows containing dates.
+   * Use this if the torrent result rows don't contain a publish date but a previous row contains the date.
+   * The indexer will go back and parse the first sibling element matching the selector as date for that torrent.
+   */
   dateheaders?: Selector;
   remove?: string;
 }

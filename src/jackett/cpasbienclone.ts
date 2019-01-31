@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www1.cpasbiens.ws/'],
+  links: ['https://www2.cpasbiens.ws/'],
+  legacylinks: ['https://www1.cpasbiens.ws/'],
   caps: {
     categorymappings: [
       { id: 'films', cat: 'Movies', desc: 'Movies' },

@@ -201,6 +201,7 @@ export const jackettSites = [
   'uhdbits',
   'ultimategamerclub',
   'unionfansub',
+  'vanila',
   'waffles',
   'wihd',
   'worldofp2p',
