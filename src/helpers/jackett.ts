@@ -139,6 +139,7 @@ export const jackettSites = [
   'passionetorrent',
   'polishsource',
   'prostylex',
+  'pt99',
   'ptfiles',
   'puntotorrent',
   'racing4everyone',

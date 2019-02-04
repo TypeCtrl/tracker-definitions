@@ -418,6 +418,9 @@ export const jpolishsource = jjpolishsource;
 import { definition as jjprostylex } from './prostylex';
 export const jprostylex = jjprostylex;
 
+import { definition as jjpt99 } from './pt99';
+export const jpt99 = jjpt99;
+
 import { definition as jjptfiles } from './ptfiles';
 export const jptfiles = jjptfiles;
 
@@ -805,6 +808,7 @@ export const definitions = [
   jjpassionetorrent,
   jjpolishsource,
   jjprostylex,
+  jjpt99,
   jjptfiles,
   jjpuntotorrent,
   jjracing4Everyone,
