@@ -7,6 +7,9 @@ export const j2Fast4You = jj2Fast4You;
 import { definition as jj3Dtorrents } from './3dtorrents';
 export const j3Dtorrents = jj3Dtorrents;
 
+import { definition as jj3Evils } from './3evils';
+export const j3Evils = jj3Evils;
+
 import { definition as jj420Files } from './420files';
 export const j420Files = jj420Files;
 
@@ -15,6 +18,9 @@ export const jbittorrentfiles = jjbittorrentfiles;
 
 import { definition as jjacidlounge } from './acidlounge';
 export const jacidlounge = jjacidlounge;
+
+import { definition as jjalein } from './alein';
+export const jalein = jjalein;
 
 import { definition as jjanidex } from './anidex';
 export const janidex = jjanidex;
@@ -186,6 +192,9 @@ export const jfanoin = jjfanoin;
 
 import { definition as jjfemdomcult } from './femdomcult';
 export const jfemdomcult = jjfemdomcult;
+
+import { definition as jjfilmPaleis } from './film-paleis';
+export const jfilmPaleis = jjfilmPaleis;
 
 import { definition as jjfreedomhd } from './freedomhd';
 export const jfreedomhd = jjfreedomhd;
@@ -361,6 +370,9 @@ export const jmetaltracker = jjmetaltracker;
 import { definition as jjmononokebt } from './mononokebt';
 export const jmononokebt = jjmononokebt;
 
+import { definition as jjmonova } from './monova';
+export const jmonova = jjmonova;
+
 import { definition as jjmteamtp } from './mteamtp';
 export const jmteamtp = jjmteamtp;
 
@@ -484,6 +496,9 @@ export const jsukebeiPantsu = jjsukebeiPantsu;
 import { definition as jjsukebeinyaasi } from './sukebeinyaasi';
 export const jsukebeinyaasi = jjsukebeinyaasi;
 
+import { definition as jjtakeabyte } from './takeabyte';
+export const jtakeabyte = jjtakeabyte;
+
 import { definition as jjtasmanit } from './tasmanit';
 export const jtasmanit = jjtasmanit;
 
@@ -552,6 +567,9 @@ export const jtorrentcouch = jjtorrentcouch;
 
 import { definition as jjtorrentdownloads } from './torrentdownloads';
 export const jtorrentdownloads = jjtorrentdownloads;
+
+import { definition as jjtorrentfunk } from './torrentfunk';
+export const jtorrentfunk = jjtorrentfunk;
 
 import { definition as jjtorrentgalaxyorg } from './torrentgalaxyorg';
 export const jtorrentgalaxyorg = jjtorrentgalaxyorg;
@@ -650,9 +668,11 @@ export const definitions = [
   jj1337X,
   jj2Fast4You,
   jj3Dtorrents,
+  jj3Evils,
   jj420Files,
   jjbittorrentfiles,
   jjacidlounge,
+  jjalein,
   jjanidex,
   jjanirena,
   jjaox,
@@ -710,6 +730,7 @@ export const definitions = [
   jjeztv,
   jjfanoin,
   jjfemdomcult,
+  jjfilmPaleis,
   jjfreedomhd,
   jjfrozenlayer,
   jjfullmixmusic,
@@ -768,6 +789,7 @@ export const definitions = [
   jjmetalIplayRo,
   jjmetaltracker,
   jjmononokebt,
+  jjmonova,
   jjmteamtp,
   jjmvgroupforum,
   jjmvgroupmain,
@@ -809,6 +831,7 @@ export const definitions = [
   jjsportscult,
   jjsukebeiPantsu,
   jjsukebeinyaasi,
+  jjtakeabyte,
   jjtasmanit,
   jjtbplus,
   jjtenyardtracker,
@@ -832,6 +855,7 @@ export const definitions = [
   jjtorrentccf,
   jjtorrentcouch,
   jjtorrentdownloads,
+  jjtorrentfunk,
   jjtorrentgalaxyorg,
   jjtorrenthr,
   jjtorrenting,

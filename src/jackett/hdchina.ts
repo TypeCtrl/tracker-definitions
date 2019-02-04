@@ -38,7 +38,11 @@ export const definition: TrackerDefinition = {
       { id: '411', cat: 'TV', desc: 'Travel' },
       { id: '412', cat: 'TV', desc: 'Food' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
+    },
   },
   login: {
     path: 'login.php',
@@ -103,13 +107,22 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img.pro_50pctdown': '.5',
-          'img.pro_30pctdown': '.3',
           'img.pro_free': '0',
+          'img.pro_free2up': '0',
+          'img.pro_50pctdown': '0.5',
+          'img.pro_50pctdown2up': '0.5',
+          'img.pro_30pctdown': '0.3',
           '*': '1',
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: {
+        case: {
+          'img.pro_50pctdown2up': '2',
+          'img.pro_free2up': '2',
+          'img.pro_2up': '2',
+          '*': '1',
+        },
+      },
     },
   },
   source: 'jackett',

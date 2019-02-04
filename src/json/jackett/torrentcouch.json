@@ -22,15 +22,18 @@
     ],
     "rows": { "selector": "article" },
     "fields": {
-      "title": { "selector": "h2 a" },
+      "title": { "selector": "h1.entry-title a" },
       "category": { "text": "1" },
-      "details": { "selector": "h2 a", "attribute": "href" },
+      "details": { "selector": "h1.entry-title a", "attribute": "href" },
       "description": { "selector": "p" },
-      "download": { "selector": "h2 a", "attribute": "href" },
+      "download": { "selector": "h1.entry-title a", "attribute": "href" },
       "size": { "text": "500 MB" },
       "seeders": { "text": "1" },
       "leechers": { "text": "1" },
-      "date": { "text": "now" },
+      "date": {
+        "selector": "span.posted-on a time",
+        "filters": [{ "name": "dateparse", "args": "January 2, 2006" }]
+      },
       "downloadvolumefactor": { "text": "0" },
       "uploadvolumefactor": { "text": "1" }
     }

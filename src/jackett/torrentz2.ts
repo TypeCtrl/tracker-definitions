@@ -109,7 +109,11 @@ export const definition: TrackerDefinition = {
         filters: [
           { name: 'regexp', args: '/(\\w+)' },
           { name: 'prepend', args: 'magnet:?xt=urn:btih:' },
-          { name: 'append', args: '&dn={{ .Result.magfile }}.torrent' },
+          {
+            name: 'append',
+            args:
+              '&dn={{ .Result.magfile }}.torrent&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.leechers-paradise.org:6969&tr=udp://tracker.opentrackr.org:1337',
+          },
         ],
       },
       category: {

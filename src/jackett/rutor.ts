@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://rutor.info/'],
+  links: ['http://rutor.info/', 'http://new-rutor.org/', 'http://live-rutor.org/'],
   caps: {
     categorymappings: [{ id: '4', cat: 'TV', desc: 'TV Shows' }],
     modes: { search: ['q'] },
@@ -32,13 +32,13 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Query.Q }}search/0/0/{{ .Config.method }}00/0/{{ .Query.Q }}{{else}}top{{end}}',
+          '{{ if .Keywords }}search/0/0/{{ .Config.method }}00/0/{{ .Keywords }}/{{else}}top/{{end}}',
       },
     ],
-    rows: { selector: 'table > tbody > tr:has(td:has(a.downgif))' },
+    rows: { selector: 'tr:has(td:has(a.downgif))' },
     fields: {
       title: {
-        selector: 'td:nth-of-type(2) a:nth-of-type(3)',
+        selector: 'td:nth-of-type(2) a[href^="/torrent/"]',
         filters: [
           {
             name: 're_replace',
@@ -52,15 +52,16 @@ export const definition: TrackerDefinition = {
         ],
       },
       details: {
-        selector: 'td:nth-of-type(2) a:nth-of-type(3)',
+        selector: 'td:nth-of-type(2) a[href^="/torrent/"]',
         attribute: 'href',
       },
       download: {
-        selector: 'td:nth-of-type(2) a:nth-of-type(1)',
+        selector: 'td:nth-of-type(2) a.downgif',
         attribute: 'href',
       },
       magnet: {
-        selector: 'td:nth-of-type(2) a:nth-of-type(2)',
+        optional: true,
+        selector: 'td:nth-of-type(2) a[href^="magnet:?xt="]',
         attribute: 'href',
       },
       date: {
@@ -84,8 +85,8 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { optional: true, selector: 'td:contains(\\00a0B)' },
-      seeders: { selector: 'td span:has(img[alt="S"])' },
-      leechers: { selector: 'td:has(img[alt="L"]) span' },
+      seeders: { selector: 'td span.green' },
+      leechers: { selector: 'td span.red' },
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },

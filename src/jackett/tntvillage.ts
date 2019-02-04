@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'it-IT',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://www.tntvillage.scambioetico.org/'],
+  links: ['http://tntvillage.scambioetico.org/'],
+  legacylinks: ['http://www.tntvillage.scambioetico.org/'],
   caps: {
     categorymappings: [
       { id: '4', cat: 'Movies', desc: 'Movies category' },

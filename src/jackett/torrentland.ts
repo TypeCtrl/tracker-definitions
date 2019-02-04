@@ -44,6 +44,7 @@ export const definition: TrackerDefinition = {
       { id: '20', cat: 'TV/SD', desc: 'Series - HDRip' },
       { id: '22', cat: 'TV/SD', desc: 'Series - DVD' },
       { id: '51', cat: 'TV/Other', desc: 'Series - Otros Formatos' },
+      { id: '84', cat: 'TV/HD', desc: 'Series - H265' },
       { id: '53', cat: 'TV/Documentary', desc: 'Documentales - HD' },
       { id: '52', cat: 'TV/Documentary', desc: 'Documentales - SD' },
       { id: '55', cat: 'XXX/x264', desc: 'Adultos - HD' },
@@ -74,7 +75,7 @@ export const definition: TrackerDefinition = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector: '#Mcol table.table-inverse ~ table.table-inverse > tbody > tr:not(:first-child)',
+      selector: '#Mcol table.lista:nth-child(1) > tbody > tr:not(:first-child)',
     },
     fields: {
       category: {
@@ -82,24 +83,31 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
-      title: { selector: 'td:nth-child(2) a' },
+      title: {
+        selector: 'td:nth-child(2)',
+        filters: [{ name: 'replace', args: ['>', ''] }, { name: 'replace', args: ['"', ''] }],
+      },
       banner: {
         optional: true,
-        selector: 'td:nth-child(2) a',
+        selector: 'td:nth-child(2) > a',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?)width' }, { name: 'trim' }],
       },
       details: { selector: 'td:nth-child(2) a', attribute: 'href' },
-      size: { selector: 'td:nth-child(6)' },
-      seeders: { selector: 'td:nth-child(8) a' },
-      leechers: { selector: 'td:nth-child(9) a' },
+      size: { selector: 'td:nth-child(10)' },
+      seeders: { selector: 'td:nth-child(6) a' },
+      leechers: { selector: 'td:nth-child(7) a' },
       grabs: {
-        selector: 'td:nth-child(10)',
+        selector: 'td:nth-child(8)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
       date: {
-        selector: 'td:nth-child(7)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        selector: 'td:nth-child(5)',
+        filters: [
+          { name: 'replace', args: ['>', ''] },
+          { name: 'replace', args: ['"', ''] },
+          { name: 'dateparse', args: '02/01/2006' },
+        ],
       },
       download: {
         selector: 'a[href^="download.php"]',
