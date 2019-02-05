@@ -108,7 +108,11 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
-    paths: [{ path: 'torrents-search.php' }],
+    paths: [
+      {
+        path: '{{if .Keywords}}torrents-search.php{{else}}torrents.php{{end}}',
+      },
+    ],
   },
   source: 'jackett',
 };

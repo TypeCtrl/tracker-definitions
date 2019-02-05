@@ -427,6 +427,9 @@ export const jptfiles = jjptfiles;
 import { definition as jjpuntotorrent } from './puntotorrent';
 export const jpuntotorrent = jjpuntotorrent;
 
+import { definition as jjpwtorrents } from './pwtorrents';
+export const jpwtorrents = jjpwtorrents;
+
 import { definition as jjracing4Everyone } from './racing4everyone';
 export const jracing4Everyone = jjracing4Everyone;
 
@@ -649,6 +652,9 @@ export const jxbytes2 = jjxbytes2;
 import { definition as jjxtremezone } from './xtremezone';
 export const jxtremezone = jjxtremezone;
 
+import { definition as jjxwtorrents } from './xwtorrents';
+export const jxwtorrents = jjxwtorrents;
+
 import { definition as jjyggtorrent } from './yggtorrent';
 export const jyggtorrent = jjyggtorrent;
 
@@ -811,6 +817,7 @@ export const definitions = [
   jjpt99,
   jjptfiles,
   jjpuntotorrent,
+  jjpwtorrents,
   jjracing4Everyone,
   jjredstartorrent,
   jjredtopia,
@@ -885,6 +892,7 @@ export const definitions = [
   jjxIteMe,
   jjxbytes2,
   jjxtremezone,
+  jjxwtorrents,
   jjyggtorrent,
   jjyourexotic,
   jjzamundanet,

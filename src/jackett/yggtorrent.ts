@@ -174,11 +174,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
+          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ re_replace .Keywords "\\s" """" }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
       },
       {
         path:
-          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ .Keywords }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
+          '/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ re_replace .Keywords "\\s" """" }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
