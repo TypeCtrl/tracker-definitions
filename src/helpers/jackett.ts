@@ -36,6 +36,7 @@ export const jackettSites = [
   'btstornet',
   'btxpress',
   'carpathians',
+  'casstudiotv',
   'ccfbits',
   'chdbits',
   'cinemageddon',

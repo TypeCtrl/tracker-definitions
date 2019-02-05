@@ -109,6 +109,9 @@ export const jbtxpress = jjbtxpress;
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
 
+import { definition as jjcasstudiotv } from './casstudiotv';
+export const jcasstudiotv = jjcasstudiotv;
+
 import { definition as jjccfbits } from './ccfbits';
 export const jccfbits = jjccfbits;
 
@@ -711,6 +714,7 @@ export const definitions = [
   jjbtstornet,
   jjbtxpress,
   jjcarpathians,
+  jjcasstudiotv,
   jjccfbits,
   jjchdbits,
   jjcinemageddon,
