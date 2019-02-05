@@ -4,6 +4,7 @@ export type Filters =
   | DateparseFilter
   | QuerystringFilter
   | RegexpFilter
+  | RegexFilter
   | TrimFilter
   | TimeagoFilter
   | AppendFilter
@@ -38,6 +39,11 @@ export interface QuerystringFilter {
 export interface RegexpFilter {
   name: 'regexp';
   args: string;
+}
+
+export interface RegexFilter {
+  name: 'regex';
+  args: [string, string];
 }
 
 export interface TrimFilter {
