@@ -207,6 +207,7 @@ export const jackettSites = [
   'totheglory',
   'trancetraffic',
   'trezzor',
+  'turktorrent',
   'uhdbits',
   'ultimategamerclub',
   'unionfansub',

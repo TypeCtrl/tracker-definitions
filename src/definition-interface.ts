@@ -5,6 +5,7 @@ import { Filters } from './filters';
 export type SiteType = 'private' | 'semi-private' | 'public';
 
 export type SiteEncoding =
+  | 'ISO-8859-9'
   | 'ISO-8859-1'
   | 'ISO-8859-15'
   | 'ISO-8859-2'

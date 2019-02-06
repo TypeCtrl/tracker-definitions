@@ -622,6 +622,9 @@ export const jtrancetraffic = jjtrancetraffic;
 import { definition as jjtrezzor } from './trezzor';
 export const jtrezzor = jjtrezzor;
 
+import { definition as jjturktorrent } from './turktorrent';
+export const jturktorrent = jjturktorrent;
+
 import { definition as jjuhdbits } from './uhdbits';
 export const juhdbits = jjuhdbits;
 
@@ -885,6 +888,7 @@ export const definitions = [
   jjtotheglory,
   jjtrancetraffic,
   jjtrezzor,
+  jjturktorrent,
   jjuhdbits,
   jjultimategamerclub,
   jjunionfansub,
