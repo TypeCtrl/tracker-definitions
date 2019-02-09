@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   site: 'alein',
   name: 'Alein',
   description: 'Alein is a BULGARIAN Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'en-EN',
+  language: 'bg-BG',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://alein.org/'],

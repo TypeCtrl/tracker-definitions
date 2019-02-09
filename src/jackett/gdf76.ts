@@ -5,7 +5,7 @@ export const definition: TrackerDefinition = {
   name: 'gdf76',
   description:
     'gdf76 is an ITALIAN semi-private site for ITA films in mp4 format optimized for streaming',
-  language: 'en-EN',
+  language: 'it-IT',
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://gdf76.altervista.org/'],

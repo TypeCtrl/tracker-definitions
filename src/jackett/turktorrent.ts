@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   site: 'turktorrent',
   name: 'TurkTorrent',
   description: 'TurkTorrent (TT) is a TURKISH Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'en-EN',
+  language: 'tr-TR',
   type: 'private',
   encoding: 'ISO-8859-9',
   links: ['http://turktorrent1.in/'],

@@ -24,6 +24,7 @@ export const definition: TrackerDefinition = {
       { name: 're_replace', args: ['E(\\d{2,3})', ' $1 '] },
     ],
     inputs: { s: '{{ .Keywords }}', $raw: '&x=0&y=0' },
+    error: [{ selector: '#principal div.not_results' }],
     rows: { selector: '#principal .miniboxs-ficha li' },
     fields: {
       title: {

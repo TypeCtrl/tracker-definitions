@@ -55,6 +55,9 @@ export const jaudiobookbay = jjaudiobookbay;
 import { definition as jjaudiobooktorrents } from './audiobooktorrents';
 export const jaudiobooktorrents = jjaudiobooktorrents;
 
+import { definition as jjaudionews } from './audionews';
+export const jaudionews = jjaudionews;
+
 import { definition as jjawesomehd } from './awesomehd';
 export const jawesomehd = jjawesomehd;
 
@@ -340,6 +343,9 @@ export const jkickasstorrent = jjkickasstorrent;
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
 
+import { definition as jjlesaloon } from './lesaloon';
+export const jlesaloon = jjlesaloon;
+
 import { definition as jjlimetorrents } from './limetorrents';
 export const jlimetorrents = jjlimetorrents;
 
@@ -415,8 +421,14 @@ export const jourbits = jjourbits;
 import { definition as jjpassionetorrent } from './passionetorrent';
 export const jpassionetorrent = jjpassionetorrent;
 
+import { definition as jjpiratbit } from './piratbit';
+export const jpiratbit = jjpiratbit;
+
 import { definition as jjpolishsource } from './polishsource';
 export const jpolishsource = jjpolishsource;
+
+import { definition as jjproaudiotorrents } from './proaudiotorrents';
+export const jproaudiotorrents = jjproaudiotorrents;
 
 import { definition as jjprostylex } from './prostylex';
 export const jprostylex = jjprostylex;
@@ -486,6 +498,9 @@ export const jsktorrent = jjsktorrent;
 
 import { definition as jjskytorrentsclone } from './skytorrentsclone';
 export const jskytorrentsclone = jjskytorrentsclone;
+
+import { definition as jjspacetorrent } from './spacetorrent';
+export const jspacetorrent = jjspacetorrent;
 
 import { definition as jjspeedShare } from './speed-share';
 export const jspeedShare = jjspeedShare;
@@ -699,6 +714,7 @@ export const definitions = [
   jjast4U,
   jjaudiobookbay,
   jjaudiobooktorrents,
+  jjaudionews,
   jjawesomehd,
   jjb2SShare,
   jjbackups,
@@ -794,6 +810,7 @@ export const definitions = [
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinozal,
+  jjlesaloon,
   jjlimetorrents,
   jjlinkomanija,
   jjlosslessclub,
@@ -819,7 +836,9 @@ export const definitions = [
   jjnyoo,
   jjourbits,
   jjpassionetorrent,
+  jjpiratbit,
   jjpolishsource,
+  jjproaudiotorrents,
   jjprostylex,
   jjpt99,
   jjptfiles,
@@ -843,6 +862,7 @@ export const definitions = [
   jjshokweb,
   jjsktorrent,
   jjskytorrentsclone,
+  jjspacetorrent,
   jjspeedShare,
   jjspeedtorrentreloaded,
   jjsporthd,
