@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'nethd',
   name: 'NetHD',
-  description: 'A vietnamese tracker',
+  description: 'NetHD (VietTorrent) is a VIETNAMESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'vi-VN',
   type: 'semi-private',
   encoding: 'UTF-8',

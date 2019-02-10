@@ -162,6 +162,10 @@ export interface Req {
    * e.g. if a CSRF token is hidden in JavaScript).
    */
   selectorinputs?: {
+    token?: {
+      selector: string;
+      attribute: string;
+    }
     getUnique?: {
       selector: string;
       attribute: string;

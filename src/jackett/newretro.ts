@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'newretro',
   name: 'The New Retro',
-  description: 'A German gerneral tracker',
+  description: 'The New Retro is a GERMAN Private Torrent Tracker for MOVIES / GENERAL',
   language: 'de-DE',
   type: 'private',
   encoding: 'WINDOWS-1252',

@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'worldofp2p',
   name: 'WorldOfP2P',
-  description: 'A general tracker',
+  description: 'WorldOfP2P (WOP) is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

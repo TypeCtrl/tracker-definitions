@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'blutopia',
   name: 'Blutopia',
-  description: 'HD Tracker Movies/TV/FANRES',
+  description: 'Blutopia (BLU) is a Private Torrent Tracker for HD MOVIES / TV',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

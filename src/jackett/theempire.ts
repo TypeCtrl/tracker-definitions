@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'theempire',
   name: 'The Empire',
-  description: 'Commonwealth television',
+  description: 'TheEmpire (TE) is a Private Torrent Tracker for COMMONWEALTH TV / RADIO',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

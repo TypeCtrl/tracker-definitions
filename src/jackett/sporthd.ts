@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'sporthd',
   name: 'SportHD',
-  description: 'Sports tracker',
+  description: 'SportHD is a Private Torrent Tracker for HD SPORTS',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

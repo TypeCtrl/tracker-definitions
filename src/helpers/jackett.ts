@@ -135,6 +135,7 @@ export const jackettSites = [
   'newretro',
   'newstudio',
   'nnm-club',
+  'nostalgic',
   'nyaa-pantsu',
   'nyaasi',
   'nyoo',

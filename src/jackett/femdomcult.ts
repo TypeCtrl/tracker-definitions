@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'femdomcult',
   name: 'Femdomcult',
-  description: 'A porn tracker',
+  description: 'Femdomcult is a Private Torrent Tracker for FETISH XXX',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

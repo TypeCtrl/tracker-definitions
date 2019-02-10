@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'torrentland',
   name: 'Torrentland',
-  description: 'Torrentland is a SPANISH site for General content',
+  description: 'Torrentland is a SPANISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'es-ES',
   type: 'private',
   encoding: 'UTF-8',

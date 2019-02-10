@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   site: 'metaliplayro',
   name: 'Romanian Metal Torrent',
   description:
-    'Romanian Metal Torrent is a Private site dedicated to METAL MUSIC. This definition is for the English site.',
+    'Romanian Metal Torrent (RMT) is a Private site dedicated to METAL MUSIC. This definition is for the English site.',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'sportscult',
   name: 'SportsCult',
-  description: 'Sports tracker',
+  description: 'SportsCult is a Private Torrent Tracker for SPORTS',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

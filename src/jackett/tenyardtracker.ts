@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'tenyardtracker',
   name: 'TenYardTracker',
-  description: 'An American football tracker',
+  description: 'TenYardTorrents (TYT) is a Private Torrent Tracker for AMERICAN FOOTBALL',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

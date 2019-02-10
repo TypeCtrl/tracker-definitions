@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'hdforever',
   name: 'HD-Forever',
-  description: 'A french private HD tracker',
+  description: 'HD-Forever (HD-F) is a FRENCH Private Torrent Tracker for HD MOVIES',
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',

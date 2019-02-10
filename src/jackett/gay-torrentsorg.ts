@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'gay-torrentsorg',
   name: 'gay-torrents.org',
-  description: 'Tracker for GAY XXX, movies, TV, books and PC.',
+  description: 'Gay-Torrents.org is a Private Torrent Tracker for GAY XXX',
   language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',

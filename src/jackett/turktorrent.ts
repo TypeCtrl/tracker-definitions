@@ -99,7 +99,7 @@ export const definition: TrackerDefinition = {
     path: 'index.php',
     selector: 'div#top div:nth-child(2) span:nth-child(2)',
     filters: [
-      { name: 'replace', args: ['Inf.', '0.00'] },
+      { name: 'replace', args: ['Inf.', '2147483647'] },
       { name: 'regexp', args: 'Ratio: (.+?) Bonus:' },
     ],
   },

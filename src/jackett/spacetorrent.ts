@@ -86,22 +86,18 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [
-    { name: 'cookie', type: 'text', label: 'Cookie' },
-    {
-      name: 'info',
-      type: 'info',
-      label: 'How to get the Cookie',
-      default:
-        "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
-    },
-  ],
   login: {
-    method: 'cookie',
-    inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: 'index', selector: 'a[href="../logout"]' },
+    method: 'post',
+    path: 'ajax/takelogin.php',
+    inputs: {
+      snlo: 'certified',
+      username: '{{ .Config.username }}',
+      password: '{{ .Config.password }}',
+      returnto: '/my.php',
+    },
+    test: { path: 'my.php', selector: 'a[href="../logout"]' },
   },
-  ratio: { path: 'index', selector: 'a.nav-link i[class="ti-pulse"]' },
+  ratio: { path: 'my.php', selector: 'a.nav-link i[class="ti-pulse"]' },
   download: { selector: 'a[href^="magnet:?xt="]' },
   search: {
     inputs: { search: '{{ .Keywords }}', cat: 0 },

@@ -406,6 +406,9 @@ export const jnewstudio = jjnewstudio;
 import { definition as jjnnmClub } from './nnm-club';
 export const jnnmClub = jjnnmClub;
 
+import { definition as jjnostalgic } from './nostalgic';
+export const jnostalgic = jjnostalgic;
+
 import { definition as jjnyaaPantsu } from './nyaa-pantsu';
 export const jnyaaPantsu = jjnyaaPantsu;
 
@@ -831,6 +834,7 @@ export const definitions = [
   jjnewretro,
   jjnewstudio,
   jjnnmClub,
+  jjnostalgic,
   jjnyaaPantsu,
   jjnyaasi,
   jjnyoo,

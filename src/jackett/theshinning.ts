@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'theshinning',
   name: 'The Shinning',
-  description: 'A German gerneral tracker',
+  description: 'The Shinning (TsH) is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'de-DE',
   type: 'private',
   encoding: 'WINDOWS-1252',

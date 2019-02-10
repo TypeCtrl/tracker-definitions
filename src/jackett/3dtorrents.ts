@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: '3dtorrents',
   name: '3D Torrents',
-  description: '3D Movie tracker',
+  description: '3D Torrents (3DT) is a Private Torrent Tracker for 3D HD / BLURAY MOVIES',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

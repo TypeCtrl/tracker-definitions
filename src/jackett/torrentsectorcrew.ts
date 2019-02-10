@@ -3,7 +3,8 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'torrentsectorcrew',
   name: 'Torrent Sector Crew',
-  description: 'A German general tracker',
+  description:
+    'Torrent Sector Crew (TSC) is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'de-DE',
   type: 'private',
   encoding: 'WINDOWS-1252',

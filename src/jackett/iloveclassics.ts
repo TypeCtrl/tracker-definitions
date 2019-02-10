@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'iloveclassics',
   name: 'I Love Classics',
-  description: 'Classics movie tracker',
+  description: 'iLoveClassics (iLC) is a Private Torrent Tracker for CLASSIC MOVIES / TV',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

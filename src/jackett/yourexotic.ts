@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'yourexotic',
   name: 'ExoticaZ',
-  description: 'a porn tracker',
+  description: 'ExoticaZ (YourExotic) is a Private Torrent Tracker for XXX',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
