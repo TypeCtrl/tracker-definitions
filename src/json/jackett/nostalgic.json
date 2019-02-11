@@ -53,8 +53,7 @@
   },
   "ratio": {
     "path": "/",
-    "selector": "td:has(a[href=\"/articles.php?topic=ratio\"])  > td",
-    "filters": [{ "name": "replace", "args": ["∞", "2147483647"] }]
+    "selector": "td:has(a[href=\"/articles.php?topic=ratio\"])  > td"
   },
   "search": {
     "paths": [{ "path": "torrents.php" }],

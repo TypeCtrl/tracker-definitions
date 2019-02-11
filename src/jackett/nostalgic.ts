@@ -57,7 +57,6 @@ export const definition: TrackerDefinition = {
   ratio: {
     path: '/',
     selector: 'td:has(a[href="/articles.php?topic=ratio"])  > td',
-    filters: [{ name: 'replace', args: ['∞', '2147483647'] }],
   },
   search: {
     paths: [{ path: 'torrents.php' }],
