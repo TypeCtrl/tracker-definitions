@@ -24,7 +24,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     form: 'form.auth_form',
     inputs: {
       username: '{{ .Config.username }}',
@@ -37,11 +37,11 @@ export const definition: TrackerDefinition = {
         message: { selector: '.auth_form > .warning' },
       },
     ],
-    test: { path: '/top10.php' },
+    test: { path: 'top10.php' },
   },
-  ratio: { path: '/top10.php', selector: 'span.r99' },
+  ratio: { path: 'top10.php', selector: 'span.r99' },
   search: {
-    paths: [{ path: '/torrents.php' }],
+    paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
       searchstr: '{{if .Query.IMDBID}}{{else}}{{ .Query.Keywords }}{{end}}',

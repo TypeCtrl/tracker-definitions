@@ -61,7 +61,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/ajax/login.php',
+    path: 'ajax/login.php',
     method: 'post',
     headers: {
       'user-agent':
@@ -75,7 +75,7 @@ export const definition: TrackerDefinition = {
       loginbox_remember: 'true',
     },
     error: [{ selector: 'div.error' }],
-    test: { path: '/?p=home&pid=1', selector: 'div#member_info_bar' },
+    test: { path: '?p=home&pid=1', selector: 'div#member_info_bar' },
   },
   search: {
     keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],

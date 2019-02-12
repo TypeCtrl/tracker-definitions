@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://chdbits.co'],
+  links: ['https://chdbits.co/'],
   caps: {
     categorymappings: [
       { id: '401', cat: 'Movies', desc: 'Movies' },
@@ -23,22 +23,22 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   ratio: {
-    path: '/torrents.php',
+    path: 'torrents.php',
     selector: 'table#info_block',
     filters: [{ name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' }],
   },
   search: {
-    paths: [{ path: '/torrents.php' }],
+    paths: [{ path: 'torrents.php' }],
     method: 'post',
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',

@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://abtorrents.me'],
+  links: ['https://abtorrents.me/'],
   caps: {
     categorymappings: [
       { id: '10', cat: 'Audio/Audiobook', desc: 'Adventure' },
@@ -61,10 +61,10 @@ export const definition: TrackerDefinition = {
       { selector: 'td.embedded:has(h2:contains("Oops"))' },
       { selector: 'td.embedded:has(h2:contains("failed"))' },
     ],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',

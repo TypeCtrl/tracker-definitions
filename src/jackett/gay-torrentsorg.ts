@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://gay-torrents.org', 'https://gay-area.org/'],
+  links: ['https://gay-torrents.org/', 'https://gay-area.org/'],
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },

@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   login: {
-    path: '/login',
+    path: 'login',
     method: 'form',
     inputs: {
       username_email: '{{ .Config.username }}',
@@ -57,7 +57,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { 'i.fa-gem': '2', '*': '1' } },
     },
-    paths: [{ path: '/torrents' }],
+    paths: [{ path: 'torrents' }],
   },
   source: 'jackett',
 };

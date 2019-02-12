@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://1337x.to'],
+  links: ['https://1337x.to/'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime/Anime' },
@@ -105,19 +105,19 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/1/{{else}}/trending{{end}}',
+        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/1/{{else}}trending{{end}}',
       },
       {
-        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/2/{{else}}{{end}}',
+        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/2/{{else}}{{end}}',
       },
       {
-        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/3/{{else}}{{end}}',
+        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/3/{{else}}{{end}}',
       },
       {
-        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/4/{{else}}{{end}}',
+        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/4/{{else}}{{end}}',
       },
       {
-        path: '{{if .Keywords}}/sort-search/{{ .Keywords}}/time/desc/5/{{else}}{{end}}',
+        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/5/{{else}}{{end}}',
       },
     ],
     keywordsfilters: [{ name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] }],

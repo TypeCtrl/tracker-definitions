@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.icetorrent.org'],
+  links: ['https://www.icetorrent.org/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'PC/0day', desc: 'Appz' },
@@ -54,7 +54,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form',
     inputs: {
@@ -62,7 +62,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'font:contains("failed") + table' }],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   ratio: { text: -1 },
   search: {

@@ -47,7 +47,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form',
     inputs: {
@@ -55,14 +55,14 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(center > h2:contains(failed))' }],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   ratio: {
-    path: '/browse.php',
+    path: 'browse.php',
     selector: 'font:contains("Ratio:")+font',
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

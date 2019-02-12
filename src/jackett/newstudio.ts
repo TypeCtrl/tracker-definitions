@@ -7,13 +7,13 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://newstudio.tv'],
+  links: ['http://newstudio.tv/'],
   caps: {
     categorymappings: [{ id: '6', cat: 'TV', desc: 'TV series' }],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'post',
     inputs: {
       login: 1,
@@ -25,10 +25,10 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [
-      { path: '/tracker.php?nm={{ .Keywords}}' },
-      { path: '/tracker.php?nm={{ .Keywords}}&start=50' },
-      { path: '/tracker.php?nm={{ .Keywords}}&start=100' },
-      { path: '/tracker.php?nm={{ .Keywords}}&start=150' },
+      { path: 'tracker.php?nm={{ .Keywords}}' },
+      { path: 'tracker.php?nm={{ .Keywords}}&start=50' },
+      { path: 'tracker.php?nm={{ .Keywords}}&start=100' },
+      { path: 'tracker.php?nm={{ .Keywords}}&start=150' },
     ],
     rows: {
       selector: 'table.well > tbody > tr:has(a[href^="./viewtopic.php?t="])',

@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
     { name: 'pin', type: 'text', label: 'Pin' },
   ],
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
@@ -50,10 +50,10 @@ export const definition: TrackerDefinition = {
       { selector: 'td.embedded:has(h2:contains("failed"))' },
       { selector: 'td.embedded:has(h2:contains("Error"))' },
     ],
-    test: { selector: 'a[href^="logout.php"]', path: '/browse.php' },
+    test: { selector: 'a[href^="logout.php"]', path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

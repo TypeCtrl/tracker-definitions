@@ -95,7 +95,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'post',
     inputs: {
       take_login: '1',
@@ -104,10 +104,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',

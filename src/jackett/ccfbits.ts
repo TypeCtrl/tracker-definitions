@@ -39,7 +39,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form[action="takelogin.php"]',
     inputs: {
@@ -47,10 +47,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("登录失败"))' }],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php', method: 'get' }],
+    paths: [{ path: 'browse.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',

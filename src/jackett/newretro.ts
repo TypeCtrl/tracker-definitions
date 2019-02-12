@@ -49,7 +49,7 @@ export const definition: TrackerDefinition = {
     { name: 'pin', type: 'text', label: 'Pin' },
   ],
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     cookies: ['JAVA=OK'],
     inputs: {
@@ -63,15 +63,15 @@ export const definition: TrackerDefinition = {
         selector: 'table.tableinborder:contains("Anmeldung Gescheitert!") > tbody > tr > td.tablea',
       },
     ],
-    test: { path: '/usercp.php' },
+    test: { path: 'usercp.php' },
   },
   ratio: {
-    path: '/usercp.php',
+    path: 'usercp.php',
     selector: 'div#lmtd table > tbody > tr:contains("Ratio:") > td:nth-child(2)',
     filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

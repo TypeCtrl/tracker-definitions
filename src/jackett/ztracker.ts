@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'hu-HU',
   type: 'semi-private',
   encoding: 'ISO-8859-2',
-  links: ['http://ztracker.org'],
+  links: ['http://ztracker.org/'],
   caps: {
     categorymappings: [
       { id: '30', cat: 'Movies/SD', desc: 'CAM/HUN' },

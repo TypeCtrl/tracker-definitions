@@ -20,7 +20,7 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'div#btn-download a', attribute: 'href' },
   search: {
-    paths: [{ path: '{{if .Keywords}}/recherche/{{.Keywords}}{{else}}{{end}}' }],
+    paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'div#gauche > table > tbody > tr:has(a)' },
     fields: {
       site_date: {

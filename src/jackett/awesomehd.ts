@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://awesome-hd.me'],
+  links: ['https://awesome-hd.me/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies/HD', desc: 'Movies' },

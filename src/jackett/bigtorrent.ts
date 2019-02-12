@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',

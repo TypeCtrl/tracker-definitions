@@ -58,10 +58,10 @@ export const definition: TrackerDefinition = {
       input: 'imagestring',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   search: {
-    paths: [{ path: '/torrents.php' }],
+    paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',

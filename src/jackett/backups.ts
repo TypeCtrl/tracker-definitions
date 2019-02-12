@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',

@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
       { selector: 'table:contains("Login failed!")' },
       { selector: 'table:contains("Wrong Code!")' },
     ],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
     method: 'get',
@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { case: { '*': '1' } },
       uploadvolumefactor: { case: { '*': '1' } },
     },
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
   },
   source: 'jackett',
 };

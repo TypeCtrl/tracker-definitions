@@ -71,7 +71,7 @@ export const definition: TrackerDefinition = {
     { name: 'password', type: 'password', label: 'Password' },
   ],
   login: {
-    path: '/login.php?from=index1',
+    path: 'login.php?from=index1',
     method: 'post',
     inputs: {
       action: 'login',

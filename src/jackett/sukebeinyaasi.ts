@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://sukebei.nyaa.si'],
+  links: ['https://sukebei.nyaa.si/'],
   settings: [
     {
       name: 'filter-id',

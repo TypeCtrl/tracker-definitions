@@ -103,7 +103,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/?p=home&pid=1',
+    path: '?p=home&pid=1',
     method: 'form',
     form: 'form#loginbox_form',
     submitpath: '/ajax/login.php',
@@ -120,7 +120,7 @@ export const definition: TrackerDefinition = {
       },
     },
     error: [{ selector: ':contains("-ERROR-")' }],
-    test: { path: '/?p=torrents&pid=32', selector: 'a#logout' },
+    test: { path: '?p=torrents&pid=32', selector: 'a#logout' },
   },
   search: {
     paths: [{ path: '/' }],

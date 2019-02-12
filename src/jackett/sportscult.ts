@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://sportscult.org'],
+  links: ['https://sportscult.org/'],
   caps: {
     categorymappings: [
       { id: '47', cat: 'TV/Sport', desc: 'EPL' },
@@ -59,7 +59,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/?page=login',
+    path: '?page=login',
     method: 'form',
     form: 'form',
     inputs: {

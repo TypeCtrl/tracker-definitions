@@ -36,7 +36,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Keywords}}/{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}download/invalid-cat/{{end}}',
+          '{{if .Keywords}}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}download/invalid-cat/{{end}}',
       },
     ],
     rows: { selector: 'tr:has(td[class="m"])' },

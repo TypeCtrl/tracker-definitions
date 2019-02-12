@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
@@ -42,7 +42,7 @@ export const definition: TrackerDefinition = {
       timeout: '1',
     },
     error: [{ selector: 'div#error-text' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   search: {
     paths: [{ path: 'torrents.php' }],

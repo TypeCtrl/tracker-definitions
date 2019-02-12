@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   encoding: 'UTF-8',
   type: 'private',
-  links: ['https://www.hd-bits.com'],
+  links: ['https://www.hd-bits.com/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Audio', desc: 'Music' },

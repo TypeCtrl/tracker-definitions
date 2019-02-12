@@ -30,7 +30,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}/search?term={{.Keywords}}{{else}}/video{{end}}',
+        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}',
       },
     ],
     rows: {

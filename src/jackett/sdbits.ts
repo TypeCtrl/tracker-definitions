@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://sdbits.org'],
+  links: ['http://sdbits.org/'],
   caps: {
     categorymappings: [
       { id: '6', cat: 'Audio', desc: 'Audio' },
@@ -20,7 +20,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/takeloginn3.php',
+    path: 'takeloginn3.php',
     method: 'post',
     inputs: {
       uname: '{{ .Config.username }}',
@@ -29,17 +29,17 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed")+table)' }],
     test: {
-      path: '/browse.php',
+      path: 'browse.php',
       selector: 'span.smallfont:has(a[href="logout.php"])',
     },
   },
   ratio: {
-    path: '/browse.php',
+    path: 'browse.php',
     selector: 'span.smallfont:has(a[href="logout.php"])',
     filters: [{ name: 'regexp', args: 'Ratio:[  ](.*?) ' }],
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     method: 'post',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',

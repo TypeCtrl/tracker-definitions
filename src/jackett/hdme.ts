@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'WINDOWS-1252',
-  links: ['https://hdme.eu'],
+  links: ['https://hdme.eu/'],
   caps: {
     categorymappings: [
       { id: '24', cat: 'TV/Anime', desc: 'Anime' },
@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     form: 'form',
     inputs: {
@@ -49,10 +49,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded', message: { selector: 'td.text' } }],
-    test: { path: '/my.php' },
+    test: { path: 'my.php' },
   },
   ratio: {
-    path: '/my.php',
+    path: 'my.php',
     selector: 'span.smallfont > font',
     filters: [
       { name: 'regexp', args: 'Ratio:(.+?)Uploaded' },
@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',

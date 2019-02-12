@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://hdf.world'],
+  links: ['https://hdf.world/'],
   caps: {
     modes: { search: ['q'] },
     categorymappings: [

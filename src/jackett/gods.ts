@@ -65,7 +65,7 @@ export const definition: TrackerDefinition = {
     { name: 'password', type: 'password', label: 'Password' },
   ],
   login: {
-    path: '/login/',
+    path: 'login/',
     method: 'form',
     form: 'form',
     inputs: {

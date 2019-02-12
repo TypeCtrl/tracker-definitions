@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'lv-LV',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.fano.in'],
+  links: ['https://www.fano.in/'],
   caps: {
     categorymappings: [
       { id: '20', cat: 'Movies/SD', desc: 'Movies/SD' },

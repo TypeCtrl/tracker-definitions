@@ -39,7 +39,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
@@ -47,10 +47,10 @@ export const definition: TrackerDefinition = {
       ssl: 'yes',
     },
     error: [{ selector: 'div.glavni:has(div.glavni_naslov:contains("Greška"))' }],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

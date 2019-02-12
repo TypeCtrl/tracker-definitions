@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://nyoo.moe'],
+  links: ['https://nyoo.moe/'],
   settings: [],
   caps: {
     categorymappings: [
@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   search: {
-    paths: [{ path: '/search' }],
+    paths: [{ path: 'search' }],
     inputs: { page: 'search', q: '{{ .Query.Keywords}}' },
     rows: { selector: 'tr.torrent-info' },
     fields: {

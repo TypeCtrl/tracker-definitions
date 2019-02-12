@@ -70,7 +70,7 @@ export const definition: TrackerDefinition = {
     { name: 'pin', type: 'text', label: 'Pin' },
   ],
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form[action="/login.php"]',
     cookies: ['JAVA=OK'],

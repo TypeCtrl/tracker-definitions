@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    paths: [{ path: '/index.php' }],
+    paths: [{ path: 'index.php' }],
     keywordsfilters: [
       { name: 'diacritics', args: 'replace' },
       { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', '$1'] },

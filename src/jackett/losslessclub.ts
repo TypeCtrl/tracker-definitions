@@ -20,10 +20,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded > div.error' }],
-    test: { path: '/browse.php', selector: 'span.bar_user_welcome' },
+    test: { path: 'browse.php', selector: 'span.bar_user_welcome' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: { search: '{{ .Query.Keywords }}', t: 'all' },
     rows: {
       selector: 'div#releases-table > table > tbody > tr:has(a.browselink)',

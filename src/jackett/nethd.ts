@@ -24,21 +24,21 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'form#loginform > span.warning' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   ratio: {
-    path: '/torrents.php',
+    path: 'torrents.php',
     selector: 'div.user-info-extend > dl > dt:contains("Ratio:") + dd',
   },
   search: {
-    paths: [{ path: '/torrents.php', method: 'post' }],
+    paths: [{ path: 'torrents.php', method: 'post' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',

@@ -55,7 +55,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q'] },
   },
   search: {
-    paths: [{ path: '/search' }],
+    paths: [{ path: 'search' }],
     inputs: {
       q: '{{ .Query.Keywords }}',
       c: '{{ .Config.cat-id }}',

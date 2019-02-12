@@ -35,17 +35,17 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("登录失败"))' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   search: {
-    paths: [{ path: '/torrents.php', method: 'get' }],
+    paths: [{ path: 'torrents.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',

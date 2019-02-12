@@ -86,7 +86,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '1' },
       uploadvolumefactor: { text: '1' },
     },
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
   },
   source: 'jackett',
 };

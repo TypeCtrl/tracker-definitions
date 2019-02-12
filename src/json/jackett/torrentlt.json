@@ -58,17 +58,17 @@
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
   },
   "login": {
-    "path": "/lt/account-login.php",
+    "path": "lt/account-login.php",
     "method": "post",
     "inputs": {
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}"
     },
     "error": [{ "selector": "p.error_text" }],
-    "test": { "path": "/lt/torrents.php" }
+    "test": { "path": "lt/torrents.php" }
   },
   "search": {
-    "paths": [{ "path": "/lt/torrents.php" }],
+    "paths": [{ "path": "lt/torrents.php" }],
     "inputs": {
       "$raw": "{{range .Categories}}cats[]={{.}}&{{end}}",
       "search": "{{ .Keywords }}"

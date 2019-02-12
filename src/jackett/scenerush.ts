@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'pt-PT',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.scene-rush.pt'],
+  links: ['http://www.scene-rush.pt/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'PC', desc: 'Apps' },
@@ -39,21 +39,21 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q'] },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed")+table)' }],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   ratio: {
-    path: '/browse.php',
+    path: 'browse.php',
     selector: "td[width='60'][style=['text-align:center;'] > span > font",
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     method: 'post',
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',

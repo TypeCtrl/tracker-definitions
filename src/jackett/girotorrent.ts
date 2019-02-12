@@ -69,14 +69,14 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/index.php?page=login',
+    path: 'index.php?page=login',
     method: 'post',
     inputs: {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
     error: [{ selector: 'div.error' }],
-    test: { path: '/index.php', selector: 'a[href="logout.php"]' },
+    test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   download: {
     before: {
@@ -92,16 +92,16 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [
-      { path: '/index.php', inputs: { pages: 1 } },
-      { path: '/index.php', inputs: { pages: 2 } },
-      { path: '/index.php', inputs: { pages: 3 } },
-      { path: '/index.php', inputs: { pages: 4 } },
-      { path: '/index.php', inputs: { pages: 5 } },
-      { path: '/index.php', inputs: { pages: 6 } },
-      { path: '/index.php', inputs: { pages: 7 } },
-      { path: '/index.php', inputs: { pages: 8 } },
-      { path: '/index.php', inputs: { pages: 9 } },
-      { path: '/index.php', inputs: { pages: 10 } },
+      { path: 'index.php', inputs: { pages: 1 } },
+      { path: 'index.php', inputs: { pages: 2 } },
+      { path: 'index.php', inputs: { pages: 3 } },
+      { path: 'index.php', inputs: { pages: 4 } },
+      { path: 'index.php', inputs: { pages: 5 } },
+      { path: 'index.php', inputs: { pages: 6 } },
+      { path: 'index.php', inputs: { pages: 7 } },
+      { path: 'index.php', inputs: { pages: 8 } },
+      { path: 'index.php', inputs: { pages: 9 } },
+      { path: 'index.php', inputs: { pages: 10 } },
     ],
     inputs: {
       search: '{{ .Keywords }}',

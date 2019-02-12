@@ -103,15 +103,12 @@ export const definition: TrackerDefinition = {
         "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
     },
   ],
-  login: {
-    method: 'cookie',
-    test: { path: '/category/latest/page/1' },
-  },
+  login: { method: 'cookie', test: { path: 'category/latest/page/1' } },
   search: {
     paths: [
       {
         path:
-          '{{ if .Keywords }}/katsearch/page/1/{{ .Keywords }}{{ else }}/category/latest/page/1{{ end }}',
+          '{{ if .Keywords }}katsearch/page/1/{{ .Keywords }}{{ else }}category/latest/page/1{{ end }}',
       },
     ],
     rows: { selector: 'table.torrents_table > tbody > tr' },

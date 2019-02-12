@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://horrorcharnel.org'],
+  links: ['https://horrorcharnel.org/'],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
     categorymappings: [{ id: '1', cat: 'Movies' }, { id: '2', cat: 'TV' }],
@@ -37,7 +37,7 @@ export const definition: TrackerDefinition = {
     test: { path: 'usercp.php' },
   },
   ratio: {
-    path: '/my.php',
+    path: 'my.php',
     selector: 'td.navi_top:contains("Deine Ratio:")',
     filters: [
       { name: 'replace', args: ['Deine Ratio: ', ''] },
@@ -46,7 +46,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: { search: '{{ .Query.Keywords }}', incldead: 1 },
     rows: {
       selector:

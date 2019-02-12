@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/loginproc/',
+    path: 'loginproc/',
     method: 'form',
     form: 'form#login',
     inputs: {

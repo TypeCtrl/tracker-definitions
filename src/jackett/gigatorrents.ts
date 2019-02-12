@@ -52,7 +52,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form',
     inputs: {
@@ -60,10 +60,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'div.box:has(div.title:contains("bejelentkez"))' }],
-    test: { path: '/torrentek.php' },
+    test: { path: 'torrentek.php' },
   },
   search: {
-    paths: [{ path: '/torrentek.php' }],
+    paths: [{ path: 'torrentek.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',

@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://tp.m-team.cc'],
+  links: ['https://tp.m-team.cc/'],
   caps: {
     categorymappings: [
       { id: '401', cat: 'Movies/SD', desc: 'Movie(電影)/SD' },
@@ -69,10 +69,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   ratio: {
-    path: '/torrents.php',
+    path: 'torrents.php',
     selector: 'table#info_block',
     filters: [{ name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' }],
   },

@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://worldofp2p.net'],
+  links: ['https://worldofp2p.net/'],
   caps: {
     categorymappings: [
       { id: '9', cat: 'TV/Anime', desc: 'Anime' },
@@ -70,7 +70,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form',
     inputs: {
@@ -79,10 +79,10 @@ export const definition: TrackerDefinition = {
       login: 'Login',
     },
     error: [{ selector: 'td.stdmsg2' }],
-    test: { path: '/usercp.php?action=default' },
+    test: { path: 'usercp.php?action=default' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

@@ -64,7 +64,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form[action="takelogin.php"]',
     inputs: {
@@ -76,10 +76,10 @@ export const definition: TrackerDefinition = {
         selector: 'table.main > tbody > tr > td.embedded td.text:contains("incorrect")',
       },
     ],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

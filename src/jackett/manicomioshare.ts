@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'pt-BR',
   type: 'private',
   encoding: 'ISO-8859-1',
-  links: ['https://www.manicomio-share.com'],
+  links: ['https://www.manicomio-share.com/'],
   caps: {
     categorymappings: [
       { id: '80', cat: 'XXX', desc: 'Adulto: [XXX] - Filmes' },

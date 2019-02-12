@@ -98,7 +98,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login',
+    path: 'login',
     method: 'form',
     form: 'form#login-form',
     inputs: {
@@ -107,10 +107,10 @@ export const definition: TrackerDefinition = {
       _remember_me: 'on',
     },
     error: [{ selector: ':contains("\\"success\\":false")' }],
-    test: { path: '/torrents' },
+    test: { path: 'torrents' },
   },
   search: {
-    paths: [{ path: '/torrent/ajaxfiltertorrent/{{ .Keywords }}' }],
+    paths: [{ path: 'torrent/ajaxfiltertorrent/{{ .Keywords }}' }],
     keywordsfilters: [{ name: 're_replace', args: ['^$', 'null'] }],
     inputs: {
       $raw: '{{range .Categories}}subcat[]={{.}}&{{end}}',

@@ -42,10 +42,10 @@ export const definition: TrackerDefinition = {
   login: {
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

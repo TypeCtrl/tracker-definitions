@@ -16,11 +16,17 @@ export const j420Files = jj420Files;
 import { definition as jjbittorrentfiles } from './bittorrentfiles';
 export const jbittorrentfiles = jjbittorrentfiles;
 
+import { definition as jjacgrip } from './acgrip';
+export const jacgrip = jjacgrip;
+
 import { definition as jjacidlounge } from './acidlounge';
 export const jacidlounge = jjacidlounge;
 
 import { definition as jjalein } from './alein';
 export const jalein = jjalein;
+
+import { definition as jjamigosshare } from './amigosshare';
+export const jamigosshare = jjamigosshare;
 
 import { definition as jjanidex } from './anidex';
 export const janidex = jjanidex;
@@ -111,6 +117,9 @@ export const jbtxpress = jjbtxpress;
 
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
+
+import { definition as jjcartoonchaos } from './cartoonchaos';
+export const jcartoonchaos = jjcartoonchaos;
 
 import { definition as jjcasstudiotv } from './casstudiotv';
 export const jcasstudiotv = jjcasstudiotv;
@@ -252,6 +261,9 @@ export const jhachede = jjhachede;
 
 import { definition as jjhd4Free } from './hd4free';
 export const jhd4Free = jjhd4Free;
+
+import { definition as jjhdarea } from './hdarea';
+export const jhdarea = jjhdarea;
 
 import { definition as jjhdbits } from './hdbits';
 export const jhdbits = jjhdbits;
@@ -447,6 +459,9 @@ export const jpuntotorrent = jjpuntotorrent;
 
 import { definition as jjpwtorrents } from './pwtorrents';
 export const jpwtorrents = jjpwtorrents;
+
+import { definition as jjqxr } from './qxr';
+export const jqxr = jjqxr;
 
 import { definition as jjracing4Everyone } from './racing4everyone';
 export const jracing4Everyone = jjracing4Everyone;
@@ -704,8 +719,10 @@ export const definitions = [
   jj3Evils,
   jj420Files,
   jjbittorrentfiles,
+  jjacgrip,
   jjacidlounge,
   jjalein,
+  jjamigosshare,
   jjanidex,
   jjanirena,
   jjaox,
@@ -736,6 +753,7 @@ export const definitions = [
   jjbtstornet,
   jjbtxpress,
   jjcarpathians,
+  jjcartoonchaos,
   jjcasstudiotv,
   jjccfbits,
   jjchdbits,
@@ -783,6 +801,7 @@ export const definitions = [
   jjgreekteam,
   jjhachede,
   jjhd4Free,
+  jjhdarea,
   jjhdbits,
   jjhdbitscom,
   jjhdcenter,
@@ -848,6 +867,7 @@ export const definitions = [
   jjptfiles,
   jjpuntotorrent,
   jjpwtorrents,
+  jjqxr,
   jjracing4Everyone,
   jjredstartorrent,
   jjredtopia,

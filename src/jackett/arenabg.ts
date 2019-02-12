@@ -96,7 +96,7 @@ export const definition: TrackerDefinition = {
   },
   download: { selector: 'a[href^="magnet:?"]' },
   search: {
-    paths: [{ path: '/torrents/', method: 'post', followredirect: true }],
+    paths: [{ path: 'torrents/', method: 'post', followredirect: true }],
     inputs: {
       text: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}',
       text_mobile: '',

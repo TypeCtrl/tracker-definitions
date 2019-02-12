@@ -42,22 +42,22 @@ export const definition: TrackerDefinition = {
     ],
   },
   login: {
-    path: '/login.php?returnto=',
+    path: 'login.php?returnto=',
     method: 'form',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'form#loginform > span.warning' }],
-    test: { path: '/my.php' },
+    test: { path: 'my.php' },
   },
   ratio: {
-    path: '/my.php',
+    path: 'my.php',
     selector: 'span.smallfont:has(span#sp_signed)',
     filters: [{ name: 'regexp', args: '分享率 : (.*?)  ' }],
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       search_field: '{{range .Categories}}分类:`{{.}}` {{end}}{{ .Query.Keywords }}',
       c: 'M',

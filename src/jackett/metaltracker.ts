@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   login: {
-    path: '/user/login.html',
+    path: 'user/login.html',
     method: 'form',
     inputs: {
       username: '{{ .Config.username }}',
@@ -35,12 +35,12 @@ export const definition: TrackerDefinition = {
       },
     ],
     test: {
-      path: '/torrents/search.html',
+      path: 'torrents/search.html',
       selector: 'li li:has(a[href="/user/logout.html"])',
     },
   },
   search: {
-    paths: [{ path: '/torrents/search.html', method: 'post' }],
+    paths: [{ path: 'torrents/search.html', method: 'post' }],
     inputs: {
       'SearchTorrentsForm[nameTorrent]':
         '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',

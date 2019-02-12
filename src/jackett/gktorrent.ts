@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'a[href*="/get_torrent/"]' },
   search: {
-    paths: [{ path: '{{if .Keywords}}/recherche/{{.Keywords}}{{else}}{{end}}' }],
+    paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'div.listing-torrent > table > tbody > tr:has(a)' },
     fields: {
       site_date: {

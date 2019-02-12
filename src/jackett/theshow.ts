@@ -63,7 +63,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form',
     inputs: {

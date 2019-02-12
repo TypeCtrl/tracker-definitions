@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://zooqle.com'],
+  links: ['https://zooqle.com/'],
   caps: {
     modes: {
       search: ['q'],
@@ -31,7 +31,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '/search?{{if .Keywords}}s=ns&v=t&sd=d&q={{ .Keywords}}{{else}}s=dt&v=t&sd=d&q= *{{end}}{{if .Categories}} category:{{range .Categories}}{{.}},{{end}}{{else}}{{end}}',
+          'search?{{if .Keywords}}s=ns&v=t&sd=d&q={{ .Keywords}}{{else}}s=dt&v=t&sd=d&q= *{{end}}{{if .Categories}} category:{{range .Categories}}{{.}},{{end}}{{else}}{{end}}',
       },
     ],
     rows: {

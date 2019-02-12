@@ -95,7 +95,7 @@
   "download": { "selector": "a[href^=\"magnet:?\"]" },
   "search": {
     "paths": [
-      { "path": "/torrents/", "method": "post", "followredirect": true }
+      { "path": "torrents/", "method": "post", "followredirect": true }
     ],
     "inputs": {
       "text": "{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}",

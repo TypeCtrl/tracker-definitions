@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   search: {
-    paths: [{ path: '/{{if .Keywords}}?s={{ .Keywords}}{{else}}{{end}}' }],
+    paths: [{ path: '{{if .Keywords}}?s={{ .Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'table tbody tr:has(td.torrents_small_type_data1)' },
     fields: {
       title: { selector: '.torrents_small_info_data1 div' },

@@ -25,17 +25,17 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login',
+    path: 'login',
     method: 'form',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'table.main:contains("Login Failed!")' }],
-    test: { path: '/torrents' },
+    test: { path: 'torrents' },
   },
   search: {
-    paths: [{ path: '/filterTorrents' }],
+    paths: [{ path: 'filterTorrents' }],
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
       search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',

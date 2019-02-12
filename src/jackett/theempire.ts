@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://theempire.click'],
+  links: ['https://theempire.click/'],
   legacylinks: ['http://theempire.click/'],
   caps: {
     categorymappings: [
@@ -48,7 +48,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form',
     inputs: {

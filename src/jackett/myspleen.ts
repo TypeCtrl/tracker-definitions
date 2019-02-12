@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.myspleen.org'],
+  links: ['https://www.myspleen.org/'],
   caps: {
     categorymappings: [
       { id: '31', cat: 'TV', desc: 'Adult Swim' },
@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
@@ -34,16 +34,16 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'div#content:has(h2:contains("Login Failed"))' }],
     test: {
-      path: '/browse.php',
+      path: 'browse.php',
       selector: 'span.key:contains("Ratio") + span.value',
     },
   },
   ratio: {
-    path: '/browse.php',
+    path: 'browse.php',
     selector: 'span.key:contains("Ratio") + span.value',
   },
   search: {
-    paths: [{ path: '/browse.php', method: 'get' }],
+    paths: [{ path: 'browse.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

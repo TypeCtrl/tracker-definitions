@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://funkytorrents.com'],
+  links: ['http://funkytorrents.com/'],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
     categorymappings: [
@@ -62,7 +62,7 @@ export const definition: TrackerDefinition = {
     test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: { search: '{{ .Query.Keywords }}', incldead: 1 },
     rows: {
       selector: 'table.mainouter > tbody > tr > td.outer > table > tbody > tr.mouse_out',

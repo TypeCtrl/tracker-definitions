@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://tasmanit.es'],
+  links: ['https://tasmanit.es/'],
   caps: {
     categorymappings: [
       { id: '72', cat: 'TV', desc: 'All Australian TV' },

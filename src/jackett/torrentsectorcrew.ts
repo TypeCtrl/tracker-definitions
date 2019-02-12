@@ -79,7 +79,7 @@ export const definition: TrackerDefinition = {
     test: { path: 'my.php' },
   },
   ratio: {
-    path: '/my.php',
+    path: 'my.php',
     selector: 'td.navi_top:contains("Deine Ratio:")',
     filters: [
       { name: 'replace', args: ['Deine Ratio: ', ''] },

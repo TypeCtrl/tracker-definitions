@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     form: 'form[action="takelogin.php"]',
     captcha: {
@@ -53,10 +53,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("登录失败"))' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   search: {
-    paths: [{ path: '/torrents.php', method: 'get' }],
+    paths: [{ path: 'torrents.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',

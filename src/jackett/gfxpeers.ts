@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
@@ -30,10 +30,10 @@ export const definition: TrackerDefinition = {
       keeplogged: '1',
     },
     error: [{ selector: '.auth_form > .warning' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   search: {
-    paths: [{ path: '/torrents.php' }],
+    paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
       searchstr: '{{ .Query.Keywords }}',

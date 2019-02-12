@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'de-DE',
   type: 'private',
   encoding: 'WINDOWS-1252',
-  links: ['https://theshinning.org'],
+  links: ['https://theshinning.me/'],
+  legacylinks: ['https://theshinning.org'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'Movies/SD', desc: 'HORROR' },
@@ -63,18 +64,18 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: '/login.php',
+    path: 'login.php',
     method: 'form',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'div.stderr_info_wrap' }],
-    test: { path: '/browse.php', selector: 'img[title="Ratio"] + i' },
+    test: { path: 'browse.php', selector: 'img[title="Ratio"] + i' },
   },
-  ratio: { path: '/browse.php', selector: 'img[title="Ratio"] + i' },
+  ratio: { path: 'browse.php', selector: 'img[title="Ratio"] + i' },
   search: {
-    paths: [{ path: '/browse.php' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

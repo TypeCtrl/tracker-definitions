@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.hyperay.org'],
+  links: ['https://www.hyperay.org/'],
   legacylinks: ['https://www.hyperay.cc'],
   caps: {
     categorymappings: [
@@ -45,10 +45,10 @@ export const definition: TrackerDefinition = {
       authcode: '',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   search: {
-    paths: [{ path: '/torrents.php', method: 'post' }],
+    paths: [{ path: 'torrents.php', method: 'post' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',

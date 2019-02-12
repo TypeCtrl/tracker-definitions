@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://hdbits.org'],
+  links: ['https://hdbits.org/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movie' },
@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/login',
+    path: 'login',
     method: 'form',
     form: 'form',
     inputs: {

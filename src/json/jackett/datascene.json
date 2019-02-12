@@ -56,21 +56,21 @@
     }
   },
   "login": {
-    "path": "/takelogin.php",
+    "path": "takelogin.php",
     "method": "post",
     "inputs": {
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}"
     },
     "error": [{ "selector": "td.embedded:has(h2:contains(\"failed\"))" }],
-    "test": { "path": "/browse.php" }
+    "test": { "path": "browse.php" }
   },
   "ratio": {
-    "path": "/browse.php",
+    "path": "browse.php",
     "selector": "font:contains(\"Ratio:\") > span"
   },
   "search": {
-    "paths": [{ "path": "/browse.php" }],
+    "paths": [{ "path": "browse.php" }],
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{ .Keywords }}",

@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'vi-VN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://torviet.com'],
+  links: ['http://torviet.com/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Console', desc: 'Game' },
@@ -46,22 +46,22 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
-    test: { path: '/torrents.php' },
+    test: { path: 'torrents.php' },
   },
   ratio: {
-    path: '/torrents.php',
+    path: 'torrents.php',
     selector: 'table#info_block',
     filters: [{ name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' }],
   },
   search: {
-    paths: [{ path: '/torrents.php' }],
+    paths: [{ path: 'torrents.php' }],
     inputs: {
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       sltCategory: 0,

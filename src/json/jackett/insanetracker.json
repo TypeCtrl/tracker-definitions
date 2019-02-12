@@ -52,10 +52,10 @@
       "notsecure": "1"
     },
     "error": [{ "selector": "div.login_error_content" }],
-    "test": { "path": "/browse.php" }
+    "test": { "path": "browse.php" }
   },
   "search": {
-    "paths": [{ "path": "/browse.php" }],
+    "paths": [{ "path": "browse.php" }],
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}",

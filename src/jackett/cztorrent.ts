@@ -53,10 +53,10 @@ export const definition: TrackerDefinition = {
   login: {
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: '/torrents' },
+    test: { path: 'torrents' },
   },
   search: {
-    paths: [{ path: '/torrents' }],
+    paths: [{ path: 'torrents' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       s: '{{ .Keywords }}',

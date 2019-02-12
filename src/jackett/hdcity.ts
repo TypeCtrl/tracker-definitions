@@ -232,7 +232,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/index.php?page=login',
+    path: 'index.php?page=login',
     method: 'post',
     inputs: {
       uid: '{{ .Config.username }}',

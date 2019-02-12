@@ -53,10 +53,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.msg_info > font > b' }],
-    test: { path: '/browse.php' },
+    test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: '/browse.php', method: 'post' }],
+    paths: [{ path: 'browse.php', method: 'post' }],
     inputs: { search: '{{ .Query.Keywords }}', incldead: '1' },
     rows: {
       selector: 'table > tbody > tr[class]',

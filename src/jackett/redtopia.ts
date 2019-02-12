@@ -25,17 +25,17 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'music-search': ['q'] },
   },
   login: {
-    path: '/login',
+    path: 'login',
     method: 'form',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'form[action*="/login"] .text-red' }],
-    test: { path: '/torrents' },
+    test: { path: 'torrents' },
   },
   search: {
-    paths: [{ path: '/filterTorrents' }],
+    paths: [{ path: 'filterTorrents' }],
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
       search: '{{ .Keywords }}',

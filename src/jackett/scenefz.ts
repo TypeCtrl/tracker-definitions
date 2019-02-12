@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: '/login',
+    path: 'login',
     method: 'form',
     form: 'form',
     inputs: {
@@ -53,10 +53,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'div.alert-danger' }],
-    test: { path: '/torrents' },
+    test: { path: 'torrents' },
   },
   search: {
-    paths: [{ path: '/torrents' }],
+    paths: [{ path: 'torrents' }],
     inputs: { q: '{{ .Keywords }}', searchin: 0, cat: 0, dead: 1 },
     rows: {
       selector: 'div.table-responsive > table > tbody > tr:has(a[href^="/torrents?"])',

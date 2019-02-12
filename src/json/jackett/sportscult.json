@@ -5,7 +5,7 @@
   "language": "en-US",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://sportscult.org"],
+  "links": ["https://sportscult.org/"],
   "caps": {
     "categorymappings": [
       { "id": "47", "cat": "TV/Sport", "desc": "EPL" },
@@ -57,7 +57,7 @@
     "modes": { "search": ["q"] }
   },
   "login": {
-    "path": "/?page=login",
+    "path": "?page=login",
     "method": "form",
     "form": "form",
     "inputs": {

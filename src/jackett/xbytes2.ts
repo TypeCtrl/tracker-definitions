@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'es-ES',
   type: 'private',
   encoding: 'ISO-8859-1',
-  links: ['http://xbytesv2.li'],
+  links: ['http://xbytesv2.li/'],
   caps: {
     categorymappings: [
       {

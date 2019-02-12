@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    paths: [{ path: '/src/releaselist.php', method: 'post' }],
+    paths: [{ path: 'src/releaselist.php', method: 'post' }],
     inputs: { cat: 0, page: 1, srcrel: '{{ .Keywords }}' },
     keywordsfilters: [{ name: 'diacritics', args: 'replace' }],
     rows: {

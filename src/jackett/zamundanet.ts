@@ -33,17 +33,17 @@ export const definition: TrackerDefinition = {
     ],
   },
   login: {
-    path: '/takelogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
-    test: { path: '/bananas' },
+    test: { path: 'bananas' },
   },
   search: {
-    paths: [{ path: '/bananas' }],
+    paths: [{ path: 'bananas' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Query.Keywords }}',

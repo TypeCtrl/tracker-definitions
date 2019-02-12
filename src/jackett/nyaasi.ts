@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://nyaa.si'],
+  links: ['https://nyaa.si/'],
   certificates: ['3801e330482d4f9baef71ca4e33ba23ede74f59c'],
   settings: [
     {

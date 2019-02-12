@@ -54,10 +54,10 @@ export const definition: TrackerDefinition = {
         },
       },
     ],
-    test: { path: '/letoltes.php' },
+    test: { path: 'letoltes.php' },
   },
   search: {
-    paths: [{ path: '/letoltes.php', method: 'get' }],
+    paths: [{ path: 'letoltes.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}kat[]={{.}}&{{end}}',
       kereses_nev: '{{ .Query.Keywords }}',
