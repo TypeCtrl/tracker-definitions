@@ -58,7 +58,11 @@ export const definition: TrackerDefinition = {
       { id: '128', cat: 'Movies/HD', desc: 'Animación H265' },
       { id: '129', cat: 'Other/Misc', desc: 'Documentales H265' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   login: {
     path: 'ajax/login.php',

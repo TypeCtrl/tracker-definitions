@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'tr-TR',
   type: 'private',
   encoding: 'ISO-8859-9',
-  links: ['http://turktorrent1.in/'],
+  links: ['http://turktorrent.us/'],
+  legacylinks: ['http://turktorrent1.in/'],
   caps: {
     categorymappings: [
       { id: '3', cat: 'Movies', desc: 'Animasyon GENEL' },

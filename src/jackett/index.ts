@@ -145,6 +145,9 @@ export const jcpabien = jjcpabien;
 import { definition as jjcpasbienclone } from './cpasbienclone';
 export const jcpasbienclone = jjcpasbienclone;
 
+import { definition as jjcrnaberza } from './crnaberza';
+export const jcrnaberza = jjcrnaberza;
+
 import { definition as jjcztorrent } from './cztorrent';
 export const jcztorrent = jjcztorrent;
 
@@ -162,6 +165,9 @@ export const jdiablotorrent = jjdiablotorrent;
 
 import { definition as jjdigbt } from './digbt';
 export const jdigbt = jjdigbt;
+
+import { definition as jjdocumentarytorrents } from './documentarytorrents';
+export const jdocumentarytorrents = jjdocumentarytorrents;
 
 import { definition as jjdownloadville } from './downloadville';
 export const jdownloadville = jjdownloadville;
@@ -670,6 +676,9 @@ export const junionfansub = jjunionfansub;
 import { definition as jjvanila } from './vanila';
 export const jvanila = jjvanila;
 
+import { definition as jjvizuk } from './vizuk';
+export const jvizuk = jjvizuk;
+
 import { definition as jjwaffles } from './waffles';
 export const jwaffles = jjwaffles;
 
@@ -762,12 +771,14 @@ export const definitions = [
   jjclassix,
   jjcpabien,
   jjcpasbienclone,
+  jjcrnaberza,
   jjcztorrent,
   jjdatascene,
   jjdeildu,
   jjdesitorrents,
   jjdiablotorrent,
   jjdigbt,
+  jjdocumentarytorrents,
   jjdownloadville,
   jjdragonworldreloaded,
   jjdreamteam,
@@ -937,6 +948,7 @@ export const definitions = [
   jjultimategamerclub,
   jjunionfansub,
   jjvanila,
+  jjvizuk,
   jjwaffles,
   jjwihd,
   jjworldofp2P,

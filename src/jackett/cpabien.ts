@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.cpabien.link/'],
+  links: ['https://www.cpasbiens.cz/'],
   legacylinks: [
     'http://www.cpasbiens.cc/',
     'http://www.cpabien.cm/',
@@ -33,6 +33,7 @@ export const definition: TrackerDefinition = {
     'https://www.cpasbien.re/',
     'http://www.cpasbien.io/',
     'https://www.cpabien.bz/',
+    'https://www.cpabien.link/',
   ],
   caps: {
     categorymappings: [
@@ -42,16 +43,10 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   settings: [],
-  download: { selector: 'div#telecharger a', attribute: 'href' },
+  download: { selector: 'div.btn-download a', attribute: 'href' },
   search: {
-    paths: [
-      {
-        path: 'search.php',
-        method: 'post',
-        inputs: { t: '{{ .Keywords }}' },
-      },
-    ],
-    rows: { selector: 'div.ligne1, div.ligne2' },
+    paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
+    rows: { selector: 'div#gauche > table > tbody > tr:has(a)' },
     fields: {
       site_date: {
         selector: 'a',

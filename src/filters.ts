@@ -9,6 +9,7 @@ export type Filters =
   | TimeagoFilter
   | AppendFilter
   | DateparseFilter
+  | FuzzyDateparseFilter
   | DiacriticsFilter
   | PrependFilter
   | ValidfilenameFilter
@@ -64,6 +65,10 @@ export interface PrependFilter {
 export interface DateparseFilter {
   name: 'dateparse';
   args: string;
+}
+
+export interface FuzzyDateparseFilter {
+  name: 'fuzzytime';
 }
 
 /**
