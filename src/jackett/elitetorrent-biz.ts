@@ -19,6 +19,7 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
+    paths: [{ path: 'index.php' }, { path: 'index.php/page/2/' }, { path: 'index.php/page/3/' }],
     keywordsfilters: [
       { name: 're_replace', args: ['S0?(\\d{1,2})', ' $1 '] },
       { name: 're_replace', args: ['E(\\d{2,3})', ' $1 '] },
@@ -42,6 +43,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'split', args: ['/', 3] }],
       },
       size: {
+        optional: true,
         selector: '.voto1',
         filters: [{ name: 'replace', args: ['s', ''] }],
       },
@@ -51,7 +53,6 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
     },
-    paths: [{ path: 'index.php' }],
   },
   source: 'jackett',
 };
