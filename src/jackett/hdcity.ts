@@ -231,6 +231,17 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'IP requirement',
+      default:
+        'This site accepts only users with Spanish IP addresses.<br>For others it will return error: 403 Forbidden.',
+    },
+  ],
   login: {
     path: 'index.php?page=login',
     method: 'post',

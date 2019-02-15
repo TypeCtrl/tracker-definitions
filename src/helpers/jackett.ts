@@ -55,6 +55,7 @@ export const jackettSites = [
   'desitorrents',
   'diablotorrent',
   'digbt',
+  'divteam',
   'documentarytorrents',
   'downloadville',
   'dragonworldreloaded',

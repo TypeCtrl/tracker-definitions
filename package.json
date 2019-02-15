@@ -30,11 +30,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "24.0.0",
+    "@types/jest": "24.0.5",
     "@types/js-yaml": "3.12.0",
-    "@types/lodash": "4.14.120",
-    "@types/node": "10.12.21",
-    "@types/prettier": "1.15.2",
+    "@types/lodash": "4.14.121",
+    "@types/node": "11.9.4",
+    "@types/prettier": "1.16.1",
     "@types/rimraf": "2.0.2",
     "jest": "24.1.0",
     "js-yaml": "3.12.1",
@@ -47,7 +47,7 @@
     "tslint": "5.12.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-xo": "0.14.0",
-    "typescript": "3.3.1"
+    "typescript": "3.3.3"
   },
   "publishConfig": {
     "access": "public"
