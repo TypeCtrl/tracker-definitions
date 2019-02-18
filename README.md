@@ -1,4 +1,4 @@
-# tracker definitions
+# tracker definitions [![CircleCI](https://circleci.com/gh/TypeCtrl/tracker-definitions/tree/master.svg?style=svg)](https://circleci.com/gh/TypeCtrl/tracker-definitions/tree/master)
 
 > Tracker definitions from [jackett](https://github.com/Jackett/Jackett) and [cardigann](https://github.com/cardigann/cardigann) published as json and js modules. Data is somewhat normalized and types definitions available for modules.
 
