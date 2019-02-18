@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.torrentbd.com/'],
-  legacylinks: ['http://www.torrentbd.com/torrent'],
+  links: ['https://www.torrentbd.com/'],
+  legacylinks: ['http://www.torrentbd.com/torrent', 'http://www.torrentbd.com/'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime - All' },
@@ -90,10 +90,10 @@ export const definition: TrackerDefinition = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [{ selector: 'div.myFrame:has(div.myF-caption > font.error)' }],
+    error: [{ selector: 'div.row p.red-text' }],
     test: {
       path: 'torrent/torrents-search.php',
-      selector: 'div.myB-content:contains("Ratio:")',
+      selector: 'a[href*="logout"]',
     },
   },
   ratio: {

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'pt-BR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://amigos-share.club/'],
+  links: ['https://amigos-share.club/'],
+  legacylinks: ['http://amigos-share.club/'],
   caps: {
     categorymappings: [
       { id: '74', cat: 'XXX', desc: 'Adultos: XXX' },
@@ -117,8 +118,7 @@ export const definition: TrackerDefinition = {
   },
   login: {
     path: 'account-login.php',
-    method: 'form',
-    form: 'form.form-signin',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
