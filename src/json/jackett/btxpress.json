@@ -130,14 +130,14 @@
           {
             "name": "re_replace",
             "args": [
-              "(ay|kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|mois|Monat|месец|maand)",
+              " (ay|kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|mois|Monat|месец|maand)",
               "month"
             ]
           },
           {
             "name": "re_replace",
             "args": [
-              "(ay|kuud|måneder|mesi|miesiące|meses|měsíce|месяца|месяцев|luni|meses|mois|Monaten|месеца|maanden)",
+              " (ay|kuud|måneder|mesi|miesiące|meses|měsíce|месяца|месяцев|luni|meses|mois|Monaten|месеца|maanden)",
               "months"
             ]
           }

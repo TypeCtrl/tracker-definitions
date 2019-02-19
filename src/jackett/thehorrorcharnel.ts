@@ -10,7 +10,11 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://horrorcharnel.org/'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
+    },
     categorymappings: [{ id: '1', cat: 'Movies' }, { id: '2', cat: 'TV' }],
   },
   settings: [
@@ -47,11 +51,14 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
-    inputs: { search: '{{ .Query.Keywords }}', incldead: 1 },
+    inputs: {
+      search: '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      incldead: 1,
+      cat: 0,
+    },
     rows: {
       selector:
         'p + table > tbody > tr:has(a[href^="download.php"]), p + table > tbody > tr:has(a[href^="download.php"]) + tr[id^="kdescr"]',
-      filters: [{ name: 'andmatch' }],
       after: 1,
     },
     fields: {
