@@ -31,6 +31,7 @@ jobs:
       - run: npm run build
       - run: npm run semantic-release
   update_upstream:
+    github-token: $GH_TOKEN
     docker:
       - image: circleci/node:10
     steps:
@@ -68,7 +69,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "45 * * * *"
+          cron: "0 * * * *"
           filters:
             branches:
               only:
