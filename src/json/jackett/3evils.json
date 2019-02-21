@@ -8,12 +8,24 @@
   "links": ["https://www.3evils.com/"],
   "caps": {
     "categorymappings": [
-      { "id": "2", "cat": "Console", "desc": "Games" },
-      { "id": "3", "cat": "Movies", "desc": "Movies" },
-      { "id": "4", "cat": "Audio", "desc": "Music" },
-      { "id": "9", "cat": "TV/Anime", "desc": " Anime" },
-      { "id": "17", "cat": "TV", "desc": " TV" },
-      { "id": "18", "cat": "PC", "desc": "Appz" }
+      { "id": "65", "cat": "Books", "desc": "Books" },
+      { "id": "27", "cat": "Console/NDS", "desc": "Games/Nintendo-DS" },
+      { "id": "28", "cat": "Console/Other", "desc": "Games/Switch" },
+      { "id": "42", "cat": "PC/Phone-Android", "desc": "Mobile/Android" },
+      { "id": "44", "cat": "Movies/UHD", "desc": "Movies/4K" },
+      { "id": "13", "cat": "Movies/BluRay", "desc": "Movies/Bluray" },
+      { "id": "12", "cat": "Movies/DVD", "desc": "Movies/DVD-R" },
+      { "id": "14", "cat": "Movies", "desc": "Movies/Packs" },
+      { "id": "67", "cat": "Movies/HD", "desc": "Movies/x264" },
+      { "id": "55", "cat": "Movies/HD", "desc": "Movies/X265" },
+      { "id": "45", "cat": "Movies", "desc": "Movies/Remux" },
+      { "id": "62", "cat": "Audio", "desc": "Music/Audio" },
+      { "id": "32", "cat": "Audio", "desc": "Music/Packs" },
+      { "id": "6", "cat": "TV", "desc": "TV/Packs" },
+      { "id": "3", "cat": "TV/HD", "desc": "TV/x264" },
+      { "id": "4", "cat": "TV/HD", "desc": "TV/x265" },
+      { "id": "8", "cat": "TV/SD", "desc": "TV/Xvid" },
+      { "id": "63", "cat": "PC/0day", "desc": "Windows/Applications" }
     ],
     "modes": {
       "search": ["q"],
@@ -79,21 +91,18 @@
         ]
       },
       "size": { "selector": "td:nth-last-child(6)" },
-      "files": { "selector": "td:nth-last-child(9)" },
+      "files": { "selector": "a[href^=\"filelist.php?id=\"]" },
       "grabs": {
-        "selector": "td:nth-last-child(5)",
-        "filters": [{ "name": "replace", "args": ["Times", ""] }]
+        "selector": "a[href^=\"snatches.php?id=\"]",
+        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
       },
       "date": {
         "optional": true,
         "selector": "td:nth-last-child(7):not(:contains(\"day\"))",
-        "filters": [
-          { "name": "regex", "args": ["(.+?)<[^>]*>(.+?)", "$1 $2"] },
-          { "name": "dateparse", "args": "Jan 2 2006 03:04 pm" }
-        ]
+        "filters": [{ "name": "dateparse", "args": "Jan 2 2006 03:04 pm" }]
       },
-      "seeders": { "selector": "td:nth-last-child(4)" },
-      "leechers": { "selector": "td:nth-last-child(3)" },
+      "seeders": { "optional": true, "selector": "a[href$=\"#seeders\"]" },
+      "leechers": { "optional": true, "selector": "a[href$=\"#leechers\"]" },
       "downloadvolumefactor": {
         "case": { "b:contains(\"[FREE]\")": "0", "*": "1" }
       },
