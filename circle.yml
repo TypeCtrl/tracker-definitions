@@ -39,13 +39,12 @@ jobs:
           working_directory: ~/workdir
           command: |
             git clone --depth 1 https://${DOCS_GITHUB_TOKEN}@github.com/TypeCtrl/tracker-definitions.git
+            cd tracker-definitions
       - run:
           name: "Pull Submodules"
           command: |
             git submodule init
             git submodule update --remote
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - run: git submodule foreach git pull origin master
       - run: npm run update
@@ -73,7 +72,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "20 * * * *"
+          cron: "28 * * * *"
           filters:
             branches:
               only:
