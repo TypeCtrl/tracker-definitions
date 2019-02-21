@@ -91,6 +91,9 @@ export const jbitme = jjbitme;
 import { definition as jjbitspyder } from './bitspyder';
 export const jbitspyder = jjbitspyder;
 
+import { definition as jjbitturk } from './bitturk';
+export const jbitturk = jjbitturk;
+
 import { definition as jjbluebird } from './bluebird';
 export const jbluebird = jjbluebird;
 
@@ -640,6 +643,9 @@ export const jtorrentland = jjtorrentland;
 import { definition as jjtorrentlt } from './torrentlt';
 export const jtorrentlt = jjtorrentlt;
 
+import { definition as jjtorrentproject2 } from './torrentproject2';
+export const jtorrentproject2 = jjtorrentproject2;
+
 import { definition as jjtorrentsectorcrew } from './torrentsectorcrew';
 export const jtorrentsectorcrew = jjtorrentsectorcrew;
 
@@ -756,6 +762,7 @@ export const definitions = [
   jjbithumen,
   jjbitme,
   jjbitspyder,
+  jjbitturk,
   jjbluebird,
   jjblutopia,
   jjbtbit,
@@ -939,6 +946,7 @@ export const definitions = [
   jjtorrentkitty,
   jjtorrentland,
   jjtorrentlt,
+  jjtorrentproject2,
   jjtorrentsectorcrew,
   jjtorrentseeds,
   jjtorrentz2,

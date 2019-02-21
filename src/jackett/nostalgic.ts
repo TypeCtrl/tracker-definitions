@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'td.cats_col div a',
         attribute: 'href',
-        filters: [{ name: 'strdump' }, { name: 'regexp', args: '(\\d+)]=1' }, { name: 'strdump' }],
+        filters: [{ name: 'regexp', args: '(\\d+)]=1' }],
       },
       details: {
         selector: 'a[href^="/torrents.php?id="]',

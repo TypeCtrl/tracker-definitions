@@ -260,7 +260,7 @@ export const definition: TrackerDefinition = {
           '{{if .Config.vostfr }}{{ .Result.title_vostfr }}{{else}}{{ .Result.title_phase2 }}{{end}}',
       },
       details: { selector: ':nth-child(2) > a', attribute: 'href' },
-      category: { selector: ':nth-child(1) > div#hidden' },
+      category: { selector: ':nth-child(1) > div.hidden' },
       comments: {
         optional: true,
         selector: 'td:nth-child(1) > a[href$="#comments"]',
