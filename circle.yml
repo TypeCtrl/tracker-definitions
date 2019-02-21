@@ -31,7 +31,6 @@ jobs:
       - run: npm run build
       - run: npm run semantic-release
   update_upstream:
-    github-token: $GH_TOKEN
     docker:
       - image: circleci/node:10
     steps:
@@ -52,6 +51,7 @@ jobs:
             git config credential.helper "cache --timeout=120"
             git config user.email "scttcper@gmail.com"
             git config user.name "scttcper"
+            ssh-add -D
       - run: git add .
       - run: "git commit -a -m 'fix: update from upstream'"
       - run: git push
