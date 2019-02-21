@@ -34,17 +34,14 @@ jobs:
     docker:
       - image: circleci/node:10
     steps:
-      - run:
-          name: Clone
-          working_directory: ~/workdir
-          command: |
-            git clone --depth 1 https://${DOCS_GITHUB_TOKEN}@github.com/TypeCtrl/tracker-definitions.git
-            cd tracker-definitions
+      - checkout
       - run:
           name: "Pull Submodules"
           command: |
             git submodule init
             git submodule update --remote
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - run: git submodule foreach git pull origin master
       - run: npm run update
@@ -57,7 +54,6 @@ jobs:
             ssh-add -D
       - run: git add .
       - run: "git commit -a -m 'fix: update from upstream'"
-      - run: git push
       - run: git push -q https://${GH_TOKEN}@github.com/TypeCtrl/tracker-definitions.git master
 
 workflows:
@@ -72,7 +68,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "28 * * * *"
+          cron: "32 * * * *"
           filters:
             branches:
               only:
