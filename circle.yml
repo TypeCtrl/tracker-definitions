@@ -40,6 +40,9 @@ jobs:
       - run: npm install
       - run: git submodule foreach git pull origin master
       - run: npm run update
+      - run: git add .
+      - run: "git commit -a -m 'fix: update from upstream'"
+      - run: git push
 
 workflows:
   version: 2
