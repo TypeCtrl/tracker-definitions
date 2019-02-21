@@ -42,7 +42,7 @@ jobs:
             git submodule update --remote
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
-      - run: npm install
+      - run: npm ci
       - run: git submodule foreach git pull origin master
       - run: npm run update
       - run:
@@ -68,7 +68,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "32 * * * *"
+          cron: "0 0 * * *"
           filters:
             branches:
               only:
