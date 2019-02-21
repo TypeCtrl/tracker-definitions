@@ -35,14 +35,22 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
+      - run:
+          name: "Pull Submodules"
+          command: |
+            git submodule init
+            git submodule update --remote
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - run: git submodule foreach git pull origin master
       - run: npm run update
-      - run: git config credential.helper "cache --timeout=120"
-      - run: git config user.email "scttcper@gmail.com"
-      - run: git config user.name "scttcper"
+      - run:
+          name: "git config"
+          command: |
+            git config credential.helper "cache --timeout=120"
+            git config user.email "scttcper@gmail.com"
+            git config user.name "scttcper"
       - run: git add .
       - run: "git commit -a -m 'fix: update from upstream'"
       - run: git push
