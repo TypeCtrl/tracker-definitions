@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://theshinning.me/'],
-  legacylinks: ['https://theshinning.org'],
+  legacylinks: ['https://theshinning.org', 'https://theshinning.org/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },

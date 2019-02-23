@@ -131,7 +131,7 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: ["([a-zA-Z]+)\\s+(\\d{1,2})\\s+'(\\d{2})", '$2 $1 $3'],
           },
-          { name: 'dateparse', args: '02 Jan 06' },
+          { name: 'dateparse', args: '2 Jan 06' },
         ],
       },
       downloadvolumefactor: { case: { '*': 1 } },
