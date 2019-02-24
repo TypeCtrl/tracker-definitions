@@ -176,6 +176,7 @@ export const jackettSites = [
   'shokweb',
   'sktorrent',
   'skytorrentsclone',
+  'solidtorrents',
   'spacetorrent',
   'speed-share',
   'speedtorrentreloaded',

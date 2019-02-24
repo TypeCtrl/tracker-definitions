@@ -529,6 +529,9 @@ export const jsktorrent = jjsktorrent;
 import { definition as jjskytorrentsclone } from './skytorrentsclone';
 export const jskytorrentsclone = jjskytorrentsclone;
 
+import { definition as jjsolidtorrents } from './solidtorrents';
+export const jsolidtorrents = jjsolidtorrents;
+
 import { definition as jjspacetorrent } from './spacetorrent';
 export const jspacetorrent = jjspacetorrent;
 
@@ -908,6 +911,7 @@ export const definitions = [
   jjshokweb,
   jjsktorrent,
   jjskytorrentsclone,
+  jjsolidtorrents,
   jjspacetorrent,
   jjspeedShare,
   jjspeedtorrentreloaded,

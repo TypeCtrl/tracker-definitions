@@ -7,7 +7,10 @@
   "encoding": "WINDOWS-1251",
   "links": ["https://nnm-club.me/"],
   "legacylinks": ["https://nnm-club.name/"],
-  "certificates": ["7877113458e90f3643dd28424657a29469f5dc55"],
+  "certificates": [
+    "7877113458e90f3643dd28424657a29469f5dc55",
+    "0edfdcc8cf9f69dbe5473878145cae92504275b0"
+  ],
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
