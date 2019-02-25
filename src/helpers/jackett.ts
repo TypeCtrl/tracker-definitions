@@ -159,6 +159,7 @@ export const jackettSites = [
   'pwtorrents',
   'qxr',
   'racing4everyone',
+  'racingforme',
   'redstartorrent',
   'redtopia',
   'retroflix',

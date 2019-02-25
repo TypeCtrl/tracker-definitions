@@ -478,6 +478,9 @@ export const jqxr = jjqxr;
 import { definition as jjracing4Everyone } from './racing4everyone';
 export const jracing4Everyone = jjracing4Everyone;
 
+import { definition as jjracingforme } from './racingforme';
+export const jracingforme = jjracingforme;
+
 import { definition as jjredstartorrent } from './redstartorrent';
 export const jredstartorrent = jjredstartorrent;
 
@@ -894,6 +897,7 @@ export const definitions = [
   jjpwtorrents,
   jjqxr,
   jjracing4Everyone,
+  jjracingforme,
   jjredstartorrent,
   jjredtopia,
   jjretroflix,
