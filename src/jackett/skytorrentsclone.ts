@@ -43,16 +43,16 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created{{else}}top100{{end}}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created{{else}}top100{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=2{{else}}{{end}}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created&page=2{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=3{{else}}{{end}}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created&page=3{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=4{{else}}{{end}}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created&page=4{{else}}{{end}}',
       },
     ],
     rows: { selector: 'tr.result' },

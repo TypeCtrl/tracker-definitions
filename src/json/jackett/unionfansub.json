@@ -72,7 +72,10 @@
       "files": { "selector": "td:nth-last-child(8)" },
       "size": {
         "selector": "td:nth-last-child(5)",
-        "filters": [{ "name": "replace", "args": [",", "."] }]
+        "filters": [
+          { "name": "replace", "args": [".", ""] },
+          { "name": "replace", "args": [",", "."] }
+        ]
       },
       "grabs": { "selector": "td:nth-last-child(4)" },
       "seeders": { "selector": "td:nth-last-child(3)" },

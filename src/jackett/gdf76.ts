@@ -49,7 +49,7 @@ export const definition: TrackerDefinition = {
       active: 0,
     },
     rows: {
-      selector: 'tr:has(a[href^="index.php?page=torrent-details"])',
+      selector: 'tr > td > table > tbody tr:has(a[href^="index.php?page=torrent-details"])',
     },
     fields: {
       title: { selector: 'td a[href^="index.php?page=torrent-details"]' },

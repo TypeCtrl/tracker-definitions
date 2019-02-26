@@ -59,7 +59,6 @@
     "error": [{ "selector": "td.lista span[style=\"color:#FF0000;\"]" }],
     "test": { "path": "/", "selector": ":has(a[href=\"logout.php\"])" }
   },
-  "download": { "selector": "a[href^=\"download.php?id=\"]" },
   "search": {
     "paths": [{ "path": "index.php" }],
     "inputs": {
@@ -68,16 +67,29 @@
       "search": "{{if .Keywords }}{{.Keywords}}{{else}}{{end}}",
       "active": "1"
     },
-    "rows": { "selector": "tr.trclass" },
+    "rows": { "selector": "tr.trclass:not(:has(td.lista-cat-rec))" },
     "fields": {
-      "title": { "selector": "td.lista-list a" },
-      "details": { "selector": "td.lista-list a", "attribute": "href" },
+      "title": { "selector": "td a[href*=\"id=\"]" },
+      "details": { "selector": "td a[href*=\"id=\"]", "attribute": "href" },
       "category": {
-        "selector": "td.lista-cat a",
+        "selector": "td a[href*=\"category=\"]",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "category" }]
       },
-      "download": { "selector": "td.lista-list a", "attribute": "href" },
+      "download": {
+        "selector": "td a[href*=\"id=\"]",
+        "attribute": "href",
+        "filters": [
+          { "name": "querystring", "args": "id" },
+          { "name": "prepend", "args": "download.php?id=" },
+          { "name": "append", "args": "&f={{.Result.title}}.torrent" }
+        ]
+      },
+      "banner": {
+        "selector": "td a[href*=\"id=\"]",
+        "attribute": "onmouseover",
+        "filters": [{ "name": "regexp", "args": "src=(.+?) width=" }]
+      },
       "size": { "selector": "td:nth-child(6)" },
       "seeders": { "selector": "td:nth-child(7)" },
       "leechers": { "selector": "td:nth-child(8)" },
