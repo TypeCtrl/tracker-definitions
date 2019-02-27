@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'de-DE',
   type: 'private',
   encoding: 'WINDOWS-1252',
-  links: ['https://tsctracker.net/'],
+  links: ['https://tsctracker.org/'],
+  legacylinks: ['https://tsctracker.net/'],
   caps: {
     categorymappings: [
       { id: '65', cat: 'PC/Phone-Android', desc: 'Android' },
