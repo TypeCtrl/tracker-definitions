@@ -48,7 +48,7 @@ export const definition: TrackerDefinition = {
       sent: 'yes',
       returnto: '/',
     },
-    error: [{ selector: 'table:contains("Login failed!")' }],
+    error: [{ selector: 'div.error' }],
     test: { path: 'index.php' },
   },
   download: { selector: 'a[href^="download.php?id="]' },
@@ -56,7 +56,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{if .Keywords}}{{ .Keywords }}{{else}}  {{end}}',
     },
     rows: {
       selector: 'table#torrent_table > tbody > tr:has(a[href^="browse.php?cat="])',

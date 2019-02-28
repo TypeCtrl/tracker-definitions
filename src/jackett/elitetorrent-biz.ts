@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
-    paths: [{ path: 'index.php' }, { path: 'index.php/page/2/' }, { path: 'index.php/page/3/' }],
+    paths: [{ path: '/' }, { path: '/page/2/' }, { path: '/page/3/' }],
     keywordsfilters: [
       { name: 're_replace', args: ['S0?(\\d{1,2})', ' $1 '] },
       { name: 're_replace', args: ['E(\\d{2,3})', ' $1 '] },

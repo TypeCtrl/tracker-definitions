@@ -84,8 +84,7 @@ export const definition: TrackerDefinition = {
   },
   login: {
     path: 'torrent/account-login.php',
-    method: 'form',
-    form: 'form[action="account-login.php"]',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
@@ -93,7 +92,7 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.row p.red-text' }],
     test: {
       path: 'torrent/torrents-search.php',
-      selector: 'a[href*="logout"]',
+      selector: 'div.myB-content:contains("Ratio:")',
     },
   },
   ratio: {
