@@ -7,8 +7,9 @@ export const definition: TrackerDefinition = {
   language: 'it-IT',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://ilcorsaronero.vip/'],
+  links: ['https://ilcorsaronero.live/'],
   legacylinks: [
+    'https://ilcorsaronero.vip/',
     'https://ilcorsaronero.info/',
     'https://ilcorsaronero.ch/',
     'https://ilcorsaronero.cc/',
