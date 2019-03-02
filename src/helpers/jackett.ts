@@ -155,6 +155,7 @@ export const jackettSites = [
   'prostylex',
   'pt99',
   'ptfiles',
+  'pthome',
   'puntotorrent',
   'pwtorrents',
   'qxr',

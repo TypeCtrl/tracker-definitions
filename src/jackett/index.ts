@@ -466,6 +466,9 @@ export const jpt99 = jjpt99;
 import { definition as jjptfiles } from './ptfiles';
 export const jptfiles = jjptfiles;
 
+import { definition as jjpthome } from './pthome';
+export const jpthome = jjpthome;
+
 import { definition as jjpuntotorrent } from './puntotorrent';
 export const jpuntotorrent = jjpuntotorrent;
 
@@ -893,6 +896,7 @@ export const definitions = [
   jjprostylex,
   jjpt99,
   jjptfiles,
+  jjpthome,
   jjpuntotorrent,
   jjpwtorrents,
   jjqxr,
