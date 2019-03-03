@@ -47,9 +47,9 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'table > tbody > tr' },
     fields: {
       category: {
-        selector: 'a[href*="/categories/"]',
+        selector: 'a[href*="/category/"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
+        filters: [{ name: 'regexp', args: '/category/.*?\\.(\\d+)' }],
       },
       title: { selector: 'a.view-torrent' },
       download: {

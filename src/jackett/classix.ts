@@ -31,6 +31,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector: 'table > tbody > tr:has(a[href^="torrents.php?cat="])',
+      filters: [{ name: 'andmatch' }],
     },
     fields: {
       category: { text: 1 },
