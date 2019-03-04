@@ -64,34 +64,31 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'div[class="tgxtablerow clickable-row click"]' },
     fields: {
       title: {
-        selector: 'div.tgxtablecell:nth-child(3) div a',
+        selector: 'div a[href^="/torrent/"]',
         attribute: 'title',
       },
       category: {
-        selector: 'div.tgxtablecell a',
+        selector: 'div a[href^="/torrents.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
       details: {
-        selector: 'div.tgxtablecell:nth-child(3) div a',
+        selector: 'div a[href^="/torrent/"]',
         attribute: 'href',
       },
-      download: {
-        selector: 'div.tgxtablecell:nth-child(4) a',
-        attribute: 'href',
-      },
+      download: { selector: 'div a[href*="/get/"]', attribute: 'href' },
       magnet: {
-        selector: 'div.tgxtablecell:nth-child(4) a:nth-child(2)',
+        selector: 'div a[href^="magnet:?"]',
         attribute: 'href',
       },
-      size: { selector: 'div.tgxtablecell:nth-child(7) span' },
-      seeders: { selector: 'div.tgxtablecell:nth-child(10) span font b' },
+      size: { selector: 'div span[style^="border-radius"]' },
+      seeders: { selector: 'div span[title="Seeders/Leechers"] font b' },
       leechers: {
-        selector: 'div.tgxtablecell:nth-child(10) span font:nth-child(2) b',
+        selector: 'div span[title="Seeders/Leechers"] font:nth-child(2) b',
       },
       date: {
         optional: true,
-        selector: 'div.tgxtablecell:nth-child(11) small:contains(":")',
+        selector: 'div.tgxtablecell:last-of-type small:contains(":")',
         filters: [{ name: 'dateparse', args: '02/01/06 15:04' }],
       },
       downloadvolumefactor: { text: '0' },
