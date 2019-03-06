@@ -523,6 +523,9 @@ export const jshareisland = jjshareisland;
 import { definition as jjsharespacedb } from './sharespacedb';
 export const jsharespacedb = jjsharespacedb;
 
+import { definition as jjsharingue } from './sharingue';
+export const jsharingue = jjsharingue;
+
 import { definition as jjshellife } from './shellife';
 export const jshellife = jjshellife;
 
@@ -915,6 +918,7 @@ export const definitions = [
   jjsdbits,
   jjshareisland,
   jjsharespacedb,
+  jjsharingue,
   jjshellife,
   jjshokweb,
   jjsktorrent,

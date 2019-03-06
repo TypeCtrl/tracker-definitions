@@ -174,6 +174,7 @@ export const jackettSites = [
   'sdbits',
   'shareisland',
   'sharespacedb',
+  'sharingue',
   'shellife',
   'shokweb',
   'sktorrent',
