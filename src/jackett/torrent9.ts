@@ -46,7 +46,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}/search_torrent/{{ .Keywords }}/page-0{{else}}/top_torrent.php{{end}}',
+          '{{ if .Keywords }}/search_torrent/{{ re_replace .Keywords "[\']+" "" }}/page-0{{else}}/top_torrent.php{{end}}',
       },
     ],
     rows: { selector: 'div.table-responsive > table tbody tr' },

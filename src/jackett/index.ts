@@ -673,6 +673,9 @@ export const jtorrof = jjtorrof;
 import { definition as jjtorviet } from './torviet';
 export const jtorviet = jjtorviet;
 
+import { definition as jjtotallykids } from './totallykids';
+export const jtotallykids = jjtotallykids;
+
 import { definition as jjtotheglory } from './totheglory';
 export const jtotheglory = jjtotheglory;
 
@@ -968,6 +971,7 @@ export const definitions = [
   jjtorrentz2,
   jjtorrof,
   jjtorviet,
+  jjtotallykids,
   jjtotheglory,
   jjtrancetraffic,
   jjtrezzor,

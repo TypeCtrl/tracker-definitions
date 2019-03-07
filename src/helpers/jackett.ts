@@ -224,6 +224,7 @@ export const jackettSites = [
   'torrentz2',
   'torrof',
   'torviet',
+  'totallykids',
   'totheglory',
   'trancetraffic',
   'trezzor',
