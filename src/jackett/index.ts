@@ -628,9 +628,6 @@ export const jtorrentbd = jjtorrentbd;
 import { definition as jjtorrentccf } from './torrentccf';
 export const jtorrentccf = jjtorrentccf;
 
-import { definition as jjtorrentcouch } from './torrentcouch';
-export const jtorrentcouch = jjtorrentcouch;
-
 import { definition as jjtorrentdownloads } from './torrentdownloads';
 export const jtorrentdownloads = jjtorrentdownloads;
 
@@ -956,7 +953,6 @@ export const definitions = [
   jjtorrent9Clone,
   jjtorrentbd,
   jjtorrentccf,
-  jjtorrentcouch,
   jjtorrentdownloads,
   jjtorrentfunk,
   jjtorrentgalaxyorg,

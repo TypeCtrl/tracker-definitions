@@ -209,7 +209,6 @@ export const jackettSites = [
   'torrent9clone',
   'torrentbd',
   'torrentccf',
-  'torrentcouch',
   'torrentdownloads',
   'torrentfunk',
   'torrentgalaxyorg',

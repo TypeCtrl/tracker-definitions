@@ -13,7 +13,11 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'Movies/HD', desc: 'Movies' },
       { id: '2', cat: 'TV/HD', desc: 'TV-Shows' },
     ],
-    modes: { searchstr: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },
