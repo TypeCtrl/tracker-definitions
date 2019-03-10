@@ -108,7 +108,6 @@ export const jackettSites = [
   'hush',
   'hyperay',
   'icetorrent',
-  'idopeclone',
   'ilcorsaroblu',
   'ilcorsaronero',
   'iloveclassics',

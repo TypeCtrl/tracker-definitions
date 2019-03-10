@@ -5,7 +5,7 @@ export const definition: TrackerDefinition = {
   name: 'Xtreme Zone',
   description: 'XtreMeZone (MYXZ) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.myxz.eu/'],
   caps: {

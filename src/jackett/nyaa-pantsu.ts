@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://nyaa.pantsu.cat/'],
+  links: ['https://nyaa.pantsu.cat/', 'https://nyaa.pt/'],
   settings: [
     {
       name: 'cat-id',

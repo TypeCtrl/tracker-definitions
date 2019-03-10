@@ -325,9 +325,6 @@ export const jhyperay = jjhyperay;
 import { definition as jjicetorrent } from './icetorrent';
 export const jicetorrent = jjicetorrent;
 
-import { definition as jjidopeclone } from './idopeclone';
-export const jidopeclone = jjidopeclone;
-
 import { definition as jjilcorsaroblu } from './ilcorsaroblu';
 export const jilcorsaroblu = jjilcorsaroblu;
 
@@ -852,7 +849,6 @@ export const definitions = [
   jjhush,
   jjhyperay,
   jjicetorrent,
-  jjidopeclone,
   jjilcorsaroblu,
   jjilcorsaronero,
   jjiloveclassics,
