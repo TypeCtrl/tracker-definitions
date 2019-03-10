@@ -15,7 +15,6 @@ import { definitions } from '@ctrl/tracker-definitions';
 for (const def of definitions) {
   console.log(def.source, def.name);
 }
-
 ```
 
 ### Definitions docs: 

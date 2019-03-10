@@ -100,6 +100,7 @@ export const jackettSites = [
   'hdforever',
   'hdhome',
   'hdme',
+  'hdplus',
   'hdsky',
   'hdspain',
   'hdtorrentsit',

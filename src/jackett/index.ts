@@ -301,6 +301,9 @@ export const jhdhome = jjhdhome;
 import { definition as jjhdme } from './hdme';
 export const jhdme = jjhdme;
 
+import { definition as jjhdplus } from './hdplus';
+export const jhdplus = jjhdplus;
+
 import { definition as jjhdsky } from './hdsky';
 export const jhdsky = jjhdsky;
 
@@ -841,6 +844,7 @@ export const definitions = [
   jjhdforever,
   jjhdhome,
   jjhdme,
+  jjhdplus,
   jjhdsky,
   jjhdspain,
   jjhdtorrentsit,
