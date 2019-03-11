@@ -84,10 +84,7 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(8)' },
       date: {
         selector: 'td:nth-child(4)',
-        filters: [
-          { name: 'append', args: ' +0700' },
-          { name: 'dateparse', args: '2006-01-0215:04:05 -0700' },
-        ],
+        filters: [{ name: 'timeago' }],
       },
       downloadvolumefactor: {
         case: {

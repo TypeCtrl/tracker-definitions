@@ -154,6 +154,9 @@ export const jcrnaberza = jjcrnaberza;
 import { definition as jjcztorrent } from './cztorrent';
 export const jcztorrent = jjcztorrent;
 
+import { definition as jjdarkShadow } from './dark-shadow';
+export const jdarkShadow = jjdarkShadow;
+
 import { definition as jjdatascene } from './datascene';
 export const jdatascene = jjdatascene;
 
@@ -795,6 +798,7 @@ export const definitions = [
   jjcpasbienclone,
   jjcrnaberza,
   jjcztorrent,
+  jjdarkShadow,
   jjdatascene,
   jjdeildu,
   jjdesitorrents,

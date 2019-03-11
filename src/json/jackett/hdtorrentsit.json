@@ -107,6 +107,7 @@
       "size": { "selector": "td:nth-child(3)" },
       "seeders": {
         "selector": "td:nth-child(4)",
+        "optional": true,
         "filters": [
           {
             "name": "re_replace",
@@ -116,6 +117,7 @@
       },
       "leechers": {
         "selector": "td:nth-child(4)",
+        "optional": true,
         "filters": [
           {
             "name": "re_replace",

@@ -51,6 +51,7 @@ export const jackettSites = [
   'cpasbienclone',
   'crnaberza',
   'cztorrent',
+  'dark-shadow',
   'datascene',
   'deildu',
   'desitorrents',

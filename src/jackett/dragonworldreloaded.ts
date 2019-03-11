@@ -246,10 +246,9 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { case: { '*': '1' } },
       date: {
-        selector: 'div.selection_unter_ab',
+        selector: 'div.selection_unter_ab:contains(".")',
+        optional: true,
         filters: [
-          { name: 'replace', args: ['Heute', 'Today'] },
-          { name: 'replace', args: ['Gestern', 'Yesterday'] },
           { name: 'replace', args: [' um', ''] },
           { name: 'dateparse', args: '02.01.2006 15:04:05' },
         ],

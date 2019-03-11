@@ -97,6 +97,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(3)' },
       seeders: {
         selector: 'td:nth-child(4)',
+        optional: true,
         filters: [
           {
             name: 're_replace',
@@ -106,6 +107,7 @@ export const definition: TrackerDefinition = {
       },
       leechers: {
         selector: 'td:nth-child(4)',
+        optional: true,
         filters: [
           {
             name: 're_replace',
