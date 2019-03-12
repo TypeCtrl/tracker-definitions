@@ -22,6 +22,9 @@ export const jacgrip = jjacgrip;
 import { definition as jjacidlounge } from './acidlounge';
 export const jacidlounge = jjacidlounge;
 
+import { definition as jjaftershock } from './aftershock';
+export const jaftershock = jjaftershock;
+
 import { definition as jjalein } from './alein';
 export const jalein = jjalein;
 
@@ -754,6 +757,7 @@ export const definitions = [
   jjbittorrentfiles,
   jjacgrip,
   jjacidlounge,
+  jjaftershock,
   jjalein,
   jjamigosshare,
   jjanidex,
