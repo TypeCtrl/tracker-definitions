@@ -670,9 +670,6 @@ export const jtorrentseeds = jjtorrentseeds;
 import { definition as jjtorrentz2 } from './torrentz2';
 export const jtorrentz2 = jjtorrentz2;
 
-import { definition as jjtorrof } from './torrof';
-export const jtorrof = jjtorrof;
-
 import { definition as jjtorviet } from './torviet';
 export const jtorviet = jjtorviet;
 
@@ -973,7 +970,6 @@ export const definitions = [
   jjtorrentsectorcrew,
   jjtorrentseeds,
   jjtorrentz2,
-  jjtorrof,
   jjtorviet,
   jjtotallykids,
   jjtotheglory,

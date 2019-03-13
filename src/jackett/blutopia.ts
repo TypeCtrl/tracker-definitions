@@ -64,6 +64,11 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(6)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
+      imdb: {
+        optional: true,
+        selector: 'a[href^="https://www.imdb.com/title/"]',
+        attribute: 'href',
+      },
       date: {
         selector: 'time',
         filters: [
@@ -141,6 +146,7 @@ export const definition: TrackerDefinition = {
         case: {
           'i[data-original-title="100% Free"]': '0',
           'i[data-original-title="Global FreeLeech"]': '0',
+          'i[data-original-title="Freeleech"]': '0',
           '*': '1',
         },
       },

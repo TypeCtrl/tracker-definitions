@@ -223,7 +223,6 @@ export const jackettSites = [
   'torrentsectorcrew',
   'torrentseeds',
   'torrentz2',
-  'torrof',
   'torviet',
   'totallykids',
   'totheglory',

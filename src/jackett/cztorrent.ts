@@ -10,13 +10,12 @@ export const definition: TrackerDefinition = {
   links: ['https://tracker.cztorrent.net/'],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'Movies', desc: 'Filmy' },
-      { id: '25', cat: 'TV', desc: 'Seriály' },
-      { id: '23', cat: 'TV/Documentary', desc: 'Filmy - dokument' },
       { id: '22', cat: 'PC', desc: 'Aplikace' },
+      { id: '1', cat: 'Movies', desc: 'Filmy' },
       { id: '36', cat: 'Movies/3D', desc: 'Filmy - 3D' },
       { id: '35', cat: 'Movies/Other', desc: 'Filmy - anime' },
       { id: '37', cat: 'Movies/BluRay', desc: 'Filmy - Blu-ray' },
+      { id: '33', cat: 'TV/Documentary', desc: 'Filmy - dokument' },
       { id: '11', cat: 'Movies/DVD', desc: 'Filmy - DVD' },
       { id: '30', cat: 'Movies/DVD', desc: 'Filmy - DVD full' },
       { id: '5', cat: 'Movies', desc: 'Filmy - kreslené' },
@@ -30,6 +29,7 @@ export const definition: TrackerDefinition = {
       { id: '32', cat: 'Audio', desc: 'Mluvené slovo' },
       { id: '16', cat: 'PC/Phone-Other', desc: 'Mobil, PDA' },
       { id: '4', cat: 'Other', desc: 'Ostatní' },
+      { id: '25', cat: 'TV', desc: 'Seriály' },
       { id: '29', cat: 'Audio', desc: 'Soundtrack' },
       { id: '19', cat: 'Audio/Video', desc: 'Videoklipy' },
       { id: '24', cat: 'XXX', desc: 'xXx' },
@@ -80,11 +80,11 @@ export const definition: TrackerDefinition = {
         ],
       },
       category: {
-        selector: 'td:nth-child(2)',
+        selector: 'td.categorie',
         case: {
           ':contains("Filmy")': 1,
           ':contains("Seriály")': 25,
-          ':contains("Filmy - dokument")': 23,
+          ':contains("Filmy - dokument")': 33,
           ':contains("Aplikace")': 22,
           ':contains("Filmy - 3D")': 36,
           ':contains("Filmy - anime")': 35,
@@ -111,18 +111,14 @@ export const definition: TrackerDefinition = {
       download: { selector: 'td.download a', attribute: 'href' },
       size: {
         selector: 'td.detaily',
-        filters: [
-          { name: 'split', args: ['|', 0] },
-          { name: 'regexp', args: 'Velikost: (.+?) ?$' },
-        ],
+        filters: [{ name: 'split', args: ['|', 1] }],
       },
       date: {
-        selector: 'td:nth-child(4)',
+        selector: 'td.detaily',
         filters: [
-          { name: 'split', args: ['|', 1] },
-          { name: 'regexp', args: 'Přidán: (.+?) ?$' },
+          { name: 'split', args: ['|', 2] },
           { name: 'append', args: ' +02:00' },
-          { name: 'dateparse', args: '2.1.2006 15:04 -07:00' },
+          { name: 'dateparse', args: '2.1.2006 15:04  -07:00' },
         ],
       },
       seeders: { selector: 'td:nth-child(7) span' },

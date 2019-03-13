@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://en.metal-tracker.com/'],
+  links: ['https://en.metal-tracker.com/'],
+  legacylinks: ['http://en.metal-tracker.com/'],
   caps: {
     modes: {
       search: ['q'],
@@ -22,7 +23,7 @@ export const definition: TrackerDefinition = {
   },
   login: {
     path: 'user/login.html',
-    method: 'form',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
