@@ -67,7 +67,11 @@ export const definition: TrackerDefinition = {
       { id: '48', cat: 'XXX/Packs', desc: 'xXx-Packs' },
       { id: '6', cat: 'XXX/XviD', desc: 'xXx-XviD' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
+    },
   },
   login: {
     path: 'login.php',
@@ -85,9 +89,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{if .Query.IMDBID}}{{.Query.IMDBID}}{{else}}{{.Keywords}}{{end}}',
       incldead: '1',
-      searchin: 'title',
+      searchin: '{{if .Query.IMDBID}}all{{else}}title{{end}}',
     },
     rows: {
       selector: 'table > tbody > tr:has(a[href^="download.php?torrent="])',

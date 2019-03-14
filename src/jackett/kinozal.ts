@@ -87,6 +87,12 @@ export const definition: TrackerDefinition = {
         '12': 'Silver (50%DL)',
       },
     },
+    {
+      name: 'striprussian',
+      type: 'checkbox',
+      label: 'Strip Russian Letters',
+      default: true,
+    },
   ],
   login: {
     path: 'takelogin.php',
@@ -125,8 +131,8 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(\\([Сс]езон\\s+(\\d+).+[Сс]ери[ия]\\s+(?:(\\d+-*\\d*).*\\d+)*\\))',
-              '(S$2E$3) RUS',
+              '(\\((\\d+)\\s+[Сс]езон:\\s+((\\d+-*\\d*)\\s+[Сс]ери[ия]\\s+.*\\d+)*\\))',
+              '(S$2E$4) RUS',
             ],
           },
           {
