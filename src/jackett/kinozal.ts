@@ -111,6 +111,14 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
+    keywordsfilters: [
+      { name: 'diacritics', args: 'replace' },
+      { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', '$1'] },
+      {
+        name: 're_replace',
+        args: ['(?i)\\bS0*(\\d+)E0*(\\d+)\\b', '$1 $2'],
+      },
+    ],
     inputs: {
       c: '0',
       s: '{{ .Keywords }}',
@@ -131,10 +139,11 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(\\((\\d+)\\s+[Сс]езон:\\s+((\\d+-*\\d*)\\s+[Сс]ери[ия]\\s+.*\\d+)*\\))',
-              '(S$2E$4) RUS',
+              '\\((\\d+)\\s+[Сс]езон:\\s+((\\d+-*\\d*)\\s+[Сс]ери[ия]\\s+.*\\d+)\\)(.*)',
+              '$4 S$1E$2 RUS ',
             ],
           },
+          { name: 're_replace', args: ['\\((\\d+p)\\)', '$1'] },
           {
             name: 're_replace',
             args: [
@@ -144,6 +153,7 @@ export const definition: TrackerDefinition = {
           },
           { name: 'replace', args: ['WEBDLRip', 'WEBDL'] },
           { name: 'replace', args: ['WEB-DLRip', 'WEBDL'] },
+          { name: 'replace', args: ['WEB-DL', 'WEBDL'] },
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
       },

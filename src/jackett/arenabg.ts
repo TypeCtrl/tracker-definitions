@@ -77,6 +77,17 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'downloadlink',
+      type: 'select',
+      label: 'Download link',
+      default: 'magnet:',
+      options: { '/download/': '.torrent', 'magnet:': 'magnet' },
+    },
+  ],
   login: {
     path: '/',
     method: 'form',
@@ -94,7 +105,7 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: '/', selector: 'a[href="/users/logout/"]' },
   },
-  download: { selector: 'a[href^="magnet:?"]' },
+  download: { selector: 'a[href^="{{ .Config.downloadlink }}"]' },
   search: {
     paths: [{ path: 'torrents/', method: 'post', followredirect: true }],
     inputs: {
@@ -117,7 +128,7 @@ export const definition: TrackerDefinition = {
       download: { selector: 'td.filename div a', attribute: 'href' },
       size: { selector: 'td:nth-child(4)' },
       date: {
-        selector: 'td:nth-child(3):has("-")',
+        selector: 'td:nth-child(3):contains("-")',
         optional: true,
         filters: [{ name: 'dateparse', args: '2006-01-02' }],
       },

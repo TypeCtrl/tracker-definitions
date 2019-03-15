@@ -370,6 +370,9 @@ export const jkickasstorrentKathow = jjkickasstorrentKathow;
 import { definition as jjkickasstorrent } from './kickasstorrent';
 export const jkickasstorrent = jjkickasstorrent;
 
+import { definition as jjkikibt } from './kikibt';
+export const jkikibt = jjkikibt;
+
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
 
@@ -870,6 +873,7 @@ export const definitions = [
   jjkatcrs,
   jjkickasstorrentKathow,
   jjkickasstorrent,
+  jjkikibt,
   jjkinozal,
   jjlesaloon,
   jjlimetorrents,

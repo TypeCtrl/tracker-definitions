@@ -123,6 +123,7 @@ export const jackettSites = [
   'katcrs',
   'kickasstorrent-kathow',
   'kickasstorrent',
+  'kikibt',
   'kinozal',
   'lesaloon',
   'limetorrents',
