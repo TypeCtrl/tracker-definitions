@@ -1381,13 +1381,13 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'a[href^="viewtopic.php?t="] > b',
         filters: [
-          { name: 're_replace', args: ['\\b(\\d)\\b', '0$1'] },
           { name: 'replace', args: ['Кураж-Бамбей', 'kurazh'] },
+          { name: 'replace', args: ['Кубик в Кубе', 'Kubik'] },
           {
             name: 're_replace',
             args: [
               '(\\([Сс]езон\\s+(\\d+).+[Сс]ери[ия]\\s+(?:(\\d+-*\\d*).*\\d+)*\\))',
-              '(S$2E$3) RUS',
+              'S$2E$3 RUS',
             ],
           },
           {

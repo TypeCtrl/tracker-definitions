@@ -388,6 +388,9 @@ export const jlinkomanija = jjlinkomanija;
 import { definition as jjlosslessclub } from './losslessclub';
 export const jlosslessclub = jjlosslessclub;
 
+import { definition as jjmactorrents } from './mactorrents';
+export const jmactorrents = jjmactorrents;
+
 import { definition as jjmagico } from './magico';
 export const jmagico = jjmagico;
 
@@ -879,6 +882,7 @@ export const definitions = [
   jjlimetorrents,
   jjlinkomanija,
   jjlosslessclub,
+  jjmactorrents,
   jjmagico,
   jjmagnetdl,
   jjmajomparade,

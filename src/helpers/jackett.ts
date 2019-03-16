@@ -129,6 +129,7 @@ export const jackettSites = [
   'limetorrents',
   'linkomanija',
   'losslessclub',
+  'mactorrents',
   'magico',
   'magnetdl',
   'majomparade',

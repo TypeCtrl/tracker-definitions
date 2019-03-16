@@ -132,13 +132,13 @@
       "title": {
         "selector": "td.nam a[href^=\"/details.php?id=\"]",
         "filters": [
-          { "name": "re_replace", "args": ["\\b(\\d)\\b", "0$1"] },
           { "name": "replace", "args": ["Кураж-Бамбей", "kurazh"] },
+          { "name": "replace", "args": ["Кубик в Кубе", "Kubik"] },
           {
             "name": "re_replace",
             "args": [
-              "\\((\\d+)\\s+[Сс]езон:\\s+((\\d+-*\\d*)\\s+[Сс]ери[ия]\\s+.*\\d+)\\)(.*)",
-              "$4 S$1E$2 RUS "
+              "\\((\\d+)\\s+[Сс]езон:\\s+(?:(\\d+-*\\d*)\\s+[Сс]ери[ия]\\s+.*\\d+)\\)(.*)",
+              "$3 S$1E$2 RUS "
             ]
           },
           { "name": "re_replace", "args": ["\\((\\d+p)\\)", "$1"] },

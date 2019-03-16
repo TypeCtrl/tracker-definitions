@@ -59,7 +59,7 @@
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}"
     },
-    "error": [{ "selector": "font:contains(\"failed\") + table" }],
+    "error": [{ "selector": "div.alert:contains(\"failed\")" }],
     "test": { "path": "browse.php" }
   },
   "ratio": { "text": -1 },
