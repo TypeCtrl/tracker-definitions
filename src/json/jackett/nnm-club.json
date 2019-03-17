@@ -1378,13 +1378,14 @@
       "title": {
         "selector": "a[href^=\"viewtopic.php?t=\"] > b",
         "filters": [
+          { "name": "replace", "args": [" / ", " "] },
           { "name": "replace", "args": ["Кураж-Бамбей", "kurazh"] },
           { "name": "replace", "args": ["Кубик в Кубе", "Kubik"] },
           {
             "name": "re_replace",
             "args": [
-              "(\\([Сс]езон\\s+(\\d+).+[Сс]ери[ия]\\s+(?:(\\d+-*\\d*).*\\d+)*\\))",
-              "S$2E$3 RUS"
+              "((\\([12][0-9]{3}\\))(.+)\\([Сс]езон\\s+(\\d+).+[Сс]ери[ия]\\s+(?:(\\d+-*\\d*).*\\d+)*\\))",
+              " - S$4E$5 - rus $3"
             ]
           },
           {
@@ -1394,8 +1395,9 @@
               "{{ if .Config.striprussian }}{{ else }}$1$2$3$4{{ end }}"
             ]
           },
+          { "name": "replace", "args": ["-Rip", "Rip"] },
+          { "name": "replace", "args": ["WEB-DL", "WEBDL"] },
           { "name": "replace", "args": ["WEBDLRip", "WEBDL"] },
-          { "name": "replace", "args": ["WEB-DLRip", "WEBDL"] },
           { "name": "replace", "args": ["HDTVRip", "HDTV"] }
         ]
       },

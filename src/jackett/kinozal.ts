@@ -134,16 +134,16 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'td.nam a[href^="/details.php?id="]',
         filters: [
+          { name: 'replace', args: [' / ', ' '] },
           { name: 'replace', args: ['Кураж-Бамбей', 'kurazh'] },
           { name: 'replace', args: ['Кубик в Кубе', 'Kubik'] },
           {
             name: 're_replace',
             args: [
-              '\\((\\d+)\\s+[Сс]езон:\\s+(?:(\\d+-*\\d*)\\s+[Сс]ери[ия]\\s+.*\\d+)\\)(.*)',
-              '$3 S$1E$2 RUS ',
+              '\\((\\d+)\\s+[Сс]езон:\\s+(?:(\\d+-*\\d*)\\s+[Сс]ери[ия]\\s+.*\\d+)\\)(.*)\\s([12][0-9]{3})\\s(.*)',
+              '$3 - S$1E$2 - rus $5',
             ],
           },
-          { name: 're_replace', args: ['\\((\\d+p)\\)', '$1'] },
           {
             name: 're_replace',
             args: [
@@ -151,9 +151,10 @@ export const definition: TrackerDefinition = {
               '{{ if .Config.striprussian }}{{ else }}$1$2$3$4{{ end }}',
             ],
           },
-          { name: 'replace', args: ['WEBDLRip', 'WEBDL'] },
-          { name: 'replace', args: ['WEB-DLRip', 'WEBDL'] },
+          { name: 're_replace', args: ['\\((\\d+p)\\)', '$1'] },
+          { name: 'replace', args: ['-Rip', 'Rip'] },
           { name: 'replace', args: ['WEB-DL', 'WEBDL'] },
+          { name: 'replace', args: ['WEBDLRip', 'WEBDL'] },
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
       },

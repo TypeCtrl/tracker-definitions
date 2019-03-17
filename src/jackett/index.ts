@@ -82,6 +82,9 @@ export const jbigtorrent = jjbigtorrent;
 import { definition as jjbigtower } from './bigtower';
 export const jbigtower = jjbigtower;
 
+import { definition as jjbitTitan } from './bit-titan';
+export const jbitTitan = jjbitTitan;
+
 import { definition as jjbithorlo } from './bithorlo';
 export const jbithorlo = jjbithorlo;
 
@@ -231,6 +234,9 @@ export const jfilmPaleis = jjfilmPaleis;
 
 import { definition as jjfreedomhd } from './freedomhd';
 export const jfreedomhd = jjfreedomhd;
+
+import { definition as jjfreetorrent } from './freetorrent';
+export const jfreetorrent = jjfreetorrent;
 
 import { definition as jjfrozenlayer } from './frozenlayer';
 export const jfrozenlayer = jjfrozenlayer;
@@ -456,6 +462,9 @@ export const jnyoo = jjnyoo;
 
 import { definition as jjourbits } from './ourbits';
 export const jourbits = jjourbits;
+
+import { definition as jjp2Pbg } from './p2pbg';
+export const jp2Pbg = jjp2Pbg;
 
 import { definition as jjpassionetorrent } from './passionetorrent';
 export const jpassionetorrent = jjpassionetorrent;
@@ -780,6 +789,7 @@ export const definitions = [
   jjbackups,
   jjbigtorrent,
   jjbigtower,
+  jjbitTitan,
   jjbithorlo,
   jjbithumen,
   jjbitme,
@@ -830,6 +840,7 @@ export const definitions = [
   jjfemdomcult,
   jjfilmPaleis,
   jjfreedomhd,
+  jjfreetorrent,
   jjfrozenlayer,
   jjfullmixmusic,
   jjfunkytorrents,
@@ -905,6 +916,7 @@ export const definitions = [
   jjnyaasi,
   jjnyoo,
   jjourbits,
+  jjp2Pbg,
   jjpassionetorrent,
   jjpiratbit,
   jjpolishsource,
