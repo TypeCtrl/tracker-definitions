@@ -43,9 +43,6 @@ export const jaox = jjaox;
 import { definition as jjarabafenice } from './arabafenice';
 export const jarabafenice = jjarabafenice;
 
-import { definition as jjarchetorrent } from './archetorrent';
-export const jarchetorrent = jjarchetorrent;
-
 import { definition as jjarenabg } from './arenabg';
 export const jarenabg = jjarenabg;
 
@@ -108,6 +105,9 @@ export const jblutopia = jjblutopia;
 
 import { definition as jjbtbit } from './btbit';
 export const jbtbit = jjbtbit;
+
+import { definition as jjbtdigg } from './btdigg';
+export const jbtdigg = jjbtdigg;
 
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
@@ -472,6 +472,9 @@ export const jpassionetorrent = jjpassionetorrent;
 import { definition as jjpiratbit } from './piratbit';
 export const jpiratbit = jjpiratbit;
 
+import { definition as jjpleasuredome } from './pleasuredome';
+export const jpleasuredome = jjpleasuredome;
+
 import { definition as jjpolishsource } from './polishsource';
 export const jpolishsource = jjpolishsource;
 
@@ -543,6 +546,9 @@ export const jshareisland = jjshareisland;
 
 import { definition as jjsharespacedb } from './sharespacedb';
 export const jsharespacedb = jjsharespacedb;
+
+import { definition as jjsharewood } from './sharewood';
+export const jsharewood = jjsharewood;
 
 import { definition as jjsharingue } from './sharingue';
 export const jsharingue = jjsharingue;
@@ -776,7 +782,6 @@ export const definitions = [
   jjanirena,
   jjaox,
   jjarabafenice,
-  jjarchetorrent,
   jjarenabg,
   jjasiancinema,
   jjasiandvdclub,
@@ -798,6 +803,7 @@ export const definitions = [
   jjbluebird,
   jjblutopia,
   jjbtbit,
+  jjbtdigg,
   jjbtgigs,
   jjbtkitty,
   jjbtnext,
@@ -919,6 +925,7 @@ export const definitions = [
   jjp2Pbg,
   jjpassionetorrent,
   jjpiratbit,
+  jjpleasuredome,
   jjpolishsource,
   jjproaudiotorrents,
   jjprostylex,
@@ -943,6 +950,7 @@ export const definitions = [
   jjsdbits,
   jjshareisland,
   jjsharespacedb,
+  jjsharewood,
   jjsharingue,
   jjshellife,
   jjshokweb,

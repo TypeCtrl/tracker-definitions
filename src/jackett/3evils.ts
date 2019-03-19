@@ -92,7 +92,7 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      size: { selector: 'td:nth-last-child(6)' },
+      size: { selector: 'td:nth-last-child(4)' },
       files: { selector: 'a[href^="filelist.php?id="]' },
       grabs: {
         selector: 'a[href^="snatches.php?id="]',
@@ -100,7 +100,7 @@ export const definition: TrackerDefinition = {
       },
       date: {
         optional: true,
-        selector: 'td:nth-last-child(7):not(:contains("day"))',
+        selector: 'td:nth-last-child(5):not(:contains("day"))',
         filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 pm' }],
       },
       seeders: { optional: true, selector: 'a[href$="#seeders"]' },
