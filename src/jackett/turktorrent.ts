@@ -103,19 +103,36 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
+    keywordsfilters: [
+      {
+        name: 're_replace',
+        args: ['(?i)\\bS0*(\\d+)E0*(\\d+)\\b', '$1.sezon $2.blm'],
+      },
+    ],
     inputs: {
       do: 'search',
-      keywords: '{{.Keywords}}',
+      keywords: '{{if .Keywords}}"{{.Keywords}}"{{else}}{{end}}',
       category: '0',
       search_type: 't_name',
       include_dead_torrents: 'yes',
     },
     rows: {
       selector: 'table#sortabletable tbody tr:has(div[id^="port-target-"])',
-      filters: [{ name: 'andmatch' }],
     },
     fields: {
-      title: { selector: 'div[id^="port-target-"] a' },
+      title: {
+        selector: 'div[id^="port-target-"] a',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)\\b(\\d+).sezon\\s(\\d+).blm\\b', 'S$1E$2'],
+          },
+          {
+            name: 're_replace',
+            args: ['\\((\\d+)\\.(\\d+)\\.(\\d+)\\)', '$2/$1/$3'],
+          },
+        ],
+      },
       details: {
         selector: 'div[id^="port-target-"] a',
         attribute: 'href',

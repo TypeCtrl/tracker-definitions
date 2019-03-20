@@ -60,6 +60,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{.Keywords}}',
+      searchin: 'title',
       incldead: 1,
     },
     rows: {
@@ -90,6 +91,15 @@ export const definition: TrackerDefinition = {
             name: 'replace',
             args: ['details.php?id=', 'download.php?torrent='],
           },
+        ],
+      },
+      banner: {
+        selector: 'a[href^="details.php?id="][onmouseover]',
+        attribute: 'onmouseover',
+        filters: [
+          { name: 'regexp', args: '/imdb/(.*?).jpg' },
+          { name: 'prepend', args: '/imdb/' },
+          { name: 'append', args: '.jpg' },
         ],
       },
       size: { selector: 'td:nth-last-child(4)' },

@@ -10,9 +10,6 @@ export const j3Dtorrents = jj3Dtorrents;
 import { definition as jj3Evils } from './3evils';
 export const j3Evils = jj3Evils;
 
-import { definition as jj420Files } from './420files';
-export const j420Files = jj420Files;
-
 import { definition as jjbittorrentfiles } from './bittorrentfiles';
 export const jbittorrentfiles = jjbittorrentfiles;
 
@@ -106,6 +103,9 @@ export const jblutopia = jjblutopia;
 import { definition as jjbtbit } from './btbit';
 export const jbtbit = jjbtbit;
 
+import { definition as jjbtdb } from './btdb';
+export const jbtdb = jjbtdb;
+
 import { definition as jjbtdigg } from './btdigg';
 export const jbtdigg = jjbtdigg;
 
@@ -121,14 +121,14 @@ export const jbtnext = jjbtnext;
 import { definition as jjbtstornet } from './btstornet';
 export const jbtstornet = jjbtstornet;
 
-import { definition as jjbtxpress } from './btxpress';
-export const jbtxpress = jjbtxpress;
-
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
 
 import { definition as jjcartoonchaos } from './cartoonchaos';
 export const jcartoonchaos = jjcartoonchaos;
+
+import { definition as jjcasatorrent } from './casatorrent';
+export const jcasatorrent = jjcasatorrent;
 
 import { definition as jjcasstudiotv } from './casstudiotv';
 export const jcasstudiotv = jjcasstudiotv;
@@ -511,9 +511,6 @@ export const jracingforme = jjracingforme;
 import { definition as jjredstartorrent } from './redstartorrent';
 export const jredstartorrent = jjredstartorrent;
 
-import { definition as jjredtopia } from './redtopia';
-export const jredtopia = jjredtopia;
-
 import { definition as jjretroflix } from './retroflix';
 export const jretroflix = jjretroflix;
 
@@ -742,6 +739,9 @@ export const jxIteMe = jjxIteMe;
 import { definition as jjxbytes2 } from './xbytes2';
 export const jxbytes2 = jjxbytes2;
 
+import { definition as jjxktorrent } from './xktorrent';
+export const jxktorrent = jjxktorrent;
+
 import { definition as jjxtremezone } from './xtremezone';
 export const jxtremezone = jjxtremezone;
 
@@ -771,7 +771,6 @@ export const definitions = [
   jj2Fast4You,
   jj3Dtorrents,
   jj3Evils,
-  jj420Files,
   jjbittorrentfiles,
   jjacgrip,
   jjacidlounge,
@@ -803,14 +802,15 @@ export const definitions = [
   jjbluebird,
   jjblutopia,
   jjbtbit,
+  jjbtdb,
   jjbtdigg,
   jjbtgigs,
   jjbtkitty,
   jjbtnext,
   jjbtstornet,
-  jjbtxpress,
   jjcarpathians,
   jjcartoonchaos,
+  jjcasatorrent,
   jjcasstudiotv,
   jjccfbits,
   jjchdbits,
@@ -938,7 +938,6 @@ export const definitions = [
   jjracing4Everyone,
   jjracingforme,
   jjredstartorrent,
-  jjredtopia,
   jjretroflix,
   jjrgu,
   jjrockbox,
@@ -1015,6 +1014,7 @@ export const definitions = [
   jjworldwidetorrents,
   jjxIteMe,
   jjxbytes2,
+  jjxktorrent,
   jjxtremezone,
   jjxwtorrents,
   jjyggtorrent,
