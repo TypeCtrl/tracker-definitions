@@ -11,6 +11,8 @@ export const definition: TrackerDefinition = {
   legacylinks: ['http://amigos-share.club/'],
   caps: {
     categorymappings: [
+      { id: '107', cat: 'XXX', desc: 'Adultos: Gay' },
+      { id: '108', cat: 'XXX', desc: 'Adultos: Transex/Female' },
       { id: '74', cat: 'XXX', desc: 'Adultos: XXX' },
       { id: '75', cat: 'XXX', desc: 'Adultos: Hentai' },
       { id: '69', cat: 'TV/Anime', desc: 'Anime: Anime' },
@@ -58,6 +60,8 @@ export const definition: TrackerDefinition = {
       { id: '56', cat: 'Console/Xbox', desc: 'Jogos: Xbox' },
       { id: '55', cat: 'Console/Wii', desc: 'Jogos: Wii' },
       { id: '58', cat: 'Console/NDS', desc: 'Jogos: Nintendo DS' },
+      { id: '111', cat: 'Console', desc: 'Jogos: Nintendo Swich' },
+      { id: '110', cat: 'Console', desc: 'Jogos: Nintendo Switch' },
       { id: '57', cat: 'Console', desc: 'Jogos: Android' },
       { id: '82', cat: 'Console/PSP', desc: 'Jogos: PSP' },
       { id: '78', cat: 'Console/XboxOne', desc: 'Jogos: Xbox One' },

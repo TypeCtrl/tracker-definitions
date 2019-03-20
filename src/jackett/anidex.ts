@@ -31,21 +31,20 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   settings: [
-    { name: 'cat-id', type: 'text', label: 'Category Id' },
+    { name: 'lang-id', type: 'text', label: 'Language ID' },
     {
       name: 'info',
       type: 'info',
-      label: 'Category Id Note',
+      label: 'Language ID Note',
       default:
-        'You can filter your searches by using any of the following category numbers (comma delimited):<br>1 :Anime - Sub<br>2 :Anime - Raw<br>3 :Anime - Dub<br>4 :LA - Sub<br>5 :LA - Raw<br>6 :Light Novel<br>7 :Manga - TLed<br>8 :Manga - Raw<br>9 :♫ - Lossy<br>10 :♫ - Lossless<br>11 :♫ - Video<br>12 :Games<br>13 :Applications<br>14 :Pictures<br>15 :Adult Video<br>16 :Other',
+        'You can filter your searches using any of the following language ID (comma delimited):<br>19 :Arabic<br>22 :Bengali<br>14 :Bulgarian<br>21 :Chinese (Simplified)<br>24 :Czech<br>20 :Danish<br>5 :Dutch<br>1 :English<br>11 :Finnish<br>10 :French<br>8 :German<br>13 :Greek<br>9 :Hungarian<br>27 :Indonesian<br>6 :Italian<br>2 :Japanese<br>28 :Korean<br>31 :Malaysian<br>25 :Mongolian<br>30 :Persian<br>3 :Polish<br>16 :Portuguese (Brazil)<br>17 :Portuguese (Portugal)<br>23 :Romanian<br>7 :Russian<br>4 :Serbo-Croatian<br>29 :Spanish (LATAM)<br>15 :Spanish (Spain)<br>18 :Swedish<br>26 :Turkish<br>12 :Vietnamese',
     },
-    { name: 'lang-id', type: 'text', label: 'Language Id' },
   ],
   search: {
     paths: [
       {
         path:
-          '?{{if .Config.cat-id}}id={{.Config.cat-id }}&{{else}}{{end}}{{if .Config.lang-id}}lang_id={{.Config.lang-id}}&{{else}}{{end}}q={{if .Keywords}}{{.Keywords}}{{else}}{{end}}',
+          '?page=search&id={{if .Categories}}{{range .Categories}}{{.}},{{end}}{{else}}0{{end}}{{if .Config.lang-id}}&lang_id={{.Config.lang-id}}{{else}}{{end}}&group_id=0&q={{if .Keywords}}{{.Keywords}}{{else}}{{end}}',
       },
     ],
     rows: { selector: 'div.table-responsive > table > tbody > tr' },
