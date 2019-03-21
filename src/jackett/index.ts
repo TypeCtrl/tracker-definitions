@@ -118,9 +118,6 @@ export const jbtkitty = jjbtkitty;
 import { definition as jjbtnext } from './btnext';
 export const jbtnext = jjbtnext;
 
-import { definition as jjbtstornet } from './btstornet';
-export const jbtstornet = jjbtstornet;
-
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
 
@@ -807,7 +804,6 @@ export const definitions = [
   jjbtgigs,
   jjbtkitty,
   jjbtnext,
-  jjbtstornet,
   jjcarpathians,
   jjcartoonchaos,
   jjcasatorrent,

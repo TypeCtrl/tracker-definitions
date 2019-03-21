@@ -41,11 +41,7 @@ export const definition: TrackerDefinition = {
       { id: '270', cat: 'Audio/Audiobook', desc: 'Urban Fantasy' },
       { id: '280', cat: 'Audio/Audiobook', desc: 'Western' },
     ],
-    modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
-    },
+    modes: { search: ['q'] },
   },
   login: {
     path: 'takelogin.php',

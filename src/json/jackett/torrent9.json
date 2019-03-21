@@ -6,7 +6,7 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://wvw.torrent9.uno/", "https://wvw.t9.pe/"],
+  "links": ["https://wvw.t9.pe/"],
   "legacylinks": [
     "http://www.torrent9.ec/",
     "http://www.torrent9.red/",
@@ -21,7 +21,9 @@
     "https://www.torrent9.ph/",
     "https://ww1.torrent9.ph/",
     "https://torrent9.ga/",
-    "https://www.torrent9.uno/"
+    "https://www.torrent9.uno/",
+    "https://wvw.torrent9.uno/",
+    "https://ww1.torrent9.uno/"
   ],
   "caps": {
     "categorymappings": [
@@ -39,6 +41,7 @@
     ],
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
   },
+  "settings": [],
   "download": { "selector": "a[href^=\"/downloading/\"]" },
   "search": {
     "paths": [

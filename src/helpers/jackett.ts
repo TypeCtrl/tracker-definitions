@@ -39,7 +39,6 @@ export const jackettSites = [
   'btgigs',
   'btkitty',
   'btnext',
-  'btstornet',
   'carpathians',
   'cartoonchaos',
   'casatorrent',
