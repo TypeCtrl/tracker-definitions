@@ -44,6 +44,7 @@ export const jackettSites = [
   'casatorrent',
   'casstudiotv',
   'ccfbits',
+  'channelx',
   'chdbits',
   'cinemageddon',
   'cinematik',

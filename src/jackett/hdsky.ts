@@ -27,20 +27,19 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here.</ol>",
+    },
+  ],
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
-    captcha: {
-      type: 'image',
-      selector: 'img[alt="CAPTCHA"]',
-      input: 'imagestring',
-    },
-    inputs: {
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
-    },
-    error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'torrents.php' },
   },
   ratio: {
@@ -54,11 +53,11 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      incldead: '1',
-      spstate: '0',
-      inclbookmarked: '0',
+      incldead: 0,
+      spstate: 0,
+      inclbookmarked: 0,
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
-      search_mode: '0',
+      search_mode: 0,
     },
     rows: {
       selector: 'table.torrents > tbody > tr:has(table.torrentname)',
@@ -83,7 +82,7 @@ export const definition: TrackerDefinition = {
         attribute: 'action',
       },
       imdb: {
-        selector: 'a[href^="http://www.imdb.com/title/tt"]',
+        selector: 'a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },
       size: { selector: 'td.rowfollow:nth-child(5)' },

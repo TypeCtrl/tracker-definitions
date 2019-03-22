@@ -133,6 +133,9 @@ export const jcasstudiotv = jjcasstudiotv;
 import { definition as jjccfbits } from './ccfbits';
 export const jccfbits = jjccfbits;
 
+import { definition as jjchannelx } from './channelx';
+export const jchannelx = jjchannelx;
+
 import { definition as jjchdbits } from './chdbits';
 export const jchdbits = jjchdbits;
 
@@ -809,6 +812,7 @@ export const definitions = [
   jjcasatorrent,
   jjcasstudiotv,
   jjccfbits,
+  jjchannelx,
   jjchdbits,
   jjcinemageddon,
   jjcinematik,
