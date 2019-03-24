@@ -48,7 +48,7 @@ export const definition: TrackerDefinition = {
     },
     error: [
       { selector: 'td.embedded:has(h2:contains("failed"))' },
-      { selector: 'td.embedded:has(h2:contains("Error"))aD' },
+      { selector: 'td.embedded:has(h2:contains("Error"))' },
     ],
     test: { selector: 'a[href^="logout.php"]', path: 'browse.php' },
   },
