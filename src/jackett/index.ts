@@ -13,6 +13,9 @@ export const j3Evils = jj3Evils;
 import { definition as jjbittorrentfiles } from './bittorrentfiles';
 export const jbittorrentfiles = jjbittorrentfiles;
 
+import { definition as jjdasunerwartete } from './dasunerwartete';
+export const jdasunerwartete = jjdasunerwartete;
+
 import { definition as jjacgrip } from './acgrip';
 export const jacgrip = jjacgrip;
 
@@ -171,6 +174,9 @@ export const jdatascene = jjdatascene;
 
 import { definition as jjdeildu } from './deildu';
 export const jdeildu = jjdeildu;
+
+import { definition as jjdesireleasers } from './desireleasers';
+export const jdesireleasers = jjdesireleasers;
 
 import { definition as jjdesitorrents } from './desitorrents';
 export const jdesitorrents = jjdesitorrents;
@@ -730,6 +736,9 @@ export const jwaffles = jjwaffles;
 import { definition as jjwihd } from './wihd';
 export const jwihd = jjwihd;
 
+import { definition as jjworldOfTomorrow } from './world-of-tomorrow';
+export const jworldOfTomorrow = jjworldOfTomorrow;
+
 import { definition as jjworldofp2P } from './worldofp2p';
 export const jworldofp2P = jjworldofp2P;
 
@@ -775,6 +784,7 @@ export const definitions = [
   jj3Dtorrents,
   jj3Evils,
   jjbittorrentfiles,
+  jjdasunerwartete,
   jjacgrip,
   jjacidlounge,
   jjaftershock,
@@ -828,6 +838,7 @@ export const definitions = [
   jjdarkShadow,
   jjdatascene,
   jjdeildu,
+  jjdesireleasers,
   jjdesitorrents,
   jjdiablotorrent,
   jjdigbt,
@@ -1014,6 +1025,7 @@ export const definitions = [
   jjvizuk,
   jjwaffles,
   jjwihd,
+  jjworldOfTomorrow,
   jjworldofp2P,
   jjworldwidetorrents,
   jjxIteMe,
