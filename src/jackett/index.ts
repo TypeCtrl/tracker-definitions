@@ -64,6 +64,9 @@ export const jaudiobooktorrents = jjaudiobooktorrents;
 import { definition as jjaudionews } from './audionews';
 export const jaudionews = jjaudionews;
 
+import { definition as jjavg } from './avg';
+export const javg = jjavg;
+
 import { definition as jjawesomehd } from './awesomehd';
 export const jawesomehd = jjawesomehd;
 
@@ -478,6 +481,9 @@ export const jp2Pbg = jjp2Pbg;
 import { definition as jjpassionetorrent } from './passionetorrent';
 export const jpassionetorrent = jjpassionetorrent;
 
+import { definition as jjpeersfm } from './peersfm';
+export const jpeersfm = jjpeersfm;
+
 import { definition as jjpiratbit } from './piratbit';
 export const jpiratbit = jjpiratbit;
 
@@ -636,6 +642,9 @@ export const jthetorrents = jjthetorrents;
 
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
+
+import { definition as jjtigersDl } from './tigers-dl';
+export const jtigersDl = jjtigersDl;
 
 import { definition as jjtntvillage } from './tntvillage';
 export const jtntvillage = jjtntvillage;
@@ -801,6 +810,7 @@ export const definitions = [
   jjaudiobookbay,
   jjaudiobooktorrents,
   jjaudionews,
+  jjavg,
   jjawesomehd,
   jjb2SShare,
   jjbackups,
@@ -939,6 +949,7 @@ export const definitions = [
   jjourbits,
   jjp2Pbg,
   jjpassionetorrent,
+  jjpeersfm,
   jjpiratbit,
   jjpleasuredome,
   jjpolishsource,
@@ -992,6 +1003,7 @@ export const definitions = [
   jjtheshow,
   jjthetorrents,
   jjthevault,
+  jjtigersDl,
   jjtntvillage,
   jjtokyotosho,
   jjtorlock,

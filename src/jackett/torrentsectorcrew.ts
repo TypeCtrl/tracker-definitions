@@ -70,6 +70,13 @@ export const definition: TrackerDefinition = {
     { name: 'pin', type: 'text', label: 'Pin' },
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        '<ol><li>Only the Classic profile is supported.<li>Make sure to set the <b>TorrentList-Layout</b> option in your profile to <b>Klassisches Layout, sehr breite Darstellung.</b><li>And for best results set the <b>Torrents pro Seite</b> to <b>100.</b></ol>',
+    },
   ],
   login: {
     path: 'landing.php',
