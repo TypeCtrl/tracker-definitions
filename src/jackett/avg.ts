@@ -674,9 +674,23 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td.leechmed' },
       grabs: { optional: true, selector: 'td[title^="Replies"]' },
       date: {
-        selector:
-          'td[title="Добавлен"] p:last-of-type, td[title="Доданий"] p:last-of-type, td[title="Added"] p:last-of-type',
-        filters: [{ name: 'dateparse', args: '2-01-06' }],
+        selector: 'td[title="Додано"] p:last-of-type',
+        optional: true,
+        filters: [
+          { name: 'replace', args: ['Січ', 'Jan'] },
+          { name: 'replace', args: ['Лют', 'Feb'] },
+          { name: 'replace', args: ['Бер', 'Mar'] },
+          { name: 'replace', args: ['Кві', 'Apr'] },
+          { name: 'replace', args: ['Травень', 'May'] },
+          { name: 'replace', args: ['Чер', 'Jun'] },
+          { name: 'replace', args: ['Лип', 'Jul'] },
+          { name: 'replace', args: ['Сер', 'Aug'] },
+          { name: 'replace', args: ['Вер', 'Sep'] },
+          { name: 'replace', args: ['Жов', 'Oct'] },
+          { name: 'replace', args: ['Лис', 'Nov'] },
+          { name: 'replace', args: ['Грудень', 'Dec'] },
+          { name: 'dateparse', args: '2-Jan-06' },
+        ],
       },
       downloadvolumefactor: {
         case: {
