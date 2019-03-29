@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       remember: 1,
     },
-    error: [{ selector: 'form[action*="/login"] .text-red' }],
+    error: [{ selector: 'div.has-error' }],
     test: { path: 'torrents', selector: 'a[href$="/logout"]' },
   },
   ratio: {
@@ -78,12 +78,12 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-child(5)' },
+      seeders: { selector: 'td:nth-child(6)' },
+      leechers: { selector: 'td:nth-child(7)' },
       grabs: {
-        selector: 'td:nth-child(6)',
+        selector: 'td:nth-child(8)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
-      seeders: { selector: 'td:nth-child(7)' },
-      leechers: { selector: 'td:nth-child(8)' },
       imdb: {
         optional: true,
         selector: 'a[href*="www.imdb.com/title/tt"]',
