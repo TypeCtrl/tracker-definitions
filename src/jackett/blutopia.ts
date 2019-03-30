@@ -26,8 +26,9 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      remember: 1,
     },
-    error: [{ selector: 'form[action*="/login"] .text-red' }],
+    error: [{ selector: 'div.has-error' }],
     test: { path: 'torrents' },
   },
   search: {
@@ -35,12 +36,13 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
       search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '',
       tmdb: '',
       mal: '',
-      sorting: 'created_at',
+      sort: 'created_at',
       direction: 'desc',
       qty: 100,
     },
@@ -57,6 +59,17 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
+      banner: {
+        optional: true,
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+        filters: [
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/600x900', ''],
+          },
+        ],
+      },
       size: { selector: 'td:nth-child(5)' },
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },
@@ -66,7 +79,7 @@ export const definition: TrackerDefinition = {
       },
       imdb: {
         optional: true,
-        selector: 'a[href^="https://www.imdb.com/title/"]',
+        selector: 'a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },
       date: {
