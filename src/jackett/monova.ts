@@ -30,13 +30,22 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}',
+        path: '{{if .Keywords}}search?term={{.Keywords}}?page=1{{else}}video?page=1{{end}}',
+      },
+      {
+        path: '{{if .Keywords}}search?term={{.Keywords}}?page=2{{else}}video?page=2{{end}}',
+      },
+      {
+        path: '{{if .Keywords}}search?term={{.Keywords}}?page=3{{else}}video?page=3{{end}}',
+      },
+      {
+        path: '{{if .Keywords}}search?term={{.Keywords}}?page=4{{else}}video?page=4{{end}}',
+      },
+      {
+        path: '{{if .Keywords}}search?term={{.Keywords}}?page=5{{else}}video?page=5{{end}}',
       },
     ],
-    rows: {
-      selector: 'tr.desktop:not(tr.success)',
-      filters: [{ name: 'andmatch' }],
-    },
+    rows: { selector: 'tr.desktop', filters: [{ name: 'andmatch' }] },
     fields: {
       title: { selector: 'td.torrent_name a' },
       category: {
@@ -46,15 +55,25 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'td.torrent_name a', attribute: 'href' },
       download: { selector: 'td.torrent_name a', attribute: 'href' },
-      size: { selector: 'td.center-align' },
+      size: {
+        optional: true,
+        selector: 'td.center-align',
+        filters: [{ name: 'replace', args: ['N/A', '500 MB'] }],
+      },
       seeders: { text: '1' },
       leechers: { text: '1' },
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
       date: {
+        optional: true,
         selector: 'td.torrent_name',
         remove: 'a',
-        filters: [{ name: 'replace', args: ['added ', ''] }, { name: 'timeago' }],
+        filters: [
+          { name: 'replace', args: ['added ', ''] },
+          { name: 'replace', args: [' ago.*$', ''] },
+          { name: 'replace', args: ['min.', 'minutes'] },
+          { name: 'timeago' },
+        ],
       },
     },
   },

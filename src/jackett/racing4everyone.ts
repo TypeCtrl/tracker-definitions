@@ -48,7 +48,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       remember: 1,
     },
-    error: [{ selector: 'form[action$="/login"] .text-red' }],
+    error: [{ selector: 'div.has-error' }],
     test: { path: 'torrents', selector: 'a[href$="/logout"]' },
   },
   ratio: {
@@ -84,10 +84,10 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
       size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(7)' },
-      leechers: { selector: 'td:nth-child(8)' },
+      seeders: { selector: 'td:nth-child(6)' },
+      leechers: { selector: 'td:nth-child(7)' },
       grabs: {
-        selector: 'td:nth-child(6)',
+        selector: 'td:nth-child(8)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
       date: {
@@ -165,15 +165,20 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'i[data-original-title="100% Free"]': '0',
+          'i[data-original-title="Personal Freeleech"]': '0',
+          'i[data-original-title="Special Freeleech"]': '0',
+          'i[data-original-title="Freeleech Token"]': '0',
           'i[data-original-title="Global FreeLeech"]': '0',
+          'i[data-original-title="Freeleech"]': '0',
+          'i[data-original-title="Featured"]': '0',
           '*': '1',
         },
       },
       uploadvolumefactor: {
         case: {
-          'i[data-original-title="Double upload"]': '2',
           'i[data-original-title="Double Upload"]': '2',
+          'i[data-original-title="Global Double Upload"]': '2',
+          'i[data-original-title="Featured"]': '2',
           '*': '1',
         },
       },
