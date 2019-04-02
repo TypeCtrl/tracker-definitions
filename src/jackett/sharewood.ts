@@ -51,8 +51,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
       search: '{{ .Keywords }}',
+      description: '',
       uploader: '',
-      sort: 'created_at',
+      sorting: 'created_at',
       direction: 'desc',
       qty: 100,
     },

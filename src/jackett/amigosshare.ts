@@ -140,10 +140,7 @@ export const definition: TrackerDefinition = {
       remember: 'yes',
     },
     error: [{ selector: 'div.alert-error' }],
-    test: {
-      path: 'index.php',
-      selector: 'a[href="account-logout.php"]',
-    },
+    test: { path: 'index.php' },
   },
   ratio: { path: 'index.php', selector: 'li:contains("Ratio:") a b' },
   search: {
@@ -157,14 +154,14 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: 0,
+      incldead: 1,
       freeleech: 0,
       lang: 0,
       sort: 'id',
       order: 'desc',
     },
     rows: {
-      selector: 'table.table-striped > tbody > tr:has(a[href^="torrents-details.php?id="])',
+      selector: 'table > tbody > tr:has(a[href^="torrents-details.php?id="])',
     },
     fields: {
       title: { selector: 'a[href^="torrents-details.php?id="]' },
@@ -260,11 +257,11 @@ export const definition: TrackerDefinition = {
         },
       },
       date: { text: 'now' },
-      size: { selector: 'td:nth-child(2) span.label-info' },
+      size: { selector: 'td:nth-child(2) span.badge-info' },
       seeders: { selector: 'td:nth-child(4)' },
       leechers: { selector: 'td:nth-child(5)' },
       downloadvolumefactor: {
-        case: { 'span.label-success i:contains("FREE")': '0', '*': '1' },
+        case: { 'span.badge-success:contains("FREE")': '0', '*': '1' },
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
