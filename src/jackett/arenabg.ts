@@ -84,8 +84,8 @@ export const definition: TrackerDefinition = {
       name: 'downloadlink',
       type: 'select',
       label: 'Download link',
-      default: 'magnet:',
-      options: { '/download/': '.torrent', 'magnet:': 'magnet' },
+      default: 'magnet:?xt=',
+      options: { '/get/key:': '.torrent', 'magnet:?xt=': 'magnet' },
     },
   ],
   login: {
@@ -105,7 +105,7 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: '/', selector: 'a[href="/users/logout/"]' },
   },
-  download: { selector: 'a[href^="{{ .Config.downloadlink }}"]' },
+  download: { selector: 'a[href*="{{ .Config.downloadlink }}"]' },
   search: {
     paths: [{ path: 'torrents/', method: 'post', followredirect: true }],
     inputs: {
