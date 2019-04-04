@@ -56,15 +56,11 @@
       "date": {
         "selector": "td:nth-child(4)",
         "filters": [
-          { "name": "replace", "args": ["heures", "hours"] },
           { "name": "replace", "args": ["heure", "hour"] },
-          { "name": "replace", "args": ["jours", "days"] },
           { "name": "replace", "args": ["jour", "day"] },
-          { "name": "replace", "args": ["semaines", "weeks"] },
           { "name": "replace", "args": ["semaine", "week"] },
-          { "name": "replace", "args": ["mois", "months"] },
-          { "name": "replace", "args": ["ans", "years"] },
-          { "name": "replace", "args": ["an", "year"] },
+          { "name": "replace", "args": ["moi", "month"] },
+          { "name": "replace", "args": [" an", " year"] },
           { "name": "append", "args": " ago" }
         ]
       },
