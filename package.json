@@ -30,24 +30,24 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "24.0.11",
-    "@types/js-yaml": "3.12.0",
+    "@types/js-yaml": "3.12.1",
     "@types/lodash": "4.14.123",
-    "@types/node": "11.12.2",
+    "@types/node": "11.13.0",
     "@types/prettier": "1.16.1",
     "@types/rimraf": "2.0.2",
-    "jest": "24.5.0",
+    "jest": "24.7.1",
     "jest-junit": "6.3.0",
     "js-yaml": "3.13.0",
     "lodash": "4.17.11",
     "prettier": "1.16.4",
     "rimraf": "2.6.3",
     "semantic-release": "15.13.3",
-    "ts-jest": "24.0.0",
+    "ts-jest": "24.0.1",
     "ts-node": "8.0.3",
-    "tslint": "5.14.0",
+    "tslint": "5.15.0",
     "tslint-config-prettier": "1.18.0",
-    "tslint-xo": "0.15.0",
-    "typescript": "3.3.4000"
+    "tslint-xo": "0.16.0",
+    "typescript": "3.4.1"
   },
   "publishConfig": {
     "access": "public"
