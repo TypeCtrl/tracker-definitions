@@ -8,11 +8,12 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www2.torrent9.ch/'],
+  links: ['https://wwv.torrent9.vg/'],
   legacylinks: [
     'https://www.torrents9.pw/',
     'https://www.torrent9.ch/',
     'https://www1.torrent9.ch/',
+    'https://www2.torrent9.ch/',
   ],
   caps: {
     categorymappings: [
@@ -75,7 +76,11 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 'replace',
-            args: ['FRENCH', '{{ .Result.site_date }} FRENCH'],
+            args: [' FRENCH', ' {{ .Result.site_date }} FRENCH'],
+          },
+          {
+            name: 'replace',
+            args: ['MULTI', '{{ .Result.site_date }} MULTI'],
           },
           {
             name: 'replace',

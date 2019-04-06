@@ -580,6 +580,9 @@ export const jskytorrentsclone = jjskytorrentsclone;
 import { definition as jjsolidtorrents } from './solidtorrents';
 export const jsolidtorrents = jjsolidtorrents;
 
+import { definition as jjsoundpark } from './soundpark';
+export const jsoundpark = jjsoundpark;
+
 import { definition as jjspacetorrent } from './spacetorrent';
 export const jspacetorrent = jjspacetorrent;
 
@@ -982,6 +985,7 @@ export const definitions = [
   jjsktorrent,
   jjskytorrentsclone,
   jjsolidtorrents,
+  jjsoundpark,
   jjspacetorrent,
   jjspeedShare,
   jjspeedtorrentreloaded,

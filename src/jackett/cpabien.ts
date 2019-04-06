@@ -59,7 +59,11 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 'replace',
-            args: ['FRENCH', '{{ .Result.site_date }} FRENCH'],
+            args: [' FRENCH', ' {{ .Result.site_date }} FRENCH'],
+          },
+          {
+            name: 'replace',
+            args: ['MULTI', '{{ .Result.site_date }} MULTI'],
           },
           {
             name: 'replace',

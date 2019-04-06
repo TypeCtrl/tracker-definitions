@@ -193,6 +193,7 @@ export const jackettSites = [
   'sktorrent',
   'skytorrentsclone',
   'solidtorrents',
+  'soundpark',
   'spacetorrent',
   'speed-share',
   'speedtorrentreloaded',

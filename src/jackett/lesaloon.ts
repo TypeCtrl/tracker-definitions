@@ -88,6 +88,11 @@ export const definition: TrackerDefinition = {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
+    captcha: {
+      type: 'image',
+      selector: 'img[src^="access_code/"]',
+      input: 'private_key',
+    },
     error: [{ selector: 'tr td span[style="color:#FF0000;"]' }],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
