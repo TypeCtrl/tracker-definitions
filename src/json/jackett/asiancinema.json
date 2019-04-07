@@ -23,31 +23,38 @@
     "method": "form",
     "inputs": {
       "username": "{{ .Config.username }}",
-      "password": "{{ .Config.password }}"
+      "password": "{{ .Config.password }}",
+      "remember": 1
     },
-    "error": [{ "selector": "form[action*=\"/login\"] .text-red" }],
-    "test": { "path": "torrents" }
+    "error": [{ "selector": "div.has-error" }],
+    "test": { "path": "torrents", "selector": "a[href$=\"/logout\"]" }
+  },
+  "ratio": {
+    "path": "torrents",
+    "selector": "li:has(i.fa-sync-alt)",
+    "filters": [{ "name": "regexp", "args": "Ratio : (\\d+)" }]
   },
   "search": {
     "paths": [{ "path": "filterTorrents" }],
     "inputs": {
       "$raw": "{{range .Categories}}categories[]={{.}}&{{end}}",
       "search": "{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}",
+      "description": "",
       "uploader": "",
       "imdb": "{{ .Query.IMDBIDShort }}",
       "tvdb": "",
       "tmdb": "",
       "mal": "",
-      "sorting": "created_at",
+      "sort": "created_at",
       "direction": "desc",
       "qty": 100
     },
     "rows": { "selector": "table > tbody > tr" },
     "fields": {
       "category": {
-        "selector": "a[href*=\"/category/\"]",
+        "selector": "a[href*=\"/categories/\"]",
         "attribute": "href",
-        "filters": [{ "name": "regexp", "args": "/category/.*?\\.(\\d+)" }]
+        "filters": [{ "name": "regexp", "args": "/categories/.*?\\.(\\d+)" }]
       },
       "title": { "selector": "a.view-torrent" },
       "download": {
@@ -55,12 +62,28 @@
         "attribute": "href"
       },
       "details": { "selector": "a.view-torrent", "attribute": "href" },
+      "banner": {
+        "optional": true,
+        "selector": "div.torrent-poster img",
+        "attribute": "src",
+        "filters": [
+          {
+            "name": "replace",
+            "args": ["https://via.placeholder.com/600x900", ""]
+          }
+        ]
+      },
       "size": { "selector": "td:nth-child(5)" },
-      "seeders": { "selector": "td:nth-child(7)" },
-      "leechers": { "selector": "td:nth-child(8)" },
+      "seeders": { "selector": "td:nth-child(6)" },
+      "leechers": { "selector": "td:nth-child(7)" },
       "grabs": {
-        "selector": "td:nth-child(6)",
+        "selector": "td:nth-child(8)",
         "filters": [{ "name": "regexp", "args": "([\\d\\.]+)" }]
+      },
+      "imdb": {
+        "optional": true,
+        "selector": "a[href*=\"www.imdb.com/title/tt\"]",
+        "attribute": "href"
       },
       "date": {
         "selector": "time",
@@ -146,15 +169,20 @@
       },
       "downloadvolumefactor": {
         "case": {
-          "i[data-original-title=\"100% Free\"]": "0",
+          "i[data-original-title=\"Personal Freeleech\"]": "0",
+          "i[data-original-title=\"Special Freeleech\"]": "0",
+          "i[data-original-title=\"Freeleech Token\"]": "0",
           "i[data-original-title=\"Global FreeLeech\"]": "0",
+          "i[data-original-title=\"Freeleech\"]": "0",
+          "i[data-original-title=\"Featured\"]": "0",
           "*": "1"
         }
       },
       "uploadvolumefactor": {
         "case": {
-          "i[data-original-title=\"Double upload\"]": "2",
           "i[data-original-title=\"Double Upload\"]": "2",
+          "i[data-original-title=\"Global Double Upload\"]": "2",
+          "i[data-original-title=\"Featured\"]": "2",
           "*": "1"
         }
       }
