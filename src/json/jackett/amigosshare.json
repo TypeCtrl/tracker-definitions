@@ -55,7 +55,7 @@
       { "id": "2", "cat": "Movies", "desc": "Filmes: Terror" },
       { "id": "1", "cat": "Movies", "desc": "Filmes: Ação" },
       { "id": "80", "cat": "Movies", "desc": "Filmes: Aventura" },
-      { "id": "70", "cat": "Other", "desc": "Fotos: XXX" },
+      { "id": "70", "cat": "XXX", "desc": "Fotos: XXX" },
       { "id": "79", "cat": "Console/PS4", "desc": "Jogos: Ps4" },
       { "id": "47", "cat": "PC/Games", "desc": "Jogos: Pc" },
       { "id": "61", "cat": "Console", "desc": "Jogos: Emuladores e Roms" },
@@ -137,9 +137,15 @@
       "remember": "yes"
     },
     "error": [{ "selector": "div.alert-error" }],
-    "test": { "path": "index.php" }
+    "test": {
+      "path": "torrents-search.php",
+      "selector": "a[href=\"account-logout.php\"]"
+    }
   },
-  "ratio": { "path": "index.php", "selector": "li:contains(\"Ratio:\") a b" },
+  "ratio": {
+    "path": "torrents-search.php",
+    "selector": "li:contains(\"Ratio:\") a b"
+  },
   "search": {
     "paths": [
       { "path": "torrents-search.php" },
@@ -170,6 +176,11 @@
         "selector": "a[href^=\"download.php?id=\"]",
         "attribute": "href"
       },
+      "banner": {
+        "selector": "a[href^=\"torrents-details.php?id=\"]",
+        "attribute": "title",
+        "filters": [{ "name": "regexp", "args": "src=\"(.*?)\"" }]
+      },
       "category": {
         "selector": "td:first-child img",
         "attribute": "src",
@@ -189,7 +200,7 @@
           "[src$=\"/E-books.png\"]": "67",
           "[src$=\"/Revista.png\"]": "68",
           "[src$=\"/Aventura.png\"]": "87",
-          "[src$=\"/XXX.png\"]": "70",
+          "[src$=\"/Revistas-XXX.png\"]": "70",
           "[src$=\"/Jogos-Ps4.png\"]": "79",
           "[src$=\"/Jogos-PC.png\"]": "47",
           "[src$=\"/Jogos-EmuladoreseRoms.png\"]": "61",
