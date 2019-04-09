@@ -66,7 +66,7 @@ export const definition: TrackerDefinition = {
         followredirect: true,
       },
     ],
-    rows: { selector: '#similarfiles div:has(a[href^="/t3-"])' },
+    rows: { selector: '#similarfiles div:has(a[href^="/t0-"])' },
     fields: {
       title: { selector: 'span > a' },
       details: { selector: 'span > a', attribute: 'href' },
