@@ -54,7 +54,6 @@ export const jackettSites = [
   'classix',
   'cpabien',
   'cpasbienclone',
-  'crazyhd',
   'crnaberza',
   'cztorrent',
   'dark-shadow',
