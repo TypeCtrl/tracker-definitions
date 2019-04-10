@@ -82,6 +82,7 @@ export const jackettSites = [
   'fanoin',
   'femdomcult',
   'film-paleis',
+  'focusx',
   'freedomhd',
   'freetorrent',
   'frozenlayer',
