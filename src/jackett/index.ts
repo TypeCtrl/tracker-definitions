@@ -328,9 +328,6 @@ export const jhdhome = jjhdhome;
 import { definition as jjhdme } from './hdme';
 export const jhdme = jjhdme;
 
-import { definition as jjhdplus } from './hdplus';
-export const jhdplus = jjhdplus;
-
 import { definition as jjhdsky } from './hdsky';
 export const jhdsky = jjhdsky;
 
@@ -709,6 +706,9 @@ export const jtorrentsectorcrew = jjtorrentsectorcrew;
 import { definition as jjtorrentseeds } from './torrentseeds';
 export const jtorrentseeds = jjtorrentseeds;
 
+import { definition as jjtorrentslocal } from './torrentslocal';
+export const jtorrentslocal = jjtorrentslocal;
+
 import { definition as jjtorrentz2 } from './torrentz2';
 export const jtorrentz2 = jjtorrentz2;
 
@@ -904,7 +904,6 @@ export const definitions = [
   jjhdforever,
   jjhdhome,
   jjhdme,
-  jjhdplus,
   jjhdsky,
   jjhdspain,
   jjhdtorrentsit,
@@ -1031,6 +1030,7 @@ export const definitions = [
   jjtorrentproject2,
   jjtorrentsectorcrew,
   jjtorrentseeds,
+  jjtorrentslocal,
   jjtorrentz2,
   jjtorviet,
   jjtotallykids,

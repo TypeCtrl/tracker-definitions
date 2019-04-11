@@ -122,23 +122,28 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'category' }],
       },
       download: {
-        selector: 'td a[href^="download.php?id="]',
+        selector: 'td a[href*="torrent-details"]',
         attribute: 'href',
+        filters: [
+          { name: 'querystring', args: 'id' },
+          { name: 'prepend', args: 'download.php?id=' },
+          { name: 'append', args: '&f={{.Result.title}}.torrent' },
+        ],
       },
       banner: {
         selector: 'td a[href*="id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) width=' }],
       },
-      size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(6)' },
-      leechers: { selector: 'td:nth-child(7)' },
+      size: { selector: 'td:nth-child(4)' },
+      seeders: { selector: 'td:nth-child(5)' },
+      leechers: { selector: 'td:nth-child(6)' },
       grabs: {
-        selector: 'td:nth-child(8)',
+        selector: 'td:nth-child(7)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
       date: {
-        selector: 'td:nth-child(9)',
+        selector: 'td:nth-child(8)',
         filters: [
           {
             name: 're_replace',
