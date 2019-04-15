@@ -10,7 +10,10 @@ export const definition: TrackerDefinition = {
   links: ['https://www.trancetraffic.com/'],
   certificates: ['117B89D7C086F3E051F0A5A3576504667402AE52'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'music-search': ['q', 'album', 'artist', 'label', 'year'],
+    },
     categorymappings: [{ id: '1', cat: 'Audio' }],
   },
   login: {
@@ -25,7 +28,9 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
-    inputs: { search: '{{ .Query.Keywords }}' },
+    inputs: {
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+    },
     rows: {
       selector: 'table.mainouter table > tbody > tr:has(a[href^="details.php?id="])',
     },

@@ -9,7 +9,10 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['http://funkytorrents.com/'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'music-search': ['q', 'album', 'artist', 'label', 'year'],
+    },
     categorymappings: [
       { id: '1', cat: 'PC' },
       { id: '2', cat: 'Books' },
@@ -63,7 +66,10 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
-    inputs: { search: '{{ .Query.Keywords }}', incldead: 1 },
+    inputs: {
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      incldead: 1,
+    },
     rows: {
       selector: 'table.mainouter > tbody > tr > td.outer > table > tbody > tr.mouse_out',
     },

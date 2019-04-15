@@ -60,8 +60,18 @@ export const definition: TrackerDefinition = {
       { id: '19', cat: 'TV/Sport', desc: 'WWE Velocity' },
       { id: '31', cat: 'TV/Sport', desc: 'WWE Vintage' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'seedbox',
+      type: 'checkbox',
+      label: 'Use SeedBox Download Link',
+      default: false,
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -105,9 +115,16 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'title',
       },
-      download: {
+      download1: {
         selector: 'a[href^="download.php"]',
         attribute: 'href',
+      },
+      download2: {
+        selector: 'a[href^="download2.php"]',
+        attribute: 'href',
+      },
+      download: {
+        text: '{{if .Config.seedbox}}{{ .Result.download2 }}{{else}}{{ .Result.download1 }}{{end}}',
       },
       details: {
         selector: 'a[href^="details.php?id="]',

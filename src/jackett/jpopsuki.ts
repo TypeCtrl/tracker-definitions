@@ -21,7 +21,11 @@ export const definition: TrackerDefinition = {
       { id: '9', cat: 'Other', desc: 'Pictures' },
       { id: '10', cat: 'Other/Misc', desc: 'Misc' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'music-search': ['q', 'album', 'artist', 'label', 'year'],
+    },
   },
   login: {
     path: 'login.php',
@@ -40,7 +44,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      searchstr: '{{ .Query.Keywords }}',
+      searchstr: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
       order_by: 'time',
       order_way: 'desc',
       action: 'basic',

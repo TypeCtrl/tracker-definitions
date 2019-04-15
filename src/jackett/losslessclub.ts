@@ -9,7 +9,10 @@ export const definition: TrackerDefinition = {
   encoding: 'WINDOWS-1251',
   links: ['https://losslessclub.com/'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'music-search': ['q', 'album', 'artist', 'label', 'year'],
+    },
     categorymappings: [{ id: '1', cat: 'Audio/Lossless' }],
   },
   login: {
@@ -24,7 +27,10 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
-    inputs: { search: '{{ .Query.Keywords }}', t: 'all' },
+    inputs: {
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      t: 'all',
+    },
     rows: {
       selector: 'div#releases-table > table > tbody > tr:has(a.browselink)',
     },

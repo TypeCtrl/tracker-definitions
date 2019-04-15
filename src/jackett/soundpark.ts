@@ -9,7 +9,10 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://soundpark-club.com/', 'https://soundpark-club.casa/'],
   caps: {
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'music-search': ['q', 'album', 'artist', 'label', 'year'],
+    },
     categorymappings: [{ id: 'Music', cat: 'Audio' }],
   },
   login: {
@@ -27,7 +30,10 @@ export const definition: TrackerDefinition = {
   download: { selector: 'a[href^="/album/download-torrent/"]' },
   search: {
     paths: [{ path: '{{if .Keywords}}search{{else}}music{{end}}' }],
-    inputs: { q: '{{ .Keywords }}', num: 50 },
+    inputs: {
+      q: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      num: 50,
+    },
     rows: {
       selector: 'div[itemscope] > table.browse_albums, div.div-rellist',
     },

@@ -289,9 +289,6 @@ export const jgirotorrent = jjgirotorrent;
 import { definition as jjgktorrent } from './gktorrent';
 export const jgktorrent = jjgktorrent;
 
-import { definition as jjgods } from './gods';
-export const jgods = jjgods;
-
 import { definition as jjgreekteam } from './greekteam';
 export const jgreekteam = jjgreekteam;
 
@@ -891,7 +888,6 @@ export const definitions = [
   jjgigatorrents,
   jjgirotorrent,
   jjgktorrent,
-  jjgods,
   jjgreekteam,
   jjhachede,
   jjhd4Free,

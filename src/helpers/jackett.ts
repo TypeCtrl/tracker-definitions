@@ -96,7 +96,6 @@ export const jackettSites = [
   'gigatorrents',
   'girotorrent',
   'gktorrent',
-  'gods',
   'greekteam',
   'hachede',
   'hd4free',
