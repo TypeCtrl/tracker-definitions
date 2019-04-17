@@ -73,6 +73,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'div.col-detail div.row div:nth-child(2)' },
       seeders: { selector: 'div.bouton-s' },
       leechers: { selector: 'div.bouton-l' },
+      grabs: { selector: 'div.bouton-c' },
       date: {
         selector: 'div.col-detail div.row div span',
         filters: [
@@ -84,8 +85,12 @@ export const definition: TrackerDefinition = {
           { name: 'append', args: ' ago' },
         ],
       },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: {
+        case: { "span.badge-extra:contains('Freeleech')": '0', '*': '1' },
+      },
+      uploadvolumefactor: {
+        case: { "span.badge-extra:contains('Double Upload')": '2', '*': '1' },
+      },
     },
   },
   source: 'jackett',
