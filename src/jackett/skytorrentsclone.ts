@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.skytorrents.to/'],
-  legacylinks: ['https://www.skytorrents.lol/'],
+  links: ['https://www.skytorrents.lol/'],
+  legacylinks: ['https://www.skytorrents.to/'],
   caps: {
     modes: {
       search: ['q'],
@@ -26,33 +26,20 @@ export const definition: TrackerDefinition = {
       { id: 'software', cat: 'PC' },
     ],
   },
-  settings: [
-    {
-      name: 'btdb.eu-links',
-      type: 'checkbox',
-      label: 'Add download links via btdb.eu',
-      default: true,
-    },
-    {
-      name: 'info',
-      type: 'info',
-      label: 'btdb.eu Note',
-      default: 'Without the btdb.eu option only magnet links will be provided.',
-    },
-  ],
+  settings: [],
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created{{else}}top100{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created{{else}}top100{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created&page=2{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=2{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created&page=3{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=3{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort=created&page=4{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=4{{else}}{{end}}',
       },
     ],
     rows: { selector: 'tr.result' },
@@ -60,13 +47,7 @@ export const definition: TrackerDefinition = {
       title: { selector: 'td a' },
       category: { optional: true, selector: 'a.label[href*="type="]' },
       details: { selector: 'td a', attribute: 'href' },
-      'download-btdb.eu': {
-        selector: 'a[href^="//btdb.eu"]',
-        attribute: 'href',
-      },
-      download: {
-        text: '{{if .Config.btdb.eu-links}}{{ .Result.download-btdb.eu }}{{else}}{{end}}',
-      },
+      download: { selector: 'a[href*="/torrent/"]', attribute: 'href' },
       magnet: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
       size: { selector: 'td:nth-child(2)' },
       files: { selector: 'td:nth-child(3)' },

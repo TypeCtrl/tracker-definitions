@@ -157,6 +157,9 @@ export const jcinematik = jjcinematik;
 import { definition as jjclassix } from './classix';
 export const jclassix = jjclassix;
 
+import { definition as jjconcen } from './concen';
+export const jconcen = jjconcen;
+
 import { definition as jjcpabien } from './cpabien';
 export const jcpabien = jjcpabien;
 
@@ -844,6 +847,7 @@ export const definitions = [
   jjcinemageddon,
   jjcinematik,
   jjclassix,
+  jjconcen,
   jjcpabien,
   jjcpasbienclone,
   jjcrnaberza,
