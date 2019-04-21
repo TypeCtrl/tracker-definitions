@@ -46,14 +46,14 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: 'takelogin.php',
+    path: 'login.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
       notsecure: '1',
     },
-    error: [{ selector: 'div.login_error_content' }],
+    error: [{ selector: 'div.login_error_content_text' }],
     test: { path: 'browse.php' },
   },
   search: {
