@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'cn-CN',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://cntorrentkitty.com/', 'http://cntorrentkitty.xyz/'],
+  links: ['https://gotorrentkitty.cc/'],
+  legacylinks: ['http://cntorrentkitty.com/', 'http://cntorrentkitty.xyz/'],
   settings: [
     {
       name: 'category',

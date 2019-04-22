@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['http://btkitty.pet/'],
+  links: ['https://btkittys.co/'],
   legacylinks: [
     'https://cnbtkitty.org/',
     'http://cnbtkitty.org/',
@@ -17,6 +17,7 @@ export const definition: TrackerDefinition = {
     'https://cnbtkitty.me/',
     'http://cnbtkitty.me/',
     'http://cnbtkitty.ws/',
+    'http://btkitty.pet/',
   ],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],

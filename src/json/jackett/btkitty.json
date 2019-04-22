@@ -6,7 +6,7 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["http://btkitty.pet/"],
+  "links": ["https://btkittys.co/"],
   "legacylinks": [
     "https://cnbtkitty.org/",
     "http://cnbtkitty.org/",
@@ -14,7 +14,8 @@
     "http://cnbtkitty.com/",
     "https://cnbtkitty.me/",
     "http://cnbtkitty.me/",
-    "http://cnbtkitty.ws/"
+    "http://cnbtkitty.ws/",
+    "http://btkitty.pet/"
   ],
   "caps": {
     "categorymappings": [{ "id": "1", "cat": "Other", "desc": "Other" }],
