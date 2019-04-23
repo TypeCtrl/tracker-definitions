@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'megabliz',
   name: 'Mega-Bliz',
-  description: 'Mega-Bliz is a Semi-Private site for MOVIES / TV / GENERAL',
+  description: 'Mega-Bliz is a Private site for MOVIES / TV / GENERAL',
   language: 'en-US',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'UTF-8',
   links: ['https://mega-bliz.nl/'],
   caps: {
