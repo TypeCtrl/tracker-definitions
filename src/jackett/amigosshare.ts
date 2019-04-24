@@ -167,7 +167,7 @@ export const definition: TrackerDefinition = {
       order: 'desc',
     },
     rows: {
-      selector: 'table > tbody > tr:has(a[href^="torrents-details.php?id="])',
+      selector: 'div#fancy-list-group ul.list-group li.list-group-item',
     },
     fields: {
       title: { selector: 'a[href^="torrents-details.php?id="]' },
@@ -179,13 +179,8 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
-        selector: 'a[href^="torrents-details.php?id="]',
-        attribute: 'title',
-        filters: [{ name: 'regexp', args: 'src="(.*?)"' }],
-      },
       category: {
-        selector: 'td:first-child img',
+        selector: 'div.list-group-item-addon img',
         attribute: 'src',
         case: {
           '[src$="/XXXZ.png"]': '74',
@@ -268,9 +263,11 @@ export const definition: TrackerDefinition = {
         },
       },
       date: { text: 'now' },
-      size: { selector: 'td:nth-child(2) span.badge-info' },
-      seeders: { selector: 'td:nth-child(4)' },
-      leechers: { selector: 'td:nth-child(5)' },
+      size: {
+        selector: 'div.list-group-item-content p.m-0 span.badge-info',
+      },
+      seeders: { selector: 'div.list-group-item-controls a:nth-child(1)' },
+      leechers: { selector: 'div.list-group-item-controls a:nth-child(2)' },
       downloadvolumefactor: {
         case: { 'span.badge-success:contains("FREE")': '0', '*': '1' },
       },
