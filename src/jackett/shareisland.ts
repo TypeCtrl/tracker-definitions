@@ -68,6 +68,18 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
+  download: {
+    before: {
+      path: 'thanks.php',
+      method: 'post',
+      inputs: {
+        infohash: '{{ .DownloadUri.Query.id }}',
+        thanks: '1',
+        rndval: '1487013827343',
+      },
+    },
+    selector: 'a[href^="download.php?id="]',
+  },
   search: {
     paths: [
       { path: 'index.php', inputs: { pages: 1 } },
@@ -104,7 +116,7 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       download: {
-        selector: 'a[href^="download.php?id="]',
+        selector: 'a[href^="index.php?page=downloadcheck&id="]',
         attribute: 'href',
       },
       title: {
