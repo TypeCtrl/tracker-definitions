@@ -14,16 +14,17 @@ export const definition: TrackerDefinition = {
       { id: '21', cat: 'Movies/DVD', desc: 'Movie DVD-9' },
       { id: '11', cat: 'Movies/DVD', desc: 'Movie DVD-5' },
       { id: '20', cat: 'Movies/SD', desc: 'Movie DVDRip' },
+      { id: '45', cat: 'Movies', desc: 'Movie RIP mp4' },
       { id: '22', cat: 'Movies/UHD', desc: 'Movie 4K-Ultra-HD' },
       { id: '23', cat: 'Movies/HD', desc: 'Movie H-265' },
       { id: '24', cat: 'Movies/HD', desc: 'Movie 1080p' },
       { id: '25', cat: 'Movies/HD', desc: 'Movie 720p' },
       { id: '26', cat: 'Movies/3D', desc: 'Movie 3D-FullHD' },
-      { id: '27', cat: 'Movies/BluRay', desc: 'Movie Blu Ray Disk' },
-      { id: '43', cat: 'Movies/SD', desc: 'BMovie DRip' },
+      { id: '27', cat: 'Movies/BluRay', desc: 'Movie BluRay' },
+      { id: '43', cat: 'Movies/SD', desc: 'Movie BDRip' },
       { id: '29', cat: 'Movies/SD', desc: 'Movie Cine News' },
-      { id: '30', cat: 'TV/HD', desc: 'Serie Tv HD' },
-      { id: '31', cat: 'TV/SD', desc: 'Serie Tv SD' },
+      { id: '30', cat: 'TV/HD', desc: 'Serie TV HD' },
+      { id: '31', cat: 'TV/SD', desc: 'Serie TV SD' },
       { id: '35', cat: 'TV/Other', desc: 'Programmi TV' },
       { id: '42', cat: 'TV/Documentary', desc: 'Documentari' },
       { id: '36', cat: 'Audio/MP3', desc: 'Music MP3' },
@@ -38,6 +39,7 @@ export const definition: TrackerDefinition = {
       { id: '28', cat: 'Books', desc: 'Edicola Libri' },
       { id: '17', cat: 'Books', desc: 'Edicola Riviste' },
       { id: '41', cat: 'Books', desc: 'Edicola Fumetti' },
+      { id: '4', cat: 'PC', desc: 'IPTV' },
       { id: '7', cat: 'PC/0day', desc: 'Applicazioni PC' },
       { id: '8', cat: 'PC/0day', desc: 'Applicazioni Linux' },
       { id: '9', cat: 'PC/Mac', desc: 'Applicazioni Mac' },
@@ -67,18 +69,6 @@ export const definition: TrackerDefinition = {
       { selector: 'td.lista > span[style="color:#FF0000;"]' },
     ],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
-  },
-  download: {
-    before: {
-      path: 'thanks.php',
-      method: 'post',
-      inputs: {
-        infohash: '{{ .DownloadUri.Query.id }}',
-        thanks: '1',
-        rndval: '1487013827343',
-      },
-    },
-    selector: 'a[href^="download.php?id="]',
   },
   search: {
     paths: [
@@ -116,7 +106,7 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       download: {
-        selector: 'a[href^="index.php?page=downloadcheck&id="]',
+        selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
       title: {
