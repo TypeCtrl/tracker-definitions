@@ -76,12 +76,6 @@ export const definition: TrackerDefinition = {
       { path: 'index.php', inputs: { pages: 2 } },
       { path: 'index.php', inputs: { pages: 3 } },
       { path: 'index.php', inputs: { pages: 4 } },
-      { path: 'index.php', inputs: { pages: 5 } },
-      { path: 'index.php', inputs: { pages: 6 } },
-      { path: 'index.php', inputs: { pages: 7 } },
-      { path: 'index.php', inputs: { pages: 8 } },
-      { path: 'index.php', inputs: { pages: 9 } },
-      { path: 'index.php', inputs: { pages: 10 } },
     ],
     inputs: {
       search: '{{ .Keywords }}',
@@ -100,8 +94,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     rows: {
-      selector:
-        'div.b-content > table > tbody > tr > td > table.lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
+      selector: 'table.lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {
@@ -110,9 +103,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       title: {
-        optional: true,
-        selector: 'td:nth-child(2)',
-        attribute: 'title',
+        selector: 'a[href^="index.php?page=torrent-details&id="]',
         filters: [
           { name: 're_replace', args: ['[^a-zA-Z0-9\\s]|\\.', ' '] },
           { name: 're_replace', args: ['[ ]{2,}', ' '] },
@@ -148,7 +139,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       category: {
-        selector: 'td:nth-child(1) a[href^="index.php?page=torrents&category="]',
+        selector: 'a[href^="index.php?page=torrents&category="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
@@ -162,17 +153,33 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
       },
-      size: { selector: 'td:nth-last-child(3)' },
+      size: {
+        selector: 'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(2)',
+        filters: [{ name: 'replace', args: ['   ', ' '] }, { name: 'regexp', args: '  (.*?)$' }],
+      },
       date: {
-        selector: 'td[width="85"]',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        selector: 'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(3)',
+        filters: [
+          { name: 'replace', args: ['  ', ' '] },
+          { name: 'regexp', args: ' (.*?)$' },
+          { name: 'dateparse', args: '15:04:05 02/01/2006' },
+        ],
+      },
+      seeders: {
+        selector:
+          'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(4) a:nth-of-type(1)',
+        filters: null,
+      },
+      leechers: {
+        selector:
+          'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(4) a:nth-of-type(2)',
+        filters: null,
       },
       grabs: {
-        selector: 'td[width="85"] + td + td + td',
-        filters: [{ name: 'replace', args: ['---', '0'] }],
+        optional: true,
+        selector:
+          'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(4) a:nth-of-type(3)',
       },
-      seeders: { selector: 'td[width="85"] + td' },
-      leechers: { selector: 'td[width="85"] + td + td' },
       downloadvolumefactor: {
         case: {
           'img[alt="Free Leech"]': '0',
