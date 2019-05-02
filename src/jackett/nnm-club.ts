@@ -8,8 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'WINDOWS-1251',
-  links: ['https://nnm-club.me/'],
-  legacylinks: ['https://nnm-club.name/'],
+  links: ['http://nnmclub.to/'],
+  legacylinks: ['https://nnm-club.name/', 'https://nnm-club.me/'],
   certificates: [
     '7877113458e90f3643dd28424657a29469f5dc55',
     '0edfdcc8cf9f69dbe5473878145cae92504275b0',
