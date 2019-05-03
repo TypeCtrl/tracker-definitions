@@ -202,6 +202,7 @@ export const jackettSites = [
   'sukebei-pantsu',
   'sukebeinyaasi',
   'takeabyte',
+  'tapochek',
   'tasmanit',
   'tbplus',
   'tenyardtracker',

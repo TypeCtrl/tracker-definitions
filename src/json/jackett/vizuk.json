@@ -171,18 +171,21 @@
       },
       "downloadvolumefactor": {
         "optional": true,
-        "selector": "img[src$=\"torrent_multiple_download.png\"]",
+        "selector": "img[src$=\"torrent_free.png\"]",
         "attribute": "title",
-        "filters": [{ "name": "split", "args": [":", 1] }, { "name": "trim" }]
+        "filters": [
+          { "name": "replace", "args": ["No cuenta la descarga", "0"] },
+          { "name": "replace", "args": ["Cuenta descarga: 0.5", "0.5"] }
+        ]
       },
       "uploadvolumefactor": {
         "optional": true,
         "selector": "img[src$=\"torrent_multiple_upload.png\"]",
         "attribute": "title",
-        "filters": [{ "name": "split", "args": [":", 1] }, { "name": "trim" }]
+        "filters": [{ "name": "replace", "args": ["Cuenta subida por: 2", 2] }]
       },
       "minimumratio": { "text": "1.0" },
-      "minimumseedtime": { "text": "259200" }
+      "minimumseedtime": { "text": "345600" }
     },
     "paths": [{ "path": "/" }]
   },

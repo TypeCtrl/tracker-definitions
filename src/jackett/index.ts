@@ -607,6 +607,9 @@ export const jsukebeinyaasi = jjsukebeinyaasi;
 import { definition as jjtakeabyte } from './takeabyte';
 export const jtakeabyte = jjtakeabyte;
 
+import { definition as jjtapochek } from './tapochek';
+export const jtapochek = jjtapochek;
+
 import { definition as jjtasmanit } from './tasmanit';
 export const jtasmanit = jjtasmanit;
 
@@ -997,6 +1000,7 @@ export const definitions = [
   jjsukebeiPantsu,
   jjsukebeinyaasi,
   jjtakeabyte,
+  jjtapochek,
   jjtasmanit,
   jjtbplus,
   jjtenyardtracker,
