@@ -24,7 +24,7 @@ export type Filters =
 
 export interface ReplaceFilter {
   name: 'replace';
-  args: [string, string];
+  args: [string, string | number];
 }
 
 export interface ReReplaceFilter {
