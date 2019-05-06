@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.yggtorrent.gg/'],
+  links: ['https://www.yggtorrent.ch/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -27,6 +27,7 @@ export const definition: TrackerDefinition = {
     'https://www.ygg.to/',
     'https://ww3.yggtorrent.gg/',
     'http://www2.yggtorrent.gg/',
+    'https://www.yggtorrent.gg/',
   ],
   caps: {
     categorymappings: [
@@ -98,7 +99,7 @@ export const definition: TrackerDefinition = {
       name: 'searchanddlurl',
       label: 'Search and download URL',
       type: 'text',
-      default: 'www2.yggtorrent.gg',
+      default: 'www2.yggtorrent.ch',
     },
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },

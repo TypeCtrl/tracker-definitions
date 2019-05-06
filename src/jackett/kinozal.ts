@@ -137,6 +137,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: [' / ', ' '] },
           { name: 'replace', args: ['Кураж-Бамбей', 'kurazh'] },
           { name: 'replace', args: ['Кубик в Кубе', 'Kubik'] },
+          { name: 'replace', args: ['Кравец', 'Kravec'] },
           {
             name: 're_replace',
             args: [
