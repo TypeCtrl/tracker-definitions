@@ -8,7 +8,6 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.trancetraffic.com/'],
-  certificates: ['117B89D7C086F3E051F0A5A3576504667402AE52'],
   caps: {
     modes: {
       search: ['q'],

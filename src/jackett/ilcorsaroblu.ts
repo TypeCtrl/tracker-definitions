@@ -9,7 +9,6 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://www.ilcorsaroblu.org/'],
   legacylinks: ['http://ilcorsaroblu.org/', 'https://www.ilcorsaroblu.info/'],
-  certificates: ['e6dd93ef71f96d04559e2bee8cc8e6fd74957730'],
   caps: {
     categorymappings: [
       { id: '12', cat: 'XXX', desc: 'Adult' },
