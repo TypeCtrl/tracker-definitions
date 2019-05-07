@@ -75,15 +75,12 @@
       "search_by": "{{ if .Query.IMDBID }}imdb{{else}}name{{end}}"
     },
     "rows": {
-      "selector": "table.table-striped > tbody > tr:has(a[title][href^=\"details.php?id=\"])"
+      "selector": "table.table-striped > tbody > tr:has(a[href^=\"details.php?id=\"])"
     },
     "fields": {
-      "title": {
-        "selector": "a[title][href^=\"details.php?id=\"]",
-        "attribute": "title"
-      },
+      "title": { "selector": "a[href^=\"details.php?id=\"]" },
       "details": {
-        "selector": "a[title][href^=\"details.php?id=\"]",
+        "selector": "a[href^=\"details.php?id=\"]",
         "attribute": "href"
       },
       "category": {
@@ -93,7 +90,7 @@
       },
       "banner": { "attribute": "rel" },
       "imdb": {
-        "selector": "a[href*=\"https://www.imdb.com/title/\"]",
+        "selector": "a[href*=\"www.imdb.com/title/\"]",
         "optional": true,
         "attribute": "href"
       },
