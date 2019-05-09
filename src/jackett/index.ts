@@ -76,6 +76,9 @@ export const jb2SShare = jjb2SShare;
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
 
+import { definition as jjbeyondHd } from './beyond-hd';
+export const jbeyondHd = jjbeyondHd;
+
 import { definition as jjbigtorrent } from './bigtorrent';
 export const jbigtorrent = jjbigtorrent;
 
@@ -823,6 +826,7 @@ export const definitions = [
   jjawesomehd,
   jjb2SShare,
   jjbackups,
+  jjbeyondHd,
   jjbigtorrent,
   jjbigtower,
   jjbitTitan,

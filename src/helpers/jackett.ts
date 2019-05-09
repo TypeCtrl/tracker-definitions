@@ -25,6 +25,7 @@ export const jackettSites = [
   'awesomehd',
   'b2s-share',
   'backups',
+  'beyond-hd',
   'bigtorrent',
   'bigtower',
   'bit-titan',
