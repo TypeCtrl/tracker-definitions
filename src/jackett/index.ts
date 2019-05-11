@@ -214,6 +214,9 @@ export const jdreamteam = jjdreamteam;
 import { definition as jjdxdhd } from './dxdhd';
 export const jdxdhd = jjdxdhd;
 
+import { definition as jjefectodoppler } from './efectodoppler';
+export const jefectodoppler = jjefectodoppler;
+
 import { definition as jjelitehd } from './elitehd';
 export const jelitehd = jjelitehd;
 
@@ -872,6 +875,7 @@ export const definitions = [
   jjdragonworldreloaded,
   jjdreamteam,
   jjdxdhd,
+  jjefectodoppler,
   jjelitehd,
   jjelitetorrentBiz,
   jjelittracker,

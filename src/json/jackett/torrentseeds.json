@@ -121,12 +121,13 @@
     },
     "fields": {
       "category": {
-        "selector": "td:nth-of-type(1) a",
+        "selector": "a[href^=\"browse.php?cat=\"]",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "cat" }]
       },
       "title": {
-        "selector": "td:nth-of-type(2) a",
+        "optional": true,
+        "selector": "td:nth-of-type(2) a[onmouseover]",
         "attribute": "onmouseover",
         "filters": [
           { "name": "split", "args": [">", "1"] },
@@ -134,10 +135,11 @@
         ]
       },
       "details": {
-        "selector": "td:nth-of-type(2) > a[onmouseover]",
+        "selector": "a[href^=\"details.php?id=\"]",
         "attribute": "href"
       },
       "banner": {
+        "optional": true,
         "selector": "td:nth-of-type(2) > a[onmouseover]",
         "attribute": "onmouseover",
         "filters": [
@@ -145,7 +147,10 @@
           { "name": "replace", "args": ["./pic/noposter.png", ""] }
         ]
       },
-      "download": { "selector": "td:nth-of-type(3) a", "attribute": "href" },
+      "download": {
+        "selector": "a[href^=\"download.php?torrent=\"]",
+        "attribute": "href"
+      },
       "files": { "selector": "td:nth-of-type(5)" },
       "date": {
         "optional": true,
