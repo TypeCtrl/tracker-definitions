@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   settings: [],
-  download: { selector: 'a[href^="/downloading/"]' },
+  download: { selector: 'a.download:contains("le Torrent")' },
   search: {
     paths: [
       {

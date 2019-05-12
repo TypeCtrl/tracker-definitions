@@ -39,7 +39,7 @@
       "tmdb": "",
       "sorting": "created_at",
       "direction": "desc",
-      "qty": 25
+      "qty": 100
     },
     "rows": { "selector": "table > tbody > tr" },
     "fields": {
@@ -66,13 +66,13 @@
         ]
       },
       "date": {
-        "selector": "td:nth-last-child(5)",
+        "selector": "td:not(a[href$=\"/history\"]) span.text-orange",
         "filters": [{ "name": "timeago" }]
       },
-      "size": { "selector": "td:nth-last-child(4)" },
-      "seeders": { "selector": "td:nth-last-child(3)" },
-      "leechers": { "selector": "td:nth-last-child(2)" },
-      "grabs": { "selector": "td:nth-last-child(1)" },
+      "size": { "selector": "td span.text-blue" },
+      "seeders": { "selector": "a[href$=\"/peers\"] span.text-green" },
+      "leechers": { "selector": "a[href$=\"/peers\"] span.text-red" },
+      "grabs": { "selector": "a[href$=\"/history\"]" },
       "imdb": {
         "optional": true,
         "selector": "a[href*=\"www.imdb.com/title/tt\"]",

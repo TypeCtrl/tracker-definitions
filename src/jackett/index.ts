@@ -256,9 +256,6 @@ export const jfilmPaleis = jjfilmPaleis;
 import { definition as jjfocusx } from './focusx';
 export const jfocusx = jjfocusx;
 
-import { definition as jjfreedomhd } from './freedomhd';
-export const jfreedomhd = jjfreedomhd;
-
 import { definition as jjfreetorrent } from './freetorrent';
 export const jfreetorrent = jjfreetorrent;
 
@@ -889,7 +886,6 @@ export const definitions = [
   jjfemdomcult,
   jjfilmPaleis,
   jjfocusx,
-  jjfreedomhd,
   jjfreetorrent,
   jjfrozenlayer,
   jjfullmixmusic,

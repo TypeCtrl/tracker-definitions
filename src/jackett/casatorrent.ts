@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://teamctgame.xyz/'],
-  legacylinks: ['https://teamctgame.co/'],
+  links: ['https://teamctgame.xyz/'],
+  legacylinks: ['https://teamctgame.co/', 'http://teamctgame.xyz/'],
   caps: {
     categorymappings: [
       { id: '65', cat: 'Movies/HD', desc: 'BD: BD' },

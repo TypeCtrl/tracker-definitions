@@ -85,7 +85,6 @@ export const jackettSites = [
   'femdomcult',
   'film-paleis',
   'focusx',
-  'freedomhd',
   'freetorrent',
   'frozenlayer',
   'fullmixmusic',
