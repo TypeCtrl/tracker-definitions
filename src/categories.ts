@@ -71,7 +71,7 @@ export type Categories =
   | 'Books/Other'
   | 'Books/Foreign';
 
-export const TORZNAB_CATEGORIES = {
+export const TORZNAB_CATEGORIES: { [key in Categories]: number } = {
   Console: 1000,
   'Console/NDS': 1010,
   'Console/PSP': 1020,
@@ -83,6 +83,7 @@ export const TORZNAB_CATEGORIES = {
   'Console/PS3': 1080,
   'Console/Other': 1090,
   'Console/3DS': 1110,
+  'Console/PS Vita': 1120,
   'Console/PSVita': 1120,
   'Console/WiiU': 1130,
   'Console/XboxOne': 1140,

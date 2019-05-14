@@ -19,7 +19,7 @@ export interface TrackerDefinition {
   /**
    * upstream origin of the tracker definition
    */
-  source: 'jackett' | 'cardigann';
+  source: 'jackett' | 'cardigann' | 'custom';
   /**
    * Internal name of the indexer (all lower case, typically the
    * display name without any special characters, same as filename)
@@ -225,8 +225,20 @@ export interface Ratio {
 export interface Fields {
   /**
    * title is required and parsed first
+   * torrent title
    */
   title: Selector;
+  category: Selector;
+  details: Selector;
+  comments: Selector;
+  download: Selector;
+  size: Selector;
+  date: Selector;
+  seeders: Selector;
+  leechers: Selector;
+  grabs: Selector;
+  downloadvolumefactor: Selector;
+  uploadvolumefactor: Selector;
   [key: string]: Selector;
 }
 
