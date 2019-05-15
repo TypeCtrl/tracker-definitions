@@ -28,7 +28,7 @@ export const definition: TrackerDefinition = {
       { id: '15', cat: 'Console/NDS', desc: 'DS' },
       { id: '68', cat: 'Console/NDS', desc: '3DS' },
       { id: '69', cat: 'Console/PSP', desc: 'PSP' },
-      { id: '70', cat: 'Console/PSVita', desc: 'PSVita' },
+      { id: '70', cat: 'Console/PS Vita', desc: 'PSVita' },
       { id: '65', cat: 'PC/Phone-IOS', desc: 'iOS' },
       { id: '49', cat: 'PC/Phone-Android', desc: 'Android' },
       { id: '66', cat: 'PC/Phone-Other', desc: 'Windows Mobile' },

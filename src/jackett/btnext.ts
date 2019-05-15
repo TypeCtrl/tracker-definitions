@@ -47,7 +47,7 @@ export const definition: TrackerDefinition = {
       { id: '81', cat: 'Console/PS3', desc: 'PS3' },
       { id: '82', cat: 'Console/PS4', desc: 'PS4' },
       { id: '83', cat: 'Console/PSP', desc: 'PSP' },
-      { id: '95', cat: 'Console/PSVita', desc: 'PSVITA' },
+      { id: '95', cat: 'Console/PS Vita', desc: 'PSVITA' },
       { id: '4', cat: 'Console/Wii', desc: 'Wii' },
       { id: '26', cat: 'Console/Xbox360', desc: 'XBOX360' },
       { id: '84', cat: 'Console/Xbox', desc: 'XONE' },
