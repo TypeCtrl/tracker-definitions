@@ -16,7 +16,7 @@ export const definition: TrackerDefinition = {
       type: 'info',
       label: 'Search results',
       default:
-        'For best results, increase the torrents number in your profile to 100.<br />Default is 15.',
+        'Only the <b>xBtit_Default</b> style is supported with this indexer.<br />For best results, increase the torrents number in your profile to 100.<br />Default is 15.',
     },
   ],
   caps: {

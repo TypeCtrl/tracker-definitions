@@ -280,6 +280,9 @@ export const jgaytorrentru = jjgaytorrentru;
 import { definition as jjgdf76 } from './gdf76';
 export const jgdf76 = jjgdf76;
 
+import { definition as jjgenerationfree } from './generationfree';
+export const jgenerationfree = jjgenerationfree;
+
 import { definition as jjgfxnews } from './gfxnews';
 export const jgfxnews = jjgfxnews;
 
@@ -574,6 +577,9 @@ export const jshellife = jjshellife;
 import { definition as jjshokweb } from './shokweb';
 export const jshokweb = jjshokweb;
 
+import { definition as jjsiambit } from './siambit';
+export const jsiambit = jjsiambit;
+
 import { definition as jjsktorrent } from './sktorrent';
 export const jsktorrent = jjsktorrent;
 
@@ -618,6 +624,9 @@ export const jtasmanit = jjtasmanit;
 
 import { definition as jjtbplus } from './tbplus';
 export const jtbplus = jjtbplus;
+
+import { definition as jjteamhd } from './teamhd';
+export const jteamhd = jjteamhd;
 
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
@@ -894,6 +903,7 @@ export const definitions = [
   jjgayTorrentsorg,
   jjgaytorrentru,
   jjgdf76,
+  jjgenerationfree,
   jjgfxnews,
   jjgfxpeers,
   jjgigatorrents,
@@ -992,6 +1002,7 @@ export const definitions = [
   jjsharingue,
   jjshellife,
   jjshokweb,
+  jjsiambit,
   jjsktorrent,
   jjskytorrentsclone,
   jjsolidtorrents,
@@ -1007,6 +1018,7 @@ export const definitions = [
   jjtapochek,
   jjtasmanit,
   jjtbplus,
+  jjteamhd,
   jjtenyardtracker,
   jjtheempire,
   jjthegeeks,
