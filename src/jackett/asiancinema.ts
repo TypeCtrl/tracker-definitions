@@ -36,6 +36,7 @@ export const definition: TrackerDefinition = {
     selector: 'li:has(i.fa-sync-alt)',
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
+  download: { selector: 'a[href*="/download/"]' },
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
@@ -60,7 +61,7 @@ export const definition: TrackerDefinition = {
       },
       title: { selector: 'a.view-torrent' },
       download: {
-        selector: 'a[href*="/download/"]',
+        selector: 'a[href*="/download_check/"]',
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },

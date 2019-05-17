@@ -121,6 +121,30 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'VOSTFR',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI FRENCH': 'MULTI FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI ENGLISH': 'MULTI ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI VOSTFR': 'MULTI VOSTFR',
+      },
+    },
+  ],
   login: {
     path: 'account-login.php',
     method: 'post',
@@ -160,7 +184,22 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'table.ttable_headinner > tbody > tr.t-row' },
     fields: {
-      title: { selector: 'a[href^="torrents-details.php?id="] b' },
+      title_original: {
+        selector: 'a[href^="torrents-details.php?id="] b',
+      },
+      title_multilang: {
+        text: '{{ .Result.title_original }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['\\s[Mm][Uu][Ll][Tt][Ii]\\s', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title: {
+        text:
+          '{{if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_original }}{{end}}',
+      },
       category: {
         selector: 'a[href^="torrents.php?cat="]',
         attribute: 'href',
