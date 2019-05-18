@@ -23,6 +23,7 @@ export const definition: TrackerDefinition = {
       { id: '11', cat: 'PC/Phone-Android', desc: 'Android ROMs' },
       { id: '12', cat: 'TV/Documentary', desc: 'Documentaries' },
       { id: '13', cat: 'TV', desc: 'Shows' },
+      { id: '14', cat: 'Audio/Video', desc: 'Music clips' },
     ],
     modes: {
       search: ['q'],
@@ -45,6 +46,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
       search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '',
@@ -68,15 +70,15 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
       size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(7)' },
-      leechers: { selector: 'td:nth-child(8)' },
+      seeders: { selector: 'td:nth-child(6)' },
+      leechers: { selector: 'td:nth-child(7)' },
       grabs: {
-        selector: 'td:nth-child(6)',
+        selector: 'td:nth-child(8)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
       imdb: {
         optional: true,
-        selector: 'a[href^="https://www.imdb.com/title/"]',
+        selector: 'a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },
       date: {
@@ -154,16 +156,20 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'i[data-original-title="100% Free"]': '0',
+          'i[data-original-title="Personal Freeleech"]': '0',
+          'i[data-original-title="Special Freeleech"]': '0',
+          'i[data-original-title="Freeleech Token"]': '0',
           'i[data-original-title="Global FreeLeech"]': '0',
           'i[data-original-title="Freeleech"]': '0',
+          'i[data-original-title="Featured"]': '0',
           '*': '1',
         },
       },
       uploadvolumefactor: {
         case: {
-          'i[data-original-title="Double upload"]': '2',
           'i[data-original-title="Double Upload"]': '2',
+          'i[data-original-title="Global Double Upload"]': '2',
+          'i[data-original-title="Featured"]': '2',
           '*': '1',
         },
       },

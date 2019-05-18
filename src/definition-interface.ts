@@ -13,7 +13,8 @@ export type SiteEncoding =
   | 'WINDOWS-1250'
   | 'WINDOWS-1251'
   | 'WINDOWS-1252'
-  | 'WINDOWS-1253';
+  | 'WINDOWS-1253'
+  | 'TIS-620';
 
 export interface TrackerDefinition {
   /**
@@ -228,18 +229,19 @@ export interface Fields {
    * torrent title
    */
   title: Selector;
-  category: Selector;
-  details: Selector;
-  comments: Selector;
-  download: Selector;
-  size: Selector;
-  date: Selector;
-  seeders: Selector;
-  leechers: Selector;
-  grabs: Selector;
-  downloadvolumefactor: Selector;
-  uploadvolumefactor: Selector;
-  [key: string]: Selector;
+  category?: Selector;
+  details?: Selector;
+  comments?: Selector;
+  download?: Selector;
+  magnet?: Selector;
+  size?: Selector;
+  date?: Selector;
+  seeders?: Selector;
+  leechers?: Selector;
+  grabs?: Selector;
+  downloadvolumefactor?: Selector;
+  uploadvolumefactor?: Selector;
+  [key: string]: Selector | undefined;
 }
 
 export interface Search {
