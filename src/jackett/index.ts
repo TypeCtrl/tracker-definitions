@@ -418,9 +418,6 @@ export const jmactorrents = jjmactorrents;
 import { definition as jjmagico } from './magico';
 export const jmagico = jjmagico;
 
-import { definition as jjmagnetdl } from './magnetdl';
-export const jmagnetdl = jjmagnetdl;
-
 import { definition as jjmajomparade } from './majomparade';
 export const jmajomparade = jjmajomparade;
 
@@ -567,9 +564,6 @@ export const jsharespacedb = jjsharespacedb;
 
 import { definition as jjsharewood } from './sharewood';
 export const jsharewood = jjsharewood;
-
-import { definition as jjsharingue } from './sharingue';
-export const jsharingue = jjsharingue;
 
 import { definition as jjshellife } from './shellife';
 export const jshellife = jjshellife;
@@ -949,7 +943,6 @@ export const definitions = [
   jjlosslessclub,
   jjmactorrents,
   jjmagico,
-  jjmagnetdl,
   jjmajomparade,
   jjmanicomioshare,
   jjmegabliz,
@@ -999,7 +992,6 @@ export const definitions = [
   jjshareisland,
   jjsharespacedb,
   jjsharewood,
-  jjsharingue,
   jjshellife,
   jjshokweb,
   jjsiambit,

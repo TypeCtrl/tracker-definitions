@@ -14,9 +14,10 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'TV', desc: 'TV' },
       { id: '3', cat: 'Audio', desc: 'Music' },
       { id: '4', cat: 'Books', desc: 'Books' },
-      { id: '5', cat: 'PC/Mac', desc: 'Apps' },
+      { id: '5', cat: 'PC', desc: 'Apps' },
       { id: '6', cat: 'Other', desc: 'Other' },
       { id: '7', cat: 'PC/Games', desc: 'Games' },
+      { id: '8', cat: 'TV/Sport', desc: 'Sports' },
     ],
     modes: {
       search: ['q'],
@@ -39,6 +40,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
       search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '',
@@ -145,11 +147,13 @@ export const definition: TrackerDefinition = {
         case: {
           'i[data-original-title="100% Free"]': '0',
           'i[data-original-title="Global FreeLeech"]': '0',
+          'i[data-original-title="Featured"]': '0',
           '*': '1',
         },
       },
       uploadvolumefactor: {
         case: {
+          'i[data-original-title="Featured"]': '2',
           'i[data-original-title="Double upload"]': '2',
           'i[data-original-title="Double Upload"]': '2',
           '*': '1',

@@ -82,23 +82,14 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'i[data-original-title="Personal Freeleech"]': '0',
-          'i[data-original-title="Special Freeleech"]': '0',
-          'i[data-original-title="Freeleech Token"]': '0',
-          'i[data-original-title="Global FreeLeech"]': '0',
-          'i[data-original-title="Freeleech"]': '0',
-          'i[data-original-title="Featured Torrent"]': '0',
+          'i[data-original-title="100% Free"]': '0',
+          'i[data-original-title="25% Promo"]': '0.75',
+          'i[data-original-title="50% Promo"]': '0.5',
+          'i[data-original-title="75% Promo"]': '0.25',
           '*': '1',
         },
       },
-      uploadvolumefactor: {
-        case: {
-          'i[data-original-title="Double Upload"]': '2',
-          'i[data-original-title="Global Double Upload"]': '2',
-          'i[data-original-title="Featured Torrent"]': '2',
-          '*': '1',
-        },
-      },
+      uploadvolumefactor: { case: { '*': '1' } },
     },
   },
   source: 'jackett',
