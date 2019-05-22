@@ -100,6 +100,7 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'td.text' }],
     test: { path: 'nDonated.php', selector: 'a[href="logout.php"]' },
   },
+  download: { selector: 'a[href^="downloadnew.php?id="]' },
   search: {
     paths: [
       {
@@ -118,7 +119,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table[width="100%"][border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="downloadnew.php?id="])',
+        'table[width="100%"][border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href*="hashinfo="])',
     },
     fields: {
       title: { selector: 'a[href^="details.php?id="]' },
@@ -132,7 +133,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'cat' }],
       },
       download: {
-        selector: 'a[href^="downloadnew.php?id="]',
+        selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
       imdb: {

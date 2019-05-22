@@ -748,6 +748,9 @@ export const jultimategamerclub = jjultimategamerclub;
 import { definition as jjunionfansub } from './unionfansub';
 export const junionfansub = jjunionfansub;
 
+import { definition as jjuniongang } from './uniongang';
+export const juniongang = jjuniongang;
+
 import { definition as jjvanila } from './vanila';
 export const jvanila = jjvanila;
 
@@ -1053,6 +1056,7 @@ export const definitions = [
   jjuhdbits,
   jjultimategamerclub,
   jjunionfansub,
+  jjuniongang,
   jjvanila,
   jjvizuk,
   jjwaffles,

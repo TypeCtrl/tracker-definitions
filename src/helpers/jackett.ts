@@ -249,6 +249,7 @@ export const jackettSites = [
   'uhdbits',
   'ultimategamerclub',
   'unionfansub',
+  'uniongang',
   'vanila',
   'vizuk',
   'waffles',
