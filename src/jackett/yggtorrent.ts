@@ -283,6 +283,10 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: ['[\\.\\s\\[\\-][Vv][Oo][Ss][Tt][Ff][Rr][\\.\\s\\]\\-]', '.ENGLISH.'],
           },
+          {
+            name: 're_replace',
+            args: ['[\\.\\s\\[\\-][Ss][Uu][Bb][Ff][Rr][Ee][Nn][Cc][Hh][\\.\\s\\]\\-]', '.ENGLISH.'],
+          },
         ],
       },
       title: {

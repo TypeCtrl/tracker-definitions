@@ -100,7 +100,14 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'td.text' }],
     test: { path: 'nDonated.php', selector: 'a[href="logout.php"]' },
   },
-  download: { selector: 'a[href^="downloadnew.php?id="]' },
+  download: {
+    before: {
+      path: 'ajax.php',
+      method: 'get',
+      inputs: { _action: 'say_thank', id: '{{ .DownloadUri.Query.id }}' },
+    },
+    selector: 'a[href^="downloadnew.php?id="]',
+  },
   search: {
     paths: [
       {

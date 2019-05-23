@@ -108,6 +108,10 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },
       grabs: { selector: 'td:nth-child(8)' },
+      date: {
+        selector: 'td:nth-child(5)',
+        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+      },
       downloadvolumefactor: { case: { '*': '1' } },
       uploadvolumefactor: { case: { '*': '1' } },
     },
