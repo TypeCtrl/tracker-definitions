@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '67', cat: 'TV/Sport', desc: 'Formula 1 2019' },
       { id: '68', cat: 'TV/Sport', desc: 'Formula 1 2018-1950' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep', 'imdbid'] },
   },
   login: {
     path: 'login',
@@ -48,7 +48,12 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       remember: 1,
     },
-    error: [{ selector: 'div.has-error' }],
+    error: [
+      {
+        selector: 'script[nonce]:contains("Error")',
+        message: { selector: 'script[nonce]:contains("Error")' },
+      },
+    ],
     test: { path: 'torrents', selector: 'a[href$="/logout"]' },
   },
   ratio: {
@@ -60,10 +65,10 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
-      search: '{{ .Keywords }}',
+      search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
       description: '',
       uploader: '',
-      imdb: '',
+      imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '',
       tmdb: '',
       sort: 'created_at',
@@ -83,11 +88,22 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(6)' },
-      leechers: { selector: 'td:nth-child(7)' },
+      banner: {
+        optional: true,
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+        filters: [
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/600x900', ''],
+          },
+        ],
+      },
+      size: { selector: 'td:nth-last-child(4)' },
+      seeders: { selector: 'td:nth-last-child(3)' },
+      leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
-        selector: 'td:nth-child(8)',
+        selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
       date: {

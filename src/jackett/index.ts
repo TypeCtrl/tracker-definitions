@@ -538,6 +538,9 @@ export const jrgu = jjrgu;
 import { definition as jjrockbox } from './rockbox';
 export const jrockbox = jjrockbox;
 
+import { definition as jjrockethd } from './rockethd';
+export const jrockethd = jjrockethd;
+
 import { definition as jjrodvd } from './rodvd';
 export const jrodvd = jjrodvd;
 
@@ -986,6 +989,7 @@ export const definitions = [
   jjretroflix,
   jjrgu,
   jjrockbox,
+  jjrockethd,
   jjrodvd,
   jjrutor,
   jjscenefz,

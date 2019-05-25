@@ -38,7 +38,12 @@ export const definition: TrackerDefinition = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [{ selector: 'form[action*="/login"] .text-red' }],
+    error: [
+      {
+        selector: 'script[nonce]:contains("Error")',
+        message: { selector: 'script[nonce]:contains("Error")' },
+      },
+    ],
     test: { path: 'torrents' },
   },
   search: {
@@ -69,11 +74,22 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(6)' },
-      leechers: { selector: 'td:nth-child(7)' },
+      banner: {
+        optional: true,
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+        filters: [
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/600x900', ''],
+          },
+        ],
+      },
+      size: { selector: 'td:nth-last-child(4)' },
+      seeders: { selector: 'td:nth-last-child(3)' },
+      leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
-        selector: 'td:nth-child(8)',
+        selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
       imdb: {

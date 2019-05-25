@@ -1,19 +1,18 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'Channelx',
-  name: 'ChannelX',
-  description: 'ChannelX is a Private Torrent Tracker for High Quality Optimized HD MOVIES / TV',
-  language: 'en-US',
+  site: 'rockethd',
+  name: 'RocketHD',
+  description: 'RocketHD is a GERMAN Private Tracker for MOVIES / TV',
+  language: 'de-DE',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://channelx.online/'],
+  links: ['https://rocket-hd.me/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
       { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '3', cat: 'Audio', desc: 'Audiotracks' },
-      { id: '4', cat: 'TV/Sport', desc: 'Sports' },
+      { id: '3', cat: 'Movies', desc: 'Collection' },
     ],
     modes: {
       search: ['q'],
@@ -42,7 +41,6 @@ export const definition: TrackerDefinition = {
     selector: 'li:has(i.fa-sync-alt)',
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
-  download: { selector: 'a[href*="/download/"]' },
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
@@ -67,7 +65,7 @@ export const definition: TrackerDefinition = {
       },
       title: { selector: 'a.view-torrent' },
       download: {
-        selector: 'a[href*="/download_check/"]',
+        selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },

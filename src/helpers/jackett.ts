@@ -179,6 +179,7 @@ export const jackettSites = [
   'retroflix',
   'rgu',
   'rockbox',
+  'rockethd',
   'rodvd',
   'rutor',
   'scenefz',

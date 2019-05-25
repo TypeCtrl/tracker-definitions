@@ -29,15 +29,22 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      remember: 1,
     },
-    error: [{ selector: 'form[action*="/login"] .text-red' }],
-    test: { path: 'torrents' },
+    error: [
+      {
+        selector: 'script[nonce]:contains("Error")',
+        message: { selector: 'script[nonce]:contains("Error")' },
+      },
+    ],
+    test: { path: 'torrents', selector: 'a[href$="/logout"]' },
   },
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
       search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '',
@@ -60,11 +67,11 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(7)' },
-      leechers: { selector: 'td:nth-child(8)' },
+      size: { selector: 'td:nth-last-child(4)' },
+      seeders: { selector: 'td:nth-last-child(3)' },
+      leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
-        selector: 'td:nth-child(6)',
+        selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
       date: {
@@ -142,15 +149,20 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'i[data-original-title="100% Free"]': '0',
+          'i[data-original-title="Personal Freeleech"]': '0',
+          'i[data-original-title="Special Freeleech"]': '0',
+          'i[data-original-title="Freeleech Token"]': '0',
           'i[data-original-title="Global FreeLeech"]': '0',
+          'i[data-original-title="Freeleech"]': '0',
+          'i[data-original-title="Featured"]': '0',
           '*': '1',
         },
       },
       uploadvolumefactor: {
         case: {
-          'i[data-original-title="Double upload"]': '2',
           'i[data-original-title="Double Upload"]': '2',
+          'i[data-original-title="Global Double Upload"]': '2',
+          'i[data-original-title="Featured"]': '2',
           '*': '1',
         },
       },

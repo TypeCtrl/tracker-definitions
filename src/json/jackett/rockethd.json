@@ -1,42 +1,22 @@
 {
-  "site": "racing4everyone",
-  "name": "Racing4Everyone (R4E)",
-  "description": "Racing4Everyone (R4E) is a Private Torrent Tracker for RACING",
-  "language": "en-US",
+  "site": "rockethd",
+  "name": "RocketHD",
+  "description": "RocketHD is a GERMAN Private Tracker for MOVIES / TV",
+  "language": "de-DE",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://racing4everyone.eu/"],
-  "legacylinks": ["https://racing4everyone.jp/"],
+  "links": ["https://rocket-hd.me/"],
   "caps": {
     "categorymappings": [
-      { "id": "1", "cat": "TV/Sport", "desc": "BTCC" },
-      { "id": "2", "cat": "TV/Sport", "desc": "Documentaries/TV" },
-      { "id": "3", "cat": "TV/Sport", "desc": "DTM" },
-      { "id": "22", "cat": "TV/Sport", "desc": "Formula 2" },
-      { "id": "23", "cat": "TV/Sport", "desc": "Formula E" },
-      { "id": "24", "cat": "TV/Sport", "desc": "Misc" },
-      { "id": "25", "cat": "TV/Sport", "desc": "Motorbikes" },
-      { "id": "26", "cat": "TV/Sport", "desc": "MotoGP/2/3" },
-      { "id": "31", "cat": "TV/Sport", "desc": "Nascar" },
-      { "id": "32", "cat": "TV/Sport", "desc": "Stockcars" },
-      { "id": "33", "cat": "TV/Sport", "desc": "Touring Cars" },
-      { "id": "50", "cat": "TV/Sport", "desc": "WRC" },
-      { "id": "53", "cat": "TV/Sport", "desc": "Open-Wheelers" },
-      { "id": "55", "cat": "TV/Sport", "desc": "Season Reviews" },
-      { "id": "56", "cat": "TV/Sport", "desc": "WRX" },
-      { "id": "57", "cat": "TV/Sport", "desc": "WEC" },
-      { "id": "58", "cat": "TV/Sport", "desc": "Formula 1 Full Seasons" },
-      { "id": "60", "cat": "TV/Sport", "desc": "Drag Racing" },
-      { "id": "61", "cat": "TV/Sport", "desc": "Rally" },
-      { "id": "62", "cat": "TV/Sport", "desc": "Formula 1 Testing" },
-      { "id": "63", "cat": "TV/Sport", "desc": "Supercars" },
-      { "id": "64", "cat": "TV/Sport", "desc": "Indycar Complete Seasons" },
-      { "id": "65", "cat": "TV/Sport", "desc": "NASCAR Complete Seasons" },
-      { "id": "66", "cat": "TV/Sport", "desc": "Documentaries" },
-      { "id": "67", "cat": "TV/Sport", "desc": "Formula 1 2019" },
-      { "id": "68", "cat": "TV/Sport", "desc": "Formula 1 2018-1950" }
+      { "id": "1", "cat": "Movies", "desc": "Movies" },
+      { "id": "2", "cat": "TV", "desc": "TV" },
+      { "id": "3", "cat": "Movies", "desc": "Collection" }
     ],
-    "modes": { "search": ["q"], "tv-search": ["q", "season", "ep", "imdbid"] }
+    "modes": {
+      "search": ["q"],
+      "tv-search": ["q", "season", "ep", "imdbid"],
+      "movie-search": ["q", "imdbid"]
+    }
   },
   "login": {
     "path": "login",
@@ -55,8 +35,8 @@
     "test": { "path": "torrents", "selector": "a[href$=\"/logout\"]" }
   },
   "ratio": {
-    "path": "/",
-    "selector": "span:has(i.fa-sync-alt)",
+    "path": "torrents",
+    "selector": "li:has(i.fa-sync-alt)",
     "filters": [{ "name": "regexp", "args": "Ratio : (\\d+)" }]
   },
   "search": {
@@ -69,6 +49,7 @@
       "imdb": "{{ .Query.IMDBIDShort }}",
       "tvdb": "",
       "tmdb": "",
+      "mal": "",
       "sort": "created_at",
       "direction": "desc",
       "qty": 100
@@ -103,6 +84,11 @@
       "grabs": {
         "selector": "td:nth-last-child(1)",
         "filters": [{ "name": "regexp", "args": "([\\d\\.]+)" }]
+      },
+      "imdb": {
+        "optional": true,
+        "selector": "a[href*=\"www.imdb.com/title/tt\"]",
+        "attribute": "href"
       },
       "date": {
         "selector": "time",
