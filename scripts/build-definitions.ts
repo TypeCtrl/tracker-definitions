@@ -1,9 +1,10 @@
+import del from 'del';
 import fs from 'fs';
 import * as yaml from 'js-yaml';
 import { camelCase } from 'lodash';
 import path from 'path';
 import prettier from 'prettier';
-import rimraf from 'rimraf';
+
 import { TORZNAB_CATEGORIES } from '../src/categories';
 
 const SOURCES = [
@@ -42,10 +43,12 @@ function validateJson(json: any): any {
   } else {
     lang = `${lang}-${lang.toUpperCase()}`;
   }
+
   // TODO: make pr to jackett removing this
   if (lang === 'us-EN') {
     lang = 'en-US';
   }
+
   json.language = lang;
 
   // parse and normalize categories
@@ -54,8 +57,10 @@ function validateJson(json: any): any {
       return { id: n, cat: json.caps.categories[n] };
     });
     json.caps.categorymappings = mappings;
-    delete json.caps.categories;
   }
+
+  delete json.caps.categories;
+
   if (json.caps.categorymappings) {
     json.caps.categorymappings = json.caps.categorymappings.map(cat => {
       const l = cat.cat.toLowerCase().replace(' ', '');
@@ -89,9 +94,9 @@ for (const src of SOURCES) {
   const jsonOutDir = path.join(__dirname, `../src/json/${src.name}`);
   const moduleOutDir = path.join(__dirname, `../src/${src.name}`);
   // cleanup dir
-  rimraf.sync(jsonOutDir);
+  del.sync(jsonOutDir);
   fs.mkdirSync(jsonOutDir);
-  rimraf.sync(moduleOutDir);
+  del.sync(moduleOutDir);
   fs.mkdirSync(moduleOutDir);
 
   for (const file of files) {

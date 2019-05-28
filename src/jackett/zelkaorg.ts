@@ -9,7 +9,6 @@ export const definition: TrackerDefinition = {
   encoding: 'WINDOWS-1251',
   links: ['http://zelka.org/', 'http://zamunda.se/'],
   caps: {
-    categories: null,
     categorymappings: [
       { id: '42', cat: 'Movies/BluRay', desc: 'Movies Blu-ray' },
       { id: '25', cat: 'TV/Anime', desc: 'TV Animation/Anime' },
