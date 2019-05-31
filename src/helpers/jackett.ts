@@ -139,6 +139,7 @@ export const jackettSites = [
   'losslessclub',
   'mactorrents',
   'magico',
+  'magnetdl',
   'majomparade',
   'manicomioshare',
   'megabliz',

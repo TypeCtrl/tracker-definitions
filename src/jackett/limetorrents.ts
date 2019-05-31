@@ -43,7 +43,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}search/all/{{ .Keywords}}/{{else}}/index.php?page=latest100{{end}}',
+        path:
+          '{{if .Keywords}}search/all/{{ .Keywords}}/date/1/{{else}}/index.php?page=latest100{{end}}',
       },
     ],
     keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
