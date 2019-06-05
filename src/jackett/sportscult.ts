@@ -13,11 +13,13 @@ export const definition: TrackerDefinition = {
       { id: '47', cat: 'TV/Sport', desc: 'EPL' },
       { id: '41', cat: 'TV/Sport', desc: 'American Football' },
       { id: '17', cat: 'TV/Sport', desc: 'Athletics' },
+      { id: '51', cat: 'TV/Sport', desc: 'Baseball' },
       { id: '34', cat: 'TV/Sport', desc: 'Bodybuilding/Fitness' },
+      { id: '50', cat: 'TV/Sport', desc: 'Golf' },
       { id: '29', cat: 'TV/Sport', desc: 'Boxing' },
       { id: '19', cat: 'TV/Sport', desc: 'BrainGames' },
       { id: '36', cat: 'TV/Sport', desc: 'BreakDance' },
-      { id: '40', cat: 'TV/Sport', desc: 'Cricet/Golf/Baseball' },
+      { id: '40', cat: 'TV/Sport', desc: 'Golf' },
       { id: '23', cat: 'TV/Sport', desc: 'Cycling' },
       { id: '31', cat: 'TV/Sport', desc: 'Documentary' },
       { id: '1', cat: 'TV/Sport', desc: 'European Basketball' },
@@ -55,6 +57,7 @@ export const definition: TrackerDefinition = {
       { id: '16', cat: 'TV/Sport', desc: 'WinterSport' },
       { id: '33', cat: 'TV/Sport', desc: 'Wrestling/Grapling' },
       { id: '48', cat: 'TV/Sport', desc: 'Uncategorised' },
+      { id: '53', cat: 'TV/Sport', desc: 'Cricket' },
     ],
     modes: { search: ['q'] },
   },
@@ -69,7 +72,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'span:contains("Password Incorrect")' }],
     test: { path: 'index.php' },
   },
-  download: { selector: 'a[href^="download.php?id="]' },
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {
@@ -89,16 +91,15 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
-      title: { remove: 'span', selector: 'td:nth-child(2)' },
+      title: {
+        remove: 'span',
+        selector: 'td:nth-child(2)',
+        filters: [{ name: 're_replace', args: ['( \\| )+', ' '] }],
+      },
       download: {
-        selector: 'a[href^="index.php?page=torrent-details&id="]',
+        selector: 'a[href^="download.php?id="]',
         attribute: 'href',
-        filters: [
-          {
-            name: 'replace',
-            args: ['index.php?page=torrent-details&id=', 'download.php?id='],
-          },
-        ],
+        filters: [{ name: 're_replace', args: ['(\\+%7C\\+)+', '+'] }],
       },
       details: {
         selector: 'a[href^="index.php?page=torrent-details&id="]',
