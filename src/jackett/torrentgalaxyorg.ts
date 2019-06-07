@@ -61,7 +61,7 @@ export const definition: TrackerDefinition = {
       sort: 'id',
       order: 'desc',
     },
-    rows: { selector: 'div[class="tgxtablerow clickable-row click"]' },
+    rows: { selector: 'div[class="tgxtablerow"]' },
     fields: {
       title: {
         selector: 'div a[href^="/torrent/"]',
@@ -76,7 +76,6 @@ export const definition: TrackerDefinition = {
         selector: 'div a[href^="/torrent/"]',
         attribute: 'href',
       },
-      download: { selector: 'div a[href*="/get/"]', attribute: 'href' },
       magnet: {
         selector: 'div a[href^="magnet:?"]',
         attribute: 'href',
