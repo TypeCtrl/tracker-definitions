@@ -82,11 +82,11 @@
     },
     "fields": {
       "title": {
-        "selector": "td:nth-child(2) a",
+        "selector": "a[href^=\"javascript:popdetails\"]",
         "filters": [{ "name": "replace", "args": ["[FREE] ", ""] }]
       },
       "details": {
-        "selector": "td:nth-child(2) a",
+        "selector": "a[href^=\"javascript:popdetails\"]",
         "attribute": "href",
         "filters": [
           { "name": "replace", "args": ["javascript:popdetails('", ""] },
@@ -94,23 +94,22 @@
         ]
       },
       "category": {
-        "selector": "td:nth-child(1) a",
+        "selector": "a[href^=\"torrents.php?category=\"]",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "category" }]
       },
       "download": {
-        "optional": true,
-        "selector": "td:nth-child(4) a",
+        "selector": "a[href^=\"download.php?id=\"]",
         "attribute": "href"
       },
       "date": {
-        "selector": "td:nth-child(5)",
+        "selector": "td:nth-last-child(9)",
         "filters": [{ "name": "dateparse", "args": "02/01/2006" }]
       },
-      "size": { "selector": "td:nth-child(6)" },
-      "seeders": { "selector": "td:nth-child(8)" },
-      "leechers": { "selector": "td:nth-child(9) a" },
-      "grabs": { "selector": "td:nth-child(10)" },
+      "size": { "selector": "td:nth-last-child(8)" },
+      "seeders": { "selector": "td:nth-last-child(6)" },
+      "leechers": { "selector": "td:nth-last-child(5)" },
+      "grabs": { "selector": "td:nth-last-child(4)" },
       "downloadvolumefactor": {
         "case": { "img[src=\"images/fdownload.gif\"]": "0", "*": "1" }
       },

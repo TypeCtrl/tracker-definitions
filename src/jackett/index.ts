@@ -148,9 +148,6 @@ export const jchannelx = jjchannelx;
 import { definition as jjchdbits } from './chdbits';
 export const jchdbits = jjchdbits;
 
-import { definition as jjcinefilhd } from './cinefilhd';
-export const jcinefilhd = jjcinefilhd;
-
 import { definition as jjcinemageddon } from './cinemageddon';
 export const jcinemageddon = jjcinemageddon;
 
@@ -862,7 +859,6 @@ export const definitions = [
   jjccfbits,
   jjchannelx,
   jjchdbits,
-  jjcinefilhd,
   jjcinemageddon,
   jjcinematik,
   jjclassix,

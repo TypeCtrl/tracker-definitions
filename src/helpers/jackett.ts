@@ -49,7 +49,6 @@ export const jackettSites = [
   'ccfbits',
   'channelx',
   'chdbits',
-  'cinefilhd',
   'cinemageddon',
   'cinematik',
   'classix',
