@@ -32,13 +32,16 @@ export const definition: TrackerDefinition = {
         path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time{{else}}recent{{end}}',
       },
       {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=2{{else}}{{end}}',
+        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=2{{else}}recent?page=2{{end}}',
       },
       {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=3{{else}}{{end}}',
+        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=3{{else}}recent?page=3{{end}}',
       },
       {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=4{{else}}{{end}}',
+        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=4{{else}}recent?page=4{{end}}',
+      },
+      {
+        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=5{{else}}recent?page=5{{end}}',
       },
     ],
     rows: { selector: 'li[class$="item"]' },
@@ -58,7 +61,10 @@ export const definition: TrackerDefinition = {
       },
       size: { selector: 'div[class$="info"] span:nth-of-type(1)' },
       files: { selector: 'div[class$="info"] span:nth-of-type(2)' },
-      date: { selector: 'div[class$="info"] span:nth-of-type(3)' },
+      date: {
+        selector: 'div[class$="info"] span:nth-of-type(3)',
+        filters: [{ name: 'timeago' }],
+      },
       grabs: { selector: 'div[class$="info"] span:nth-of-type(4)' },
       seeders: { text: 1 },
       leechers: { text: 1 },

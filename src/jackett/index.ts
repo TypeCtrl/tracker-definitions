@@ -544,6 +544,9 @@ export const jrockethd = jjrockethd;
 import { definition as jjrodvd } from './rodvd';
 export const jrodvd = jjrodvd;
 
+import { definition as jjrptorrents } from './rptorrents';
+export const jrptorrents = jjrptorrents;
+
 import { definition as jjrutor } from './rutor';
 export const jrutor = jjrutor;
 
@@ -793,6 +796,9 @@ export const jxwtorrents = jjxwtorrents;
 import { definition as jjyggtorrent } from './yggtorrent';
 export const jyggtorrent = jjyggtorrent;
 
+import { definition as jjyourbittorrent } from './yourbittorrent';
+export const jyourbittorrent = jjyourbittorrent;
+
 import { definition as jjyourexotic } from './yourexotic';
 export const jyourexotic = jjyourexotic;
 
@@ -991,6 +997,7 @@ export const definitions = [
   jjrockbox,
   jjrockethd,
   jjrodvd,
+  jjrptorrents,
   jjrutor,
   jjscenefz,
   jjscenereactor,
@@ -1074,6 +1081,7 @@ export const definitions = [
   jjxtremezone,
   jjxwtorrents,
   jjyggtorrent,
+  jjyourbittorrent,
   jjyourexotic,
   jjzamundanet,
   jjzelkaorg,
