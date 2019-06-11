@@ -23,9 +23,9 @@ export const definition: TrackerDefinition = {
     fields: {
       title: { selector: 'div.blog-content h3 a' },
       category: {
-        selector: 'a[href*="/category/"]',
+        selector: 'a[href*="/mac-os-"]',
         attribute: 'href',
-        filters: [{ name: 'split', args: ['/', 4] }],
+        filters: [{ name: 'split', args: ['/', 3] }],
       },
       details: { selector: 'div.blog-content h3 a', attribute: 'href' },
       download: { selector: 'a.download', attribute: 'href' },
@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
         attribute: 'data-src',
       },
       date: {
-        selector: 'div.blog-content div.entry-meta time',
+        selector: 'time',
         attribute: 'datetime',
         filters: [
           { name: 'replace', args: ['T', ' '] },
