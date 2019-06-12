@@ -373,6 +373,9 @@ export const jinsanetracker = jjinsanetracker;
 import { definition as jjisohunt2 } from './isohunt2';
 export const jisohunt2 = jjisohunt2;
 
+import { definition as jjitorrent } from './itorrent';
+export const jitorrent = jjitorrent;
+
 import { definition as jjjpopsuki } from './jpopsuki';
 export const jjpopsuki = jjjpopsuki;
 
@@ -438,6 +441,9 @@ export const jmononokebt = jjmononokebt;
 
 import { definition as jjmonova } from './monova';
 export const jmonova = jjmonova;
+
+import { definition as jjmovcr } from './movcr';
+export const jmovcr = jjmovcr;
 
 import { definition as jjmteamtp } from './mteamtp';
 export const jmteamtp = jjmteamtp;
@@ -940,6 +946,7 @@ export const definitions = [
   jjinperil,
   jjinsanetracker,
   jjisohunt2,
+  jjitorrent,
   jjjpopsuki,
   jjkapaki,
   jjkaragarga,
@@ -962,6 +969,7 @@ export const definitions = [
   jjmetaltracker,
   jjmononokebt,
   jjmonova,
+  jjmovcr,
   jjmteamtp,
   jjmvgroupforum,
   jjmvgroupmain,
