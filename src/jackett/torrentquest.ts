@@ -1,14 +1,13 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'magnetdl',
-  name: 'MagnetDL',
-  description: 'MagnetDL is a Public torrent Magnet Links search engine',
+  site: 'torrentquest',
+  name: 'TorrentQuest',
+  description: 'TorrentQuest is a Public torrent Magnet Links search engine',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.magnetdl.com/'],
-  legacylinks: ['http://www.magnetdl.com/'],
+  links: ['https://torrentquest.com/'],
   caps: {
     modes: {
       search: ['q'],

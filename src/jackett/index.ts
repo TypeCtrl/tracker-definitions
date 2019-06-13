@@ -301,6 +301,9 @@ export const jgreekteam = jjgreekteam;
 import { definition as jjhachede } from './hachede';
 export const jhachede = jjhachede;
 
+import { definition as jjhamsterstudio } from './hamsterstudio';
+export const jhamsterstudio = jjhamsterstudio;
+
 import { definition as jjhd4Free } from './hd4free';
 export const jhd4Free = jjhd4Free;
 
@@ -483,6 +486,9 @@ export const jnyoo = jjnyoo;
 
 import { definition as jjourbits } from './ourbits';
 export const jourbits = jjourbits;
+
+import { definition as jjoxtorrent } from './oxtorrent';
+export const joxtorrent = jjoxtorrent;
 
 import { definition as jjp2Pbg } from './p2pbg';
 export const jp2Pbg = jjp2Pbg;
@@ -721,6 +727,9 @@ export const jtorrentlt = jjtorrentlt;
 import { definition as jjtorrentproject2 } from './torrentproject2';
 export const jtorrentproject2 = jjtorrentproject2;
 
+import { definition as jjtorrentquest } from './torrentquest';
+export const jtorrentquest = jjtorrentquest;
+
 import { definition as jjtorrentsectorcrew } from './torrentsectorcrew';
 export const jtorrentsectorcrew = jjtorrentsectorcrew;
 
@@ -922,6 +931,7 @@ export const definitions = [
   jjgktorrent,
   jjgreekteam,
   jjhachede,
+  jjhamsterstudio,
   jjhd4Free,
   jjhdarea,
   jjhdbits,
@@ -983,6 +993,7 @@ export const definitions = [
   jjnyaasi,
   jjnyoo,
   jjourbits,
+  jjoxtorrent,
   jjp2Pbg,
   jjpassionetorrent,
   jjpeersfm,
@@ -1062,6 +1073,7 @@ export const definitions = [
   jjtorrentland,
   jjtorrentlt,
   jjtorrentproject2,
+  jjtorrentquest,
   jjtorrentsectorcrew,
   jjtorrentseeds,
   jjtorrentslocal,
