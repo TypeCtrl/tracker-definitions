@@ -160,11 +160,10 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
-      name: 'sonarrv3hack',
+      name: 'betasearchengine',
       type: 'checkbox',
-      label:
-        "Enable Full season search hack: Sonarrv3 send 'Series Name SXX' but it won't match 'Series Name - Saison 01' for example so we remove the 'SXX' ==> 'Series Name'",
-      default: true,
+      label: 'Use Beta Search engine URL (Less restrictive) / SonarrV3 Full Series Search NEW',
+      default: false,
     },
   ],
   login: {
@@ -201,22 +200,15 @@ export const definition: TrackerDefinition = {
   },
   search: {
     followredirect: true,
-    keywordsfilters: [
-      {
-        name: 're_replace',
-        args: ['(.*)[sS](\\d{1,4})$', '{{ if .Config.sonarrv3hack }}$1{{else}}$1S$2{{end}}'],
-      },
-      { name: 'replace', args: ['"', ''] },
-      { name: 'trim' },
-    ],
+    keywordsfilters: [{ name: 'replace', args: ['"', ''] }, { name: 'trim' }],
     paths: [
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ re_replace .Keywords "\\s" """" }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
+          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/engine/search?category={{ .Config.category }}&name={{if .Config.enhancedAnime}}{{ re_replace .Keywords "([\\.\\s\\[\\-])(\\d+)$" "$1e$2" }}{{else}}{{ re_replace .Keywords "\\s" """" }}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
+          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
@@ -289,9 +281,22 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      title: {
+      title_phase3: {
         text:
           '{{if .Config.vostfr }}{{ .Result.title_vostfr }}{{else}}{{ .Result.title_phase2 }}{{end}}',
+      },
+      title_anime: {
+        text: '{{ .Result.title_phase3 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(.*)(\\.| |\\-)(\\d{1,4})(\\.| |\\-)(.*)', '$1 E$3 $5'],
+          },
+        ],
+      },
+      title: {
+        text:
+          '{{if .Config.enhancedAnime }}{{ .Result.title_anime }}{{else}}{{ .Result.title_phase3 }}{{end}}',
       },
       details: { selector: ':nth-child(2) > a', attribute: 'href' },
       category: { selector: ':nth-child(1) > div.hidden' },
