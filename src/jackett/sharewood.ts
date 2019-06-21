@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'div.table-responsive-line' },
     fields: {
       category: {
-        selector: 'i.torrent-icon',
+        selector: 'img.torrent-icon',
         attribute: 'data-original-title',
       },
       title: { selector: 'a.view-torrent' },

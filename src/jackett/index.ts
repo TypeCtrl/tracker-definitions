@@ -439,6 +439,9 @@ export const jmetalIplayRo = jjmetalIplayRo;
 import { definition as jjmetaltracker } from './metaltracker';
 export const jmetaltracker = jjmetaltracker;
 
+import { definition as jjmkvcage } from './mkvcage';
+export const jmkvcage = jjmkvcage;
+
 import { definition as jjmononokebt } from './mononokebt';
 export const jmononokebt = jjmononokebt;
 
@@ -977,6 +980,7 @@ export const definitions = [
   jjmegabliz,
   jjmetalIplayRo,
   jjmetaltracker,
+  jjmkvcage,
   jjmononokebt,
   jjmonova,
   jjmovcr,

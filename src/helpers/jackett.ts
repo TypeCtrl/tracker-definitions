@@ -146,6 +146,7 @@ export const jackettSites = [
   'megabliz',
   'metal-iplay-ro',
   'metaltracker',
+  'mkvcage',
   'mononokebt',
   'monova',
   'movcr',

@@ -48,20 +48,19 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
-  login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
-    inputs: {
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
-      use_ssl: '1',
-      perm_ssl: '1',
+  settings: [
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
     },
-    error: [
-      { selector: 'tbody:has(td.colhead > span:contains("Error"))' },
-      { selector: 'tbody:has(td.colhead > span:contains("failed"))' },
-    ],
+  ],
+  login: {
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'browse.php' },
   },
   search: {

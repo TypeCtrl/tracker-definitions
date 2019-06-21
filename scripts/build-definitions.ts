@@ -86,6 +86,8 @@ function validateJson(json: any): any {
   return json;
 }
 
+const skip = ['nbtorrents'];
+
 for (const src of SOURCES) {
   const files = fs.readdirSync(src.dir);
   // list of sites available
@@ -101,6 +103,9 @@ for (const src of SOURCES) {
 
   for (const file of files) {
     const name = file.replace('.yml', '').toLowerCase();
+    if (skip.includes(name)) {
+      continue;
+    }
     console.log(name, file);
     const content = fs.readFileSync(path.join(src.dir, file), 'utf8');
     const json = yaml.safeLoad(content, { json: true });
