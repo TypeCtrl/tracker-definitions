@@ -211,6 +211,9 @@ export const jdreamteam = jjdreamteam;
 import { definition as jjdxdhd } from './dxdhd';
 export const jdxdhd = jjdxdhd;
 
+import { definition as jjebooksShares } from './ebooks-shares';
+export const jebooksShares = jjebooksShares;
+
 import { definition as jjefectodoppler } from './efectodoppler';
 export const jefectodoppler = jjefectodoppler;
 
@@ -904,6 +907,7 @@ export const definitions = [
   jjdragonworldreloaded,
   jjdreamteam,
   jjdxdhd,
+  jjebooksShares,
   jjefectodoppler,
   jjelitehd,
   jjelitetorrentBiz,

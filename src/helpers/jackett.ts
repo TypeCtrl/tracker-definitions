@@ -70,6 +70,7 @@ export const jackettSites = [
   'dragonworldreloaded',
   'dreamteam',
   'dxdhd',
+  'ebooks-shares',
   'efectodoppler',
   'elitehd',
   'elitetorrent-biz',
