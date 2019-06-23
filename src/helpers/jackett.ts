@@ -115,6 +115,7 @@ export const jackettSites = [
   'hdsky',
   'hdspain',
   'hdtorrentsit',
+  'hon3yhd-net',
   'hon3yhd',
   'hqsource',
   'hush',

@@ -85,6 +85,13 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Torrent list mode',
+      default:
+        'This indexer only supports the torrent display in <b>list</b> mode.<br/> Set the option to <b>Torrents mode Liste</b> on the menu bar.',
+    },
   ],
   login: {
     path: 'index.php?page=login',
