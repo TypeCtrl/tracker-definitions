@@ -137,6 +137,7 @@ export const jackettSites = [
   'kikibt',
   'kinozal',
   'lesaloon',
+  'libranet',
   'limetorrents',
   'linkomanija',
   'losslessclub',

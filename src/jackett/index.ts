@@ -412,6 +412,9 @@ export const jkinozal = jjkinozal;
 import { definition as jjlesaloon } from './lesaloon';
 export const jlesaloon = jjlesaloon;
 
+import { definition as jjlibranet } from './libranet';
+export const jlibranet = jjlibranet;
+
 import { definition as jjlimetorrents } from './limetorrents';
 export const jlimetorrents = jjlimetorrents;
 
@@ -977,6 +980,7 @@ export const definitions = [
   jjkikibt,
   jjkinozal,
   jjlesaloon,
+  jjlibranet,
   jjlimetorrents,
   jjlinkomanija,
   jjlosslessclub,
