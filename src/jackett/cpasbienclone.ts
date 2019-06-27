@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [],
-  download: { selector: 'div.btn-download a', attribute: 'href' },
+  download: { selector: 'a[href^="magnet:"]', attribute: 'href' },
   search: {
     paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'table.table-corps > tbody > tr:has(a)' },

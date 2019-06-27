@@ -1081,6 +1081,7 @@ export const definition: TrackerDefinition = {
       download: {
         selector: 'td a[href^="magnet:?xt="]',
         attribute: 'href',
+        filters: [{ name: 'urldecode' }, { name: 'replace', args: [' ⭐', ''] }],
       },
       date: {
         selector: 'td:nth-last-of-type(5)',

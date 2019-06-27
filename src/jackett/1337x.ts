@@ -101,7 +101,10 @@ export const definition: TrackerDefinition = {
       },
     },
   ],
-  download: { selector: 'ul li a[href^="{{ .Config.downloadlink }}"]' },
+  download: {
+    selector: 'ul li a[href^="{{ .Config.downloadlink }}"]',
+    filters: [{ name: 'urldecode' }, { name: 'replace', args: [' ⭐', ''] }],
+  },
   search: {
     paths: [
       {

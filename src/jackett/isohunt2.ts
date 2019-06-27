@@ -48,7 +48,11 @@ export const definition: TrackerDefinition = {
   ],
   download: {
     selector: 'a.btn-magnet',
-    filters: [{ name: 'querystring', args: 'url' }, { name: 'urldecode' }],
+    filters: [
+      { name: 'querystring', args: 'url' },
+      { name: 'urldecode' },
+      { name: 'replace', args: [' ⭐', ''] },
+    ],
   },
   search: {
     paths: [

@@ -53,7 +53,8 @@
         "attribute": "href",
         "filters": [
           { "name": "querystring", "args": "url" },
-          { "name": "urldecode" }
+          { "name": "urldecode" },
+          { "name": "replace", "args": [" ⭐", ""] }
         ]
       },
       "size": {

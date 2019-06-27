@@ -48,7 +48,8 @@
     "selector": "a.btn-magnet",
     "filters": [
       { "name": "querystring", "args": "url" },
-      { "name": "urldecode" }
+      { "name": "urldecode" },
+      { "name": "replace", "args": [" ⭐", ""] }
     ]
   },
   "search": {

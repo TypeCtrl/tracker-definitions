@@ -53,7 +53,11 @@ export const definition: TrackerDefinition = {
       download: {
         selector: 'td:nth-child(1) > div > a[data-download=""]',
         attribute: 'href',
-        filters: [{ name: 'querystring', args: 'url' }, { name: 'urldecode' }],
+        filters: [
+          { name: 'querystring', args: 'url' },
+          { name: 'urldecode' },
+          { name: 'replace', args: [' ⭐', ''] },
+        ],
       },
       size: {
         selector: 'td:nth-child(2)',

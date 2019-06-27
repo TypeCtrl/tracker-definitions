@@ -7,7 +7,9 @@ export const definition: TrackerDefinition = {
   language: 'lt-LT',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.torrent.ai/'],
+  links: ['https://torrent.ai/'],
+  legacylinks: ['http://www.torrent.ai/'],
+  certificates: ['87B5A1F83FEEA465EF81D582CF461B8F564AFE91'],
   caps: {
     categorymappings: [
       { id: '27', cat: 'TV', desc: 'Animacija' },

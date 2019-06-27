@@ -66,6 +66,7 @@ export const definition: TrackerDefinition = {
       magnet: {
         selector: 'td:nth-child(1) div div a[data-nop=""]',
         attribute: 'href',
+        filters: [{ name: 'urldecode' }, { name: 'replace', args: [' ⭐', ''] }],
       },
       size: { selector: 'td:nth-child(2)' },
       date: {
