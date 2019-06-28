@@ -463,6 +463,9 @@ export const jmovcr = jjmovcr;
 import { definition as jjmteamtp } from './mteamtp';
 export const jmteamtp = jjmteamtp;
 
+import { definition as jjmusicMaster } from './music-master';
+export const jmusicMaster = jjmusicMaster;
+
 import { definition as jjmvgroupforum } from './mvgroupforum';
 export const jmvgroupforum = jjmvgroupforum;
 
@@ -646,9 +649,6 @@ export const jtapochek = jjtapochek;
 import { definition as jjtasmanit } from './tasmanit';
 export const jtasmanit = jjtasmanit;
 
-import { definition as jjtbplus } from './tbplus';
-export const jtbplus = jjtbplus;
-
 import { definition as jjteamhd } from './teamhd';
 export const jteamhd = jjteamhd;
 
@@ -771,6 +771,9 @@ export const jtrezzor = jjtrezzor;
 
 import { definition as jjturktorrent } from './turktorrent';
 export const jturktorrent = jjturktorrent;
+
+import { definition as jjtwilight } from './twilight';
+export const jtwilight = jjtwilight;
 
 import { definition as jjuhdbits } from './uhdbits';
 export const juhdbits = jjuhdbits;
@@ -997,6 +1000,7 @@ export const definitions = [
   jjmonova,
   jjmovcr,
   jjmteamtp,
+  jjmusicMaster,
   jjmvgroupforum,
   jjmvgroupmain,
   jjmyspleen,
@@ -1058,7 +1062,6 @@ export const definitions = [
   jjtakeabyte,
   jjtapochek,
   jjtasmanit,
-  jjtbplus,
   jjteamhd,
   jjtenyardtracker,
   jjtheempire,
@@ -1100,6 +1103,7 @@ export const definitions = [
   jjtrancetraffic,
   jjtrezzor,
   jjturktorrent,
+  jjtwilight,
   jjuhdbits,
   jjultimategamerclub,
   jjunionfansub,
