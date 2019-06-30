@@ -589,6 +589,9 @@ export const jscenerush = jjscenerush;
 import { definition as jjsdbits } from './sdbits';
 export const jsdbits = jjsdbits;
 
+import { definition as jjseedfile } from './seedfile';
+export const jseedfile = jjseedfile;
+
 import { definition as jjshareisland } from './shareisland';
 export const jshareisland = jjshareisland;
 
@@ -1042,6 +1045,7 @@ export const definitions = [
   jjscenereactor,
   jjscenerush,
   jjsdbits,
+  jjseedfile,
   jjshareisland,
   jjsharespacedb,
   jjsharewood,

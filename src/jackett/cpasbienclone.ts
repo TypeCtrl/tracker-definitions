@@ -72,6 +72,7 @@ export const definition: TrackerDefinition = {
           { name: 're_replace', args: ['\\.(\\d)To', '$1X00000000000'] },
           { name: 're_replace', args: ['To', '000000000000'] },
           { name: 'replace', args: ['X', ''] },
+          { name: 're_replace', args: ['(\\d+)\\.\\d', '$1 MB'] },
         ],
       },
       date: { text: 'now' },

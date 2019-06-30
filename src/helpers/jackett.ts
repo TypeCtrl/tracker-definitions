@@ -196,6 +196,7 @@ export const jackettSites = [
   'scenereactor',
   'scenerush',
   'sdbits',
+  'seedfile',
   'shareisland',
   'sharespacedb',
   'sharewood',
