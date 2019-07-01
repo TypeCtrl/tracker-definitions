@@ -98,9 +98,10 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      download: {
-        selector: 'a[href^="download.php?id="]',
+      category: {
+        selector: 'a[href^="index.php?page=torrents&category="]',
         attribute: 'href',
+        filters: [{ name: 'querystring', args: 'category' }],
       },
       title: {
         selector: 'a[href^="index.php?page=torrent-details&id="]',
@@ -138,47 +139,30 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      category: {
-        selector: 'a[href^="index.php?page=torrents&category="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'category' }],
-      },
       details: {
         selector: 'a[href^="index.php?page=torrent-details&id="]',
         attribute: 'href',
       },
       banner: {
         optional: true,
-        selector: 'a[href^="index.php?page=torrent-details&id="][onmouseover]',
+        selector: 'a[href^="index.php?page=torrent-details&id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
       },
-      size: {
-        selector: 'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(2)',
-        filters: [{ name: 'replace', args: ['   ', ' '] }, { name: 'regexp', args: '  (.*?)$' }],
+      download: {
+        selector: 'a[href^="download.php?id="]',
+        attribute: 'href',
       },
-      date: {
-        selector: 'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(3)',
-        filters: [
-          { name: 'replace', args: ['  ', ' '] },
-          { name: 'regexp', args: ' (.*?)$' },
-          { name: 'dateparse', args: '15:04:05 02/01/2006' },
-        ],
-      },
-      seeders: {
-        selector:
-          'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(4) a:nth-of-type(1)',
-        filters: null,
-      },
-      leechers: {
-        selector:
-          'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(4) a:nth-of-type(2)',
-        filters: null,
-      },
+      size: { selector: 'td:nth-last-child(3)' },
       grabs: {
-        optional: true,
-        selector:
-          'td:has(a[href^="index.php?page=torrent-details&id="]) p:nth-of-type(4) a:nth-of-type(3)',
+        selector: 'td:nth-last-child(4)',
+        filters: [{ name: 'replace', args: ['---', '0'] }],
+      },
+      leechers: { selector: 'td:nth-last-child(5)' },
+      seeders: { selector: 'td:nth-last-child(6)' },
+      date: {
+        selector: 'td:nth-last-child(7)',
+        filters: [{ name: 'dateparse', args: '02/01/2006' }],
       },
       downloadvolumefactor: {
         case: {
