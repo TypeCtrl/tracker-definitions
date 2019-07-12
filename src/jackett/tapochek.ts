@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'private',
   encoding: 'WINDOWS-1251',
-  links: ['https://tapochek.net/'],
+  links: ['http://tapochek.net/'],
+  legacylinks: ['https://tapochek.net/'],
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },

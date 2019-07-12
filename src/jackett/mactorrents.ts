@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.mac-torrents.com/'],
-  legacylinks: ['https://mac-torrents.com/'],
+  links: ['https://mac-torrents.io/'],
+  legacylinks: ['https://mac-torrents.com/', 'https://www.mac-torrents.com/'],
   caps: {
     modes: { search: ['q'] },
     categorymappings: [
