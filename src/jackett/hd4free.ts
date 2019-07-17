@@ -146,7 +146,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: {
           'i[data-original-title="100% Free"]': '0',
-          'i[data-original-title="Global Freeleech"]': '0',
+          'i[data-original-title="Global FreeLeech"]': '0',
           'i[data-original-title="Featured"]': '0',
           '*': '1',
         },

@@ -7,8 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://sound-park.world/', 'https://soundpark-club.casa/'],
-  legacylinks: ['https://soundpark-club.com/'],
+  links: ['https://soundpark-club.com/', 'https://soundpark-club.casa/'],
   caps: {
     modes: {
       search: ['q'],

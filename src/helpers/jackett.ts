@@ -218,7 +218,6 @@ export const jackettSites = [
   'tapochek',
   'tasmanit',
   'teamhd',
-  'tellytorrent',
   'tenyardtracker',
   'theempire',
   'thegeeks',

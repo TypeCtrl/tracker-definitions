@@ -160,7 +160,7 @@ export const definition: TrackerDefinition = {
           'i[data-original-title="Personal Freeleech"]': '0',
           'i[data-original-title="Special Freeleech"]': '0',
           'i[data-original-title="Freeleech Token"]': '0',
-          'i[data-original-title="Global Freeleech"]': '0',
+          'i[data-original-title="Global FreeLeech"]': '0',
           'i[data-original-title="Freeleech"]': '0',
           'i[data-original-title="Featured"]': '0',
           '*': '1',

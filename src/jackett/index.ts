@@ -655,9 +655,6 @@ export const jtasmanit = jjtasmanit;
 import { definition as jjteamhd } from './teamhd';
 export const jteamhd = jjteamhd;
 
-import { definition as jjtellytorrent } from './tellytorrent';
-export const jtellytorrent = jjtellytorrent;
-
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
 
@@ -1070,7 +1067,6 @@ export const definitions = [
   jjtapochek,
   jjtasmanit,
   jjteamhd,
-  jjtellytorrent,
   jjtenyardtracker,
   jjtheempire,
   jjthegeeks,

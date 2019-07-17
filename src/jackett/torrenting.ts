@@ -78,7 +78,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(1)' },
       size: { selector: 'td:nth-last-child(3)' },
       downloadvolumefactor: {
-        case: { 'span:contains("FreeLeech")': '0', '*': '1' },
+        case: { 'span:contains("Freeleech")': '0', '*': '1' },
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },

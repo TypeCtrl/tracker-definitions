@@ -45,14 +45,10 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'table > tbody > tr' },
     fields: {
-      _category: {
+      category: {
         selector: 'a[href*="/categories/"]',
-        optional: true,
         attribute: 'href',
         filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
-      },
-      category: {
-        text: '{{if .Result._category}}{{.Result._category}}{{else}}1{{end}}',
       },
       title: { selector: 'a.torrent-name' },
       download: {
@@ -87,7 +83,6 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: {
           'i[data-original-title="100% Free"]': '0',
-          'i[data-original-title="100% Free (Limited UL)"]': '0',
           'i[data-original-title="25% Promo"]': '0.75',
           'i[data-original-title="50% Promo"]': '0.5',
           'i[data-original-title="75% Promo"]': '0.25',
