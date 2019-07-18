@@ -65,7 +65,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },
       category: {
-        selector: 'td:nth-child(1) > i',
+        selector: 'td:nth-child(1) div i',
         case: {
           '.Films': 'movies',
           '.Séries': 'tvshows',

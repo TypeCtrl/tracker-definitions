@@ -1,18 +1,23 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'blutopia',
-  name: 'Blutopia',
-  description: 'Blutopia (BLU) is a Private Torrent Tracker for HD MOVIES / TV',
-  language: 'en-US',
+  site: 'tellytorrent',
+  name: 'TellyTorrent',
+  description: 'TellyTorrent is an INDIAN Private Tracker for MOVIES / TV',
+  language: 'en-EN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://blutopia.xyz/'],
+  links: ['https://tellytorrent.net/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
       { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '3', cat: 'Movies', desc: 'FANRES' },
+      { id: '3', cat: 'Audio', desc: 'Music' },
+      { id: '4', cat: 'Movies', desc: 'Web Originals' },
+      { id: '5', cat: 'PC/Games', desc: 'Games' },
+      { id: '6', cat: 'PC/0day', desc: 'Application' },
+      { id: '7', cat: 'PC/Phone-Other', desc: 'Mobile App' },
+      { id: '8', cat: 'Other', desc: 'IPL 2019' },
     ],
     modes: {
       search: ['q'],
@@ -35,6 +40,11 @@ export const definition: TrackerDefinition = {
       },
     ],
     test: { path: 'torrents', selector: 'a[href$="/logout"]' },
+  },
+  ratio: {
+    path: 'torrents',
+    selector: 'li:has(i.fa-sync-alt)',
+    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
   search: {
     paths: [{ path: 'filterTorrents' }],

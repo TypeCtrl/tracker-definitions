@@ -59,6 +59,8 @@ export const definition: TrackerDefinition = {
       { id: '54', cat: 'TV/Sport', desc: 'WWE Superstars HD' },
       { id: '19', cat: 'TV/Sport', desc: 'WWE Velocity' },
       { id: '31', cat: 'TV/Sport', desc: 'WWE Vintage' },
+      { id: '74', cat: 'TV/Sport', desc: 'AEW' },
+      { id: '75', cat: 'TV/Sport', desc: 'AEW HD' },
     ],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },

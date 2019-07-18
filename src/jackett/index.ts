@@ -46,6 +46,9 @@ export const jarabafenice = jjarabafenice;
 import { definition as jjarenabg } from './arenabg';
 export const jarenabg = jjarenabg;
 
+import { definition as jjasgaard } from './asgaard';
+export const jasgaard = jjasgaard;
+
 import { definition as jjasiancinema } from './asiancinema';
 export const jasiancinema = jjasiancinema;
 
@@ -655,6 +658,9 @@ export const jtasmanit = jjtasmanit;
 import { definition as jjteamhd } from './teamhd';
 export const jteamhd = jjteamhd;
 
+import { definition as jjtellytorrent } from './tellytorrent';
+export const jtellytorrent = jjtellytorrent;
+
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
 
@@ -864,6 +870,7 @@ export const definitions = [
   jjaox,
   jjarabafenice,
   jjarenabg,
+  jjasgaard,
   jjasiancinema,
   jjasiandvdclub,
   jjast4U,
@@ -1067,6 +1074,7 @@ export const definitions = [
   jjtapochek,
   jjtasmanit,
   jjteamhd,
+  jjtellytorrent,
   jjtenyardtracker,
   jjtheempire,
   jjthegeeks,

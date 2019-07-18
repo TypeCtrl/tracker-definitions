@@ -97,6 +97,8 @@ export const definition: TrackerDefinition = {
       default: 'magnet:',
       options: {
         'http://itorrents.org/': 'iTorrents.org',
+        'http://torrage.info/': 'Torrage.info',
+        'http://btcache.me/': 'BTcache.me',
         'magnet:': 'magnet',
       },
     },

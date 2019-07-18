@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'de-DE',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://rocket-hd.me/'],
+  links: ['http://rocket-hd.me/'],
+  legacylinks: ['https://rocket-hd.me/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },

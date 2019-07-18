@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://ww1.torrent9.lol/'],
+  links: ['https://ww5.torrent9.lol//'],
   legacylinks: [
     'https://www.torrents9.pw/',
     'https://www.torrent9.ch/',
@@ -20,6 +20,7 @@ export const definition: TrackerDefinition = {
     'https://www.torrent9.lol/',
     'https://wvw.torrent9.lol/',
     'https://wwv.torrent9.lol/',
+    'https://ww1.torrent9.lol/',
   ],
   caps: {
     categorymappings: [
