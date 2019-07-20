@@ -169,6 +169,9 @@ export const jcpabien = jjcpabien;
 import { definition as jjcpasbienclone } from './cpasbienclone';
 export const jcpasbienclone = jjcpasbienclone;
 
+import { definition as jjcrazyscorner } from './crazyscorner';
+export const jcrazyscorner = jjcrazyscorner;
+
 import { definition as jjcrazyspirits } from './crazyspirits';
 export const jcrazyspirits = jjcrazyspirits;
 
@@ -661,6 +664,9 @@ export const jtasmanit = jjtasmanit;
 import { definition as jjteamhd } from './teamhd';
 export const jteamhd = jjteamhd;
 
+import { definition as jjteamos } from './teamos';
+export const jteamos = jjteamos;
+
 import { definition as jjtellytorrent } from './tellytorrent';
 export const jtellytorrent = jjtellytorrent;
 
@@ -914,6 +920,7 @@ export const definitions = [
   jjconcen,
   jjcpabien,
   jjcpasbienclone,
+  jjcrazyscorner,
   jjcrazyspirits,
   jjcrnaberza,
   jjcztorrent,
@@ -1078,6 +1085,7 @@ export const definitions = [
   jjtapochek,
   jjtasmanit,
   jjteamhd,
+  jjteamos,
   jjtellytorrent,
   jjtenyardtracker,
   jjtheempire,
