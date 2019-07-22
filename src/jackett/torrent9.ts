@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.torrent9.cat/'],
+  links: ['https://ww1.torrent9.is/', 'https://www.torrent09.uno/', 'https://ww1.torrent9.to/'],
   legacylinks: [
     'http://www.torrent9.ec/',
     'http://www.torrent9.red/',
@@ -27,6 +27,9 @@ export const definition: TrackerDefinition = {
     'https://wvw.torrent9.uno/',
     'https://ww1.torrent9.uno/',
     'https://wvw.t9.pe/',
+    'https://www4.torrent9.to/',
+    'https://www.torrent9.cat/',
+    'https://www.torrent9.is/',
   ],
   caps: {
     categorymappings: [
@@ -42,10 +45,14 @@ export const definition: TrackerDefinition = {
         desc: 'Console Games',
       },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [],
-  download: { selector: 'a.download:contains("le Torrent")' },
+  download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
     paths: [
       {
@@ -53,7 +60,10 @@ export const definition: TrackerDefinition = {
           '{{ if .Keywords }}/search_torrent/{{ re_replace .Keywords "[\']+" "" }}/page-0{{else}}/top_torrent.php{{end}}',
       },
     ],
-    rows: { selector: 'div.table-responsive > table tbody tr' },
+    rows: {
+      selector: 'div.table-responsive > table tbody tr',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       site_date: {
         selector: 'td:nth-child(1) a',
@@ -87,6 +97,7 @@ export const definition: TrackerDefinition = {
         case: {
           'i[class="fa fa-video-camera"]': 'films',
           'i[class="fa fa-desktop"]': 'series',
+          'i[class="fa fa-tv"]': 'series',
           'i[class="fa fa-music"]': 'musique',
           'i[class="fa fa-gamepad"]': 'jeux-pc',
           'i[class="fa fa-laptop"]': 'logiciels',
@@ -107,6 +118,7 @@ export const definition: TrackerDefinition = {
           { name: 're_replace', args: ['\\.(\\d) To', '$1X00000000000'] },
           { name: 're_replace', args: [' To', '000000000000'] },
           { name: 'replace', args: ['X', ''] },
+          { name: 're_replace', args: ['(\\d+)\\.\\d', '$1 MB'] },
         ],
       },
       seeders: {

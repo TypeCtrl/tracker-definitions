@@ -190,6 +190,9 @@ export const jdatascene = jjdatascene;
 import { definition as jjdeildu } from './deildu';
 export const jdeildu = jjdeildu;
 
+import { definition as jjdemonoid } from './demonoid';
+export const jdemonoid = jjdemonoid;
+
 import { definition as jjdesireleasers } from './desireleasers';
 export const jdesireleasers = jjdesireleasers;
 
@@ -418,6 +421,12 @@ export const jkikibt = jjkikibt;
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
 
+import { definition as jjlearnflakes } from './learnflakes';
+export const jlearnflakes = jjlearnflakes;
+
+import { definition as jjlechaudron } from './lechaudron';
+export const jlechaudron = jjlechaudron;
+
 import { definition as jjlesaloon } from './lesaloon';
 export const jlesaloon = jjlesaloon;
 
@@ -555,6 +564,9 @@ export const jpwtorrents = jjpwtorrents;
 
 import { definition as jjqxr } from './qxr';
 export const jqxr = jjqxr;
+
+import { definition as jjr3Vwtf } from './r3vwtf';
+export const jr3Vwtf = jjr3Vwtf;
 
 import { definition as jjracing4Everyone } from './racing4everyone';
 export const jracing4Everyone = jjracing4Everyone;
@@ -927,6 +939,7 @@ export const definitions = [
   jjdarkShadow,
   jjdatascene,
   jjdeildu,
+  jjdemonoid,
   jjdesireleasers,
   jjdesitorrents,
   jjdiablotorrent,
@@ -1003,6 +1016,8 @@ export const definitions = [
   jjkickasstorrent,
   jjkikibt,
   jjkinozal,
+  jjlearnflakes,
+  jjlechaudron,
   jjlesaloon,
   jjlibranet,
   jjlimetorrents,
@@ -1049,6 +1064,7 @@ export const definitions = [
   jjpuntotorrent,
   jjpwtorrents,
   jjqxr,
+  jjr3Vwtf,
   jjracing4Everyone,
   jjracingforme,
   jjredstartorrent,

@@ -82,7 +82,7 @@ export const definition: TrackerDefinition = {
         cat: 'PC/ISO',
         desc: 'Microsoft Office Multi-lang Untouch ISO',
       },
-      { id: '59', cat: 'PC', '/ISO desc': 'x86-x64 bit Untouched Iso' },
+      { id: '59', cat: 'PC/ISO', desc: 'x86-x64 bit Untouched Iso' },
       { id: '61', cat: 'PC/0day', desc: 'Antivirus' },
       { id: '62', cat: 'PC/Phone-Android', desc: 'Android Apps' },
       { id: '63', cat: 'PC/0day', desc: 'Download Managers' },
