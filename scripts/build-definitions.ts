@@ -24,7 +24,7 @@ const PRETTIER_TYPESCRIPT: prettier.Options = {
   bracketSpacing: true,
   semi: true,
   singleQuote: true,
-  printWidth: 100
+  printWidth: 100,
 };
 
 const HELPERS_DIR = path.join(__dirname, `../src/helpers`);
@@ -69,6 +69,7 @@ function validateJson(json: any): any {
         console.error(cat.cat);
         throw new Error(cat.cat);
       }
+
       cat.id = `${cat.id}`;
       cat.cat = f || cat.cat;
       return cat;
@@ -86,7 +87,7 @@ function validateJson(json: any): any {
   return json;
 }
 
-const skip = ['nbtorrents'];
+const skip = ['nbtorrents', 'scenepalace'];
 
 for (const src of SOURCES) {
   const files = fs.readdirSync(src.dir);
@@ -106,6 +107,7 @@ for (const src of SOURCES) {
     if (skip.includes(name)) {
       continue;
     }
+
     console.log(name, file);
     const content = fs.readFileSync(path.join(src.dir, file), 'utf8');
     const json = yaml.safeLoad(content, { json: true });
