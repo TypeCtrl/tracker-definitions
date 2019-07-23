@@ -228,6 +228,7 @@ export const jackettSites = [
   'teamos',
   'tellytorrent',
   'tenyardtracker',
+  'theaudioscene',
   'theempire',
   'thegeeks',
   'thehorrorcharnel',

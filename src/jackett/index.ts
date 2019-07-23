@@ -685,6 +685,9 @@ export const jtellytorrent = jjtellytorrent;
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
 
+import { definition as jjtheaudioscene } from './theaudioscene';
+export const jtheaudioscene = jjtheaudioscene;
+
 import { definition as jjtheempire } from './theempire';
 export const jtheempire = jjtheempire;
 
@@ -1104,6 +1107,7 @@ export const definitions = [
   jjteamos,
   jjtellytorrent,
   jjtenyardtracker,
+  jjtheaudioscene,
   jjtheempire,
   jjthegeeks,
   jjthehorrorcharnel,
