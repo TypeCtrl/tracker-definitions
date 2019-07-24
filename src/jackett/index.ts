@@ -79,6 +79,9 @@ export const jb2SShare = jjb2SShare;
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
 
+import { definition as jjbaibako } from './baibako';
+export const jbaibako = jjbaibako;
+
 import { definition as jjbeyondHd } from './beyond-hd';
 export const jbeyondHd = jjbeyondHd;
 
@@ -420,6 +423,9 @@ export const jkikibt = jjkikibt;
 
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
+
+import { definition as jjlapausetorrents } from './lapausetorrents';
+export const jlapausetorrents = jjlapausetorrents;
 
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
@@ -905,6 +911,7 @@ export const definitions = [
   jjawesomehd,
   jjb2SShare,
   jjbackups,
+  jjbaibako,
   jjbeyondHd,
   jjbigtorrent,
   jjbigtower,
@@ -1019,6 +1026,7 @@ export const definitions = [
   jjkickasstorrent,
   jjkikibt,
   jjkinozal,
+  jjlapausetorrents,
   jjlearnflakes,
   jjlechaudron,
   jjlesaloon,
