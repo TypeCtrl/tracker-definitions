@@ -78,7 +78,7 @@ export const definition: TrackerDefinition = {
     rows: { selector: '.responsetop > tbody > tr:has(td.td_newborder)' },
     fields: {
       title: {
-        selector: 'td:nth-child(2) > a[href^="/download.php"]',
+        selector: 'a:has(i.fa-download)',
         attribute: 'href',
         filters: [
           {

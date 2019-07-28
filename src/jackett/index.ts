@@ -73,11 +73,11 @@ export const javg = jjavg;
 import { definition as jjawesomehd } from './awesomehd';
 export const jawesomehd = jjawesomehd;
 
-import { definition as jjb2SShare } from './b2s-share';
-export const jb2SShare = jjb2SShare;
-
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
+
+import { definition as jjbaibako } from './baibako';
+export const jbaibako = jjbaibako;
 
 import { definition as jjbeyondHd } from './beyond-hd';
 export const jbeyondHd = jjbeyondHd;
@@ -223,6 +223,9 @@ export const jdreamteam = jjdreamteam;
 import { definition as jjdxdhd } from './dxdhd';
 export const jdxdhd = jjdxdhd;
 
+import { definition as jjebookparadijs } from './ebookparadijs';
+export const jebookparadijs = jjebookparadijs;
+
 import { definition as jjebooksShares } from './ebooks-shares';
 export const jebooksShares = jjebooksShares;
 
@@ -241,6 +244,9 @@ export const jelittracker = jjelittracker;
 import { definition as jjempornium } from './empornium';
 export const jempornium = jjempornium;
 
+import { definition as jjesharenet } from './esharenet';
+export const jesharenet = jjesharenet;
+
 import { definition as jjestone } from './estone';
 export const jestone = jjestone;
 
@@ -249,6 +255,9 @@ export const jethor = jjethor;
 
 import { definition as jjettv } from './ettv';
 export const jettv = jjettv;
+
+import { definition as jjevolutionpalace } from './evolutionpalace';
+export const jevolutionpalace = jjevolutionpalace;
 
 import { definition as jjextratorrentAg } from './extratorrent-ag';
 export const jextratorrentAg = jjextratorrentAg;
@@ -376,6 +385,9 @@ export const jhyperay = jjhyperay;
 import { definition as jjicetorrent } from './icetorrent';
 export const jicetorrent = jjicetorrent;
 
+import { definition as jjidope } from './idope';
+export const jidope = jjidope;
+
 import { definition as jjilcorsaroblu } from './ilcorsaroblu';
 export const jilcorsaroblu = jjilcorsaroblu;
 
@@ -421,11 +433,17 @@ export const jkikibt = jjkikibt;
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
 
+import { definition as jjlapausetorrents } from './lapausetorrents';
+export const jlapausetorrents = jjlapausetorrents;
+
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
 
 import { definition as jjlechaudron } from './lechaudron';
 export const jlechaudron = jjlechaudron;
+
+import { definition as jjleporno } from './leporno';
+export const jleporno = jjleporno;
 
 import { definition as jjlesaloon } from './lesaloon';
 export const jlesaloon = jjlesaloon;
@@ -453,9 +471,6 @@ export const jmagnetdl = jjmagnetdl;
 
 import { definition as jjmajomparade } from './majomparade';
 export const jmajomparade = jjmajomparade;
-
-import { definition as jjmanicomioshare } from './manicomioshare';
-export const jmanicomioshare = jjmanicomioshare;
 
 import { definition as jjmegabliz } from './megabliz';
 export const jmegabliz = jjmegabliz;
@@ -513,9 +528,6 @@ export const jnyaaPantsu = jjnyaaPantsu;
 
 import { definition as jjnyaasi } from './nyaasi';
 export const jnyaasi = jjnyaasi;
-
-import { definition as jjnyoo } from './nyoo';
-export const jnyoo = jjnyoo;
 
 import { definition as jjourbits } from './ourbits';
 export const jourbits = jjourbits;
@@ -646,9 +658,6 @@ export const jsoundpark = jjsoundpark;
 import { definition as jjspacetorrent } from './spacetorrent';
 export const jspacetorrent = jjspacetorrent;
 
-import { definition as jjspeedShare } from './speed-share';
-export const jspeedShare = jjspeedShare;
-
 import { definition as jjspeedtorrentreloaded } from './speedtorrentreloaded';
 export const jspeedtorrentreloaded = jjspeedtorrentreloaded;
 
@@ -685,6 +694,9 @@ export const jtellytorrent = jjtellytorrent;
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
 
+import { definition as jjtheaudioscene } from './theaudioscene';
+export const jtheaudioscene = jjtheaudioscene;
+
 import { definition as jjtheempire } from './theempire';
 export const jtheempire = jjtheempire;
 
@@ -693,6 +705,9 @@ export const jthegeeks = jjthegeeks;
 
 import { definition as jjthehorrorcharnel } from './thehorrorcharnel';
 export const jthehorrorcharnel = jjthehorrorcharnel;
+
+import { definition as jjthemoviecave } from './themoviecave';
+export const jthemoviecave = jjthemoviecave;
 
 import { definition as jjtheoccult } from './theoccult';
 export const jtheoccult = jjtheoccult;
@@ -847,6 +862,9 @@ export const jxbytes2 = jjxbytes2;
 import { definition as jjxktorrent } from './xktorrent';
 export const jxktorrent = jjxktorrent;
 
+import { definition as jjxtremefile } from './xtremefile';
+export const jxtremefile = jjxtremefile;
+
 import { definition as jjxtremezone } from './xtremezone';
 export const jxtremezone = jjxtremezone;
 
@@ -900,8 +918,8 @@ export const definitions = [
   jjaudionews,
   jjavg,
   jjawesomehd,
-  jjb2SShare,
   jjbackups,
+  jjbaibako,
   jjbeyondHd,
   jjbigtorrent,
   jjbigtower,
@@ -950,15 +968,18 @@ export const definitions = [
   jjdragonworldreloaded,
   jjdreamteam,
   jjdxdhd,
+  jjebookparadijs,
   jjebooksShares,
   jjefectodoppler,
   jjelitehd,
   jjelitetorrentBiz,
   jjelittracker,
   jjempornium,
+  jjesharenet,
   jjestone,
   jjethor,
   jjettv,
+  jjevolutionpalace,
   jjextratorrentAg,
   jjeztv,
   jjfanoin,
@@ -1001,6 +1022,7 @@ export const definitions = [
   jjhush,
   jjhyperay,
   jjicetorrent,
+  jjidope,
   jjilcorsaroblu,
   jjilcorsaronero,
   jjiloveclassics,
@@ -1016,8 +1038,10 @@ export const definitions = [
   jjkickasstorrent,
   jjkikibt,
   jjkinozal,
+  jjlapausetorrents,
   jjlearnflakes,
   jjlechaudron,
+  jjleporno,
   jjlesaloon,
   jjlibranet,
   jjlimetorrents,
@@ -1027,7 +1051,6 @@ export const definitions = [
   jjmagico,
   jjmagnetdl,
   jjmajomparade,
-  jjmanicomioshare,
   jjmegabliz,
   jjmetalIplayRo,
   jjmetaltracker,
@@ -1047,7 +1070,6 @@ export const definitions = [
   jjnostalgic,
   jjnyaaPantsu,
   jjnyaasi,
-  jjnyoo,
   jjourbits,
   jjoxtorrent,
   jjp2Pbg,
@@ -1091,7 +1113,6 @@ export const definitions = [
   jjsolidtorrents,
   jjsoundpark,
   jjspacetorrent,
-  jjspeedShare,
   jjspeedtorrentreloaded,
   jjsporthd,
   jjsportscult,
@@ -1104,9 +1125,11 @@ export const definitions = [
   jjteamos,
   jjtellytorrent,
   jjtenyardtracker,
+  jjtheaudioscene,
   jjtheempire,
   jjthegeeks,
   jjthehorrorcharnel,
+  jjthemoviecave,
   jjtheoccult,
   jjthepiratebay,
   jjtheplace,
@@ -1158,6 +1181,7 @@ export const definitions = [
   jjxIteMe,
   jjxbytes2,
   jjxktorrent,
+  jjxtremefile,
   jjxtremezone,
   jjxwtorrents,
   jjyggtorrent,

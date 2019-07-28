@@ -40,14 +40,19 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  login: {
-    path: 'takelogin.php',
-    method: 'post',
-    inputs: {
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
+  settings: [
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here.</ol>",
     },
-    error: [{ selector: 'div.error' }],
+  ],
+  login: {
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'index.php', selector: 'a[href="/logout.php"]' },
   },
   search: {

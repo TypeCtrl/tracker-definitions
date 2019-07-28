@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://wwv.oxtorrent.com/'],
+  links: ['https://www.smartorrent.tv/'],
+  legacylinks: ['https://wwv.oxtorrent.com/'],
   caps: {
     categorymappings: [
       { id: 'movies', cat: 'Movies', desc: 'Movies' },

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://audiobookbay.nl/', 'https://audiobookbay.la/'],
+  links: ['http://audiobookbay.nl/'],
+  legacylinks: ['https://audiobookbay.nl/', 'https://audiobookbay.la/'],
   caps: {
     categorymappings: [
       {
@@ -92,7 +93,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   login: {
-    path: 'https://audiobookbay.nl/member/login.php',
+    path: 'member/login.php',
     form: 'form',
     method: 'post',
     inputs: {
@@ -103,7 +104,17 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'td.embedded:has(h2:contains("Invalid"))' }],
     test: { path: '/member/users/' },
   },
-  download: { selector: 'a[href^="/download?"]', attribute: 'href' },
+  download: {
+    method: 'get',
+    before: {
+      path: 'member/login.php',
+      method: 'post',
+      inputs: {
+        username: '{{ .Config.username }}',
+        password: '{{ .Config.password }}',
+      },
+    },
+  },
   search: {
     paths: [
       { path: '{{if .Keywords}}/?s={{ .Keywords}}{{else}}/{{end}}' },
@@ -117,8 +128,9 @@ export const definition: TrackerDefinition = {
       title: { selector: 'div.postTitle' },
       details: { selector: 'div.postTitle h2 a', attribute: 'href' },
       download: {
-        selector: 'a[href^="/audio-books/"]',
+        selector: 'a[href^="/dl-now?f="]',
         attribute: 'href',
+        filters: [{ name: 'replace', args: ['/dl-now?f=', '/download?f='] }],
       },
       banner: { optional: true, selector: 'img', attribute: 'src' },
       category: {
