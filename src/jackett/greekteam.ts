@@ -129,17 +129,17 @@ export const definition: TrackerDefinition = {
       title: { selector: 'a.torname' },
       details: { selector: 'a.torname', attribute: 'href' },
       download: { text: 'download2.php?torrent={{ .Result._id }}' },
-      size: { selector: 'td:nth-last-child(3)' },
+      files: { selector: 'td:nth-child(3)' },
       date: {
-        selector: 'td:nth-last-child(5) > nobr',
+        selector: 'td:nth-child(5) > nobr',
         filters: [
           { name: 'append', args: ' +02:00' },
           { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
-      files: { selector: 'td:nth-last-child(7)' },
-      seeders: { selector: 'td:nth-last-child(2)' },
-      leechers: { selector: 'td:nth-last-child(1)' },
+      size: { selector: 'td:nth-child(7)' },
+      seeders: { selector: 'td:nth-child(8)' },
+      leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
         case: { 'img[src="pic/free.png"]': '0', '*': '1' },
       },

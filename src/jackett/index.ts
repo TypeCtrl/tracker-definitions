@@ -130,6 +130,9 @@ export const jbtkitty = jjbtkitty;
 import { definition as jjbtnext } from './btnext';
 export const jbtnext = jjbtnext;
 
+import { definition as jjbtschool } from './btschool';
+export const jbtschool = jjbtschool;
+
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
 
@@ -547,6 +550,9 @@ export const jpeersfm = jjpeersfm;
 import { definition as jjpiratbit } from './piratbit';
 export const jpiratbit = jjpiratbit;
 
+import { definition as jjpixelcove } from './pixelcove';
+export const jpixelcove = jjpixelcove;
+
 import { definition as jjpleasuredome } from './pleasuredome';
 export const jpleasuredome = jjpleasuredome;
 
@@ -823,14 +829,14 @@ export const jtwilight = jjtwilight;
 import { definition as jjuhdbits } from './uhdbits';
 export const juhdbits = jjuhdbits;
 
-import { definition as jjultimategamerclub } from './ultimategamerclub';
-export const jultimategamerclub = jjultimategamerclub;
-
 import { definition as jjunionfansub } from './unionfansub';
 export const junionfansub = jjunionfansub;
 
 import { definition as jjuniongang } from './uniongang';
 export const juniongang = jjuniongang;
+
+import { definition as jjunlimitz } from './unlimitz';
+export const junlimitz = jjunlimitz;
 
 import { definition as jjvanila } from './vanila';
 export const jvanila = jjvanila;
@@ -937,6 +943,7 @@ export const definitions = [
   jjbtgigs,
   jjbtkitty,
   jjbtnext,
+  jjbtschool,
   jjcarpathians,
   jjcartoonchaos,
   jjcasatorrent,
@@ -1076,6 +1083,7 @@ export const definitions = [
   jjpassionetorrent,
   jjpeersfm,
   jjpiratbit,
+  jjpixelcove,
   jjpleasuredome,
   jjpolishsource,
   jjproaudiotorrents,
@@ -1168,9 +1176,9 @@ export const definitions = [
   jjturktorrent,
   jjtwilight,
   jjuhdbits,
-  jjultimategamerclub,
   jjunionfansub,
   jjuniongang,
+  jjunlimitz,
   jjvanila,
   jjvizuk,
   jjwaffles,

@@ -1,11 +1,11 @@
 {
-  "site": "ultimategamerclub",
-  "name": "Ultimate Gamer Club",
-  "description": "Ultimate Gamer (UGC) is a Private Torrent Tracker for GAMES",
+  "site": "pixelcove",
+  "name": "PixelCove",
+  "description": "PixelCove (Ultimate Gamer) is a Private Torrent Tracker for GAMES",
   "language": "en-US",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://ultimategamer.club/"],
+  "links": ["https://www.pixelcove.me/"],
   "caps": {
     "categorymappings": [
       { "id": "10", "cat": "PC/Games", "desc": "Windows" },
@@ -23,6 +23,7 @@
       { "id": "57", "cat": "Console/Other", "desc": "Gamecube" },
       { "id": "44", "cat": "Console/Wii", "desc": "Wii" },
       { "id": "46", "cat": "Console/Wii", "desc": "Wii U" },
+      { "id": "76", "cat": "Console/Other", "desc": "Switch" },
       { "id": "15", "cat": "Console/NDS", "desc": "DS" },
       { "id": "68", "cat": "Console/NDS", "desc": "3DS" },
       { "id": "69", "cat": "Console/PSP", "desc": "PSP" },
@@ -43,11 +44,7 @@
       { "id": "72", "cat": "Other", "desc": "Board Games" },
       { "id": "75", "cat": "Other", "desc": "Paper Crafting" }
     ],
-    "modes": {
-      "search": ["q"],
-      "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"]
-    }
+    "modes": { "search": ["q"] }
   },
   "login": {
     "path": "login",
@@ -58,14 +55,14 @@
       "cinfo": "2550|1350|24|-60",
       "keeploggedin": 1
     },
-    "error": [{ "selector": "form#loginform > span.warning" }],
+    "error": [{ "selector": "div.error" }],
     "test": { "path": "torrents.php", "selector": "a.username" }
   },
   "search": {
     "paths": [{ "path": "torrents.php" }],
     "inputs": {
       "$raw": "{{range .Categories}}filter_cat[{{.}}]=1&{{end}}",
-      "title": "{{ .Query.Keywords }}",
+      "title": "{{ .Keywords }}",
       "order_by": "time",
       "order_way": "desc",
       "action": "basic",
