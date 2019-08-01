@@ -45,7 +45,7 @@
     "js-yaml": "3.13.1",
     "lodash": "4.17.15",
     "prettier": "1.18.2",
-    "semantic-release": "15.13.18",
+    "semantic-release": "15.13.19",
     "ts-jest": "24.0.2",
     "ts-node": "8.3.0",
     "eslint": "6.1.0",
