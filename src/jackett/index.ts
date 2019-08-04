@@ -10,6 +10,9 @@ export const j3Dtorrents = jj3Dtorrents;
 import { definition as jj3Evils } from './3evils';
 export const j3Evils = jj3Evils;
 
+import { definition as jj4Thd } from './4thd';
+export const j4Thd = jj4Thd;
+
 import { definition as jjbittorrentfiles } from './bittorrentfiles';
 export const jbittorrentfiles = jjbittorrentfiles;
 
@@ -258,9 +261,6 @@ export const jethor = jjethor;
 
 import { definition as jjettv } from './ettv';
 export const jettv = jjettv;
-
-import { definition as jjevolutionpalace } from './evolutionpalace';
-export const jevolutionpalace = jjevolutionpalace;
 
 import { definition as jjextratorrentAg } from './extratorrent-ag';
 export const jextratorrentAg = jjextratorrentAg;
@@ -688,6 +688,9 @@ export const jtapochek = jjtapochek;
 import { definition as jjtasmanit } from './tasmanit';
 export const jtasmanit = jjtasmanit;
 
+import { definition as jjtazmaniaden } from './tazmaniaden';
+export const jtazmaniaden = jjtazmaniaden;
+
 import { definition as jjteamhd } from './teamhd';
 export const jteamhd = jjteamhd;
 
@@ -903,6 +906,7 @@ export const definitions = [
   jj2Fast4You,
   jj3Dtorrents,
   jj3Evils,
+  jj4Thd,
   jjbittorrentfiles,
   jjdasunerwartete,
   jjacgrip,
@@ -986,7 +990,6 @@ export const definitions = [
   jjestone,
   jjethor,
   jjettv,
-  jjevolutionpalace,
   jjextratorrentAg,
   jjeztv,
   jjfanoin,
@@ -1129,6 +1132,7 @@ export const definitions = [
   jjtakeabyte,
   jjtapochek,
   jjtasmanit,
+  jjtazmaniaden,
   jjteamhd,
   jjteamos,
   jjtellytorrent,

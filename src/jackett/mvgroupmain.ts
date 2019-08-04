@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://forums.mvgroup.org/'],
+  links: ['https://forums.mvgroup.org/'],
+  legacylinks: ['http://forums.mvgroup.org/'],
   caps: {
     categorymappings: [{ id: '1', cat: 'TV', desc: 'TV' }],
     modes: {
@@ -118,12 +119,11 @@ export const definition: TrackerDefinition = {
     inputs: {
       UserName: '{{ .Config.username }}',
       PassWord: '{{ .Config.password }}',
-      Privacy: '1',
-      CookieDate: '0',
+      Privacy: 1,
+      CookieDate: 1,
       CODE: '01',
-      referer: 'http://forums.mvgroup.org/',
+      referer: 'https://forums.mvgroup.org/index.php?',
       act: 'Login',
-      submit: 'Log me in',
     },
     error: [
       {
@@ -132,7 +132,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     test: {
-      path: 'index.php?http://forums.mvgroup.org/',
+      path: 'index.php?https://forums.mvgroup.org/',
       selector: 'tr td.nav_mem div span[id="member_menu"]',
     },
   },

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://prostylex.com/'],
+  links: ['https://prostylex.org/'],
+  legacylinks: ['http://prostylex.com/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies/SD', desc: 'Movies - Divx/Xvid' },

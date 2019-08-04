@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.myxz.eu/'],
+  links: ['https://myxz.eu/'],
+  legacylinks: ['https://www.myxz.eu/'],
   caps: {
     categorymappings: [
       { id: '3', cat: 'TV/Anime', desc: 'Anime/Hentai' },

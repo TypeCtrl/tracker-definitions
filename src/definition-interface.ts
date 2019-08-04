@@ -14,6 +14,7 @@ export type SiteEncoding =
   | 'WINDOWS-1251'
   | 'WINDOWS-1252'
   | 'WINDOWS-1253'
+  | 'WINDOWS-874'
   | 'TIS-620';
 
 export interface TrackerDefinition {
@@ -110,6 +111,8 @@ export interface Categorymapping {
    * Specify if this category should be used as default (if the search query doesn't contain any categories).
    */
   default?: boolean;
+
+  [key: string]: any;
 }
 
 export interface Setting {

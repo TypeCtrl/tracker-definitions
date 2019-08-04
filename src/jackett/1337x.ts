@@ -110,8 +110,9 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/1/{{else}}trending{{end}}',
+        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/1/{{else}}cat/Movies/1/{{end}}',
       },
+      { path: '{{if .Keywords}}{{else}}cat/TV/1/{{end}}' },
       {
         path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/2/{{else}}{{end}}',
       },
