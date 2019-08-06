@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.2f4y.me/'],
-  legacylinks: ['http://www.2f4y.me/'],
+  links: ['https://2f4y.me/'],
+  legacylinks: ['http://www.2f4y.me/', 'https://www.2f4y.me/'],
   caps: {
     categorymappings: [
       { id: '10', cat: 'TV/Anime', desc: 'Animation: HD720P' },
@@ -83,7 +83,11 @@ export const definition: TrackerDefinition = {
       { id: '6', cat: 'TV', desc: 'Serie TV: Saison FR' },
       { id: '98', cat: 'TV/Anime', desc: 'Serie TV: Manga VOSTFR' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   login: {
     path: 'account-login.php',
@@ -105,13 +109,20 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: '1',
+      incldead: 1,
+      freeleech: 0,
+      lang: 0,
     },
     keywordsfilters: [{ name: 're_replace', args: ['^$', '%'] }],
     rows: {
       selector: 'table.ttable_headinner > tbody > tr[class^="t-row"]',
     },
     fields: {
+      category: {
+        selector: 'a[href^="torrents.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
       download: {
         selector: 'a[href^="torrents-details.php?id="]',
         attribute: 'href',
@@ -126,11 +137,6 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="torrents-details.php?id="]',
         filters: [{ name: 'replace', args: [' - (Nouveau!)', ''] }],
       },
-      category: {
-        selector: 'a[href^="torrents.php?cat="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
-      },
       details: {
         selector: 'a[href^="torrents-details.php?id="]',
         attribute: 'href',
@@ -139,6 +145,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(5)' },
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },
+      date: { text: 'now' },
       downloadvolumefactor: {
         case: { 'img[title="freeleech"]': '0', '*': '1' },
       },

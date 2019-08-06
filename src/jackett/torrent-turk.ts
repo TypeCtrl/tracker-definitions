@@ -8,8 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'tr-TR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://torrent-turk.co/'],
-  legacylinks: ['https://torrent-turk.org/'],
+  links: ['https://torrent-turk.de/'],
+  legacylinks: ['https://torrent-turk.org/', 'https://torrent-turk.co/'],
   caps: {
     categorymappings: [
       { id: '149', cat: 'Movies', desc: 'Movies/Turkish' },

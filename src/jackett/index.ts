@@ -1,3 +1,6 @@
+import { definition as jj0Daykiev } from './0daykiev';
+export const j0Daykiev = jj0Daykiev;
+
 import { definition as jj1337X } from './1337x';
 export const j1337X = jj1337X;
 
@@ -902,6 +905,7 @@ import { definition as jjztracker } from './ztracker';
 export const jztracker = jjztracker;
 
 export const definitions = [
+  jj0Daykiev,
   jj1337X,
   jj2Fast4You,
   jj3Dtorrents,
