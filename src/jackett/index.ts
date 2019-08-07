@@ -217,6 +217,9 @@ export const jdigbt = jjdigbt;
 import { definition as jjdivteam } from './divteam';
 export const jdivteam = jjdivteam;
 
+import { definition as jjdmhy } from './dmhy';
+export const jdmhy = jjdmhy;
+
 import { definition as jjdocumentarytorrents } from './documentarytorrents';
 export const jdocumentarytorrents = jjdocumentarytorrents;
 
@@ -978,6 +981,7 @@ export const definitions = [
   jjdiablotorrent,
   jjdigbt,
   jjdivteam,
+  jjdmhy,
   jjdocumentarytorrents,
   jjdownloadville,
   jjdragonworldreloaded,

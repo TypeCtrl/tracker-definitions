@@ -72,6 +72,7 @@ export const jackettSites = [
   'diablotorrent',
   'digbt',
   'divteam',
+  'dmhy',
   'documentarytorrents',
   'downloadville',
   'dragonworldreloaded',
