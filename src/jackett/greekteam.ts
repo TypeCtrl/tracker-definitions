@@ -129,17 +129,23 @@ export const definition: TrackerDefinition = {
       title: { selector: 'a.torname' },
       details: { selector: 'a.torname', attribute: 'href' },
       download: { text: 'download2.php?torrent={{ .Result._id }}' },
-      files: { selector: 'td:nth-child(3)' },
+      files: { selector: 'td:has(a[href$="filelist=1"])' },
       date: {
-        selector: 'td:nth-child(5) > nobr',
+        selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td > nobr',
         filters: [
           { name: 'append', args: ' +02:00' },
           { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
-      size: { selector: 'td:nth-child(7)' },
-      seeders: { selector: 'td:nth-child(8)' },
-      leechers: { selector: 'td:nth-child(9)' },
+      size: {
+        selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td',
+      },
+      seeders: {
+        selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td ~ td',
+      },
+      leechers: {
+        selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td ~ td ~ td',
+      },
       downloadvolumefactor: {
         case: { 'img[src="pic/free.png"]': '0', '*': '1' },
       },

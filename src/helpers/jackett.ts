@@ -8,6 +8,7 @@ export const jackettSites = [
   'bittorrentfiles',
   'dasunerwartete',
   'acgrip',
+  'acgsou',
   'acidlounge',
   'aftershock',
   'alein',

@@ -25,6 +25,9 @@ export const jdasunerwartete = jjdasunerwartete;
 import { definition as jjacgrip } from './acgrip';
 export const jacgrip = jjacgrip;
 
+import { definition as jjacgsou } from './acgsou';
+export const jacgsou = jjacgsou;
+
 import { definition as jjacidlounge } from './acidlounge';
 export const jacidlounge = jjacidlounge;
 
@@ -917,6 +920,7 @@ export const definitions = [
   jjbittorrentfiles,
   jjdasunerwartete,
   jjacgrip,
+  jjacgsou,
   jjacidlounge,
   jjaftershock,
   jjalein,
