@@ -181,6 +181,9 @@ export const jcpabien = jjcpabien;
 import { definition as jjcpasbienclone } from './cpasbienclone';
 export const jcpasbienclone = jjcpasbienclone;
 
+import { definition as jjcrazyhd } from './crazyhd';
+export const jcrazyhd = jjcrazyhd;
+
 import { definition as jjcrazyscorner } from './crazyscorner';
 export const jcrazyscorner = jjcrazyscorner;
 
@@ -972,6 +975,7 @@ export const definitions = [
   jjconcen,
   jjcpabien,
   jjcpasbienclone,
+  jjcrazyhd,
   jjcrazyscorner,
   jjcrazyspirits,
   jjcrnaberza,

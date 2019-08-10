@@ -60,6 +60,7 @@ export const jackettSites = [
   'concen',
   'cpabien',
   'cpasbienclone',
+  'crazyhd',
   'crazyscorner',
   'crazyspirits',
   'crnaberza',
