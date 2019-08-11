@@ -162,6 +162,7 @@ export const jackettSites = [
   'magico',
   'magnetdl',
   'majomparade',
+  'marinetracker',
   'megabliz',
   'metal-iplay-ro',
   'metaltracker',

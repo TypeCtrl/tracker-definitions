@@ -487,6 +487,9 @@ export const jmagnetdl = jjmagnetdl;
 import { definition as jjmajomparade } from './majomparade';
 export const jmajomparade = jjmajomparade;
 
+import { definition as jjmarinetracker } from './marinetracker';
+export const jmarinetracker = jjmarinetracker;
+
 import { definition as jjmegabliz } from './megabliz';
 export const jmegabliz = jjmegabliz;
 
@@ -1077,6 +1080,7 @@ export const definitions = [
   jjmagico,
   jjmagnetdl,
   jjmajomparade,
+  jjmarinetracker,
   jjmegabliz,
   jjmetalIplayRo,
   jjmetaltracker,
