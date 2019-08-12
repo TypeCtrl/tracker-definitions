@@ -595,9 +595,6 @@ export const jpuntotorrent = jjpuntotorrent;
 import { definition as jjpwtorrents } from './pwtorrents';
 export const jpwtorrents = jjpwtorrents;
 
-import { definition as jjqxr } from './qxr';
-export const jqxr = jjqxr;
-
 import { definition as jjr3Vwtf } from './r3vwtf';
 export const jr3Vwtf = jjr3Vwtf;
 
@@ -1116,7 +1113,6 @@ export const definitions = [
   jjpthome,
   jjpuntotorrent,
   jjpwtorrents,
-  jjqxr,
   jjr3Vwtf,
   jjracing4Everyone,
   jjracingforme,

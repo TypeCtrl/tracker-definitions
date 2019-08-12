@@ -198,7 +198,6 @@ export const jackettSites = [
   'pthome',
   'puntotorrent',
   'pwtorrents',
-  'qxr',
   'r3vwtf',
   'racing4everyone',
   'racingforme',

@@ -98,7 +98,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.text' }],
-    test: { path: 'nDonated.php', selector: 'a[href="logout.php"]' },
+    test: { path: '/', selector: 'a[href="logout.php"]' },
   },
   download: {
     before: {
