@@ -253,7 +253,10 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'form[name="jump1"]' },
   },
   search: {
-    keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],
+    keywordsfilters: [
+      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
+      { name: 're_replace', args: ['[^a-zA-Z0-9]+', ' '] },
+    ],
     inputs: {
       page: 'torrents',
       $raw: '&category={{range .Categories}}{{.}};{{end}}',

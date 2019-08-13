@@ -31,11 +31,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "24.0.16",
+    "@types/jest": "24.0.17",
     "@types/js-yaml": "3.12.1",
     "@types/lodash": "4.14.136",
-    "@types/node": "12.6.9",
-    "@types/prettier": "1.18.1",
+    "@types/node": "12.7.1",
+    "@types/prettier": "1.18.2",
     "@typescript-eslint/eslint-plugin": "1.13.0",
     "@typescript-eslint/parser": "1.13.0",
     "del": "5.0.0",
@@ -50,7 +50,7 @@
     "ts-node": "8.3.0",
     "eslint": "6.1.0",
     "eslint-config-xo-space": "0.21.0",
-    "eslint-config-xo-typescript": "0.15.0",
+    "eslint-config-xo-typescript": "0.16.0",
     "eslint-plugin-import": "2.18.2",
     "typescript": "3.5.3"
   },

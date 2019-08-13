@@ -15,5 +15,6 @@ module.exports = {
     quotes: 0,
     'quote-props': 0,
     'no-script-url': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
 };
