@@ -19,7 +19,11 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'Books', desc: 'Books' },
       { id: '9', cat: 'Other', desc: 'Other' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [
     {
@@ -38,7 +42,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: '{{if .Keywords}}/search/{{else}}/today/{{end}}' }],
     inputs: {
       $raw: 'new=1&{{range .Categories}}s_cat={{.}}&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
     },
     rows: {
       selector: 'div.inner_container > div:has(p:has(a[href^="/torrent/"]))',
