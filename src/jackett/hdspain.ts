@@ -63,6 +63,7 @@ export const definition: TrackerDefinition = {
         filters: [
           { name: 'prepend', args: '{{ .Result.extras }} ' },
           { name: 'append', args: ' [Spanish]' },
+          { name: 're_replace', args: ['(?i)T(\\d{1,2})\\b', 'S$1'] },
         ],
       },
       details: { selector: 'td.titulo a[id]', attribute: 'href' },
