@@ -1371,7 +1371,8 @@ export const definition: TrackerDefinition = {
       submit: 'Поиск',
     },
     rows: {
-      selector: 'table.forumline.tablesorter > tbody > tr:has(a[href^="viewtopic.php?t="])',
+      selector:
+        'table.forumline.tablesorter > tbody > tr:has(a[href^="viewtopic.php?t="]):has(a[href^="download.php?id="])',
     },
     fields: {
       title: {
@@ -1405,7 +1406,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        optional: true,
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
@@ -1432,6 +1432,8 @@ export const definition: TrackerDefinition = {
         case: {
           'img[src$="/images/gold.gif"]': '0',
           'img[src$="/images/platinum.gif"]': '0',
+          'img[src$="/images/bronze.gif"]': '0.75',
+          'img[src$="/images/silver.gif"]': '0.5',
           '*': '1',
         },
       },
