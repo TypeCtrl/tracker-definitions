@@ -63,7 +63,11 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'td:nth-child(2) > a',
         filters: [
-          { name: 're_replace', args: ['[^a-zA-Z0-9\\s]|\\.', ' '] },
+          {
+            name: 're_replace',
+            args: ['[\\[!"#$%&\'()*+,\\-.\\/:;<=>?@[\\]^_`{|}~]', ' '],
+          },
+          { name: 'diacritics', args: 'replace' },
           { name: 're_replace', args: ['[ ]{2,}', ' '] },
           {
             name: 're_replace',

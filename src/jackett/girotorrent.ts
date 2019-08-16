@@ -132,7 +132,11 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         filters: [
-          { name: 're_replace', args: ['[^a-zA-Z0-9\\s]|\\.', ' '] },
+          {
+            name: 're_replace',
+            args: ['[\\[!"#$%&\'()*+,\\-.\\/:;<=>?@[\\]^_`{|}~]', ' '],
+          },
+          { name: 'diacritics', args: 'replace' },
           { name: 're_replace', args: ['[ ]{2,}', ' '] },
           {
             name: 're_replace',
