@@ -412,6 +412,9 @@ export const jilcorsaronero = jjilcorsaronero;
 import { definition as jjiloveclassics } from './iloveclassics';
 export const jiloveclassics = jjiloveclassics;
 
+import { definition as jjimmortuos } from './immortuos';
+export const jimmortuos = jjimmortuos;
+
 import { definition as jjinperil } from './inperil';
 export const jinperil = jjinperil;
 
@@ -1052,6 +1055,7 @@ export const definitions = [
   jjilcorsaroblu,
   jjilcorsaronero,
   jjiloveclassics,
+  jjimmortuos,
   jjinperil,
   jjinsanetracker,
   jjisohunt2,

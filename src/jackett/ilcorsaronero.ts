@@ -6,7 +6,7 @@ export const definition: TrackerDefinition = {
   description: 'Il Corsaro Nero is an ITALIAN Public site for TV / MOVIES / GENERAL',
   language: 'it-IT',
   type: 'public',
-  encoding: 'UTF-8',
+  encoding: 'WINDOWS-1252',
   links: ['https://ilcorsaronero.pizza/'],
   legacylinks: [
     'https://ilcorsaronero.live/',
@@ -67,7 +67,6 @@ export const definition: TrackerDefinition = {
       },
     ],
     keywordsfilters: [
-      { name: 'diacritics', args: 'replace' },
       { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', '$1'] },
       {
         name: 're_replace',
@@ -84,8 +83,12 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [
           { name: 'split', args: ['/', -1] },
+          { name: 'diacritics', args: 'replace' },
           { name: 'urldecode' },
-          { name: 're_replace', args: ['[^a-zA-Z0-9\\s]|\\.', ' '] },
+          {
+            name: 're_replace',
+            args: ['[\\[!"#$%&\'()*+,\\-.\\/:;<=>?@[\\]^_`{|}~]', ' '],
+          },
           { name: 're_replace', args: ['[ ]{2,}', ' '] },
           {
             name: 're_replace',

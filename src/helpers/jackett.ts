@@ -137,6 +137,7 @@ export const jackettSites = [
   'ilcorsaroblu',
   'ilcorsaronero',
   'iloveclassics',
+  'immortuos',
   'inperil',
   'insanetracker',
   'isohunt2',
