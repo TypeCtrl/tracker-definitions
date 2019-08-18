@@ -37,6 +37,9 @@ export const jaftershock = jjaftershock;
 import { definition as jjalein } from './alein';
 export const jalein = jjalein;
 
+import { definition as jjalexfilm } from './alexfilm';
+export const jalexfilm = jjalexfilm;
+
 import { definition as jjamigosshare } from './amigosshare';
 export const jamigosshare = jjamigosshare;
 
@@ -120,6 +123,9 @@ export const jbluebird = jjbluebird;
 
 import { definition as jjblutopia } from './blutopia';
 export const jblutopia = jjblutopia;
+
+import { definition as jjbooktracker } from './booktracker';
+export const jbooktracker = jjbooktracker;
 
 import { definition as jjbtbit } from './btbit';
 export const jbtbit = jjbtbit;
@@ -718,6 +724,9 @@ export const jtellytorrent = jjtellytorrent;
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
 
+import { definition as jjtfile } from './tfile';
+export const jtfile = jjtfile;
+
 import { definition as jjtheaudioscene } from './theaudioscene';
 export const jtheaudioscene = jjtheaudioscene;
 
@@ -930,6 +939,7 @@ export const definitions = [
   jjacidlounge,
   jjaftershock,
   jjalein,
+  jjalexfilm,
   jjamigosshare,
   jjanidex,
   jjanirena,
@@ -958,6 +968,7 @@ export const definitions = [
   jjbitturk,
   jjbluebird,
   jjblutopia,
+  jjbooktracker,
   jjbtbit,
   jjbtdb,
   jjbtdigg,
@@ -1157,6 +1168,7 @@ export const definitions = [
   jjteamos,
   jjtellytorrent,
   jjtenyardtracker,
+  jjtfile,
   jjtheaudioscene,
   jjtheempire,
   jjthegeeks,

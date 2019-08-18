@@ -166,6 +166,10 @@ export interface Req {
    * e.g. if a CSRF token is hidden in JavaScript).
    */
   selectorinputs?: {
+    cookie_test?: {
+      selector: string;
+      attribute: string;
+    };
     _token?: {
       selector: string;
       attribute: string;
