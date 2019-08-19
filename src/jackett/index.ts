@@ -466,6 +466,9 @@ export const jlearnflakes = jjlearnflakes;
 import { definition as jjlechaudron } from './lechaudron';
 export const jlechaudron = jjlechaudron;
 
+import { definition as jjlemencili } from './lemencili';
+export const jlemencili = jjlemencili;
+
 import { definition as jjleporno } from './leporno';
 export const jleporno = jjleporno;
 
@@ -1082,6 +1085,7 @@ export const definitions = [
   jjlapausetorrents,
   jjlearnflakes,
   jjlechaudron,
+  jjlemencili,
   jjleporno,
   jjlesaloon,
   jjlibranet,

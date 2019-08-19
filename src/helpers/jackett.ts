@@ -155,6 +155,7 @@ export const jackettSites = [
   'lapausetorrents',
   'learnflakes',
   'lechaudron',
+  'lemencili',
   'leporno',
   'lesaloon',
   'libranet',
