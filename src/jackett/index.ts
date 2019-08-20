@@ -625,6 +625,9 @@ export const jretroflix = jjretroflix;
 import { definition as jjrgu } from './rgu';
 export const jrgu = jjrgu;
 
+import { definition as jjrns } from './rns';
+export const jrns = jjrns;
+
 import { definition as jjrockbox } from './rockbox';
 export const jrockbox = jjrockbox;
 
@@ -832,6 +835,9 @@ export const jtorrentseeds = jjtorrentseeds;
 import { definition as jjtorrentslocal } from './torrentslocal';
 export const jtorrentslocal = jjtorrentslocal;
 
+import { definition as jjtorrentwal } from './torrentwal';
+export const jtorrentwal = jjtorrentwal;
+
 import { definition as jjtorrentz2 } from './torrentz2';
 export const jtorrentz2 = jjtorrentz2;
 
@@ -858,6 +864,9 @@ export const jtwilight = jjtwilight;
 
 import { definition as jjuhdbits } from './uhdbits';
 export const juhdbits = jjuhdbits;
+
+import { definition as jjunderverse } from './underverse';
+export const junderverse = jjunderverse;
 
 import { definition as jjunionfansub } from './unionfansub';
 export const junionfansub = jjunionfansub;
@@ -1138,6 +1147,7 @@ export const definitions = [
   jjredstartorrent,
   jjretroflix,
   jjrgu,
+  jjrns,
   jjrockbox,
   jjrockethd,
   jjrodvd,
@@ -1207,6 +1217,7 @@ export const definitions = [
   jjtorrentsectorcrew,
   jjtorrentseeds,
   jjtorrentslocal,
+  jjtorrentwal,
   jjtorrentz2,
   jjtorviet,
   jjtotallykids,
@@ -1216,6 +1227,7 @@ export const definitions = [
   jjturktorrent,
   jjtwilight,
   jjuhdbits,
+  jjunderverse,
   jjunionfansub,
   jjuniongang,
   jjunlimitz,
