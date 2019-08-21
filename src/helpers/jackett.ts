@@ -180,6 +180,7 @@ export const jackettSites = [
   'mvgroupmain',
   'myspleen',
   'nethd',
+  'netlab',
   'newretro',
   'newstudio',
   'nnm-club',

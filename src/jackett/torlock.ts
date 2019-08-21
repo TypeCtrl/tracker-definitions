@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.torlock2.com/', 'https://www.torlock.com/', 'https://torlock.com/'],
+  links: ['https://www.torlock2.com/'],
+  legacylinks: ['https://torlock.com/', 'https://www.torlock.com/'],
   caps: {
     categorymappings: [
       { id: 'TELEVISION', cat: 'TV', desc: 'TV Shows' },

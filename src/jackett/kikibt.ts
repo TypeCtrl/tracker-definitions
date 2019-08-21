@@ -8,12 +8,14 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://kikibt8.me/'],
+  links: ['https://kikibt8.net/'],
   legacylinks: [
     'https://kikibt.me/',
     'http://kikibt.pw/',
     'https://kikibt.cc/',
     'https://kikibt.pw/',
+    'https://kikibt8.me/',
+    'http://kikibt8.me/',
   ],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],

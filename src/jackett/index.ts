@@ -541,6 +541,9 @@ export const jmyspleen = jjmyspleen;
 import { definition as jjnethd } from './nethd';
 export const jnethd = jjnethd;
 
+import { definition as jjnetlab } from './netlab';
+export const jnetlab = jjnetlab;
+
 import { definition as jjnewretro } from './newretro';
 export const jnewretro = jjnewretro;
 
@@ -1119,6 +1122,7 @@ export const definitions = [
   jjmvgroupmain,
   jjmyspleen,
   jjnethd,
+  jjnetlab,
   jjnewretro,
   jjnewstudio,
   jjnnmClub,
