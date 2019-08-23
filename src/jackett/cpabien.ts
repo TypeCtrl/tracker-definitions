@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.cpasbien.vg/'],
+  links: ['https://www.cpasbien.lol/'],
   legacylinks: [
     'http://www.cpasbiens.cc/',
     'http://www.cpabien.cm/',
@@ -36,6 +36,7 @@ export const definition: TrackerDefinition = {
     'https://www.cpabien.link/',
     'https://www.cpasbiens.cz/',
     'https://www.cpasbiens.bz/',
+    'https://www.cpasbien.vg/',
   ],
   caps: {
     categorymappings: [
