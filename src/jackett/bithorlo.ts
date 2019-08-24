@@ -36,7 +36,11 @@ export const definition: TrackerDefinition = {
       { id: '9', cat: 'XXX', desc: 'XXX/Film' },
       { id: '10', cat: 'XXX', desc: 'XXX/Kép' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },
@@ -53,7 +57,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
     },
     rows: { selector: 'tr[class^="browse"]' },
     fields: {
