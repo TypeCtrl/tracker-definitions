@@ -44,6 +44,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [
+      { selector: 'td.embedded:has(h2:contains("nieudane"))' },
       { selector: 'td.embedded:has(h2:contains("failed"))' },
       { selector: 'td.embedded:has(h2:contains("Error"))' },
     ],

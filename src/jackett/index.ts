@@ -133,9 +133,6 @@ export const jbtbit = jjbtbit;
 import { definition as jjbtdb } from './btdb';
 export const jbtdb = jjbtdb;
 
-import { definition as jjbtdigg } from './btdigg';
-export const jbtdigg = jjbtdigg;
-
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
 
@@ -325,9 +322,6 @@ export const jgdf76 = jjgdf76;
 import { definition as jjgenerationfree } from './generationfree';
 export const jgenerationfree = jjgenerationfree;
 
-import { definition as jjgfxnews } from './gfxnews';
-export const jgfxnews = jjgfxnews;
-
 import { definition as jjgfxpeers } from './gfxpeers';
 export const jgfxpeers = jjgfxpeers;
 
@@ -501,9 +495,6 @@ export const jmajomparade = jjmajomparade;
 
 import { definition as jjmarinetracker } from './marinetracker';
 export const jmarinetracker = jjmarinetracker;
-
-import { definition as jjmegabliz } from './megabliz';
-export const jmegabliz = jjmegabliz;
 
 import { definition as jjmetalIplayRo } from './metal-iplay-ro';
 export const jmetalIplayRo = jjmetalIplayRo;
@@ -772,9 +763,6 @@ export const jthetorrents = jjthetorrents;
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
 
-import { definition as jjtigersDl } from './tigers-dl';
-export const jtigersDl = jjtigersDl;
-
 import { definition as jjtntvillage } from './tntvillage';
 export const jtntvillage = jjtntvillage;
 
@@ -898,9 +886,6 @@ export const jworldOfTomorrow = jjworldOfTomorrow;
 import { definition as jjworldofp2P } from './worldofp2p';
 export const jworldofp2P = jjworldofp2P;
 
-import { definition as jjworldwidetorrents } from './worldwidetorrents';
-export const jworldwidetorrents = jjworldwidetorrents;
-
 import { definition as jjxIteMe } from './x-ite.me';
 export const jxIteMe = jjxIteMe;
 
@@ -986,7 +971,6 @@ export const definitions = [
   jjbooktracker,
   jjbtbit,
   jjbtdb,
-  jjbtdigg,
   jjbtgigs,
   jjbtkitty,
   jjbtnext,
@@ -1050,7 +1034,6 @@ export const definitions = [
   jjgaytorrentru,
   jjgdf76,
   jjgenerationfree,
-  jjgfxnews,
   jjgfxpeers,
   jjgigatorrents,
   jjgirotorrent,
@@ -1109,7 +1092,6 @@ export const definitions = [
   jjmagnetdl,
   jjmajomparade,
   jjmarinetracker,
-  jjmegabliz,
   jjmetalIplayRo,
   jjmetaltracker,
   jjmkvcage,
@@ -1199,7 +1181,6 @@ export const definitions = [
   jjtheshow,
   jjthetorrents,
   jjthevault,
-  jjtigersDl,
   jjtntvillage,
   jjtokyotosho,
   jjtorlock,
@@ -1241,7 +1222,6 @@ export const definitions = [
   jjwihd,
   jjworldOfTomorrow,
   jjworldofp2P,
-  jjworldwidetorrents,
   jjxIteMe,
   jjxbytes2,
   jjxktorrent,

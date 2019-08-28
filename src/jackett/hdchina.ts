@@ -85,9 +85,8 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="details.php?id="]',
+        selector: 'a[href^="download.php?hash="]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php', 'download.php'] }],
       },
       size: { selector: 'td.t_size' },
       grabs: { selector: 'td.t_completed' },

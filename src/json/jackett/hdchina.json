@@ -82,11 +82,8 @@
         "attribute": "href"
       },
       "download": {
-        "selector": "a[href^=\"details.php?id=\"]",
-        "attribute": "href",
-        "filters": [
-          { "name": "replace", "args": ["details.php", "download.php"] }
-        ]
+        "selector": "a[href^=\"download.php?hash=\"]",
+        "attribute": "href"
       },
       "size": { "selector": "td.t_size" },
       "grabs": { "selector": "td.t_completed" },

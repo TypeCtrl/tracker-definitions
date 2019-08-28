@@ -266,9 +266,9 @@ export const definition: TrackerDefinition = {
     fields: {
       title: { selector: 'a[href^="/files/details/"]' },
       category: {
-        selector: 'a[href^="/files/?cat="]',
+        selector: 'td span.subcategory a.subcategory:nth-child(2)',
         attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
+        filters: [{ name: 'regexp', args: '(\\d+)$' }],
       },
       details: {
         selector: 'a[href^="/files/details/"]',
