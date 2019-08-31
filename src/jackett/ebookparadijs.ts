@@ -24,6 +24,10 @@ export const definition: TrackerDefinition = {
       { id: '17', cat: 'Books/Ebook', desc: 'hobby' },
       { id: '19', cat: 'Books/Ebook', desc: 'medisch' },
       { id: '21', cat: 'Books/Ebook', desc: 'sport' },
+      { id: '50', cat: 'Books/Ebook', desc: 'Kookboeken' },
+      { id: '51', cat: 'Books/Ebook', desc: 'Fantasy' },
+      { id: '52', cat: 'Books/Ebook', desc: 'Kerst' },
+      { id: '53', cat: 'Books/Ebook', desc: 'Waargebeurd' },
     ],
     modes: { search: ['q'] },
   },
@@ -58,7 +62,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      banner: { selector: 'img[src*="/covers"]', attribute: 'src' },
+      banner: { selector: 'img[src*="/covers/"]', attribute: 'src' },
       title: { selector: 'a[href^="details.php?id="]' },
       details: {
         selector: 'a[href^="details.php?id="]',
@@ -82,7 +86,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '(\\d{1,})' }],
       },
       date: {
-        selector: 'td:nth-child(4) table tr:nth-child(2) td:nth-child(3)',
+        selector: 'td:nth-child(4) table tr:nth-child(2) td:nth-child(2)',
         filters: [
           { name: 'replace', args: ['januari', 'January'] },
           { name: 'replace', args: ['februari', 'February'] },

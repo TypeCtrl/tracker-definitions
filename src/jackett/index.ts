@@ -763,9 +763,6 @@ export const jthetorrents = jjthetorrents;
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
 
-import { definition as jjtntvillage } from './tntvillage';
-export const jtntvillage = jjtntvillage;
-
 import { definition as jjtokyotosho } from './tokyotosho';
 export const jtokyotosho = jjtokyotosho;
 
@@ -1181,7 +1178,6 @@ export const definitions = [
   jjtheshow,
   jjthetorrents,
   jjthevault,
-  jjtntvillage,
   jjtokyotosho,
   jjtorlock,
   jjtorrentTurk,
