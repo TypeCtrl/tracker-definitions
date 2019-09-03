@@ -10,10 +10,12 @@ export const definition: TrackerDefinition = {
   links: ['http://theshow.click/'],
   caps: {
     categorymappings: [
+      { id: '72', cat: 'Other', desc: '-empty-' },
       { id: '64', cat: 'Other', desc: 'Graphics / Photo Editing' },
       { id: '51', cat: 'Other', desc: 'Performing Craft: Acting' },
       { id: '85', cat: 'Other', desc: 'Scripts: Theatre' },
       { id: '90', cat: 'Other', desc: 'Visual Craft: Handcraft/Sculpt' },
+      { id: '81', cat: 'Other', desc: '-empty-' },
       { id: '32', cat: 'Other', desc: 'Magazines / Trade Journals' },
       { id: '4', cat: 'Other', desc: 'Performing Craft: Dance' },
       { id: '49', cat: 'Other', desc: 'Software / Tutorials' },
@@ -74,12 +76,11 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'table:contains("Login failed!")' }],
     test: { path: 'main.php' },
   },
-  download: { selector: 'a[href^="download.php"]' },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
     },
     rows: {
       selector: 'table[border="0"] > tbody > tr.ttable:has(a[href^="browse.php?cat="])',
@@ -92,9 +93,8 @@ export const definition: TrackerDefinition = {
       },
       title: { filters: null, selector: 'td:nth-child(2) b' },
       download: {
-        selector: 'a[href^="details.php?id="]',
+        selector: 'a[href^="download.php/"]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
       },
       details: {
         selector: 'a[href^="details.php?id="]',
@@ -102,7 +102,7 @@ export const definition: TrackerDefinition = {
       },
       grabs: {
         selector: 'td:nth-child(8)',
-        filters: [{ name: 'regexp', args: '([\\d,]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       files: { selector: 'td:nth-child(4)' },
       size: { selector: 'td:nth-child(7)' },

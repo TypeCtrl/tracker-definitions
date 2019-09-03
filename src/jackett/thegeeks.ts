@@ -103,7 +103,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'table:contains("Login failed!")' }],
     test: { path: 'main.php' },
   },
-  download: { selector: 'a[href^="download.php"]' },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {

@@ -251,7 +251,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'files/' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{range .Categories}}c{{.}}&{{end}}',
       lang: 0,
       incldead: 0,
       search: '{{.Keywords}}',
