@@ -86,7 +86,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '(\\d{1,})' }],
       },
       date: {
-        selector: 'td:nth-child(4) table tr:nth-child(2) td:nth-child(3)',
+        selector: 'td:nth-child(4) table tr:nth-child(2) td:last-child',
         filters: [
           { name: 'replace', args: ['januari', 'January'] },
           { name: 'replace', args: ['februari', 'February'] },
