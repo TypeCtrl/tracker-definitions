@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'es-ES',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://xbt.puntotorrent.ch/'],
+  links: ['https://xbt.puntotorrent.com/'],
+  legacylinks: ['https://xbt.puntotorrent.ch/'],
   caps: {
     categorymappings: [
       { id: '17', cat: 'Movies/Other', desc: 'VCD/SVCD - SVCD/VCD' },
