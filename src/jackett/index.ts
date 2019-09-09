@@ -889,9 +889,6 @@ export const jxIteMe = jjxIteMe;
 import { definition as jjxbytes2 } from './xbytes2';
 export const jxbytes2 = jjxbytes2;
 
-import { definition as jjxktorrent } from './xktorrent';
-export const jxktorrent = jjxktorrent;
-
 import { definition as jjxtremefile } from './xtremefile';
 export const jxtremefile = jjxtremefile;
 
@@ -1220,7 +1217,6 @@ export const definitions = [
   jjworldofp2P,
   jjxIteMe,
   jjxbytes2,
-  jjxktorrent,
   jjxtremefile,
   jjxtremezone,
   jjxwtorrents,

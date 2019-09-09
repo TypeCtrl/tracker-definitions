@@ -296,7 +296,6 @@ export const jackettSites = [
   'worldofp2p',
   'x-ite.me',
   'xbytes2',
-  'xktorrent',
   'xtremefile',
   'xtremezone',
   'xwtorrents',
