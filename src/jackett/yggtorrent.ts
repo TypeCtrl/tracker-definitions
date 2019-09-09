@@ -200,15 +200,36 @@ export const definition: TrackerDefinition = {
   },
   search: {
     followredirect: true,
-    keywordsfilters: [{ name: 'replace', args: ['"', ''] }, { name: 'trim' }],
+    keywordsfilters: [
+      {
+        name: 're_replace',
+        args: ['(.*)[sS]([1-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
+      },
+      {
+        name: 're_replace',
+        args: ['(.*)[sS]([1-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
+      },
+      {
+        name: 're_replace',
+        args: ['(.*)[sS]([1-9][0-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
+      },
+      {
+        name: 're_replace',
+        args: ['(.*)[sS]([1-9][0-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
+      },
+      { name: 're_replace', args: ['(.*)[sS]([1-9])$', '$1 S0$2'] },
+      { name: 're_replace', args: ['(.*)[sS]([1-9][0-9])$', '$1 S0$2'] },
+      { name: 'replace', args: ['"', ''] },
+      { name: 'trim' },
+    ],
     paths: [
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
+          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{if .Config.betasearchengine}}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
+          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{if .Config.betasearchengine}}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
