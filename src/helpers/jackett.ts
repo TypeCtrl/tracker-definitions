@@ -167,7 +167,6 @@ export const jackettSites = [
   'marinetracker',
   'metal-iplay-ro',
   'metaltracker',
-  'mkvcage',
   'mononokebt',
   'monova',
   'movcr',
