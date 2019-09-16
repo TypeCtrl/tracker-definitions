@@ -91,7 +91,7 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       download: {
-        selector: 'a[href^="torrents.php?action=download&id="]',
+        selector: 'a[href^="/torrents.php?action=download&id="]',
         attribute: 'href',
       },
       description: { selector: 'div.tags' },
@@ -131,7 +131,11 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
-        case: { 'img[alt="Freeleech"]': '0', '*': '1' },
+        case: {
+          'span.icon[title*="Freeleech"]': 0,
+          'img[alt="Freeleech"]': '0',
+          '*': '1',
+        },
       },
       uploadvolumefactor: { case: { '*': '1' } },
     },
