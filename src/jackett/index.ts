@@ -538,6 +538,9 @@ export const jnewretro = jjnewretro;
 import { definition as jjnewstudio } from './newstudio';
 export const jnewstudio = jjnewstudio;
 
+import { definition as jjnitro } from './nitro';
+export const jnitro = jjnitro;
+
 import { definition as jjnnmClub } from './nnm-club';
 export const jnnmClub = jjnnmClub;
 
@@ -1097,6 +1100,7 @@ export const definitions = [
   jjnetlab,
   jjnewretro,
   jjnewstudio,
+  jjnitro,
   jjnnmClub,
   jjnostalgic,
   jjnyaaPantsu,
