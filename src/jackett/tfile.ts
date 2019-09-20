@@ -5,7 +5,7 @@ export const definition: TrackerDefinition = {
   name: 'TFile',
   description: 'TFile is a RUSSIAN Public Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',
-  type: 'private',
+  type: 'public',
   encoding: 'WINDOWS-1251',
   links: ['http://search.tfile.me/'],
   legacylinks: ['http://tfile.ru/', 'http://megatfile.cc/'],
