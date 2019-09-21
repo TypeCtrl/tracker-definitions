@@ -44,6 +44,7 @@ export const jackettSites = [
   'booktracker',
   'btbit',
   'btdb',
+  'btdigg',
   'btgigs',
   'btkitty',
   'btnext',

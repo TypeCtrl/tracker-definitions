@@ -139,11 +139,11 @@
         "selector": "div:has(span[id^=\"staff_pick_\"])",
         "filters": [{ "name": "dateparse", "args": "2 Jan 2006 15:04:05" }]
       },
-      "files": { "selector": "td:nth-last-child(7)" },
-      "size": { "selector": "td:nth-last-child(5)" },
-      "grabs": { "selector": "td:nth-last-child(4)" },
-      "seeders": { "selector": "td:nth-last-child(3)" },
-      "leechers": { "selector": "td:nth-last-child(2)" },
+      "files": { "selector": "td:nth-child(5)" },
+      "size": { "selector": "td:nth-child(7)" },
+      "grabs": { "selector": "td:nth-child(8)" },
+      "seeders": { "selector": "td:nth-child(9)" },
+      "leechers": { "selector": "td:nth-child(10)" },
       "downloadvolumefactor": {
         "case": { "img[src=\"./images/gold.png\"]": "0", "*": "1" }
       },

@@ -133,6 +133,9 @@ export const jbtbit = jjbtbit;
 import { definition as jjbtdb } from './btdb';
 export const jbtdb = jjbtdb;
 
+import { definition as jjbtdigg } from './btdigg';
+export const jbtdigg = jjbtdigg;
+
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
 
@@ -965,6 +968,7 @@ export const definitions = [
   jjbooktracker,
   jjbtbit,
   jjbtdb,
+  jjbtdigg,
   jjbtgigs,
   jjbtkitty,
   jjbtnext,
