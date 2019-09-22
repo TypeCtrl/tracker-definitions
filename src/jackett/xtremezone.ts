@@ -46,7 +46,11 @@ export const definition: TrackerDefinition = {
       { id: '51', cat: 'XXX', desc: 'XXX-SD' },
       { id: '60', cat: 'TV/Foreign', desc: 'TV-RO' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   login: {
     path: 'login',
@@ -64,8 +68,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse' }],
     inputs: {
-      $raw: '{{range .Categories}}&categories[]={{.}}{{end}}',
-      search: '{{ .Query.Keywords }}',
+      $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
+      search: '{{ .Keywords }}',
     },
     rows: {
       selector:
@@ -75,9 +79,9 @@ export const definition: TrackerDefinition = {
       title: { selector: 'a[href^="/browse/"]' },
       details: { selector: 'a[href^="/browse/"]', attribute: 'href' },
       category: {
-        selector: 'a[href] > img',
-        attribute: 'class',
-        filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+        selector: 'a[href^="/browse?categories"]',
+        attribute: 'href',
+        filters: [{ name: 'regexp', args: '(\\d+)$' }],
       },
       download: { selector: 'a[href^="/dwn.php"]', attribute: 'href' },
       size: { selector: 'div[data-toggle="kt-tooltip"] + div + div' },
@@ -101,6 +105,7 @@ export const definition: TrackerDefinition = {
       banner: {
         selector: 'a[onmouseover][href^="details.php?id="]',
         attribute: 'onmouseover',
+        optional: true,
         filters: [{ name: 'regexp', args: 'src=([^\\s]+)' }],
       },
       downloadvolumefactor: {

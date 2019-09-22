@@ -139,9 +139,6 @@ export const jbtdigg = jjbtdigg;
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
 
-import { definition as jjbtkitty } from './btkitty';
-export const jbtkitty = jjbtkitty;
-
 import { definition as jjbtnext } from './btnext';
 export const jbtnext = jjbtnext;
 
@@ -447,9 +444,6 @@ export const jkickasstorrentKathow = jjkickasstorrentKathow;
 
 import { definition as jjkickasstorrent } from './kickasstorrent';
 export const jkickasstorrent = jjkickasstorrent;
-
-import { definition as jjkikibt } from './kikibt';
-export const jkikibt = jjkikibt;
 
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
@@ -802,9 +796,6 @@ export const jtorrenthr = jjtorrenthr;
 import { definition as jjtorrenting } from './torrenting';
 export const jtorrenting = jjtorrenting;
 
-import { definition as jjtorrentkitty } from './torrentkitty';
-export const jtorrentkitty = jjtorrentkitty;
-
 import { definition as jjtorrentland } from './torrentland';
 export const jtorrentland = jjtorrentland;
 
@@ -970,7 +961,6 @@ export const definitions = [
   jjbtdb,
   jjbtdigg,
   jjbtgigs,
-  jjbtkitty,
   jjbtnext,
   jjbtschool,
   jjcarpathians,
@@ -1073,7 +1063,6 @@ export const definitions = [
   jjkatcrs,
   jjkickasstorrentKathow,
   jjkickasstorrent,
-  jjkikibt,
   jjkinozal,
   jjlapausetorrents,
   jjlearnflakes,
@@ -1191,7 +1180,6 @@ export const definitions = [
   jjtorrentgalaxyorg,
   jjtorrenthr,
   jjtorrenting,
-  jjtorrentkitty,
   jjtorrentland,
   jjtorrentlt,
   jjtorrentproject2,
