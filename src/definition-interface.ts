@@ -293,6 +293,10 @@ export interface RowsSelector {
 }
 
 export interface Selector {
+  /**
+   * used to override the default GET method
+   */
+  method?: 'post';
   selector?: string;
   filters?: Filters[] | null;
   ffilters?: Filters[];

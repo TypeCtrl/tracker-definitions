@@ -218,6 +218,7 @@ export const jackettSites = [
   'seedfile',
   'shareisland',
   'sharespacedb',
+  'shareuniversity',
   'sharewood',
   'shellife',
   'shokweb',

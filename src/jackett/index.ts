@@ -655,6 +655,9 @@ export const jshareisland = jjshareisland;
 import { definition as jjsharespacedb } from './sharespacedb';
 export const jsharespacedb = jjsharespacedb;
 
+import { definition as jjshareuniversity } from './shareuniversity';
+export const jshareuniversity = jjshareuniversity;
+
 import { definition as jjsharewood } from './sharewood';
 export const jsharewood = jjsharewood;
 
@@ -1133,6 +1136,7 @@ export const definitions = [
   jjseedfile,
   jjshareisland,
   jjsharespacedb,
+  jjshareuniversity,
   jjsharewood,
   jjshellife,
   jjshokweb,
