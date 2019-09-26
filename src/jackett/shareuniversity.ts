@@ -10,19 +10,20 @@ export const definition: TrackerDefinition = {
   links: ['https://shareuniversity.org/'],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'Movies' },
-      { id: '8', cat: 'Movies' },
-      { id: '2', cat: 'TV' },
-      { id: '9', cat: 'TV' },
-      { id: '12', cat: 'TV/Anime' },
-      { id: '6', cat: 'Other' },
-      { id: '13', cat: 'Audio/Audiobook' },
-      { id: '4', cat: 'Books/Ebook' },
-      { id: '5', cat: 'PC/Games' },
-      { id: '11', cat: 'Movies' },
-      { id: '3', cat: 'Audio' },
-      { id: '10', cat: 'XXX' },
-      { id: '7', cat: 'Movies' },
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '8', cat: 'Movies', desc: 'Movies Boxset' },
+      { id: '2', cat: 'TV', desc: 'TV' },
+      { id: '9', cat: 'TV', desc: 'TV Boxset' },
+      { id: '12', cat: 'TV/Anime', desc: 'Anime' },
+      { id: '6', cat: 'PC', desc: 'Appz' },
+      { id: '13', cat: 'Audio/Audiobook', desc: 'AudioBooks' },
+      { id: '4', cat: 'Books/Ebook', desc: 'E-Books' },
+      { id: '16', cat: 'Other', desc: 'Elearning' },
+      { id: '5', cat: 'Console', desc: 'Games' },
+      { id: '11', cat: 'Movies', desc: 'Kids' },
+      { id: '3', cat: 'Audio', desc: 'Music' },
+      { id: '10', cat: 'XXX', desc: 'XXX' },
+      { id: '7', cat: 'Movies', desc: 'Not Nordic' },
     ],
     modes: {
       search: ['q'],
@@ -61,7 +62,6 @@ export const definition: TrackerDefinition = {
       imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '',
       tmdb: '',
-      mal: '',
       sort: 'created_at',
       direction: 'desc',
       qty: 100,
@@ -74,6 +74,17 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
       },
       title: { selector: 'a.view-torrent' },
+      banner: {
+        optional: true,
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+        filters: [
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/600x900', ''],
+          },
+        ],
+      },
       download: {
         method: 'post',
         selector: 'a[href*="/download/"]',
@@ -87,6 +98,11 @@ export const definition: TrackerDefinition = {
       grabs: {
         selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+      },
+      imdb: {
+        optional: true,
+        selector: 'a[href*="www.imdb.com/title/tt"]',
+        attribute: 'href',
       },
       date: {
         selector: 'time',
