@@ -364,9 +364,6 @@ export const jhdchina = jjhdchina;
 import { definition as jjhdcity } from './hdcity';
 export const jhdcity = jjhdcity;
 
-import { definition as jjhdforever } from './hdforever';
-export const jhdforever = jjhdforever;
-
 import { definition as jjhdhome } from './hdhome';
 export const jhdhome = jjhdhome;
 
@@ -1039,7 +1036,6 @@ export const definitions = [
   jjhdcenter,
   jjhdchina,
   jjhdcity,
-  jjhdforever,
   jjhdhome,
   jjhdme,
   jjhdsky,

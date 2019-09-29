@@ -121,7 +121,6 @@ export const jackettSites = [
   'hdcenter',
   'hdchina',
   'hdcity',
-  'hdforever',
   'hdhome',
   'hdme',
   'hdsky',
