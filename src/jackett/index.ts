@@ -364,6 +364,9 @@ export const jhdchina = jjhdchina;
 import { definition as jjhdcity } from './hdcity';
 export const jhdcity = jjhdcity;
 
+import { definition as jjhdforever } from './hdforever';
+export const jhdforever = jjhdforever;
+
 import { definition as jjhdhome } from './hdhome';
 export const jhdhome = jjhdhome;
 
@@ -618,9 +621,6 @@ export const jrns = jjrns;
 
 import { definition as jjrockbox } from './rockbox';
 export const jrockbox = jjrockbox;
-
-import { definition as jjrockethd } from './rockethd';
-export const jrockethd = jjrockethd;
 
 import { definition as jjrodvd } from './rodvd';
 export const jrodvd = jjrodvd;
@@ -1036,6 +1036,7 @@ export const definitions = [
   jjhdcenter,
   jjhdchina,
   jjhdcity,
+  jjhdforever,
   jjhdhome,
   jjhdme,
   jjhdsky,
@@ -1121,7 +1122,6 @@ export const definitions = [
   jjrgu,
   jjrns,
   jjrockbox,
-  jjrockethd,
   jjrodvd,
   jjrptorrents,
   jjrutor,

@@ -42,7 +42,6 @@ export const definition: TrackerDefinition = {
     selector: 'li:has(i.fa-sync-alt)',
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
-  download: { selector: 'a[href*="/download/"]' },
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
@@ -54,6 +53,7 @@ export const definition: TrackerDefinition = {
       tvdb: '',
       tmdb: '',
       mal: '',
+      igdb: '',
       sort: 'created_at',
       direction: 'desc',
       qty: 100,
@@ -67,7 +67,7 @@ export const definition: TrackerDefinition = {
       },
       title: { selector: 'a.view-torrent' },
       download: {
-        selector: 'a[href*="/download_check/"]',
+        selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
@@ -82,6 +82,7 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
+      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },

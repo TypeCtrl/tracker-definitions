@@ -74,6 +74,11 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
       },
       title: { selector: 'a.view-torrent' },
+      download: {
+        selector: 'a[href*="/download/"]',
+        attribute: 'href',
+      },
+      details: { selector: 'a.view-torrent', attribute: 'href' },
       banner: {
         optional: true,
         selector: 'div.torrent-poster img',
@@ -85,12 +90,6 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      download: {
-        method: 'post',
-        selector: 'a[href*="/download/"]',
-        attribute: 'href',
-      },
-      details: { selector: 'a.view-torrent', attribute: 'href' },
       comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },

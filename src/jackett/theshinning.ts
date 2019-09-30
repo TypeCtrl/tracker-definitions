@@ -19,6 +19,8 @@ export const definition: TrackerDefinition = {
       { id: '6', cat: 'Other', desc: 'Misc' },
       { id: '7', cat: 'XXX', desc: 'XXX' },
       { id: '8', cat: 'Movies', desc: 'Kids' },
+      { id: '9', cat: 'TV/Sport', desc: 'Sport' },
+      { id: '10', cat: 'TV/Documentary', desc: 'Doku' },
     ],
     modes: {
       search: ['q'],

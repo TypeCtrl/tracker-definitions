@@ -31,9 +31,15 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      remember: 1,
     },
-    error: [{ selector: 'table.main:contains("Login Failed!")' }],
-    test: { path: 'torrents' },
+    error: [{ selector: 'form[action$="/login"] .text-red' }],
+    test: { path: '/', selector: 'a[href$="/logout"]' },
+  },
+  ratio: {
+    path: '/',
+    selector: 'li:has(i.fa-signal)',
+    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
   search: {
     paths: [{ path: 'filterTorrents' }],
@@ -46,7 +52,7 @@ export const definition: TrackerDefinition = {
       tvdb: '',
       tmdb: '',
       mal: '',
-      sorting: 'created_at',
+      sort: 'created_at',
       direction: 'desc',
       qty: 100,
     },
@@ -63,12 +69,23 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
+      banner: {
+        optional: true,
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+      },
+      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-child(5)' },
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
       grabs: {
         selector: 'td:nth-child(6)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+      },
+      imdb: {
+        optional: true,
+        selector: 'a[href*="www.imdb.com/title/tt"]',
+        attribute: 'href',
       },
       date: {
         selector: 'time',

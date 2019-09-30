@@ -39,6 +39,11 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: 'torrents', selector: 'a[href$="/logout"]' },
   },
+  ratio: {
+    path: 'torrents',
+    selector: 'li:has(i.fa-sync-alt)',
+    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
+  },
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
@@ -50,7 +55,8 @@ export const definition: TrackerDefinition = {
       tvdb: '',
       tmdb: '',
       mal: '',
-      sorting: 'created_at',
+      igdb: '',
+      sort: 'created_at',
       direction: 'desc',
       qty: 100,
     },
@@ -67,12 +73,29 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
+      banner: {
+        optional: true,
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+        filters: [
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/600x900', ''],
+          },
+        ],
+      },
+      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
         selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+      },
+      imdb: {
+        optional: true,
+        selector: 'a[href*="www.imdb.com/title/tt"]',
+        attribute: 'href',
       },
       date: {
         selector: 'time',

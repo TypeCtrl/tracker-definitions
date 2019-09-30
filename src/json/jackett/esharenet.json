@@ -76,6 +76,7 @@
       "tvdb": "",
       "tmdb": "",
       "mal": "",
+      "igdb": "",
       "sort": "created_at",
       "direction": "desc",
       "qty": 100
@@ -104,6 +105,7 @@
           }
         ]
       },
+      "comments": { "selector": "a[href*=\"#comments\"]", "attribute": "href" },
       "size": { "selector": "td:nth-last-child(4)" },
       "seeders": { "selector": "td:nth-last-child(3)" },
       "leechers": { "selector": "td:nth-last-child(2)" },
@@ -203,7 +205,7 @@
           "i[data-original-title=\"Personal Freeleech\"]": "0",
           "i[data-original-title=\"Special Freeleech\"]": "0",
           "i[data-original-title=\"Freeleech Token\"]": "0",
-          "i[data-original-title=\"Global FreeLeech\"]": "0",
+          "i[data-original-title=\"Global Freeleech\"]": "0",
           "i[data-original-title=\"Freeleech\"]": "0",
           "i[data-original-title=\"Featured\"]": "0",
           "*": "1"
