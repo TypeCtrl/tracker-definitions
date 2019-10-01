@@ -88,6 +88,7 @@ export const jackettSites = [
   'elitetorrent-biz',
   'elittracker',
   'empornium',
+  'eniahd',
   'esharenet',
   'estone',
   'ethor',

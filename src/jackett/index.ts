@@ -265,6 +265,9 @@ export const jelittracker = jjelittracker;
 import { definition as jjempornium } from './empornium';
 export const jempornium = jjempornium;
 
+import { definition as jjeniahd } from './eniahd';
+export const jeniahd = jjeniahd;
+
 import { definition as jjesharenet } from './esharenet';
 export const jesharenet = jjesharenet;
 
@@ -1003,6 +1006,7 @@ export const definitions = [
   jjelitetorrentBiz,
   jjelittracker,
   jjempornium,
+  jjeniahd,
   jjesharenet,
   jjestone,
   jjethor,
