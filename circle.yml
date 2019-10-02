@@ -45,6 +45,7 @@ jobs:
       - run: npm ci
       - run: git submodule foreach git pull origin master
       - run: npm run update
+      - run: npm run build
       - run:
           name: "git config"
           command: |
