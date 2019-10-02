@@ -19,5 +19,7 @@ module.exports = {
     'quote-props': 0,
     'no-script-url': 0,
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/quotes': 0,
+    '@typescript-eslint/strict-boolean-expressions': 0,
   },
 };

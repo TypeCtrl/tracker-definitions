@@ -312,5 +312,5 @@ export interface Path {
   inputs?: { [key: string]: string | number };
   method?: string;
   followredirect?: boolean;
-  categorymappings?: (string | number)[];
+  categorymappings?: Array<(string | number)>;
 }

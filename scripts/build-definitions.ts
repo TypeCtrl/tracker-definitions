@@ -1,7 +1,7 @@
 import del from 'del';
 import fs from 'fs';
 import * as yaml from 'js-yaml';
-import { camelCase } from 'lodash';
+import { camelCase, isObjectLike } from 'lodash';
 import path from 'path';
 import prettier from 'prettier';
 
@@ -44,7 +44,7 @@ function validateJson(json: any): any {
     lang = `${lang}-${lang.toUpperCase()}`;
   }
 
-  // TODO: make pr to jackett removing this
+  // meh maybe make pr to jackett removing this
   if (lang === 'us-EN') {
     lang = 'en-US';
   }
@@ -52,7 +52,7 @@ function validateJson(json: any): any {
   json.language = lang;
 
   // parse and normalize categories
-  if (json.caps.categories) {
+  if (isObjectLike(json.caps.categories)) {
     const mappings = Object.keys(json.caps.categories).map(n => {
       return { id: n, cat: json.caps.categories[n] };
     });
@@ -61,11 +61,11 @@ function validateJson(json: any): any {
 
   delete json.caps.categories;
 
-  if (json.caps.categorymappings) {
+  if (Array.isArray(json.caps.categorymappings)) {
     json.caps.categorymappings = json.caps.categorymappings.map(cat => {
       const l = cat.cat.toLowerCase().replace(' ', '');
       const f = cats.find(n => n.toLowerCase().replace(' ', '') === l);
-      if (!f) {
+      if (f === undefined) {
         console.error(cat.cat);
         throw new Error(cat.cat);
       }

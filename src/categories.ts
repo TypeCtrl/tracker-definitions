@@ -71,7 +71,7 @@ export type Categories =
   | 'Books/Other'
   | 'Books/Foreign';
 
-export const TORZNAB_CATEGORIES: { [key in Categories]: number } = {
+export const TORZNAB_CATEGORIES: Record<Categories, number> = {
   Console: 1000,
   'Console/NDS': 1010,
   'Console/PSP': 1020,
