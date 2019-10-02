@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/jest": "24.0.18",
     "@types/js-yaml": "3.12.1",
-    "@types/lodash": "4.14.139",
+    "@types/lodash": "4.14.141",
     "@types/node": "12.7.7",
     "@types/prettier": "1.18.2",
     "@typescript-eslint/eslint-plugin": "2.3.1",
