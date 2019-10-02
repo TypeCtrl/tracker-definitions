@@ -48,7 +48,7 @@
     "semantic-release": "15.13.24",
     "ts-jest": "24.1.0",
     "ts-node": "8.4.1",
-    "eslint": "6.4.0",
+    "eslint": "6.5.1",
     "eslint-config-xo-space": "0.21.0",
     "eslint-config-xo-typescript": "0.18.0",
     "eslint-plugin-import": "2.18.2",
