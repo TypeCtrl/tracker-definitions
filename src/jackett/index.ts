@@ -718,6 +718,9 @@ export const jteamhd = jjteamhd;
 import { definition as jjteamos } from './teamos';
 export const jteamos = jjteamos;
 
+import { definition as jjtekno3D } from './tekno3d';
+export const jtekno3D = jjtekno3D;
+
 import { definition as jjtellytorrent } from './tellytorrent';
 export const jtellytorrent = jjtellytorrent;
 
@@ -1157,6 +1160,7 @@ export const definitions = [
   jjtazmaniaden,
   jjteamhd,
   jjteamos,
+  jjtekno3D,
   jjtellytorrent,
   jjtenyardtracker,
   jjtfile,

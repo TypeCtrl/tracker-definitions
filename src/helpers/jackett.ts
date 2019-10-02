@@ -239,6 +239,7 @@ export const jackettSites = [
   'tazmaniaden',
   'teamhd',
   'teamos',
+  'tekno3d',
   'tellytorrent',
   'tenyardtracker',
   'tfile',
