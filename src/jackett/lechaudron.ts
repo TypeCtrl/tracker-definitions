@@ -175,7 +175,8 @@ export const definition: TrackerDefinition = {
       },
       title: {
         selector: 'a[href*="/SousCategories/"]',
-        attribute: 'title',
+        attribute: 'alt',
+        filters: [{ name: 'regexp', args: '^..(.+)' }],
       },
       details: { selector: 'a[onmouseover]', attribute: 'href' },
       download: { selector: 'a[onmouseover]', attribute: 'href' },
