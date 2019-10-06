@@ -36,7 +36,7 @@ export const definition: TrackerDefinition = {
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
-      'movie-search': ['imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
   login: {
