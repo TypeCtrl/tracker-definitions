@@ -31,7 +31,10 @@ export const definition: TrackerDefinition = {
     fields: {
       title: {
         selector: '.meta a',
+        attribute: 'href',
         filters: [
+          { name: 're_replace', args: ['.*/([^/]*)/$', '$1'] },
+          { name: 'replace', args: ['-', ' '] },
           { name: 're_replace', args: ['(\\d{2})×(\\d{2})', 'S$1E$2'] },
           { name: 're_replace', args: ['(\\d{1})×(\\d{2})', 'S0$1E$2'] },
         ],

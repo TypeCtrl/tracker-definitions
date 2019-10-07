@@ -76,10 +76,6 @@ export const definition: TrackerDefinition = {
   ],
   login: {
     method: 'cookie',
-    headers: {
-      'user-agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
-    },
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: '?p=home&pid=1' },
   },
@@ -133,7 +129,7 @@ export const definition: TrackerDefinition = {
       },
       imdb: {
         optional: true,
-        selector: '.torrentFlags a[href^="http://www.imdb.com/title/"]',
+        selector: '.torrentFlags a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },
       date: {

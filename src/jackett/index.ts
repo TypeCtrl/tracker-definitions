@@ -388,6 +388,9 @@ export const jhdtorrentsit = jjhdtorrentsit;
 import { definition as jjhdturk } from './hdturk';
 export const jhdturk = jjhdturk;
 
+import { definition as jjhdzone } from './hdzone';
+export const jhdzone = jjhdzone;
+
 import { definition as jjhon3YhdNet } from './hon3yhd-net';
 export const jhon3YhdNet = jjhon3YhdNet;
 
@@ -1053,6 +1056,7 @@ export const definitions = [
   jjhdspain,
   jjhdtorrentsit,
   jjhdturk,
+  jjhdzone,
   jjhon3YhdNet,
   jjhon3Yhd,
   jjhqsource,

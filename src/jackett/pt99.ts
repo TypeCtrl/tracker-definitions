@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['details.php', 'download.php'] }],
       },
       imdb: {
-        selector: 'a[href^="http://www.imdb.com/title/tt"]',
+        selector: 'a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },
       size: { selector: 'td:nth-child(5)' },
