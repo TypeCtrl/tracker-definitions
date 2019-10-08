@@ -1,8 +1,8 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'yggtorrent',
-  name: 'YGGtorrent',
+  site: 'yggcookie',
+  name: 'YGGcookie',
   description: 'YGGTorrent is a FRENCH Semi-Private Torrent Tracker for 0DAY / GENERAL',
   language: 'fr-FR',
   type: 'semi-private',
@@ -97,14 +97,20 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
+    },
     {
       name: 'searchanddlurl',
       label: 'Search and download URL',
       type: 'text',
       default: 'www2.yggtorrent.pe',
     },
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
     {
       name: 'category',
       type: 'select',
@@ -169,32 +175,8 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    method: 'form',
-    path: '/',
-    form: '#user-login',
-    inputs: {
-      id: '{{ .Config.username }}',
-      pass: '{{ .Config.password }}',
-      submit: '',
-    },
-    error: [
-      { selector: '#login_msg_pass[style=""][style] > center' },
-      { selector: '#ban_msg_login[style=""][style] > center' },
-      { selector: '#login_msg_mail[style=""][style] > center' },
-      {
-        selector: 'a[href$="/user/disabled"]',
-        message: {
-          selector: 'a[href$="/user/disabled"] strong',
-          filters: [
-            {
-              name: 'append',
-              args:
-                " - Dès que vous passez en dessous d'un ratio inférieur à 1, Votre compte devient inactif et le site vous coupe les téléchargements.",
-            },
-          ],
-        },
-      },
-    ],
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
     test: {
       path: '/',
       selector: 'div#top_panel:contains("Déconnexion")',

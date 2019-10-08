@@ -301,6 +301,7 @@ export const jackettSites = [
   'xtremefile',
   'xtremezone',
   'xwtorrents',
+  'yggcookie',
   'yggtorrent',
   'yourbittorrent',
   'yourexotic',

@@ -904,6 +904,9 @@ export const jxtremezone = jjxtremezone;
 import { definition as jjxwtorrents } from './xwtorrents';
 export const jxwtorrents = jjxwtorrents;
 
+import { definition as jjyggcookie } from './yggcookie';
+export const jyggcookie = jjyggcookie;
+
 import { definition as jjyggtorrent } from './yggtorrent';
 export const jyggtorrent = jjyggtorrent;
 
@@ -1228,6 +1231,7 @@ export const definitions = [
   jjxtremefile,
   jjxtremezone,
   jjxwtorrents,
+  jjyggcookie,
   jjyggtorrent,
   jjyourbittorrent,
   jjyourexotic,
