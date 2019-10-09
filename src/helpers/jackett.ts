@@ -59,6 +59,7 @@ export const jackettSites = [
   'cinematik',
   'classix',
   'concen',
+  'concertos',
   'cpabien',
   'cpasbienclone',
   'crazyhd',

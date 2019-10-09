@@ -178,6 +178,9 @@ export const jclassix = jjclassix;
 import { definition as jjconcen } from './concen';
 export const jconcen = jjconcen;
 
+import { definition as jjconcertos } from './concertos';
+export const jconcertos = jjconcertos;
+
 import { definition as jjcpabien } from './cpabien';
 export const jcpabien = jjcpabien;
 
@@ -989,6 +992,7 @@ export const definitions = [
   jjcinematik,
   jjclassix,
   jjconcen,
+  jjconcertos,
   jjcpabien,
   jjcpasbienclone,
   jjcrazyhd,
