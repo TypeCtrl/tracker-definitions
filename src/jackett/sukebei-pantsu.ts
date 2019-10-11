@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://sukebei.pantsu.cat/'],
+  links: ['https://sukebei.nyaa.net/'],
+  legacylinks: ['https://sukebei.pantsu.cat/'],
   settings: [
     {
       name: 'cat-id',

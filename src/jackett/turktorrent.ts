@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'tr-TR',
   type: 'private',
   encoding: 'ISO-8859-9',
-  links: ['http://turktorrent.us/'],
-  legacylinks: ['http://turktorrent1.in/'],
+  links: ['https://turktorrent.us/'],
+  legacylinks: ['http://turktorrent1.in/', 'http://turktorrent.us/'],
   caps: {
     categorymappings: [
       { id: '3', cat: 'Movies', desc: 'Animasyon GENEL' },
@@ -78,31 +78,27 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: 'login.php',
+    path: '?p=home&pid=1',
     method: 'form',
-    form: 'form[action="takelogin.php"]',
+    form: 'form#loginbox_form',
+    submitpath: 'ajax/login.php',
     inputs: {
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
+      action: 'login',
+      loginbox_membername: '{{ .Config.username }}',
+      loginbox_password: '{{ .Config.password }}',
+      loginbox_remember: 1,
     },
-    captcha: {
-      type: 'image',
-      selector: 'img#regimage',
-      input: 'imagestring',
+    selectorinputs: {
+      securitytoken: {
+        selector: 'script:contains("stKey: ")',
+        filters: [{ name: 'regexp', args: 'stKey: "(.+?)",' }],
+      },
     },
-    error: [{ selector: 'table:contains("Bir hata oluştu!")' }],
-    test: {
-      path: 'index.php',
-      selector: 'a[href*="/logout.php?logouthash="]',
-    },
-  },
-  ratio: {
-    path: 'index.php',
-    selector: 'div#top div:nth-child(2) span:nth-child(2)',
-    filters: [{ name: 'regexp', args: 'Ratio: (.+?) Bonus:' }],
+    error: [{ selector: 'div.error' }, { selector: ':contains("-ERROR-")' }],
+    test: { path: '?p=home&pid=1', selector: 'div#member_info_bar' },
   },
   search: {
-    paths: [{ path: 'browse.php' }],
+    paths: [{ path: '/' }],
     keywordsfilters: [
       {
         name: 're_replace',
@@ -110,11 +106,11 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      do: 'search',
-      keywords: '{{if .Keywords}}"{{.Keywords}}"{{else}}{{end}}',
-      category: '0',
-      search_type: 't_name',
-      include_dead_torrents: 'yes',
+      p: 'torrents',
+      pid: 10,
+      $raw: '{{range .Categories}}&cid[]={{.}}{{end}}',
+      keywords: '{{ .Keywords }}',
+      search_type: 'name',
     },
     rows: {
       selector: 'table#sortabletable tbody tr:has(div[id^="port-target-"])',

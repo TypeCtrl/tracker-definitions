@@ -10,9 +10,6 @@ export const j2Fast4You = jj2Fast4You;
 import { definition as jj3Dtorrents } from './3dtorrents';
 export const j3Dtorrents = jj3Dtorrents;
 
-import { definition as jj3Evils } from './3evils';
-export const j3Evils = jj3Evils;
-
 import { definition as jj4Thd } from './4thd';
 export const j4Thd = jj4Thd;
 
@@ -889,9 +886,6 @@ export const jwihd = jjwihd;
 import { definition as jjworldOfTomorrow } from './world-of-tomorrow';
 export const jworldOfTomorrow = jjworldOfTomorrow;
 
-import { definition as jjworldofp2P } from './worldofp2p';
-export const jworldofp2P = jjworldofp2P;
-
 import { definition as jjxIteMe } from './x-ite.me';
 export const jxIteMe = jjxIteMe;
 
@@ -936,7 +930,6 @@ export const definitions = [
   jj1337X,
   jj2Fast4You,
   jj3Dtorrents,
-  jj3Evils,
   jj4Thd,
   jjbittorrentfiles,
   jjdasunerwartete,
@@ -1229,7 +1222,6 @@ export const definitions = [
   jjwaffles,
   jjwihd,
   jjworldOfTomorrow,
-  jjworldofp2P,
   jjxIteMe,
   jjxbytes2,
   jjxtremefile,
