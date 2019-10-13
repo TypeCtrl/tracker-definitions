@@ -853,6 +853,9 @@ export const jtrezzor = jjtrezzor;
 import { definition as jjturktorrent } from './turktorrent';
 export const jturktorrent = jjturktorrent;
 
+import { definition as jjtvchaosuk } from './tvchaosuk';
+export const jtvchaosuk = jjtvchaosuk;
+
 import { definition as jjtwilight } from './twilight';
 export const jtwilight = jjtwilight;
 
@@ -1211,6 +1214,7 @@ export const definitions = [
   jjtrancetraffic,
   jjtrezzor,
   jjturktorrent,
+  jjtvchaosuk,
   jjtwilight,
   jjuhdbits,
   jjunderverse,
