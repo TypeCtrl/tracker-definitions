@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   site: 'focusx',
   name: 'FocusX',
   description: 'FocusX is a RUSSIAN Public torrent site for MOVIES and TV',
-  language: 're-RU',
+  language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://focu.sx/'],

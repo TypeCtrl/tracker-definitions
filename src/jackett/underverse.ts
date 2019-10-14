@@ -3,11 +3,11 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'underverse',
   name: 'Underverse',
-  description: 'Underverse is a RUSSIAN Semi-Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'Underverse is a RUSSIAN Public Torrent Tracker for MOVIES / TV / MUSIC / GENERAL',
   language: 'ru-RU',
-  type: 'semi-private',
+  type: 'public',
   encoding: 'WINDOWS-1251',
-  links: ['https://underverse.su/'],
+  links: ['https://underver.se/', 'https://underverse.su/'],
   caps: {
     categorymappings: [
       { id: '15', cat: 'Movies/SD', desc: "Помощь по разделу 'Видео'" },
@@ -1644,8 +1644,6 @@ export const definition: TrackerDefinition = {
       { id: '616', cat: 'Other', desc: 'Для пробных раздач' },
       { id: '614', cat: 'Other', desc: 'Отстойник' },
       { id: '615', cat: 'Other', desc: 'Для поглощенных раздач' },
-      { id: '603', cat: 'Other', desc: 'Релизерская каптерка' },
-      { id: '604', cat: 'TV', desc: ' |- Черновики' },
     ],
     modes: {
       search: ['q'],
@@ -1654,8 +1652,6 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
     {
       name: 'striprussian',
       type: 'checkbox',
@@ -1663,28 +1659,6 @@ export const definition: TrackerDefinition = {
       default: false,
     },
   ],
-  login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action$="/login.php"]',
-    inputs: {
-      login_username: '{{ .Config.username }}',
-      login_password: '{{ .Config.password }}',
-      redirect: 'index.php',
-      autologin: 1,
-    },
-    selectorinputs: {
-      cookie_test: {
-        selector: 'input[name="cookie_test"]',
-        attribute: 'value',
-      },
-    },
-    error: [{ selector: 'h4.warnColor1' }],
-    test: {
-      path: 'index.php',
-      selector: 'a[href="./login.php?logout=1"]',
-    },
-  },
   search: {
     paths: [{ path: 'tracker.php' }],
     keywordsfilters: [

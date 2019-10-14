@@ -3,26 +3,16 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'newstudio',
   name: 'Newstudio',
-  description: 'Newstudio is a RUSSIAN Semi-Private site for TV',
+  description: 'Newstudio is a RUSSIAN Public site for TV',
   language: 'ru-RU',
-  type: 'semi-private',
+  type: 'public',
   encoding: 'UTF-8',
   links: ['http://newstudio.tv/'],
   caps: {
     categorymappings: [{ id: '6', cat: 'TV', desc: 'TV series' }],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
-  login: {
-    path: 'login.php',
-    method: 'post',
-    inputs: {
-      login: 1,
-      login_username: '{{ .Config.username }}',
-      login_password: '{{ .Config.password }}',
-    },
-    error: [{ selector: 'div.alert-error' }],
-    test: { path: '/', selector: 'a[href="/login.php?logout=1"]' },
-  },
+  settings: [],
   search: {
     paths: [
       { path: 'tracker.php?nm={{ .Keywords}}' },
