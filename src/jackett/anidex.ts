@@ -44,7 +44,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '?page=search&id={{if .Categories}}{{range .Categories}}{{.}},{{end}}{{else}}0{{end}}{{if .Config.lang-id}}&lang_id={{.Config.lang-id}}{{else}}{{end}}&group_id=0&q={{if .Keywords}}{{.Keywords}}{{else}}{{end}}',
+          '?page=search&id={{if .Categories}}{{range .Categories}},{{.}}{{end}}{{else}}0{{end}}{{if .Config.lang-id}}&lang_id={{.Config.lang-id}}{{else}}{{end}}&group_id=0&q={{if .Keywords}}{{.Keywords}}{{else}}{{end}}',
       },
     ],
     rows: { selector: 'div.table-responsive > table > tbody > tr' },
