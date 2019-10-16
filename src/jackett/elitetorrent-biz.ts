@@ -7,8 +7,12 @@ export const definition: TrackerDefinition = {
   language: 'es-ES',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.elitetorrent.one/'],
-  legacylinks: ['https://www.elitetorrent.biz/', 'https://www.elitetorrent.io/'],
+  links: ['https://www.elitetorrent.is/'],
+  legacylinks: [
+    'https://www.elitetorrent.biz/',
+    'https://www.elitetorrent.io/',
+    'https://www.elitetorrent.one/',
+  ],
   caps: {
     modes: {
       search: ['q'],
