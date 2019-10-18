@@ -508,6 +508,9 @@ export const jmetalIplayRo = jjmetalIplayRo;
 import { definition as jjmetaltracker } from './metaltracker';
 export const jmetaltracker = jjmetaltracker;
 
+import { definition as jjmkvcage } from './mkvcage';
+export const jmkvcage = jjmkvcage;
+
 import { definition as jjmononokebt } from './mononokebt';
 export const jmononokebt = jjmononokebt;
 
@@ -777,6 +780,9 @@ export const jtokyotosho = jjtokyotosho;
 
 import { definition as jjtorlock } from './torlock';
 export const jtorlock = jjtorlock;
+
+import { definition as jjtorrentExplosiv } from './torrent-explosiv';
+export const jtorrentExplosiv = jjtorrentExplosiv;
 
 import { definition as jjtorrentTurk } from './torrent-turk';
 export const jtorrentTurk = jjtorrentTurk;
@@ -1099,6 +1105,7 @@ export const definitions = [
   jjmarinetracker,
   jjmetalIplayRo,
   jjmetaltracker,
+  jjmkvcage,
   jjmononokebt,
   jjmonova,
   jjmovcr,
@@ -1189,6 +1196,7 @@ export const definitions = [
   jjthevault,
   jjtokyotosho,
   jjtorlock,
+  jjtorrentExplosiv,
   jjtorrentTurk,
   jjtorrent9,
   jjtorrent9Clone,
