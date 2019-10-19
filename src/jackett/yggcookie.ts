@@ -202,7 +202,7 @@ export const definition: TrackerDefinition = {
         args: ['(.*)[sS]([1-9][0-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
       },
       { name: 're_replace', args: ['(.*)[sS]([1-9])$', '$1 S0$2'] },
-      { name: 're_replace', args: ['(.*)[sS]([1-9][0-9])$', '$1 S0$2'] },
+      { name: 're_replace', args: ['(.*)[sS]([1-9][0-9])$', '$1 S$2'] },
       { name: 'replace', args: ['"', ''] },
       { name: 'trim' },
     ],

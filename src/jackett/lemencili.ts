@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://lemencili1.xyz/'],
+  links: ['https://lemencili10.xyz/'],
+  legacylinks: ['https://lemencili1.xyz/'],
   settings: [],
   caps: {
     modes: {
