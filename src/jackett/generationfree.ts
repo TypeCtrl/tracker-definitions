@@ -154,7 +154,7 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'td.tboxhead' }],
     test: {
-      path: 'torrents-search.php',
+      path: 'index.php',
       selector: 'a[href="account-logout.php"]',
     },
   },
