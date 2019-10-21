@@ -46,9 +46,6 @@ export const janidex = jjanidex;
 import { definition as jjanirena } from './anirena';
 export const janirena = jjanirena;
 
-import { definition as jjaox } from './aox';
-export const jaox = jjaox;
-
 import { definition as jjarabafenice } from './arabafenice';
 export const jarabafenice = jjarabafenice;
 
@@ -75,9 +72,6 @@ export const jaudiobooktorrents = jjaudiobooktorrents;
 
 import { definition as jjaudionews } from './audionews';
 export const jaudionews = jjaudionews;
-
-import { definition as jjavg } from './avg';
-export const javg = jjavg;
 
 import { definition as jjawesomehd } from './awesomehd';
 export const jawesomehd = jjawesomehd;
@@ -238,9 +232,6 @@ export const jdownloadville = jjdownloadville;
 import { definition as jjdragonworldreloaded } from './dragonworldreloaded';
 export const jdragonworldreloaded = jjdragonworldreloaded;
 
-import { definition as jjdreamteam } from './dreamteam';
-export const jdreamteam = jjdreamteam;
-
 import { definition as jjdxdhd } from './dxdhd';
 export const jdxdhd = jjdxdhd;
 
@@ -252,9 +243,6 @@ export const jebooksShares = jjebooksShares;
 
 import { definition as jjefectodoppler } from './efectodoppler';
 export const jefectodoppler = jjefectodoppler;
-
-import { definition as jjelitehd } from './elitehd';
-export const jelitehd = jjelitehd;
 
 import { definition as jjelitetorrentBiz } from './elitetorrent-biz';
 export const jelitetorrentBiz = jjelitetorrentBiz;
@@ -318,9 +306,6 @@ export const jgayTorrentsorg = jjgayTorrentsorg;
 
 import { definition as jjgaytorrentru } from './gaytorrentru';
 export const jgaytorrentru = jjgaytorrentru;
-
-import { definition as jjgdf76 } from './gdf76';
-export const jgdf76 = jjgdf76;
 
 import { definition as jjgenerationfree } from './generationfree';
 export const jgenerationfree = jjgenerationfree;
@@ -951,7 +936,6 @@ export const definitions = [
   jjamigosshare,
   jjanidex,
   jjanirena,
-  jjaox,
   jjarabafenice,
   jjarenabg,
   jjasgaard,
@@ -961,7 +945,6 @@ export const definitions = [
   jjaudiobookbay,
   jjaudiobooktorrents,
   jjaudionews,
-  jjavg,
   jjawesomehd,
   jjbackups,
   jjbaibako,
@@ -1015,12 +998,10 @@ export const definitions = [
   jjdocumentarytorrents,
   jjdownloadville,
   jjdragonworldreloaded,
-  jjdreamteam,
   jjdxdhd,
   jjebookparadijs,
   jjebooksShares,
   jjefectodoppler,
-  jjelitehd,
   jjelitetorrentBiz,
   jjelittracker,
   jjempornium,
@@ -1042,7 +1023,6 @@ export const definitions = [
   jjgayTorrents,
   jjgayTorrentsorg,
   jjgaytorrentru,
-  jjgdf76,
   jjgenerationfree,
   jjgfxpeers,
   jjgigatorrents,
