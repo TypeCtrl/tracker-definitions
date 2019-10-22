@@ -388,9 +388,6 @@ export const jhqsource = jjhqsource;
 import { definition as jjhush } from './hush';
 export const jhush = jjhush;
 
-import { definition as jjhyperay } from './hyperay';
-export const jhyperay = jjhyperay;
-
 import { definition as jjicetorrent } from './icetorrent';
 export const jicetorrent = jjicetorrent;
 
@@ -630,9 +627,6 @@ export const jrutor = jjrutor;
 
 import { definition as jjscenefz } from './scenefz';
 export const jscenefz = jjscenefz;
-
-import { definition as jjscenereactor } from './scenereactor';
-export const jscenereactor = jjscenereactor;
 
 import { definition as jjscenerush } from './scenerush';
 export const jscenerush = jjscenerush;
@@ -1050,7 +1044,6 @@ export const definitions = [
   jjhon3Yhd,
   jjhqsource,
   jjhush,
-  jjhyperay,
   jjicetorrent,
   jjidope,
   jjilcorsaroblu,
@@ -1131,7 +1124,6 @@ export const definitions = [
   jjrptorrents,
   jjrutor,
   jjscenefz,
-  jjscenereactor,
   jjscenerush,
   jjsdbits,
   jjseedfile,
