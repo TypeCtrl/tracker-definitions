@@ -45,6 +45,7 @@ export const definition: TrackerDefinition = {
       { id: '50', cat: 'XXX', desc: 'XXX-Packs' },
       { id: '51', cat: 'XXX', desc: 'XXX-SD' },
       { id: '60', cat: 'TV/Foreign', desc: 'TV-RO' },
+      { id: '66', cat: 'TV/Foreign', desc: 'TV-Packs-RO' },
     ],
     modes: {
       search: ['q'],
