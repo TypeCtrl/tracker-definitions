@@ -102,12 +102,6 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: '/' }],
-    keywordsfilters: [
-      {
-        name: 're_replace',
-        args: ['(?i)\\bS0*(\\d+)E0*(\\d+)\\b', '$1.sezon $2.blm'],
-      },
-    ],
     inputs: {
       p: 'torrents',
       pid: 32,
@@ -124,19 +118,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cid' }],
       },
-      title: {
-        selector: 'a[href*="?p=torrents&pid=10&action=details"]',
-        filters: [
-          {
-            name: 're_replace',
-            args: ['(?i)\\b(\\d+).sezon\\s(\\d+).blm\\b', 'S$1E$2'],
-          },
-          {
-            name: 're_replace',
-            args: ['\\((\\d+)\\.(\\d+)\\.(\\d+)\\)', ' $2/$1/$3 '],
-          },
-        ],
-      },
+      title: { selector: 'a[href*="?p=torrents&pid=10&action=details"]' },
       details: {
         selector: 'a[href*="?p=torrents&pid=10&action=details"]',
         attribute: 'href',
