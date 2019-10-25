@@ -49,6 +49,12 @@ export const definition: TrackerDefinition = {
       default:
         "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here.</ol>",
     },
+    {
+      name: 'striprussian',
+      type: 'checkbox',
+      label: 'Strip Russian Letters',
+      default: false,
+    },
   ],
   login: {
     method: 'cookie',
@@ -70,7 +76,18 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      title: { selector: 'a[href^="/details/id"]' },
+      title: {
+        selector: 'a[href^="/details/id"]',
+        filters: [
+          {
+            name: 're_replace',
+            args: [
+              '(\\([А-Яа-я\\W]+\\))|(^[А-Яа-я\\W\\d]+\\/ )|([а-яА-Я \\-]+,+)|([а-яА-Я]+)',
+              '{{ if .Config.striprussian }}{{ else }}$1$2$3$4{{ end }}',
+            ],
+          },
+        ],
+      },
       details: {
         selector: 'a[href^="/details/id"]',
         attribute: 'href',

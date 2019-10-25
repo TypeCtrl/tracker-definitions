@@ -195,7 +195,9 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td[data-title="Size"]' },
       files: { selector: 'td[data-title="Files"]' },
       date: {
-        selector: 'td[data-title="Age"]',
+        selector: 'td[data-title="Age"]:not(:contains("-"))',
+        attribute: 'title',
+        optional: true,
         filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
       },
       seeders: { selector: 'td[data-title="Seed"]' },
