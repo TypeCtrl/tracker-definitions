@@ -1,13 +1,13 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'lapausetorrents',
-  name: 'Lapausetorrents',
-  description: 'Lapausetorrents is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
+  site: 'galeriens',
+  name: 'Galeriens',
+  description: 'Galeriens is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://tempsdepause.eu/'],
+  links: ['https://galeriens.eu/'],
   caps: {
     categorymappings: [
       { id: '4', cat: 'Movies/UHD', desc: 'Animations -  4K Remux' },

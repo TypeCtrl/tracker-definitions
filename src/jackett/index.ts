@@ -298,6 +298,9 @@ export const jfullmixmusic = jjfullmixmusic;
 import { definition as jjfunkytorrents } from './funkytorrents';
 export const jfunkytorrents = jjfunkytorrents;
 
+import { definition as jjgaleriens } from './galeriens';
+export const jgaleriens = jjgaleriens;
+
 import { definition as jjgayTorrents } from './gay-torrents';
 export const jgayTorrents = jjgayTorrents;
 
@@ -438,9 +441,6 @@ export const jkickasstorrent = jjkickasstorrent;
 
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
-
-import { definition as jjlapausetorrents } from './lapausetorrents';
-export const jlapausetorrents = jjlapausetorrents;
 
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
@@ -1014,6 +1014,7 @@ export const definitions = [
   jjfrozenlayer,
   jjfullmixmusic,
   jjfunkytorrents,
+  jjgaleriens,
   jjgayTorrents,
   jjgayTorrentsorg,
   jjgaytorrentru,
@@ -1061,7 +1062,6 @@ export const definitions = [
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinozal,
-  jjlapausetorrents,
   jjlearnflakes,
   jjlechaudron,
   jjlemencili,
