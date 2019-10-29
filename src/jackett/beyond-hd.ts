@@ -43,7 +43,7 @@ export const definition: TrackerDefinition = {
       direction: 'desc',
       qty: 100,
     },
-    rows: { selector: 'table > tbody > tr' },
+    rows: { selector: 'table > tbody > tr', after: 1 },
     fields: {
       _category: {
         selector: 'a[href*="/categories/"]',
@@ -64,12 +64,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         selector: 'div.torrent-poster img',
         attribute: 'src',
-        filters: [
-          {
-            name: 'replace',
-            args: ['https://via.placeholder.com/600x900', ''],
-          },
-        ],
+        filters: [{ name: 'replace', args: ['/img/person.png', ''] }],
       },
       date: {
         selector: 'td:not(a[href$="/history"]) span.text-orange',
