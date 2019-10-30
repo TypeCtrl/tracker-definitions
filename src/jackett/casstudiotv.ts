@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'casstudiotv',
   name: 'CasStudioTV',
-  description: 'CasStudioTV is a RUSSIAN Private Torrent Tracker for TV',
+  description: 'CasStudioTV is a RUSSIAN Semi-Private Torrent Tracker for TV',
   language: 'ru-RU',
-  type: 'private',
+  type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://casstudio.tk/'],
   legacylinks: ['https://casstudio.tv/'],

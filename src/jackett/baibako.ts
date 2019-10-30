@@ -5,7 +5,7 @@ export const definition: TrackerDefinition = {
   name: 'BaibaKo',
   description: 'BaibaKo is a RUSSIAN Semi-Private Torrent Tracker for TV',
   language: 'ru-RU',
-  type: 'private',
+  type: 'semi-private',
   encoding: 'WINDOWS-1251',
   links: ['http://baibako.tv/'],
   caps: {

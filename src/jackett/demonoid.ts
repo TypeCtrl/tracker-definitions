@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.dnoid.to/'],
+  links: ['https://www.demonoid.is/'],
+  legacylinks: ['https://www.dnoid.to/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'PC/Phone-Android', desc: 'Applications Android' },
@@ -354,15 +355,15 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'files/' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}&{{end}}',
-      incldead: 3,
-      search: '{{.Keywords}}',
-      sort: 'added',
-      order: 'desc',
+      seeded: 2,
+      language: 0,
+      quality: 0,
+      to: 'on',
+      query: '{{.Keywords}}',
     },
     rows: {
-      selector: 'table.ttable_headinner tr:has(td[class^="tone_1"])',
+      selector: 'table.font_12px tr:has(td[class^="tone_1"])',
       after: 1,
-      filters: [{ name: 'andmatch' }],
       dateheaders: {
         selector: 'tr td.added_today:not(:contains("Sponsored links"))',
         filters: [

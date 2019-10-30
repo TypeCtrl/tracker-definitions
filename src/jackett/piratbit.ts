@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'piratbit',
   name: 'PiratBit',
-  description: 'PirateBit is a RUSSIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'PirateBit is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',
-  type: 'private',
+  type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://piratbit.top/'],
   legacylinks: [
