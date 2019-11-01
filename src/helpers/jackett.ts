@@ -28,6 +28,7 @@ export const jackettSites = [
   'backups',
   'baibako',
   'beyond-hd',
+  'bigfangroup',
   'bigtorrent',
   'bigtower',
   'bit-titan',

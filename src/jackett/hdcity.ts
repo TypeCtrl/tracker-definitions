@@ -273,8 +273,9 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'category' }],
       },
       title: {
-        selector: 'td[valign="middle"] a',
-        filters: [{ name: 'append', args: ' [spanish]' }],
+        selector: 'td[valign="middle"] a:not(:contains("VOSE"))',
+        optional: true,
+        filters: [{ name: 'append', args: ' [spanish] [english]' }],
       },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },
       banner: {

@@ -85,6 +85,9 @@ export const jbaibako = jjbaibako;
 import { definition as jjbeyondHd } from './beyond-hd';
 export const jbeyondHd = jjbeyondHd;
 
+import { definition as jjbigfangroup } from './bigfangroup';
+export const jbigfangroup = jjbigfangroup;
+
 import { definition as jjbigtorrent } from './bigtorrent';
 export const jbigtorrent = jjbigtorrent;
 
@@ -946,6 +949,7 @@ export const definitions = [
   jjbackups,
   jjbaibako,
   jjbeyondHd,
+  jjbigfangroup,
   jjbigtorrent,
   jjbigtower,
   jjbitTitan,

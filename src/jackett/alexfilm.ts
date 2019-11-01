@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://alexfilm.cc/'],
+  links: ['https://alexfilm.org/'],
+  legacylinks: ['https://alexfilm.cc/'],
   caps: {
     categorymappings: [{ id: '1', cat: 'TV', desc: 'TV' }],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
