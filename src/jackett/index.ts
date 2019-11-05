@@ -274,6 +274,9 @@ export const jettv = jjettv;
 import { definition as jjextratorrentAg } from './extratorrent-ag';
 export const jextratorrentAg = jjextratorrentAg;
 
+import { definition as jjexttorrents } from './exttorrents';
+export const jexttorrents = jjexttorrents;
+
 import { definition as jjeztv } from './eztv';
 export const jeztv = jjeztv;
 
@@ -328,6 +331,9 @@ export const jgirotorrent = jjgirotorrent;
 import { definition as jjgktorrent } from './gktorrent';
 export const jgktorrent = jjgktorrent;
 
+import { definition as jjglodls } from './glodls';
+export const jglodls = jjglodls;
+
 import { definition as jjgreekteam } from './greekteam';
 export const jgreekteam = jjgreekteam;
 
@@ -366,6 +372,9 @@ export const jhdhome = jjhdhome;
 
 import { definition as jjhdme } from './hdme';
 export const jhdme = jjhdme;
+
+import { definition as jjhdreactor } from './hdreactor';
+export const jhdreactor = jjhdreactor;
 
 import { definition as jjhdsky } from './hdsky';
 export const jhdsky = jjhdsky;
@@ -447,9 +456,6 @@ export const jkinozal = jjkinozal;
 
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
-
-import { definition as jjlechaudron } from './lechaudron';
-export const jlechaudron = jjlechaudron;
 
 import { definition as jjlemencili } from './lemencili';
 export const jlemencili = jjlemencili;
@@ -1012,6 +1018,7 @@ export const definitions = [
   jjethor,
   jjettv,
   jjextratorrentAg,
+  jjexttorrents,
   jjeztv,
   jjfanoin,
   jjfemdomcult,
@@ -1030,6 +1037,7 @@ export const definitions = [
   jjgigatorrents,
   jjgirotorrent,
   jjgktorrent,
+  jjglodls,
   jjgreekteam,
   jjhachede,
   jjhamsterstudio,
@@ -1043,6 +1051,7 @@ export const definitions = [
   jjhdforever,
   jjhdhome,
   jjhdme,
+  jjhdreactor,
   jjhdsky,
   jjhdspain,
   jjhdtorrentsit,
@@ -1070,7 +1079,6 @@ export const definitions = [
   jjkickasstorrent,
   jjkinozal,
   jjlearnflakes,
-  jjlechaudron,
   jjlemencili,
   jjleporno,
   jjlesaloon,

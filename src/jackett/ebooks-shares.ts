@@ -115,7 +115,7 @@ export const definition: TrackerDefinition = {
       {
         id: '222',
         cat: 'Books/Comics',
-        desc: 'Comics: Books &amp; Mags - Comics',
+        desc: 'Comics: Books & Mags - Comics',
       },
       {
         id: '225',
@@ -197,7 +197,7 @@ export const definition: TrackerDefinition = {
       {
         id: '123',
         cat: 'Books/Ebook',
-        desc: 'Educational: Biology &amp; Genetics',
+        desc: 'Educational: Biology & Genetics',
       },
       { id: '124', cat: 'Books/Ebook', desc: 'Educational: Chemistry' },
       {
@@ -218,7 +218,7 @@ export const definition: TrackerDefinition = {
       {
         id: '128',
         cat: 'Books/Ebook',
-        desc: 'Educational: Engineering &amp; Technology ',
+        desc: 'Educational: Engineering & Technology ',
       },
       {
         id: '129',
@@ -291,7 +291,7 @@ export const definition: TrackerDefinition = {
       {
         id: '84',
         cat: 'Books/Ebook',
-        desc: 'Fiction: Military &amp; Historic',
+        desc: 'Fiction: Military & Historic',
       },
       { id: '86', cat: 'Books/Ebook', desc: 'Fiction: Romance' },
       { id: '87', cat: 'Books/Ebook', desc: 'Fiction: Sci-Fi/Fantasy' },
@@ -309,7 +309,7 @@ export const definition: TrackerDefinition = {
       {
         id: '143',
         cat: 'Books/Ebook',
-        desc: 'Hobby/Pastime: Food &amp; Drink',
+        desc: 'Hobby/Pastime: Food & Drink',
       },
       {
         id: '144',
@@ -523,7 +523,7 @@ export const definition: TrackerDefinition = {
       {
         id: '91',
         cat: 'Books/Ebook',
-        desc: 'Non Fict/Ref: Auto &amp; Repair',
+        desc: 'Non Fict/Ref: Auto & Repair',
       },
       { id: '92', cat: 'Books/Ebook', desc: 'Non Fict/Ref: Aviation' },
       {
@@ -546,7 +546,7 @@ export const definition: TrackerDefinition = {
       {
         id: '100',
         cat: 'Books/Ebook',
-        desc: 'Non Fict/Ref: Economics &amp; Math',
+        desc: 'Non Fict/Ref: Economics & Math',
       },
       {
         id: '102',
@@ -571,7 +571,7 @@ export const definition: TrackerDefinition = {
       {
         id: '106',
         cat: 'Books/Ebook',
-        desc: 'Non Fict/Ref: Geo &amp; Archaeology',
+        desc: 'Non Fict/Ref: Geo & Archaeology',
       },
       {
         id: '107',
@@ -594,7 +594,7 @@ export const definition: TrackerDefinition = {
       {
         id: '113',
         cat: 'Books/Ebook',
-        desc: 'Non Fict/Ref: Philosophy &amp; Belief',
+        desc: 'Non Fict/Ref: Philosophy & Belief',
       },
       {
         id: '114',
@@ -671,7 +671,7 @@ export const definition: TrackerDefinition = {
       {
         id: '293',
         cat: 'Books/Ebook',
-        desc: 'Non Fict/Ref: Zoology &amp; Veterinary Science',
+        desc: 'Non Fict/Ref: Zoology & Veterinary Science',
       },
       {
         id: '294',

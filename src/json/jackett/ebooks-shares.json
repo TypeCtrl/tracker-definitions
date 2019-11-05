@@ -113,7 +113,7 @@
       {
         "id": "222",
         "cat": "Books/Comics",
-        "desc": "Comics: Books &amp; Mags - Comics"
+        "desc": "Comics: Books & Mags - Comics"
       },
       {
         "id": "225",
@@ -195,7 +195,7 @@
       {
         "id": "123",
         "cat": "Books/Ebook",
-        "desc": "Educational: Biology &amp; Genetics"
+        "desc": "Educational: Biology & Genetics"
       },
       { "id": "124", "cat": "Books/Ebook", "desc": "Educational: Chemistry" },
       {
@@ -216,7 +216,7 @@
       {
         "id": "128",
         "cat": "Books/Ebook",
-        "desc": "Educational: Engineering &amp; Technology "
+        "desc": "Educational: Engineering & Technology "
       },
       {
         "id": "129",
@@ -289,7 +289,7 @@
       {
         "id": "84",
         "cat": "Books/Ebook",
-        "desc": "Fiction: Military &amp; Historic"
+        "desc": "Fiction: Military & Historic"
       },
       { "id": "86", "cat": "Books/Ebook", "desc": "Fiction: Romance" },
       { "id": "87", "cat": "Books/Ebook", "desc": "Fiction: Sci-Fi/Fantasy" },
@@ -307,7 +307,7 @@
       {
         "id": "143",
         "cat": "Books/Ebook",
-        "desc": "Hobby/Pastime: Food &amp; Drink"
+        "desc": "Hobby/Pastime: Food & Drink"
       },
       {
         "id": "144",
@@ -521,7 +521,7 @@
       {
         "id": "91",
         "cat": "Books/Ebook",
-        "desc": "Non Fict/Ref: Auto &amp; Repair"
+        "desc": "Non Fict/Ref: Auto & Repair"
       },
       { "id": "92", "cat": "Books/Ebook", "desc": "Non Fict/Ref: Aviation" },
       {
@@ -544,7 +544,7 @@
       {
         "id": "100",
         "cat": "Books/Ebook",
-        "desc": "Non Fict/Ref: Economics &amp; Math"
+        "desc": "Non Fict/Ref: Economics & Math"
       },
       {
         "id": "102",
@@ -569,7 +569,7 @@
       {
         "id": "106",
         "cat": "Books/Ebook",
-        "desc": "Non Fict/Ref: Geo &amp; Archaeology"
+        "desc": "Non Fict/Ref: Geo & Archaeology"
       },
       {
         "id": "107",
@@ -592,7 +592,7 @@
       {
         "id": "113",
         "cat": "Books/Ebook",
-        "desc": "Non Fict/Ref: Philosophy &amp; Belief"
+        "desc": "Non Fict/Ref: Philosophy & Belief"
       },
       {
         "id": "114",
@@ -669,7 +669,7 @@
       {
         "id": "293",
         "cat": "Books/Ebook",
-        "desc": "Non Fict/Ref: Zoology &amp; Veterinary Science"
+        "desc": "Non Fict/Ref: Zoology & Veterinary Science"
       },
       {
         "id": "294",

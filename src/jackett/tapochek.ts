@@ -510,34 +510,34 @@ export const definition: TrackerDefinition = {
       {
         id: '500',
         cat: 'Audio/Video',
-        desc: 'New Age, Relax, Meditative &amp; Flamenco (video)',
+        desc: 'New Age, Relax, Meditative & Flamenco (video)',
       },
       { id: '501', cat: 'Audio', desc: 'Звуки природы' },
       { id: '502', cat: 'Audio', desc: 'Психоактивныe аудиопрограммы' },
       {
         id: '504',
         cat: 'Audio/Lossless',
-        desc: 'Зарубежный Rap, Hip-Hop, R&#039;n&#039;B (lossless)',
+        desc: "Зарубежный Rap, Hip-Hop, R'n'B (lossless)",
       },
       {
         id: '505',
         cat: 'Audio/Lossless',
-        desc: 'Отечественный Rap, Hip-Hop, R&#039;n&#039;B (lossless)',
+        desc: "Отечественный Rap, Hip-Hop, R'n'B (lossless)",
       },
       {
         id: '506',
         cat: 'Audio/MP3',
-        desc: 'Зарубежный Rap, Hip-Hop, R&#039;n&#039;B (mp3)',
+        desc: "Зарубежный Rap, Hip-Hop, R'n'B (mp3)",
       },
       {
         id: '507',
         cat: 'Audio/MP3',
-        desc: 'Отечественный Rap, Hip-Hop, R&#039;n&#039;B (mp3)',
+        desc: "Отечественный Rap, Hip-Hop, R'n'B (mp3)",
       },
       {
         id: '508',
         cat: 'Audio/Video',
-        desc: 'Rap, Hip-Hop, R&#039;n&#039;B (video)',
+        desc: "Rap, Hip-Hop, R'n'B (video)",
       },
       {
         id: '510',
@@ -552,7 +552,7 @@ export const definition: TrackerDefinition = {
       {
         id: '512',
         cat: 'Audio/Lossless',
-        desc: 'Drum &amp; Bass, Jungle, Breakbeat, Dubstep, IDM (lossless)',
+        desc: 'Drum & Bass, Jungle, Breakbeat, Dubstep, IDM (lossless)',
       },
       {
         id: '513',
@@ -582,7 +582,7 @@ export const definition: TrackerDefinition = {
       {
         id: '518',
         cat: 'Audio/MP3',
-        desc: 'Drum &amp; Bass, Jungle, Breakbeat, Dubstep, IDM (mp3)',
+        desc: 'Drum & Bass, Jungle, Breakbeat, Dubstep, IDM (mp3)',
       },
       {
         id: '519',

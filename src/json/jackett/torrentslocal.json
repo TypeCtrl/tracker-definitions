@@ -97,11 +97,7 @@
         "cat": "TV",
         "desc": "Американская история ужасов / American Horror Story"
       },
-      {
-        "id": "194",
-        "cat": "TV",
-        "desc": "Анатомия страcти / Grey&#039;s Anatomy"
-      },
+      { "id": "194", "cat": "TV", "desc": "Анатомия страcти / Grey's Anatomy" },
       { "id": "734", "cat": "TV", "desc": "Антураж / Красавцы / Entourage" },
       { "id": "997", "cat": "TV", "desc": "Банши / Banshee" },
       {
@@ -154,7 +150,7 @@
       {
         "id": "114",
         "cat": "TV",
-        "desc": "Демоны Да Винчи / Da Vinci&#039;s Demons"
+        "desc": "Демоны Да Винчи / Da Vinci's Demons"
       },
       { "id": "380", "cat": "TV", "desc": "Дефективный детектив / Monk" },
       {
@@ -164,7 +160,7 @@
       },
       { "id": "112", "cat": "TV", "desc": "Доктор Кто / Doctor Who" },
       { "id": "61", "cat": "TV", "desc": "Доктор Хаус / House M.D." },
-      { "id": "121", "cat": "TV", "desc": "Друзья / Friends &amp; Джо / Joey" },
+      { "id": "121", "cat": "TV", "desc": "Друзья / Friends & Джо / Joey" },
       { "id": "560", "cat": "TV", "desc": "Её звали Никита / La Femme Nikita" },
       { "id": "125", "cat": "TV", "desc": "Зачарованные / Charmed" },
       { "id": "91", "cat": "TV", "desc": "Звездные Врата / Stargate" },
@@ -240,7 +236,7 @@
       {
         "id": "167",
         "cat": "TV",
-        "desc": "Пуаро Агаты Кристи / Agatha Christie&#039;s Poirot"
+        "desc": "Пуаро Агаты Кристи / Agatha Christie's Poirot"
       },
       { "id": "943", "cat": "TV", "desc": "Редкие и старинные сериалы" },
       { "id": "991", "cat": "TV", "desc": "Рухнувшие небеса / Falling Skies" },
@@ -521,7 +517,7 @@
       { "id": "763", "cat": "TV", "desc": "Рестлинг" },
       { "id": "897", "cat": "TV", "desc": "DVD" },
       { "id": "814", "cat": "TV", "desc": "NXT" },
-      { "id": "772", "cat": "TV", "desc": "Packs &amp; Documentaries" },
+      { "id": "772", "cat": "TV", "desc": "Packs & Documentaries" },
       { "id": "764", "cat": "TV", "desc": "RAW" },
       { "id": "765", "cat": "TV", "desc": "SmackDown!" },
       { "id": "768", "cat": "TV", "desc": "TNA IMPACT WRESTLING" },
@@ -725,7 +721,7 @@
       { "id": "469", "cat": "Audio", "desc": "Отечественная" },
       { "id": "600", "cat": "Audio", "desc": "Отечественная (lossless)" },
       { "id": "471", "cat": "Audio", "desc": "Сборники" },
-      { "id": "25", "cat": "Audio", "desc": "Рэп, Хип-Хоп, R&#039;n&#039;B" },
+      { "id": "25", "cat": "Audio", "desc": "Рэп, Хип-Хоп, R'n'B" },
       { "id": "925", "cat": "Audio", "desc": "WebRip Видео (Зарубежное)" },
       { "id": "880", "cat": "Audio", "desc": "WebRip Видео (Отечественное)" },
       { "id": "410", "cat": "Audio", "desc": "DVD видео" },
@@ -735,15 +731,15 @@
       {
         "id": "611",
         "cat": "Audio",
-        "desc": "Зарубежный Рэп, Хип-Хоп, R&#039;n&#039;B (lossless)"
+        "desc": "Зарубежный Рэп, Хип-Хоп, R'n'B (lossless)"
       },
-      { "id": "921", "cat": "Audio", "desc": "Зарубежный R&#039;n&#039;B" },
-      { "id": "922", "cat": "Audio", "desc": "Отечественный R&#039;n&#039;B" },
+      { "id": "921", "cat": "Audio", "desc": "Зарубежный R'n'B" },
+      { "id": "922", "cat": "Audio", "desc": "Отечественный R'n'B" },
       { "id": "234", "cat": "Audio", "desc": "Отечественный Рэп, Хип-Хоп" },
       {
         "id": "612",
         "cat": "Audio",
-        "desc": "Отечественный Рэп, Хип-Хоп, R&#039;n&#039;B (lossless)"
+        "desc": "Отечественный Рэп, Хип-Хоп, R'n'B (lossless)"
       },
       { "id": "409", "cat": "Audio", "desc": "Видео (Заруб.)" },
       { "id": "412", "cat": "Audio", "desc": "Видео (Отеч.)" },
@@ -827,11 +823,11 @@
       { "id": "247", "cat": "Audio", "desc": "Thrash, Speed" },
       { "id": "504", "cat": "Audio", "desc": "Thrash, Speed (lossless)" },
       { "id": "28", "cat": "Audio", "desc": "Зарубежный Rock" },
-      { "id": "260", "cat": "Audio", "desc": "Classic Rock &amp; Hard Rock" },
+      { "id": "260", "cat": "Audio", "desc": "Classic Rock & Hard Rock" },
       {
         "id": "505",
         "cat": "Audio",
-        "desc": "Classic Rock &amp; Hard Rock (lossless)"
+        "desc": "Classic Rock & Hard Rock (lossless)"
       },
       { "id": "258", "cat": "Audio", "desc": "Folk-Rock" },
       { "id": "506", "cat": "Audio", "desc": "Folk-Rock (lossless)" },
@@ -857,21 +853,21 @@
         "cat": "Audio",
         "desc": "Indie Rock, Britpop, Pop-Rock, Soft Rock (lossless)"
       },
-      { "id": "259", "cat": "Audio", "desc": "Progressive &amp; Art-Rock" },
+      { "id": "259", "cat": "Audio", "desc": "Progressive & Art-Rock" },
       {
         "id": "510",
         "cat": "Audio",
-        "desc": "Progressive &amp; Art-Rock (lossless)"
+        "desc": "Progressive & Art-Rock (lossless)"
       },
       {
         "id": "255",
         "cat": "Audio",
-        "desc": "Rockabilly, Psychobilly, Rock&#039;n&#039;Roll"
+        "desc": "Rockabilly, Psychobilly, Rock'n'Roll"
       },
       {
         "id": "511",
         "cat": "Audio",
-        "desc": "Rockabilly, Psychobilly, Rock&#039;n&#039;Roll (lossless)"
+        "desc": "Rockabilly, Psychobilly, Rock'n'Roll (lossless)"
       },
       { "id": "99", "cat": "Audio", "desc": "Отечественный Метал" },
       { "id": "336", "cat": "Audio", "desc": "Black, Folk, Pagan, Viking" },
@@ -887,12 +883,12 @@
       {
         "id": "333",
         "cat": "Audio",
-        "desc": "Hard &amp; Heavy, Power, Speed, Thrash"
+        "desc": "Hard & Heavy, Power, Speed, Thrash"
       },
       {
         "id": "515",
         "cat": "Audio",
-        "desc": "Hard &amp; Heavy, Power, Speed, Thrash (lossless)"
+        "desc": "Hard & Heavy, Power, Speed, Thrash (lossless)"
       },
       { "id": "334", "cat": "Audio", "desc": "Progressive, Art" },
       { "id": "516", "cat": "Audio", "desc": "Progressive, Art (lossless)" },
@@ -900,28 +896,28 @@
       {
         "id": "360",
         "cat": "Audio",
-        "desc": "Classic Rock &amp; Hard Rock &amp; Rock&#039;n&#039;Roll"
+        "desc": "Classic Rock & Hard Rock & Rock'n'Roll"
       },
       {
         "id": "517",
         "cat": "Audio",
-        "desc": "Classic Rock &amp; Hard Rock &amp; Rock&#039;n..."
+        "desc": "Classic Rock & Hard Rock & Rock'n..."
       },
-      { "id": "361", "cat": "Audio", "desc": "Progressive &amp; Art-Rock" },
+      { "id": "361", "cat": "Audio", "desc": "Progressive & Art-Rock" },
       {
         "id": "518",
         "cat": "Audio",
-        "desc": "Progressive &amp; Art-Rock (lossless)"
+        "desc": "Progressive & Art-Rock (lossless)"
       },
       {
         "id": "362",
         "cat": "Audio",
-        "desc": "Pop-Rock &amp; Soft Rock &amp; Folk Rock"
+        "desc": "Pop-Rock & Soft Rock & Folk Rock"
       },
       {
         "id": "519",
         "cat": "Audio",
-        "desc": "Pop-Rock &amp; Soft Rock &amp; Folk Rock (lossless)"
+        "desc": "Pop-Rock & Soft Rock & Folk Rock (lossless)"
       },
       { "id": "141", "cat": "Audio", "desc": "Experimental" },
       { "id": "526", "cat": "Audio", "desc": "Lossless" },
@@ -985,15 +981,15 @@
       {
         "id": "35",
         "cat": "Audio",
-        "desc": "Drum &amp; Bass, Jungle, Electro, Breakbeat, IDM,..."
+        "desc": "Drum & Bass, Jungle, Electro, Breakbeat, IDM,..."
       },
       { "id": "416", "cat": "Audio", "desc": "Breakbeat / Beats" },
       { "id": "540", "cat": "Audio", "desc": "Breakbeat / Beats (lossless)" },
-      { "id": "415", "cat": "Audio", "desc": "Drum &amp; Bass / Jungle" },
+      { "id": "415", "cat": "Audio", "desc": "Drum & Bass / Jungle" },
       {
         "id": "543",
         "cat": "Audio",
-        "desc": "Drum &amp; Bass / Jungle (lossless)"
+        "desc": "Drum & Bass / Jungle (lossless)"
       },
       { "id": "417", "cat": "Audio", "desc": "Electro" },
       { "id": "544", "cat": "Audio", "desc": "Electro (lossless)" },

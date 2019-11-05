@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://et8.org/'],
-  legacylinks: ['https://et8.org/'],
+  links: ['https://et8.org/'],
+  legacylinks: ['http://et8.org/'],
   caps: {
     categorymappings: [
       { id: '601', cat: 'Movies', desc: 'Movies' },

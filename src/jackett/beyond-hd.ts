@@ -22,6 +22,11 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login',
     method: 'form',
+    captcha: {
+      type: 'text',
+      selector: 'div[style*="#999999;"]',
+      input: 'key',
+    },
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',

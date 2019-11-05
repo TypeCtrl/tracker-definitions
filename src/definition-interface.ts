@@ -193,7 +193,7 @@ export interface Captcha {
   /**
    * image based captcha (can be image or text)
    */
-  type: 'image';
+  type: 'image' | 'text';
   /**
    * selector for the captcha HTML element
    */

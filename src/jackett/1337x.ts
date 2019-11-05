@@ -131,7 +131,10 @@ export const definition: TrackerDefinition = {
     fields: {
       title: {
         selector: 'td[class^="coll-1"] a[href^="/torrent/"]',
-        filters: [{ name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] }],
+        filters: [
+          { name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] },
+          { name: 'replace', args: ['\u000f', ''] },
+        ],
       },
       category: {
         optional: true,
