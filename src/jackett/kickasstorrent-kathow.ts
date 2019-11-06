@@ -55,8 +55,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [
           { name: 'querystring', args: 'url' },
-          { name: 'urldecode' },
-          { name: 'replace', args: [' ⭐', ''] },
+          { name: 'replace', args: ['%E2%AD%90', ''] },
         ],
       },
       size: {

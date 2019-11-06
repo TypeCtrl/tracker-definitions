@@ -7,7 +7,15 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://1337x.to/'],
+  links: [
+    'https://1337x.to/',
+    'https://1337x.gd/',
+    'https://1337x.is/',
+    'https://1337x.st/',
+    'https://x1337x.ws/',
+    'https://x1337x.eu/',
+    'https://x1337x.se/',
+  ],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime/Anime' },
@@ -105,7 +113,7 @@ export const definition: TrackerDefinition = {
   ],
   download: {
     selector: 'ul li a[href^="{{ .Config.downloadlink }}"]',
-    filters: [{ name: 'urldecode' }, { name: 'replace', args: [' ⭐', ''] }],
+    filters: [{ name: 'replace', args: ['%E2%AD%90', ''] }],
   },
   search: {
     paths: [
