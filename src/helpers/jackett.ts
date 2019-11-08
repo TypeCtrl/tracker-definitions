@@ -179,6 +179,7 @@ export const jackettSites = [
   'netlab',
   'newretro',
   'newstudio',
+  'newstudiol',
   'nitro',
   'nnm-club',
   'nostalgic',
