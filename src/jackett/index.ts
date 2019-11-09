@@ -307,6 +307,9 @@ export const jfunkytorrents = jjfunkytorrents;
 import { definition as jjgaleriens } from './galeriens';
 export const jgaleriens = jjgaleriens;
 
+import { definition as jjgamestorrents } from './gamestorrents';
+export const jgamestorrents = jjgamestorrents;
+
 import { definition as jjgayTorrents } from './gay-torrents';
 export const jgayTorrents = jjgayTorrents;
 
@@ -441,9 +444,6 @@ export const jkapaki = jjkapaki;
 
 import { definition as jjkaragarga } from './karagarga';
 export const jkaragarga = jjkaragarga;
-
-import { definition as jjkatcrs } from './katcrs';
-export const jkatcrs = jjkatcrs;
 
 import { definition as jjkickasstorrentKathow } from './kickasstorrent-kathow';
 export const jkickasstorrentKathow = jjkickasstorrentKathow;
@@ -1032,6 +1032,7 @@ export const definitions = [
   jjfullmixmusic,
   jjfunkytorrents,
   jjgaleriens,
+  jjgamestorrents,
   jjgayTorrents,
   jjgayTorrentsorg,
   jjgaytorrentru,
@@ -1077,7 +1078,6 @@ export const definitions = [
   jjjpopsuki,
   jjkapaki,
   jjkaragarga,
-  jjkatcrs,
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinozal,
