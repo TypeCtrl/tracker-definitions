@@ -121,9 +121,6 @@ export const jblutopia = jjblutopia;
 import { definition as jjbooktracker } from './booktracker';
 export const jbooktracker = jjbooktracker;
 
-import { definition as jjbtbit } from './btbit';
-export const jbtbit = jjbtbit;
-
 import { definition as jjbtdb } from './btdb';
 export const jbtdb = jjbtdb;
 
@@ -346,9 +343,6 @@ export const jhachede = jjhachede;
 import { definition as jjhamsterstudio } from './hamsterstudio';
 export const jhamsterstudio = jjhamsterstudio;
 
-import { definition as jjhd4Free } from './hd4free';
-export const jhd4Free = jjhd4Free;
-
 import { definition as jjhdarea } from './hdarea';
 export const jhdarea = jjhdarea;
 
@@ -418,9 +412,6 @@ export const jilcorsaroblu = jjilcorsaroblu;
 import { definition as jjilcorsaronero } from './ilcorsaronero';
 export const jilcorsaronero = jjilcorsaronero;
 
-import { definition as jjiloveclassics } from './iloveclassics';
-export const jiloveclassics = jjiloveclassics;
-
 import { definition as jjimmortuos } from './immortuos';
 export const jimmortuos = jjimmortuos;
 
@@ -456,9 +447,6 @@ export const jkinozal = jjkinozal;
 
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
-
-import { definition as jjlemencili } from './lemencili';
-export const jlemencili = jjlemencili;
 
 import { definition as jjleporno } from './leporno';
 export const jleporno = jjleporno;
@@ -970,7 +958,6 @@ export const definitions = [
   jjbluebird,
   jjblutopia,
   jjbooktracker,
-  jjbtbit,
   jjbtdb,
   jjbtdigg,
   jjbtgigs,
@@ -1045,7 +1032,6 @@ export const definitions = [
   jjgreekteam,
   jjhachede,
   jjhamsterstudio,
-  jjhd4Free,
   jjhdarea,
   jjhdbits,
   jjhdbitscom,
@@ -1069,7 +1055,6 @@ export const definitions = [
   jjidope,
   jjilcorsaroblu,
   jjilcorsaronero,
-  jjiloveclassics,
   jjimmortuos,
   jjinperil,
   jjinsanetracker,
@@ -1082,7 +1067,6 @@ export const definitions = [
   jjkickasstorrent,
   jjkinozal,
   jjlearnflakes,
-  jjlemencili,
   jjleporno,
   jjlesaloon,
   jjlibranet,

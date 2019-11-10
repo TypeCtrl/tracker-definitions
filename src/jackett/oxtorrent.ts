@@ -8,8 +8,8 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.smartorrent.tv/'],
-  legacylinks: ['https://wwv.oxtorrent.com/'],
+  links: ['https://www.oxtorrent.com/'],
+  legacylinks: ['https://wwv.oxtorrent.com/', 'https://www.smartorrent.tv/'],
   caps: {
     categorymappings: [
       { id: 'movies', cat: 'Movies', desc: 'Movies' },
@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [],
-  download: { selector: 'a[href^="/download/"]' },
+  download: { selector: 'a[href^="/get_torrent/"]' },
   search: {
     paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'div.listing-torrent > table > tbody > tr:has(a)' },
