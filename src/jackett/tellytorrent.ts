@@ -40,15 +40,15 @@ export const definition: TrackerDefinition = {
         message: { selector: 'script[nonce]:contains("Error")' },
       },
     ],
-    test: { path: 'torrents', selector: 'a[href$="/logout"]' },
+    test: { path: '/', selector: 'a[href$="/logout"]' },
   },
   ratio: {
-    path: 'torrents',
+    path: '/',
     selector: 'li:has(i.fa-sync-alt)',
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
   search: {
-    paths: [{ path: 'filterTorrents' }],
+    paths: [{ path: 'torrents/filter' }],
     inputs: {
       $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
       search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
@@ -68,7 +68,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'a[href*="/categories/"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
+        filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
       title: { selector: 'a.view-torrent' },
       download: {
@@ -93,7 +93,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
         selector: 'td:nth-last-child(1)',
-        filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       imdb: {
         optional: true,
@@ -175,21 +175,22 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'i[data-original-title="Personal Freeleech"]': '0',
-          'i[data-original-title="Special Freeleech"]': '0',
-          'i[data-original-title="Freeleech Token"]': '0',
-          'i[data-original-title="Global Freeleech"]': '0',
-          'i[data-original-title="Freeleech"]': '0',
-          'i[data-original-title="Featured"]': '0',
-          '*': '1',
+          'i[class*="fa-id-badge text-orange"]': 0,
+          'i[class*="fa-trophy text-purple"]': 0,
+          'i[class*="fa-star text-bold"]': 0,
+          'i[class*="fa-coins text-bold"]': 0,
+          'i[class*="fa-globe text-blue"]': 0,
+          'i[class*="fa-star text-gold"]': 0,
+          'i[class*="fa-certificate text-pink"]': 0,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'i[data-original-title="Double Upload"]': '2',
-          'i[data-original-title="Global Double Upload"]': '2',
-          'i[data-original-title="Featured"]': '2',
-          '*': '1',
+          'i[class*="fa-gem text-green"]': 2,
+          'i[class*="fa-globe text-green"]': 2,
+          'i[class*="fa-certificate text-pink"]': 2,
+          '*': 1,
         },
       },
     },

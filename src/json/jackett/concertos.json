@@ -73,15 +73,10 @@
         "attribute": "href"
       },
       "downloadvolumefactor": {
-        "case": {
-          "i.fa-star": 0,
-          "i.fa-gem": 0,
-          "i.fa-certificate": 0,
-          "*": "1"
-        }
+        "case": { "i.fa-star": 0, "i.fa-certificate": 0, "*": 1 }
       },
       "uploadvolumefactor": {
-        "case": { "i.fa-certificate": 2, "i.fa-gem": 2, "*": "1" }
+        "case": { "i.fa-certificate": 2, "i.fa-gem": 2, "*": 1 }
       }
     }
   },

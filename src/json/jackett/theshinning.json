@@ -181,17 +181,17 @@
       },
       "downloadvolumefactor": {
         "case": {
-          "i[data-original-title=\"Freeleech\"]": "0",
-          "i[data-original-title=\"Global freeleech\"]": "0",
-          "i[data-original-title=\"Featured\"]": "0",
+          "i[class*=\"fa-star text-gold\"]": 0,
+          "i[class*=\"fa-globe text-blue\"]": 0,
+          "i[class*=\"fa-certificate text-pink\"]": 0,
           "*": "1"
         }
       },
       "uploadvolumefactor": {
         "case": {
-          "i[data-original-title=\"Double upload\"]": "2",
-          "i[data-original-title=\"Double Upload\"]": "2",
-          "i[data-original-title=\"Featured\"]": "2",
+          "i[class*=\"fa-gem text-green\"]": 2,
+          "i[class*=\"fa-globe text-green\"]": 2,
+          "i[class*=\"fa-certificate text-pink\"]": 2,
           "*": "1"
         }
       }
