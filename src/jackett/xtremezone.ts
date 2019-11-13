@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      _remember_me: 1,
+      _remember_me: 'on',
     },
     error: [{ selector: 'td.embedded:has(center > h2:contains(failed))' }],
     test: { path: 'browse' },

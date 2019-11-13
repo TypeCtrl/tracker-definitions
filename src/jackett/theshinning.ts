@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      remember: 1,
+      remember: 'on',
     },
     selectorinputs: {
       _token: {
@@ -85,14 +85,14 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 'replace',
-            args: ['https://via.placeholder.com/600x900/212121/FFFFFF/?text=NOCOVER', ''],
+            args: ['https://theshinning.me/img/nocover.png', ''],
           },
         ],
       },
       size: { selector: 'td:nth-last-child(4)' },
       grabs: {
         selector: 'td:nth-last-child(3)',
-        filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
@@ -174,7 +174,7 @@ export const definition: TrackerDefinition = {
           'i[class*="fa-star text-gold"]': 0,
           'i[class*="fa-globe text-blue"]': 0,
           'i[class*="fa-certificate text-pink"]': 0,
-          '*': '1',
+          '*': 1,
         },
       },
       uploadvolumefactor: {
@@ -182,7 +182,7 @@ export const definition: TrackerDefinition = {
           'i[class*="fa-gem text-green"]': 2,
           'i[class*="fa-globe text-green"]': 2,
           'i[class*="fa-certificate text-pink"]': 2,
-          '*': '1',
+          '*': 1,
         },
       },
     },

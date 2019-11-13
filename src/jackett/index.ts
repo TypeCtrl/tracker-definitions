@@ -334,6 +334,9 @@ export const jgktorrent = jjgktorrent;
 import { definition as jjglodls } from './glodls';
 export const jglodls = jjglodls;
 
+import { definition as jjgreeklegendsYaml } from './greeklegends.yaml';
+export const jgreeklegendsYaml = jjgreeklegendsYaml;
+
 import { definition as jjgreekteam } from './greekteam';
 export const jgreekteam = jjgreekteam;
 
@@ -360,6 +363,9 @@ export const jhdchina = jjhdchina;
 
 import { definition as jjhdcity } from './hdcity';
 export const jhdcity = jjhdcity;
+
+import { definition as jjhddolby } from './hddolby';
+export const jhddolby = jjhddolby;
 
 import { definition as jjhdforever } from './hdforever';
 export const jhdforever = jjhdforever;
@@ -1029,6 +1035,7 @@ export const definitions = [
   jjgirotorrent,
   jjgktorrent,
   jjglodls,
+  jjgreeklegendsYaml,
   jjgreekteam,
   jjhachede,
   jjhamsterstudio,
@@ -1038,6 +1045,7 @@ export const definitions = [
   jjhdcenter,
   jjhdchina,
   jjhdcity,
+  jjhddolby,
   jjhdforever,
   jjhdhome,
   jjhdme,

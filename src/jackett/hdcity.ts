@@ -256,6 +256,7 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [
       { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
       { name: 're_replace', args: ['[^a-zA-Z0-9]+', ' '] },
+      { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', 'T$1'] },
     ],
     inputs: {
       page: 'torrents',
@@ -275,7 +276,10 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'td[valign="middle"] a:not(:contains("VOSE"))',
         optional: true,
-        filters: [{ name: 'append', args: ' [spanish] [english]' }],
+        filters: [
+          { name: 'append', args: ' [Spanish]' },
+          { name: 're_replace', args: ['(?i)T\\s?(\\d{1,2})\\b', 'S$1'] },
+        ],
       },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },
       banner: {

@@ -1,16 +1,24 @@
 {
-  "site": "asiancinema",
-  "name": "AsianCinema",
-  "description": "Tracker Movies/TV/Music",
+  "site": "greeklegends",
+  "name": "GreekLegends",
+  "description": "Greek Legends is a Private Torrent Tracker for High Quality Content",
   "language": "en-US",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://asiancinema.me/"],
+  "links": ["https://greeklegends.net/"],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "Movies", "desc": "Movies" },
       { "id": "2", "cat": "TV", "desc": "TV" },
-      { "id": "3", "cat": "Audio", "desc": "Music" }
+      { "id": "3", "cat": "Audio", "desc": "Music" },
+      { "id": "4", "cat": "PC", "desc": "Apps" },
+      { "id": "5", "cat": "Books", "desc": "Books" },
+      { "id": "6", "cat": "Console", "desc": "Games" },
+      { "id": "7", "cat": "TV/Documentary", "desc": "Documentaries" },
+      { "id": "8", "cat": "PC/Phone-Other", "desc": "Mobile Apps" },
+      { "id": "9", "cat": "Other/Misc", "desc": "misc" },
+      { "id": "10", "cat": "TV/Sport", "desc": "Sports" },
+      { "id": "11", "cat": "TV/Anime", "desc": "Anime/Cartoon" }
     ],
     "modes": {
       "search": ["q"],
@@ -39,7 +47,6 @@
     "selector": "li:has(i.fa-sync-alt)",
     "filters": [{ "name": "regexp", "args": "Ratio : (\\d+)" }]
   },
-  "download": { "selector": "a[href*=\"/download/\"]" },
   "search": {
     "paths": [{ "path": "filterTorrents" }],
     "inputs": {
@@ -50,7 +57,6 @@
       "imdb": "{{ .Query.IMDBIDShort }}",
       "tvdb": "",
       "tmdb": "",
-      "mal": "",
       "sort": "created_at",
       "direction": "desc",
       "qty": 100
@@ -64,7 +70,7 @@
       },
       "title": { "selector": "a.view-torrent" },
       "download": {
-        "selector": "a[href*=\"/download_check/\"]",
+        "selector": "a[href*=\"/download/\"]",
         "attribute": "href"
       },
       "details": { "selector": "a.view-torrent", "attribute": "href" },

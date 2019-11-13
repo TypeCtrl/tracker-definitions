@@ -113,7 +113,7 @@ export const definition: TrackerDefinition = {
       loginbox_membername: '{{ .Config.username }}',
       loginbox_password: '{{ .Config.password }}',
       action: 'login',
-      loginbox_remember: 'true',
+      loginbox_remember: 1,
     },
     error: [{ selector: 'div.error' }],
     test: { path: '?p=home&pid=1', selector: 'div#member_info_bar' },

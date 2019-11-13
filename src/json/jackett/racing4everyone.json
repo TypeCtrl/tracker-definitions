@@ -48,7 +48,7 @@
     "inputs": {
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}",
-      "remember": 1
+      "remember": "on"
     },
     "error": [
       {
@@ -56,10 +56,10 @@
         "message": { "selector": "script[nonce]:contains(\"Error\")" }
       }
     ],
-    "test": { "path": "torrents", "selector": "a[href$=\"/logout\"]" }
+    "test": { "path": "/", "selector": "a[href$=\"/logout\"]" }
   },
   "ratio": {
-    "path": "torrents",
+    "path": "/",
     "selector": "li:has(i.fa-sync-alt)",
     "filters": [{ "name": "regexp", "args": "Ratio : (\\d+)" }]
   },
@@ -107,7 +107,7 @@
       "leechers": { "selector": "td:nth-last-child(2)" },
       "grabs": {
         "selector": "td:nth-last-child(1)",
-        "filters": [{ "name": "regexp", "args": "([\\d\\.]+)" }]
+        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
       },
       "imdb": {
         "optional": true,

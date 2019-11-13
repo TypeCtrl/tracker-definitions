@@ -26,7 +26,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      remember: 1,
+      remember: 'on',
     },
     error: [
       {
@@ -34,10 +34,10 @@ export const definition: TrackerDefinition = {
         message: { selector: 'script[nonce]:contains("Error")' },
       },
     ],
-    test: { path: 'torrents', selector: 'a[href$="/logout"]' },
+    test: { path: '/', selector: 'a[href$="/logout"]' },
   },
   ratio: {
-    path: 'torrents',
+    path: '/',
     selector: 'li:has(i.fa-sync-alt)',
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
         selector: 'td:nth-last-child(1)',
-        filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       imdb: {
         optional: true,

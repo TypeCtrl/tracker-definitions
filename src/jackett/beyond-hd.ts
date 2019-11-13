@@ -30,7 +30,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      remember: 1,
+      remember: 'on',
     },
     error: [{ selector: 'div.has-error' }],
     test: { path: 'torrents' },

@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
       action: 'login',
       loginbox_membername: '{{ .Config.username }}',
       loginbox_password: '{{ .Config.password }}',
-      loginbox_remember: 'true',
+      loginbox_remember: 1,
     },
     selectorinputs: {
       securitytoken: {

@@ -31,7 +31,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      remember: 1,
+      remember: 'on',
     },
     error: [{ selector: 'form[action$="/login"] .text-red' }],
     test: { path: '/', selector: 'a[href$="/logout"]' },

@@ -83,7 +83,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      remember: 1,
+      remember: 'on',
     },
     selectorinputs: {
       _token: {
@@ -139,10 +139,10 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: {
-        case: { "span.badge-extra:contains('Freeleech')": '0', '*': '1' },
+        case: { "span.badge-extra:contains('Freeleech')": 0, '*': 1 },
       },
       uploadvolumefactor: {
-        case: { "span.badge-extra:contains('Double Upload')": '2', '*': '1' },
+        case: { "span.badge-extra:contains('Double Upload')": 2, '*': 1 },
       },
     },
   },
