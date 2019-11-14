@@ -568,6 +568,9 @@ export const jpeersfm = jjpeersfm;
 import { definition as jjpiratbit } from './piratbit';
 export const jpiratbit = jjpiratbit;
 
+import { definition as jjpiratbitl } from './piratbitl';
+export const jpiratbitl = jjpiratbitl;
+
 import { definition as jjpixelcove } from './pixelcove';
 export const jpixelcove = jjpixelcove;
 
@@ -859,6 +862,9 @@ export const juhdbits = jjuhdbits;
 import { definition as jjunderverse } from './underverse';
 export const junderverse = jjunderverse;
 
+import { definition as jjunderversel } from './underversel';
+export const junderversel = jjunderversel;
+
 import { definition as jjunionfansub } from './unionfansub';
 export const junionfansub = jjunionfansub;
 
@@ -1113,6 +1119,7 @@ export const definitions = [
   jjpassionetorrent,
   jjpeersfm,
   jjpiratbit,
+  jjpiratbitl,
   jjpixelcove,
   jjpleasuredome,
   jjpolishsource,
@@ -1210,6 +1217,7 @@ export const definitions = [
   jjtwilight,
   jjuhdbits,
   jjunderverse,
+  jjunderversel,
   jjunionfansub,
   jjuniongang,
   jjunlimitz,

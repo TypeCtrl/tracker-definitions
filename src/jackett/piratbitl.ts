@@ -1,11 +1,11 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'piratbit',
-  name: 'PiratBit',
-  description: 'PirateBit is a RUSSIAN Public Torrent Tracker for MOVIES / TV / GENERAL',
+  site: 'piratbitl',
+  name: 'PiratBitL',
+  description: 'this is the PiratBit indexer with Login enabled in the config.',
   language: 'ru-RU',
-  type: 'public',
+  type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://piratbit.top/'],
   legacylinks: [
@@ -1646,8 +1646,22 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
-  settings: [],
-  download: { selector: 'a[href^="magnet:?xt="]' },
+  login: {
+    path: 'login.php',
+    method: 'post',
+    inputs: {
+      login_username: '{{ .Config.username }}',
+      login_password: '{{ .Config.password }}',
+      autologin: 1,
+      login: 'Вход',
+      redirect: '/',
+    },
+    error: [{ selector: 'table tr td div.alert' }],
+    test: {
+      path: 'index.php',
+      selector: 'li a[href="/login.php?logout=1"]',
+    },
+  },
   search: {
     paths: [{ path: 'tracker.php', method: 'post' }],
     inputs: {
@@ -1678,7 +1692,7 @@ export const definition: TrackerDefinition = {
     fields: {
       title: { selector: 'td a.genmed b' },
       details: { selector: 'td a.genmed', attribute: 'href' },
-      download: { selector: 'td a.genmed', attribute: 'href' },
+      download: { selector: 'td div a.dLink', attribute: 'href' },
       category: {
         selector: 'td a.gen',
         attribute: 'href',

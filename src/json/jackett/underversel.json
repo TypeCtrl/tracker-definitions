@@ -1,9 +1,9 @@
 {
-  "site": "underverse",
-  "name": "Underverse",
-  "description": "Underverse is a RUSSIAN Public Torrent Tracker for MOVIES / TV / MUSIC / GENERAL",
+  "site": "underversel",
+  "name": "UnderverseL",
+  "description": "this is the Underverse indexer with Login enabled in the config.",
   "language": "ru-RU",
-  "type": "public",
+  "type": "semi-private",
   "encoding": "WINDOWS-1251",
   "links": ["https://underver.se/", "https://underverse.su/"],
   "caps": {
@@ -1650,6 +1650,8 @@
     }
   },
   "settings": [
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
     {
       "name": "striprussian",
       "type": "checkbox",
@@ -1657,6 +1659,28 @@
       "default": false
     }
   ],
+  "login": {
+    "path": "login.php",
+    "method": "form",
+    "form": "form[action$=\"/login.php\"]",
+    "inputs": {
+      "login_username": "{{ .Config.username }}",
+      "login_password": "{{ .Config.password }}",
+      "redirect": "index.php",
+      "autologin": 1
+    },
+    "selectorinputs": {
+      "cookie_test": {
+        "selector": "input[name=\"cookie_test\"]",
+        "attribute": "value"
+      }
+    },
+    "error": [{ "selector": "h4.warnColor1" }],
+    "test": {
+      "path": "index.php",
+      "selector": "a[href=\"./login.php?logout=1\"]"
+    }
+  },
   "search": {
     "paths": [{ "path": "tracker.php" }],
     "keywordsfilters": [
@@ -1696,7 +1720,9 @@
       "pn": "",
       "allw": 0
     },
-    "rows": { "selector": "tr[id^=\"tor_\"]:has(a[href^=\"magnet:?xt=\"])" },
+    "rows": {
+      "selector": "tr[id^=\"tor_\"]:has(a[href^=\"./download.php?id=\"])"
+    },
     "fields": {
       "title": {
         "selector": "a.genmed:nth-child(2)",
@@ -1726,6 +1752,10 @@
         ]
       },
       "details": { "selector": "a.tLink", "attribute": "href" },
+      "download": {
+        "selector": "a[href^=\"./download.php?id=\"]",
+        "attribute": "href"
+      },
       "magnet": { "selector": "a[href^=\"magnet:?xt=\"]", "attribute": "href" },
       "category": {
         "selector": "a.gen",

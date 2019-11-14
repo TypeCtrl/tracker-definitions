@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www3.yggtorrent.pe/'],
+  links: ['https://www5.yggtorrent.pe/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -30,6 +30,7 @@ export const definition: TrackerDefinition = {
     'https://www.yggtorrent.gg/',
     'https://www.yggtorrent.ch/',
     'https://www.yggtorrent.pe/',
+    'https://www3.yggtorrent.pe/',
   ],
   caps: {
     categorymappings: [
