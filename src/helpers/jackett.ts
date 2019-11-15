@@ -180,6 +180,7 @@ export const jackettSites = [
   'newstudiol',
   'nitro',
   'nnm-club',
+  'nntt',
   'nostalgic',
   'nyaa-pantsu',
   'nyaasi',

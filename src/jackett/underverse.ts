@@ -1701,7 +1701,7 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'tr[id^="tor_"]:has(a[href^="magnet:?xt="])' },
     fields: {
       title: {
-        selector: 'a.genmed:nth-child(2)',
+        selector: 'a.genmed:nth-child(2), a.seedmed:nth-child(2)',
         filters: [
           { name: 're_replace', args: ['[\\:\\-\\/\\|]', ' '] },
           {

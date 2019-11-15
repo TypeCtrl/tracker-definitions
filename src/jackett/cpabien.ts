@@ -38,6 +38,7 @@ export const definition: TrackerDefinition = {
     'https://www.cpasbiens.bz/',
     'https://www.cpasbien.vg/',
     'https://www.cpasbien.lol/',
+    'https://www.gktorrent.biz/',
   ],
   caps: {
     categorymappings: [

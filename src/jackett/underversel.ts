@@ -1727,7 +1727,7 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       title: {
-        selector: 'a.genmed:nth-child(2)',
+        selector: 'a.genmed:nth-child(2), a.seedmed:nth-child(2)',
         filters: [
           { name: 're_replace', args: ['[\\:\\-\\/\\|]', ' '] },
           {
