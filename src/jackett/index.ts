@@ -334,8 +334,8 @@ export const jgktorrent = jjgktorrent;
 import { definition as jjglodls } from './glodls';
 export const jglodls = jjglodls;
 
-import { definition as jjgreeklegendsYaml } from './greeklegends.yaml';
-export const jgreeklegendsYaml = jjgreeklegendsYaml;
+import { definition as jjgreeklegends } from './greeklegends';
+export const jgreeklegends = jjgreeklegends;
 
 import { definition as jjgreekteam } from './greekteam';
 export const jgreekteam = jjgreekteam;
@@ -1044,7 +1044,7 @@ export const definitions = [
   jjgirotorrent,
   jjgktorrent,
   jjglodls,
-  jjgreeklegendsYaml,
+  jjgreeklegends,
   jjgreekteam,
   jjhachede,
   jjhamsterstudio,

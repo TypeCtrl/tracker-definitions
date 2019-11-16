@@ -111,7 +111,7 @@ export const jackettSites = [
   'girotorrent',
   'gktorrent',
   'glodls',
-  'greeklegends.yaml',
+  'greeklegends',
   'greekteam',
   'hachede',
   'hamsterstudio',

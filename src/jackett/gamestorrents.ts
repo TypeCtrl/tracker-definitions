@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'es-ES',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.gamestorrents.tv/'],
-  legacylinks: ['https://www.gamestorrents.com/'],
+  links: ['https://www.gamestorrents.nu/'],
+  legacylinks: ['https://www.gamestorrents.com/', 'https://www.gamestorrents.tv/'],
   caps: {
     modes: { search: ['q'] },
     categorymappings: [

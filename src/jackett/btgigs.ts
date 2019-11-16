@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: 'takelogin__akcja.php',
+    path: 'takelogin_action.php',
     method: 'post',
     inputs: {
       username_dupa: '{{ .Config.username }}',
