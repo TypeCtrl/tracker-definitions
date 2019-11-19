@@ -1192,7 +1192,7 @@
           { "name": "replace", "args": ["окт", "Oct"] },
           { "name": "replace", "args": ["ноя", "Nov"] },
           { "name": "replace", "args": ["дек", "Dec"] },
-          { "name": "dateparse", "args": "02 Jan 06" }
+          { "name": "dateparse", "args": "02 Jan 2006" }
         ]
       },
       "downloadvolumefactor": { "text": "0" },

@@ -211,6 +211,7 @@ export const jackettSites = [
   'rockbox',
   'rodvd',
   'rptorrents',
+  'rus-media',
   'rutor',
   'scenefz',
   'scenerush',

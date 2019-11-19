@@ -634,6 +634,9 @@ export const jrodvd = jjrodvd;
 import { definition as jjrptorrents } from './rptorrents';
 export const jrptorrents = jjrptorrents;
 
+import { definition as jjrusMedia } from './rus-media';
+export const jrusMedia = jjrusMedia;
+
 import { definition as jjrutor } from './rutor';
 export const jrutor = jjrutor;
 
@@ -1144,6 +1147,7 @@ export const definitions = [
   jjrockbox,
   jjrodvd,
   jjrptorrents,
+  jjrusMedia,
   jjrutor,
   jjscenefz,
   jjscenerush,
