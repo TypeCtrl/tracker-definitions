@@ -254,9 +254,9 @@ export const definition: TrackerDefinition = {
   },
   search: {
     keywordsfilters: [
-      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
+      { name: 're_replace', args: ['S(\\d+)E(\\d+)', '$1x$2'] },
+      { name: 're_replace', args: ['(?i)S(\\d+)', ' $1 '] },
       { name: 're_replace', args: ['[^a-zA-Z0-9]+', ' '] },
-      { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', ' $1 '] },
     ],
     inputs: {
       page: 'torrents',
@@ -280,7 +280,7 @@ export const definition: TrackerDefinition = {
           { name: 'append', args: ' [Spanish]' },
           {
             name: 're_replace',
-            args: ['(?i)T[\\s\\S]?(\\d{1,2})\\b', ' S$1 '],
+            args: ['(?i)T[\\s-_]?(\\d{1,2})\\b', ' S$1 '],
           },
           {
             name: 're_replace',

@@ -235,6 +235,9 @@ export const jdragonworldreloaded = jjdragonworldreloaded;
 import { definition as jjdxdhd } from './dxdhd';
 export const jdxdhd = jjdxdhd;
 
+import { definition as jjdxp } from './dxp';
+export const jdxp = jjdxp;
+
 import { definition as jjebookparadijs } from './ebookparadijs';
 export const jebookparadijs = jjebookparadijs;
 
@@ -814,6 +817,9 @@ export const jtorrentland = jjtorrentland;
 import { definition as jjtorrentlt } from './torrentlt';
 export const jtorrentlt = jjtorrentlt;
 
+import { definition as jjtorrentparadise } from './torrentparadise';
+export const jtorrentparadise = jjtorrentparadise;
+
 import { definition as jjtorrentproject2 } from './torrentproject2';
 export const jtorrentproject2 = jjtorrentproject2;
 
@@ -1014,6 +1020,7 @@ export const definitions = [
   jjdownloadville,
   jjdragonworldreloaded,
   jjdxdhd,
+  jjdxp,
   jjebookparadijs,
   jjebooksShares,
   jjefectodoppler,
@@ -1207,6 +1214,7 @@ export const definitions = [
   jjtorrenting,
   jjtorrentland,
   jjtorrentlt,
+  jjtorrentparadise,
   jjtorrentproject2,
   jjtorrentquest,
   jjtorrentsectorcrew,

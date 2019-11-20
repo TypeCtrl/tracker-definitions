@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [],
-  download: { selector: 'a[href^="/download/"]' },
+  download: { selector: 'a[href^="magnet:?xt="]' },
   search: {
     paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'div.listing-torrent > table > tbody > tr:has(a)' },

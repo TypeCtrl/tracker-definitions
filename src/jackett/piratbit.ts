@@ -1684,22 +1684,20 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'f' }],
       },
-      size: {
-        selector: 'td div a.dLink',
-        filters: [{ name: 're_replace', args: ['↓', ''] }],
-      },
+      size: { selector: 'td > u' },
       seeders: { selector: 'td.seedmed' },
       leechers: { selector: 'td.leechmed' },
-      grabs: { optional: true, selector: 'td[title^="Replies"]' },
+      grabs: {
+        selector: 'td[title^="Ответов"], td[title^="Відповідей"], td[title^="Replies"]',
+      },
       date: {
         optional: true,
-        selector: 'td[title="Added"] p:first-of-type:contains("-")',
+        selector:
+          'td[title="Добавлен"] p:first-of-type:contains("-"), td[title="Доданий"] p:first-of-type:contains("-"), td[title="Added"] p:first-of-type:contains("-")',
         filters: [{ name: 'dateparse', args: '15:04 2-01-06' }],
       },
-      downloadvolumefactor: {
-        case: { 'span.isgold': '0', 'span.issilver': '0.5', '*': '1' },
-      },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
