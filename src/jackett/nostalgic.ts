@@ -47,7 +47,6 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       cinfo: '1536|864|24|-780',
       iplocked: 0,
-      keeploggedin: 1,
       submit: 'login',
     },
     selectorinputs: {

@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'nl-NL',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://www.film-paleis.me/'],
-  legacylinks: ['https://www.film-paleis.me/'],
+  links: ['https://www.film-paleis.me/'],
+  legacylinks: ['http://www.film-paleis.me/'],
   caps: {
     categorymappings: [
       { id: '2', cat: 'Movies/BluRay', desc: ' Bluray/HD' },

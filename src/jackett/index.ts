@@ -214,9 +214,6 @@ export const jdesitorrents = jjdesitorrents;
 import { definition as jjdiablotorrent } from './diablotorrent';
 export const jdiablotorrent = jjdiablotorrent;
 
-import { definition as jjdigbt } from './digbt';
-export const jdigbt = jjdigbt;
-
 import { definition as jjdivteam } from './divteam';
 export const jdivteam = jjdivteam;
 
@@ -288,6 +285,9 @@ export const jfemdomcult = jjfemdomcult;
 
 import { definition as jjfilmPaleis } from './film-paleis';
 export const jfilmPaleis = jjfilmPaleis;
+
+import { definition as jjfirebit } from './firebit';
+export const jfirebit = jjfirebit;
 
 import { definition as jjfocusx } from './focusx';
 export const jfocusx = jjfocusx;
@@ -1013,7 +1013,6 @@ export const definitions = [
   jjdesireleasers,
   jjdesitorrents,
   jjdiablotorrent,
-  jjdigbt,
   jjdivteam,
   jjdmhy,
   jjdocumentarytorrents,
@@ -1038,6 +1037,7 @@ export const definitions = [
   jjfanoin,
   jjfemdomcult,
   jjfilmPaleis,
+  jjfirebit,
   jjfocusx,
   jjfreetorrent,
   jjfrozenlayer,

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'tr-TR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://hdturk.de/'],
+  links: ['https://hdturk.de/'],
+  legacylinks: ['http://hdturk.de/'],
   caps: {
     categorymappings: [
       { id: '37', cat: 'Other', desc: 'Diğer' },
@@ -82,14 +83,14 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login.php',
     method: 'form',
-    form: 'form[action="takelogin.php"]',
+    form: 'form[action$="takelogin.php"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     captcha: {
       type: 'image',
-      selector: 'img#regimage',
+      selector: 'img#regimage2',
       input: 'imagestring',
     },
     error: [{ selector: 'table:contains("Bir hata oluştu!")' }],
