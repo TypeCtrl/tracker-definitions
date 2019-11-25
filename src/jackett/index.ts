@@ -106,6 +106,9 @@ export const jbithumen = jjbithumen;
 import { definition as jjbitme } from './bitme';
 export const jbitme = jjbitme;
 
+import { definition as jjbitru } from './bitru';
+export const jbitru = jjbitru;
+
 import { definition as jjbitspyder } from './bitspyder';
 export const jbitspyder = jjbitspyder;
 
@@ -977,6 +980,7 @@ export const definitions = [
   jjbithorlo,
   jjbithumen,
   jjbitme,
+  jjbitru,
   jjbitspyder,
   jjbitturk,
   jjbluebird,

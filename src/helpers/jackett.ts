@@ -35,6 +35,7 @@ export const jackettSites = [
   'bithorlo',
   'bithumen',
   'bitme',
+  'bitru',
   'bitspyder',
   'bitturk',
   'bluebird',
