@@ -73,7 +73,7 @@ export const definition: TrackerDefinition = {
   login: {
     path: '?p=home&pid=1',
     method: 'form',
-    form: 'form#sls_form',
+    form: 'form#loginbox_form',
     submitpath: 'ajax/login.php',
     inputs: {
       action: 'login',
