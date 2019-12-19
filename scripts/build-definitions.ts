@@ -70,6 +70,7 @@ function validateJson(json: any): any {
         throw new Error(cat.cat);
       }
 
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       cat.id = `${cat.id}`;
       cat.cat = f || cat.cat;
       return cat;
@@ -149,7 +150,7 @@ for (const src of SOURCES) {
     `;
   }, '');
   exportedSites += `
-    export const definitions = [${sites.map(n => `${src.name[0]}${src.name[0]}${camelCase(n)}`)}];
+    export const definitions = [${sites.map(n => `${src.name[0]}${src.name[0]}${camelCase(n)}`).toString()}];
   `;
   fs.writeFileSync(
     path.join(moduleOutDir, `index.ts`),

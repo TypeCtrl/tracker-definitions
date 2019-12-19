@@ -93,6 +93,7 @@ export interface TrackerDefinition {
  * Mapping between the tracker categories and the Newznab categories. Not supported by Cardigann.
  */
 export interface Categorymapping {
+  [key: string]: any;
   /**
    * The tracker specific category ID.
    */
@@ -111,8 +112,6 @@ export interface Categorymapping {
    * Specify if this category should be used as default (if the search query doesn't contain any categories).
    */
   default?: boolean;
-
-  [key: string]: any;
 }
 
 export interface Setting {
@@ -231,6 +230,7 @@ export interface Ratio {
 }
 
 export interface Fields {
+  [key: string]: Selector | undefined;
   /**
    * title is required and parsed first
    * torrent title
@@ -248,7 +248,6 @@ export interface Fields {
   grabs?: Selector;
   downloadvolumefactor?: Selector;
   uploadvolumefactor?: Selector;
-  [key: string]: Selector | undefined;
 }
 
 export interface Search {
