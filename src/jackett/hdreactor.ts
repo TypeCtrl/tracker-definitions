@@ -37,6 +37,20 @@ export const definition: TrackerDefinition = {
       label: 'Strip Russian Letters',
       default: false,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'date',
+      options: { date: 'created', title: 'title' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   download: { selector: 'a[href^="magnet:?xt="]' },
   search: {
@@ -50,11 +64,13 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      $raw: '{{range .Categories}}catlist[]={{.}}&{{end}}',
+      $raw: '{{ range .Categories }}catlist[]={{.}}&{{end}}',
       do: 'search',
       subaction: 'search',
       showposts: 1,
       story: '{{ if .Keywords }}{{ .Keywords }}{{ else }}2019{{ end }}',
+      sortby: '{{ .Config.sort }}',
+      resorder: '{{ .Config.type }}',
     },
     rows: { selector: 'div.news:contains("Категория:")' },
     fields: {
@@ -125,14 +141,12 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'div.news-content',
         filters: [
-          { name: 'strdump' },
           {
             name: 'regexp',
             args: '(\\d{1,2}\\-\\d{2}\\-\\d{4}\\, \\d{1,2}\\:\\d{2})',
           },
           { name: 'replace', args: [',', ''] },
           { name: 'dateparse', args: '2-01-2006 15:04' },
-          { name: 'strdump' },
         ],
       },
       downloadvolumefactor: { text: 0 },

@@ -44,8 +44,13 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: 'films', cat: 'Movies', desc: 'Movies' },
       { id: 'series', cat: 'TV', desc: 'TV' },
+      { id: 'other', cat: 'Other', desc: 'Other' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
@@ -53,11 +58,12 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Keywords}}index.php?do=search&subaction=search&story={{.Keywords}}{{else}}{{end}}',
+          '{{ if .Keywords }}index.php?do=search&subaction=search&story={{ .Keywords }}{{else}}{{end}}',
       },
     ],
     rows: { selector: 'div#gauche > table > tbody > tr:has(a)' },
     fields: {
+      category: { text: 'other' },
       site_date: {
         selector: 'a',
         filters: [{ name: 'regexp', args: '(\\w+)$' }],
@@ -90,8 +96,8 @@ export const definition: TrackerDefinition = {
       date: { text: 'now' },
       seeders: { selector: 'div.up', optional: true },
       leechers: { selector: 'div.down', optional: true },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

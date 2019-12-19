@@ -54,8 +54,14 @@ export const definition: TrackerDefinition = {
       selector: 'table.torrents > tbody > tr:has(table.torrentname)',
     },
     fields: {
-      release_year: { selector: 'a[href^="/torrents.php?processing="]' },
-      quality: { selector: 'a[href^="/torrents.php?standard="]' },
+      release_year: {
+        selector: 'a[href^="/torrents.php?processing="]',
+        optional: true,
+      },
+      quality: {
+        selector: 'a[href^="/torrents.php?standard="]',
+        optional: true,
+      },
       title: {
         selector: 'a[title][href^="details.php?id="]',
         attribute: 'title',

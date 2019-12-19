@@ -63,6 +63,25 @@ export const definition: TrackerDefinition = {
       label: 'Strip Russian Letters',
       default: false,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seed: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   search: {
     paths: [{ path: 'browse.php' }],
@@ -70,8 +89,11 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       cat: 0,
       incldead: 1,
+      ajax: 1,
       year: 0,
       format: 0,
+      s: '{{ .Config.sort }}',
+      d: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table > tbody#highlighted > tr:has(a[href^="browse.php?cat="])',

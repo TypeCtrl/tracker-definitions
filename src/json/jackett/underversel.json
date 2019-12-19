@@ -1657,6 +1657,20 @@
       "type": "checkbox",
       "label": "Strip Russian Letters",
       "default": false
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "1",
+      "options": { "1": "created", "2": "title", "7": "size", "10": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "2",
+      "options": { "1": "asc", "2": "desc" }
     }
   ],
   "login": {
@@ -1706,9 +1720,9 @@
       "prev_dc": 0,
       "prev_df": 1,
       "prev_ds": 0,
-      "o": 1,
+      "o": "{{ .Config.sort }}",
+      "s": "{{ .Config.type }}",
       "status": 1,
-      "s": 2,
       "dc": 0,
       "df": 1,
       "da": 1,
@@ -1767,8 +1781,8 @@
       "leechers": { "selector": "td.leechmed > b" },
       "grabs": { "selector": "td:nth-child(10)" },
       "date": { "selector": "td:last-child > u" },
-      "downloadvolumefactor": { "text": "1" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

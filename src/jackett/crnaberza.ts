@@ -52,18 +52,25 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
-      name: 'incldead',
-      type: 'select',
-      label: 'Search Torrents that are:',
-      default: '0',
-      options: { '0': 'Active', '1': 'Including Dead', '2': 'Only Dead' },
-    },
-    {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
       default:
         "For best results, change the 'Torrents per page' setting to 100 on your 'Personal Options' from the 'Personal' menu on the Crna Berza webpage.",
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
     },
   ],
   login: {
@@ -73,7 +80,6 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      submitme: 'X',
     },
     error: [{ selector: 'h2', message: { selector: 'table tr td.text' } }],
     test: { path: 'browse.php', selector: 'a[href$="/logout.php"]' },
@@ -86,10 +92,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       searchin: 'title',
-      incldead: '{{ .Config.incldead }}',
+      incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: { selector: 'tr:has(td.trowtorrent)' },
     fields: {
@@ -115,9 +123,9 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-of-type(9)' },
       leechers: { selector: 'td:nth-of-type(10)' },
       downloadvolumefactor: {
-        case: { 'img[src$="/pic/freedownload.gif"]': '0', '*': '1' },
+        case: { 'img[src$="/pic/freedownload.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

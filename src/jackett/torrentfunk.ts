@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.torrentfunk.com/'],
+  links: ['https://www.torrentfunk.com/', 'https://www.torrentfunk2.com/'],
   caps: {
     modes: {
       search: ['q'],
@@ -27,53 +27,10 @@ export const definition: TrackerDefinition = {
       { id: '10', cat: 'Books' },
     ],
   },
-  settings: [
-    {
-      name: 'category',
-      type: 'select',
-      label: 'Category',
-      default: 'all',
-      options: {
-        all: 'All',
-        movie: 'Movies',
-        music: 'Music',
-        television: 'TV',
-        game: 'Games',
-        software: 'Software',
-        anime: 'Anime',
-        ebook: 'eBooks',
-        adult: 'Adult',
-      },
-    },
-    {
-      name: 'verified',
-      type: 'select',
-      label: 'Verified',
-      default: '_',
-      options: { _: 'Any', on: 'Verified Only' },
-    },
-    {
-      name: 'sort',
-      type: 'select',
-      label: 'Sort Desc',
-      default: 'added',
-      options: {
-        added: 'Date',
-        seeds: 'Seeders',
-        peers: 'Leechers',
-        size: 'Size',
-        name: 'Title',
-      },
-    },
-  ],
-  download: { selector: 'a[href^="/tor/"]' },
+  settings: [],
   search: {
-    paths: [
-      {
-        path:
-          '{{.Config.category}}/torrents/{{.Keywords}}.html?v={{re_replace .Config.verified "_" ""}}&smi=&sma=&i=50&sort={{.Config.sort}}&o=desc',
-      },
-    ],
+    paths: [{ path: 'all/torrents/{{ .Keywords }}.html' }],
+    keywordsfilters: [{ name: 're_replace', args: ['[\\s]+', '-'] }, { name: 'tolower' }],
     rows: {
       selector: 'table.tmain tbody tr:has(a[href^="/torrent/"])',
       filters: [{ name: 'andmatch' }],
@@ -92,6 +49,11 @@ export const definition: TrackerDefinition = {
       download: {
         selector: 'div a[href^="/torrent/"]',
         attribute: 'href',
+        filters: [
+          { name: 'split', args: ['/', 2] },
+          { name: 'prepend', args: '/tor/' },
+          { name: 'append', args: '.torrent' },
+        ],
       },
       date: {
         selector: 'td:nth-child(2):contains(" ")',
@@ -101,8 +63,8 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(3)' },
       seeders: { selector: 'td:nth-child(4)' },
       leechers: { selector: 'td:nth-child(5)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

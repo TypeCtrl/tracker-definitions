@@ -31,10 +31,21 @@ export const definition: TrackerDefinition = {
       default: 'yes',
       options: { yes: 'yes', no: 'no' },
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '_',
+      options: { _: 'created', seeders: 'seeders', size: 'size' },
+    },
   ],
   search: {
     paths: [{ path: 'browse.php' }],
-    inputs: { s: '{{ .Keywords }}', rek: '{{ .Config.adverts }}' },
+    inputs: {
+      s: '{{ .Keywords }}',
+      rek: '{{ .Config.adverts }}',
+      sort: '{{ re_replace .Config.sort "_" ""}}',
+    },
     rows: { selector: 'table.browse-list > tbody > tr' },
     fields: {
       category: {
@@ -107,8 +118,8 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(5)',
         filters: [{ name: 'replace', args: ['?', '0'] }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

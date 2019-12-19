@@ -13,6 +13,11 @@ export const definition: TrackerDefinition = {
       { id: '111', cat: 'Movies', desc: '1922' },
       { id: '135', cat: 'Movies', desc: 'Анон' },
       { id: '168', cat: 'Movies', desc: 'Воспитательница' },
+      { id: '189', cat: 'Movies', desc: 'Дедвуд' },
+      { id: '193', cat: 'Movies', desc: 'Та, которой не было' },
+      { id: '200', cat: 'Movies', desc: 'Основные принципы ухода' },
+      { id: '201', cat: 'Movies', desc: 'Быстрая, как ветер' },
+      { id: '202', cat: 'Movies', desc: 'Визит инспектора' },
       { id: '10', cat: 'Movies', desc: 'Мёд в голове' },
       { id: '16', cat: 'Movies', desc: 'Малыш' },
       { id: '18', cat: 'Movies', desc: 'Копенгаген' },
@@ -116,6 +121,14 @@ export const definition: TrackerDefinition = {
       { id: '180', cat: 'TV', desc: 'АКАДЕМИЯ АМБРЕЛЛА' },
       { id: '181', cat: 'TV', desc: 'Сорвиголова' },
       { id: '182', cat: 'TV', desc: 'Мистер Посредник' },
+      { id: '183', cat: 'TV', desc: 'Футурама' },
+      { id: '184', cat: 'TV', desc: 'Доктор Блейк' },
+      { id: '185', cat: 'TV', desc: 'Стальная Звезда' },
+      { id: '186', cat: 'TV', desc: 'Изгнание' },
+      { id: '187', cat: 'TV', desc: 'Крупный Город' },
+      { id: '190', cat: 'TV', desc: 'Кобра Кай' },
+      { id: '197', cat: 'TV', desc: 'Западное крыло' },
+      { id: '199', cat: 'TV', desc: 'Семь миров, одна планета' },
       { id: '9', cat: 'TV', desc: 'Иерихон' },
       { id: '11', cat: 'TV', desc: '11-22-63' },
       { id: '12', cat: 'TV', desc: 'Апокалипсис: Первая мировая война' },
@@ -156,20 +169,35 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time',
+      options: { time: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   search: {
     paths: [
       {
         path:
-          '{{if .Keywords}}tracker/search?freeleech=0&query={{.Keywords}}{{else}}tracker/{{end}}',
+          'tracker/{{ if .Keywords }}search?freeleech=0&query={{ .Keywords }}&{{else}}?{{end}}order={{ .Config.sort }}&direction={{ .Config.type }}',
         followredirect: true,
       },
     ],
     rows: { selector: 'ol.torrentListItems li.torrentListItem' },
     fields: {
-      title: { selector: 'div.name div.titleText h3 a' },
+      title: { selector: 'h3.title a' },
       details: {
-        selector: 'div.name div.titleText h3 a',
+        selector: 'h3.title a',
         attribute: 'href',
         filters: [{ name: 'prepend', args: '{{ .Config.sitelink }}' }],
       },
@@ -188,7 +216,8 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'div.name div.titleText div.secondRow div span',
+        selector: 'span.DateTime',
+        optional: true,
         attribute: 'title',
         filters: [
           { name: 'replace', args: [' в ', ' '] },
@@ -221,13 +250,8 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'div.snatched' },
       seeders: { selector: 'div.seeders' },
       leechers: { selector: 'div.leechers' },
-      downloadvolumefactor: {
-        case: {
-          'div.name div.titleText h3 span:contains("Золото")': '0',
-          '*': '1',
-        },
-      },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { case: { 'span.freeleech': 0, '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

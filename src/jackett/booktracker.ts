@@ -12,6 +12,24 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: '1', cat: 'Books/Ebook', desc: 'Ebooks' }],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '1',
+      options: { '1': 'created', '2': 'title', '7': 'size', '10': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -36,7 +54,13 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'tracker.php' }],
-    inputs: { nm: '{{ .Keywords }}', o: 1, s: 2, tm: -1, sns: -1 },
+    inputs: {
+      nm: '{{ .Keywords }}',
+      o: '{{ .Config.sort }}',
+      s: '{{ .Config.type }}',
+      tm: -1,
+      sns: -1,
+    },
     rows: {
       selector: 'tr[id^="tor_"]:has(a[href^="./download.php?id="])',
     },
@@ -53,8 +77,8 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td.leechmed > b' },
       grabs: { selector: 'td:nth-child(9)' },
       date: { selector: 'td:last-child > u' },
-      downloadvolumefactor: { text: '1' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

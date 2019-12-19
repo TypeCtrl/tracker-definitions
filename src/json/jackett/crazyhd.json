@@ -83,6 +83,24 @@
       "music-search": ["q"]
     }
   },
+  "settings": [
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "3",
+      "options": { "2": "title", "3": "created", "4": "size", "5": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "2",
+      "options": { "1": "asc", "2": "desc" }
+    }
+  ],
   "login": {
     "path": "index.php?page=login",
     "method": "form",
@@ -104,12 +122,12 @@
     "inputs": {
       "page": "searchlist",
       "pages": 1,
-      "order": 3,
-      "by": 2,
+      "order": "{{ .Config.sort }}",
+      "by": "{{ .Config.type }}",
       "gold": 0,
       "options": 0,
       "active": 0,
-      "category": "{{if .Categories}}{{range .Categories}}{{.}};{{end}}{{else}}0{{end}}",
+      "category": "{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}",
       "search": "{{ .Keywords }}"
     },
     "rows": { "selector": "div.inf-table-row" },
@@ -153,12 +171,12 @@
       "grabs": { "selector": "div.torrent-completed" },
       "downloadvolumefactor": {
         "case": {
-          "img[src=\"gold/gold.gif\"]": "0",
-          "img[src=\"gold/silver.gif\"]": "0.5",
-          "*": "1"
+          "img[src=\"gold/gold.gif\"]": 0,
+          "img[src=\"gold/silver.gif\"]": 0.5,
+          "*": 1
         }
       },
-      "uploadvolumefactor": { "text": "1" }
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

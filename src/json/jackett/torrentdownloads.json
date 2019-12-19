@@ -5,7 +5,10 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://www.torrentdownloads.me/"],
+  "links": [
+    "https://www.torrentdownloads.me/",
+    "https://www.torrentdownloads.info/"
+  ],
   "caps": {
     "categorymappings": [
       { "id": "8", "cat": "TV", "desc": "TV Shows" },
@@ -64,8 +67,8 @@
         "attribute": "src",
         "filters": [{ "name": "regexp", "args": "([\\d,]+)" }]
       },
-      "downloadvolumefactor": { "text": "1" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

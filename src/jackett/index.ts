@@ -82,6 +82,9 @@ export const jbackups = jjbackups;
 import { definition as jjbaibako } from './baibako';
 export const jbaibako = jjbaibako;
 
+import { definition as jjbeyondHdOneurl } from './beyond-hd-oneurl';
+export const jbeyondHdOneurl = jjbeyondHdOneurl;
+
 import { definition as jjbeyondHd } from './beyond-hd';
 export const jbeyondHd = jjbeyondHd;
 
@@ -112,6 +115,9 @@ export const jbitru = jjbitru;
 import { definition as jjbitspyder } from './bitspyder';
 export const jbitspyder = jjbitspyder;
 
+import { definition as jjbittorrentam } from './bittorrentam';
+export const jbittorrentam = jjbittorrentam;
+
 import { definition as jjbitturk } from './bitturk';
 export const jbitturk = jjbitturk;
 
@@ -130,6 +136,9 @@ export const jbtdb = jjbtdb;
 import { definition as jjbtdigg } from './btdigg';
 export const jbtdigg = jjbtdigg;
 
+import { definition as jjbtetree } from './btetree';
+export const jbtetree = jjbtetree;
+
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
 
@@ -138,6 +147,9 @@ export const jbtnext = jjbtnext;
 
 import { definition as jjbtschool } from './btschool';
 export const jbtschool = jjbtschool;
+
+import { definition as jjbtsow } from './btsow';
+export const jbtsow = jjbtsow;
 
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
@@ -195,9 +207,6 @@ export const jcrnaberza = jjcrnaberza;
 
 import { definition as jjcztorrent } from './cztorrent';
 export const jcztorrent = jjcztorrent;
-
-import { definition as jjdarkShadow } from './dark-shadow';
-export const jdarkShadow = jjdarkShadow;
 
 import { definition as jjdatascene } from './datascene';
 export const jdatascene = jjdatascene;
@@ -264,6 +273,9 @@ export const jesharenet = jjesharenet;
 
 import { definition as jjestone } from './estone';
 export const jestone = jjestone;
+
+import { definition as jjestrenosdtl } from './estrenosdtl';
+export const jestrenosdtl = jjestrenosdtl;
 
 import { definition as jjethor } from './ethor';
 export const jethor = jjethor;
@@ -352,6 +364,9 @@ export const jhachede = jjhachede;
 import { definition as jjhamsterstudio } from './hamsterstudio';
 export const jhamsterstudio = jjhamsterstudio;
 
+import { definition as jjhd4Fans } from './hd4fans';
+export const jhd4Fans = jjhd4Fans;
+
 import { definition as jjhdarea } from './hdarea';
 export const jhdarea = jjhdarea;
 
@@ -385,6 +400,9 @@ export const jhdme = jjhdme;
 import { definition as jjhdreactor } from './hdreactor';
 export const jhdreactor = jjhdreactor;
 
+import { definition as jjhdroute } from './hdroute';
+export const jhdroute = jjhdroute;
+
 import { definition as jjhdsky } from './hdsky';
 export const jhdsky = jjhdsky;
 
@@ -396,6 +414,9 @@ export const jhdtorrentsit = jjhdtorrentsit;
 
 import { definition as jjhdturk } from './hdturk';
 export const jhdturk = jjhdturk;
+
+import { definition as jjhdu } from './hdu';
+export const jhdu = jjhdu;
 
 import { definition as jjhdzone } from './hdzone';
 export const jhdzone = jjhdzone;
@@ -460,6 +481,9 @@ export const jkinozal = jjkinozal;
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
 
+import { definition as jjlegittorrents } from './legittorrents';
+export const jlegittorrents = jjlegittorrents;
+
 import { definition as jjleporno } from './leporno';
 export const jleporno = jjleporno;
 
@@ -499,9 +523,6 @@ export const jmetalIplayRo = jjmetalIplayRo;
 import { definition as jjmetaltracker } from './metaltracker';
 export const jmetaltracker = jjmetaltracker;
 
-import { definition as jjmkvcage } from './mkvcage';
-export const jmkvcage = jjmkvcage;
-
 import { definition as jjmononokebt } from './mononokebt';
 export const jmononokebt = jjmononokebt;
 
@@ -511,11 +532,17 @@ export const jmonova = jjmonova;
 import { definition as jjmovcr } from './movcr';
 export const jmovcr = jjmovcr;
 
+import { definition as jjmoviesdvdr } from './moviesdvdr';
+export const jmoviesdvdr = jjmoviesdvdr;
+
 import { definition as jjmteamtp } from './mteamtp';
 export const jmteamtp = jjmteamtp;
 
 import { definition as jjmusicMaster } from './music-master';
 export const jmusicMaster = jjmusicMaster;
+
+import { definition as jjmuziekfabriek } from './muziekfabriek';
+export const jmuziekfabriek = jjmuziekfabriek;
 
 import { definition as jjmvgroupforum } from './mvgroupforum';
 export const jmvgroupforum = jjmvgroupforum;
@@ -589,6 +616,9 @@ export const jpleasuredome = jjpleasuredome;
 import { definition as jjpolishsource } from './polishsource';
 export const jpolishsource = jjpolishsource;
 
+import { definition as jjpornbay } from './pornbay';
+export const jpornbay = jjpornbay;
+
 import { definition as jjproaudiotorrents } from './proaudiotorrents';
 export const jproaudiotorrents = jjproaudiotorrents;
 
@@ -628,6 +658,9 @@ export const jretroflix = jjretroflix;
 import { definition as jjrgu } from './rgu';
 export const jrgu = jjrgu;
 
+import { definition as jjriperam } from './riperam';
+export const jriperam = jjriperam;
+
 import { definition as jjrns } from './rns';
 export const jrns = jjrns;
 
@@ -657,6 +690,9 @@ export const jsdbits = jjsdbits;
 
 import { definition as jjseedfile } from './seedfile';
 export const jseedfile = jjseedfile;
+
+import { definition as jjseedpeer } from './seedpeer';
+export const jseedpeer = jjseedpeer;
 
 import { definition as jjshareisland } from './shareisland';
 export const jshareisland = jjshareisland;
@@ -702,6 +738,9 @@ export const jsporthd = jjsporthd;
 
 import { definition as jjsportscult } from './sportscult';
 export const jsportscult = jjsportscult;
+
+import { definition as jjspringsunday } from './springsunday';
+export const jspringsunday = jjspringsunday;
 
 import { definition as jjsukebeiPantsu } from './sukebei-pantsu';
 export const jsukebeiPantsu = jjsukebeiPantsu;
@@ -778,8 +817,14 @@ export const jthevault = jjthevault;
 import { definition as jjtokyotosho } from './tokyotosho';
 export const jtokyotosho = jjtokyotosho;
 
+import { definition as jjtopnow } from './topnow';
+export const jtopnow = jjtopnow;
+
 import { definition as jjtorlock } from './torlock';
 export const jtorlock = jjtorlock;
+
+import { definition as jjtoros } from './toros';
+export const jtoros = jjtoros;
 
 import { definition as jjtorrentExplosiv } from './torrent-explosiv';
 export const jtorrentExplosiv = jjtorrentExplosiv;
@@ -798,6 +843,9 @@ export const jtorrentbd = jjtorrentbd;
 
 import { definition as jjtorrentccf } from './torrentccf';
 export const jtorrentccf = jjtorrentccf;
+
+import { definition as jjtorrentdownload } from './torrentdownload';
+export const jtorrentdownload = jjtorrentdownload;
 
 import { definition as jjtorrentdownloads } from './torrentdownloads';
 export const jtorrentdownloads = jjtorrentdownloads;
@@ -889,9 +937,6 @@ export const juniongang = jjuniongang;
 import { definition as jjunlimitz } from './unlimitz';
 export const junlimitz = jjunlimitz;
 
-import { definition as jjvanila } from './vanila';
-export const jvanila = jjvanila;
-
 import { definition as jjvizuk } from './vizuk';
 export const jvizuk = jjvizuk;
 
@@ -972,6 +1017,7 @@ export const definitions = [
   jjawesomehd,
   jjbackups,
   jjbaibako,
+  jjbeyondHdOneurl,
   jjbeyondHd,
   jjbigfangroup,
   jjbigtorrent,
@@ -982,15 +1028,18 @@ export const definitions = [
   jjbitme,
   jjbitru,
   jjbitspyder,
+  jjbittorrentam,
   jjbitturk,
   jjbluebird,
   jjblutopia,
   jjbooktracker,
   jjbtdb,
   jjbtdigg,
+  jjbtetree,
   jjbtgigs,
   jjbtnext,
   jjbtschool,
+  jjbtsow,
   jjcarpathians,
   jjcartoonchaos,
   jjcasatorrent,
@@ -1010,7 +1059,6 @@ export const definitions = [
   jjcrazyspirits,
   jjcrnaberza,
   jjcztorrent,
-  jjdarkShadow,
   jjdatascene,
   jjdeildu,
   jjdemonoid,
@@ -1033,6 +1081,7 @@ export const definitions = [
   jjeniahd,
   jjesharenet,
   jjestone,
+  jjestrenosdtl,
   jjethor,
   jjettv,
   jjextratorrentAg,
@@ -1062,6 +1111,7 @@ export const definitions = [
   jjgreekteam,
   jjhachede,
   jjhamsterstudio,
+  jjhd4Fans,
   jjhdarea,
   jjhdbits,
   jjhdbitscom,
@@ -1073,10 +1123,12 @@ export const definitions = [
   jjhdhome,
   jjhdme,
   jjhdreactor,
+  jjhdroute,
   jjhdsky,
   jjhdspain,
   jjhdtorrentsit,
   jjhdturk,
+  jjhdu,
   jjhdzone,
   jjhon3YhdNet,
   jjhon3Yhd,
@@ -1098,6 +1150,7 @@ export const definitions = [
   jjkickasstorrent,
   jjkinozal,
   jjlearnflakes,
+  jjlegittorrents,
   jjleporno,
   jjlesaloon,
   jjlibranet,
@@ -1111,12 +1164,13 @@ export const definitions = [
   jjmarinetracker,
   jjmetalIplayRo,
   jjmetaltracker,
-  jjmkvcage,
   jjmononokebt,
   jjmonova,
   jjmovcr,
+  jjmoviesdvdr,
   jjmteamtp,
   jjmusicMaster,
+  jjmuziekfabriek,
   jjmvgroupforum,
   jjmvgroupmain,
   jjmyspleen,
@@ -1141,6 +1195,7 @@ export const definitions = [
   jjpixelcove,
   jjpleasuredome,
   jjpolishsource,
+  jjpornbay,
   jjproaudiotorrents,
   jjprostylex,
   jjpt99,
@@ -1154,6 +1209,7 @@ export const definitions = [
   jjredstartorrent,
   jjretroflix,
   jjrgu,
+  jjriperam,
   jjrns,
   jjrockbox,
   jjrodvd,
@@ -1164,6 +1220,7 @@ export const definitions = [
   jjscenerush,
   jjsdbits,
   jjseedfile,
+  jjseedpeer,
   jjshareisland,
   jjsharespacedb,
   jjshareuniversity,
@@ -1179,6 +1236,7 @@ export const definitions = [
   jjspeedtorrentreloaded,
   jjsporthd,
   jjsportscult,
+  jjspringsunday,
   jjsukebeiPantsu,
   jjsukebeinyaasi,
   jjtakeabyte,
@@ -1204,13 +1262,16 @@ export const definitions = [
   jjthetorrents,
   jjthevault,
   jjtokyotosho,
+  jjtopnow,
   jjtorlock,
+  jjtoros,
   jjtorrentExplosiv,
   jjtorrentTurk,
   jjtorrent9,
   jjtorrent9Clone,
   jjtorrentbd,
   jjtorrentccf,
+  jjtorrentdownload,
   jjtorrentdownloads,
   jjtorrentfunk,
   jjtorrentgalaxyorg,
@@ -1241,7 +1302,6 @@ export const definitions = [
   jjunionfansub,
   jjuniongang,
   jjunlimitz,
-  jjvanila,
   jjvizuk,
   jjwaffles,
   jjwihd,

@@ -11,20 +11,17 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://mac-torrents.com/', 'https://www.mac-torrents.com/'],
   caps: {
     modes: { search: ['q'] },
-    categorymappings: [
-      { id: 'mac-os-apps', cat: 'PC/Mac' },
-      { id: 'mac-os-games', cat: 'PC/Games' },
-    ],
+    categorymappings: [{ id: 'mac-os-apps', cat: 'PC/Mac' }, { id: 'mac-games', cat: 'PC/Games' }],
   },
   settings: [],
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{.Keywords}}' },
-    rows: { selector: 'div.iso-item article' },
+    rows: { selector: 'div.iso-item article:has(a.download)' },
     fields: {
       title: { selector: 'div.blog-content h3 a' },
       category: {
-        selector: 'a[href*="/mac-os-"]',
+        selector: 'a[href$="/mac-os-apps/"], a[href$="/mac-games/"]',
         attribute: 'href',
         filters: [{ name: 'split', args: ['/', 3] }],
       },

@@ -71,10 +71,12 @@ export const definition: TrackerDefinition = {
       },
       download: {
         selector: 'td:nth-child(3) a[href$=".torrent"]',
+        optional: true,
         attribute: 'href',
       },
       magnet: {
         selector: 'td:nth-child(3) a[href^="magnet:?"]',
+        optional: true,
         attribute: 'href',
       },
       size: { selector: 'td:nth-child(4)' },

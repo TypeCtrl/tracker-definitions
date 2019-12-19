@@ -12,21 +12,39 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
     categorymappings: [{ id: '1', cat: 'Other' }],
   },
-  settings: [],
-  search: {
-    paths: [
-      {
-        path: 'torrents/concen.org/content/ufos-extraterrestrials-and-classified-free-energy-pack',
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'created',
+      options: {
+        created: 'created',
+        seeds: 'seeders',
+        size: 'size',
+        title: 'title',
       },
-    ],
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
+  search: {
+    paths: [{ path: 'torrents' }],
     inputs: {
       title_op: 'allwords',
-      title: '{{.Keywords}}',
+      title: '{{ .Keywords }}',
       title_1_op: 'not',
       title_1: '',
       seeds: 'All',
+      order: '{{ .Config.sort }}',
+      sort: '{{ .Config.type }}',
     },
-    rows: { selector: 'table  > tbody > tr' },
+    rows: { selector: 'table  > tbody > tr:has(td.views-field-title)' },
     fields: {
       title: { selector: 'td.views-field-title a' },
       category: { text: 1 },
@@ -45,8 +63,8 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td.views-field-seeds' },
       leechers: { selector: 'td.views-field-peers' },
       grabs: { selector: 'td.views-field-completed' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

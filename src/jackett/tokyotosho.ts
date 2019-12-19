@@ -29,31 +29,41 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    paths: [{ path: '{{if .Query.Keywords }}search.php{{else}}index.php{{end}}' }],
+    paths: [{ path: '{{if .Keywords }}search.php{{else}}index.php{{end}}' }],
     inputs: {
-      terms: '{{ .Query.Keywords }}',
+      terms: '{{ .Keywords }}',
       type: '{{ .Config.type-id }}',
       cat: '{{ .Config.type-id }}',
     },
     rows: { selector: 'table.listing tr.category_0', after: 1 },
     fields: {
       category: {
-        selector: 'td:nth-child(1) > a',
+        selector: 'a[href*="?cat="]',
         attribute: 'href',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
-      title: { selector: 'td:nth-child(2) > a:nth-child(2)' },
-      details: { selector: 'td:nth-child(3) > a', attribute: 'href' },
-      download: {
-        selector: 'td:nth-child(2) > a:nth-child(2)',
+      title: {
+        selector: 'td.desc-top a[type="application/x-bittorrent"]',
+      },
+      details: {
+        selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
+      download: {
+        selector: 'td.desc-top a[type="application/x-bittorrent"]',
+        attribute: 'href',
+      },
+      magnet: {
+        selector: 'a[href^="magnet:?xt="]',
+        attribute: 'href',
+        optional: true,
+      },
       size: {
-        selector: 'td:nth-child(4)',
+        selector: 'td.desc-bot',
         filters: [{ name: 'split', args: ['|', 1] }, { name: 'regexp', args: 'Size: (.+?) ?$' }],
       },
       date: {
-        selector: 'td:nth-child(4)',
+        selector: 'td.desc-bot',
         filters: [
           { name: 'split', args: ['|', 2] },
           { name: 'regexp', args: 'Date: (.+?) ?$' },
@@ -61,8 +71,10 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-02 15:04 -07' },
         ],
       },
-      seeders: { selector: 'td:nth-child(5) > span:nth-child(1)' },
-      leechers: { selector: 'td:nth-child(5) > span:nth-child(2)' },
+      seeders: { selector: 'td.stats > span:nth-child(1)' },
+      leechers: { selector: 'td.stats > span:nth-child(2)' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

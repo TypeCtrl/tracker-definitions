@@ -148,7 +148,7 @@ export interface Download {
 
 export interface Req {
   path?: string;
-  method?: 'cookie' | 'post' | 'form' | 'get';
+  method?: 'cookie' | 'post' | 'form' | 'get' | 'oneurl';
   submitpath?: string;
   inputs?: { [key: string]: string | number };
   captcha?: Captcha;

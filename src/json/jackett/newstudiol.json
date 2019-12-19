@@ -10,6 +10,24 @@
     "categorymappings": [{ "id": "6", "cat": "TV", "desc": "TV series" }],
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
   },
+  "settings": [
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "1",
+      "options": { "1": "created", "2": "title", "7": "size", "10": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "2",
+      "options": { "1": "asc", "2": "desc" }
+    }
+  ],
   "login": {
     "path": "login.php",
     "method": "post",
@@ -23,11 +41,14 @@
   },
   "search": {
     "paths": [
-      { "path": "tracker.php?nm={{ .Keywords}}" },
-      { "path": "tracker.php?nm={{ .Keywords}}&start=50" },
-      { "path": "tracker.php?nm={{ .Keywords}}&start=100" },
-      { "path": "tracker.php?nm={{ .Keywords}}&start=150" }
+      { "path": "tracker.php" },
+      { "path": "tracker.php", "inputs": { "start": 50 } }
     ],
+    "inputs": {
+      "nm": "{{.Keywords}}",
+      "o": "{{ .Config.sort }}",
+      "s": "{{ .Config.type }}"
+    },
     "rows": {
       "selector": "table.well > tbody > tr:has(a[href^=\"./viewtopic.php?t=\"])",
       "filters": [{ "name": "andmatch" }]
@@ -81,10 +102,12 @@
           { "name": "dateparse", "args": "2 Jan 06 15:04:05 -07:00" }
         ]
       },
+      "seeders": { "text": 1 },
+      "leechers": { "text": 1 },
       "downloadvolumefactor": {
-        "case": { "img[src=\"images/tor_gold.gif\"]": "0", "*": "1" }
+        "case": { "img[src=\"images/tor_gold.gif\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "text": "1" }
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

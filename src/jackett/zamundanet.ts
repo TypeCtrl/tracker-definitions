@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'bg-BG',
   type: 'private',
   encoding: 'WINDOWS-1251',
-  links: ['http://zamunda.net/', 'http://zamunda.ch/'],
+  links: ['https://zamunda.net/', 'https://zamunda.ch/'],
+  legacylinks: ['http://zamunda.net/', 'http://zamunda.ch/'],
   caps: {
     categorymappings: [
       { id: '42', cat: 'Movies/BluRay', desc: 'Movies Blu-ray' },
@@ -58,6 +59,31 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        'This Indexer supports search results only from the <b>LIST</b> view.<br><li>Access the web site, bring up the torrent search page and click on the <b>LIST</b> icon setting (located to the top right of the search results table).</li><br>The alternate <i>GRID</i> view is not supported.',
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '6',
+      options: { '2': 'title', '6': 'created', '7': 'size', '9': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -71,9 +97,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'bananas' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
       incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: { selector: '.responsetop > tbody > tr:has(td.td_newborder)' },
     fields: {
@@ -81,6 +109,7 @@ export const definition: TrackerDefinition = {
         selector: 'a:has(i.fa-download)',
         attribute: 'href',
         filters: [
+          { name: 'urldecode' },
           {
             name: 're_replace',
             args: ['^(.*?)download\\.php\\/[0-9]{1,10}\\/|\\.torrent(?=[^.]*$)', ''],
@@ -92,7 +121,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       category: {
-        selector: 'td:nth-child(1) > a',
+        selector: 'a[href^="list?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
@@ -118,8 +147,8 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: "src=\\\\'([^\\s\\\\]+)" }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

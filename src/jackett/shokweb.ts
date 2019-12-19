@@ -23,7 +23,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    paths: [{ path: '{{if .Keywords}}{{.Keywords}}{{else}}{{end}}' }],
+    paths: [{ path: '{{if .Keywords}}/search/{{.Keywords}}{{else}}{{end}}' }],
     rows: {
       selector: 'div:has(a[href^="magnet:?"])',
       filters: [{ name: 'andmatch' }],
@@ -46,10 +46,10 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['前', ' ago'] },
         ],
       },
-      seeders: { text: '1' },
-      leechers: { text: '1' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      seeders: { text: 1 },
+      leechers: { text: 1 },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

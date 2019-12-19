@@ -1623,9 +1623,12 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'td.t a', attribute: 'href' },
       download: { selector: 'td.t a', attribute: 'href' },
-      size: { selector: 'td:nth-child(4)' },
-      seeders: { selector: 'b.sd' },
-      leechers: { selector: 'b.lc' },
+      size: {
+        selector: 'td:nth-child(4):contains("B")',
+        optional: true,
+      },
+      seeders: { selector: 'b.sd', optional: true },
+      leechers: { selector: 'b.lc', optional: true },
       date: {
         selector: 'td.ms',
         filters: [{ name: 'dateparse', args: '2006-01-02 15:04' }],

@@ -15,6 +15,7 @@ export const definition: TrackerDefinition = {
     'https://x1337x.ws/',
     'https://x1337x.eu/',
     'https://x1337x.se/',
+    'https://1337x.unblocked.earth/',
   ],
   caps: {
     categorymappings: [
@@ -110,6 +111,20 @@ export const definition: TrackerDefinition = {
         'magnet:': 'magnet',
       },
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time',
+      options: { time: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   download: {
     selector: 'ul li a[href^="{{ .Config.downloadlink }}"]',
@@ -118,20 +133,27 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/1/{{else}}cat/Movies/1/{{end}}',
-      },
-      { path: '{{if .Keywords}}{{else}}cat/TV/1/{{end}}' },
-      {
-        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/2/{{else}}{{end}}',
+        path:
+          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/1/{{else}}cat/Movies/{{ .Config.sort }}/{{ .Config.type }}/1/{{end}}',
       },
       {
-        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/3/{{else}}{{end}}',
+        path: '{{if .Keywords}}{{else}}cat/TV/{{ .Config.sort }}/{{ .Config.type }}/1/{{end}}',
       },
       {
-        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/4/{{else}}{{end}}',
+        path:
+          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/2/{{else}}{{end}}',
       },
       {
-        path: '{{if .Keywords}}sort-search/{{ .Keywords}}/time/desc/5/{{else}}{{end}}',
+        path:
+          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/3/{{else}}{{end}}',
+      },
+      {
+        path:
+          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/4/{{else}}{{end}}',
+      },
+      {
+        path:
+          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/5/{{else}}{{end}}',
       },
     ],
     keywordsfilters: [{ name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] }],
@@ -166,8 +188,8 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td[class^="coll-4"]' },
       seeders: { selector: 'td[class^="coll-2"]' },
       leechers: { selector: 'td[class^="coll-3"]' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

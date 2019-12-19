@@ -1644,7 +1644,22 @@
     ],
     "modes": { "search": ["q"] }
   },
-  "settings": [],
+  "settings": [
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "1",
+      "options": { "1": "created", "7": "size", "10": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "2",
+      "options": { "1": "asc", "2": "desc" }
+    }
+  ],
   "download": { "selector": "a[href^=\"magnet:?xt=\"]" },
   "search": {
     "paths": [{ "path": "tracker.php", "method": "post" }],
@@ -1664,8 +1679,8 @@
       "prev_dc": 0,
       "prev_df": 1,
       "prev_ds": 0,
-      "o": 1,
-      "s": 2,
+      "o": "{{ .Config.sort }}",
+      "s": "{{ .Config.type }}",
       "df": 1,
       "da": 1,
       "ss": "{{ .Keywords }}",

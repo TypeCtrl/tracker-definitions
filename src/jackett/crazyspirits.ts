@@ -101,6 +101,25 @@ export const definition: TrackerDefinition = {
       default:
         "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: {
+        id: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     method: 'cookie',
@@ -130,6 +149,8 @@ export const definition: TrackerDefinition = {
       incldead: 1,
       freeleech: 0,
       lang: 0,
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: { selector: 'table.border_table > tbody > tr.t-row' },
     fields: {
@@ -169,9 +190,9 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: {
-        case: { 'img[src="images/Torrents/free.png"]': '0', '*': '1' },
+        case: { 'img[src="images/Torrents/free.png"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

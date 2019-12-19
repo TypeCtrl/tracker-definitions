@@ -15,6 +15,24 @@ export const definition: TrackerDefinition = {
     },
     categorymappings: [{ id: '1', cat: 'Audio' }],
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time',
+      options: { time: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'post',
@@ -30,14 +48,14 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      artistname: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{end}}',
-      groupname: '{{if .Query.Artist}}{{else}}{{ .Keywords }}{{end}}',
-      order_by: 'time',
-      order_way: 'desc',
+      artistname: '{{ if .Query.Artist }}{{ .Query.Artist }}{{else}}{{end}}',
+      groupname: '{{ if .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      order_by: '{{ .Config.sort }}',
+      order_way: '{{ .Config.type }}',
     },
     rows: { selector: 'tr.torrent' },
     fields: {
-      category: { text: '1' },
+      category: { text: 1 },
       artist: { selector: 'a[href^="artist.php?id="]', optional: true },
       title: {
         selector: 'a[href^="torrents.php?id="]',
@@ -65,13 +83,13 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: {
-          'strong.torrent_label[title*="Neutral"]': '0',
-          'strong.torrent_label[title*="Oro"]': '0',
-          '*': '1',
+          'strong.torrent_label[title*="Neutral"]': 0,
+          'strong.torrent_label[title*="Oro"]': 0,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'strong.torrent_label[title*="Neutral"]': '0', '*': '1' },
+        case: { 'strong.torrent_label[title*="Neutral"]': 0, '*': 1 },
       },
     },
   },

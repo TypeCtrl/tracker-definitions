@@ -49,6 +49,20 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '3',
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
   ],
   login: {
     path: 'index.php?page=login',
@@ -59,15 +73,17 @@ export const definition: TrackerDefinition = {
       pwd: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.lista span[style="color:#FF0000;"]' }],
-    test: { path: '/', selector: ':has(a[href="logout.php"])' },
+    test: { path: '/', selector: 'a[href="logout.php"]' },
   },
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {
       page: 'torrents',
-      category: '{{range .Categories}}{{.}};{{end}}',
-      search: '{{if .Keywords }}{{.Keywords}}{{else}}{{end}}',
-      active: '1',
+      category: '{{ range .Categories }}{{.}};{{end}}',
+      search: '{{ .Keywords }}',
+      active: 0,
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: { selector: 'tr.trclass:not(:has(td.lista-cat-rec))' },
     fields: {
@@ -84,7 +100,7 @@ export const definition: TrackerDefinition = {
         filters: [
           { name: 'querystring', args: 'id' },
           { name: 'prepend', args: 'download.php?id=' },
-          { name: 'append', args: '&f={{.Result.title}}.torrent' },
+          { name: 'append', args: '&f={{ .Result.title }}.torrent' },
         ],
       },
       banner: {
@@ -100,8 +116,8 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(5)',
         filters: [{ name: 'dateparse', args: '02/01/2006' }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

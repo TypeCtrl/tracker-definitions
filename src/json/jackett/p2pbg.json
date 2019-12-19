@@ -68,6 +68,20 @@
       "type": "info",
       "label": "Search results",
       "default": "For best results, increase the torrents number in your profile to 100.<br />Default is 15."
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "data",
+      "options": { "data": "created", "size": "size" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "DESC",
+      "options": { "DESC": "desc", "ASC": "asc" }
     }
   ],
   "login": {
@@ -79,15 +93,17 @@
       "pwd": "{{ .Config.password }}"
     },
     "error": [{ "selector": "td.lista span[style=\"color:#FF0000;\"]" }],
-    "test": { "path": "index.php", "selector": ":has(a[href=\"logout.php\"])" }
+    "test": { "path": "index.php", "selector": "a[href=\"logout.php\"]" }
   },
   "search": {
     "paths": [{ "path": "index.php" }],
     "inputs": {
       "page": "torrents",
-      "category": "{{if .Categories }}{{range .Categories}}{{.}};{{end}}{{else}}0;{{end}}",
-      "search": "{{if .Keywords }}{{.Keywords}}{{else}}{{end}}",
-      "active": "1"
+      "category": "{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0;{{end}}",
+      "search": "{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}",
+      "active": 0,
+      "order": "{{ .Config.sort }}",
+      "by": "{{ .Config.type }}"
     },
     "rows": {
       "selector": "table.lista tr td table.lista tr:has(a[href^=\"index.php?page=torrent-details\"])"
@@ -131,8 +147,8 @@
       "seeders": { "selector": "td:nth-child(8)" },
       "leechers": { "selector": "td:nth-child(9)" },
       "grabs": { "selector": "td:nth-child(10)" },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

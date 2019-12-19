@@ -254,8 +254,8 @@ export const definition: TrackerDefinition = {
   },
   search: {
     keywordsfilters: [
-      { name: 're_replace', args: ['S(\\d+)E(\\d+)', '$1x$2'] },
-      { name: 're_replace', args: ['(?i)S(\\d+)', ' $1 '] },
+      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
+      { name: 're_replace', args: ['S0?(\\d{1,2})', ' $1 '] },
       { name: 're_replace', args: ['[^a-zA-Z0-9]+', ' '] },
     ],
     inputs: {

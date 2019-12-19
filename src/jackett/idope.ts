@@ -40,12 +40,26 @@ export const definition: TrackerDefinition = {
       label: 'ITorrents Note',
       default: 'Without the itorrents option only magnet links will be provided.',
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site (Applies only to search with Keywords)',
+      default: '-3',
+      options: {
+        '1': 'seeders asc',
+        '2': 'size asc',
+        '3': 'created asc',
+        '-3': 'created desc',
+        '-1': 'seeders desc',
+        '-2': 'size desc',
+      },
+    },
   ],
   search: {
     paths: [
       {
         path:
-          '{{if .Keywords}}torrent-list/{{ .Keywords}}?&o=-3&c={{range .Categories }}{{.}}{{end}}{{else}}browse.html{{end}}',
+          '{{ if .Keywords }}torrent-list/{{ .Keywords }}?o={{ .Config.sort }}&c={{ range .Categories }}{{.}}{{end}}{{else}}browse.html{{end}}',
       },
     ],
     rows: { selector: 'div.resultdiv' },
@@ -105,12 +119,12 @@ export const definition: TrackerDefinition = {
       seeders: {
         selector: 'div.resultdivbotton div.resultseed div.resultdivbottonseed',
       },
-      leechers: { text: '0' },
+      leechers: { text: 0 },
       files: {
         selector: 'div.resultdivbotton div.resultfile div.resultdivbottonfiles',
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

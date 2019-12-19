@@ -85,6 +85,25 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'user', type: 'text', label: 'Username' },
     { name: 'pass', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeds: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: 'signin.php',
@@ -96,10 +115,12 @@ export const definition: TrackerDefinition = {
   },
   search: {
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{.Query.IMDBID}}{{else}}{{.Keywords}}{{end}}',
-      search_where: '{{if .Query.IMDBID}}3{{else}}0{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search_where: '{{ if .Query.IMDBID }}3{{else}}0{{end}}',
       status: 1,
+      orderby: '{{ .Config.sort }}',
+      sort: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table.tableinborder > tbody > tr:has(a[href^="details.php"])',
@@ -137,13 +158,13 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[alt="OU"]': '0',
-          'img[alt="D/2"]': '0.5',
-          'img[alt="D / 2"]': '0.5',
-          '*': '1',
+          'img[alt="OU"]': 0,
+          'img[alt="D/2"]': 0.5,
+          'img[alt="D / 2"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { 'img[alt="2xU"]': '2', '*': '1' } },
+      uploadvolumefactor: { case: { 'img[alt="2xU"]': 2, '*': 1 } },
     },
     paths: [{ path: 'browse.php' }],
   },

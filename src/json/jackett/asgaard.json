@@ -61,13 +61,27 @@
     }
   },
   "settings": [
-    { "name": "username", "type": "text", "label": "Username" },
-    { "name": "password", "type": "password", "label": "Password" },
     {
       "name": "info",
       "type": "info",
       "label": "About the Username field",
       "default": "Enter your <b>Email address</b> in the username field."
+    },
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "2",
+      "options": { "1": "title", "2": "created", "5": "size", "7": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "desc": "desc", "asc": "asc" }
     }
   ],
   "login": {
@@ -87,9 +101,9 @@
   "search": {
     "paths": [{ "path": "browse.php" }],
     "inputs": {
-      "$raw": "{{range .Categories}}cats[]={{.}}&{{end}}",
+      "$raw": "{{ range .Categories }}cats[]={{.}}&{{end}}",
       "sns": "",
-      "sna": "{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}",
+      "sna": "{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
       "spf": "",
       "sr": "",
       "sg": "",
@@ -101,8 +115,8 @@
       "ss": "",
       "incldead": 0,
       "only_free": 0,
-      "sort": 4,
-      "type": "desc"
+      "sort": "{{ .Config.sort }}",
+      "type": "{{ .Config.type }}"
     },
     "rows": {
       "selector": "table.table-striped > tbody > tr:has(a[href*=\"details.php?id=\"])",
@@ -141,9 +155,9 @@
       "seeders": { "selector": "td:nth-child(9)" },
       "leechers": { "selector": "td:nth-child(10)" },
       "downloadvolumefactor": {
-        "case": { "img[src=\"./images/gold.png\"]": "0", "*": "1" }
+        "case": { "img[src=\"./images/gold.png\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "case": { "*": "1" } }
+      "uploadvolumefactor": { "case": { "*": 1 } }
     }
   },
   "source": "jackett"

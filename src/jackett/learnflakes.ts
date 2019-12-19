@@ -46,6 +46,24 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: { added: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: '?p=home&pid=1',
     method: 'form',
@@ -68,16 +86,18 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [
-      { path: '/', inputs: { page: '1' } },
-      { path: '/', inputs: { page: '2' } },
-      { path: '/', inputs: { page: '3' } },
+      { path: '/', inputs: { page: 1 } },
+      { path: '/', inputs: { page: 2 } },
+      { path: '/', inputs: { page: 3 } },
     ],
     inputs: {
       p: 'torrents',
-      pid: '10',
-      $raw: '{{range .Categories}}&cid[]={{.}}{{end}}',
+      pid: 10,
+      $raw: '{{ range .Categories }}&cid[]={{.}}{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
+      'sortOptions[sortBy]': '{{ .Config.sort }}',
+      'sortOptions[sortOrder]': '{{ .Config.type }}',
     },
     rows: { selector: 'div.torrent-box[id^="torrent_"]' },
     fields: {
@@ -115,9 +135,9 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: {
-        case: { 'img[src$="/torrent_free.png"]': '0', '*': '1' },
+        case: { 'img[src$="/torrent_free.png"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

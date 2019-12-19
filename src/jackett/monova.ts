@@ -15,12 +15,12 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
     categorymappings: [
+      { id: 'venus-mars', cat: 'XXX' },
       { id: 'video-camera', cat: 'Movies' },
       { id: 'music', cat: 'Audio' },
       { id: 'book', cat: 'Books' },
       { id: 'gamepad', cat: 'PC/Games' },
       { id: 'cog', cat: 'PC/0day' },
-      { id: 'venus-mars', cat: 'XXX' },
       { id: 'list', cat: 'Other' },
       { id: 'picture-o', cat: 'Other/Misc' },
     ],
@@ -30,22 +30,13 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}search?term={{.Keywords}}?page=1{{else}}video?page=1{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}search?term={{.Keywords}}?page=2{{else}}video?page=2{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}search?term={{.Keywords}}?page=3{{else}}video?page=3{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}search?term={{.Keywords}}?page=4{{else}}video?page=4{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}search?term={{.Keywords}}?page=5{{else}}video?page=5{{end}}',
+        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}',
       },
     ],
-    rows: { selector: 'tr.desktop', filters: [{ name: 'andmatch' }] },
+    rows: {
+      selector: 'tr.desktop:has(a[href^="//"])',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       title: { selector: 'td.torrent_name a' },
       category: {
@@ -60,10 +51,10 @@ export const definition: TrackerDefinition = {
         selector: 'td.center-align',
         filters: [{ name: 'replace', args: ['N/A', '500 MB'] }],
       },
-      seeders: { text: '1' },
-      leechers: { text: '1' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      seeders: { text: 1 },
+      leechers: { text: 1 },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
       date: {
         optional: true,
         selector: 'td.torrent_name',

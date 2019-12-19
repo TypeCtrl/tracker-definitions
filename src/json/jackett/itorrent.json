@@ -13,43 +13,67 @@
       "movie-search": ["q"]
     },
     "categorymappings": [
-      { "id": "Apps", "cat": "PC" },
+      { "id": "app", "cat": "PC" },
       { "id": "book", "cat": "Books" },
-      { "id": "Games", "cat": "PC/Games" },
-      { "id": "Movies", "cat": "Movies" },
-      { "id": "Music", "cat": "Audio" },
-      { "id": "XXX", "cat": "XXX" },
-      { "id": "TV", "cat": "TV" }
+      { "id": "game", "cat": "PC/Games" },
+      { "id": "movies", "cat": "Movies" },
+      { "id": "music", "cat": "Audio" },
+      { "id": "heart", "cat": "XXX" },
+      { "id": "tv", "cat": "TV" }
     ]
   },
-  "settings": [],
+  "settings": [
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "date_added",
+      "options": {
+        "date_added": "created",
+        "seeders": "seeders",
+        "size": "size",
+        "title": "title"
+      }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "DESC",
+      "options": { "DESC": "desc", "ASC": "asc" }
+    }
+  ],
   "download": { "selector": "a[href^=\"/torrentfiles/\"]" },
   "search": {
-    "paths": [{ "path": "torrentek/title/{{ .Keywords}}/" }],
+    "paths": [
+      {
+        "path": "torrentek/title/{{ .Keywords }}/order/{{ .Config.sort }}/by/{{ .Config.type }}/"
+      }
+    ],
     "rows": { "selector": "tr.gradeX", "filters": [{ "name": "andmatch" }] },
     "fields": {
       "category": {
         "selector": "td:nth-child(1) i",
         "attribute": "class",
-        "filters": [
-          { "name": "replace", "args": [" ", "-"] },
-          { "name": "split", "args": ["-", 2] }
-        ]
+        "filters": [{ "name": "replace", "args": ["zqf zqf-", ""] }]
       },
       "title": { "selector": "td:nth-child(2) a" },
       "details": { "selector": "td:nth-child(2) a", "attribute": "href" },
       "download": { "selector": "td:nth-child(2) a", "attribute": "href" },
       "date": {
-        "selector": "td:nth-child(4):not(span)",
+        "selector": "td:nth-child(4):not(:has(span))",
         "optional": true,
         "filters": [{ "name": "dateparse", "args": "2006.01.02" }]
       },
       "size": { "selector": "td:nth-child(5)" },
-      "grabs": { "selector": "td:nth-child(6)" },
+      "grabs": {
+        "selector": "td:nth-child(6)",
+        "filters": [{ "name": "replace", "args": [" ", ""] }]
+      },
       "seeders": { "selector": "td:nth-child(7)" },
       "leechers": { "selector": "td:nth-child(8)" },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

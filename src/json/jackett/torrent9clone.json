@@ -32,14 +32,14 @@
   ],
   "caps": {
     "categorymappings": [
-      { "id": "films", "cat": "Movies", "desc": "Movies" },
-      { "id": "series", "cat": "TV", "desc": "TV" },
-      { "id": "musique", "cat": "Audio", "desc": "Music" },
-      { "id": "ebook", "cat": "Books", "desc": "Books" },
-      { "id": "logiciels", "cat": "PC", "desc": "Software" },
-      { "id": "jeux-pc", "cat": "PC/Games", "desc": "PC Games" },
+      { "id": "Films", "cat": "Movies", "desc": "Movies" },
+      { "id": "Séries", "cat": "TV", "desc": "TV" },
+      { "id": "Musique", "cat": "Audio", "desc": "Music" },
+      { "id": "Ebook", "cat": "Books", "desc": "Books" },
+      { "id": "Logiciels", "cat": "PC", "desc": "Software" },
+      { "id": "Jeux-PC", "cat": "PC/Games", "desc": "PC Games" },
       {
-        "id": "jeux-consoles",
+        "id": "Jeux-Consoles",
         "cat": "Console/Xbox360",
         "desc": "Console Games"
       }
@@ -87,17 +87,7 @@
         ]
       },
       "details": { "selector": "td:nth-child(1) a", "attribute": "href" },
-      "category": {
-        "selector": "td:nth-child(1) i",
-        "case": {
-          "i[class=\"Films\"]": "films",
-          "i[class=\"Séries\"]": "series",
-          "i[class=\"Musique\"]": "musique",
-          "i[class=\"Jeux-PC\"]": "jeux-pc",
-          "i[class=\"Logiciels\"]": "logiciels",
-          "i[class=\"Ebook\"]": "ebook"
-        }
-      },
+      "category": { "selector": "td:nth-child(1) i", "attribute": "class" },
       "download": { "selector": "td:nth-child(1) a", "attribute": "href" },
       "date": { "text": "now" },
       "size": { "selector": "td:nth-child(2)" },

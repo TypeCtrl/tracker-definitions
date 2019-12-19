@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.magnetdl.com/'],
-  legacylinks: ['http://www.magnetdl.com/'],
+  links: ['https://www.magnetdl.com/', 'https://magnetdl.unblockninja.com/'],
+  legacylinks: ['http://www.magnetdl.com/ https://www.magnetdl.me/'],
   caps: {
     modes: {
       search: ['q'],
@@ -25,7 +25,22 @@ export const definition: TrackerDefinition = {
       { id: 'Other', cat: 'Other' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'age',
+      options: { age: 'created', se: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   search: {
     headers: {
       Accept: [
@@ -36,7 +51,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Keywords}}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}download/movies/{{end}}',
+          '{{if .Keywords}}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}download/movies/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
       },
     ],
     rows: { selector: 'tr:has(td.m)' },
@@ -53,8 +68,8 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td.s' },
       leechers: { selector: 'td.l' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

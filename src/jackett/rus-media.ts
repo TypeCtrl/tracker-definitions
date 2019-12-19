@@ -381,7 +381,22 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 't',
+      options: { t: 'created', ts: 'seeders', sz: 'size', i: 'title' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'd',
+      options: { d: 'desc', a: 'asc' },
+    },
+  ],
   download: { selector: 'a[href^="./download/file.php?id="]' },
   search: {
     paths: [{ path: 'search.php' }],
@@ -391,6 +406,8 @@ export const definition: TrackerDefinition = {
       fp: 1,
       tracker_search: 'torrent',
       keywords: '{{if .Keywords }}{{.Keywords}}{{else}}2019{{end}}',
+      sk: '{{ .Config.sort }}',
+      sd: '{{ .Config.type }}',
       $raw: '{{range .Categories}}&fid[]={{.}}{{end}}',
     },
     rows: { selector: 'table.tablebg tr.col_line' },
@@ -404,7 +421,8 @@ export const definition: TrackerDefinition = {
       details: { selector: 'a.topictitle', attribute: 'href' },
       download: { selector: 'a.topictitle', attribute: 'href' },
       size: {
-        selector: 'td:nth-of-type(5) p',
+        selector: 'td:nth-of-type(5) p:not(:empty)',
+        optional: true,
         filters: [
           { name: 'replace', args: ['ТБ', 'TB'] },
           { name: 'replace', args: ['ГБ', 'GB'] },
@@ -412,8 +430,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['КБ', 'KB'] },
         ],
       },
-      seeders: { selector: 'span.seed' },
-      leechers: { selector: 'span.leech' },
+      seeders: { selector: 'span.seed', optional: true },
+      leechers: { selector: 'span.leech', optional: true },
       date: {
         selector:
           'td:nth-of-type(6) p:nth-of-type(1):not(:contains("Сегодня")):not(:contains("Вчера"))',
@@ -435,8 +453,8 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '02 Jan 2006 15:04' },
         ],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

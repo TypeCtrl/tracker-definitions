@@ -49,7 +49,7 @@ export const definition: TrackerDefinition = {
       order: 'date-desc',
       team_id: 0,
     },
-    rows: { selector: 'table tbody tr' },
+    rows: { selector: 'table tbody tr:has(a[href^="magnet:?"])' },
     fields: {
       date: {
         selector: 'td:nth-child(1) span',

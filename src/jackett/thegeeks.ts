@@ -130,7 +130,7 @@ export const definition: TrackerDefinition = {
       },
       grabs: {
         selector: 'td:nth-child(8)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
+        filters: [{ name: 'replace', args: ['Never', '0'] }, { name: 'regexp', args: '(\\d+)' }],
       },
       files: { selector: 'td:nth-child(4)' },
       size: { selector: 'td:nth-child(7)' },

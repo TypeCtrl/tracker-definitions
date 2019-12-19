@@ -19,6 +19,24 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time',
+      options: { time: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -34,9 +52,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      searchstr: '{{ .Query.Keywords }}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      searchstr: '{{ .Keywords }}',
       page: 'torrents',
+      order_by: '{{ .Config.sort }}',
+      order_way: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -59,8 +79,8 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-last-child(3)' },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

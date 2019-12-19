@@ -39,7 +39,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [{ name: 'timeago' }],
       },
-      size: { selector: 'td.leeches' },
+      size: { selector: 'td.leeches:contains("B")', optional: true },
       seeders: {
         selector: 'td:nth-child(2)',
         filters: [{ name: 'split', args: ['/', 0] }],

@@ -37,6 +37,24 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -51,7 +69,11 @@ export const definition: TrackerDefinition = {
   download: { selector: 'a[href^="download.php?id="]' },
   search: {
     paths: [{ path: 'torrents.php' }],
-    inputs: { search: '{{ .Keywords }}', sort: 4, type: 'desc' },
+    inputs: {
+      search: '{{ .Keywords }}',
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
+    },
     rows: {
       selector:
         'table#loading-table tbody#highlighted tr:has(a[href^="torrents.php?cat="]), table#loading-table tbody#highlighted tr:has(a[href^="details.php?id="])',

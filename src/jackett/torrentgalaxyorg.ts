@@ -54,6 +54,19 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [],
+  login: {
+    path: 'galaxyfence.php?f',
+    method: 'form',
+    form: 'form[action="/galaxyfence.php"]',
+    inputs: { dropoff: '/torrents.php' },
+    captcha: {
+      type: 'image',
+      selector: 'img#captcha',
+      input: 'captcha',
+    },
+    error: [{ selector: 'span:contains("Captcha incorrect")' }],
+    test: { path: '/' },
+  },
   search: {
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',

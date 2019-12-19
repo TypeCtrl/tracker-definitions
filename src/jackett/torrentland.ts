@@ -62,6 +62,7 @@ export const definition: TrackerDefinition = {
       { id: '76', cat: 'Movies/3D', desc: 'Animacion - 3D' },
       { id: '61', cat: 'TV/Sport', desc: 'Deportes - HD' },
       { id: '60', cat: 'TV/Sport', desc: 'Deportes - SD' },
+      { id: '85', cat: 'Books', desc: 'Manuales' },
     ],
     modes: { search: ['q'] },
   },
@@ -76,11 +77,12 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'form[name="jump1"]' },
   },
   search: {
+    keywordsfilters: [{ name: 're_replace', args: ['(?i)\\bS(\\d+)', 'T$1'] }],
     inputs: {
       page: 'torrents',
       $raw: '&category={{range .Categories}}{{.}};{{end}}',
       active: '0',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
     },
     rows: {
       selector: '#Mcol table.table-inverse ~ table.table-inverse > tbody > tr:not(:first-child)',
@@ -91,7 +93,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
-      title: { selector: 'td:nth-child(2) a' },
+      title: {
+        selector: 'td:nth-child(2) a',
+        filters: [{ name: 're_replace', args: ['(?i)\\bT(\\d+)', 'S$1'] }],
+      },
       banner: {
         optional: true,
         selector: 'td:nth-child(2) a',

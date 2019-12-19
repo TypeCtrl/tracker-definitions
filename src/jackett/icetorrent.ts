@@ -109,7 +109,7 @@ export const definition: TrackerDefinition = {
         remove: 'a',
       },
       date: {
-        selector: 'td > small:has(i.fa-clock)',
+        selector: 'td > small:has(i.fa-clock), td > span.small:has(i.fa-clock)',
         filters: [
           { name: 'replace', args: [' ', ' '] },
           { name: 'replace', args: ['st ', ' '] },
@@ -123,8 +123,8 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
-      downloadvolumefactor: { case: { '*': '0' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

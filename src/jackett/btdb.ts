@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://btdb.eu/'],
-  legacylinks: ['https://btdb.to/', 'https://btdb.unblocked.app/'],
+  links: ['https://btdb.io/'],
+  legacylinks: ['https://btdb.to/', 'https://btdb.unblocked.app/', 'https://btdb.eu/'],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],
     modes: {
@@ -25,23 +25,19 @@ export const definition: TrackerDefinition = {
       default:
         'BTDB does not use categories. In your Sonarr or Radarr Torznab Indexer settings, set the category to 100001.',
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time',
+      options: { time: 'created', length: 'size' },
+    },
   ],
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time{{else}}recent{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=2{{else}}recent?page=2{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=3{{else}}recent?page=3{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=4{{else}}recent?page=4{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}?search={{ .Keywords}}&sort=time&page=5{{else}}recent?page=5{{end}}',
+        path:
+          '{{ if .Keywords }}?s={{ .Keywords }}&sort={{ .Config.sort }}{{else}}recent?sort={{ .Config.sort }}{{end}}',
       },
     ],
     rows: { selector: 'li[class$="item"]' },
@@ -50,7 +46,7 @@ export const definition: TrackerDefinition = {
         selector: 'h2[class$="title"] a[href*="/torrent/"]',
         attribute: 'title',
       },
-      category: { text: '1' },
+      category: { text: 1 },
       details: {
         selector: 'h2[class$="title"] a[href*="/torrent/"]',
         attribute: 'href',
@@ -68,8 +64,8 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'div[class$="info"] span:nth-of-type(4)' },
       seeders: { text: 1 },
       leechers: { text: 1 },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

@@ -54,6 +54,24 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '0',
+      options: { '0': 'created', '1': 'title', '4': 'size', '6': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -80,8 +98,13 @@ export const definition: TrackerDefinition = {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
-    rows: { selector: 'table tbody#torrent_background tr:has(a.index)' },
+    rows: {
+      selector: 'table tbody#torrent_background tr:has(a.index)',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       title: {
         selector: 'a.index',

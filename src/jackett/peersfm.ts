@@ -31,8 +31,30 @@ export const definition: TrackerDefinition = {
       { id: '4', cat: 'Movies/DVD', desc: 'Фильмы DVD' },
       { id: '6', cat: 'Movies', desc: 'Фильмы MPEG4' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -47,9 +69,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table[width="940px"] > tbody > tr:has(a[href^="details.php?id="])',
@@ -96,14 +120,14 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
         case: {
-          'img[src="pic/free_100.png"]': '0',
-          'img[src="pic/free_75.png"]': '0.25',
-          'img[src="pic/free_50.png"]': '0.5',
-          'img[src="pic/free_25.png"]': '0.75',
-          '*': '1',
+          'img[src="pic/free_100.png"]': 0,
+          'img[src="pic/free_75.png"]': 0.25,
+          'img[src="pic/free_50.png"]': 0.5,
+          'img[src="pic/free_25.png"]': 0.75,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

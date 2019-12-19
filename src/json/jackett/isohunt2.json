@@ -42,6 +42,17 @@
         "8": "Series & TV",
         "9": "Books"
       }
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "created_at",
+      "options": {
+        "created_at": "created",
+        "seeders": "seeders",
+        "size": "size"
+      }
     }
   ],
   "download": {
@@ -52,15 +63,12 @@
     ]
   },
   "search": {
-    "paths": [
-      { "path": "torrents", "inputs": { "Torrent_page": "0" } },
-      { "path": "torrents", "inputs": { "Torrent_page": "40" } },
-      { "path": "torrents", "inputs": { "Torrent_page": "80" } }
-    ],
+    "paths": [{ "path": "torrents" }],
     "inputs": {
       "ihq": "{{ .Keywords }}",
       "iht": "{{ .Config.category }}",
-      "age": "0"
+      "age": 0,
+      "Torrent_sort": "{{ .Config.sort }}"
     },
     "rows": { "selector": "table > tbody > tr[data-key=\"0\"]" },
     "fields": {
@@ -84,19 +92,19 @@
       "category": {
         "selector": "td.category-row > span",
         "case": {
-          "span[title=\"anime\"]": "1",
-          "span[title=\"software\"]": "2",
-          "span[title=\"games\"]": "3",
-          "span[title=\"adult\"]": "4",
-          "span[title=\"movies\"]": "5",
-          "span[title=\"music\"]": "6",
-          "span[title=\"other\"]": "7",
-          "span[title=\"seriestv\"]": "8",
-          "span[title=\"books\"]": "9"
+          "span[title=\"anime\"]": 1,
+          "span[title=\"software\"]": 2,
+          "span[title=\"games\"]": 3,
+          "span[title=\"adult\"]": 4,
+          "span[title=\"movies\"]": 5,
+          "span[title=\"music\"]": 6,
+          "span[title=\"other\"]": 7,
+          "span[title=\"seriestv\"]": 8,
+          "span[title=\"books\"]": 9
         }
       },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

@@ -95,6 +95,25 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeds: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: 'login.php',
@@ -125,8 +144,8 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       blah: 0,
       incldead: 1,
-      orderby: 'added',
-      sort: 'desc',
+      orderby: '{{ .Config.sort }}',
+      sort: '{{ .Config.type }}',
       showsearch: 0,
     },
     rows: {

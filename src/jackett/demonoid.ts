@@ -349,17 +349,34 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: { added: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   download: { selector: 'a[href^="magnet:?xt="]' },
   search: {
     paths: [{ path: 'files/' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}&{{end}}',
       seeded: 2,
       language: 0,
       quality: 0,
       to: 'on',
-      query: '{{.Keywords}}',
+      query: '{{ .Keywords }}',
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table.font_12px tr:has(td[class^="tone_1"])',
@@ -380,6 +397,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'a[href*="&subcategory="]',
         attribute: 'href',
+        optional: true,
         filters: [{ name: 'querystring', args: 'subcategory' }],
       },
       details: {
@@ -395,8 +413,8 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

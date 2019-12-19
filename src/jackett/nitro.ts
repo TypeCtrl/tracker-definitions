@@ -29,7 +29,22 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'data',
+      options: { data: 'created', seeds: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   search: {
     paths: [{ path: 'tags.php' }],
     inputs: {
@@ -37,7 +52,8 @@ export const definition: TrackerDefinition = {
       where: 1,
       per: 50,
       active: 1,
-      order: 'data',
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table[width="100%"] > tbody > tr:has(a[onclick="getMagnet(this)"])',

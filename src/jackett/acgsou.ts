@@ -65,7 +65,9 @@ export const definition: TrackerDefinition = {
         path: '{{ if .Keywords }}search.php?keyword={{ .Keywords }}{{else}}1.html{{end}}',
       },
     ],
-    rows: { selector: 'table tbody tr[class^="alt"]' },
+    rows: {
+      selector: 'table tbody tr[class^="alt"]:has(td:nth-child(3) a)',
+    },
     fields: {
       date: {
         selector: 'td:nth-child(1):not(:contains(":"))',

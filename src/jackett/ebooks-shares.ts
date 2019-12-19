@@ -711,6 +711,29 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: {
+        id: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'account-login.php',
     method: 'post',
@@ -721,6 +744,7 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.panel:contains("Access Denied")' }],
     test: { path: 'index.php' },
   },
+  download: { selector: 'a[href^="download.php?id="]' },
   search: {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {
@@ -729,6 +753,8 @@ export const definition: TrackerDefinition = {
       incldead: 0,
       freeleech: 0,
       lang: 0,
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: { selector: 'tr.t-row' },
     fields: {
@@ -746,21 +772,21 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="download.php?id="]',
+        selector: 'a[href^="torrents-details.php?id="]',
         attribute: 'href',
       },
-      seeders: { selector: 'td:nth-child(5)' },
-      leechers: { selector: 'td:nth-child(6)' },
-      size: { selector: 'td:nth-child(7)' },
+      seeders: { selector: 'td:nth-child(4)' },
+      leechers: { selector: 'td:nth-child(5)' },
+      size: { selector: 'td:nth-child(6)' },
       description: {
-        selector: 'td:nth-child(8)',
+        selector: 'td:nth-child(7)',
         filters: [{ name: 'prepend', args: 'wait: ' }],
       },
       date: { text: 'now' },
       downloadvolumefactor: {
-        case: { 'img[src="images/free.gif"]': 0, '*': '1' },
+        case: { 'img[src="images/free.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

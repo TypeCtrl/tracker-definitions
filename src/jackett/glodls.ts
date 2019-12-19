@@ -37,18 +37,38 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: {
+        id: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   search: {
     paths: [{ path: 'search_results.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       cat: 0,
       incldead: 1,
       inclexternal: 0,
       lang: 0,
-      sort: 'id',
-      order: 'desc',
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: { selector: 'table.ttable_headinner tr.t-row', after: 1 },
     fields: {
@@ -63,7 +83,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="/down.php?id="]',
+        selector: 'a[href^="/down.php?id="], a[href*="itorrents.org/torrent/"]',
         attribute: 'href',
       },
       magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },

@@ -26,6 +26,7 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'TV/SD', 'TV/SD MP4/mkv': null },
       { id: '31', cat: 'TV/SD', 'TV/XviD': null },
       { id: '18', cat: 'PC/Games', 'Games/PC': null },
+      { id: '44', cat: 'Audio', 'Music/Pack': null },
       { id: '12', cat: 'Audio/Lossless', 'Music/FLAC': null },
       { id: '15', cat: 'Audio/MP3', 'Music/MP3': null },
       { id: '37', cat: 'Audio', Radio: null },
@@ -39,6 +40,24 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time',
+      options: { time: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -54,9 +73,9 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      order_by: 'time',
-      order_way: 'desc',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      order_by: '{{ .Config.sort }}',
+      order_way: '{{ .Config.type }}',
       filter_freeleech: 0,
       title: '{{ .Keywords }}',
       search_type: 1,
@@ -89,7 +108,10 @@ export const definition: TrackerDefinition = {
         ],
       },
       files: { selector: 'td:nth-child(3)' },
-      date: { selector: 'td:nth-child(5)' },
+      date: {
+        selector: 'td:nth-child(5)',
+        filters: [{ name: 'replace', args: ['Never', '99 years ago'] }],
+      },
       size: { selector: 'td:nth-child(6)' },
       grabs: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(8)' },

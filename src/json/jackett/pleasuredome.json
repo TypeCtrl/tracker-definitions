@@ -57,6 +57,29 @@
     ],
     "modes": { "search": ["q"] }
   },
+  "settings": [
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "data",
+      "options": {
+        "data": "created",
+        "s.seeds": "seeders",
+        "n.size": "size",
+        "n.filename": "title"
+      }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "DESC",
+      "options": { "DESC": "desc", "ASC": "asc" }
+    }
+  ],
   "login": {
     "path": "login2.php",
     "method": "form",
@@ -74,8 +97,8 @@
       "search": "{{ .Keywords }}",
       "category": 0,
       "active": 0,
-      "sort": "data",
-      "order": "DESC"
+      "sort": "{{ .Config.sort }}",
+      "order": "{{ .Config.type }}"
     },
     "rows": {
       "selector": "table[width=\"100%\"] > tbody tr:has(a[href^=\"download.php?id=\"])"
@@ -108,12 +131,14 @@
       },
       "size": { "selector": "td:nth-last-child(8)" },
       "seeders": { "selector": "td:nth-last-child(6)" },
-      "leechers": { "selector": "td:nth-last-child(5)" },
+      "leechers": { "selector": "td:nth-last-child(5) a" },
       "grabs": { "selector": "td:nth-last-child(4)" },
       "downloadvolumefactor": {
-        "case": { "img[src=\"images/fdownload.gif\"]": "0", "*": "1" }
+        "case": { "img[src=\"images/fdownload.gif\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "case": { "*": "1" } }
+      "uploadvolumefactor": {
+        "case": { "img[src=\"images/2x.gif\"]": 2, "*": 1 }
+      }
     }
   },
   "source": "jackett"

@@ -21,6 +21,29 @@ export const definition: TrackerDefinition = {
       { id: 'Music', cat: 'Audio/MP3' },
     ],
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'date',
+      options: {
+        date: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'DESC',
+      options: { DESC: 'desc', ASC: 'asc' },
+    },
+  ],
   login: {
     path: 'user/login.html',
     method: 'post',
@@ -44,7 +67,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents/search.html', method: 'post' }],
     inputs: {
       'SearchTorrentsForm[nameTorrent]':
-        '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+        '{{ if .Query.Artist }}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      'SearchTorrentsForm[sort]': '{{ .Config.sort }}',
+      'SearchTorrentsForm[sortType]': '{{ .Config.type }}',
       'go-search': 'Search',
     },
     rows: { selector: '.smallalbum' },
@@ -59,8 +84,8 @@ export const definition: TrackerDefinition = {
       date: { text: 'now' },
       seeders: { selector: '.center font:nth-of-type(1)' },
       leechers: { selector: '.center font:nth-of-type(2)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
       category: {
         selector: '.smallalbum',
         remove: 'div.thumb, div.center, a',

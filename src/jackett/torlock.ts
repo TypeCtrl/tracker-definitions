@@ -8,8 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.torlock2.com/'],
-  legacylinks: ['https://torlock.com/', 'https://www.torlock.com/'],
+  links: ['https://www.torlock.com/', 'https://www.torlock2.com/'],
+  legacylinks: ['https://torlock.com/'],
   caps: {
     categorymappings: [
       { id: 'TELEVISION', cat: 'TV', desc: 'TV Shows' },
@@ -30,11 +30,27 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site (only works for search with keywords)',
+      default: 'added',
+      options: { added: 'created', seeds: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}/all/torrents/{{ .Keywords }}.html{{else}}/fresh.html{{end}}',
+        path:
+          '{{if .Keywords}}/all/torrents/{{ .Keywords }}.html?sort={{ .Config.sort }}&order={{ .Config.type }}{{else}}/fresh.html{{end}}',
       },
     ],
     keywordsfilters: [{ name: 'tolower' }, { name: 're_replace', args: ['[^a-zA-Z0-9]+', '-'] }],
@@ -82,8 +98,8 @@ export const definition: TrackerDefinition = {
           '*': '',
         },
       },
-      downloadvolumefactor: { text: '1' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

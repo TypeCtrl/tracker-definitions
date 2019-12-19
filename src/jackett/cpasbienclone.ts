@@ -18,11 +18,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: 'films', cat: 'Movies', desc: 'Movies' },
       { id: 'series', cat: 'TV', desc: 'TV' },
-      { id: 'musique', cat: 'Audio', desc: 'Music' },
-      { id: 'ebook', cat: 'Books', desc: 'Ebook' },
-      { id: 'logiciels', cat: 'PC', desc: 'Software' },
-      { id: 'jeux-pc', cat: 'PC/Games', desc: 'PC Games' },
-      { id: 'jeux-consoles', cat: 'Console', desc: 'Console Games' },
+      { id: 'other', cat: 'Other', desc: 'Other' },
     ],
     modes: {
       search: ['q'],
@@ -30,12 +26,34 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site (Only works for searches with Keywords)',
+      default: '?trie-date-d',
+      options: {
+        '?trie-date-d': 'created desc',
+        '?trie-date-a': 'created asc',
+        '?trie-seeds-d': 'seeders desc',
+        '?trie-seeds-a': 'seeders asc',
+        '?trie-poid-d': 'size desc',
+        '?trie-poid-a': 'size asc',
+        '?trie-nom-d': 'title desc',
+        '?trie-nom-a': 'title asc',
+      },
+    },
+  ],
   download: { selector: 'a[href^="magnet:"]', attribute: 'href' },
   search: {
-    paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
+    paths: [
+      {
+        path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{ .Config.sort }}{{else}}{{end}}',
+      },
+    ],
     rows: { selector: 'table.table-corps > tbody > tr:has(a)' },
     fields: {
+      category: { text: 'other' },
       site_date: {
         selector: 'a',
         filters: [{ name: 'regexp', args: '(\\w+)$' }],
@@ -82,8 +100,8 @@ export const definition: TrackerDefinition = {
       date: { text: 'now' },
       seeders: { selector: 'div.up', optional: true },
       leechers: { selector: 'div.down', optional: true },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

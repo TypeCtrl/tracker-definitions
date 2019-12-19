@@ -111,6 +111,24 @@ export const definition: TrackerDefinition = {
       default:
         'MVGroup does not use categories. In your Sonarr or Radarr Torznab Indexer settings, set the category to 100001.',
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeders: 'seeders',
+        filename: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'DESC',
+      options: { DESC: 'desc', ASC: 'asc' },
+    },
   ],
   login: {
     path: 'index.php?act=Login&CODE=00',
@@ -120,8 +138,8 @@ export const definition: TrackerDefinition = {
       UserName: '{{ .Config.username }}',
       PassWord: '{{ .Config.password }}',
       Privacy: 1,
-      CookieDate: 0,
-      CODE: '01',
+      CookieDate: 1,
+      CODE: 1,
       referer: 'https://forums.mvgroup.org/index.php?',
       act: 'Login',
     },
@@ -142,6 +160,8 @@ export const definition: TrackerDefinition = {
       seed: '{{ if .Config.seed }}1{{else}}0{{end}}',
       withsubs: '{{ re_replace .Config.withsubs "_" "" }}',
       filter: '{{ if .Config.hidef }}hd+{{else}}{{end}}{{ .Keywords }}',
+      orderby: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     keywordsfilters: [
       {
@@ -161,7 +181,7 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 'append',
-            args: '{{ if .Config.stripS01E01 }} S01E01{{else}}{{end}}',
+            args: '{{ if .Config.stripS01E01 }}{{else}} S01E01{{end}}',
           },
         ],
       },
@@ -172,7 +192,7 @@ export const definition: TrackerDefinition = {
       },
       download: { selector: 'td a.torrentlink', attribute: 'href' },
       magnet: { selector: 'td a.magnetlink', attribute: 'href' },
-      category: { text: '1' },
+      category: { text: 1 },
       size: { text: '500 MB' },
       date: {
         selector: 'td:nth-of-type(3)',
@@ -181,8 +201,8 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-of-type(4)' },
       leechers: { selector: 'td:nth-of-type(5)' },
       grabs: { selector: 'td:nth-of-type(6)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

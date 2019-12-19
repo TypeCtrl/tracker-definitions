@@ -78,6 +78,29 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: {
+        is: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'account-login.php',
     method: 'form',
@@ -96,12 +119,14 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       cat: 0,
       incldead: 1,
       freeleech: 0,
       lang: 0,
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table.ttable_headinner tr.t-row',
@@ -130,9 +155,9 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(8)' },
       date: { text: 'now' },
       downloadvolumefactor: {
-        case: { 'img[src="images/freeleech_star.gif"]': '0', '*': '1' },
+        case: { 'img[src="images/freeleech_star.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

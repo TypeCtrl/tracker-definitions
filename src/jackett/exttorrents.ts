@@ -25,13 +25,28 @@ export const definition: TrackerDefinition = {
       { id: '/tv/', cat: 'TV' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'age',
+      options: { age: 'created', seed: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   download: { selector: 'a[href^="magnet:?xt="]' },
   search: {
     paths: [
       {
         path:
-          '{{ if .Keywords }}search/?order=age&sort=desc&q={{ .Keywords }}{{ else }}latest/{{ end }}',
+          '{{ if .Keywords }}search/?order={{ .Config.sort }}&sort={{ .Config.type }}&q={{ .Keywords }}{{ else }}latest/?order={{ .Config.sort }}&sort={{ .Config.type }}{{ end }}',
       },
     ],
     rows: { selector: 'table.table-striped > tbody > tr' },
@@ -48,8 +63,8 @@ export const definition: TrackerDefinition = {
       date: { selector: 'td:nth-child(4)' },
       seeders: { selector: 'td:nth-child(5)' },
       leechers: { selector: 'td:nth-child(6)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

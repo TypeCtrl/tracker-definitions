@@ -7,6 +7,7 @@
   "encoding": "UTF-8",
   "links": ["https://alexfilm.org/"],
   "legacylinks": ["https://alexfilm.cc/"],
+  "certificates": ["9200e15406272061df1f609a0f40d76282f54295"],
   "caps": {
     "categorymappings": [{ "id": "1", "cat": "TV", "desc": "TV" }],
     "modes": { "search": ["q"], "tv-search": ["q", "season", "ep"] }
@@ -19,6 +20,20 @@
       "type": "checkbox",
       "label": "Strip Russian Letters",
       "default": false
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "1",
+      "options": { "1": "created", "2": "title", "7": "size", "10": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "1",
+      "options": { "1": "asc", "2": "desc" }
     }
   ],
   "login": {
@@ -53,8 +68,8 @@
       "prev_df": 1,
       "prev_ds": 0,
       "prev_tor_type": 0,
-      "o": 1,
-      "s": 2,
+      "o": "{{ .Config.sort }}",
+      "s": "{{ .Config.type }}",
       "dc": 0,
       "df": 1,
       "da": 1,

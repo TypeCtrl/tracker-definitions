@@ -21,6 +21,20 @@ export const definition: TrackerDefinition = {
       label: 'Strip Russian Letters',
       default: false,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: 'takelogin.php',
@@ -34,7 +48,12 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'browse.php' }],
-    inputs: { search: '{{.Keywords }}', incldead: '1' },
+    inputs: {
+      search: '{{.Keywords }}',
+      incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
+    },
     keywordsfilters: [{ name: 're_replace', args: ['[s|S](\\d+)[e|E][\\d]+', '/s$1'] }],
     rows: {
       selector: 'table > tbody > tr:has(a[href^="details.php?id="])',
@@ -106,11 +125,11 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-last-child(1)' },
       downloadvolumefactor: {
         case: {
-          'a[href^="details.php?id="]:contains("(Золото)")': '0',
-          '*': '1',
+          'a[href^="details.php?id="]:contains("(Золото)")': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

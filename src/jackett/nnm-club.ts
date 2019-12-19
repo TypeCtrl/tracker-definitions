@@ -16,6 +16,20 @@ export const definition: TrackerDefinition = {
       label: 'Strip Russian Letters',
       default: true,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '1',
+      options: { '1': 'created', '2': 'title', '7': 'size', '10': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
   ],
   caps: {
     categorymappings: [
@@ -1405,28 +1419,11 @@ export const definition: TrackerDefinition = {
     },
   },
   search: {
-    paths: [
-      { path: 'forum/tracker.php', method: 'post' },
-      {
-        path: 'forum/tracker.php',
-        inputs: { start: 50 },
-        method: 'post',
-      },
-      {
-        path: 'forum/tracker.php',
-        inputs: { start: 100 },
-        method: 'post',
-      },
-      {
-        path: 'forum/tracker.php',
-        inputs: { start: 150 },
-        method: 'post',
-      },
-    ],
+    paths: [{ path: 'forum/tracker.php', method: 'post' }],
     inputs: {
       $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
-      o: 1,
-      s: 2,
+      o: '{{ .Config.sort }}',
+      s: '{{ .Config.type }}',
       tm: -1,
       shf: 1,
       sha: 1,
@@ -1498,14 +1495,14 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td.leechmed > b' },
       downloadvolumefactor: {
         case: {
-          'img[src$="/images/gold.gif"]': '0',
-          'img[src$="/images/platinum.gif"]': '0',
-          'img[src$="/images/bronze.gif"]': '0.75',
-          'img[src$="/images/silver.gif"]': '0.5',
-          '*': '1',
+          'img[src$="/images/gold.gif"]': 0,
+          'img[src$="/images/platinum.gif"]': 0,
+          'img[src$="/images/bronze.gif"]': 0.75,
+          'img[src$="/images/silver.gif"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

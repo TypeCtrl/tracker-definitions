@@ -21,63 +21,80 @@
         "35": "Anime - English-translated",
         "36": "Anime - Raw",
         "47": "Literature - English-translated",
+        "48": "Literature - Raw",
+        "59": "Live Action - English subtitled",
         "312": "Anime - Anime Music Video",
         "313": "Anime - Non-English-translated",
-        "414": "Literature - Raw",
+        "414": "Literature - Non-English-translated",
+        "510": "Live Action - Trailers",
+        "511": "Live Action - Raw",
+        "518": "Live Action - Non-English subtitled",
+        "615": "Pictures - Graphics",
+        "616": "Pictures - Photos",
         "_": "All categories",
         "3_": "Anime",
         "2_": "Audio",
         "4_": "Literature",
-        "1_": "Software"
+        "1_": "Software",
+        "5_": "Live Action",
+        "6_": "Pictures"
       }
     },
     {
-      "name": "filter-id",
+      "name": "sort",
       "type": "select",
-      "label": "Filter",
-      "default": "0",
-      "options": {
-        "0": "Show all",
-        "1": "Filter Remakes",
-        "2": "Trusted",
-        "3": "A+"
-      }
+      "label": "Sort requested from site",
+      "default": "2",
+      "options": { "1": "title", "2": "created", "4": "size", "5": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "false",
+      "options": { "false": "desc", "true": "asc" }
     }
   ],
   "caps": {
     "categorymappings": [
       { "id": "3_", "cat": "TV/Anime", "desc": "Anime" },
       { "id": "312", "cat": "TV/Anime", "desc": "Anime music videos" },
-      { "id": "35", "cat": "TV/Anime", "desc": "English subtitled animes" },
-      {
-        "id": "313",
-        "cat": "TV/Anime",
-        "desc": "Non-english subtitled animes"
-      },
-      { "id": "36", "cat": "TV/Anime", "desc": "Raw animes" },
+      { "id": "35", "cat": "TV/Anime", "desc": "Anime English subtitled" },
+      { "id": "313", "cat": "TV/Anime", "desc": "Anime Non-English subtitled" },
+      { "id": "36", "cat": "TV/Anime", "desc": "Anime Raw" },
       { "id": "2_", "cat": "Audio", "desc": "Audio" },
-      { "id": "23", "cat": "Audio", "desc": "Lossless audio" },
-      { "id": "24", "cat": "Audio", "desc": "Lossy audio" },
+      { "id": "23", "cat": "Audio", "desc": "Audio Lossless" },
+      { "id": "24", "cat": "Audio", "desc": "Audio Lossy" },
       { "id": "4_", "cat": "Books", "desc": "Literature" },
-      { "id": "47", "cat": "Books", "desc": "Literature english translated" },
+      { "id": "47", "cat": "Books", "desc": "Literature English translated" },
       {
         "id": "414",
         "cat": "Books",
-        "desc": "Literature non-english translated"
+        "desc": "Literature non-English translated"
       },
-      { "id": "48", "cat": "Books", "desc": "Raw literature" },
+      { "id": "48", "cat": "Books", "desc": "Literature Raw" },
       { "id": "1_", "cat": "PC", "desc": "Software" },
       { "id": "11", "cat": "PC/ISO", "desc": "Applications" },
-      { "id": "12", "cat": "PC/Games", "desc": "Games" }
+      { "id": "12", "cat": "PC/Games", "desc": "Games" },
+      { "id": "5_", "cat": "TV", "desc": "Live Action" },
+      { "id": "510", "cat": "TV", "desc": "Live Action Trailers" },
+      { "id": "59", "cat": "TV", "desc": "Live Action English subtitled" },
+      { "id": "518", "cat": "TV", "desc": "Live Action Non-English subtitled" },
+      { "id": "511", "cat": "TV", "desc": "Live Action Raw" },
+      { "id": "6_", "cat": "Other", "desc": "Pictures" },
+      { "id": "615", "cat": "Other", "desc": "Pictures Graphics" },
+      { "id": "616", "cat": "Other", "desc": "Pictures Photos" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q"] }
   },
   "search": {
     "paths": [{ "path": "search" }],
     "inputs": {
-      "q": "{{ .Query.Keywords }}",
+      "q": "{{ .Keywords }}",
       "c": "{{ .Config.cat-id }}",
-      "s": "{{ .Config.filter-id }}"
+      "s": 0,
+      "sort": "{{ .Config.sort }}",
+      "order": "{{ .Config.type }}"
     },
     "rows": { "selector": "tr.torrent-info" },
     "fields": {
@@ -103,8 +120,8 @@
         "selector": "td.tr-size",
         "filters": [{ "name": "replace", "args": ["Unknown", "0"] }]
       },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

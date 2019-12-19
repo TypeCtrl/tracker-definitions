@@ -13,6 +13,11 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: 'torrent_movie', cat: 'Movies', desc: '토렌트영화 (Movies)' },
       {
+        id: 'torrent_bluray',
+        cat: 'Movies/BluRay',
+        desc: '토렌트영화 (Movies)',
+      },
+      {
         id: 'torrent_variety',
         cat: 'TV',
         desc: 'TV예능 (TV Variety Shows)',
@@ -59,7 +64,7 @@ export const definition: TrackerDefinition = {
         path: '{{ if .Keywords }}bbs/s-1-{{ .Keywords }}{{else}}bbs/s-1-유희열{{end}}',
       },
     ],
-    rows: { selector: 'tr.bg1' },
+    rows: { selector: 'tr.bg1:has(a[href^="/bbs/bc.php?bo_table="])' },
     fields: {
       magnet: {
         selector: 'td:nth-child(1) a[href^="javascript:"]',
@@ -87,7 +92,8 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'dateparse', args: '01-02' }],
       },
       size: {
-        selector: 'td:nth-child(4)',
+        selector: 'td:nth-child(4):not(:contains(".M"))',
+        optional: true,
         filters: [{ name: 'append', args: 'B' }],
       },
       downloadvolumefactor: { text: 0 },

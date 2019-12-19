@@ -23,6 +23,29 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -40,13 +63,15 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}cat={{.}}&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}cat={{.}}&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
       search_mode: 0,
       spstate: 0,
       inclbookmarked: 0,
       incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector: 'tr:has(td.name)',
@@ -89,14 +114,14 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
         case: {
-          'span.label:contains("Free")': '0',
-          'span.label:contains("50%")': '0.5',
-          'span.label:contains("30%")': '0.7',
-          '*': '1',
+          'span.label:contains("Free")': 0,
+          'span.label:contains("50%")': 0.5,
+          'span.label:contains("30%")': 0.7,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'span.label:contains("2X")': '2', '*': '1' },
+        case: { 'span.label:contains("2X")': 2, '*': 1 },
       },
     },
   },

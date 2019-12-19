@@ -23,12 +23,19 @@ export const definition: TrackerDefinition = {
       default:
         'BTDigg does not use categories. In your software Indexer settings, set the category to 100001.',
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '2',
+      options: { '2': 'created', '3': 'size' },
+    },
   ],
   search: {
     paths: [{ path: 'search' }],
     inputs: {
-      q: '{{if .Keywords }}{{.Keywords}}{{else}}test{{end}}',
-      order: 2,
+      q: '{{ if .Keywords }}{{ .Keywords }}{{else}}test{{end}}',
+      order: '{{ .Config.sort }}',
     },
     rows: {
       selector: 'div.one_result',
@@ -50,8 +57,8 @@ export const definition: TrackerDefinition = {
       size: { selector: 'span.torrent_size' },
       seeders: { text: 1 },
       leechers: { text: 1 },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

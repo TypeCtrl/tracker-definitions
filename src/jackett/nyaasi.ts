@@ -11,13 +11,6 @@ export const definition: TrackerDefinition = {
   links: ['https://nyaa.si/'],
   settings: [
     {
-      name: 'filter-id',
-      type: 'select',
-      label: 'Filter',
-      default: '0',
-      options: { '0': 'No filter', '1': 'No remakes', '2': 'Trusted only' },
-    },
-    {
       name: 'cat-id',
       type: 'select',
       label: 'Category',
@@ -48,6 +41,20 @@ export const definition: TrackerDefinition = {
         '61': 'Software - Applications',
         '62': 'Software - Games',
       },
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: { id: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
     },
   ],
   caps: {
@@ -94,9 +101,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: {
-      q: '{{ .Query.Keywords}}',
-      f: '{{ .Config.filter-id }}',
+      q: '{{ .Keywords }}',
+      f: 0,
       c: '{{ .Config.cat-id }}',
+      s: '{{ .Config.sort }}',
+      o: '{{ .Config.type }}',
     },
     rows: { selector: 'tr.default,tr.danger,tr.success' },
     fields: {
@@ -105,7 +114,14 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'split', args: ['=', -1] }],
       },
-      title: { selector: 'td:nth-child(2) a:last-of-type' },
+      title: {
+        selector: 'td:nth-child(2) a:last-of-type:contains("[PuyaSubs!] ")',
+        optional: true,
+        filters: [
+          { name: 'replace', args: ['[PuyaSubs!] ', ''] },
+          { name: 'append', args: ' Spanish' },
+        ],
+      },
       details: {
         selector: 'td:nth-child(2) a:last-of-type',
         attribute: 'href',
@@ -126,11 +142,17 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-02 15:04 -07' },
         ],
       },
-      seeders: { selector: 'td:nth-child(6)' },
-      leechers: { selector: 'td:nth-child(7)' },
-      grabs: { selector: 'td:nth-child(8)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      seeders: {
+        selector: 'td:nth-child(6):not(:empty)',
+        optional: true,
+      },
+      leechers: {
+        selector: 'td:nth-child(7):not(:empty)',
+        optional: true,
+      },
+      grabs: { selector: 'td:nth-child(8):not(:empty)', optional: true },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

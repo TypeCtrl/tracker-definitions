@@ -49,16 +49,16 @@ export const definition: TrackerDefinition = {
     },
     error: [
       {
-        selector: 'table[border="0"][cellspacing="0"][cellpadding="10"] tr td font[color="yellow"]',
+        selector: 'table[border="0"][cellspacing="0"][cellpadding="10"] tr td font[color="orange"]',
       },
     ],
-    test: { path: '/', selector: ':has(a[href="logout.php"])' },
+    test: { path: '/', selector: 'a[href="logout.php"]' },
   },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{.Keywords}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
       incldead: 1,
     },
     rows: {
@@ -87,11 +87,11 @@ export const definition: TrackerDefinition = {
       },
       files: {
         selector: 'td:nth-child(4) table tr td:nth-child(2)',
-        filters: [{ name: 'regexp', args: 'in (\\d{1,}) bestan' }],
+        filters: [{ name: 'regexp', args: 'in (\\d+) bestan' }],
       },
       grabs: {
         selector: 'td:nth-child(4) table tr:nth-child(2) td:nth-child(1)',
-        filters: [{ name: 'regexp', args: '(\\d{1,})' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       date: {
         selector: 'td:nth-child(4) table tr:nth-child(2) td:nth-child(2)',
@@ -114,14 +114,14 @@ export const definition: TrackerDefinition = {
       },
       seeders: {
         optional: true,
-        selector: 'td:nth-child(4) table tr:nth-child(3) td:nth-child(5)  b:nth-child(1)',
+        selector: 'td:nth-child(4) table tr:nth-child(3) td:nth-child(5)  font b',
       },
       leechers: {
         optional: true,
-        selector: 'td:nth-child(4) table tr:nth-child(3) td:nth-child(5) b:nth-child(2)',
+        selector: 'td:nth-child(4) table tr:nth-child(3) td:nth-child(5) font font b',
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

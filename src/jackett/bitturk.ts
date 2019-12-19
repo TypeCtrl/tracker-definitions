@@ -70,6 +70,20 @@ export const definition: TrackerDefinition = {
       default:
         '<ol><li>Only the English Classic profile is supported.<li>Make sure to set the <b>Torrent Listing (Listeleme Biçimi)</b> option in your profile to <b>Classic (Klasik)</b><li>And set the <b>Language (Dil)</b> to <b>English</b><li>Using the <i>Modern</i> theme will prevent results, and using <i>Turkish</i> will prevent upload dates.</ol>',
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: { added: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: '?p=home&pid=1',
@@ -96,11 +110,13 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%25'] }],
     inputs: {
       p: 'torrents',
-      pid: '32',
-      $raw: '{{range .Categories}}cid[]={{.}}&{{end}}',
+      pid: 32,
+      $raw: '{{ range .Categories }}cid[]={{.}}&{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
       searchin: 'title',
+      'sortOptions[sortBy]': '{{ .Config.sort }}',
+      'sortOptions[sortOrder]': '{{ .Config.type }}',
     },
     error: [
       {
@@ -143,10 +159,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       downloadvolumefactor: {
-        case: { 'img[src$="/torrent_free.png"]': '0.5', '*': '1' },
+        case: { 'img[src$="/torrent_free.png"]': 0.5, '*': 1 },
       },
       uploadvolumefactor: {
-        case: { 'img[src$="/torrent_multiple_upload.png"]': '2', '*': '1' },
+        case: { 'img[src$="/torrent_multiple_upload.png"]': 2, '*': 1 },
       },
     },
   },

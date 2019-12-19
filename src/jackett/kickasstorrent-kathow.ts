@@ -16,7 +16,11 @@ export const definition: TrackerDefinition = {
     'https://kat.how/',
   ],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
     categorymappings: [
       { id: 'movies', cat: 'Movies' },
       { id: 'tv', cat: 'TV' },
@@ -28,11 +32,27 @@ export const definition: TrackerDefinition = {
       { id: 'other', cat: 'Other' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time_add',
+      options: { time_add: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}usearch/{{ .Keywords }}/{{else}}new/{{end}}',
+        path:
+          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{else}}new/{{end}}?field={{ .Config.sort }}&sorder={{ .Config.type }}',
       },
     ],
     rows: { selector: 'table[class="data"] tr[id]' },
@@ -75,8 +95,8 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['N/A', '0'] }],
       },
       description: { selector: 'td:nth-child(1) > div > div > span' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

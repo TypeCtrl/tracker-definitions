@@ -8,7 +8,6 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['http://leporno.org/'],
-  settings: [],
   caps: {
     categorymappings: [{ id: '1', cat: 'XXX', desc: 'XXX' }],
     modes: {
@@ -17,13 +16,29 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '1',
+      options: { '1': 'created', '2': 'title', '7': 'size', '10': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
+  ],
   download: { selector: 'a[href*="/dl.php?id="]' },
   search: {
     paths: [{ path: 'tracker.php#results', method: 'post' }],
     inputs: {
       'f[]': -1,
-      o: 1,
-      s: 2,
+      o: '{{ .Config.sort }}',
+      s: '{{ .Config.type }}',
       tm: -1,
       sns: -1,
       srg: -1,

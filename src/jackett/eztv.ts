@@ -9,14 +9,14 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: ['https://eztv.io/'],
-  legacylinks: ['https://eztv.ag/', 'https://eztv.re/'],
+  legacylinks: ['https://eztv.ag/', 'https://eztv.re/', 'https://eztv.it/', 'https://eztv.ch/'],
   caps: {
     modes: { 'tv-search': ['q', 'season', 'ep'] },
     categorymappings: [{ id: '1', cat: 'TV' }],
   },
   settings: [],
   search: {
-    paths: [{ path: '{{if .Keywords}}search/{{ .Keywords}}{{else}}/{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}search/{{ .Keywords }}{{else}}/{{end}}' }],
     keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
     rows: {
       selector: "table.forum_header_border tr[name='hover'].forum_header_border:has(a.magnet)",
@@ -44,8 +44,8 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'append', args: ' ago' }],
       },
       seeders: { selector: 'td:nth-child(6)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 0 },
     },
   },
   source: 'jackett',

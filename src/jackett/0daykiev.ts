@@ -85,6 +85,20 @@ export const definition: TrackerDefinition = {
       label: 'Strip Russian Letters',
       default: true,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: 'takelogin.php',
@@ -117,6 +131,8 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       incldead: 1,
       where: 0,
+      sort: '{{ .Config.sort}}',
+      type: '{{ .Config.type}}',
     },
     rows: { selector: 'table > tbody > tr.rowtorrentinfo' },
     fields: {

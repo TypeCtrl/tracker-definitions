@@ -76,6 +76,20 @@ export const definition: TrackerDefinition = {
       default:
         "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     method: 'cookie',
@@ -85,13 +99,15 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 0,
       spstate: 0,
       inclbookmarked: 0,
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
       search_mode: 0,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table.torrents > tbody > tr:has(table.torrentname)',
@@ -135,20 +151,20 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: {
-          'img.pro_free': '0',
-          'img.pro_free2up': '0',
-          'img.pro_50pctdown': '0.5',
-          'img.pro_50pctdown2up': '0.5',
-          'img.pro_30pctdown': '0.3',
-          '*': '1',
+          'img.pro_free': 0,
+          'img.pro_free2up': 0,
+          'img.pro_50pctdown': 0.5,
+          'img.pro_50pctdown2up': 0.5,
+          'img.pro_30pctdown': 0.3,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'img.pro_50pctdown2up': '2',
-          'img.pro_free2up': '2',
-          'img.pro_2up': '2',
-          '*': '1',
+          'img.pro_50pctdown2up': 2,
+          'img.pro_free2up': 2,
+          'img.pro_2up': 2,
+          '*': 1,
         },
       },
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },
