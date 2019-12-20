@@ -110,7 +110,10 @@ export const definition: TrackerDefinition = {
       size: {
         selector:
           'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) > b:nth-child(1)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: {
         selector:

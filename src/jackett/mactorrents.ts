@@ -11,7 +11,10 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://mac-torrents.com/', 'https://www.mac-torrents.com/'],
   caps: {
     modes: { search: ['q'] },
-    categorymappings: [{ id: 'mac-os-apps', cat: 'PC/Mac' }, { id: 'mac-games', cat: 'PC/Games' }],
+    categorymappings: [
+      { id: 'mac-os-apps', cat: 'PC/Mac' },
+      { id: 'mac-games', cat: 'PC/Games' },
+    ],
   },
   settings: [],
   search: {

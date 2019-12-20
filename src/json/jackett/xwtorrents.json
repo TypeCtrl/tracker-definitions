@@ -69,12 +69,25 @@
       "type": "checkbox",
       "label": "Use SeedBox Download Link",
       "default": false
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "4",
+      "options": { "1": "title", "4": "created", "5": "size", "7": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "desc": "desc", "asc": "asc" }
     }
   ],
   "login": {
-    "path": "login.php",
-    "method": "form",
-    "form": "form[action=\"tlogin.php\"]",
+    "path": "tlogin.php",
+    "method": "post",
     "inputs": {
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}"
@@ -85,20 +98,17 @@
         "message": { "selector": "table tr td.text" }
       }
     ],
-    "test": {
-      "path": "browse.php",
-      "selector": "div#wel-messeng:has(a[href=\"logout.php\"])"
-    }
+    "test": { "path": "browse.php", "selector": "a[href=\"logout.php\"]" }
   },
   "ratio": { "path": "browse.php", "selector": "div#wel-radio b:nth-child(2)" },
   "search": {
     "paths": [{ "path": "browse.php" }],
     "inputs": {
-      "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
-      "incldead": "1",
+      "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
+      "incldead": 1,
       "search": "{{ .Keywords }}",
-      "sort": "4",
-      "type": "desc"
+      "sort": "{{ .Config.sort }}",
+      "type": "{{ .Config.type }}"
     },
     "rows": {
       "selector": "table[border=\"0\"][cellspacing=\"0\"][cellpadding=\"5\"] tr:has(a[href^=\"download.php?id=\"])"
@@ -131,10 +141,7 @@
       "files": { "selector": "td:nth-child(3)" },
       "grabs": {
         "selector": "td:nth-child(7)",
-        "filters": [
-          { "name": "replace", "args": ["times", ""] },
-          { "name": "replace", "args": ["time", ""] }
-        ]
+        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
       },
       "size": { "selector": "td:nth-child(6)" },
       "seeders": { "selector": "td:nth-last-child(3)" },
@@ -144,9 +151,9 @@
         "filters": [{ "name": "dateparse", "args": "2006-01-0215:04:05" }]
       },
       "downloadvolumefactor": {
-        "case": { "img[src=\"pic/freeleech.png\"]": "0", "*": "1" }
+        "case": { "img[src=\"pic/freeleech.png\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "case": { "*": "1" } }
+      "uploadvolumefactor": { "case": { "*": 1 } }
     }
   },
   "source": "jackett"

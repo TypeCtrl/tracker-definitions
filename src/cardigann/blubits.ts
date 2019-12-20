@@ -58,7 +58,10 @@ export const definition: TrackerDefinition = {
   ratio: {
     path: 'index.php',
     selector: 'ul#navlist > li:contains("Ratio: ")',
-    filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: ['---', '0'] }],
+    filters: [
+      { name: 'split', args: [' ', 1] },
+      { name: 'replace', args: ['---', '0'] },
+    ],
   },
   search: {
     inputs: {

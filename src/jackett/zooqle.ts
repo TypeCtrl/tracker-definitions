@@ -43,7 +43,10 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'td:nth-child(2) > i',
         attribute: 'class',
-        filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: ['zqf-', ''] }],
+        filters: [
+          { name: 'split', args: [' ', 1] },
+          { name: 'replace', args: ['zqf-', ''] },
+        ],
       },
       details: { selector: 'td:nth-child(2) a', attribute: 'href' },
       download: {
@@ -72,13 +75,19 @@ export const definition: TrackerDefinition = {
         optional: true,
         selector: 'td:nth-child(6) div',
         attribute: 'title',
-        filters: [{ name: 'split', args: [' ', 1] }, { name: 'replace', args: [',', ''] }],
+        filters: [
+          { name: 'split', args: [' ', 1] },
+          { name: 'replace', args: [',', ''] },
+        ],
       },
       leechers: {
         optional: true,
         selector: 'td:nth-child(6) div',
         attribute: 'title',
-        filters: [{ name: 'split', args: [' ', 4] }, { name: 'replace', args: [',', ''] }],
+        filters: [
+          { name: 'split', args: [' ', 4] },
+          { name: 'replace', args: [',', ''] },
+        ],
       },
       downloadvolumefactor: { text: '0' },
       uploadvolumefactor: { text: '1' },

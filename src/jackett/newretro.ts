@@ -68,7 +68,10 @@ export const definition: TrackerDefinition = {
   ratio: {
     path: 'usercp.php',
     selector: 'div#lmtd table > tbody > tr:contains("Ratio:") > td:nth-child(2)',
-    filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+    filters: [
+      { name: 'replace', args: ['.', ''] },
+      { name: 'replace', args: [',', '.'] },
+    ],
   },
   search: {
     paths: [{ path: 'browse.php' }],

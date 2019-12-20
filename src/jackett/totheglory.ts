@@ -85,7 +85,10 @@ export const definition: TrackerDefinition = {
       },
       leechers: {
         selector: 'td:nth-child(9)',
-        filters: [{ name: 'split', args: ['/', 1] }, { name: 'replace', args: ['\n', ''] }],
+        filters: [
+          { name: 'split', args: ['/', 1] },
+          { name: 'replace', args: ['\n', ''] },
+        ],
       },
       grabs: {
         selector: 'td:nth-child(8)',

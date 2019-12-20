@@ -15,7 +15,10 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
-    categorymappings: [{ id: '1', cat: 'Movies' }, { id: '2', cat: 'TV' }],
+    categorymappings: [
+      { id: '1', cat: 'Movies' },
+      { id: '2', cat: 'TV' },
+    ],
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

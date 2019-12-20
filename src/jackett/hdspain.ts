@@ -56,7 +56,10 @@ export const definition: TrackerDefinition = {
       extras: {
         optional: true,
         selector: 'td.titulo a[class]',
-        filters: [{ name: 'prepend', args: '[' }, { name: 'append', args: ']' }],
+        filters: [
+          { name: 'prepend', args: '[' },
+          { name: 'append', args: ']' },
+        ],
       },
       title: {
         selector: 'td.titulo a[id]',

@@ -1300,7 +1300,10 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'td a.tr-dl',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: { selector: 'td.seedmed' },
       leechers: { selector: 'td.leechmed' },

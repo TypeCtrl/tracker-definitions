@@ -135,7 +135,10 @@ export const definition: TrackerDefinition = {
   ratio: {
     path: 'browse.php',
     selector: 'div#tom-b-t8',
-    filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+    filters: [
+      { name: 'replace', args: ['.', ''] },
+      { name: 'replace', args: [',', '.'] },
+    ],
   },
   search: {
     paths: [{ path: 'browse.php' }],
@@ -182,7 +185,10 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'div.tor-size',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       grabs: {
         selector: 'div.tor-take',

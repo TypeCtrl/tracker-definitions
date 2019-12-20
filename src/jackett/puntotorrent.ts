@@ -182,7 +182,10 @@ export const definition: TrackerDefinition = {
       details: { selector: 'td:nth-child(3) a', attribute: 'href' },
       size: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: { selector: 'td:nth-child(8) a' },
       leechers: { selector: 'td:nth-child(9) a' },

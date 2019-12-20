@@ -60,7 +60,10 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'td.desc-bot',
-        filters: [{ name: 'split', args: ['|', 1] }, { name: 'regexp', args: 'Size: (.+?) ?$' }],
+        filters: [
+          { name: 'split', args: ['|', 1] },
+          { name: 'regexp', args: 'Size: (.+?) ?$' },
+        ],
       },
       date: {
         selector: 'td.desc-bot',

@@ -55,9 +55,8 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
+    path: 'takelogin.php',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
@@ -96,8 +95,8 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
       date: { selector: 'td:nth-child(2)' },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

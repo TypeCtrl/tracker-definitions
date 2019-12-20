@@ -72,7 +72,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td.torrentNameInfo > div',
-        filters: [{ name: 're_replace', args: [' by.*', ''] }, { name: 'split', args: ['|', -1] }],
+        filters: [
+          { name: 're_replace', args: [' by.*', ''] },
+          { name: 'split', args: ['|', -1] },
+        ],
       },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },

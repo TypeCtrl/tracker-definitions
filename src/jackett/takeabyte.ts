@@ -59,14 +59,31 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
+    path: 'takelogin.php',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      returnto: '/browse.php',
+      returnto: '/',
     },
     error: [
       {
@@ -74,18 +91,17 @@ export const definition: TrackerDefinition = {
         message: { selector: 'table tr td.colhead2' },
       },
     ],
-    test: {
-      path: '/',
-      selector: ':has(a[href^="logout.php?hash_please="])',
-    },
+    test: { path: '/', selector: 'a[href^="logout.php?hash_please="]' },
   },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{.Keywords}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
       searchin: 'title',
       incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table tr:has(a[href^="browse.php?cat="]):has(a[href^="details.php?id="])',
@@ -116,10 +132,7 @@ export const definition: TrackerDefinition = {
       files: { selector: 'td:nth-last-child(7)' },
       grabs: {
         selector: 'td:nth-last-child(3)',
-        filters: [
-          { name: 'replace', args: ['times', ''] },
-          { name: 'replace', args: ['time', ''] },
-        ],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       date: {
         optional: true,
@@ -132,10 +145,10 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
       downloadvolumefactor: {
-        case: { 'b:contains("[Free and Double]")': '0', '*': '1' },
+        case: { 'b:contains("[Free and Double]")': 0, '*': 1 },
       },
       uploadvolumefactor: {
-        case: { 'b:contains("[Free and Double]")': '2', '*': '1' },
+        case: { 'b:contains("[Free and Double]")': 2, '*': 1 },
       },
     },
   },

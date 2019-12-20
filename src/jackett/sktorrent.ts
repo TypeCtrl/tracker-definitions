@@ -99,7 +99,10 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'td:nth-child(3)',
-        filters: [{ name: 'split', args: ['|', 0] }, { name: 'regexp', args: 'Velkost (.+?) ?$' }],
+        filters: [
+          { name: 'split', args: ['|', 0] },
+          { name: 'regexp', args: 'Velkost (.+?) ?$' },
+        ],
       },
       date: {
         selector: 'td:nth-child(3)',

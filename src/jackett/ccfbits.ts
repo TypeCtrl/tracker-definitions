@@ -39,9 +39,8 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
+    path: 'takelogin.php',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
@@ -52,11 +51,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php', method: 'get' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: '1',
-      d: 'DESC',
+      incldead: 1,
       sort: 'added',
+      d: 'DESC',
     },
     rows: {
       selector: 'table[border="1"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
@@ -102,12 +101,12 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'font[color="#C20603"]:contains("免费")': '0',
-          'font:has([src="/pic/arrowdown1.gif"]):contains("0.5x")': '0.5',
-          '*': '1',
+          'font[color="#C20603"]:contains("免费")': 0,
+          'font:has([src="/pic/arrowdown1.gif"]):contains("0.5x")': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
       description: {
         selector: 'td:nth-child(2) > table > tbody > tr:nth-child(2)',
         remove: 'a, img',

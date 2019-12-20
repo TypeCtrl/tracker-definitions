@@ -33,10 +33,36 @@ export const definition: TrackerDefinition = {
       { id: '23', cat: 'Audio', desc: 'Music Pack' },
       { id: '22', cat: 'Audio/Video', desc: 'Music Video' },
       { id: '35', cat: 'PC/Games', desc: 'Games Pack' },
-      { id: '29', cat: 'XXX', desc: 'Movie XXX' },
+      { id: '36', cat: 'XXX', desc: 'Movie XXX' },
+      { id: '37', cat: 'Movies/SD', desc: 'Movies SD' },
+      { id: '38', cat: 'Books/Ebook', desc: 'Books eBooks' },
+      { id: '39', cat: 'Audio/Audiobook', desc: 'Books Audio' },
     ],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: {
+        is: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'account-login.php',
     method: 'post',
@@ -59,9 +85,15 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldesc: 1,
+      incldead: 1,
+      freeleech: 0,
+      inclexternal: 0,
+      lang: 0,
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: { selector: 'tr.t-row' },
     fields: {
@@ -92,13 +124,13 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
         case: {
-          'img[src="images/free.gif"]': '0',
-          'img[src="images/t_extern.png"]': '0',
-          '*': '1',
+          'img[src="images/free.gif"]': 0,
+          'img[src="images/t_extern.png"]': 0,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'img[src="images/t_extern.png"]': '0', '*': '1' },
+        case: { 'img[src="images/t_extern.png"]': 0, '*': 1 },
       },
     },
   },

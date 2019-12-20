@@ -37,6 +37,29 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'down',
+      options: { down: 'desc', up: 'asc' },
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -52,10 +75,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      cat: '0',
-      search: '{{.Keywords}}',
-      searchin: '0',
-      incldead: '1',
+      cat: 0,
+      search: '{{ .Keywords }}',
+      searchin: 0,
+      incldead: 1,
+      sort: '{{ .Config.sort }}',
+      d: '{{ .Config.type }}',
     },
     rows: { selector: 'tr.ttable:has(a[href^="browse.php?cat="])' },
     fields: {
@@ -81,12 +106,12 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(5)' },
       grabs: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'regexp', args: '([\\d,]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
-      downloadvolumefactor: { text: '1' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
       date: {
         selector: 'td:nth-child(2)',
         remove: 'a',

@@ -223,7 +223,10 @@ export const definition: TrackerDefinition = {
       banner: { selector: 'div[id^="details"] img', attribute: 'src' },
       size: {
         selector: 'div.selection_unter_ad',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       grabs: {
         selector: 'div.selection_unter_ae',
@@ -235,11 +238,17 @@ export const definition: TrackerDefinition = {
       },
       seeders: {
         selector: 'div.selection_unter_aa',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       leechers: {
         selector: 'div.selection_unter_aaa',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       downloadvolumefactor: {
         case: { ':root:has(div.onlyup)': '0', '*': '1' },

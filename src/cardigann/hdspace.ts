@@ -32,7 +32,10 @@ export const definition: TrackerDefinition = {
   ratio: {
     path: '/index.php?page=torrents',
     selector: 'table.lista > tbody > tr > td[align="center"]:contains("Ratio:")',
-    filters: [{ name: 'regexp', args: 'Ratio: (.+)' }, { name: 'replace', args: ['---', '0'] }],
+    filters: [
+      { name: 'regexp', args: 'Ratio: (.+)' },
+      { name: 'replace', args: ['---', '0'] },
+    ],
   },
   login: {
     path: '/index.php?page=login',

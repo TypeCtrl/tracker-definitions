@@ -7,7 +7,10 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://www.skytorrents.in/'],
   caps: {
-    categorymappings: [{ id: 'TV', cat: 'TV' }, { id: 'Movies', cat: 'Movies' }],
+    categorymappings: [
+      { id: 'TV', cat: 'TV' },
+      { id: 'Movies', cat: 'Movies' },
+    ],
   },
   search: {
     rows: { selector: 'table > tbody > tr' },

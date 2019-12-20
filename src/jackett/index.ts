@@ -58,9 +58,6 @@ export const jasgaard = jjasgaard;
 import { definition as jjasiancinema } from './asiancinema';
 export const jasiancinema = jjasiancinema;
 
-import { definition as jjasiandvdclub } from './asiandvdclub';
-export const jasiandvdclub = jjasiandvdclub;
-
 import { definition as jjast4U } from './ast4u';
 export const jast4U = jjast4U;
 
@@ -105,9 +102,6 @@ export const jbithorlo = jjbithorlo;
 
 import { definition as jjbithumen } from './bithumen';
 export const jbithumen = jjbithumen;
-
-import { definition as jjbitme } from './bitme';
-export const jbitme = jjbitme;
 
 import { definition as jjbitru } from './bitru';
 export const jbitru = jjbitru;
@@ -258,9 +252,6 @@ export const jefectodoppler = jjefectodoppler;
 
 import { definition as jjelitetorrentBiz } from './elitetorrent-biz';
 export const jelitetorrentBiz = jjelitetorrentBiz;
-
-import { definition as jjelittracker } from './elittracker';
-export const jelittracker = jjelittracker;
 
 import { definition as jjempornium } from './empornium';
 export const jempornium = jjempornium;
@@ -538,9 +529,6 @@ export const jmoviesdvdr = jjmoviesdvdr;
 import { definition as jjmteamtp } from './mteamtp';
 export const jmteamtp = jjmteamtp;
 
-import { definition as jjmusicMaster } from './music-master';
-export const jmusicMaster = jjmusicMaster;
-
 import { definition as jjmuziekfabriek } from './muziekfabriek';
 export const jmuziekfabriek = jjmuziekfabriek;
 
@@ -654,9 +642,6 @@ export const jredstartorrent = jjredstartorrent;
 
 import { definition as jjretroflix } from './retroflix';
 export const jretroflix = jjretroflix;
-
-import { definition as jjrgu } from './rgu';
-export const jrgu = jjrgu;
 
 import { definition as jjriperam } from './riperam';
 export const jriperam = jjriperam;
@@ -892,9 +877,6 @@ export const jtorrentwal = jjtorrentwal;
 import { definition as jjtorrentz2 } from './torrentz2';
 export const jtorrentz2 = jjtorrentz2;
 
-import { definition as jjtorviet } from './torviet';
-export const jtorviet = jjtorviet;
-
 import { definition as jjtotallykids } from './totallykids';
 export const jtotallykids = jjtotallykids;
 
@@ -940,9 +922,6 @@ export const junlimitz = jjunlimitz;
 import { definition as jjvizuk } from './vizuk';
 export const jvizuk = jjvizuk;
 
-import { definition as jjwaffles } from './waffles';
-export const jwaffles = jjwaffles;
-
 import { definition as jjwihd } from './wihd';
 export const jwihd = jjwihd;
 
@@ -960,6 +939,9 @@ export const jxtremefile = jjxtremefile;
 
 import { definition as jjxtremezone } from './xtremezone';
 export const jxtremezone = jjxtremezone;
+
+import { definition as jjxwtclassics } from './xwtclassics';
+export const jxwtclassics = jjxwtclassics;
 
 import { definition as jjxwtorrents } from './xwtorrents';
 export const jxwtorrents = jjxwtorrents;
@@ -1009,7 +991,6 @@ export const definitions = [
   jjarenabg,
   jjasgaard,
   jjasiancinema,
-  jjasiandvdclub,
   jjast4U,
   jjaudiobookbay,
   jjaudiobooktorrents,
@@ -1025,7 +1006,6 @@ export const definitions = [
   jjbitTitan,
   jjbithorlo,
   jjbithumen,
-  jjbitme,
   jjbitru,
   jjbitspyder,
   jjbittorrentam,
@@ -1076,7 +1056,6 @@ export const definitions = [
   jjebooksShares,
   jjefectodoppler,
   jjelitetorrentBiz,
-  jjelittracker,
   jjempornium,
   jjeniahd,
   jjesharenet,
@@ -1169,7 +1148,6 @@ export const definitions = [
   jjmovcr,
   jjmoviesdvdr,
   jjmteamtp,
-  jjmusicMaster,
   jjmuziekfabriek,
   jjmvgroupforum,
   jjmvgroupmain,
@@ -1208,7 +1186,6 @@ export const definitions = [
   jjracingforme,
   jjredstartorrent,
   jjretroflix,
-  jjrgu,
   jjriperam,
   jjrns,
   jjrockbox,
@@ -1287,7 +1264,6 @@ export const definitions = [
   jjtorrentslocal,
   jjtorrentwal,
   jjtorrentz2,
-  jjtorviet,
   jjtotallykids,
   jjtotheglory,
   jjtrancetraffic,
@@ -1303,13 +1279,13 @@ export const definitions = [
   jjuniongang,
   jjunlimitz,
   jjvizuk,
-  jjwaffles,
   jjwihd,
   jjworldOfTomorrow,
   jjxIteMe,
   jjxbytes2,
   jjxtremefile,
   jjxtremezone,
+  jjxwtclassics,
   jjxwtorrents,
   jjyggcookie,
   jjyggtorrent,

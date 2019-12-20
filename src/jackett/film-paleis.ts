@@ -40,9 +40,8 @@ export const definition: TrackerDefinition = {
     },
   },
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
+    path: 'takelogin.php',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',

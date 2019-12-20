@@ -84,11 +84,17 @@ export const definition: TrackerDefinition = {
       files: { selector: 'td:nth-child(5)' },
       size: {
         selector: 'td:nth-child(7)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       grabs: {
         selector: 'td:nth-child(7)',
-        filters: [{ name: 'regexp', args: '([\\d,]+)' }, { name: 'replace', args: [',', ''] }],
+        filters: [
+          { name: 'regexp', args: '([\\d,]+)' },
+          { name: 'replace', args: [',', ''] },
+        ],
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },

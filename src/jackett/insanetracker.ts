@@ -100,7 +100,10 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'td.center.size',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: {
         selector: 'td.center.data > a:first-child',

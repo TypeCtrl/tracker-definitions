@@ -59,7 +59,10 @@ export const definition: TrackerDefinition = {
   ],
   download: {
     selector: 'a.btn-magnet',
-    filters: [{ name: 'querystring', args: 'url' }, { name: 'replace', args: ['%E2%AD%90', ''] }],
+    filters: [
+      { name: 'querystring', args: 'url' },
+      { name: 'replace', args: ['%E2%AD%90', ''] },
+    ],
   },
   search: {
     paths: [{ path: 'torrents' }],

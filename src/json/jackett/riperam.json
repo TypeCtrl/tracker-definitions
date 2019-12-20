@@ -1143,7 +1143,21 @@
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
-    { "name": "password", "type": "password", "label": "Password" }
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "t",
+      "options": { "t": "created", "ts": "seeders", "sz": "size", "i": "title" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "d": "desc", "a": "asc" }
+    }
   ],
   "login": {
     "path": "ucp.php?mode=login",
@@ -1163,17 +1177,17 @@
   "search": {
     "paths": [{ "path": "search.php" }],
     "inputs": {
-      "$raw": "{{range .Categories}}&fid[]={{.}}{{end}}",
+      "$raw": "{{ range .Categories }}&fid[]={{.}}{{end}}",
       "tracker_search": "torrent",
-      "keywords": "{{if .Keywords }}{{.Keywords}}{{else}}2019{{end}}",
+      "keywords": "{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}",
       "terms": "all",
       "fp": 1,
       "author": "",
       "sc": 1,
       "sf": "titleonly",
       "sr": "topics",
-      "sk": "t",
-      "sd": "d",
+      "sk": "{{ .Config.sort }}",
+      "sd": "{{ .Config.type }}",
       "st": 0,
       "ch": 300,
       "t": 0
@@ -1994,8 +2008,8 @@
           { "name": "dateparse", "args": "02 Jan 2006, 15:04" }
         ]
       },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

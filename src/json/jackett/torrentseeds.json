@@ -76,15 +76,34 @@
       "type": "info",
       "label": "Results Per Page",
       "default": "For best results, change the <b>Torrents per page</b> setting to <b>100</b> on your <b>Torrent</b> tab from the <b>Pers Tools > UserCP</b> menu on the TorrentSeeds webpage."
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "added",
+      "options": {
+        "added": "created",
+        "seeders": "seeders",
+        "size": "size",
+        "name": "title"
+      }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "desc": "desc", "asc": "asc" }
     }
   ],
   "login": {
-    "path": "login.php",
-    "method": "form",
-    "form": "form[action=\"takelogin.php\"]",
+    "path": "takelogin.php",
+    "method": "post",
     "inputs": {
       "username": "{{ .Config.username }}",
-      "password": "{{ .Config.password }}"
+      "password": "{{ .Config.password }}",
+      "remember": "on"
     },
     "error": [
       {
@@ -97,12 +116,12 @@
   "search": {
     "paths": [{ "path": "browse_elastic.php" }],
     "inputs": {
-      "$raw": "{{range .Categories}}cat[{{.}}]=1&{{end}}",
+      "$raw": "{{ range .Categories }}cat[{{.}}]=1&{{end}}",
       "query": "{{ .Keywords }}",
       "search_in": "name",
       "search_mode": "all",
-      "order_by": "added",
-      "order_way": "desc"
+      "order_by": "{{ .Config.sort }}",
+      "order_way": "{{ .Config.type }}"
     },
     "rows": { "selector": "table.torrent-table tr[class]" },
     "fields": {
@@ -129,8 +148,8 @@
       "grabs": { "selector": "td.torrent-table-snatched" },
       "seeders": { "selector": "td.torrent-table-seeders" },
       "leechers": { "selector": "td.torrent-table-leechers" },
-      "downloadvolumefactor": { "case": { "span.freeleech": "0", "*": "1" } },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "case": { "span.freeleech": 0, "*": 1 } },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

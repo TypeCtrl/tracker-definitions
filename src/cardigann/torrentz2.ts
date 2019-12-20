@@ -52,7 +52,10 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'dt',
         remove: 'a',
-        filters: [{ name: 'trim', args: '»' }, { name: 'trim', args: ' ' }],
+        filters: [
+          { name: 'trim', args: '»' },
+          { name: 'trim', args: ' ' },
+        ],
       },
       date: {
         selector: 'dd span:nth-child(2)',

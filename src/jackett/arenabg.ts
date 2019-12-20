@@ -151,7 +151,10 @@ export const definition: TrackerDefinition = {
       },
       seeders: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'replace', args: ['-', '0'] }, { name: 'replace', args: ['DHT', '0'] }],
+        filters: [
+          { name: 'replace', args: ['-', '0'] },
+          { name: 'replace', args: ['DHT', '0'] },
+        ],
       },
       leechers: {
         selector: 'td:nth-child(7)',

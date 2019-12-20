@@ -21,7 +21,10 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [{ id: 'series', cat: 'TV' }, { id: 'peliculas', cat: 'Movies' }],
+    categorymappings: [
+      { id: 'series', cat: 'TV' },
+      { id: 'peliculas', cat: 'Movies' },
+    ],
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },

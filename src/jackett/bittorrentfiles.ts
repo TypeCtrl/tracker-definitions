@@ -144,7 +144,10 @@ export const definition: TrackerDefinition = {
       files: { selector: 'a[title="Files"]', optional: true },
       size: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'replace', args: ['.', ''] }, { name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: ['.', ''] },
+          { name: 'replace', args: [',', '.'] },
+        ],
       },
       seeders: { selector: 'a[title="Seeder"]', optional: true },
       leechers: { selector: 'a[title="Leecher"]', optional: true },

@@ -64,9 +64,8 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
+    path: 'takelogin.php',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
@@ -81,9 +80,9 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '1',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      incldead: 1,
     },
     rows: {
       selector: 'table > tbody > tr:has(a[href^="details.php?id="])',
@@ -135,10 +134,10 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
-        case: { 'img[title="FreeLeech"]': '0', '*': '1' },
+        case: { 'img[title="FreeLeech"]': 0, '*': 1 },
       },
       uploadvolumefactor: {
-        case: { 'img[title="DoubleUpload"]': '2', '*': '1' },
+        case: { 'img[title="DoubleUpload"]': 2, '*': 1 },
       },
     },
   },

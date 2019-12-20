@@ -64,7 +64,10 @@ export const definition: TrackerDefinition = {
       description: {
         selector: 'td:nth-child(2)',
         remove: 'a.altlink, a[name], div[id^="news"]',
-        filters: [{ name: 'trim', args: '-' }, { name: 'trim', args: ' ' }],
+        filters: [
+          { name: 'trim', args: '-' },
+          { name: 'trim', args: ' ' },
+        ],
       },
     },
   },

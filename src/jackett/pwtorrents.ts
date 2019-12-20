@@ -40,17 +40,30 @@ export const definition: TrackerDefinition = {
       label: 'Use SeedBox Download Link',
       default: false,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
+    path: 'takelogin.php',
+    method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'table.main:contains("Login failed!")' }],
-    test: { path: 'my.php' },
+    test: { path: 'my.php', selector: 'a[href="logout.php"]' },
   },
   ratio: {
     path: 'browse.php',
@@ -60,11 +73,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       incldead: '1',
       search: '{{ .Keywords }}',
-      sort: '4',
-      type: 'desc',
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -90,7 +103,8 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        text: '{{if .Config.seedbox}}{{ .Result.download2 }}{{else}}{{ .Result.download1 }}{{end}}',
+        text:
+          '{{ if .Config.seedbox }}{{ .Result.download2 }}{{else}}{{ .Result.download1 }}{{end}}',
       },
       date: {
         selector: 'td:nth-child(4)',
@@ -103,8 +117,8 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

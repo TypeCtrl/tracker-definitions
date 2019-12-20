@@ -62,7 +62,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(7)',
         remove: 'a, i',
-        filters: [{ name: 'replace', args: ['by', ''] }, { name: 'dateparse', args: '2/01/06' }],
+        filters: [
+          { name: 'replace', args: ['by', ''] },
+          { name: 'dateparse', args: '2/01/06' },
+        ],
       },
       downloadvolumefactor: { case: { '*': '1' } },
       uploadvolumefactor: { case: { '*': '1' } },

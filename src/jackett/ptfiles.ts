@@ -71,7 +71,10 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'td[onclick*="browse.php?cat="]',
         attribute: 'onclick',
-        filters: [{ name: 'querystring', args: 'cat' }, { name: 'trim', args: "'" }],
+        filters: [
+          { name: 'querystring', args: 'cat' },
+          { name: 'trim', args: "'" },
+        ],
       },
       details: { selector: 'a.torrentlink', attribute: 'href' },
       imdb: {
