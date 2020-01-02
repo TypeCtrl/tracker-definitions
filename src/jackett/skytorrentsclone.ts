@@ -26,21 +26,32 @@ export const definition: TrackerDefinition = {
       { id: 'software', cat: 'PC' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'created',
+      options: { created: 'created', seeders: 'seeders' },
+    },
+  ],
   search: {
     paths: [
       {
         path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort=created{{else}}top100?sort=created{{end}}',
+          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}{{else}}top100?sort={{ .Config.sort }}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=2{{else}}{{end}}',
+        path:
+          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=3{{else}}{{end}}',
+        path:
+          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort=created&page=4{{else}}{{end}}',
+        path:
+          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{else}}{{end}}',
       },
     ],
     rows: { selector: 'tr.result' },
@@ -57,8 +68,8 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(5)' },
       leechers: { selector: 'td:nth-child(6)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

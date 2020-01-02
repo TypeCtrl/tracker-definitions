@@ -1230,7 +1230,11 @@ export const definition: TrackerDefinition = {
       { id: '310', cat: 'PC', desc: 'Системы для научной работы' },
       { id: '309', cat: 'PC', desc: 'Словари, переводчики' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -1240,7 +1244,21 @@ export const definition: TrackerDefinition = {
       type: 'info',
       label: 'Layout',
       default:
-        '<ul>Only the Classic forum style is supported.<ul>On the TorrentsLocal web site navigate to the <b>Личные настройки (Preferences)</b> section and set the <b>Стиль форума (Forum Style)</b> option to <b>Классическая тема (Classic Theme)</b></ul>',
+        '<b>Only the Classic forum style is supported.</b><br/><li>On the TorrentsLocal web site navigate to the <b>Личные настройки (Preferences)</b> section and set the <b>Стиль форума (Forum Style)</b> option to <b>Классическая тема (Classic Theme)</b></li>',
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '1',
+      options: { '1': 'created', '2': 'title', '7': 'size', '10': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
     },
   ],
   login: {
@@ -1276,8 +1294,8 @@ export const definition: TrackerDefinition = {
       prev_df: 1,
       prev_ds: 0,
       prev_tor_type: 0,
-      o: 1,
-      s: 2,
+      o: '{{ .Config.sort }}',
+      s: '{{ .Config.type }}',
       dc: 0,
       df: 1,
       da: 1,
@@ -1329,12 +1347,12 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[src="styles/images/tor_gold.gif"]': '0',
-          'img[src="styles/images/tor_silver.gif"]': '0.5',
-          '*': '1',
+          'img[src="styles/images/tor_gold.gif"]': 0,
+          'img[src="styles/images/tor_silver.gif"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

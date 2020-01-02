@@ -76,7 +76,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table.tableinborder > tbody > tr > td > table.tableinborder > tbody > tr:has(a[href^="details.php"])',
+        'table > tbody > tr > td > table.tableinborder > tbody > tr:has(a[href^="details.php"])',
     },
     fields: {
       title: { selector: 'a[href^="details.php"]' },

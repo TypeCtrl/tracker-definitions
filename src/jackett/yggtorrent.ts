@@ -169,6 +169,25 @@ export const definition: TrackerDefinition = {
       label: 'Use Beta Search engine URL (Less restrictive) / SonarrV3 Full Series Search NEW',
       default: false,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'publish_date',
+      options: {
+        publish_date: 'created',
+        seed: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     method: 'form',
@@ -229,23 +248,23 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{if .Config.betasearchengine}}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date',
+          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{if .Config.betasearchengine}}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50',
+          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}&page=50',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
     fields: {
       _id: {
-        selector: ':nth-child(2) > a',
+        selector: 'td:nth-child(2) > a',
         attribute: 'href',
         filters: [{ name: 'regexp', args: '/(\\d+)-' }],
       },
-      title_normal: { selector: ':nth-child(2) > a' },
+      title_normal: { selector: 'td:nth-child(2) > a' },
       title_filtered: {
-        selector: ':nth-child(2) > a',
+        selector: 'td:nth-child(2) > a',
         filters: [
           {
             name: 're_replace',
@@ -275,7 +294,7 @@ export const definition: TrackerDefinition = {
       },
       title_phase1: {
         text:
-          '{{if .Config.filter_title }}{{ .Result.title_filtered }}{{else}}{{ .Result.title_normal }}{{end}}',
+          '{{ if .Config.filter_title }}{{ .Result.title_filtered }}{{else}}{{ .Result.title_normal }}{{end}}',
       },
       title_multilang: {
         text: '{{ .Result.title_phase1 }}',
@@ -291,7 +310,7 @@ export const definition: TrackerDefinition = {
       },
       title_phase2: {
         text:
-          '{{if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_phase1 }}{{end}}',
+          '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_phase1 }}{{end}}',
       },
       title_vostfr: {
         text: '{{ .Result.title_phase2 }}',
@@ -308,7 +327,7 @@ export const definition: TrackerDefinition = {
       },
       title_phase3: {
         text:
-          '{{if .Config.vostfr }}{{ .Result.title_vostfr }}{{else}}{{ .Result.title_phase2 }}{{end}}',
+          '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{else}}{{ .Result.title_phase2 }}{{end}}',
       },
       title_anime: {
         text: '{{ .Result.title_phase3 }}',
@@ -321,9 +340,9 @@ export const definition: TrackerDefinition = {
       },
       title: {
         text:
-          '{{if .Config.enhancedAnime }}{{ .Result.title_anime }}{{else}}{{ .Result.title_phase3 }}{{end}}',
+          '{{ if .Config.enhancedAnime }}{{ .Result.title_anime }}{{else}}{{ .Result.title_phase3 }}{{end}}',
       },
-      details: { selector: ':nth-child(2) > a', attribute: 'href' },
+      details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       category: { selector: ':nth-child(1) > div.hidden' },
       comments: {
         optional: true,
@@ -356,8 +375,8 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(8)', optional: true },
       leechers: { selector: 'td:nth-child(9)', optional: true },
-      downloadvolumefactor: { text: '1' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

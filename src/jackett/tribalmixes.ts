@@ -38,6 +38,24 @@ export const definition: TrackerDefinition = {
       'music-search': ['q', 'album', 'artist', 'label', 'year'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '_',
+      options: { '1': 'title', '6': 'size', '8': 'seeders', _: 'created' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -52,6 +70,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      sort: '{{ re_replace .Config.sort "_" "" }}',
+      type: '{{ .Config.type }}',
     },
     rows: { selector: 'div.row:has(a[href^="/download.php?id="])' },
     fields: {
@@ -86,8 +106,8 @@ export const definition: TrackerDefinition = {
         attribute: 'title',
         filters: [{ name: 'regexp', args: 'shared (.+?)<' }],
       },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

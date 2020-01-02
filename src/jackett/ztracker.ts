@@ -53,6 +53,24 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'belepes.php',
     method: 'form',
@@ -70,15 +88,20 @@ export const definition: TrackerDefinition = {
         },
       },
     ],
-    test: { path: 'browse_old.php' },
+    test: {
+      path: 'index.php',
+      selector: 'a[href*="/logout.php?logouthash="]',
+    },
   },
   search: {
     paths: [{ path: 'browse_old.php' }],
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 't_name',
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table[border="1"] > tbody > tr:has(a[href*="details.php?id="])',
@@ -116,12 +139,16 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
       files: { selector: 'td:nth-child(5)' },
-      size: { selector: 'td:nth-child(11)', remove: 'b' },
+      size: {
+        selector: 'td:nth-child(11):has(b)',
+        optional: true,
+        remove: 'b',
+      },
       downloadvolumefactor: {
-        case: { 'img[src="./pic/freedownload.gif"]': '0', '*': '1' },
+        case: { 'img[src="./pic/freedownload.gif"]': 0, '*': 1 },
       },
       uploadvolumefactor: {
-        case: { 'img[src="./pic/x2.gif"]': '2', '*': '1' },
+        case: { 'img[src="./pic/x2.gif"]': 2, '*': 1 },
       },
       date: {
         selector: 'td:nth-child(2)',

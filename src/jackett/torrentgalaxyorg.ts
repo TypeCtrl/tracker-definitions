@@ -53,7 +53,27 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: {
+        id: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'galaxyfence.php?f',
     method: 'form',
@@ -69,11 +89,11 @@ export const definition: TrackerDefinition = {
   },
   search: {
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{.Keywords}}',
-      lang: '0',
-      sort: 'id',
-      order: 'desc',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      lang: 0,
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: { selector: 'div[class="tgxtablerow"]' },
     fields: {
@@ -104,8 +124,8 @@ export const definition: TrackerDefinition = {
         selector: 'div.tgxtablecell:last-of-type small:contains(":")',
         filters: [{ name: 'dateparse', args: '02/01/06 15:04' }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
     paths: [{ path: 'torrents.php' }],
   },

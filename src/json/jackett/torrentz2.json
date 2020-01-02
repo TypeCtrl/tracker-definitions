@@ -32,6 +32,7 @@
       { "id": "game", "cat": "PC/Games" },
       { "id": "game pc", "cat": "PC/Games" },
       { "id": "game xbox", "cat": "Console/Xbox" },
+      { "id": "game nintendo", "cat": "Console/NDS" },
       { "id": "adult", "cat": "XXX" },
       { "id": "adult amateur", "cat": "XXX" },
       { "id": "adult anal", "cat": "XXX" },
@@ -41,6 +42,8 @@
       { "id": "adult double p", "cat": "XXX" },
       { "id": "adult fisting", "cat": "XXX" },
       { "id": "adult hairy", "cat": "XXX" },
+      { "id": "adult hentai", "cat": "XXX" },
+      { "id": "adult interracial", "cat": "XXX" },
       { "id": "adult lesbian", "cat": "XXX" },
       { "id": "adult milf", "cat": "XXX" },
       { "id": "adult squirting", "cat": "XXX" },
@@ -67,17 +70,24 @@
       "type": "checkbox",
       "label": "Only include verifed content in results",
       "default": false
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "A",
+      "options": { "A": "created", "P": "seeders", "S": "size" }
     }
   ],
   "search": {
     "paths": [
       {
-        "path": "{{if .Config.filter-verified }}verified{{else}}searchA{{end}}"
+        "path": "{{if .Config.filter-verified }}verified{{else}}search{{end}}{{ .Config.sort }}"
       }
     ],
     "inputs": {
-      "f": "{{if .Keywords }}title: {{else}}{{end}}{{ .Keywords }}",
-      "safe": "{{if .Config.filter-safe }}1{{else}}0{{end}}"
+      "f": "{{ if .Keywords }}title: {{ .Keywords }}{{else}}{{end}}",
+      "safe": "{{ if .Config.filter-safe }}1{{else}}0{{end}}"
     },
     "rows": { "selector": "html body #wrap .results dl:has(a)" },
     "fields": {
@@ -117,7 +127,7 @@
         "selector": "dt",
         "remove": "a",
         "filters": [
-          { "name": "re_replace", "args": ["[^a-zA-Z\\s]+", ""] },
+          { "name": "re_replace", "args": ["[^a-zA-Z0-9\\s]+", ""] },
           { "name": "trim" }
         ]
       },
@@ -125,8 +135,8 @@
       "size": { "selector": "dd span:nth-child(3)" },
       "seeders": { "selector": "dd span:nth-child(4)" },
       "leechers": { "selector": "dd span:nth-child(5)" },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

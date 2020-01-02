@@ -29,9 +29,21 @@ export const definition: TrackerDefinition = {
       { id: 'Unknown', cat: 'Other' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'date',
+      options: { date: 'created', seeders: 'seeders', size: 'size' },
+    },
+  ],
   search: {
-    paths: [{ path: 'search?q={{.Keywords}}&sort=date&category=all' }],
+    paths: [
+      {
+        path: 'search?q={{ .Keywords }}&sort={{ .Config.sort }}&category=all',
+      },
+    ],
     rows: {
       selector: 'div[role="listitem"]:has(a[href^="magnet:?xt="])',
     },
@@ -52,6 +64,7 @@ export const definition: TrackerDefinition = {
         selector: 'div.v-list__tile__content div:nth-of-type(2)',
         filters: [{ name: 'regexp', args: '(.+?) \\|' }],
       },
+      size: { selector: 'div.v-list__tile__sub-title:last-of-type strong' },
       date: {
         selector: 'div.v-list__tile__content div:nth-of-type(2)',
         filters: [
@@ -61,12 +74,11 @@ export const definition: TrackerDefinition = {
           { name: 'regexp', args: '(\\d+ \\w+ \\w+)' },
         ],
       },
+      grabs: { selector: 'div.v-list__tile__sub-title span:last-of-type' },
       seeders: { selector: 'div.v-list__tile__sub-title span.green--text' },
       leechers: { selector: 'div.v-list__tile__sub-title span.red--text' },
-      grabs: { selector: 'div.v-list__tile__sub-title span:last-of-type' },
-      size: { selector: 'div.v-list__tile__sub-title:last-of-type strong' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

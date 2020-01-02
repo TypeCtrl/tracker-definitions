@@ -7,13 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://kat.li/'],
+  links: ['https://kickass.ws/'],
   legacylinks: [
     'https://kickass.gg/',
     'https://katcr.io/',
     'https://thekat.nz/',
     'https://thekat.se/',
     'https://kat.how/',
+    'https://kat.li/',
   ],
   caps: {
     modes: {

@@ -170,6 +170,25 @@
       "type": "checkbox",
       "label": "Use Beta Search engine URL (Less restrictive) / SonarrV3 Full Series Search NEW",
       "default": false
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "publish_date",
+      "options": {
+        "publish_date": "created",
+        "seed": "seeders",
+        "size": "size",
+        "name": "title"
+      }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "desc": "desc", "asc": "asc" }
     }
   ],
   "login": {
@@ -206,22 +225,22 @@
     ],
     "paths": [
       {
-        "path": "https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{if .Config.betasearchengine}}{{ .Keywords }}{{else}}{{ re_replace .Keywords \"\\b[^\\s]+\\b\"  \"\"$&\"\"}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date"
+        "path": "https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords \"\\b[^\\s]+\\b\"  \"\"$&\"\"}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}"
       },
       {
-        "path": "https://{{ .Config.searchanddlurl }}/{{if .Config.betasearchengine}}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{if .Config.betasearchengine}}{{ .Keywords }}{{else}}{{ re_replace .Keywords \"\\b[^\\s]+\\b\"  \"\"$&\"\"}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order=desc&sort=publish_date&page=50"
+        "path": "https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords \"\\b[^\\s]+\\b\"  \"\"$&\"\"}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}&page=50"
       }
     ],
     "rows": { "selector": "table.table > tbody > tr" },
     "fields": {
       "_id": {
-        "selector": ":nth-child(2) > a",
+        "selector": "td:nth-child(2) > a",
         "attribute": "href",
         "filters": [{ "name": "regexp", "args": "/(\\d+)-" }]
       },
-      "title_normal": { "selector": ":nth-child(2) > a" },
+      "title_normal": { "selector": "td:nth-child(2) > a" },
       "title_filtered": {
-        "selector": ":nth-child(2) > a",
+        "selector": "td:nth-child(2) > a",
         "filters": [
           {
             "name": "re_replace",
@@ -301,7 +320,7 @@
       "title": {
         "text": "{{if .Config.enhancedAnime }}{{ .Result.title_anime }}{{else}}{{ .Result.title_phase3 }}{{end}}"
       },
-      "details": { "selector": ":nth-child(2) > a", "attribute": "href" },
+      "details": { "selector": "td:nth-child(2) > a", "attribute": "href" },
       "category": { "selector": ":nth-child(1) > div.hidden" },
       "comments": {
         "optional": true,
@@ -334,8 +353,8 @@
       "grabs": { "selector": "td:nth-child(7)" },
       "seeders": { "selector": "td:nth-child(8)", "optional": true },
       "leechers": { "selector": "td:nth-child(9)", "optional": true },
-      "downloadvolumefactor": { "text": "1" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 1 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

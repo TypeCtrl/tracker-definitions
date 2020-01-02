@@ -26,12 +26,27 @@ export const definition: TrackerDefinition = {
       { id: 'tv', cat: 'TV' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'dt',
+      options: { dt: 'created', ns: 'seeders', sz: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'd',
+      options: { d: 'desc', a: 'asc' },
+    },
+  ],
   search: {
     paths: [
       {
         path:
-          'search?{{if .Keywords}}s=ns&v=t&sd=d&q={{ .Keywords}}{{else}}s=dt&v=t&sd=d&q= *{{end}}{{if .Categories}} category:{{range .Categories}}{{.}},{{end}}{{else}}{{end}}',
+          'search?{{ if .Keywords }}s={{ .Config.sort }}&v=t&sd={{ .Config.type }}&q={{ .Keywords }}{{else}}s={{ .Config.sort }}&v=t&sd={{ .Config.type }}&q= *{{end}}{{ if .Categories }} category:{{ range .Categories }}{{.}},{{end}}{{else}}{{end}}',
       },
     ],
     rows: {
@@ -89,8 +104,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: [',', ''] },
         ],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

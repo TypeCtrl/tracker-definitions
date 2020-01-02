@@ -39,6 +39,13 @@ export const definition: TrackerDefinition = {
       { id: '167', cat: 'TV/Other', desc: 'TV Programs' },
       { id: '185', cat: 'TV/Documentary', desc: 'TV/Documentary' },
       { id: '168', cat: 'TV/Other', desc: 'TV/Other' },
+      { id: '169', cat: 'TV/Other', desc: 'TV/Boxset' },
+      { id: '191', cat: 'TV', desc: 'TV/BluTv' },
+      { id: '192', cat: 'TV', desc: 'TV/BluTv Series' },
+      { id: '193', cat: 'Movies', desc: 'TV/BluTv Film' },
+      { id: '199', cat: 'TV', desc: 'TV/Netflix' },
+      { id: '189', cat: 'TV', desc: 'TV/Netflix Series' },
+      { id: '190', cat: 'Movies', desc: 'TV/Netflix Film' },
       { id: '171', cat: 'Audio', desc: 'Music' },
       { id: '172', cat: 'Audio', desc: 'Music/Turkish' },
       { id: '173', cat: 'Audio', desc: 'Music/Foreign' },
@@ -69,6 +76,20 @@ export const definition: TrackerDefinition = {
       default:
         '<ol><li>Only the English Classic profile is supported.<li>Make sure to set the <b>Torrent Listing (Listeleme Biçimi)</b> option in your profile to <b>Classic (Klasik)</b><li>And set the <b>Language (Dil)</b> to <b>English</b><li>Using the <i>Modern</i> theme will prevent results, and using <i>Turkish</i> will prevent upload dates.</ol>',
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: { added: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: '?p=home&pid=1',
@@ -98,11 +119,13 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%25'] }],
     inputs: {
       p: 'torrents',
-      pid: '32',
-      $raw: '{{range .Categories}}cid[]={{.}}&{{end}}',
+      pid: 32,
+      $raw: '{{ range .Categories }}cid[]={{.}}&{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
       searchin: 'title',
+      'sortOptions[sortBy]': '{{ .Config.sort }}',
+      'sortOptions[sortOrder]': '{{ .Config.type }}',
     },
     error: [{ selector: 'div.error:not(:contains("Hiçbir sonuç bulunamadı."))' }],
     rows: {
@@ -142,13 +165,13 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[title="FREE!"]': '0',
-          'img[title="Download Multiplier: 0.5"]': '0.5',
-          '*': '1',
+          'img[title="FREE!"]': 0,
+          'img[title="Download Multiplier: 0.5"]': 0.5,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'img[title="Upload Multiplier: 2"]': '2', '*': '1' },
+        case: { 'img[title="Upload Multiplier: 2"]': 2, '*': 1 },
       },
     },
   },

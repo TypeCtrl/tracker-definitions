@@ -26,13 +26,33 @@ export const definition: TrackerDefinition = {
       { id: '10', cat: 'Other' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeds: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   download: { selector: 'a[href^="magnet:?xt="]' },
   search: {
     paths: [
       {
         path:
-          '{{ if .Keywords }}all/torrents/{{ .Keywords }}.html?v=&smi=&sma=&i=100&sort=added&o=desc{{ else }}top100.html{{ end }}',
+          '{{ if .Keywords }}all/torrents/{{ .Keywords }}.html?v=&smi=&sma=&i=100&sort={{ .Config.sort }}&o={{ .Config.type }}{{ else }}top100.html{{ end }}',
       },
     ],
     keywordsfilters: [{ name: 're_replace', args: ['[\\s]+', '-'] }, { name: 'tolower' }],

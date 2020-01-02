@@ -11,7 +11,11 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: 'Films', cat: 'Movies', desc: 'Films' },
-      { id: 'Films_Animation', cat: 'TV/Anime', desc: 'Films Animation' },
+      {
+        id: 'Films_Animations',
+        cat: 'TV/Anime',
+        desc: 'Films Animation',
+      },
       { id: 'Animes', cat: 'TV/Anime', desc: ' Séries Animations' },
       { id: 'Series', cat: 'TV', desc: 'TV Series' },
       {
@@ -21,11 +25,7 @@ export const definition: TrackerDefinition = {
       },
       { id: 'Emissions', cat: 'TV', desc: 'TV Emissions' },
       { id: 'Sports', cat: 'TV/Sport', desc: 'TV Sports' },
-      {
-        id: 'Spectacles_Concerts',
-        cat: 'TV',
-        desc: 'TV Spectacles/Concerts',
-      },
+      { id: 'Spectacles', cat: 'TV', desc: 'TV Spectacles/Concerts' },
       { id: 'Karaoke_Video', cat: 'Audio/Video', desc: 'Karaoké Vidéo' },
       { id: 'Videos_Clips', cat: 'Audio/Video', desc: 'TV Videos Clips' },
       { id: 'Musiques', cat: 'Audio', desc: 'Audio Musiques' },
@@ -77,6 +77,29 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'created_at',
+      options: {
+        created_at: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login',
     method: 'form',
@@ -105,8 +128,8 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       description: '',
       uploader: '',
-      sorting: 'created_at',
-      direction: 'desc',
+      sorting: '{{ .Config.sort }}',
+      direction: '{{ .Config.type }}',
       qty: 100,
     },
     rows: { selector: 'div.table-responsive-line' },
@@ -114,7 +137,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'img.torrent-icon',
         attribute: 'src',
-        filters: [{ name: 'regexp', args: '/img/(.+?).png' }],
+        filters: [{ name: 'regexp', args: '/img/NewIcones/(.+?).png' }],
       },
       title: { selector: 'a.view-torrent' },
       download: {

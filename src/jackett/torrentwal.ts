@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ko-KR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentwal.com/'],
-  legacylinks: ['https://torrentwal1.com/'],
+  links: ['https://torrentwal2.com/'],
+  legacylinks: ['https://torrentwal1.com/', 'https://torrentwal.com/'],
   caps: {
     categorymappings: [
       { id: 'torrent_movie', cat: 'Movies', desc: '토렌트영화 (Movies)' },

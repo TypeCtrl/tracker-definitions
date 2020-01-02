@@ -61,6 +61,24 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '3',
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
+  ],
   login: {
     path: '?page=login',
     method: 'form',
@@ -75,11 +93,13 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      search: '{{ .Keywords }}',
       page: 'torrents',
       category: 0,
       active: 1,
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -113,8 +133,8 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(5)',
         filters: [{ name: 'dateparse', args: '02/01/2006' }],
       },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

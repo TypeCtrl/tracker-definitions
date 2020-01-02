@@ -13,7 +13,26 @@
       "name": "info_results",
       "type": "info",
       "label": "Search results",
-      "default": "For best results, increase the torrents number in your profile to 100.<br />Default is 15."
+      "default": "Only the <b>xBtit_Default</b> style is supported with this indexer.<br />For best results, increase the torrents number in your profile to 100.<br />Default is 15."
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "data",
+      "options": {
+        "data": "created",
+        "seeds": "seeders",
+        "size": "size",
+        "filename": "title"
+      }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "DESC",
+      "options": { "DESC": "desc", "ASC": "asc" }
     }
   ],
   "caps": {
@@ -53,9 +72,11 @@
     "inputs": {
       "page": "torrents",
       "search": "{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}",
-      "category": "{{if .Categories}}{{range .Categories}}{{.}};{{end}}{{else}}0{{end}}",
+      "category": "{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}",
       "options": 0,
-      "active": 0
+      "active": 0,
+      "order": "{{ .Config.sort }}",
+      "by": "{{ .Config.type }}"
     },
     "rows": {
       "selector": "table.lista tr td table.lista tr:has(a[href^=\"index.php?page=torrent-details\"])"
@@ -100,9 +121,9 @@
       "leechers": { "selector": "td:nth-child(7)" },
       "grabs": { "selector": "td:nth-child(8)" },
       "downloadvolumefactor": {
-        "case": { "img[src=\"gold/gold.gif\"]": "0", "*": "1" }
+        "case": { "img[src=\"gold/gold.gif\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "text": "1" }
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://galeriens.eu/'],
+  links: ['https://galeriens.com/'],
+  legacylinks: ['https://galeriens.eu/'],
   caps: {
     categorymappings: [
       { id: '4', cat: 'Movies/UHD', desc: 'Animations -  4K Remux' },

@@ -28,6 +28,29 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'created_at',
+      options: {
+        created_at: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login',
     method: 'form',
@@ -53,16 +76,17 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
-      $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
-      search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '',
       tmdb: '',
       mal: '',
-      sorting: 'created_at',
-      direction: 'desc',
+      sorting: '{{ .Config.sort }}',
+      sort: '{{ .Config.sort }}',
+      direction: '{{ .Config.type }}',
       qty: 100,
     },
     rows: { selector: 'table > tbody > tr' },
@@ -89,6 +113,16 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
+      comments: {
+        selector: 'a[href*="#comments"]',
+        attribute: 'href',
+        optional: true,
+      },
+      imdb: {
+        optional: true,
+        selector: 'a[href*="www.imdb.com/title/tt"]',
+        attribute: 'href',
+      },
       size: { selector: 'td:nth-last-child(4)' },
       grabs: {
         selector: 'td:nth-last-child(3)',
@@ -98,85 +132,16 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(1)' },
       date: {
         selector: 'time',
-        filters: [
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(önce|tagasi|geleden|fa|temu|siden|atrás|nazpět|назад|acum|hace|il y a|vor|преди|前)',
-              ' ago',
-            ],
-          },
-          {
-            name: 're_replace',
-            args: ['(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟)', ' minute'],
-          },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)',
-              'minutes',
-            ],
-          },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时)',
-              ' hour',
-            ],
-          },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)',
-              'hours',
-            ],
-          },
-          {
-            name: 're_replace',
-            args: ['(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天)', ' day'],
-          },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)',
-              'days',
-            ],
-          },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(hafta|nädal|uge|settimana|tydzień|uke|semana|týden|неделю|săptămână|semaine|Woche|седмица|周)',
-              ' week',
-            ],
-          },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(nädalat|uger|settimane|tygodnie|uker|semanas|týdny|недели|недель|săptămâni|semaines|Wochen|седмици|weken)',
-              'weeks',
-            ],
-          },
-          { name: 're_replace', args: ['(?i) (ay)', 'month'] },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|mois|Monat|месец|maand|个月)',
-              ' month',
-            ],
-          },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(kuud|måneder|mesi|miesiące|meses|měsíce|месяца|месяцев|luni|meses|mois|Monaten|месеца|maanden)',
-              'months',
-            ],
-          },
-        ],
+        filters: [{ name: 'dateparse', args: '02/01/2006 15:04:05' }],
       },
       downloadvolumefactor: {
         case: {
-          'i[class*="fa-star text-gold"]': 0,
+          'i[class*="fa-id-badge text-orange"]': 0,
+          'i[class*="fa-trophy text-purple"]': 0,
+          'i[class*="fa-star text-bold"]': 0,
+          'i[class*="fa-coins text-bold"]': 0,
           'i[class*="fa-globe text-blue"]': 0,
+          'i[class*="fa-star text-gold"]': 0,
           'i[class*="fa-certificate text-pink"]': 0,
           '*': 1,
         },

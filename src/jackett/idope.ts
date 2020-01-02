@@ -61,6 +61,10 @@ export const definition: TrackerDefinition = {
         path:
           '{{ if .Keywords }}torrent-list/{{ .Keywords }}?o={{ .Config.sort }}&c={{ range .Categories }}{{.}}{{end}}{{else}}browse.html{{end}}',
       },
+      {
+        path:
+          '{{ if .Keywords }}torrent-list/{{ .Keywords }}?p=2&o={{ .Config.sort }}&c={{ range .Categories }}{{.}}{{end}}{{else}}browse.html?&p=2{{end}}',
+      },
     ],
     rows: { selector: 'div.resultdiv' },
     fields: {

@@ -23,7 +23,10 @@
     "rows": { "selector": "div.row:has(a[href*=\"/detail/hash/\"])" },
     "fields": {
       "category": { "text": "other" },
-      "title": { "selector": "a[href*=\"/detail/hash/\"]" },
+      "title": {
+        "selector": "a[href*=\"/detail/hash/\"]",
+        "attribute": "title"
+      },
       "details": {
         "selector": "a[href*=\"/detail/hash/\"]",
         "attribute": "href"

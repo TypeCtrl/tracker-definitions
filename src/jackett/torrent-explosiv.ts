@@ -66,6 +66,25 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     { name: 'pin', type: 'text', label: 'Pin' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeds: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: 'login.php',
@@ -83,11 +102,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'selection.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       blah: 0,
-      orderby: 'added',
-      sort: 'desc',
+      orderby: '{{ .Config.sort }}',
+      sort: '{{ .Config.type }}',
     },
     rows: { selector: 'div.selection_wrap' },
     fields: {
@@ -214,6 +233,15 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: [',', '.'] },
         ],
       },
+      date: {
+        selector: 'div.selection_unter_ab:contains(".")',
+        optional: true,
+        filters: [
+          { name: 'replace', args: [' um', ''] },
+          { name: 'dateparse', args: '02.01.2006 15:04:05' },
+        ],
+      },
+      description: { selector: 'selection_unter_af', optional: true },
       seeders: {
         selector: 'div.selection_unter_aa',
         filters: [
@@ -229,18 +257,9 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: {
-        case: { ':root:has(div.onlyup)': '0', '*': '1' },
+        case: { ':root:has(div.onlyup)': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
-      date: {
-        selector: 'div.selection_unter_ab:contains(".")',
-        optional: true,
-        filters: [
-          { name: 'replace', args: [' um', ''] },
-          { name: 'dateparse', args: '02.01.2006 15:04:05' },
-        ],
-      },
-      description: { selector: 'selection_unter_af', optional: true },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

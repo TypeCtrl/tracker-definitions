@@ -42,6 +42,24 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -50,7 +68,6 @@ export const definition: TrackerDefinition = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
       perm_ssl: 1,
-      submitme: 'X',
     },
     error: [{ selector: 'h2', message: { selector: 'table tr td.text' } }],
     test: { path: 'browse.php', selector: 'a[href="logout.php"]' },
@@ -58,9 +75,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: { selector: 'tr[class^="color"]' },
     fields: {
@@ -94,14 +113,14 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-of-type(9)' },
       grabs: {
         selector: 'td:nth-of-type(10)',
-        filters: [{ name: 'regexp', args: '([\\d]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: { selector: 'td:nth-of-type(11)' },
       leechers: { selector: 'td:nth-of-type(12)' },
       downloadvolumefactor: {
-        case: { 'img[src="free.gif"]': '0', '*': '1' },
+        case: { 'img[src="free.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

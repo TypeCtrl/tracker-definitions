@@ -49,7 +49,10 @@ export const definition: TrackerDefinition = {
       allw: 1,
       submit: 'Search',
     },
-    rows: { selector: 'table#tor-tbl tr[id^="tor_"]' },
+    rows: {
+      selector: 'table#tor-tbl tr[id^="tor_"]',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       title: { selector: 'a[href^="./viewtopic.php?t="]' },
       details: {

@@ -28,7 +28,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },
-    rows: { selector: 'table.metalion > tbody > tr' },
+    rows: {
+      selector: 'table.metalion > tbody > tr',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       title: { selector: 'td:nth-child(1) a' },
       details: { selector: 'td:nth-child(1) a', attribute: 'href' },
@@ -47,8 +50,10 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['s', ''] }],
       },
       description: { selector: 'td:nth-child(4)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      seeders: { text: 1 },
+      leechers: { text: 1 },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

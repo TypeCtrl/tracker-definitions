@@ -8,13 +8,6 @@
   "links": ["https://sukebei.nyaa.si/"],
   "settings": [
     {
-      "name": "filter-id",
-      "type": "select",
-      "label": "Filter",
-      "default": "0",
-      "options": { "0": "No filter", "1": "No remakes", "2": "Trusted only" }
-    },
-    {
       "name": "cat-id",
       "type": "select",
       "label": "Category",
@@ -31,6 +24,20 @@
         "21": "Real Life - Photobooks and Pictures",
         "22": "Real Life - Videos"
       }
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "id",
+      "options": { "id": "created", "seeders": "seeders", "size": "size" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "desc": "desc", "asc": "asc" }
     }
   ],
   "caps": {
@@ -50,9 +57,11 @@
   "search": {
     "paths": [{ "path": "/" }],
     "inputs": {
-      "q": "{{ .Query.Keywords}}",
-      "f": "{{ .Config.filter-id }}",
-      "c": "{{ .Config.cat-id }}"
+      "q": "{{ .Keywords }}",
+      "f": 0,
+      "c": "{{ .Config.cat-id }}",
+      "s": "{{ .Config.sort }}",
+      "o": "{{ .Config.type }}"
     },
     "rows": { "selector": "tr.default,tr.danger,tr.success" },
     "fields": {
@@ -87,8 +96,8 @@
       "seeders": { "selector": "td:nth-child(6)" },
       "leechers": { "selector": "td:nth-child(7)" },
       "grabs": { "selector": "td:nth-child(8)" },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

@@ -42,7 +42,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },
-    rows: { selector: 'div.new_post' },
+    rows: { selector: 'div.new_post', filters: [{ name: 'andmatch' }] },
     fields: {
       title: { selector: 'div.nombre_big1 a' },
       details: { selector: 'div.nombre_big1 a', attribute: 'href' },
@@ -53,6 +53,8 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'dateparse', args: '02-01-2006' }],
       },
       size: { selector: 'div.tamanio p' },
+      seeders: { text: 1 },
+      leechers: { text: 1 },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

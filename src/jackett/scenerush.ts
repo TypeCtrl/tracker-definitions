@@ -49,8 +49,30 @@ export const definition: TrackerDefinition = {
       { id: '44', cat: 'TV/Sport', desc: 'Sports' },
       { id: '46', cat: 'Movies/UHD', desc: '4K' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -74,10 +96,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '1',
-      blah: '0',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      incldead: 1,
+      blah: 0,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -112,8 +136,8 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-02 15:04:05' },
         ],
       },
-      downloadvolumefactor: { case: { 'i.fg-gold': '0', '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { case: { 'i.fg-gold': 0, '*': 1 } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

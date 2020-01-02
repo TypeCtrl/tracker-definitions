@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },
-    rows: { selector: 'div.hitem' },
+    rows: { selector: 'div.hitem', filters: [{ name: 'andmatch' }] },
     fields: {
       category: { text: 'Movies' },
       title: { selector: 'div.titulo' },

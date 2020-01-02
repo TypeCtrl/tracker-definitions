@@ -18,6 +18,20 @@ export const definition: TrackerDefinition = {
       label: 'Strip Russian Letters',
       default: false,
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '1',
+      options: { '1': 'created', '2': 'title', '7': 'size', '10': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
   ],
   caps: {
     categorymappings: [
@@ -1041,13 +1055,20 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
       nm: '{{ .Keywords }}',
-      o: 1,
-      s: 2,
+      o: '{{ .Config.sort }}',
+      s: '{{ .Config.type }}',
       tm: -1,
       sns: -1,
     },
-    rows: { selector: 'tr[id^="tor_"]' },
+    rows: {
+      selector: 'tr[id^="tor_"]:has(a[href^="./download.php?id="])',
+    },
     fields: {
+      category: {
+        selector: 'td a.gen',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'f' }],
+      },
       title: {
         selector: 'a.genmed',
         filters: [
@@ -1076,14 +1097,8 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'a.genmed', attribute: 'href' },
       download: {
-        optional: true,
         selector: 'a[href^="./download.php?id="]',
         attribute: 'href',
-      },
-      category: {
-        selector: 'td a.gen',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'f' }],
       },
       size: { selector: 'td:nth-child(6) > u' },
       date: { selector: 'td:last-child > u' },
@@ -1091,12 +1106,12 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td.leechmed > b' },
       downloadvolumefactor: {
         case: {
-          'img[src="images/tor_gold.gif"]': '0',
-          'img[src="images/tor_silver.gif"]': '0.5',
-          '*': '1',
+          'img[src="images/tor_gold.gif"]': 0,
+          'img[src="images/tor_silver.gif"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

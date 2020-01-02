@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.magnetdl.com/', 'https://magnetdl.unblockninja.com/'],
-  legacylinks: ['http://www.magnetdl.com/ https://www.magnetdl.me/'],
+  legacylinks: ['http://www.magnetdl.com/', 'https://www.magnetdl.me/'],
   caps: {
     modes: {
       search: ['q'],

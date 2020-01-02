@@ -37,6 +37,13 @@ export const definition: TrackerDefinition = {
       default:
         "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here.</ol>",
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '0',
+      options: { '0': 'created', '1': 'title', '2': 'size', '5': 'seeders' },
+    },
   ],
   login: {
     method: 'cookie',
@@ -47,7 +54,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrentsettings/torrentbrowse.php' }],
     inputs: {
       SrcCat: 0,
-      SrcDat: 0,
+      SrcDat: '{{ .Config.sort }}',
       SrcEnd: 0,
       search: '{{ .Keywords }}',
     },
@@ -90,8 +97,8 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td[id$="_10"]' },
       leechers: { selector: 'td[id$="_11"]' },
       grabs: { selector: 'td[id$="_12"]' },
-      downloadvolumefactor: { text: '1' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

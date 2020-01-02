@@ -25,12 +25,21 @@ export const definition: TrackerDefinition = {
       { id: 'Audio Books', cat: 'Audio/Audiobook' },
     ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site (Applies only to Search with Keywords)',
+      default: 'd',
+      options: { d: 'created', s: 'seeders', _: 'size' },
+    },
+  ],
   download: { selector: 'a[href^="magnet:?xt="]' },
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}searchd?q={{ .Keywords}}{{else}}latest{{end}}',
+        path:
+          '{{ if .Keywords }}search{{ re_replace .Config.sort "_" "" }}?q={{ .Keywords }}{{else}}latest{{end}}',
       },
     ],
     rows: { selector: 'table.table2 > tbody > tr:has(span.smallish)' },

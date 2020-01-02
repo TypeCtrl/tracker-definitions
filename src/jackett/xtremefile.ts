@@ -44,6 +44,24 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -57,10 +75,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       blah: 0,
       incldead: 1,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: { selector: 'table tbody tr.browse, table tbody tr.sticky' },
     fields: {
@@ -91,7 +111,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-last-child(4)' },
       grabs: {
         selector: 'td:nth-last-child(3)',
-        filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },

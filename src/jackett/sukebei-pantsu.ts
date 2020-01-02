@@ -29,16 +29,18 @@ export const definition: TrackerDefinition = {
       },
     },
     {
-      name: 'filter-id',
+      name: 'sort',
       type: 'select',
-      label: 'Filter',
-      default: '0',
-      options: {
-        '0': 'Show all',
-        '1': 'Filter Remakes',
-        '2': 'Trusted',
-        '3': 'A+',
-      },
+      label: 'Sort requested from site',
+      default: '2',
+      options: { '1': 'title', '2': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'false',
+      options: { false: 'desc', true: 'asc' },
     },
   ],
   caps: {
@@ -58,9 +60,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'search' }],
     inputs: {
-      q: '{{ .Query.Keywords }}',
+      q: '{{ .Keywords }}',
       c: '{{ .Config.cat-id }}',
-      s: '{{ .Config.filter-id }}',
+      s: 0,
+      sort: '{{ .Config.sort }}',
+      order: '{{ .Config.type }}',
     },
     rows: { selector: 'tr.torrent-info' },
     fields: {
@@ -86,8 +90,8 @@ export const definition: TrackerDefinition = {
         selector: 'td.tr-size',
         filters: [{ name: 'replace', args: ['Unknown', '0'] }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

@@ -67,15 +67,34 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    { name: 'pin', type: 'text', label: 'Pin' },
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    { name: 'pin', type: 'text', label: 'Pin' },
     {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
       default:
         '<ol><li>Only the Classic profile is supported.<li>Make sure to set the <b>TorrentList-Layout</b> option in your profile to <b>Klassisches Layout, sehr breite Darstellung.</b><li>And for best results set the <b>Torrents pro Seite</b> to <b>100.</b></ol>',
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeds: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
     },
   ],
   login: {
@@ -102,11 +121,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: '1',
-      orderby: 'added',
-      sort: 'desc',
+      incldead: 1,
+      orderby: '{{ .Config.sort }}',
+      sort: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table.tablebrowse > tbody > tr:has(a[href^="download_ssl.php"])',
@@ -156,11 +175,11 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'font[color="#730d1e"]:contains("[OnlyUpload]")': '0',
-          '*': '1',
+          'font[color="#730d1e"]:contains("[OnlyUpload]")': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

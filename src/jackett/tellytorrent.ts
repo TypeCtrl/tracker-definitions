@@ -26,6 +26,29 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'created_at',
+      options: {
+        created_at: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'login',
     method: 'form',
@@ -50,8 +73,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents/filter' }],
     inputs: {
-      $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
-      search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
@@ -59,8 +82,9 @@ export const definition: TrackerDefinition = {
       tmdb: '',
       mal: '',
       igdb: '',
-      sort: 'created_at',
-      direction: 'desc',
+      sorting: '{{ .Config.sort }}',
+      sort: '{{ .Config.sort }}',
+      direction: '{{ .Config.type }}',
       qty: 100,
     },
     rows: { selector: 'table > tbody > tr' },
