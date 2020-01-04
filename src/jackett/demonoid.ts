@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'demonoid',
   name: 'Demonoid',
-  description: 'Demonoid is a Private torrent site for MOVIES / TV / GENERAL',
+  description: 'Demonoid is a Public torrent site for MOVIES / TV / GENERAL',
   language: 'en-US',
-  type: 'private',
+  type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.demonoid.is/'],
   legacylinks: ['https://www.dnoid.to/'],
@@ -350,14 +350,6 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    { name: 'cookie', type: 'text', label: 'Cookie' },
-    {
-      name: 'info',
-      type: 'info',
-      label: 'How to get the Cookie',
-      default:
-        "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
-    },
     {
       name: 'sort',
       type: 'select',
@@ -374,11 +366,6 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: { selector: 'a[href^="magnet:?xt="]' },
-  login: {
-    method: 'cookie',
-    inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: 'files/' },
-  },
   search: {
     paths: [{ path: 'files/' }],
     inputs: {

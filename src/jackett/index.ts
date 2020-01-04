@@ -439,9 +439,6 @@ export const jhdu = jjhdu;
 import { definition as jjhdzone } from './hdzone';
 export const jhdzone = jjhdzone;
 
-import { definition as jjhon3YhdNet } from './hon3yhd-net';
-export const jhon3YhdNet = jjhon3YhdNet;
-
 import { definition as jjhon3Yhd } from './hon3yhd';
 export const jhon3Yhd = jjhon3Yhd;
 
@@ -841,6 +838,9 @@ export const jthetorrents = jjthetorrents;
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
 
+import { definition as jjtlfbits } from './tlfbits';
+export const jtlfbits = jjtlfbits;
+
 import { definition as jjtokyotosho } from './tokyotosho';
 export const jtokyotosho = jjtokyotosho;
 
@@ -1160,7 +1160,6 @@ export const definitions = [
   jjhdturk,
   jjhdu,
   jjhdzone,
-  jjhon3YhdNet,
   jjhon3Yhd,
   jjhqsource,
   jjhush,
@@ -1294,6 +1293,7 @@ export const definitions = [
   jjtheshow,
   jjthetorrents,
   jjthevault,
+  jjtlfbits,
   jjtokyotosho,
   jjtopnow,
   jjtorlock,

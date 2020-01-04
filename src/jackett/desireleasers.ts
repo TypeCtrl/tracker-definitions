@@ -126,8 +126,15 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(önce|tagasi|geleden|fa|temu|siden|atrás|nazpět|назад|acum|hace|il y a|vor|преди|前)',
+              '(?i)(önce|tagasi|geleden|fa|temu|siden|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)',
               ' ago',
+            ],
+          },
+          {
+            name: 're_replace',
+            args: [
+              '(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)',
+              'minutes',
             ],
           },
           {
@@ -137,8 +144,8 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)',
-              'minutes',
+              '(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)',
+              'hours',
             ],
           },
           {
@@ -151,8 +158,8 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)',
-              'hours',
+              '(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)',
+              'days',
             ],
           },
           {
@@ -162,8 +169,8 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)',
-              'days',
+              '(?i)(nädalat|uger|settimane|tygodnie|uker|semanas|týdny|недели|недель|săptămâni|semaines|Wochen|седмици|weken)',
+              'weeks',
             ],
           },
           {
@@ -173,21 +180,7 @@ export const definition: TrackerDefinition = {
               ' week',
             ],
           },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(nädalat|uger|settimane|tygodnie|uker|semanas|týdny|недели|недель|săptămâni|semaines|Wochen|седмици|weken)',
-              'weeks',
-            ],
-          },
           { name: 're_replace', args: ['(?i) (ay)', 'month'] },
-          {
-            name: 're_replace',
-            args: [
-              '(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|mois|Monat|месец|maand|个月)',
-              ' month',
-            ],
-          },
           {
             name: 're_replace',
             args: [
@@ -195,6 +188,22 @@ export const definition: TrackerDefinition = {
               'months',
             ],
           },
+          {
+            name: 're_replace',
+            args: [
+              '(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月)',
+              ' month',
+            ],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(aastat|anni|lata|anos|roky|года|ani|años|ans|Jahren|години)', ' years'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(yil|aasta|år|anno|rok|ano|год|año|Jahr|година|jaar|年)', ' year'],
+          },
+          { name: 're_replace', args: ['(?i) (an)', 'year'] },
         ],
       },
       downloadvolumefactor: {

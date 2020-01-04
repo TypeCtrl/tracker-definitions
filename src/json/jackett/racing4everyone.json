@@ -133,15 +133,8 @@
           {
             "name": "re_replace",
             "args": [
-              "(?i)(önce|tagasi|geleden|fa|temu|siden|atrás|nazpět|назад|acum|hace|il y a|vor|преди|前)",
+              "(?i)(önce|tagasi|geleden|fa|temu|siden|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)",
               " ago"
-            ]
-          },
-          {
-            "name": "re_replace",
-            "args": [
-              "(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟)",
-              " minute"
             ]
           },
           {
@@ -154,8 +147,8 @@
           {
             "name": "re_replace",
             "args": [
-              "(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时)",
-              " hour"
+              "(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟)",
+              " minute"
             ]
           },
           {
@@ -168,8 +161,8 @@
           {
             "name": "re_replace",
             "args": [
-              "(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天)",
-              " day"
+              "(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时)",
+              " hour"
             ]
           },
           {
@@ -182,8 +175,8 @@
           {
             "name": "re_replace",
             "args": [
-              "(?i)(hafta|nädal|uge|settimana|tydzień|uke|semana|týden|неделю|săptămână|semaine|Woche|седмица|周)",
-              " week"
+              "(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天)",
+              " day"
             ]
           },
           {
@@ -193,21 +186,43 @@
               "weeks"
             ]
           },
-          { "name": "re_replace", "args": ["(?i) (ay)", "month"] },
           {
             "name": "re_replace",
             "args": [
-              "(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|mois|Monat|месец|maand|个月)",
-              " month"
+              "(?i)(hafta|nädal|uge|settimana|tydzień|uke|semana|týden|неделю|săptămână|semaine|Woche|седмица|周)",
+              " week"
             ]
           },
+          { "name": "re_replace", "args": ["(?i) (ay)", "month"] },
           {
             "name": "re_replace",
             "args": [
               "(?i)(kuud|måneder|mesi|miesiące|meses|měsíce|месяца|месяцев|luni|meses|mois|Monaten|месеца|maanden)",
               "months"
             ]
-          }
+          },
+          {
+            "name": "re_replace",
+            "args": [
+              "(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月)",
+              " month"
+            ]
+          },
+          {
+            "name": "re_replace",
+            "args": [
+              "(?i)(aastat|anni|lata|anos|roky|года|ani|años|ans|Jahren|години)",
+              " years"
+            ]
+          },
+          {
+            "name": "re_replace",
+            "args": [
+              "(?i)(yil|aasta|år|anno|rok|ano|год|año|Jahr|година|jaar|年)",
+              " year"
+            ]
+          },
+          { "name": "re_replace", "args": ["(?i) (an)", "year"] }
         ]
       },
       "downloadvolumefactor": {
