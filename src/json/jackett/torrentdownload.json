@@ -13,14 +13,18 @@
       "movie-search": ["q"]
     },
     "categorymappings": [
-      { "id": "TV shows", "cat": "TV" },
+      { "id": "TVshows", "cat": "TV" },
+      { "id": "Television", "cat": "TV" },
+      { "id": "Anime", "cat": "TV/Anime" },
+      { "id": "MoviesDocumentary", "cat": "TV/Documentary" },
       { "id": "Movies", "cat": "Movies" },
+      { "id": "VideoMobile", "cat": "Movies" },
       { "id": "Music", "cat": "Audio" },
+      { "id": "AudioBooks", "cat": "Audio/Audiobook" },
       { "id": "Games", "cat": "Console" },
       { "id": "Applications", "cat": "PC/0day" },
       { "id": "Other", "cat": "Other/Misc" },
-      { "id": "Anime", "cat": "TV/Anime" },
-      { "id": "Audio Books", "cat": "Audio/Audiobook" }
+      { "id": "OtherUnsorted", "cat": "Other/Misc" }
     ]
   },
   "settings": [
@@ -41,14 +45,20 @@
     ],
     "rows": { "selector": "table.table2 > tbody > tr:has(span.smallish)" },
     "fields": {
+      "category": {
+        "selector": "div.tt-name > span.smallish",
+        "optional": true,
+        "filters": [{ "name": "re_replace", "args": ["[^A-Za-z]+", ""] }]
+      },
       "title": { "selector": "div.tt-name > a[href^=\"/\"]" },
       "details": {
         "selector": "div.tt-name > a[href^=\"/\"]",
         "attribute": "href"
       },
-      "size": { "selector": "td:nth-child(3)" },
-      "seeders": { "selector": "td.tdseed" },
-      "leechers": { "selector": "td.tdleech" },
+      "download": {
+        "selector": "div.tt-name > a[href^=\"/\"]",
+        "attribute": "href"
+      },
       "date": {
         "selector": "td:nth-child(2)",
         "filters": [
@@ -57,15 +67,9 @@
           { "name": "replace", "args": ["+", " ago"] }
         ]
       },
-      "download": {
-        "selector": "div.tt-name > a[href^=\"/\"]",
-        "attribute": "href"
-      },
-      "category": {
-        "selector": "div.tt-name > span.smallish",
-        "optional": true,
-        "filters": [{ "name": "replace", "args": ["» ", ""] }]
-      },
+      "size": { "selector": "td:nth-child(3)" },
+      "seeders": { "selector": "td.tdseed" },
+      "leechers": { "selector": "td.tdleech" },
       "downloadvolumefactor": { "text": 0 },
       "uploadvolumefactor": { "text": 1 }
     }

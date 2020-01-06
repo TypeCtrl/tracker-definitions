@@ -68,6 +68,7 @@ export const definition: TrackerDefinition = {
       do: 'search',
       subaction: 'search',
       showposts: 1,
+      titleonly: 3,
       story: '{{ if .Keywords }}{{ .Keywords }}{{ else }}2019{{ end }}',
       sortby: '{{ .Config.sort }}',
       resorder: '{{ .Config.type }}',

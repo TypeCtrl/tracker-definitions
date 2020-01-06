@@ -1,14 +1,14 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'extratorrent-ag',
-  name: 'ExtraTorrent.ag',
+  site: 'extratorrent-cd',
+  name: 'ExtraTorrent.cd',
   description:
-    'ExtraTorrent.ag is a Public tracker, a  popular alternative to the original ET site, providing Movie / TV / General magnets',
+    'ExtraTorrent.cd is a Public tracker, a  popular alternative to the original ET site, providing Movie / TV / General magnets',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://extratorrent.ag/'],
+  links: ['https://extratorrent.si/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Anime', desc: 'Anime' },
@@ -1071,27 +1071,34 @@ export const definition: TrackerDefinition = {
     paths: [{ path: '{{if .Keywords}}search/?search={{ .Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'tr[class^="tl"]' },
     fields: {
-      title: { selector: 'td.tli a' },
       category: {
-        selector: 'td a[href^="/category/"]',
+        selector: 'a[href*="/category/"]',
         attribute: 'href',
-        filters: [{ name: 'split', args: ['/', 2] }],
+        filters: [{ name: 'regexp', args: '/category/(\\d+)/' }],
       },
-      details: { selector: 'td.tli a', attribute: 'href' },
-      download: {
-        selector: 'td a[href^="magnet:?xt="]',
+      title: { selector: 'a[href*="/torrent/"][title^="view"]' },
+      details: {
+        selector: 'a[href*="/torrent/"]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['%E2%AD%90', ''] }],
+        filters: [{ name: 'replace', args: ['///', '//'] }],
+      },
+      download: {
+        selector: 'a[href^="magnet:?xt="]',
+        attribute: 'href',
       },
       date: {
-        selector: 'td:nth-last-of-type(5)',
-        filters: [{ name: 'timeago' }],
+        selector: 'td:nth-last-of-type(5):not(:contains(":"))',
+        optional: true,
+        filters: [
+          { name: 'replace', args: [' ', '-'] },
+          { name: 'dateparse', args: '01-02-2006' },
+        ],
       },
       size: { selector: 'td:nth-last-of-type(4)' },
-      seeders: { optional: true, selector: 'td.sy' },
-      leechers: { optional: true, selector: 'td.ly' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      seeders: { optional: true, selector: 'td.sy, td.sn' },
+      leechers: { optional: true, selector: 'td.ly, td.ln' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

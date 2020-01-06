@@ -126,10 +126,7 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: {
-    selector: 'ul li a[href^="{{ .Config.downloadlink }}"]',
-    filters: [{ name: 'replace', args: ['%E2%AD%90', ''] }],
-  },
+  download: { selector: 'ul li a[href^="{{ .Config.downloadlink }}"]' },
   search: {
     paths: [
       {

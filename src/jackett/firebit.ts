@@ -26,7 +26,6 @@ export const definition: TrackerDefinition = {
       { id: 'Видео', cat: 'Movies' },
       { id: 'Музыка', cat: 'Audio' },
       { id: 'Другие категории', cat: 'Other' },
-      { id: 'Новинки', cat: 'Other/Misc' },
       { id: 'Сериалы', cat: 'TV' },
     ],
   },
@@ -47,7 +46,14 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      category: { selector: 'td:nth-child(1), div.article-indent div b a' },
+      category: {
+        selector: 'td:nth-child(1), div.article-indent div b a',
+        filters: [
+          { name: 'replace', args: ['Новинки', ''] },
+          { name: 'replace', args: [',', ''] },
+          { name: 'trim' },
+        ],
+      },
       title: { selector: 'td:nth-child(2), span.article-title' },
       details: {
         selector: 'td:nth-child(2) a, span.article-title a',

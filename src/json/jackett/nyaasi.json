@@ -125,7 +125,8 @@
       },
       "download": {
         "selector": "td:nth-child(3) a[href$=\".torrent\"]",
-        "attribute": "href"
+        "attribute": "href",
+        "optional": true
       },
       "magnet": {
         "selector": "td:nth-child(3) a[href^=\"magnet:?\"]",

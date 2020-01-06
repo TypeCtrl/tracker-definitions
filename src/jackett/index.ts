@@ -289,8 +289,8 @@ export const jethor = jjethor;
 import { definition as jjettv } from './ettv';
 export const jettv = jjettv;
 
-import { definition as jjextratorrentAg } from './extratorrent-ag';
-export const jextratorrentAg = jjextratorrentAg;
+import { definition as jjextratorrentCd } from './extratorrent-cd';
+export const jextratorrentCd = jjextratorrentCd;
 
 import { definition as jjextremetorrents } from './extremetorrents';
 export const jextremetorrents = jjextremetorrents;
@@ -495,6 +495,9 @@ export const jkinozal = jjkinozal;
 
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
+
+import { definition as jjlegacyhd } from './legacyhd';
+export const jlegacyhd = jjlegacyhd;
 
 import { definition as jjlegittorrents } from './legittorrents';
 export const jlegittorrents = jjlegittorrents;
@@ -747,9 +750,6 @@ export const jsktorrent = jjsktorrent;
 
 import { definition as jjskytorrentsclone } from './skytorrentsclone';
 export const jskytorrentsclone = jjskytorrentsclone;
-
-import { definition as jjsolidtorrents } from './solidtorrents';
-export const jsolidtorrents = jjsolidtorrents;
 
 import { definition as jjsoundpark } from './soundpark';
 export const jsoundpark = jjsoundpark;
@@ -1110,7 +1110,7 @@ export const definitions = [
   jjestrenosdtl,
   jjethor,
   jjettv,
-  jjextratorrentAg,
+  jjextratorrentCd,
   jjextremetorrents,
   jjextremlymtorrents,
   jjexttorrents,
@@ -1179,6 +1179,7 @@ export const definitions = [
   jjkickasstorrent,
   jjkinozal,
   jjlearnflakes,
+  jjlegacyhd,
   jjlegittorrents,
   jjleporno,
   jjlesaloon,
@@ -1263,7 +1264,6 @@ export const definitions = [
   jjsiambit,
   jjsktorrent,
   jjskytorrentsclone,
-  jjsolidtorrents,
   jjsoundpark,
   jjspacetorrent,
   jjspeedtorrentreloaded,

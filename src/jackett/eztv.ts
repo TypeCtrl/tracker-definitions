@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(6)' },
       downloadvolumefactor: { text: 0 },
-      uploadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
