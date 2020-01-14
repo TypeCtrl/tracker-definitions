@@ -48,8 +48,9 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      artistname: '{{ if .Query.Artist }}{{ .Query.Artist }}{{else}}{{end}}',
-      groupname: '{{ if .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      searchstr: '{{ .Keywords }}',
+      artistname: '{{ .Query.Artist }}',
+      groupname: '{{ .Query.Album }}',
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
     },

@@ -105,7 +105,10 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="{{ .Config.downloadlink }}"]' },
+  download: {
+    selector: 'a[href^="{{ .Config.downloadlink }}"]',
+    attribute: 'href',
+  },
   search: {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
@@ -129,6 +132,7 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'a[href^="/torrent/"][title]',
         attribute: 'title',
+        filters: [{ name: 're_replace', args: ['( torrent)$', ''] }],
       },
       category: {
         selector: 'a[href^="/torrents.php?cat="]',

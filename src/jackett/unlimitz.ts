@@ -137,6 +137,7 @@ export const definition: TrackerDefinition = {
   },
   download: {
     selector: 'a[href^="d.php?keyalert1="]',
+    attribute: 'href',
     filters: [
       { name: 'replace', args: ['d.php?keyalert1=', '/dI.php/'] },
       { name: 'replace', args: ['&keyalert2=', '/'] },

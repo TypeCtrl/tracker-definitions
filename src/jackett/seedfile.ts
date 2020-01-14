@@ -51,7 +51,7 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.recover-error2' }],
     test: { path: 'profile.php' },
   },
-  download: { selector: 'a[href^="download.php/"]' },
+  download: { selector: 'a[href^="download.php/"]', attribute: 'href' },
   search: {
     paths: [{ path: 'download-torrents' }],
     inputs: {

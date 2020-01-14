@@ -36,7 +36,7 @@ export const definition: TrackerDefinition = {
     test: { path: 'my.php', selector: 'a[href="../logout"]' },
   },
   ratio: { path: 'my.php', selector: 'a.nav-link i[class="ti-pulse"]' },
-  download: { selector: 'a[href^="magnet:?xt="]' },
+  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
     inputs: { search: '{{ .Keywords }}', cat: 0 },
     rows: { selector: 'table#table-1 tbody tr' },

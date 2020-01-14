@@ -122,7 +122,10 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: '/', selector: 'a[href="/users/logout/"]' },
   },
-  download: { selector: 'a[href*="{{ .Config.downloadlink }}"]' },
+  download: {
+    selector: 'a[href*="{{ .Config.downloadlink }}"]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: 'torrents/', method: 'post', followredirect: true }],
     inputs: {

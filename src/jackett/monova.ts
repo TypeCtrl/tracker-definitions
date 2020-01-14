@@ -26,7 +26,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   settings: [],
-  download: { selector: 'a#download-file' },
+  download: { selector: 'a#download-file', attribute: 'href' },
   search: {
     paths: [
       {

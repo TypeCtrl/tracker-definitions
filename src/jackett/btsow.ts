@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'other', cat: 'Other' }],
   },
   settings: [],
-  download: { selector: 'a#magnetOpen' },
+  download: { selector: 'a#magnetOpen', attribute: 'href' },
   search: {
     paths: [{ path: 'search/{{if .Keywords}}{{ .Keywords}}{{else}}2019{{end}}' }],
     rows: { selector: 'div.row:has(a[href*="/detail/hash/"])' },

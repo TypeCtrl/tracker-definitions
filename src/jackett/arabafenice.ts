@@ -58,6 +58,31 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '3',
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
+  ],
   login: {
     path: 'index.php?page=login',
     method: 'post',
@@ -86,11 +111,12 @@ export const definition: TrackerDefinition = {
       method: 'post',
       inputs: {
         infohash: '{{ .DownloadUri.Query.id }}',
-        thanks: '1',
+        thanks: 1,
         rndval: '1487013827343',
       },
     },
     selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
   },
   search: {
     paths: [{ path: 'index.php' }],
@@ -105,9 +131,11 @@ export const definition: TrackerDefinition = {
     inputs: {
       search: '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
       page: 'torrents',
-      category: '{{range .Categories}}{{.}};{{end}}',
+      category: '{{ range .Categories }}{{.}};{{end}}',
       options: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
-      active: '0',
+      active: 0,
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -178,24 +206,24 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(7)' },
       downloadvolumefactor: {
         case: {
-          'img[alt="Gold 100% Free"]': '0',
-          'img[alt="Silver 50% Free"]': '0.5',
-          'img[alt="Bronze 25% Free"]': '0.75',
-          '*': '1',
+          'img[alt="Gold 100% Free"]': 0,
+          'img[alt="Silver 50% Free"]': 0.5,
+          'img[alt="Bronze 25% Free"]': 0.75,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'img[alt="2x Upload Multiplier"]': '2',
-          'img[alt="3x Upload Multiplier"]': '3',
-          'img[alt="4x Upload Multiplier"]': '4',
-          'img[alt="5x Upload Multiplier"]': '5',
-          'img[alt="6x Upload Multiplier"]': '6',
-          'img[alt="7x Upload Multiplier"]': '7',
-          'img[alt="8x Upload Multiplier"]': '8',
-          'img[alt="9x Upload Multiplier"]': '9',
-          'img[alt="10x Upload Multiplier"]': '10',
-          '*': '1',
+          'img[alt="2x Upload Multiplier"]': 2,
+          'img[alt="3x Upload Multiplier"]': 3,
+          'img[alt="4x Upload Multiplier"]': 4,
+          'img[alt="5x Upload Multiplier"]': 5,
+          'img[alt="6x Upload Multiplier"]': 6,
+          'img[alt="7x Upload Multiplier"]': 7,
+          'img[alt="8x Upload Multiplier"]': 8,
+          'img[alt="9x Upload Multiplier"]': 9,
+          'img[alt="10x Upload Multiplier"]': 10,
+          '*': 1,
         },
       },
     },

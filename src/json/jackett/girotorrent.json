@@ -106,7 +106,8 @@
         "rndval": "1487013827343"
       }
     },
-    "selector": "a[href^=\"download.php?id=\"]"
+    "selector": "a[href^=\"download.php?id=\"]",
+    "attribute": "href"
   },
   "search": {
     "paths": [

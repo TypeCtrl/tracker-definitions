@@ -136,7 +136,8 @@
         "torrent": "{{ .DownloadUri.Query.id }}"
       }
     },
-    "selector": "a:contains(\"Télécharger ce torrent\")"
+    "selector": "a:contains(\"Télécharger ce torrent\")",
+    "attribute": "href"
   },
   "search": {
     "paths": [{ "path": "torrents-search.php" }],

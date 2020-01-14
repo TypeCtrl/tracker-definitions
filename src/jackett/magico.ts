@@ -130,8 +130,8 @@ export const definition: TrackerDefinition = {
     ],
     inputs: {
       p: 'torrents',
-      pid: '32',
-      $raw: '{{range .Categories}}cid[]={{.}}&{{end}}',
+      pid: 32,
+      $raw: '{{ range .Categories }}cid[]={{.}}&{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
       searchin: 'title',
@@ -179,9 +179,9 @@ export const definition: TrackerDefinition = {
         selector: 'div.torrentDetails > div:has(span.floatright)',
       },
       downloadvolumefactor: {
-        case: { 'img[title="No Record!"]': '0', '*': '1' },
+        case: { 'img[title="No Record!"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
       date: {
         optional: true,
         selector: 'td.torrent_name',

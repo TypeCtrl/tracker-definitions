@@ -59,6 +59,7 @@ export const definition: TrackerDefinition = {
   ],
   download: {
     selector: 'a.btn-magnet',
+    attribute: 'href',
     filters: [{ name: 'querystring', args: 'url' }],
   },
   search: {

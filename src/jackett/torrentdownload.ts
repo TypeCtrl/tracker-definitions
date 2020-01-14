@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       options: { d: 'created', s: 'seeders', _: 'size' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]' },
+  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
     paths: [
       {

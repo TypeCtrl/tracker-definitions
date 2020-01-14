@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://pornbits.org/'],
+  links: ['https://pornbits.net/'],
+  legacylinks: ['https://pornbits.org/'],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
     categorymappings: [{ id: 'xxx', cat: 'XXX' }],

@@ -188,8 +188,8 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%25'] }],
     inputs: {
       p: 'torrents',
-      pid: '32',
-      $raw: '{{range .Categories}}cid[]={{.}}&{{end}}',
+      pid: 32,
+      $raw: '{{ range .Categories }}cid[]={{.}}&{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
       searchin: 'title',
@@ -234,17 +234,14 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[title="ΧΡΥΣΟ!"]': '0',
-          'img[title="100% FREE!"]': '0',
-          'img[title="Πολλαπλασιαστής Κατεβάσματος: 0.5"]': '0.5',
-          '*': '1',
+          'img[title="ΧΡΥΣΟ!"]': 0,
+          'img[title="100% FREE!"]': 0,
+          'img[title="Πολλαπλασιαστής Κατεβάσματος: 0.5"]': 0.5,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: {
-          'img[title="Πολλαπλασιαστής Ανεβάσματος: 2"]': '2',
-          '*': '1',
-        },
+        case: { 'img[title="Πολλαπλασιαστής Ανεβάσματος: 2"]': 2, '*': 1 },
       },
       date: {
         optional: true,

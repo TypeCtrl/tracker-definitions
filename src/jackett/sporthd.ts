@@ -96,7 +96,10 @@ export const definition: TrackerDefinition = {
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'index.php' },
   },
-  download: { selector: 'a[href^="download.php?id="]' },
+  download: {
+    selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {

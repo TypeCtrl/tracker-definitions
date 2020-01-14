@@ -124,6 +124,7 @@ export const definition: TrackerDefinition = {
       inputs: { _action: 'say_thank', id: '{{ .DownloadUri.Query.id }}' },
     },
     selector: 'a[href^="downloadnew.php?id="]',
+    attribute: 'href',
   },
   search: {
     paths: [

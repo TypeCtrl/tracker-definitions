@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'Movies', cat: 'Movies' }],
   },
   settings: [],
-  download: { selector: 'a.torrent_download' },
+  download: { selector: 'a.torrent_download', attribute: 'href' },
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },

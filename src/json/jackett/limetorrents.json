@@ -54,7 +54,8 @@
     }
   ],
   "download": {
-    "selector": "a.csprite_dltorrent[href^=\"{{ .Config.downloadlink }}\"]"
+    "selector": "a.csprite_dltorrent[href^=\"{{ .Config.downloadlink }}\"]",
+    "attribute": "href"
   },
   "search": {
     "paths": [

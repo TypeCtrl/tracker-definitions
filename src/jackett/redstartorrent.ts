@@ -49,15 +49,15 @@ export const definition: TrackerDefinition = {
     },
     error: [
       { selector: 'td.embedded:has(h2:contains("failed"))' },
-      { selector: 'td.embedded:has(h2:contains("Error"))aD' },
+      { selector: 'td.embedded:has(h2:contains("Error"))' },
     ],
     test: { selector: 'a[href^="logout.php"]', path: 'browse.php' },
   },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
       incldead: 1,
       polish: 0,
     },
@@ -113,7 +113,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '/ (\\d+)' }],
       },
       downloadvolumefactor: { case: { 'td.darmowy': 0, '*': 1 } },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

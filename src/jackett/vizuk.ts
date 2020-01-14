@@ -103,13 +103,6 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
-      name: 'info_language',
-      type: 'info',
-      label: 'Languages',
-      default:
-        'This Indexer only works if your Vizuk account is set for the <b>Spanish</b> language. Using another language will not return results.',
-    },
-    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -181,10 +174,14 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'td.torrent_name, .torrentOwner',
+        selector:
+          'td.torrent_name:contains("Uploaded"):not(:contains("-")), .torrentOwner:contains("Uploaded"):not(:contains("-"))',
+        optional: true,
         filters: [
-          { name: 'regexp', args: '(?<=Subido )(.*)(?= por)' },
-          { name: 'dateparse', args: '02-01-2006 15:04' },
+          { name: 'regexp', args: '(?<=Uploaded )(.*)(?= by)' },
+          { name: 'replace', args: ['Yesterday at', 'Yesterday'] },
+          { name: 'replace', args: ['Today at', 'Today'] },
+          { name: 'fuzzytime' },
         ],
       },
       size: { selector: 'td.size a, .torrentInfo a[rel="torrent_size"]' },
@@ -198,19 +195,15 @@ export const definition: TrackerDefinition = {
         selector: 'td.leechers a, .torrentInfo a[rel="torrent_leechers"]',
       },
       downloadvolumefactor: {
-        optional: true,
-        selector: 'img[src$="torrent_free.png"]',
-        attribute: 'title',
-        filters: [
-          { name: 'replace', args: ['No cuenta la descarga', 0] },
-          { name: 'replace', args: ['Cuenta descarga: 0.5', 0.5] },
-        ],
+        case: {
+          'img[src$="torrent_free.png"][title*="No cuenta"]': 0,
+          'img[src$="torrent_free.png"][title="Free!"]': 0,
+          'img[src$="torrent_free.png"][title*="0.5"]': 0.5,
+          '*': 1,
+        },
       },
       uploadvolumefactor: {
-        optional: true,
-        selector: 'img[src$="torrent_multiple_upload.png"]',
-        attribute: 'title',
-        filters: [{ name: 'replace', args: ['Cuenta subida por: 2', 2] }],
+        case: { 'img[src$="torrent_multiple_upload.png"]': 2, '*': 1 },
       },
       minimumratio: { text: 1 },
       minimumseedtime: { text: 345600 },

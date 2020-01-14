@@ -28,11 +28,19 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.stdmsg_text' }],
     test: { path: '/', selector: 'a[href="/logout"]' },
   },
-  download: { selector: 'a[href^="/album/download-torrent/"]' },
+  download: {
+    selector: 'a[href^="/album/download-torrent/"]',
+    attribute: 'href',
+  },
   search: {
-    paths: [{ path: '{{if .Keywords}}search{{else}}music{{end}}' }],
+    paths: [
+      {
+        path: '{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}search{{else}}music{{end}}',
+      },
+    ],
     inputs: {
-      q: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      q:
+        '{{if or (.Query.Album) (.Query.Artist) }}{{ or (.Query.Album) (.Query.Artist) }}{{else}}{{ .Keywords }}{{end}}',
       num: 50,
     },
     rows: {
@@ -53,6 +61,12 @@ export const definition: TrackerDefinition = {
       download: {
         selector: 'tr:nth-child(1) td:nth-child(1) h2 a, div h3 a',
         attribute: 'href',
+        filters: [
+          {
+            name: 'replace',
+            args: ['/album/torrent-', '/album/download/torrent-'],
+          },
+        ],
       },
       date: {
         selector:

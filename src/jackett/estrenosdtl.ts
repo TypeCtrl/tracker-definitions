@@ -38,7 +38,16 @@ export const definition: TrackerDefinition = {
     ],
   },
   settings: [],
-  download: { selector: 'a.linktorrent' },
+  download: {
+    selector: 'a.linktorrent',
+    attribute: 'href',
+    filters: [
+      {
+        name: 'replace',
+        args: ['https://www.estrenosdtl1.net/', '{{ .Config.sitelink }}'],
+      },
+    ],
+  },
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },

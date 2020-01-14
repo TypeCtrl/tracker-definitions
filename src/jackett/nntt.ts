@@ -1163,7 +1163,10 @@ export const definition: TrackerDefinition = {
       options: { d: 'desc', a: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="./download/file.php?id="]' },
+  download: {
+    selector: 'a[href^="./download/file.php?id="]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: 'search.php' }],
     inputs: {

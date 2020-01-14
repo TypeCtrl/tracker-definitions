@@ -275,7 +275,10 @@ export const definition: TrackerDefinition = {
       selector: 'a[href$="/TTV3/Deconnexion"]',
     },
   },
-  download: { selector: 'a[href*="/Telechargement/"]' },
+  download: {
+    selector: 'a[href*="/Telechargement/"]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: 'TTV3/Torrents/Recherche' }],
     inputs: {

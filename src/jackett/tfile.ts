@@ -1571,8 +1571,18 @@ export const definition: TrackerDefinition = {
       label: 'Strip Russian Letters',
       default: false,
     },
+    {
+      name: 'downloadlink',
+      type: 'select',
+      label: 'Download link',
+      default: 'magnet:?xt',
+      options: { 'download.php?id': '.torrent', 'magnet:?xt': 'magnet' },
+    },
   ],
-  download: { selector: 'a[href^="download.php?id="]' },
+  download: {
+    selector: 'a[href^="{{ .Config.downloadlink }}"]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: '/' }],
     keywordsfilters: [
@@ -1588,7 +1598,9 @@ export const definition: TrackerDefinition = {
       q: '{{ .Keywords }}',
       o: 'newest',
     },
-    rows: { selector: 'table > tbody > tr.tor' },
+    rows: {
+      selector: 'table > tbody > tr.tor:has(td:nth-child(4):contains("B"))',
+    },
     fields: {
       category: {
         selector: 'td.f a[href*="?f="]',
@@ -1623,10 +1635,7 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'td.t a', attribute: 'href' },
       download: { selector: 'td.t a', attribute: 'href' },
-      size: {
-        selector: 'td:nth-child(4):contains("B")',
-        optional: true,
-      },
+      size: { selector: 'td:nth-child(4)' },
       seeders: { selector: 'b.sd', optional: true },
       leechers: { selector: 'b.lc', optional: true },
       date: {

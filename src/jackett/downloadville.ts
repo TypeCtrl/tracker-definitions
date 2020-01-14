@@ -136,6 +136,27 @@ export const definition: TrackerDefinition = {
         ENGLISH: 'ENGLISH',
       },
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '3',
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
   ],
   login: {
     path: 'tracker/index.php?page=login',
@@ -160,11 +181,12 @@ export const definition: TrackerDefinition = {
       method: 'post',
       inputs: {
         infohash: '{{ .DownloadUri.Query.id }}',
-        thanks: '1',
+        thanks: 1,
         rndval: '1487013827343',
       },
     },
     selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
   },
   search: {
     paths: [{ path: 'tracker/index.php' }],
@@ -172,9 +194,11 @@ export const definition: TrackerDefinition = {
       page: 'torrents',
       search: '{{ .Keywords }}',
       category: '{{ range .Categories }}{{.}};{{end}}',
-      options: '0',
+      options: 0,
       active: '{{ .Config.active }}',
       gold: '{{ .Config.gold }}',
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -234,13 +258,13 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-last-of-type(4)' },
       downloadvolumefactor: {
         case: {
-          'img[src="images/freeleech.gif"]': '0',
-          'img[src="gold/gold.gif"]': '0',
-          'img[src="gold/slver.gif"]': '0.5',
-          '*': '1',
+          'img[src="images/freeleech.gif"]': 0,
+          'img[src="gold/gold.gif"]': 0,
+          'img[src="gold/slver.gif"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

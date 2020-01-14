@@ -84,7 +84,10 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'tr td span[style="color:#FF0000;"]' }],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
-  download: { selector: 'a[href^="download.php?id="]' },
+  download: {
+    selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {

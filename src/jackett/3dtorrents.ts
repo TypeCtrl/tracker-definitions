@@ -32,6 +32,17 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
+  ],
   login: {
     path: 'index.php?page=login&amp;returnto=index.php',
     method: 'form',
@@ -51,8 +62,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      search: '{{ .Keywords }}',
       page: 'torrents',
       category: 0,
       '3dformat': 0,
@@ -91,11 +102,11 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[title^="You get 50% off download count on this torrent"]': '0.5',
-          '*': '1',
+          'img[title^="You get 50% off download count on this torrent"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

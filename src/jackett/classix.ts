@@ -22,7 +22,10 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.myContent:contains("Access Denied")' }],
     test: { path: 'index.php' },
   },
-  download: { selector: 'a[href^="download.php?id="]' },
+  download: {
+    selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {

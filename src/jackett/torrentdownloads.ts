@@ -37,7 +37,10 @@ export const definition: TrackerDefinition = {
       },
     },
   ],
-  download: { selector: 'a[href^="{{ .Config.downloadlink }}"]' },
+  download: {
+    selector: 'a[href^="{{ .Config.downloadlink }}"]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: '{{if .Keywords}}/search/{{else}}/today/{{end}}' }],
     inputs: {

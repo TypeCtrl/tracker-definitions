@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]' },
+  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
     paths: [
       {

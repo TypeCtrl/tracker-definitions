@@ -109,15 +109,15 @@
     ],
     "inputs": {
       "p": "torrents",
-      "pid": "32",
-      "$raw": "{{range .Categories}}cid[]={{.}}&{{end}}",
+      "pid": 32,
+      "$raw": "{{ range .Categories }}cid[]={{.}}&{{end}}",
       "keywords": "{{ .Keywords }}",
       "search_type": "name",
       "searchin": "title"
     },
     "error": [
       {
-        "selector": "div.error:not(:contains(\"Não existem resultados encontrados.\"))"
+        "selector": "div.error:not(:contains(\"Não existem resultados encontrados.\")):not(:contains(\"There are no results found.\"))"
       }
     ],
     "rows": {
@@ -147,10 +147,8 @@
         "optional": true,
         "attribute": "href"
       },
-      "downloadvolumefactor": {
-        "case": { "img[title=\"FREE!\"]": "0", "*": "1" }
-      },
-      "uploadvolumefactor": { "case": { "*": "1" } },
+      "downloadvolumefactor": { "case": { "img[title=\"FREE!\"]": 0, "*": 1 } },
+      "uploadvolumefactor": { "case": { "*": 1 } },
       "date": {
         "selector": "td.torrent_name:not(:has(abbr.timeago))",
         "optional": true,

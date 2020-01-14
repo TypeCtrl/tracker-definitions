@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'other', cat: 'Other' }],
   },
   settings: [],
-  download: { selector: 'a#torrent' },
+  download: { selector: 'a#torrent', attribute: 'href' },
   search: {
     paths: [{ path: 'search.php' }],
     inputs: { dayq: '{{.Keywords}}' },

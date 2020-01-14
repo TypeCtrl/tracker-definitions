@@ -27,8 +27,19 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
-  settings: [],
-  download: { selector: 'a[href^="magnet:?xt="]' },
+  settings: [
+    {
+      name: 'downloadlink',
+      type: 'select',
+      label: 'Download link',
+      default: 'magnet:?xt=',
+      options: { '/get_torrents/': '.torrent', 'magnet:?xt=': 'magnet' },
+    },
+  ],
+  download: {
+    selector: 'a[href*="{{ .Config.downloadlink }}"]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
     rows: { selector: 'div.listing-torrent > table > tbody > tr:has(a)' },

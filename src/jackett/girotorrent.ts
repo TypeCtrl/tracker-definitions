@@ -109,6 +109,7 @@ export const definition: TrackerDefinition = {
       },
     },
     selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
   },
   search: {
     paths: [

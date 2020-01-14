@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'other', cat: 'Other' }],
   },
   settings: [],
-  download: { selector: 'a[href*="/torrent/"]' },
+  download: { selector: 'a[href*="/torrent/"]', attribute: 'href' },
   search: {
     paths: [{ path: '{{if .Keywords}}search/{{ .Keywords}}{{else}}today{{end}}' }],
     rows: {

@@ -108,7 +108,7 @@ export const definition: TrackerDefinition = {
       type: 'select',
       label: 'Order requested from site',
       default: '1',
-      options: { '1': 'asc', '2': 'desc' },
+      options: { '1': 'desc', '2': 'asc' },
     },
   ],
   login: {
@@ -139,11 +139,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{ range .Categories }}kategorie[]={{.}}&{{end}}',
-      suche: '{{ .Keywords }}',
       suchfeld: 2,
       alleanzeigen: 1,
-      durchsuche: 0,
+      $raw: '{{ range .Categories }}kategorie[]={{.}}&{{end}}',
+      suche: '{{ .Keywords }}',
+      durchsuche: 1,
       suchein: 2,
       sucheaus: 1,
       sortierenach: '{{ .Config.sort }}',

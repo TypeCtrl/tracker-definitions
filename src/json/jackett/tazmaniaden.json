@@ -32,7 +32,8 @@
         "submit": "Thanks!"
       }
     },
-    "selector": "a[href^=\"download.php?id=\"]"
+    "selector": "a[href^=\"download.php?id=\"]",
+    "attribute": "href"
   },
   "search": {
     "paths": [{ "path": "torrents-search.php" }],

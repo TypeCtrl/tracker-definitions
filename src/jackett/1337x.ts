@@ -96,6 +96,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q', 'album', 'artist', 'label', 'year'],
     },
   },
   settings: [
@@ -126,31 +127,23 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'ul li a[href^="{{ .Config.downloadlink }}"]' },
+  download: {
+    selector: 'ul li a[href^="{{ .Config.downloadlink }}"]',
+    attribute: 'href',
+  },
   search: {
     paths: [
       {
         path:
-          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/1/{{else}}cat/Movies/{{ .Config.sort }}/{{ .Config.type }}/1/{{end}}',
-      },
-      {
-        path: '{{if .Keywords}}{{else}}cat/TV/{{ .Config.sort }}/{{ .Config.type }}/1/{{end}}',
+          '{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}sort-search{{else}}cat/Movies{{end}}{{if or (.Query.Album) (.Query.Artist) }}/{{ or (.Query.Album) (.Query.Artist) }}{{else}}/{{ .Keywords }}{{end}}{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}/{{else}}{{end}}{{ .Config.sort }}/{{ .Config.type }}/1/',
       },
       {
         path:
-          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/2/{{else}}{{end}}',
+          '{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}sort-search{{else}}cat/TV{{end}}{{if or (.Query.Album) (.Query.Artist) }}/{{ or (.Query.Album) (.Query.Artist) }}{{else}}/{{ .Keywords }}{{end}}{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}/{{else}}{{end}}{{ .Config.sort }}/{{ .Config.type }}/{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}2{{else}}1{{end}}/',
       },
       {
         path:
-          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/3/{{else}}{{end}}',
-      },
-      {
-        path:
-          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/4/{{else}}{{end}}',
-      },
-      {
-        path:
-          '{{if .Keywords}}sort-search/{{ .Keywords}}/{{ .Config.sort }}/{{ .Config.type }}/5/{{else}}{{end}}',
+          '{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}sort-search{{else}}cat/Music{{end}}{{if or (.Query.Album) (.Query.Artist) }}/{{ or (.Query.Album) (.Query.Artist) }}{{else}}/{{ .Keywords }}{{end}}{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}/{{else}}{{end}}{{ .Config.sort }}/{{ .Config.type }}/{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}3{{else}}1{{end}}/',
       },
     ],
     keywordsfilters: [{ name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] }],

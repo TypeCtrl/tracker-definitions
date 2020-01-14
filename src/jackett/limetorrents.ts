@@ -57,6 +57,7 @@ export const definition: TrackerDefinition = {
   ],
   download: {
     selector: 'a.csprite_dltorrent[href^="{{ .Config.downloadlink }}"]',
+    attribute: 'href',
   },
   search: {
     paths: [

@@ -116,6 +116,7 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
     },
+    keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     rows: { selector: 'table.ttable_headinner > tbody > tr.t-row' },
     fields: {
       title: { selector: 'a[href^="torrents-details.php?id="] b' },

@@ -92,7 +92,7 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?"]' },
+  download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {

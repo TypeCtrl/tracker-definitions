@@ -140,6 +140,7 @@ export const definition: TrackerDefinition = {
       },
     },
     selector: 'a:contains("Télécharger ce torrent")',
+    attribute: 'href',
   },
   search: {
     paths: [{ path: 'torrents-search.php' }],

@@ -68,7 +68,7 @@ export const definition: TrackerDefinition = {
   download: {
     selector: '#download > div:nth-child(2) > div:nth-child(1) > a',
     attribute: 'href',
-    filters: [{ name: 'replace', args: ['https://mylink.me.uk/?url=', ''] }, { name: 'urldecode' }],
+    filters: [{ name: 'replace', args: ['https://mylink.cx/?url=', ''] }, { name: 'urldecode' }],
   },
   search: {
     paths: [

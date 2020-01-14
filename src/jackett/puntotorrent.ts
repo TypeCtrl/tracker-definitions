@@ -113,6 +113,31 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '3',
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
+  ],
   login: {
     path: 'index.php?page=login',
     method: 'post',
@@ -131,9 +156,11 @@ export const definition: TrackerDefinition = {
     ],
     inputs: {
       page: 'torrents',
-      $raw: '&category={{range .Categories}}{{.}};{{end}}',
-      active: '1',
+      $raw: '&category={{ range .Categories }}{{.}};{{end}}',
+      active: 1,
       search: '{{ .Keywords }}',
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -177,9 +204,22 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: ['(?i)(\\d{1,2})[x|\\/|\\\\](\\d{1,2})', 'S$1E$2'],
           },
+          {
+            name: 're_replace',
+            args: ['(?i)S(\\d{1,2})[/x]?C(\\d{1,2})', 'S$1E$2'],
+          },
         ],
       },
-      details: { selector: 'td:nth-child(3) a', attribute: 'href' },
+      details: {
+        selector: 'a[href^="download.php"]',
+        attribute: 'href',
+        filters: [
+          {
+            name: 'replace',
+            args: ['download.php?', 'index.php?page=torrent-details&'],
+          },
+        ],
+      },
       size: {
         selector: 'td:nth-child(6)',
         filters: [
@@ -203,17 +243,13 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[src$="golden.gif"]': '0',
-          'img[src$="silver.gif"]': '0.5',
-          '*': '1',
+          'img[src$="golden.gif"]': 0,
+          'img[src$="silver.gif"]': 0.5,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: {
-          'img[src$="x2.gif"]': '2',
-          'img[src$="x3.gif"]': '3',
-          '*': '1',
-        },
+        case: { 'img[src$="x2.gif"]': 2, 'img[src$="x3.gif"]': 3, '*': 1 },
       },
     },
     paths: [{ path: 'index.php' }],

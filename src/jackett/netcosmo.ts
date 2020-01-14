@@ -47,6 +47,13 @@ export const definition: TrackerDefinition = {
       default: '2',
       options: { '1': 'asc', '2': 'desc' },
     },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
   ],
   login: {
     path: 'sbg_login_new.php',

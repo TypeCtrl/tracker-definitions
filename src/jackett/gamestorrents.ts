@@ -24,7 +24,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   settings: [],
-  download: { selector: 'a#download_torrent' },
+  download: { selector: 'a#download_torrent', attribute: 'href' },
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },

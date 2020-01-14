@@ -39,6 +39,13 @@ export const definition: TrackerDefinition = {
       label: "Show donor torrent? (Enable if you're a donor)",
       default: false,
     },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
   ],
   login: {
     path: 'index.php?page=login',
@@ -55,9 +62,9 @@ export const definition: TrackerDefinition = {
     inputs: {
       search: '{{ .Keywords }}',
       page: 'torrents',
-      category: '{{range .Categories}}{{.}};{{end}}',
-      options: '0',
-      active: '0',
+      category: '{{ range .Categories }}{{.}};{{end}}',
+      options: 0,
+      active: 0,
     },
     rows: {
       selector:
@@ -108,24 +115,24 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(6)' },
       downloadvolumefactor: {
         case: {
-          'img[alt="Gold 100% Free"]': '0',
-          'img[alt="Silver 50% Free"]': '0.5',
-          'img[alt="Bronze 25% Free"]': '0.75',
-          '*': '1',
+          'img[alt="Gold 100% Free"]': 0,
+          'img[alt="Silver 50% Free"]': 0.5,
+          'img[alt="Bronze 25% Free"]': 0.75,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'img[alt="2x Upload Multiplier"]': '2',
-          'img[alt="3x Upload Multiplier"]': '3',
-          'img[alt="4x Upload Multiplier"]': '4',
-          'img[alt="5x Upload Multiplier"]': '5',
-          'img[alt="6x Upload Multiplier"]': '6',
-          'img[alt="7x Upload Multiplier"]': '7',
-          'img[alt="8x Upload Multiplier"]': '8',
-          'img[alt="9x Upload Multiplier"]': '9',
-          'img[alt="10x Upload Multiplier"]': '10',
-          '*': '1',
+          'img[alt="2x Upload Multiplier"]': 2,
+          'img[alt="3x Upload Multiplier"]': 3,
+          'img[alt="4x Upload Multiplier"]': 4,
+          'img[alt="5x Upload Multiplier"]': 5,
+          'img[alt="6x Upload Multiplier"]': 6,
+          'img[alt="7x Upload Multiplier"]': 7,
+          'img[alt="8x Upload Multiplier"]': 8,
+          'img[alt="9x Upload Multiplier"]': 9,
+          'img[alt="10x Upload Multiplier"]': 10,
+          '*': 1,
         },
       },
     },

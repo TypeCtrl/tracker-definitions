@@ -70,7 +70,7 @@ export const definition: TrackerDefinition = {
       type: 'info',
       label: 'Search results',
       default:
-        'For best results, increase the torrents number in your profile to 100.<br />Default is 15.',
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
     {
       name: 'sort',

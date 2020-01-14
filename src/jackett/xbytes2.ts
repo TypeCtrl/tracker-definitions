@@ -41,6 +41,31 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '3',
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
+  ],
   login: {
     path: 'index.php?page=login',
     method: 'post',
@@ -54,9 +79,11 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['S(\\d{1,2})E(\\d{1,2})', 'S$1/E$2'] }],
     inputs: {
       page: 'torrents',
-      $raw: '&category={{range .Categories}}{{.}};{{end}}',
-      active: '1',
+      $raw: '&category={{ range .Categories }}{{.}};{{end}}',
+      active: 1,
       search: '{{ .Keywords }}',
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -100,7 +127,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(11)' },
       seeders: { selector: 'td:nth-child(7) a' },
       leechers: { selector: 'td:nth-child(8) a' },
-      grabs: { selector: 'td:nth-child(9) a' },
+      grabs: { selector: 'td:nth-child(9) a', optional: true },
       date: {
         selector: 'td:nth-child(6)',
         filters: [{ name: 'dateparse', args: '02/01/2006' }],
@@ -111,22 +138,22 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[src$="gold.png"]': '0',
-          'img[src$="silver.png"]': '0.5',
-          '*': '1',
+          'img[src$="gold.png"]': 0,
+          'img[src$="silver.png"]': 0.5,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'img[src$="2x.gif"]': '2',
-          'img[src$="3x.gif"]': '3',
-          'img[src$="4x.gif"]': '4',
-          'img[src$="5x.gif"]': '5',
-          'img[src$="6x.gif"]': '6',
-          'img[src$="7x.gif"]': '7',
-          'img[src$="8x.gif"]': '8',
-          'img[src$="9x.gif"]': '9',
-          '*': '1',
+          'img[src$="2x.gif"]': 2,
+          'img[src$="3x.gif"]': 3,
+          'img[src$="4x.gif"]': 4,
+          'img[src$="5x.gif"]': 5,
+          'img[src$="6x.gif"]': 6,
+          'img[src$="7x.gif"]': 7,
+          'img[src$="8x.gif"]': 8,
+          'img[src$="9x.gif"]': 9,
+          '*': 1,
         },
       },
     },

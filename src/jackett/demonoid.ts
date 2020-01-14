@@ -365,7 +365,7 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]' },
+  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
     paths: [{ path: 'files/' }],
     inputs: {
@@ -385,7 +385,7 @@ export const definition: TrackerDefinition = {
         selector: 'tr td.added_today:not(:contains("Sponsored links"))',
         filters: [
           { name: 'replace', args: ['Added ', ''] },
-          { name: 'replace', args: ['on  ', ''] },
+          { name: 'replace', args: ['on ', ''] },
         ],
       },
     },

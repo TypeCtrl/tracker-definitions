@@ -30,7 +30,10 @@ export const definition: TrackerDefinition = {
     ],
   },
   settings: [],
-  download: { selector: 'a[href^="/download.php?id="]' },
+  download: {
+    selector: 'a[href^="/download.php?id="]',
+    attribute: 'href',
+  },
   search: {
     paths: [
       {
