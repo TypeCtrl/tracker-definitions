@@ -192,7 +192,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="index.php?page=downloadcheck&id="]',
+        selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         attribute: 'href',
       },
       banner: {
@@ -201,17 +201,17 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
       },
-      size: { selector: 'td:nth-last-child(3)' },
+      size: { selector: 'td:nth-last-child(4)' },
       date: {
-        selector: 'td:nth-last-child(8)',
+        selector: 'td:nth-last-child(6)',
         filters: [{ name: 'dateparse', args: '02/01/2006' }],
       },
       grabs: {
-        selector: 'td:nth-last-child(5)',
+        selector: 'td:nth-last-child(8)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
-      seeders: { selector: 'td:nth-last-child(7)' },
-      leechers: { selector: 'td:nth-last-child(6)' },
+      seeders: { selector: 'td:nth-last-child(3)' },
+      leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {
         case: {
           'img[alt="Free Leech"]': 0,
