@@ -8,8 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://nostalgic.is/'],
-  legacylinks: ['https://nostalgic.to/'],
+  links: ['https://vhstapes.org/'],
+  legacylinks: ['https://nostalgic.to/', 'https://nostalgic.is/'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV', desc: 'AdultSwim' },

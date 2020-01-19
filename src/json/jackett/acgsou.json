@@ -83,8 +83,8 @@
       "size": { "selector": "td:nth-child(4)" },
       "seeders": { "text": 1 },
       "leechers": { "text": 1 },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

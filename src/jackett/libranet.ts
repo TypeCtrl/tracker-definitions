@@ -41,8 +41,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search: '{{.Keywords}}',
+      $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
       searchwhere: '',
       subcat: '',
       musicstyle: '',
@@ -89,9 +89,9 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-last-child(4)' },
       leechers: { selector: 'td:nth-last-child(3)' },
       downloadvolumefactor: {
-        case: { 'img[src$="/pic/freeleech.gif"]': 0, '*': '1' },
+        case: { 'img[src$="/pic/freeleech.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

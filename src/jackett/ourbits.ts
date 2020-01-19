@@ -54,8 +54,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 0,
       spstate: 0,
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
@@ -97,20 +97,20 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td.rowfollow:nth-child(8)' },
       downloadvolumefactor: {
         case: {
-          'img.pro_free': '0',
-          'img.pro_free2up': '0',
-          'img.pro_50pctdown': '0.5',
-          'img.pro_50pctdown2up': '0.5',
-          'img.pro_30pctdown': '0.3',
-          '*': '1',
+          'img.pro_free': 0,
+          'img.pro_free2up': 0,
+          'img.pro_50pctdown': 0.5,
+          'img.pro_50pctdown2up': 0.5,
+          'img.pro_30pctdown': 0.3,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'img.pro_50pctdown2up': '2',
-          'img.pro_free2up': '2',
-          'img.pro_2up': '2',
-          '*': '1',
+          'img.pro_50pctdown2up': 2,
+          'img.pro_free2up': 2,
+          'img.pro_2up': 2,
+          '*': 1,
         },
       },
       description: {

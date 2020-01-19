@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}search/search.php?q={{ .Keywords}}{{else}}/{{end}}',
+        path: '{{ if .Keywords }}search/search.php?q={{ .Keywords }}{{else}}/{{end}}',
       },
     ],
     rows: {
@@ -48,8 +48,8 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(2)',
         filters: [{ name: 'split', args: ['/', 1] }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

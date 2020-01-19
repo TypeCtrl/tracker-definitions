@@ -98,7 +98,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}katsearch/page/1/{{ .Keywords }}{{ else }}category/latest/page/1{{ end }}',
+          '{{ if .Keywords }}katsearch/page/1/{{ .Keywords }}{{else}}category/latest/page/1{{end}}',
       },
     ],
     rows: {
@@ -202,8 +202,8 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td[data-title="Seed"]' },
       leechers: { selector: 'td[data-title="Leech"]' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

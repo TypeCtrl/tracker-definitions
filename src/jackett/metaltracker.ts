@@ -67,7 +67,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents/search.html', method: 'post' }],
     inputs: {
       'SearchTorrentsForm[nameTorrent]':
-        '{{ if .Query.Artist }}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+        '{{ if or (.Query.Artist) (.Query.Album) }}{{ or (.Query.Artist) (.Query.Album) }}{{else}}{{ .Keywords }}{{end}}',
       'SearchTorrentsForm[sort]': '{{ .Config.sort }}',
       'SearchTorrentsForm[sortType]': '{{ .Config.type }}',
       'go-search': 'Search',

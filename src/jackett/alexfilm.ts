@@ -123,12 +123,12 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(6) span:nth-last-child(1)' },
       downloadvolumefactor: {
         case: {
-          'img[src="./styles/images/tor_gold.gif"]': '0',
-          'img[src="./styles/images/tor_silver.gif"]': '0.5',
-          '*': '1',
+          'img[src="./styles/images/tor_gold.gif"]': 0,
+          'img[src="./styles/images/tor_silver.gif"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { '*': 1 } },
     },
   },
   source: 'jackett',

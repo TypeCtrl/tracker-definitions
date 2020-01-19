@@ -46,6 +46,7 @@ export const jackettSites = [
   'booktracker',
   'brasiltracker',
   'broadcity',
+  'brobits',
   'btdb',
   'btdigg',
   'btetree',

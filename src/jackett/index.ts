@@ -139,6 +139,9 @@ export const jbrasiltracker = jjbrasiltracker;
 import { definition as jjbroadcity } from './broadcity';
 export const jbroadcity = jjbroadcity;
 
+import { definition as jjbrobits } from './brobits';
+export const jbrobits = jjbrobits;
+
 import { definition as jjbtdb } from './btdb';
 export const jbtdb = jjbtdb;
 
@@ -1078,6 +1081,7 @@ export const definitions = [
   jjbooktracker,
   jjbrasiltracker,
   jjbroadcity,
+  jjbrobits,
   jjbtdb,
   jjbtdigg,
   jjbtetree,

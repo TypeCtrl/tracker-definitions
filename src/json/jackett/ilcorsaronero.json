@@ -5,7 +5,11 @@
   "language": "it-IT",
   "type": "public",
   "encoding": "WINDOWS-1252",
-  "links": ["https://ilcorsaronero.pizza/"],
+  "links": [
+    "https://ilcorsaronero.pizza/",
+    "https://ilcorsaronero.fun/",
+    "https://ilcorsaronero.pro/"
+  ],
   "legacylinks": [
     "https://ilcorsaronero.live/",
     "https://ilcorsaronero.vip/",
@@ -163,8 +167,8 @@
         "selector": "td:nth-child(7) font",
         "filters": [{ "name": "replace", "args": ["n/a", "0"] }]
       },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

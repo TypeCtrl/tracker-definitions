@@ -51,7 +51,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Keywords}}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}download/movies/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
+          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}download/movies/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
       },
     ],
     rows: { selector: 'tr:has(td.m)' },

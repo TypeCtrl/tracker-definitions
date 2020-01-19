@@ -78,7 +78,7 @@
     ],
     "inputs": {
       "search": "{{ .Keywords }}",
-      "category": "{{range .Categories}}{{.}};{{end}}",
+      "category": "{{ range .Categories }}{{.}};{{end}}",
       "page": "torrents",
       "active": 0
     },
@@ -174,8 +174,8 @@
       },
       "seeders": { "selector": "td:nth-last-child(6)" },
       "leechers": { "selector": "td:nth-last-child(5)" },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "text": "1" }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

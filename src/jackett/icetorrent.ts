@@ -71,8 +71,8 @@ export const definition: TrackerDefinition = {
       { path: 'browseadult.php', categorymappings: [9] },
     ],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
       search_by: '{{ if .Query.IMDBID }}imdb{{else}}name{{end}}',
     },

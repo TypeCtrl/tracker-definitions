@@ -39,8 +39,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      s: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      s: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       dp: 0,
       add: 0,
       or: 1,

@@ -12,13 +12,13 @@ export const definition: TrackerDefinition = {
   links: ['https://acg.rip/'],
   certificates: ['bfd88de41aeeda5c9d98d5e081e8c4ec40204b6b'],
   caps: {
-    modes: { 'tv-search': ['q', 'season', 'ep'], search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
     categorymappings: [{ id: '1', cat: 'TV' }],
   },
   settings: [],
   search: {
     paths: [{ path: '/' }],
-    inputs: { term: '{{ .Query.Keywords }}' },
+    inputs: { term: '{{ .Keywords }}' },
     rows: { selector: 'tbody tr' },
     fields: {
       title: { selector: 'td.title > span.title a' },
@@ -34,8 +34,8 @@ export const definition: TrackerDefinition = {
         attribute: 'datetime',
         filters: [{ name: 'fuzzytime' }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

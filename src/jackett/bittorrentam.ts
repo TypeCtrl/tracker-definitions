@@ -48,7 +48,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Keywords}}search.php?kwds={{ .Keywords}}&ord={{ .Config.sort }}&cat=100{{else}}/{{end}}',
+          '{{ if .Keywords }}search.php?kwds={{ .Keywords }}&ord={{ .Config.sort }}&cat=100{{else}}/{{end}}',
       },
     ],
     rows: { selector: 'table.torrentsTable:has(tr.r) tbody tr.r' },

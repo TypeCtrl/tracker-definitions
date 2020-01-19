@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
   settings: [],
   search: {
     paths: [{ path: '/' }],
-    inputs: { s: '{{.Keywords}}' },
+    inputs: { s: '{{ .Keywords }}' },
     rows: { selector: 'div.iso-item article:has(a.download)' },
     fields: {
       title: { selector: 'div.blog-content h3 a' },
@@ -43,10 +43,10 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { text: '500 MB' },
-      seeders: { text: '1' },
-      leechers: { text: '1' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      seeders: { text: 1 },
+      leechers: { text: 1 },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
