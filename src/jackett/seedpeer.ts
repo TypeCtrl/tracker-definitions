@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'a[href*="/torrent/"]', attribute: 'href' },
   search: {
-    paths: [{ path: '{{if .Keywords}}search/{{ .Keywords}}{{else}}today{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}search/{{ .Keywords }}{{else}}today{{end}}' }],
     rows: {
       selector: 'table.table > tbody > tr:has(a[href^="/details/"])',
     },

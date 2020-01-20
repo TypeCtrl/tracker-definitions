@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
     attribute: 'href',
   },
   search: {
-    paths: [{ path: '{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}{{end}}' }],
     rows: { selector: 'div.listing-torrent > table > tbody > tr:has(a)' },
     fields: {
       category: {

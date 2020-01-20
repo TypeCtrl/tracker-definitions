@@ -133,7 +133,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: { case: { 'span.fltag': 0, '*': 1 } },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

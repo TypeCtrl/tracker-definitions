@@ -55,7 +55,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'download-torrents' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
     },
@@ -162,7 +162,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src="./pic/freeleech.png"]': 0, '*': '1' },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

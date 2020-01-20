@@ -55,7 +55,7 @@
   "search": {
     "paths": [{ "path": "torrents.php" }],
     "inputs": {
-      "search": "{{ if .Query.Artist }}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}",
+      "search": "{{ if or (.Query.Artist) (.Query.Album) }}{{ or (.Query.Artist) (.Query.Album) }}{{else}}{{ .Keywords }}{{end}}",
       "active": 0,
       "options": 0,
       "order": "{{ .Config.sort }}",

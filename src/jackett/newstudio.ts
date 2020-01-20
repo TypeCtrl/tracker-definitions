@@ -31,7 +31,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'tracker.php' }, { path: 'tracker.php', inputs: { start: 50 } }],
     inputs: {
-      nm: '{{.Keywords}}',
+      nm: '{{ .Keywords }}',
       o: '{{ .Config.sort }}',
       s: '{{ .Config.type }}',
     },

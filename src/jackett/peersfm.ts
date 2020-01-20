@@ -127,7 +127,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

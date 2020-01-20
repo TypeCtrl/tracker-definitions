@@ -63,8 +63,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrent/torrents.php' }],
     inputs: {
       search: '{{ .Keywords }}',
-      category: '{{range .Categories}}{{.}};{{end}}',
-      active: '1',
+      category: '{{ range .Categories }}{{.}};{{end}}',
+      active: 1,
     },
     keywordsfilters: [{ name: 'diacritics', args: 'replace' }],
     rows: {
@@ -119,8 +119,8 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(7)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

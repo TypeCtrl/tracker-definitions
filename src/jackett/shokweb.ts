@@ -23,7 +23,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    paths: [{ path: '{{if .Keywords}}/search/{{.Keywords}}{{else}}{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}/search/{{ .Keywords }}{{else}}{{end}}' }],
     rows: {
       selector: 'div:has(a[href^="magnet:?"])',
       filters: [{ name: 'andmatch' }],

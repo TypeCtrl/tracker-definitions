@@ -137,7 +137,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: { case: { 'i.fg-gold': 0, '*': 1 } },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

@@ -251,7 +251,6 @@ export const definition: TrackerDefinition = {
         path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}*{{end}}',
         inputs: { offset: 40 },
       },
-      { path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}*{{end}}' },
     ],
     inputs: { c: -1, ob: '{{ .Config.sort }}' },
     rows: { selector: 'div#torrentBorder' },

@@ -70,7 +70,7 @@ export const definition: TrackerDefinition = {
       seeders: { optional: true, selector: 'td:nth-child(6)' },
       leechers: { optional: true, selector: 'td:nth-child(7)' },
       downloadvolumefactor: { case: { 'i.fa-star': '0', '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
     paths: [{ path: 'recherche' }],
   },

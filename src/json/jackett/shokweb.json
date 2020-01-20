@@ -22,7 +22,7 @@
   },
   "search": {
     "paths": [
-      { "path": "{{if .Keywords}}/search/{{.Keywords}}{{else}}{{end}}" }
+      { "path": "{{ if .Keywords }}/search/{{ .Keywords }}{{else}}{{end}}" }
     ],
     "rows": {
       "selector": "div:has(a[href^=\"magnet:?\"])",
