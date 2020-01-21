@@ -61,7 +61,7 @@ export const definition: TrackerDefinition = {
         selector: 'div.fecha p',
         filters: [{ name: 'dateparse', args: '02-01-2006' }],
       },
-      size: { selector: 'div.tamanio p' },
+      size: { selector: 'div.tamanio p', optional: true },
       seeders: { text: 1 },
       leechers: { text: 1 },
       downloadvolumefactor: { text: 0 },
