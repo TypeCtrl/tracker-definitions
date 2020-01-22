@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
     ],
   },
   search: {
-    paths: [{ path: '{{if .Keywords }}search.php{{else}}index.php{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}search.php{{else}}index.php{{end}}' }],
     inputs: {
       terms: '{{ .Keywords }}',
       type: '{{ .Config.type-id }}',

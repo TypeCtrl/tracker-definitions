@@ -278,7 +278,6 @@ export const jackettSites = [
   'theaudioscene',
   'theempire',
   'thegeeks',
-  'themoviecave',
   'theoccult',
   'thepiratebay',
   'theplace',

@@ -175,9 +175,9 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
       downloadvolumefactor: {
-        case: { 'span.label:contains("Freeleech")': '0', '*': '1' },
+        case: { 'span.label:contains("Freeleech")': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

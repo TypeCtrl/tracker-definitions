@@ -174,7 +174,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Query.Keywords}}/search/{{ .Keywords}}/0/{{ .Config.order }}/{{join .Categories ","}}{{else}}/recent{{end}}',
+          '{{ if .Keywords }}/search/{{ .Keywords }}/0/{{ .Config.order }}/{{ join .Categories ","}}{{else}}/recent{{end}}',
       },
     ],
     keywordsfilters: [
@@ -215,8 +215,8 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(3)' },
       leechers: { selector: 'td:nth-child(4)' },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

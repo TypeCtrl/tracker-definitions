@@ -835,9 +835,6 @@ export const jtheempire = jjtheempire;
 import { definition as jjthegeeks } from './thegeeks';
 export const jthegeeks = jjthegeeks;
 
-import { definition as jjthemoviecave } from './themoviecave';
-export const jthemoviecave = jjthemoviecave;
-
 import { definition as jjtheoccult } from './theoccult';
 export const jtheoccult = jjtheoccult;
 
@@ -1313,7 +1310,6 @@ export const definitions = [
   jjtheaudioscene,
   jjtheempire,
   jjthegeeks,
-  jjthemoviecave,
   jjtheoccult,
   jjthepiratebay,
   jjtheplace,
