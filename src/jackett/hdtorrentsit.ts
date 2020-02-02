@@ -20,6 +20,17 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'ip_filtering',
+      type: 'info',
+      label: 'IP Filtering',
+      default:
+        'HDtorrents allows only Italian IP addressess. The <b>404 Not Found</b> error means your IP was not accepted.',
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -27,7 +38,7 @@ export const definition: TrackerDefinition = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [{ selector: 'div.error' }],
+    error: [{ selector: 'div.error' }, { selector: 'h1:contains("404 Not Found")' }],
     test: { path: 'browse.php' },
   },
   search: {
