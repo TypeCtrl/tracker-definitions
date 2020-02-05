@@ -1068,7 +1068,7 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    paths: [{ path: '{{if .Keywords}}search/?search={{ .Keywords}}{{else}}{{end}}' }],
+    paths: [{ path: 'search/?search={{ .Keywords }}' }],
     rows: { selector: 'tr[class^="tl"]' },
     fields: {
       category: {
