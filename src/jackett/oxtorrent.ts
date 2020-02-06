@@ -42,7 +42,10 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}{{end}}' }],
-    rows: { selector: 'div.listing-torrent > table > tbody > tr:has(a)' },
+    rows: {
+      selector:
+        'div.listing-torrent > table > tbody > tr:has(a[href^="torrent/"]), div.listing-torrent > table > tbody > tr:has(a[href^="/torrent/"])',
+    },
     fields: {
       category: {
         selector: 'td:nth-child(1) i, td:nth-child(1) div i',

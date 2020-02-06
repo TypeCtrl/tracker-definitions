@@ -132,13 +132,17 @@
         "filters": [{ "name": "re_replace", "args": ["( torrent)$", ""] }]
       },
       "category": {
+        "optional": true,
         "selector": "a[href^=\"/torrents.php?cat=\"]",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "cat" }]
       },
       "details": { "selector": "a[href^=\"/torrent/\"]", "attribute": "href" },
       "date": { "selector": "td:nth-child(3)" },
-      "size": { "selector": "td:nth-child(4)" },
+      "size": {
+        "selector": "td:nth-child(4)",
+        "filters": [{ "name": "replace", "args": ["N/A", "0 B"] }]
+      },
       "seeders": { "selector": "td:nth-child(6)" },
       "leechers": { "selector": "td:nth-child(7)" },
       "downloadvolumefactor": { "text": 0 },

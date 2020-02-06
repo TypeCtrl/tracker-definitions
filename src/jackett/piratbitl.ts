@@ -1716,7 +1716,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'f' }],
       },
-      title: { selector: 'td a.genmed b' },
+      title: { selector: 'td a.genmed' },
       details: { selector: 'td a.genmed', attribute: 'href' },
       download: { selector: 'td div a.dLink', attribute: 'href' },
       size: { selector: 'td > u' },

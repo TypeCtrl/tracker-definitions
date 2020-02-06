@@ -6,7 +6,7 @@
   "type": "semi-private",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://yggtorrent.ws/"],
+  "links": ["https://yggtorrent.se/"],
   "legacylinks": [
     "https://yggtorrent.com/",
     "https://ww1.yggtorrent.com/",
@@ -29,7 +29,8 @@
     "https://www.yggtorrent.ch/",
     "https://www.yggtorrent.pe/",
     "https://www3.yggtorrent.pe/",
-    "https://www5.yggtorrent.pe/"
+    "https://www5.yggtorrent.pe/",
+    "https://yggtorrent.ws/"
   ],
   "caps": {
     "categorymappings": [
@@ -101,7 +102,7 @@
       "name": "searchanddlurl",
       "label": "Search and download URL",
       "type": "text",
-      "default": "www2.yggtorrent.ws"
+      "default": "www2.yggtorrent.se"
     },
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },

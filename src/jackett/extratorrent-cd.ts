@@ -1072,9 +1072,12 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'tr[class^="tl"]' },
     fields: {
       category: {
-        selector: 'a[href*="/category/"]',
+        selector: 'a[href*="/category/"], a[href="#"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '/category/(\\d+)/' }],
+        filters: [
+          { name: 'replace', args: ['#', '/category/9/'] },
+          { name: 'regexp', args: '/category/(\\d+)/' },
+        ],
       },
       title: { selector: 'a[href*="/torrent/"][title^="view"]' },
       details: {
@@ -1087,7 +1090,8 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'td:nth-last-of-type(5):not(:contains(":"))',
+        selector:
+          'td:nth-last-of-type(5):not(:contains(":")):not(:contains("Y-day-")):not(:contains("Today-"))',
         optional: true,
         filters: [
           { name: 'replace', args: [' ', '-'] },
