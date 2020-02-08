@@ -118,7 +118,11 @@
       "seeders": { "selector": "td:nth-of-type(11)" },
       "leechers": { "selector": "td:nth-of-type(12)" },
       "downloadvolumefactor": {
-        "case": { "img[src=\"free.gif\"]": 0, "*": 1 }
+        "case": {
+          "img[src=\"free.gif\"]": 0,
+          "img[src=\"./pic/fre.gif\"]": 0,
+          "*": 1
+        }
       },
       "uploadvolumefactor": { "text": 1 }
     }

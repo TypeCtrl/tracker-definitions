@@ -439,6 +439,9 @@ export const jhdsky = jjhdsky;
 import { definition as jjhdspain } from './hdspain';
 export const jhdspain = jjhdspain;
 
+import { definition as jjhdtime } from './hdtime';
+export const jhdtime = jjhdtime;
+
 import { definition as jjhdtorrentsit } from './hdtorrentsit';
 export const jhdtorrentsit = jjhdtorrentsit;
 
@@ -508,6 +511,9 @@ export const jkickasstorrent = jjkickasstorrent;
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
 
+import { definition as jjleaguehd } from './leaguehd';
+export const jleaguehd = jjleaguehd;
+
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
 
@@ -555,6 +561,9 @@ export const jmetalIplayRo = jjmetalIplayRo;
 
 import { definition as jjmetaltracker } from './metaltracker';
 export const jmetaltracker = jjmetaltracker;
+
+import { definition as jjmicrobit } from './microbit';
+export const jmicrobit = jjmicrobit;
 
 import { definition as jjmoecat } from './moecat';
 export const jmoecat = jjmoecat;
@@ -802,9 +811,6 @@ export const jtapochek = jjtapochek;
 import { definition as jjtasmanit } from './tasmanit';
 export const jtasmanit = jjtasmanit;
 
-import { definition as jjtazmaniaden } from './tazmaniaden';
-export const jtazmaniaden = jjtazmaniaden;
-
 import { definition as jjteamhd } from './teamhd';
 export const jteamhd = jjteamhd;
 
@@ -909,6 +915,9 @@ export const jtorrentkitty = jjtorrentkitty;
 
 import { definition as jjtorrentland } from './torrentland';
 export const jtorrentland = jjtorrentland;
+
+import { definition as jjtorrentleechPl } from './torrentleech-pl';
+export const jtorrentleechPl = jjtorrentleechPl;
 
 import { definition as jjtorrentlt } from './torrentlt';
 export const jtorrentlt = jjtorrentlt;
@@ -1178,6 +1187,7 @@ export const definitions = [
   jjhdroute,
   jjhdsky,
   jjhdspain,
+  jjhdtime,
   jjhdtorrentsit,
   jjhdturk,
   jjhdu,
@@ -1201,6 +1211,7 @@ export const definitions = [
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinozal,
+  jjleaguehd,
   jjlearnflakes,
   jjlegacyhd,
   jjlegittorrents,
@@ -1217,6 +1228,7 @@ export const definitions = [
   jjmarinetracker,
   jjmetalIplayRo,
   jjmetaltracker,
+  jjmicrobit,
   jjmoecat,
   jjmononokebt,
   jjmonova,
@@ -1299,7 +1311,6 @@ export const definitions = [
   jjtakeabyte,
   jjtapochek,
   jjtasmanit,
-  jjtazmaniaden,
   jjteamhd,
   jjteamos,
   jjtekno3D,
@@ -1335,6 +1346,7 @@ export const definitions = [
   jjtorrenting,
   jjtorrentkitty,
   jjtorrentland,
+  jjtorrentleechPl,
   jjtorrentlt,
   jjtorrentparadise,
   jjtorrentproject2,

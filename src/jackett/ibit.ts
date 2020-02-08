@@ -78,7 +78,10 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(4)',
         filters: [{ name: 'timeago' }],
       },
-      size: { selector: 'td:nth-child(5)' },
+      size: {
+        selector: 'td:nth-child(5)',
+        filters: [{ name: 'replace', args: ['-', '0 B'] }],
+      },
       seeders: {
         selector: 'td:nth-child(6)',
         filters: [{ name: 'replace', args: [',', ''] }],

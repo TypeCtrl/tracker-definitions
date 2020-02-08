@@ -79,13 +79,14 @@ export const definition: TrackerDefinition = {
       type: 'select',
       label: 'Sort requested from site',
       default: 'A',
-      options: { A: 'created', P: 'seeders', S: 'size' },
+      options: { _: 'peers', N: 'rating', A: 'created', S: 'size' },
     },
   ],
   search: {
     paths: [
       {
-        path: '{{if .Config.filter-verified }}verified{{else}}search{{end}}{{ .Config.sort }}',
+        path:
+          '{{if .Config.filter-verified }}verified{{else}}search{{end}}{{ re_replace .Config.sort "_" "" }}',
       },
     ],
     inputs: {

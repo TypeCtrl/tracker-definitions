@@ -255,7 +255,10 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-last-of-type(6)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
-      size: { selector: 'td:nth-last-of-type(4)' },
+      size: {
+        selector: 'td:nth-last-of-type(4)',
+        filters: [{ name: 'replace', args: [',', '.'] }],
+      },
       downloadvolumefactor: {
         case: {
           'img[src="images/freeleech.gif"]': 0,

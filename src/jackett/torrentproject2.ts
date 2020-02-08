@@ -89,8 +89,14 @@ export const definition: TrackerDefinition = {
       download: { selector: 'span > a', attribute: 'href' },
       date: { selector: 'div > span:nth-child(4)' },
       size: { selector: 'div > span:nth-child(5)' },
-      seeders: { selector: 'div > span:nth-child(2)' },
-      leechers: { selector: 'div > span:nth-child(3)' },
+      seeders: {
+        selector: 'div > span:nth-child(2)',
+        filters: [{ name: 'replace', args: ['N/A', '0'] }],
+      },
+      leechers: {
+        selector: 'div > span:nth-child(3)',
+        filters: [{ name: 'replace', args: ['N/A', '0'] }],
+      },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

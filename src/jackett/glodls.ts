@@ -73,6 +73,7 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'table.ttable_headinner tr.t-row', after: 1 },
     fields: {
       category: {
+        optional: true,
         selector: 'a[href^="/search.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
