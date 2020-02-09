@@ -47,7 +47,10 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'td:nth-child(3)',
-        filters: [{ name: 'replace', args: ['s', ''] }],
+        filters: [
+          { name: 'replace', args: ['Undefined', '0 B'] },
+          { name: 'replace', args: ['s', ''] },
+        ],
       },
       description: { selector: 'td:nth-child(4)' },
       seeders: { text: 1 },
