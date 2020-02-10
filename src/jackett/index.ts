@@ -43,9 +43,6 @@ export const jalexfilm = jjalexfilm;
 import { definition as jjamigosshare } from './amigosshare';
 export const jamigosshare = jjamigosshare;
 
-import { definition as jjanidex } from './anidex';
-export const janidex = jjanidex;
-
 import { definition as jjanirena } from './anirena';
 export const janirena = jjanirena;
 
@@ -898,6 +895,9 @@ export const jtorrentdownload = jjtorrentdownload;
 import { definition as jjtorrentdownloads } from './torrentdownloads';
 export const jtorrentdownloads = jjtorrentdownloads;
 
+import { definition as jjtorrentfactory } from './torrentfactory';
+export const jtorrentfactory = jjtorrentfactory;
+
 import { definition as jjtorrentfunk } from './torrentfunk';
 export const jtorrentfunk = jjtorrentfunk;
 
@@ -1055,7 +1055,6 @@ export const definitions = [
   jjalein,
   jjalexfilm,
   jjamigosshare,
-  jjanidex,
   jjanirena,
   jjarabafenice,
   jjarenabg,
@@ -1340,6 +1339,7 @@ export const definitions = [
   jjtorrentccf,
   jjtorrentdownload,
   jjtorrentdownloads,
+  jjtorrentfactory,
   jjtorrentfunk,
   jjtorrentgalaxyorg,
   jjtorrenthr,

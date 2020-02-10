@@ -128,7 +128,12 @@
       },
       "size": {
         "selector": "div.postContent p:contains(\"File Size:\")",
-        "filters": [{ "name": "regexp", "args": "File Size: (.+?)s" }]
+        "filters": [
+          { "name": "regexp", "args": "File Size: (.+?)$" },
+          { "name": "replace", "args": ["MBs", "MB"] },
+          { "name": "replace", "args": ["GBs", "GB"] },
+          { "name": "replace", "args": ["KBs", "KB"] }
+        ]
       },
       "seeders": { "text": 1 },
       "leechers": { "text": 1 },

@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
     'XtremeWrestlingTorrents (XWT) is a Private Torrent Tracker for PROFESSIONAL WRESTLING / MMA',
   language: 'en-US',
   type: 'private',
-  encoding: 'UTF-8',
+  encoding: 'WINDOWS-1252',
   links: ['https://xtremewrestlingtorrents.net/'],
   caps: {
     categorymappings: [

@@ -24,7 +24,7 @@ export const definition: TrackerDefinition = {
     fields: {
       title: { selector: 'div.blog-content h3 a' },
       category: {
-        selector: 'a[href$="/mac-os-apps/"], a[href$="/mac-games/"]',
+        selector: 'a[href*="/mac-os-apps/"], a[href*="/mac-games/"]',
         attribute: 'href',
         filters: [{ name: 'split', args: ['/', 3] }],
       },
