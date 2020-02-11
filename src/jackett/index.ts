@@ -412,6 +412,9 @@ export const jhdchina = jjhdchina;
 import { definition as jjhdcity } from './hdcity';
 export const jhdcity = jjhdcity;
 
+import { definition as jjhddisk } from './hddisk';
+export const jhddisk = jjhddisk;
+
 import { definition as jjhddolby } from './hddolby';
 export const jhddolby = jjhddolby;
 
@@ -775,6 +778,9 @@ export const jsktorrent = jjsktorrent;
 import { definition as jjskytorrentsclone } from './skytorrentsclone';
 export const jskytorrentsclone = jjskytorrentsclone;
 
+import { definition as jjsnowpt } from './snowpt';
+export const jsnowpt = jjsnowpt;
+
 import { definition as jjsoundpark } from './soundpark';
 export const jsoundpark = jjsoundpark;
 
@@ -846,6 +852,9 @@ export const jthepiratebay = jjthepiratebay;
 
 import { definition as jjtheplace } from './theplace';
 export const jtheplace = jjtheplace;
+
+import { definition as jjtheresurrection } from './theresurrection';
+export const jtheresurrection = jjtheresurrection;
 
 import { definition as jjtheshinning } from './theshinning';
 export const jtheshinning = jjtheshinning;
@@ -1178,6 +1187,7 @@ export const definitions = [
   jjhdcenter,
   jjhdchina,
   jjhdcity,
+  jjhddisk,
   jjhddolby,
   jjhdforever,
   jjhdhome,
@@ -1299,6 +1309,7 @@ export const definitions = [
   jjsiambit,
   jjsktorrent,
   jjskytorrentsclone,
+  jjsnowpt,
   jjsoundpark,
   jjspacetorrent,
   jjspeedtorrentreloaded,
@@ -1323,6 +1334,7 @@ export const definitions = [
   jjtheoccult,
   jjthepiratebay,
   jjtheplace,
+  jjtheresurrection,
   jjtheshinning,
   jjtheshow,
   jjthevault,
