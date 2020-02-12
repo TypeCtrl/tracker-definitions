@@ -1000,6 +1000,9 @@ export const junlimitz = jjunlimitz;
 import { definition as jjvizuk } from './vizuk';
 export const jvizuk = jjvizuk;
 
+import { definition as jjwdt } from './wdt';
+export const jwdt = jjwdt;
+
 import { definition as jjwihd } from './wihd';
 export const jwihd = jjwihd;
 
@@ -1383,6 +1386,7 @@ export const definitions = [
   jjuniongang,
   jjunlimitz,
   jjvizuk,
+  jjwdt,
   jjwihd,
   jjworldOfTomorrow,
   jjxIteMe,

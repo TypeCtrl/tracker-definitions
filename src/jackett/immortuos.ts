@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'de-DE',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.immortuos.life/'],
+  links: ['https://immortuos.life/', 'https://www.immortuos.life/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },

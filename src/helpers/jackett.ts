@@ -333,6 +333,7 @@ export const jackettSites = [
   'uniongang',
   'unlimitz',
   'vizuk',
+  'wdt',
   'wihd',
   'world-of-tomorrow',
   'x-ite.me',
