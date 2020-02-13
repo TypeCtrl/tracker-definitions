@@ -511,6 +511,9 @@ export const jkickasstorrent = jjkickasstorrent;
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
 
+import { definition as jjkorsar } from './korsar';
+export const jkorsar = jjkorsar;
+
 import { definition as jjleaguehd } from './leaguehd';
 export const jleaguehd = jjleaguehd;
 
@@ -657,6 +660,9 @@ export const jpiratbit = jjpiratbit;
 
 import { definition as jjpiratbitl } from './piratbitl';
 export const jpiratbitl = jjpiratbitl;
+
+import { definition as jjpirateiro } from './pirateiro';
+export const jpirateiro = jjpirateiro;
 
 import { definition as jjpixelcove } from './pixelcove';
 export const jpixelcove = jjpixelcove;
@@ -885,6 +891,9 @@ export const jtorrentExplosiv = jjtorrentExplosiv;
 
 import { definition as jjtorrentTurk } from './torrent-turk';
 export const jtorrentTurk = jjtorrentTurk;
+
+import { definition as jjtorrent4You } from './torrent4you';
+export const jtorrent4You = jjtorrent4You;
 
 import { definition as jjtorrent9 } from './torrent9';
 export const jtorrent9 = jjtorrent9;
@@ -1223,6 +1232,7 @@ export const definitions = [
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinozal,
+  jjkorsar,
   jjleaguehd,
   jjlearnflakes,
   jjlegacyhd,
@@ -1272,6 +1282,7 @@ export const definitions = [
   jjpeersfm,
   jjpiratbit,
   jjpiratbitl,
+  jjpirateiro,
   jjpixelcove,
   jjpleasuredome,
   jjpolishsource,
@@ -1348,6 +1359,7 @@ export const definitions = [
   jjtoros,
   jjtorrentExplosiv,
   jjtorrentTurk,
+  jjtorrent4You,
   jjtorrent9,
   jjtorrent9Clone,
   jjtorrentbd,
