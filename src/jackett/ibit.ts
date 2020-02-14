@@ -28,18 +28,22 @@ export const definition: TrackerDefinition = {
   },
   settings: [
     {
-      name: 'sort',
+      name: 'sortby',
       type: 'select',
       label: 'Sort requested from site (applies only to Keyword searches)',
-      default: 'uploaded_at:desc',
+      default: 'uploaded_at',
       options: {
-        'uploaded_at:desc': 'created desc',
-        'uploaded_at:asc': 'created asc',
-        'seeders:desc': 'seeders desc',
-        'seeders:asc': 'seeders asc',
-        'size:desc': 'size desc',
-        'size:asc': 'size asc',
+        uploaded_at: 'created',
+        seeders: 'seeders',
+        size: 'size',
       },
+    },
+    {
+      name: 'order',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
     },
   ],
   download: {
@@ -59,7 +63,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'torrent-search/{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}/all/{{ .Config.sort }}/1/',
+          'torrent-search/{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}/all/{{ .Config.sortby }}:{{ .Config.order }}/1/',
       },
     ],
     rows: {

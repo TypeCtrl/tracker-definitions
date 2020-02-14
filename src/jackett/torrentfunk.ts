@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'td[class^="tv"], td[class^="tn"]',
         attribute: 'class',
-        filters: [{ name: 'regexp', args: '(\\d)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       details: {
         selector: 'div a[href^="/torrent/"]',
@@ -56,7 +56,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       date: {
-        selector: 'td:nth-child(2):contains(" ")',
+        selector: 'td:nth-child(2):not(:contains("day"))',
         optional: true,
         filters: [{ name: 'dateparse', args: '2 Jan' }],
       },

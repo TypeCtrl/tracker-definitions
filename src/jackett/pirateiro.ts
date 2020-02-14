@@ -3,8 +3,8 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'pirateiro',
   name: 'Pirateiro',
-  description: 'Pirateiro is a Public SPANISH site for MOVIES / TV / GENERAL',
-  language: 'es-ES',
+  description: 'Pirateiro is a Public site for MOVIES / TV / GENERAL',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['http://pirateiro.com/'],

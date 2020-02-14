@@ -16,6 +16,9 @@ export const j4Thd = jj4Thd;
 import { definition as jj52Pt } from './52pt';
 export const j52Pt = jj52Pt;
 
+import { definition as jj7Torrents } from './7torrents';
+export const j7Torrents = jj7Torrents;
+
 import { definition as jjbittorrentfiles } from './bittorrentfiles';
 export const jbittorrentfiles = jjbittorrentfiles;
 
@@ -75,6 +78,9 @@ export const jawesomehd = jjawesomehd;
 
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
+
+import { definition as jjbadasstorrents } from './badasstorrents';
+export const jbadasstorrents = jjbadasstorrents;
 
 import { definition as jjbaibako } from './baibako';
 export const jbaibako = jjbaibako;
@@ -550,6 +556,9 @@ export const jmactorrents = jjmactorrents;
 import { definition as jjmagico } from './magico';
 export const jmagico = jjmagico;
 
+import { definition as jjmagnet4You } from './magnet4you';
+export const jmagnet4You = jjmagnet4You;
+
 import { definition as jjmagnetdl } from './magnetdl';
 export const jmagnetdl = jjmagnetdl;
 
@@ -847,6 +856,9 @@ export const jtheaudioscene = jjtheaudioscene;
 import { definition as jjtheempire } from './theempire';
 export const jtheempire = jjtheempire;
 
+import { definition as jjthefallingangels } from './thefallingangels';
+export const jthefallingangels = jjthefallingangels;
+
 import { definition as jjthegeeks } from './thegeeks';
 export const jthegeeks = jjthegeeks;
 
@@ -1067,6 +1079,7 @@ export const definitions = [
   jj3Dtorrents,
   jj4Thd,
   jj52Pt,
+  jj7Torrents,
   jjbittorrentfiles,
   jjdasunerwartete,
   jjacgrip,
@@ -1087,6 +1100,7 @@ export const definitions = [
   jjaudionews,
   jjawesomehd,
   jjbackups,
+  jjbadasstorrents,
   jjbaibako,
   jjbeitai,
   jjbeyondHdOneurl,
@@ -1245,6 +1259,7 @@ export const definitions = [
   jjlosslessclub,
   jjmactorrents,
   jjmagico,
+  jjmagnet4You,
   jjmagnetdl,
   jjmajomparade,
   jjmarinetracker,
@@ -1344,6 +1359,7 @@ export const definitions = [
   jjtheMadhouse,
   jjtheaudioscene,
   jjtheempire,
+  jjthefallingangels,
   jjthegeeks,
   jjtheoccult,
   jjthepiratebay,
