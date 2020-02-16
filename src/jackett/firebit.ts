@@ -8,6 +8,14 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: [
+    'https://firebit.net/',
+    'https://firebit.info/',
+    'https://firebit.name/',
+    'https://firebit.pro/',
+    'https://firebit.club/',
+    'https://firebit.biz/',
+  ],
+  legacylinks: [
     'http://firebit.net/',
     'http://firebit.info/',
     'http://firebit.name/',

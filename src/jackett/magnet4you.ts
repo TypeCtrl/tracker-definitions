@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://magnet4you.me/'],
+  links: ['https://magnet4you.me/'],
+  legacylinks: ['http://magnet4you.me/'],
   caps: {
     modes: {
       search: ['q'],

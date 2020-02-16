@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'cs-CZ',
   type: 'semi-private',
   encoding: 'WINDOWS-1250',
-  links: ['http://sktorrent.eu/'],
-  legacylinks: ['http://sktorrent.eu/torrent/'],
+  links: ['https://sktorrent.eu/'],
+  legacylinks: ['http://sktorrent.eu/torrent/', 'http://sktorrent.eu/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Filmy CZ/SK dabing' },

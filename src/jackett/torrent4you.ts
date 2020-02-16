@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://torrent4you.me/'],
+  links: ['https://torrent4you.me/'],
+  legacylinks: ['http://torrent4you.me/'],
   caps: {
     modes: {
       search: ['q'],

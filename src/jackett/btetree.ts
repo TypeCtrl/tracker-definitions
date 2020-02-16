@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://bt.etree.org/'],
+  links: ['https://bt.etree.org/'],
+  legacylinks: ['http://bt.etree.org/'],
   caps: {
     modes: {
       search: ['q'],

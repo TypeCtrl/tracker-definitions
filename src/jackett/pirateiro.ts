@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://pirateiro.com/'],
+  links: ['https://pirateiro.com/'],
+  legacylinks: ['http://pirateiro.com/'],
   caps: {
     modes: {
       search: ['q'],

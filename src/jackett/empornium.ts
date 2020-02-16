@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      title: '{{ .Query.Keywords }}',
+      title: '{{ .Keywords }}',
       order_by: 'time',
       order_way: 'desc',
       action: 'basic',
@@ -99,7 +99,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'a[href*="filter_cat"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '\\[(\\d+?)\\]' }],
+        filters: [{ name: 'regexp', args: '(\\d+)]=1' }],
       },
       details: {
         selector: 'a[href^="/torrents.php?id="]',
@@ -133,11 +133,11 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: {
           'span.icon[title*="Freeleech"]': 0,
-          'img[alt="Freeleech"]': '0',
-          '*': '1',
+          'img[alt="Freeleech"]': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

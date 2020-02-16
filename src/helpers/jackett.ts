@@ -92,6 +92,7 @@ export const jackettSites = [
   'ebookparadijs',
   'ebooks-shares',
   'efectodoppler',
+  'eggmeon',
   'elitetorrent-biz',
   'empornium',
   'eniahd',

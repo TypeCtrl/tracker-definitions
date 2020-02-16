@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'WINDOWS-1251',
-  links: ['http://nnmclub.to/'],
-  legacylinks: ['https://nnm-club.name/', 'https://nnm-club.me/'],
+  links: ['https://nnmclub.to/'],
+  legacylinks: ['https://nnm-club.name/', 'https://nnm-club.me/', 'http://nnmclub.to/'],
   settings: [
     {
       name: 'striprussian',

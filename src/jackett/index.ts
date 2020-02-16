@@ -277,6 +277,9 @@ export const jebooksShares = jjebooksShares;
 import { definition as jjefectodoppler } from './efectodoppler';
 export const jefectodoppler = jjefectodoppler;
 
+import { definition as jjeggmeon } from './eggmeon';
+export const jeggmeon = jjeggmeon;
+
 import { definition as jjelitetorrentBiz } from './elitetorrent-biz';
 export const jelitetorrentBiz = jjelitetorrentBiz;
 
@@ -1166,6 +1169,7 @@ export const definitions = [
   jjebookparadijs,
   jjebooksShares,
   jjefectodoppler,
+  jjeggmeon,
   jjelitetorrentBiz,
   jjempornium,
   jjeniahd,

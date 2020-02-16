@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://topnow.se/'],
+  links: ['https://topnow.se/'],
+  legacylinks: ['http://topnow.se/'],
   caps: {
     modes: {
       search: ['q'],

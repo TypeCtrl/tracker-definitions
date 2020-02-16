@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'es-ES',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://torrent.unionfansub.com/'],
+  links: ['https://torrent.unionfansub.com/'],
+  legacylinks: ['http://torrent.unionfansub.com/'],
   caps: {
     categorymappings: [
       { id: '13', cat: 'Movies', desc: 'Animación' },

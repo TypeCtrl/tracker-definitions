@@ -188,7 +188,13 @@ export const definition: TrackerDefinition = {
           ':has(div.kat_cat_pic_name:contains("XXX")):has(div.kat_cat_pic_name_b:contains("Pic"))': 110,
         },
       },
-      title: { selector: 'a.selection_a' },
+      title: {
+        selector: 'a.selection_a',
+        filters: [
+          { name: 're_replace', args: ['^\\[[\\w ]*\\]\\s?', ''] },
+          { name: 're_replace', args: ['^\\[[\\w ]*\\]\\s?', ''] },
+        ],
+      },
       details: { selector: 'a.selection_a', attribute: 'href' },
       download: {
         selector: 'a[href^="download_ssl.php?torrent="]',
