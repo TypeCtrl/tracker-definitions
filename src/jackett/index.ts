@@ -691,6 +691,9 @@ export const jpornbay = jjpornbay;
 import { definition as jjpornbits } from './pornbits';
 export const jpornbits = jjpornbits;
 
+import { definition as jjpornleech } from './pornleech';
+export const jpornleech = jjpornleech;
+
 import { definition as jjproaudiotorrents } from './proaudiotorrents';
 export const jproaudiotorrents = jjproaudiotorrents;
 
@@ -1307,6 +1310,7 @@ export const definitions = [
   jjpolishsource,
   jjpornbay,
   jjpornbits,
+  jjpornleech,
   jjproaudiotorrents,
   jjprostylex,
   jjpt99,

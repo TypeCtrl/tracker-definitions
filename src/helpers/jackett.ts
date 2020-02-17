@@ -230,6 +230,7 @@ export const jackettSites = [
   'polishsource',
   'pornbay',
   'pornbits',
+  'pornleech',
   'proaudiotorrents',
   'prostylex',
   'pt99',
