@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   description: 'Greek Team is a GREEK Private site for TV / MOVIES / GENERAL',
   type: 'private',
   encoding: 'WINDOWS-1253',
-  links: ['http://www.greek-team.cc/'],
+  links: ['https://www.greek-team.cc/'],
+  legacylinks: ['http://www.greek-team.cc/'],
   caps: {
     categorymappings: [
       {

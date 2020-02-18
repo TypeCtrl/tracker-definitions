@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'it-IT',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://hdtorrents.xyz/'],
-  legacylinks: ['http://hdtorrents.it/'],
+  links: ['https://hdtorrents.xyz/'],
+  legacylinks: ['http://hdtorrents.it/', 'http://hdtorrents.xyz/'],
   caps: {
     categorymappings: [
       { id: '2040', cat: 'Movies/HD' },
