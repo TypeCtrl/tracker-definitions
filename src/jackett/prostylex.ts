@@ -72,6 +72,14 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Access to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here.</ol>",
+    },
     {
       name: 'sort',
       type: 'select',
@@ -92,6 +100,11 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
+  login: {
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
+    test: { path: 'torrents-search.php' },
+  },
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
     paths: [{ path: 'torrents-search.php' }],
