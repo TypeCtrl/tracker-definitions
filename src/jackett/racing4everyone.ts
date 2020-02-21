@@ -15,6 +15,7 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'TV/Sport', desc: 'Documentaries TV' },
       { id: '3', cat: 'TV/Sport', desc: 'DTM' },
       { id: '22', cat: 'TV/Sport', desc: 'Formula 2' },
+      { id: '23', cat: 'TV/Sport', desc: 'Formula E' },
       { id: '24', cat: 'TV/Sport', desc: 'Misc' },
       { id: '25', cat: 'TV/Sport', desc: 'Other Bikes' },
       { id: '26', cat: 'TV/Sport', desc: 'MotoGP 2-3-E' },
@@ -41,6 +42,8 @@ export const definition: TrackerDefinition = {
       { id: '76', cat: 'TV/Sport', desc: 'ARCA' },
       { id: '77', cat: 'TV/Sport', desc: 'Blancpain GT' },
       { id: '78', cat: 'TV/Sport', desc: 'Porsche Supercup' },
+      { id: '79', cat: 'TV/Sport', desc: 'TV Series' },
+      { id: '80', cat: 'TV/Sport', desc: 'Touring Cars' },
     ],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep', 'imdbid'] },
   },
@@ -89,7 +92,7 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
   search: {
-    paths: [{ path: 'filterTorrents' }],
+    paths: [{ path: 'torrents/filter' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
       search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
@@ -108,7 +111,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'a[href*="/categories/"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
+        filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
       title: { selector: 'a.view-torrent' },
       download: {
@@ -116,6 +119,17 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
+      banner: {
+        optional: true,
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+        filters: [
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/600x900', ''],
+          },
+        ],
+      },
       comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },

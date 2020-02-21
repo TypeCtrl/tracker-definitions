@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'hddolby',
   name: 'HDDolby',
-  description: 'HD Dolby is a CHINESE Semi-Private Torrent Tracker for HD MOVIES / TV / GENERAL',
+  description: 'HD Dolby is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'zh-CN',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.hddolby.com/'],
   caps: {

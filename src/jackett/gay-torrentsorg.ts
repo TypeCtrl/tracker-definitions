@@ -5,7 +5,7 @@ export const definition: TrackerDefinition = {
   name: 'gay-torrents.org',
   description: 'Gay-Torrents.org is a Private Torrent Tracker for GAY XXX',
   language: 'en-US',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'UTF-8',
   links: ['https://gay-torrents.org/', 'https://gay-area.org/'],
   settings: [

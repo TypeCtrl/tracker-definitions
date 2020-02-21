@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'film-paleis',
   name: 'Film-Paleis',
-  description: 'Film-Paleis is a DUTCH Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Film-Paleis is a DUTCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'nl-NL',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.film-paleis.me/'],
   legacylinks: ['http://www.film-paleis.me/'],
@@ -39,6 +39,18 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    { name: 'thankyou', type: 'text', label: 'Thank You Comment' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Thank you comment',
+      default:
+        'This site requires you to leave a Thank You comment before you can download. Enter your personalised comment above. Minimum of at least 10 characters.',
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -48,6 +60,20 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'table.main:contains("Aanmelden mislukt")' }],
     test: { path: '/', selector: 'a[href="logout.php"]' },
+  },
+  download: {
+    before: {
+      path: 'comment.php',
+      method: 'post',
+      inputs: {
+        action: 'add',
+        tid: '{{ .DownloadUri.Query.id }}',
+        text: '{{ .Config.thankyou }}',
+        submit: 'Opslaan',
+      },
+    },
+    selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
   },
   search: {
     paths: [{ path: 'browse.php' }],
@@ -74,7 +100,6 @@ export const definition: TrackerDefinition = {
       download: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-        filters: [{ name: 'replace', args: ['details', 'download'] }],
       },
       size: {
         selector: 'td:nth-child(4) table tr td:nth-child(2)',
