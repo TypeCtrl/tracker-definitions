@@ -56,17 +56,26 @@ export const definition: TrackerDefinition = {
     { name: 'password', type: 'password', label: 'Password' },
   ],
   login: {
-    path: 'sbg_login_new.php',
-    method: 'form',
+    path: 'index.php?page=login',
+    method: 'post',
     inputs: {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
     error: [
-      { selector: 'div.altertBoxStyle:contains("Passwort falsch")' },
-      { selector: 'div.altertBoxStyle:contains("Benutzername falsch")' },
+      {
+        selector: 'body[onLoad^="makeAlert(\'"]',
+        message: {
+          selector: 'body[onLoad^="makeAlert(\'"]',
+          attribute: 'onLoad',
+          filters: [
+            { name: 'replace', args: ["makeAlert('Error' , '", ''] },
+            { name: 'replace', args: ["');", ''] },
+          ],
+        },
+      },
     ],
-    test: { path: 'index.php' },
+    test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   download: {
     selector: 'a[href^="download.php?id="]',
