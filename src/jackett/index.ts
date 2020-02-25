@@ -154,6 +154,9 @@ export const jbtdigg = jjbtdigg;
 import { definition as jjbtetree } from './btetree';
 export const jbtetree = jjbtetree;
 
+import { definition as jjbteye } from './bteye';
+export const jbteye = jjbteye;
+
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
 
@@ -288,6 +291,9 @@ export const jempornium = jjempornium;
 
 import { definition as jjeniahd } from './eniahd';
 export const jeniahd = jjeniahd;
+
+import { definition as jjerzsebet } from './erzsebet';
+export const jerzsebet = jjerzsebet;
 
 import { definition as jjesharenet } from './esharenet';
 export const jesharenet = jjesharenet;
@@ -976,6 +982,9 @@ export const jtorrentseeds = jjtorrentseeds;
 import { definition as jjtorrentslocal } from './torrentslocal';
 export const jtorrentslocal = jjtorrentslocal;
 
+import { definition as jjtorrentview } from './torrentview';
+export const jtorrentview = jjtorrentview;
+
 import { definition as jjtorrentwal } from './torrentwal';
 export const jtorrentwal = jjtorrentwal;
 
@@ -1131,6 +1140,7 @@ export const definitions = [
   jjbtdb,
   jjbtdigg,
   jjbtetree,
+  jjbteye,
   jjbtgigs,
   jjbtnext,
   jjbtschool,
@@ -1176,6 +1186,7 @@ export const definitions = [
   jjelitetorrentBiz,
   jjempornium,
   jjeniahd,
+  jjerzsebet,
   jjesharenet,
   jjestone,
   jjestrenosdtl,
@@ -1405,6 +1416,7 @@ export const definitions = [
   jjtorrentsectorcrew,
   jjtorrentseeds,
   jjtorrentslocal,
+  jjtorrentview,
   jjtorrentwal,
   jjtorrentz2,
   jjtotallykids,
