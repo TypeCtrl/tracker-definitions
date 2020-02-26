@@ -117,11 +117,6 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      description: {
-        selector: 'a[href*="/categories/"] div i',
-        attribute: 'data-original-title',
-        filters: [{ name: 'replace', args: [' torrent', ''] }],
-      },
       comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },

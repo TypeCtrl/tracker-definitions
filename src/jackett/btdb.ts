@@ -39,13 +39,29 @@ export const definition: TrackerDefinition = {
         path:
           '{{ if .Keywords }}search/{{ .Keywords }}/{{else}}recent{{end}}?sort={{ .Config.sort }}',
       },
+      {
+        path:
+          '{{ if .Keywords }}search/{{ .Keywords }}/{{else}}recent{{end}}?sort={{ .Config.sort }}&page=2',
+      },
+      {
+        path:
+          '{{ if .Keywords }}search/{{ .Keywords }}/{{else}}recent{{end}}?sort={{ .Config.sort }}&page=3',
+      },
+      {
+        path:
+          '{{ if .Keywords }}search/{{ .Keywords }}/{{else}}recent{{end}}?sort={{ .Config.sort }}&page=4',
+      },
+      {
+        path:
+          '{{ if .Keywords }}search/{{ .Keywords }}/{{else}}recent{{end}}?sort={{ .Config.sort }}&page=5',
+      },
     ],
     rows: { selector: 'div.media' },
     fields: {
       category: { text: 1 },
       title: { selector: 'a[href^="/torrent/"]' },
       details: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
-      download: { selector: 'a[href*="/dl/"]', attribute: 'href' },
+      download: { selector: 'a[href$=".torrent"]', attribute: 'href' },
       magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
       banner: {
         selector: 'a.img-thumbnail img',
