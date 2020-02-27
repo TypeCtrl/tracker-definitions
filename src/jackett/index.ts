@@ -340,6 +340,9 @@ export const jfilebase = jjfilebase;
 import { definition as jjfilmPaleis } from './film-paleis';
 export const jfilmPaleis = jjfilmPaleis;
 
+import { definition as jjfilmsclub } from './filmsclub';
+export const jfilmsclub = jjfilmsclub;
+
 import { definition as jjfinvip } from './finvip';
 export const jfinvip = jjfinvip;
 
@@ -1202,6 +1205,7 @@ export const definitions = [
   jjfemdomcult,
   jjfilebase,
   jjfilmPaleis,
+  jjfilmsclub,
   jjfinvip,
   jjfirebit,
   jjfocusx,

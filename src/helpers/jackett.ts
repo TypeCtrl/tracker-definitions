@@ -113,6 +113,7 @@ export const jackettSites = [
   'femdomcult',
   'filebase',
   'film-paleis',
+  'filmsclub',
   'finvip',
   'firebit',
   'focusx',
