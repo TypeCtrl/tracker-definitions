@@ -32,7 +32,7 @@ jobs:
       - run: npm run semantic-release
   update_upstream:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - run:
