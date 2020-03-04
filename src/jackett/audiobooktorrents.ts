@@ -43,14 +43,25 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        'If you are getting the error <b>Login Failed, got redirected</b> then access the site with your browser and <b>mark as read</b> all PMs.',
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      use_ssl: '1',
-      perm_ssl: '1',
+      use_ssl: 1,
+      perm_ssl: 1,
       submitme: 'X',
     },
     error: [
@@ -65,27 +76,22 @@ export const definition: TrackerDefinition = {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       searchin: 'title',
-      incldead: '1',
+      incldead: 1,
     },
     rows: {
       selector: 'tr.browse_color, tr.freeleech_color, tr[id^="kdescr"]',
       after: 1,
     },
     fields: {
-      banner: {
-        selector: 'a[href^="details.php?id="][onmouseover]',
-        attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: "src=\\'(.*?)\\'" }],
+      category: {
+        selector: 'a[href^="browse.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
       },
       title: {
         selector: 'a[href^="details.php?id="][onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: "Tip\\('<b>(.*?)</b>" }],
-      },
-      category: {
-        selector: 'a[href^="browse.php?cat="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
       },
       details: {
         selector: 'a[href^="details.php?id="][onmouseover]',
@@ -95,23 +101,28 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php"]',
         attribute: 'href',
       },
-      files: { selector: 'a[href^="filelist.php"]' },
+      banner: {
+        selector: 'a[href^="details.php?id="][onmouseover]',
+        attribute: 'onmouseover',
+        filters: [{ name: 'regexp', args: "src=\\'(.*?)\\'" }],
+      },
+      description: {
+        selector: 'td[colspan="13"]',
+        filters: [{ name: 'prepend', args: '{{ .Result.description }}<br>\n' }],
+      },
+      files: { selector: 'td:nth-last-child(9)' },
+      date: { selector: 'td:nth-last-child(7)' },
       size: { selector: 'td:nth-last-child(6)' },
       grabs: {
         selector: 'td:nth-last-child(5)',
-        filters: [{ name: 'regexp', args: '([\\d,]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: { selector: 'td:nth-last-child(4)' },
       leechers: { selector: 'td:nth-last-child(3)' },
-      date: { selector: 'td:nth-last-child(7)' },
       downloadvolumefactor: {
-        case: { 'a.info > b:contains("[FREE]")': '0', '*': '1' },
+        case: { 'a.info > b:contains("[FREE]")': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
-      description: {
-        selector: 'td[colspan=13]',
-        filters: [{ name: 'prepend', args: '{{ .Result.description }}<br>\n' }],
-      },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

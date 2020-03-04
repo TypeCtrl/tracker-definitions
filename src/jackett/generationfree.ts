@@ -183,10 +183,10 @@ export const definition: TrackerDefinition = {
     path: 'account-login.php',
     method: 'post',
     inputs: {
-      username: '{{ .Config.username }}',
+      login_name: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [{ selector: 'td.tboxhead' }],
+    error: [{ selector: 'td#msgError' }],
     test: {
       path: 'index.php',
       selector: 'a[href="account-logout.php"]',

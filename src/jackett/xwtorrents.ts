@@ -89,11 +89,12 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'tlogin.php',
+    path: 'takelogin.php',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      returnto: '/',
     },
     error: [
       {

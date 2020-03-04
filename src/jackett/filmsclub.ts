@@ -45,6 +45,12 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
+      name: 'stripyear',
+      type: 'checkbox',
+      label: 'Strip the Year from the Title',
+      default: false,
+    },
+    {
       name: 'info_search',
       type: 'info',
       label: 'Searching with Season / Episode (S01E01)',
@@ -91,7 +97,7 @@ export const definition: TrackerDefinition = {
           'div:contains("Мультфильмы")': 6,
         },
       },
-      title: {
+      title_with_year: {
         selector: 'a[href^="/torrent/"]',
         filters: [
           { name: 're_replace', args: ['[\\:\\-\\/\\|]', ' '] },
@@ -118,6 +124,13 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['WEBDLRip', 'WEBDL'] },
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
+      },
+      title_without_year: {
+        text: '{{ re_replace .Result.title_with_year "\\([1|2][0-9]{3}\\)" "" }}',
+      },
+      title: {
+        text:
+          '{{ if .Config.stripyear }}{{ .Result.title_without_year }}{{else}}{{ .Result.title_with_year }}{{end}}',
       },
       details: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
       download: {

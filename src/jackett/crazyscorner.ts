@@ -127,7 +127,6 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/details.php?id="]',
         attribute: 'href',
       },
-      magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
       banner: {
         selector: 'img[src*="/torrents/images/"]',
         attribute: 'src',

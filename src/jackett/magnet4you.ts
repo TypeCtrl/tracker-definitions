@@ -60,8 +60,14 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(3)',
         filters: [{ name: 'replace', args: ['Undefined', '0 B'] }],
       },
-      seeders: { selector: 'td:nth-child(5)' },
-      leechers: { selector: 'td:nth-child(6)' },
+      seeders: {
+        selector: 'td:nth-child(5)',
+        filters: [{ name: 'replace', args: ['K', '000'] }],
+      },
+      leechers: {
+        selector: 'td:nth-child(6)',
+        filters: [{ name: 'replace', args: ['K', '000'] }],
+      },
       grabs: {
         selector: 'td:nth-child(7)',
         filters: [{ name: 'replace', args: ['K', '000'] }],

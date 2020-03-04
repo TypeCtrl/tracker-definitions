@@ -88,7 +88,7 @@ function validateJson(json: any): any {
   return json;
 }
 
-const skip = ['nbtorrents', 'scenepalace', '3evils', 'vanila', 'thehorrorcharnel', 'p2pelite', 'twilightszoom'];
+const skip = ['nbtorrents', 'scenepalace', '3evils', 'vanila', 'thehorrorcharnel', 'p2pelite', 'twilightszoom', 'ttsweb'];
 
 for (const src of SOURCES) {
   const files = fs.readdirSync(src.dir);

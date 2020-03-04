@@ -84,7 +84,7 @@ export const definition: TrackerDefinition = {
       search_by: '{{ if .Query.IMDBID }}imdb{{else}}name{{end}}',
     },
     rows: {
-      selector: 'table.table-striped > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table.table-striped > tbody > tr:has(a[href^="/details.php?id="])',
     },
     fields: {
       category: {
@@ -92,9 +92,9 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      title: { selector: 'a[href^="details.php?id="]' },
+      title: { selector: 'a[href^="/details.php?id="]' },
       details: {
-        selector: 'a[href^="details.php?id="]',
+        selector: 'a[href^="/details.php?id="]',
         attribute: 'href',
       },
       banner: { attribute: 'rel' },
@@ -104,7 +104,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="download.php"]',
+        selector: 'a[href^="/download.php"]',
         attribute: 'href',
       },
       files: {

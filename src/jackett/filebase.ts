@@ -197,7 +197,6 @@ export const definition: TrackerDefinition = {
       details: { selector: 'td:nth-last-child(8) a', attribute: 'href' },
       download: {
         text: '{{ .Config.sitelink }}download.php?id={{ .Result.torrent_id }}',
-        filters: [{ name: 'strdump' }],
       },
       date: {
         selector: 'td:nth-child(4)',

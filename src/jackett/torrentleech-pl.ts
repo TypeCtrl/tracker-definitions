@@ -72,6 +72,7 @@ export const definition: TrackerDefinition = {
     rows: {
       selector:
         'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
+      filters: [{ name: 'andmatch' }],
     },
     fields: {
       category: {
