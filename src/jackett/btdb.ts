@@ -61,7 +61,11 @@ export const definition: TrackerDefinition = {
       category: { text: 1 },
       title: { selector: 'a[href*="/torrent/"]' },
       details: { selector: 'a[href*="/torrent/"]', attribute: 'href' },
-      download: { selector: 'a[href$=".torrent"]', attribute: 'href' },
+      download: {
+        selector: 'a[href$=".torrent"]',
+        attribute: 'href',
+        optional: true,
+      },
       magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
       banner: {
         selector: 'a.img-thumbnail img',

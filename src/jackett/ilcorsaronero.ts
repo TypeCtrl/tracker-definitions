@@ -7,17 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'it-IT',
   type: 'public',
   encoding: 'WINDOWS-1252',
-  links: [
-    'https://ilcorsaronero.pizza/',
-    'https://ilcorsaronero.fun/',
-    'https://ilcorsaronero.pro/',
-  ],
+  links: ['https://ilcorsaronero.pw/', 'https://ilcorsaronero.fun/', 'https://ilcorsaronero.pro/'],
   legacylinks: [
     'https://ilcorsaronero.live/',
     'https://ilcorsaronero.vip/',
     'https://ilcorsaronero.info/',
     'https://ilcorsaronero.ch/',
     'https://ilcorsaronero.cc/',
+    'https://ilcorsaronero.pizza/',
   ],
   caps: {
     categorymappings: [
