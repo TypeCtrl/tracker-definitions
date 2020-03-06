@@ -100,17 +100,21 @@ export const definition: TrackerDefinition = {
       title_with_year: {
         selector: 'a[href^="/torrent/"]',
         filters: [
-          { name: 're_replace', args: ['[\\:\\-\\/\\|]', ' '] },
+          { name: 're_replace', args: ['[\\:\\-\\/\\|,\\s]', ' '] },
+          {
+            name: 're_replace',
+            args: ['(.*)(\\([1|2][0-9]{3}\\))(.*)([CСcс]езон.*)', '$1$2$4$3'],
+          },
           {
             name: 're_replace',
             args: [
-              '(.*)[CСcс]езон\\s+(\\d+).+[CСcс]ери[ия]\\s+(\\d+)\\s+(\\d+).+(.*)',
+              '(.*)[CСcс]езон +(\\d+).+[CСcс]ери[ия] +(\\d+) +(\\d+) +из +\\d+(.*)',
               '$1 S$2E$3-$4 rus $5',
             ],
           },
           {
             name: 're_replace',
-            args: ['(.*)[CСcс]езон\\s+(\\d+)(.*)', '$1 S$2 rus $3'],
+            args: ['(.*)[CСcс]езон +(\\d+)(.*)', '$1 S$2 rus $3'],
           },
           {
             name: 're_replace',
@@ -120,8 +124,10 @@ export const definition: TrackerDefinition = {
             ],
           },
           { name: 'replace', args: [' Rip', 'Rip'] },
+          { name: 'replace', args: ['Blu Ray', 'Bluray'] },
           { name: 'replace', args: ['WEB DL', 'WEBDL'] },
           { name: 'replace', args: ['WEBDLRip', 'WEBDL'] },
+          { name: 'replace', args: ['WEBRip', 'WEBDL'] },
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
       },

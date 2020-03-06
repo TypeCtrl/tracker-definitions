@@ -841,6 +841,9 @@ export const jspacetorrent = jjspacetorrent;
 import { definition as jjspeedtorrentreloaded } from './speedtorrentreloaded';
 export const jspeedtorrentreloaded = jjspeedtorrentreloaded;
 
+import { definition as jjspiritofrevolution } from './spiritofrevolution';
+export const jspiritofrevolution = jjspiritofrevolution;
+
 import { definition as jjsporthd } from './sporthd';
 export const jsporthd = jjsporthd;
 
@@ -1399,6 +1402,7 @@ export const definitions = [
   jjsoundpark,
   jjspacetorrent,
   jjspeedtorrentreloaded,
+  jjspiritofrevolution,
   jjsporthd,
   jjsportscult,
   jjspringsunday,

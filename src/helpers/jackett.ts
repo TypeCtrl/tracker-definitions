@@ -280,6 +280,7 @@ export const jackettSites = [
   'soundpark',
   'spacetorrent',
   'speedtorrentreloaded',
+  'spiritofrevolution',
   'sporthd',
   'sportscult',
   'springsunday',
