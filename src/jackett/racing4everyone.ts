@@ -45,7 +45,10 @@ export const definition: TrackerDefinition = {
       { id: '79', cat: 'TV/Sport', desc: 'TV Series' },
       { id: '80', cat: 'TV/Sport', desc: 'Touring Cars' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep', 'imdbid'] },
+    modes: {
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

@@ -48,8 +48,8 @@ export const definition: TrackerDefinition = {
       { id: '15', cat: 'XXX', desc: 'xXx' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
   },
@@ -68,8 +68,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       key: 9,
     },
     rows: {
@@ -112,9 +112,9 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'src="([^"]+)' }],
       },
       downloadvolumefactor: {
-        case: { 'font.small[color]:contains("Free")': '0', '*': '1' },
+        case: { 'font.small[color]:contains("Free")': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
       description: {
         selector: 'td:nth-child(2)',
         remove: 'a[href^="details.php?id="]',

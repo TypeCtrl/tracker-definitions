@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'tr-TR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://broadcity.in/'],
+  links: ['https://broadcity.in/'],
+  legacylinks: ['http://broadcity.in/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies/UHD', desc: 'UHD' },

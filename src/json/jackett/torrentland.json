@@ -11,6 +11,7 @@
       { "id": "75", "cat": "Movies/UHD", "desc": "Peliculas - 4K" },
       { "id": "83", "cat": "Movies/UHD", "desc": "Peliculas - 4K CUSTOM" },
       { "id": "81", "cat": "Movies/UHD", "desc": "Peliculas - 4K Remux" },
+      { "id": "87", "cat": "Movies/UHD", "desc": "Peliculas - 4K Web" },
       { "id": "23", "cat": "Movies/BluRay", "desc": "Peliculas - Full BluRay" },
       {
         "id": "82",
@@ -46,6 +47,7 @@
       { "id": "78", "cat": "Movies/UHD", "desc": "EML HDTeam - 4K" },
       { "id": "79", "cat": "Movies/BluRay", "desc": "EML HDTeam - CUSTOM BR" },
       { "id": "50", "cat": "TV/HD", "desc": "Series - Full BluRay" },
+      { "id": "86", "cat": "TV/UHD", "desc": "Series - 4K" },
       { "id": "49", "cat": "TV/HD", "desc": "Series - H264" },
       { "id": "84", "cat": "TV/HD", "desc": "Series - H265" },
       { "id": "22", "cat": "TV/SD", "desc": "Series - DVD" },

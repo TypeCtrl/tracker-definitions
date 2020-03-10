@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'pl-PL',
   type: 'private',
   encoding: 'ISO-8859-2',
-  links: ['http://hqsource.org/'],
+  links: ['https://hqsource.org/'],
+  legacylinks: ['http://hqsource.org/'],
   caps: {
     categorymappings: [
       { id: '36', cat: 'Movies/3D', desc: '3D' },

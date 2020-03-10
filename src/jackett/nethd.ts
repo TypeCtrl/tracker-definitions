@@ -18,7 +18,7 @@ export const definition: TrackerDefinition = {
       { id: '406', cat: 'Books', desc: 'Book' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },

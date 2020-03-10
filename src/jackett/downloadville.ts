@@ -32,6 +32,7 @@ export const definition: TrackerDefinition = {
       { id: '40', cat: 'Movies', desc: 'Films V.O. SD' },
       { id: '41', cat: 'Movies', desc: 'Films V.O. HD' },
       { id: '42', cat: 'Movies', desc: 'Films TV-Rip' },
+      { id: '95', cat: 'Movies', desc: '4K LIGHT' },
       { id: '16', cat: 'TV', desc: 'Séries-Télé' },
       { id: '17', cat: 'TV', desc: 'Séries-Télé TV Pack SD' },
       { id: '21', cat: 'TV', desc: 'Séries-Télé SD' },

@@ -55,6 +55,7 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: '.meta a', attribute: 'href' },
       download: { selector: '.meta a', attribute: 'href' },
+      banner: { selector: '.imagen img', attribute: 'data-src' },
       category: {
         selector: '.meta a',
         attribute: 'href',

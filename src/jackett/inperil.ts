@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   type: 'private',
   language: 'lv-LV',
   encoding: 'UTF-8',
-  links: ['http://www.inperil.net/'],
+  links: ['https://www.inperil.net/'],
+  legacylinks: ['http://www.inperil.net/'],
   caps: {
     categorymappings: [
       { id: '34', cat: 'TV/Anime', desc: 'Animation' },

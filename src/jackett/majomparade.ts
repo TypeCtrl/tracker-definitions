@@ -48,8 +48,8 @@ export const definition: TrackerDefinition = {
       { id: '57', cat: 'XXX', desc: 'XXX/HD' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
   },
@@ -75,22 +75,22 @@ export const definition: TrackerDefinition = {
       {
         path: 'letoltes.php',
         categorymappings: ['!', 70, 39, 57],
-        inputs: { tipus: '1' },
+        inputs: { tipus: 1 },
       },
       {
         path: 'letoltes.php',
         categorymappings: ['!', 70, 39, 57],
-        inputs: { tipus: '2' },
+        inputs: { tipus: 2 },
       },
       { path: 'xxx.php', categorymappings: [70, 39, 57] },
     ],
     inputs: {
-      $raw: '{{range .Categories}}category[]={{.}}&{{end}}',
+      $raw: '{{ range .Categories }}category[]={{.}}&{{end}}',
       name:
-        '{{if .Query.IMDBID}}http://www.imdb.com/title/{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
+        '{{ if .Query.IMDBID }}http://www.imdb.com/title/{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       imdb_search: '{{ if .Query.IMDBID }}yes{{else}}{{end}}',
       k: 'yes',
-      tipuska: '1',
+      tipuska: 1,
     },
     rows: {
       selector: 'table#table > tbody > tr:has(a[href^="details.php?id="])',
@@ -144,13 +144,13 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
-      downloadvolumefactor: { text: '0' },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: {
         case: {
-          'img[title="Ennél a torrentnél 2x szorzó van."]': '2',
-          'img[title="Ennél a torrentnél 3x szorzó van."]': '3',
-          'img[title="Ennél a torrentnél 4x szorzó van."]': '4',
-          '*': '1',
+          'img[title="Ennél a torrentnél 2x szorzó van."]': 2,
+          'img[title="Ennél a torrentnél 3x szorzó van."]': 3,
+          'img[title="Ennél a torrentnél 4x szorzó van."]': 4,
+          '*': 1,
         },
       },
     },

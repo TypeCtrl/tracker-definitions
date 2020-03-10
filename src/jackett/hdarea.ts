@@ -30,9 +30,9 @@ export const definition: TrackerDefinition = {
       { id: '408', cat: 'Audio', desc: 'HQ Audio' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
   settings: [
@@ -76,7 +76,7 @@ export const definition: TrackerDefinition = {
     method: 'post',
     inputs: {
       $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
       spstate: 0,
       search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',

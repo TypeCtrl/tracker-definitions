@@ -120,7 +120,13 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      title: { selector: 'a.selection_a' },
+      title: {
+        selector: 'a.selection_a',
+        filters: [
+          { name: 're_replace', args: ['^\\[[\\w ]*\\]\\s?', ''] },
+          { name: 're_replace', args: ['^\\[[\\w ]*\\]\\s?', ''] },
+        ],
+      },
       details: { selector: 'a.selection_a', attribute: 'href' },
       category: {
         selector: 'div.kat_cat_pic',

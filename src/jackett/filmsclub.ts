@@ -51,6 +51,12 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
+      name: 'addtvshows',
+      type: 'checkbox',
+      label: 'Add (TVShows) to TV titles',
+      default: false,
+    },
+    {
       name: 'info_search',
       type: 'info',
       label: 'Searching with Season / Episode (S01E01)',
@@ -109,7 +115,7 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: [
               '(.*)[CСcс]езон +(\\d+).+[CСcс]ери[ия] +(\\d+) +(\\d+) +из +\\d+(.*)',
-              '$1 S$2E$3-$4 rus $5',
+              '$1 S$2E$3-$4 rus {{ if .Config.addtvshows }}(TVShows) {{else}}{{end}}$5',
             ],
           },
           {

@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       { id: '49', cat: 'Movies/HD', desc: 'x265 (HEVC)' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
@@ -48,8 +48,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 't' }],
     inputs: {
-      $raw: '{{range .Categories}}{{.}}=&{{end}}',
-      q: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}{{.}}=&{{end}}',
+      q: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
     },
     rows: {
@@ -81,9 +81,9 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(1)' },
       size: { selector: 'td:nth-last-child(3)' },
       downloadvolumefactor: {
-        case: { 'span:contains("FreeLeech")': '0', '*': '1' },
+        case: { 'span:contains("FreeLeech")': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

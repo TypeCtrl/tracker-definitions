@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '24', cat: 'PC/Mac', desc: 'Applicazioni Mac' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },

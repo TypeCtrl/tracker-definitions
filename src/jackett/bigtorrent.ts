@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'hu-HU',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.bigtorrent.eu/'],
+  links: ['https://www.bigtorrent.eu/'],
+  legacylinks: ['http://www.bigtorrent.eu/'],
   caps: {
     categorymappings: [
       { id: '24533', cat: 'Movies/3D', desc: '3D' },

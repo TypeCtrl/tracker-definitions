@@ -10,8 +10,8 @@ export const definition: TrackerDefinition = {
   links: ['https://uhdbits.org/'],
   caps: {
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
     categorymappings: [
@@ -43,14 +43,14 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      searchstr: '{{if .Query.IMDBID}}{{else}}{{ .Query.Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      searchstr: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       imdbid: '{{ .Query.IMDBIDShort }}',
-      tags_type: '1',
+      tags_type: 1,
       order_by: 'time',
       order_way: 'desc',
       action: 'advanced',
-      searchsubmit: '1',
+      searchsubmit: 1,
     },
     rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
     fields: {
@@ -78,15 +78,15 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'strong.blink_me:contains("Free")': '0',
-          'strong.blink_me:contains("50")': '0.5',
-          'strong.blink_me:contains("25")': '0.75',
-          'strong.blink_me:contains("75")': '0.25',
-          '*': '1',
+          'strong.blink_me:contains("Free")': 0,
+          'strong.blink_me:contains("50")': 0.5,
+          'strong.blink_me:contains("25")': 0.75,
+          'strong.blink_me:contains("75")': 0.25,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'strong.blink_me:contains("2x")': '2', '*': '1' },
+        case: { 'strong.blink_me:contains("2x")': 2, '*': 1 },
       },
       category: {
         selector: 'a[href^="torrents.php?filter_cat"]',

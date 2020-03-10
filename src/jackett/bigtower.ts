@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'UTF-8',
   links: ['http://bigtower.info/'],
+  legacylinks: ['https://bigtower.info/'],
   caps: {
     categorymappings: [
       { id: '11', cat: 'Movies/HD', desc: 'DSS' },

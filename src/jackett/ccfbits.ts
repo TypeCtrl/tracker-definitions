@@ -33,11 +33,34 @@ export const definition: TrackerDefinition = {
       { id: '22', cat: 'Other', desc: '杂项' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'DESC',
+      options: { DESC: 'desc', ASC: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -49,13 +72,14 @@ export const definition: TrackerDefinition = {
     test: { path: 'browse.php' },
   },
   search: {
-    paths: [{ path: 'browse.php', method: 'get' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
-      sort: 'added',
-      d: 'DESC',
+      fullsearch: '{{ if .Query.IMDBID }}1{{else}}{{end}}',
+      sort: '{{ .Config.sort }}',
+      d: '{{ .Config.sort }}',
     },
     rows: {
       selector: 'table[border="1"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
@@ -106,7 +130,13 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: {
+        case: {
+          'font:has([src="/pic/arrowup1.gif"]):contains("1.5x")': 1.5,
+          'font:has([src="/pic/arrowup1.gif"]):contains("2x")': 2,
+          '*': 1,
+        },
+      },
       description: {
         selector: 'td:nth-child(2) > table > tbody > tr:nth-child(2)',
         remove: 'a, img',

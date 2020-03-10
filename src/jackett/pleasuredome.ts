@@ -7,7 +7,9 @@ export const definition: TrackerDefinition = {
   language: 'en-EN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.pleasuredome.org.uk/'],
+  links: ['https://www.pleasuredome.org.uk/'],
+  legacylinks: ['http://www.pleasuredome.org.uk/'],
+  certificates: ['eb27d56880fa073cd9ddd040d9a7f101d4868f53'],
   caps: {
     categorymappings: [
       { id: '10', cat: 'Console', desc: 'MAME' },
@@ -106,6 +108,11 @@ export const definition: TrackerDefinition = {
       selector: 'table[width="100%"] > tbody tr:has(a[href^="download.php?id="])',
     },
     fields: {
+      category: {
+        selector: 'a[href^="torrents.php?category="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'category' }],
+      },
       title: {
         selector: 'a[href^="javascript:popdetails"]',
         filters: [{ name: 'replace', args: ['[FREE] ', ''] }],
@@ -115,13 +122,8 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [
           { name: 'replace', args: ["javascript:popdetails('", ''] },
-          { name: 'replace', args: [");'", ''] },
+          { name: 'replace', args: ["');", ''] },
         ],
-      },
-      category: {
-        selector: 'a[href^="torrents.php?category="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'category' }],
       },
       download: {
         selector: 'a[href^="download.php?id="]',

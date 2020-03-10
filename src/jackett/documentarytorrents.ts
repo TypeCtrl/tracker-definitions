@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
       label: 'Sort requested from site',
       default: 'id',
       options: {
-        is: 'created',
+        id: 'created',
         seeders: 'seeders',
         size: 'size',
         name: 'title',

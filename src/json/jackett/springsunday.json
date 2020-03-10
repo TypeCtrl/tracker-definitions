@@ -19,7 +19,7 @@
       { "id": "509", "cat": "Other", "desc": "Others(其他)" }
     ],
     "modes": {
-      "search": ["q"],
+      "search": ["q", "imdbid"],
       "tv-search": ["q", "season", "ep", "imdbid"],
       "movie-search": ["q", "imdbid"]
     }

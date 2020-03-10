@@ -30,7 +30,7 @@ export const definition: TrackerDefinition = {
       type: 'select',
       label: 'Sort requested from site',
       default: '3',
-      options: { '2': 'title', '3': 'created', '5': 'seeders' },
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
     },
     {
       name: 'type',
@@ -47,6 +47,8 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       category: '{{ range .Categories }}{{.}};{{end}}',
       active: 1,
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table table table.lista > tbody > tr:has(a[href^="download.php?id="])',

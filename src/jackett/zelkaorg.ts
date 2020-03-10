@@ -58,6 +58,17 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'ip_filtering',
+      type: 'info',
+      label: 'IP Filtering',
+      default:
+        'Zelka (Zamunda) allows only Bulgarian IP addressess. The <b>connection attempt failed</b> error means your IP was not accepted.',
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',

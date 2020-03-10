@@ -28,7 +28,7 @@ export const definition: TrackerDefinition = {
       { id: '16', cat: 'Audio/Video', desc: 'Live' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
@@ -47,8 +47,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      searchstr: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      searchstr: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
     },
     rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
     fields: {
@@ -81,9 +81,9 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td.seeder_col' },
       leechers: { selector: 'td.leecher_col' },
       downloadvolumefactor: {
-        case: { 'span.freeleech_slot': '0', 'span.freeleech': '0', '*': '1' },
+        case: { 'span.freeleech_slot': 0, 'span.freeleech': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://rutor.info/', 'http://new-rutor.org/', 'http://live-rutor.org/'],
+  links: ['http://rutor.info/', 'http://new-rutor.org/'],
+  legacylinks: ['http://live-rutor.org/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },

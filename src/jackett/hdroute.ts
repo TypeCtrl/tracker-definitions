@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '9', cat: 'Other', desc: '其他 (Other)' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },

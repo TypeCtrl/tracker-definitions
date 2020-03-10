@@ -26,7 +26,7 @@ export const definition: TrackerDefinition = {
       { id: '15', cat: 'PC/Phone-Android', desc: 'Apps APK' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },

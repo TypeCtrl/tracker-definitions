@@ -159,12 +159,18 @@ export interface Req {
   headers?: { [key: string]: string };
   form?: string;
   cookies?: string[];
+  selectors?: boolean;
   /**
    * Only needed in very limited cases.
    * Can be used to include values based on a result of a selector.
    * e.g. if a CSRF token is hidden in JavaScript).
    */
   selectorinputs?: {
+    [key: string]: {
+      selector: string;
+      attribute?: string;
+      filters?: Filters[];
+    } | undefined;
     cookie_test?: {
       selector: string;
       attribute: string;

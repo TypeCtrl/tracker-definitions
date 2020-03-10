@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://www.cilijj.xyz/'],
-  legacylinks: ['http://www.cili180.com/'],
+  links: ['https://www.cilijj.xyz/'],
+  legacylinks: ['http://www.cili180.com/', 'http://www.cilijj.xyz/'],
   caps: {
     modes: {
       search: ['q'],

@@ -7,8 +7,13 @@ export const definition: TrackerDefinition = {
   language: 'ko-KR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentview4.net/'],
-  legacylinks: ['https://torrentview.net/', 'https://torrentview3.net/'],
+  followredirect: true,
+  links: ['https://torrentview5.net/'],
+  legacylinks: [
+    'https://torrentview.net/',
+    'https://torrentview3.net/',
+    'https://torrentview4.net/',
+  ],
   caps: {
     categorymappings: [
       { id: 'mov', cat: 'Movies', desc: '토렌트영화 (Movies)' },

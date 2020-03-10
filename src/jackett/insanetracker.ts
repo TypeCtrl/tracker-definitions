@@ -40,8 +40,8 @@ export const definition: TrackerDefinition = {
       { id: '13', cat: 'PC/Phone-Other', desc: 'Mobil' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
   },
@@ -59,8 +59,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       t: 'all',
     },
     rows: {
@@ -128,13 +128,13 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-02 15:04' },
         ],
       },
-      downloadvolumefactor: { text: '0' },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: {
         case: {
-          'a[href^="?doubleup=four"]': '4',
-          'a[href^="?doubleup=three"]': '3',
-          'a[href^="?doubleup=two"]': '2',
-          '*': '1',
+          'a[href^="?doubleup=four"]': 4,
+          'a[href^="?doubleup=three"]': 3,
+          'a[href^="?doubleup=two"]': 2,
+          '*': 1,
         },
       },
       description: {

@@ -36,7 +36,7 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'TV', desc: 'TV' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
@@ -49,8 +49,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents' }],
     inputs: {
-      $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
-      search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
@@ -105,7 +105,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

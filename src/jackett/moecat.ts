@@ -33,7 +33,7 @@ export const definition: TrackerDefinition = {
       { id: '428', cat: 'TV/Anime', desc: 'Animations/官方-动漫' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },

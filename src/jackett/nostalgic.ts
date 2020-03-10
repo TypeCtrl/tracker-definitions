@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   site: 'nostalgic',
   name: 'Nostalgic',
   description:
-    'Nostalgic Torrents (The Archive) is a Private Torrent Tracker for MOVIES / TV / GENERAL NOSTALGIA',
+    'Nostalgic Torrents (The Archive / VHSTAPES) is a Private Torrent Tracker for MOVIES / TV / GENERAL NOSTALGIA',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

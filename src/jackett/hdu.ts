@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://pt.upxin.net/'],
+  links: ['https://pt.upxin.net/'],
+  legacylinks: ['http://pt.upxin.net/'],
   caps: {
     categorymappings: [
       { id: '401', cat: 'Movies', desc: 'Movies/电影' },
@@ -22,7 +23,7 @@ export const definition: TrackerDefinition = {
       { id: '410', cat: 'PC/Games', desc: 'Games/游戏' },
     ],
     modes: {
-      search: ['q'],
+      search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },

@@ -40,9 +40,6 @@ export const jacidlounge = jjacidlounge;
 import { definition as jjaftershock } from './aftershock';
 export const jaftershock = jjaftershock;
 
-import { definition as jjalein } from './alein';
-export const jalein = jjalein;
-
 import { definition as jjalexfilm } from './alexfilm';
 export const jalexfilm = jjalexfilm;
 
@@ -409,9 +406,6 @@ export const jgktorrent = jjgktorrent;
 import { definition as jjglodls } from './glodls';
 export const jglodls = jjglodls;
 
-import { definition as jjgreeklegends } from './greeklegends';
-export const jgreeklegends = jjgreeklegends;
-
 import { definition as jjgreekteam } from './greekteam';
 export const jgreekteam = jjgreekteam;
 
@@ -523,6 +517,9 @@ export const jisohunt2 = jjisohunt2;
 import { definition as jjitorrent } from './itorrent';
 export const jitorrent = jjitorrent;
 
+import { definition as jjivTorrents } from './iv-torrents';
+export const jivTorrents = jjivTorrents;
+
 import { definition as jjjpopsuki } from './jpopsuki';
 export const jjpopsuki = jjjpopsuki;
 
@@ -609,6 +606,9 @@ export const jmetaltracker = jjmetaltracker;
 
 import { definition as jjmicrobit } from './microbit';
 export const jmicrobit = jjmicrobit;
+
+import { definition as jjmmaTorrents } from './mma-torrents';
+export const jmmaTorrents = jjmmaTorrents;
 
 import { definition as jjmoecat } from './moecat';
 export const jmoecat = jjmoecat;
@@ -697,6 +697,9 @@ export const joxtorrent = jjoxtorrent;
 import { definition as jjp2Pbg } from './p2pbg';
 export const jp2Pbg = jjp2Pbg;
 
+import { definition as jjparnuxi } from './parnuxi';
+export const jparnuxi = jjparnuxi;
+
 import { definition as jjpeersfm } from './peersfm';
 export const jpeersfm = jjpeersfm;
 
@@ -726,6 +729,15 @@ export const jpornbits = jjpornbits;
 
 import { definition as jjpornleech } from './pornleech';
 export const jpornleech = jjpornleech;
+
+import { definition as jjpornolive } from './pornolive';
+export const jpornolive = jjpornolive;
+
+import { definition as jjpornorip } from './pornorip';
+export const jpornorip = jjpornorip;
+
+import { definition as jjpornotor } from './pornotor';
+export const jpornotor = jjpornotor;
 
 import { definition as jjproaudiotorrents } from './proaudiotorrents';
 export const jproaudiotorrents = jjproaudiotorrents;
@@ -786,6 +798,9 @@ export const jrustorka = jjrustorka;
 
 import { definition as jjrutor } from './rutor';
 export const jrutor = jjrutor;
+
+import { definition as jjrutrackerRu } from './rutracker-ru';
+export const jrutrackerRu = jjrutrackerRu;
 
 import { definition as jjscenefz } from './scenefz';
 export const jscenefz = jjscenefz;
@@ -997,6 +1012,9 @@ export const jtorrentproject2 = jjtorrentproject2;
 import { definition as jjtorrentquest } from './torrentquest';
 export const jtorrentquest = jjtorrentquest;
 
+import { definition as jjtorrentrex } from './torrentrex';
+export const jtorrentrex = jjtorrentrex;
+
 import { definition as jjtorrentsectorcrew } from './torrentsectorcrew';
 export const jtorrentsectorcrew = jjtorrentsectorcrew;
 
@@ -1135,7 +1153,6 @@ export const definitions = [
   jjacgsou,
   jjacidlounge,
   jjaftershock,
-  jjalein,
   jjalexfilm,
   jjamigosshare,
   jjanirena,
@@ -1258,7 +1275,6 @@ export const definitions = [
   jjgirotorrent,
   jjgktorrent,
   jjglodls,
-  jjgreeklegends,
   jjgreekteam,
   jjhachede,
   jjhamsterstudio,
@@ -1296,6 +1312,7 @@ export const definitions = [
   jjinsanetracker,
   jjisohunt2,
   jjitorrent,
+  jjivTorrents,
   jjjpopsuki,
   jjkapaki,
   jjkaragarga,
@@ -1325,6 +1342,7 @@ export const definitions = [
   jjmetalIplayRo,
   jjmetaltracker,
   jjmicrobit,
+  jjmmaTorrents,
   jjmoecat,
   jjmononokebt,
   jjmonova,
@@ -1354,6 +1372,7 @@ export const definitions = [
   jjourbits,
   jjoxtorrent,
   jjp2Pbg,
+  jjparnuxi,
   jjpeersfm,
   jjpiratbit,
   jjpiratbitl,
@@ -1364,6 +1383,9 @@ export const definitions = [
   jjpornbay,
   jjpornbits,
   jjpornleech,
+  jjpornolive,
+  jjpornorip,
+  jjpornotor,
   jjproaudiotorrents,
   jjprostylex,
   jjpt99,
@@ -1384,6 +1406,7 @@ export const definitions = [
   jjrusMedia,
   jjrustorka,
   jjrutor,
+  jjrutrackerRu,
   jjscenefz,
   jjscenerush,
   jjsdbits,
@@ -1454,6 +1477,7 @@ export const definitions = [
   jjtorrentparadise,
   jjtorrentproject2,
   jjtorrentquest,
+  jjtorrentrex,
   jjtorrentsectorcrew,
   jjtorrentseeds,
   jjtorrentslocal,

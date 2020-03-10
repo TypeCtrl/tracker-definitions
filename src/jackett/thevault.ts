@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://thevault.click/'],
+  links: ['https://thevault.click/'],
+  legacylinks: ['http://thevault.click/'],
   caps: {
     categorymappings: [
       { id: '87', cat: 'Other', desc: 'Author: Brian Tracy' },

@@ -5,7 +5,8 @@
   "language": "en-US",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["http://theshow.click/"],
+  "links": ["https://theshow.click/"],
+  "legacylinks": ["http://theshow.click/"],
   "caps": {
     "categorymappings": [
       { "id": "72", "cat": "Other", "desc": "-empty-" },

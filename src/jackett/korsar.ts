@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://korsar.info/'],
-  legacylinks: ['http://korsar.tv/'],
+  links: ['https://korsar.info/'],
+  legacylinks: ['http://korsar.tv/', 'http://korsar.info/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Все Кинофильмы' },
@@ -1469,13 +1469,7 @@ export const definition: TrackerDefinition = {
       },
       description: {
         selector: 'dt a:last-of-type',
-        filters: [
-          {
-            name: 'prepend',
-            args: '({{ .Result.description_category }}) ',
-          },
-          { name: 'strdump' },
-        ],
+        filters: [{ name: 'prepend', args: '({{ .Result.description_category }}) ' }],
       },
       date: {
         selector:

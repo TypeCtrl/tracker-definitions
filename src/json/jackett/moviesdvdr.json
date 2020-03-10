@@ -22,10 +22,14 @@
       "title": { "selector": "div.titulo" },
       "details": { "selector": "a", "attribute": "href" },
       "download": { "selector": "a", "attribute": "href" },
-      "banner": { "selector": "img", "attribute": "src" },
+      "banner": {
+        "selector": "img.attachment-post-thumbnail",
+        "attribute": "src"
+      },
       "date": { "text": "now" },
       "description": { "selector": "span" },
-      "size": { "text": "500 MB" },
+      "files": { "text": 1 },
+      "size": { "text": "4.5 GB" },
       "seeders": { "text": 1 },
       "leechers": { "text": 1 },
       "downloadvolumefactor": { "text": 0 },

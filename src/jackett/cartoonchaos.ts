@@ -110,6 +110,14 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ["');", ''] },
         ],
       },
+      banner: {
+        selector: 'td a[href^="index.php?page=torrent-details"]',
+        attribute: 'onmouseover',
+        filters: [
+          { name: 'regexp', args: 'src=(.+?) width' },
+          { name: 'replace', args: ['torrentimg/nocover.jpg', ''] },
+        ],
+      },
       size: { selector: 'td:nth-child(10)' },
       date: {
         selector: 'td:nth-child(5):not(:contains("day"))',

@@ -226,8 +226,14 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
+    },
     {
       name: 'torrentlanguage',
       type: 'select',
@@ -263,13 +269,8 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'TTV3/Connexion',
-    method: 'post',
-    inputs: {
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
-    },
-    error: [{ selector: 'font[color="red"]' }],
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
     test: {
       path: 'TTV3/Bienvenue',
       selector: 'a[href$="/TTV3/Deconnexion"]',

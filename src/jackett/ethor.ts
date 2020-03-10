@@ -36,8 +36,8 @@ export const definition: TrackerDefinition = {
       { id: '9', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
   },
@@ -83,13 +83,13 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBID }}{{else}}{{ .Query.Keywords }}{{end}}',
-      advcat: '0',
-      incldead: '1',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      advcat: 0,
+      incldead: 1,
       stype: 'b',
-      dp: '0',
-      isUserClick: '0',
+      dp: 0,
+      isUserClick: 0,
     },
     rows: {
       selector: 'p + table > tbody > tr:has(a[href^="/details.php"])',
@@ -155,12 +155,12 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[title^="Freeleech: "]': '0',
-          'img[title^="Half Freeleech: "]': '0.5',
-          '*': '1',
+          'img[title^="Freeleech: "]': 0,
+          'img[title^="Half Freeleech: "]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
