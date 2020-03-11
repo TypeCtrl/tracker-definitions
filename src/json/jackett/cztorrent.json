@@ -70,6 +70,9 @@
       "o": "{{ .Config.sort }}"
     },
     "rows": { "selector": "tr.torr_hover" },
+    "keywordsfilters": [
+      { "name": "re_replace", "args": ["S[0-9]{2}([^E]|$)", ""] }
+    ],
     "fields": {
       "title": {
         "selector": "td.detaily a",

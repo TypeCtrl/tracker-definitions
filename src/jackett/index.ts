@@ -283,9 +283,6 @@ export const jebooksShares = jjebooksShares;
 import { definition as jjefectodoppler } from './efectodoppler';
 export const jefectodoppler = jjefectodoppler;
 
-import { definition as jjeggmeon } from './eggmeon';
-export const jeggmeon = jjeggmeon;
-
 import { definition as jjelitetorrentBiz } from './elitetorrent-biz';
 export const jelitetorrentBiz = jjelitetorrentBiz;
 
@@ -1018,9 +1015,6 @@ export const jtorrentrex = jjtorrentrex;
 import { definition as jjtorrentsectorcrew } from './torrentsectorcrew';
 export const jtorrentsectorcrew = jjtorrentsectorcrew;
 
-import { definition as jjtorrentseeds } from './torrentseeds';
-export const jtorrentseeds = jjtorrentseeds;
-
 import { definition as jjtorrentslocal } from './torrentslocal';
 export const jtorrentslocal = jjtorrentslocal;
 
@@ -1234,7 +1228,6 @@ export const definitions = [
   jjebookparadijs,
   jjebooksShares,
   jjefectodoppler,
-  jjeggmeon,
   jjelitetorrentBiz,
   jjempornium,
   jjeniahd,
@@ -1479,7 +1472,6 @@ export const definitions = [
   jjtorrentquest,
   jjtorrentrex,
   jjtorrentsectorcrew,
-  jjtorrentseeds,
   jjtorrentslocal,
   jjtorrentview,
   jjtorrentwal,

@@ -5,8 +5,8 @@
   "language": "fr-FR",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://lesaloonv2-0.net/"],
-  "legacylinks": ["http://lesaloonv2-0.net/"],
+  "links": ["http://lesaloonv2-0.net/"],
+  "legacylinks": ["https://lesaloonv2-0.net/"],
   "caps": {
     "categorymappings": [
       { "id": "13", "cat": "Movies/BluRay", "desc": "Films BD-Rip / BRRip" },

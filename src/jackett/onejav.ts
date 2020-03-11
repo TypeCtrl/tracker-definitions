@@ -39,14 +39,9 @@ export const definition: TrackerDefinition = {
         selector: 'div.tags',
         filters: [{ name: 'prepend', args: 'Tags: ' }],
       },
+      descr: { selector: 'p.level', optional: true },
       description: {
-        selector: 'p.level',
-        filters: [
-          {
-            name: 'append',
-            args: '</br>{{ .Result.actress }}</br>{{ .Result.tags }}',
-          },
-        ],
+        text: '{{ .Result.descr }}</br>{{ .Result.actress }}</br>{{ .Result.tags }}',
       },
       date: {
         selector: 'p.is-6 > a',

@@ -191,6 +191,11 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'tracker/index.php' }],
+    headers: {
+      Referer: [
+        'https://downloadville.net/tracker/index.php?page=torrents&search=fake_referer&active=0',
+      ],
+    },
     inputs: {
       page: 'torrents',
       search: '{{ .Keywords }}',

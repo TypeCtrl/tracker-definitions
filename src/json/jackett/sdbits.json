@@ -5,7 +5,8 @@
   "language": "en-US",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["http://sdbits.org/"],
+  "links": ["https://sdbits.org/"],
+  "legacylinks": ["http://sdbits.org/"],
   "caps": {
     "categorymappings": [
       { "id": "6", "cat": "Audio", "desc": "Audio" },

@@ -67,7 +67,7 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'tr.torrenty_lista' },
     fields: {
       title: {
-        selector: 'a[href^="details.php?id="]',
+        selector: 'a[href^="details.php?slug="]',
         attribute: 'title',
         filters: [
           { name: 'replace', args: ['Zobrazit detaily: ', ''] },
@@ -81,11 +81,11 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'onlycat' }],
       },
       details: {
-        selector: 'a[href^="details.php?id="]',
+        selector: 'a[href^="details.php?slug="]',
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="download.php?id="]',
+        selector: 'a[href^="download.php?slug="]',
         attribute: 'href',
       },
       size: { selector: 'td:nth-child(7)' },
