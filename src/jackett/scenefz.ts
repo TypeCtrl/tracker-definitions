@@ -2,13 +2,13 @@ import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
   site: 'scenefz',
-  name: 'SceneFZ / u-torrents',
+  name: 'SceneFZ',
   description: 'SceneFZ is a ratioless ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.scenefz.me/', 'https://www.u-torrents.ro/'],
-  legacylinks: ['https://scenefz.me/'],
+  links: ['https://scenefz.me/'],
+  legacylinks: ['https://www.scenefz.me/', 'https://www.u-torrents.ro/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Anime', desc: 'Anime / Hentai' },

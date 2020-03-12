@@ -47,6 +47,7 @@
       { "id": "119", "cat": "TV/Documentary", "desc": "3D - Documentales" },
       { "id": "120", "cat": "Movies/3D", "desc": "3D - Películas" },
       { "id": "121", "cat": "XXX", "desc": "3D - Adulto (+18)" },
+      { "id": "122", "cat": "Audio/Video", "desc": "3D - Música" },
       { "id": "126", "cat": "TV/Anime", "desc": "Micro HD - Animación" },
       { "id": "127", "cat": "TV/Sport", "desc": "Micro HD - Deportes" },
       {
@@ -90,7 +91,7 @@
       { "id": "28", "cat": "Console/NDS", "desc": "Juegos - Nintendo" },
       { "id": "34", "cat": "Console/Other", "desc": "Juegos - Otros" },
       {
-        "id": "11",
+        "id": "113",
         "cat": "Console/Other",
         "desc": "Juegos - Emuladores/Otras P."
       },
@@ -98,7 +99,7 @@
       { "id": "131", "cat": "Books/Comics", "desc": "eBooks - Cómics" },
       { "id": "134", "cat": "Books", "desc": "eBooks - Manga" },
       { "id": "132", "cat": "Books/Magazines", "desc": "eBooks - Revistas" },
-      { "id": "7", "cat": "Books/Other", "desc": "eBooks - Otros" },
+      { "id": "72", "cat": "Books/Other", "desc": "eBooks - Otros" },
       { "id": "133", "cat": "Books", "desc": "eBooks - Adulto (+18)" },
       { "id": "92", "cat": "Other", "desc": "Otros formatos - Animación" },
       { "id": "93", "cat": "Other", "desc": "Otros formatos - Deportes" },
@@ -107,7 +108,7 @@
       { "id": "97", "cat": "Other", "desc": "Otros formatos - Series" },
       { "id": "98", "cat": "Other", "desc": "Otros formatos - Adulto (+18)" },
       { "id": "99", "cat": "Other", "desc": "Otros formatos - Música" },
-      { "id": "10", "cat": "Other", "desc": "Otros formatos - Estrenos" }
+      { "id": "100", "cat": "Other", "desc": "Otros formatos - Estrenos" }
     ],
     "modes": { "search": ["q"] }
   },

@@ -766,6 +766,9 @@ export const jracing4Everyone = jjracing4Everyone;
 import { definition as jjracingforme } from './racingforme';
 export const jracingforme = jjracingforme;
 
+import { definition as jjrapidzona } from './rapidzona';
+export const jrapidzona = jjrapidzona;
+
 import { definition as jjredstartorrent } from './redstartorrent';
 export const jredstartorrent = jjredstartorrent;
 
@@ -843,6 +846,9 @@ export const jskytorrentsclone = jjskytorrentsclone;
 
 import { definition as jjsnowpt } from './snowpt';
 export const jsnowpt = jjsnowpt;
+
+import { definition as jjsosulki } from './sosulki';
+export const jsosulki = jjsosulki;
 
 import { definition as jjsoundpark } from './soundpark';
 export const jsoundpark = jjsoundpark;
@@ -948,6 +954,9 @@ export const jtoros = jjtoros;
 
 import { definition as jjtorrentExplosiv } from './torrent-explosiv';
 export const jtorrentExplosiv = jjtorrentExplosiv;
+
+import { definition as jjtorrentPirat } from './torrent-pirat';
+export const jtorrentPirat = jjtorrentPirat;
 
 import { definition as jjtorrentTurk } from './torrent-turk';
 export const jtorrentTurk = jjtorrentTurk;
@@ -1389,6 +1398,7 @@ export const definitions = [
   jjr3Vwtf,
   jjracing4Everyone,
   jjracingforme,
+  jjrapidzona,
   jjredstartorrent,
   jjretroflix,
   jjriperam,
@@ -1415,6 +1425,7 @@ export const definitions = [
   jjsktorrent,
   jjskytorrentsclone,
   jjsnowpt,
+  jjsosulki,
   jjsoundpark,
   jjspacetorrent,
   jjspeedtorrentreloaded,
@@ -1450,6 +1461,7 @@ export const definitions = [
   jjtorlock,
   jjtoros,
   jjtorrentExplosiv,
+  jjtorrentPirat,
   jjtorrentTurk,
   jjtorrent4You,
   jjtorrent9,
