@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       default:
-        'BTeye does not use categories. In your software Indexer settings, set the category to 100001.',
+        'BTeye does not use categories. In your software Indexer settings, set the category to 7000.',
     },
   ],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },

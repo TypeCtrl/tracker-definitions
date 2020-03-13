@@ -541,6 +541,9 @@ export const jkinozal = jjkinozal;
 import { definition as jjkorsar } from './korsar';
 export const jkorsar = jjkorsar;
 
+import { definition as jjlastfiles } from './lastfiles';
+export const jlastfiles = jjlastfiles;
+
 import { definition as jjleaguehd } from './leaguehd';
 export const jleaguehd = jjleaguehd;
 
@@ -1027,6 +1030,9 @@ export const jtorrentsectorcrew = jjtorrentsectorcrew;
 import { definition as jjtorrentslocal } from './torrentslocal';
 export const jtorrentslocal = jjtorrentslocal;
 
+import { definition as jjtorrentv } from './torrentv';
+export const jtorrentv = jjtorrentv;
+
 import { definition as jjtorrentview } from './torrentview';
 export const jtorrentview = jjtorrentview;
 
@@ -1059,6 +1065,9 @@ export const jtvchaosuk = jjtvchaosuk;
 
 import { definition as jjtwilight } from './twilight';
 export const jtwilight = jjtwilight;
+
+import { definition as jjuTorrents } from './u-torrents';
+export const juTorrents = jjuTorrents;
 
 import { definition as jju2 } from './u2';
 export const ju2 = jju2;
@@ -1134,6 +1143,9 @@ export const jzamundanet = jjzamundanet;
 
 import { definition as jjzelkaorg } from './zelkaorg';
 export const jzelkaorg = jjzelkaorg;
+
+import { definition as jjzetorrents } from './zetorrents';
+export const jzetorrents = jjzetorrents;
 
 import { definition as jjzooqle } from './zooqle';
 export const jzooqle = jjzooqle;
@@ -1323,6 +1335,7 @@ export const definitions = [
   jjkinonavse100,
   jjkinozal,
   jjkorsar,
+  jjlastfiles,
   jjleaguehd,
   jjlearnflakes,
   jjlechaudron,
@@ -1485,6 +1498,7 @@ export const definitions = [
   jjtorrentrex,
   jjtorrentsectorcrew,
   jjtorrentslocal,
+  jjtorrentv,
   jjtorrentview,
   jjtorrentwal,
   jjtorrentz2,
@@ -1496,6 +1510,7 @@ export const definitions = [
   jjturktorrent,
   jjtvchaosuk,
   jjtwilight,
+  jjuTorrents,
   jju2,
   jjuhdbits,
   jjunderverse,
@@ -1521,6 +1536,7 @@ export const definitions = [
   jjyourexotic,
   jjzamundanet,
   jjzelkaorg,
+  jjzetorrents,
   jjzooqle,
   jjztracker,
 ];
