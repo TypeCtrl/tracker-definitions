@@ -1012,6 +1012,9 @@ export const jtorrentleechPl = jjtorrentleechPl;
 import { definition as jjtorrentlt } from './torrentlt';
 export const jtorrentlt = jjtorrentlt;
 
+import { definition as jjtorrentoyunindir } from './torrentoyunindir';
+export const jtorrentoyunindir = jjtorrentoyunindir;
+
 import { definition as jjtorrentparadise } from './torrentparadise';
 export const jtorrentparadise = jjtorrentparadise;
 
@@ -1492,6 +1495,7 @@ export const definitions = [
   jjtorrentland,
   jjtorrentleechPl,
   jjtorrentlt,
+  jjtorrentoyunindir,
   jjtorrentparadise,
   jjtorrentproject2,
   jjtorrentquest,

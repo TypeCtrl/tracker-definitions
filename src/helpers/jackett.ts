@@ -337,6 +337,7 @@ export const jackettSites = [
   'torrentland',
   'torrentleech-pl',
   'torrentlt',
+  'torrentoyunindir',
   'torrentparadise',
   'torrentproject2',
   'torrentquest',

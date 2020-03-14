@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'baibako',
   name: 'BaibaKo',
-  description: 'BaibaKo is a RUSSIAN Semi-Private Torrent Tracker for TV',
+  description: 'BaibaKo is a RUSSIAN Private Torrent Tracker for TV',
   language: 'ru-RU',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'WINDOWS-1251',
   links: ['http://baibako.tv/'],
   caps: {
