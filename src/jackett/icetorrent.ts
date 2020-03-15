@@ -58,6 +58,19 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'browseadult',
+      type: 'checkbox',
+      label: 'Use the BrowseAdult search engine',
+      default: false,
+    },
+    {
+      name: 'info_browseadult',
+      type: 'info',
+      label: 'About the BrowseAdult search engine',
+      default:
+        'The regular <b>Browse</b> search engine does not return <i>Adult category</i> results.</br>The <b>BrowseAdult</b> search engine can return <i>all category</i> results, but without the <i>imdb tags</i>, and also does not support <i>imdbid</i> searches.',
+    },
   ],
   login: {
     path: 'login',
@@ -74,12 +87,13 @@ export const definition: TrackerDefinition = {
   ratio: { text: -1 },
   search: {
     paths: [
-      { path: 'browse.php', categorymappings: ['!', 9, 11, 58] },
-      { path: 'browseadult.php', categorymappings: [9, 11, 58] },
+      {
+        path: '{{ if .Config.browseadult }}browseadult.php{{else}}browse.php{{end}}',
+      },
     ],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
       search_by: '{{ if .Query.IMDBID }}imdb{{else}}name{{end}}',
     },

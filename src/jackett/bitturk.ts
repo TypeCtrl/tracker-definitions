@@ -21,6 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '67', cat: 'XXX', desc: 'XxX' },
       { id: '68', cat: 'Movies', desc: 'Dual (TR-~)' },
       { id: '58', cat: 'Movies', desc: 'Film' },
+      { id: '72', cat: 'Movies', desc: 'Belgesel' },
       { id: '60', cat: 'Movies/3D', desc: '3D' },
       { id: '45', cat: 'Movies', desc: 'Eğitim / Prog ' },
       { id: '1', cat: 'Movies', desc: 'Filmler' },

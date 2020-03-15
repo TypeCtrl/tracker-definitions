@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'torrentlt',
   name: 'Torrent.LT',
-  description: 'Torrent.LT is Private site for TV / MOVIES / GENERAL',
+  description: 'Torrent.LT is a LITHUANIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'lt-LT',
   type: 'private',
   encoding: 'UTF-8',
@@ -12,9 +12,10 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '27', cat: 'TV', desc: 'Animacija' },
+      { id: '76', cat: 'TV', desc: 'Animacija / LT' },
       { id: '35', cat: 'TV/Anime', desc: 'Anime' },
       { id: '31', cat: 'Movies/DVD', desc: 'Filmai / DVD' },
-      { id: '33', cat: 'Movies', desc: 'Filmai / LTU' },
+      { id: '33', cat: 'Movies', desc: 'Filmai / LT' },
       { id: '43', cat: 'Movies', desc: 'Filmai / LT-Subs' },
       { id: '34', cat: 'Movies', desc: 'Filmai / Eng' },
       { id: '32', cat: 'Movies', desc: 'Filmai / Rus' },
@@ -59,10 +60,13 @@ export const definition: TrackerDefinition = {
       { id: '71', cat: 'XXX/Packs', desc: 'pr0n / pack' },
       { id: '30', cat: 'Other', desc: 'Kita' },
       { id: '41', cat: 'Books', desc: 'E-Books' },
-      { id: '76', cat: 'TV', desc: 'Animacija / LT' },
       { id: '77', cat: 'Other', desc: 'Educational' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },
@@ -73,6 +77,20 @@ export const definition: TrackerDefinition = {
       default:
         "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
     },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '0',
+      options: { '0': 'created', '4': 'size', '6': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     method: 'cookie',
@@ -82,8 +100,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'lt/torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}cats[]={{.}}&{{end}}',
+      $raw: '{{ range .Categories }}cats[]={{.}}&{{end}}',
       search: '{{ .Keywords }}',
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     keywordsfilters: [{ name: 'replace', args: ['.', ' '] }],
     rows: {
@@ -109,7 +129,9 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td span.torrent_leechers' },
       download: { selector: 'td a.torrent_size', attribute: 'href' },
       size: { selector: 'td a.torrent_size' },
-      downloadvolumefactor: { text: 1 },
+      downloadvolumefactor: {
+        case: { 'img[src$="/freedownload.gif"]': 0, '*': 1 },
+      },
       uploadvolumefactor: { text: 1 },
       date: {
         selector: 'td[class$="torrent_info"] span',

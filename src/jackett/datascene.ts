@@ -53,11 +53,29 @@ export const definition: TrackerDefinition = {
       { id: '12', cat: 'XXX', desc: 'XxX' },
     ],
     modes: {
-      search: ['q'],
-      'movie-search': ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -75,9 +93,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
-      incldead: 1,
+      $raw: '{{ if .Categories}}{{ range .Categories }}c{{.}}=1&{{end}}{{else}}cat=0{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      incldead: 2,
+      blah: '{{ if .Query.IMDBID }}3{{else}}0{{end}}',
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: { selector: 'div.ncls > table > tbody > tr:has(a.tname)' },
     fields: {

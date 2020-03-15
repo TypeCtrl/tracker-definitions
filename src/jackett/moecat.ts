@@ -41,6 +41,14 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    { name: '2facode', type: 'text', label: '2FA code' },
+    {
+      name: 'info_2fa',
+      type: 'info',
+      label: 'About 2FA code',
+      default:
+        'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the MoeCat Web Site. Otherwise just leave it empty.',
+    },
     {
       name: 'sort',
       type: 'select',
@@ -64,10 +72,14 @@ export const definition: TrackerDefinition = {
       logintype: 'username',
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      scode: '{{ .Config.2facode }}',
       thispagewidth: 'yes',
       logout: 720,
     },
-    error: [{ selector: 'td.embedded:has(h2:contains("姿势不正确"))' }],
+    error: [
+      { selector: 'td.embedded:has(h2:contains("姿势不正确"))' },
+      { selector: 'td.embedded:has(h2:contains("登录失败"))' },
+    ],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   search: {
