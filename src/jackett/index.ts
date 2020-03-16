@@ -1039,9 +1039,6 @@ export const jtorrentv = jjtorrentv;
 import { definition as jjtorrentview } from './torrentview';
 export const jtorrentview = jjtorrentview;
 
-import { definition as jjtorrentwal } from './torrentwal';
-export const jtorrentwal = jjtorrentwal;
-
 import { definition as jjtorrentz2 } from './torrentz2';
 export const jtorrentz2 = jjtorrentz2;
 
@@ -1504,7 +1501,6 @@ export const definitions = [
   jjtorrentslocal,
   jjtorrentv,
   jjtorrentview,
-  jjtorrentwal,
   jjtorrentz2,
   jjtotallykids,
   jjtotheglory,

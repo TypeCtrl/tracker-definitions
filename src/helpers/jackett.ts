@@ -346,7 +346,6 @@ export const jackettSites = [
   'torrentslocal',
   'torrentv',
   'torrentview',
-  'torrentwal',
   'torrentz2',
   'totallykids',
   'totheglory',
