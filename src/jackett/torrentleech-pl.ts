@@ -38,9 +38,9 @@ export const definition: TrackerDefinition = {
       { id: '56', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
   settings: [
@@ -62,9 +62,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
-      titlesearch: 0,
+      titlesearch: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
       polish: 0,
       cat_film: '',
       napisy: 0,
@@ -87,6 +87,11 @@ export const definition: TrackerDefinition = {
       },
       download: {
         selector: 'a[href^="download.php/"]',
+        attribute: 'href',
+      },
+      imdb: {
+        optional: true,
+        selector: 'a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },
       description: {

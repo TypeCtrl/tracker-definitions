@@ -18,7 +18,7 @@ export const definition: TrackerDefinition = {
       { id: '55', cat: 'Books', desc: 'Comics' },
       { id: '5', cat: 'Movies/HD', desc: 'Movies/720p HD' },
       { id: '8', cat: 'Movies/HD', desc: 'Movies/1080p HD' },
-      { id: '15', cat: 'Movies/HD', desc: 'Movies/Ultra-HD' },
+      { id: '15', cat: 'Movies/UHD', desc: 'Movies/Ultra-HD' },
       { id: '44', cat: 'Movies', desc: 'Movies/Packs' },
       { id: '69', cat: 'Books', desc: 'E Books' },
       { id: '12', cat: 'Books', desc: 'E Learning' },
@@ -35,11 +35,29 @@ export const definition: TrackerDefinition = {
       { id: '9', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '4',
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'loginproc/',
     method: 'form',
@@ -56,11 +74,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 0,
-      onlyname: 1,
-      onlyname2: true,
+      title: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table#tortable > tbody > tr.rowhead, table#tablethree > tbody > tr.rowhead',

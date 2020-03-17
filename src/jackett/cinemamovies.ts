@@ -31,9 +31,9 @@ export const definition: TrackerDefinition = {
       { id: '21', cat: 'Books', desc: 'Book' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
   settings: [
@@ -69,9 +69,11 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
-      blah: 0,
+      blah: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
+      gatunek: 0,
+      quality: 'none',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -97,6 +99,11 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
+      },
+      imdb: {
+        optional: true,
+        selector: 'a[href*="www.imdb.com/title/tt"]',
+        attribute: 'href',
       },
       description: {
         optional: true,

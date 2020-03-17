@@ -56,6 +56,7 @@ export const definition: TrackerDefinition = {
       search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
+      'music-search': ['q'],
     },
   },
   login: {
@@ -75,7 +76,7 @@ export const definition: TrackerDefinition = {
       page: 'torrents',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
-      options: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
+      options: '{{ if .Query.IMDBID }}2{{else}}0{{end}}',
       active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
