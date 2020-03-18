@@ -83,10 +83,12 @@ export const definition: TrackerDefinition = {
     test: { path: 'letoltes.php' },
   },
   search: {
-    paths: [{ path: 'letoltes.php', method: 'get' }],
+    paths: [{ path: 'letoltes.php' }],
     inputs: {
       $raw: '{{ range .Categories }}kat[]={{.}}&{{end}}{{ .Config.sort }}={{ .Config.type }}',
       kereses_nev: '{{ .Keywords }}',
+      miben: 0,
+      cimke: '',
     },
     rows: { selector: 'body > div[id^="torrent_"]' },
     fields: {

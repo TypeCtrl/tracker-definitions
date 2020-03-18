@@ -23,7 +23,7 @@ export const definition: TrackerDefinition = {
       { id: '38', cat: 'Movies/HD', desc: 'HD-LQ' },
       { id: '3', cat: 'PC/Games', desc: 'Hry' },
       { id: '2', cat: 'Audio', desc: 'Hudba' },
-      { id: '34', cat: 'Audio/Video', desc: 'Hudba DVD/HD' },
+      { id: '34', cat: 'Audio/Video', desc: 'Hudební video' },
       { id: '6', cat: 'Books', desc: 'Knihy' },
       { id: '13', cat: 'Console', desc: 'Konzole' },
       { id: '32', cat: 'Audio', desc: 'Mluvené slovo' },
@@ -31,7 +31,6 @@ export const definition: TrackerDefinition = {
       { id: '4', cat: 'Other', desc: 'Ostatní' },
       { id: '25', cat: 'TV', desc: 'Seriály' },
       { id: '29', cat: 'Audio', desc: 'Soundtrack' },
-      { id: '19', cat: 'Audio/Video', desc: 'Videoklipy' },
       { id: '24', cat: 'XXX', desc: 'xXx' },
     ],
     modes: {

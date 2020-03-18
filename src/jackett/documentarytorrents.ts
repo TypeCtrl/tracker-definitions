@@ -76,7 +76,7 @@ export const definition: TrackerDefinition = {
       { id: '89', cat: 'TV/HD', desc: 'War: HD' },
       { id: '88', cat: 'TV/SD', desc: 'War: Xvid / x264' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

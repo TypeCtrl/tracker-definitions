@@ -11,19 +11,20 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '96', cat: 'TV/Documentary', desc: 'Docus TV' },
+      { id: '124', cat: 'TV/Documentary', desc: 'Docus Formation Video' },
       { id: '49', cat: 'Movies/3D', desc: 'Films 3D' },
       { id: '1', cat: 'XXX', desc: '3X' },
       { id: '48', cat: 'XXX', desc: '3X  HD1080p' },
       { id: '47', cat: 'XXX', desc: '3X  HD720p' },
       { id: '50', cat: 'Movies/UHD', desc: 'Films 4K' },
-      { id: '51', cat: 'Movies/UHD', desc: 'Films 4K UHDTV' },
+      { id: '51', cat: 'TV/UHD', desc: 'Films 4K UHDTV' },
       { id: '57', cat: 'Movies/BluRay', desc: 'Films BDRip' },
       { id: '56', cat: 'Movies/BluRay', desc: 'Films Blu-Ray' },
       { id: '58', cat: 'Movies/BluRay', desc: 'Films BRRip' },
       { id: '66', cat: 'Movies', desc: 'Films CamTS' },
       { id: '59', cat: 'Movies/DVD', desc: 'Films DVDR' },
       { id: '60', cat: 'Movies/DVD', desc: 'Films DVDRip' },
-      { id: '98', cat: 'Movies', desc: 'Films Film Animées' },
+      { id: '98', cat: 'TV/Anime', desc: 'Films Film Animées' },
       { id: '65', cat: 'Movies', desc: 'Films FSCR' },
       { id: '52', cat: 'Movies/HD', desc: 'Films HD 720p' },
       { id: '53', cat: 'Movies/HD', desc: 'Films HD1080p' },
@@ -145,7 +146,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
       freeleech: 0,
@@ -193,7 +194,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src="images/Torrents/free.png"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
