@@ -23,9 +23,9 @@ export const definition: TrackerDefinition = {
       { id: '13', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
   settings: [
@@ -70,12 +70,12 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
       scene: 0,
       pl: 0,
       sub: '',
-      search_in: 'title',
+      search_in: '{{ if .Query.IMDBID }}nfo{{else}}title{{end}}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },

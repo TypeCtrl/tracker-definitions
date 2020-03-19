@@ -90,6 +90,13 @@ export const definition: TrackerDefinition = {
       default: 'desc',
       options: { desc: 'desc', asc: 'asc' },
     },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        "If you are getting the error: <b>An error has occured!You can't view this page unless you read all your unread messages</b>, then access the site with your browser and <b>mark as read</b> all PMs.",
+    },
   ],
   login: {
     path: '?p=home&pid=1',

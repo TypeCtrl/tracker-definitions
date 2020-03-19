@@ -38,11 +38,29 @@ export const definition: TrackerDefinition = {
       { id: '110', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '5',
+      options: { '2': 'title', '5': 'created', '6': 'size', '8': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -55,11 +73,14 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search:
+        '{{ if .Query.IMDBID }}https://www.imdb.com/title/{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 0,
       onlyname: 1,
       onlyname2: true,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
     },
     rows: { selector: 'table[id!="torrent_ajanlo"] > tbody > tr[id]' },
     fields: {
@@ -85,7 +106,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       imdb: {
-        selector: 'a[href*="https://www.imdb.com/title/"]',
+        selector: 'a[href*="www.imdb.com/title/tt"]',
         optional: true,
         attribute: 'href',
       },
@@ -98,7 +119,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(6)' },
       grabs: {
         selector: 'td:nth-child(7)',
-        filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
@@ -115,9 +136,13 @@ export const definition: TrackerDefinition = {
           { name: 'timeago' },
         ],
       },
-      downloadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 1 },
       uploadvolumefactor: {
-        case: { 'img[src="pic/double.png"]': '2', '*': '1' },
+        case: {
+          'img[src="pic/double.png"]': 2,
+          'img[src="pic/doubledouble2.png"]': 4,
+          '*': 1,
+        },
       },
     },
   },
