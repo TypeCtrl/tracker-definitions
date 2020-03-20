@@ -159,6 +159,7 @@ export const jackettSites = [
   'hdu',
   'hdzone',
   'hon3yhd',
+  'horrorsite',
   'hqsource',
   'hush',
   'ibit',

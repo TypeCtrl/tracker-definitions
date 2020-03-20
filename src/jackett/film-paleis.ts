@@ -34,9 +34,9 @@ export const definition: TrackerDefinition = {
       { id: '32', cat: 'Audio/Audiobook', desc: ' Luister Boeken' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
   settings: [
@@ -79,7 +79,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 1,
     },
     rows: {
@@ -101,6 +101,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
+      banner: { selector: 'img[src*="/covers/"]', attribute: 'src' },
       size: {
         selector: 'td:nth-child(4) table tr td:nth-child(2)',
         filters: [{ name: 'regexp', args: '(.+?) in' }],
@@ -140,7 +141,9 @@ export const definition: TrackerDefinition = {
         optional: true,
         selector: 'td:nth-child(4) table tr:nth-child(3) td:nth-child(5) font font b',
       },
-      downloadvolumefactor: { text: 0 },
+      downloadvolumefactor: {
+        case: { 'img[src="pic/freedlfsu.gif"]': 0, '*': 1 },
+      },
       uploadvolumefactor: { text: 1 },
     },
   },

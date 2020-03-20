@@ -478,6 +478,9 @@ export const jhdzone = jjhdzone;
 import { definition as jjhon3Yhd } from './hon3yhd';
 export const jhon3Yhd = jjhon3Yhd;
 
+import { definition as jjhorrorsite } from './horrorsite';
+export const jhorrorsite = jjhorrorsite;
+
 import { definition as jjhqsource } from './hqsource';
 export const jhqsource = jjhqsource;
 
@@ -1314,6 +1317,7 @@ export const definitions = [
   jjhdu,
   jjhdzone,
   jjhon3Yhd,
+  jjhorrorsite,
   jjhqsource,
   jjhush,
   jjibit,

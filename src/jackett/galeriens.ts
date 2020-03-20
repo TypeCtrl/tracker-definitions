@@ -327,7 +327,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src$="/images/Torrents/TLibre.png"]': '0', '*': '1' },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
