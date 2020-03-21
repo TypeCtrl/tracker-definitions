@@ -36,6 +36,7 @@ export const definition: TrackerDefinition = {
       { id: '117', cat: 'PC', desc: 'Applications: Appli-autre' },
       { id: '67', cat: 'TV/Other', desc: 'Autres: Emission TV' },
       { id: '141', cat: 'TV/Other', desc: 'Autres: Noel' },
+      { id: '142', cat: 'TV/Sport', desc: 'Autres: Emission sport' },
       { id: '90', cat: 'Books/Ebook', desc: 'BD: Livres' },
       { id: '132', cat: 'TV/Documentary', desc: 'Documentaires: BluRay' },
       { id: '133', cat: 'TV/Documentary', desc: 'Documentaires: 4k' },
@@ -47,7 +48,6 @@ export const definition: TrackerDefinition = {
         cat: 'TV/Documentary',
         desc: 'Documentaires: TVRip/HDTV',
       },
-      { id: '118', cat: 'TV/Documentary', desc: 'Documentaires: Sport' },
       { id: '139', cat: 'TV/Documentary', desc: 'Documentaires: Noel' },
       { id: '138', cat: 'Books/Ebook', desc: 'E-Books: Noel' },
       { id: '53', cat: 'Books/Ebook', desc: 'E-Books: Livre Anglais' },
@@ -79,8 +79,8 @@ export const definition: TrackerDefinition = {
       { id: '71', cat: 'Movies/WEBDL', desc: 'Films: WEB-DL' },
       { id: '69', cat: 'Movies/3D', desc: 'Films: Film 3D' },
       { id: '65', cat: 'Movies', desc: 'Films: VO' },
-      { id: '1', cat: 'Movies/HD', desc: 'Films: Remux Bluray 4K' },
-      { id: '130', cat: 'Movies/UHD', desc: 'Films: HD720P' },
+      { id: '1', cat: 'Movies/UHD', desc: 'Films: Remux Bluray 4K' },
+      { id: '130', cat: 'Movies/HD', desc: 'Films: HD720P' },
       { id: '102', cat: 'Movies/WEBDL', desc: 'Films: WEB-DL 720P' },
       { id: '103', cat: 'Movies/HD', desc: 'Films: Film-HDRIP' },
       { id: '111', cat: 'Movies/WEBDL', desc: 'Films: WEBRip-720P' },
@@ -195,7 +195,6 @@ export const definition: TrackerDefinition = {
   download: {
     before: {
       path: 'list_thanks.php',
-      method: 'get',
       inputs: {
         id: '{{ .DownloadUri.Query.id }}',
         to: 'give',
@@ -212,7 +211,6 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       incldead: 1,
       freeleech: 0,
-      inclexternal: 0,
       lang: 0,
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
@@ -256,7 +254,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src="images/fl.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

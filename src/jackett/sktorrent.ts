@@ -26,7 +26,7 @@ export const definition: TrackerDefinition = {
       { id: '5', cat: 'Movies', desc: 'Filmy Kreslené' },
       { id: '19', cat: 'Movies/HD', desc: 'HD Filmy' },
       { id: '29', cat: 'Movies/3D', desc: '3D Blu-ray' },
-      { id: '43', cat: 'Movies/HD', desc: 'UHD Filmy' },
+      { id: '43', cat: 'Movies/UHD', desc: 'UHD Filmy' },
       { id: '28', cat: 'Movies/BluRay', desc: 'Blu-ray' },
       { id: '18', cat: 'PC/Games', desc: 'Hry na Windows' },
       { id: '30', cat: 'PC/Games', desc: 'Hry na Konzole' },

@@ -39,9 +39,9 @@ export const definition: TrackerDefinition = {
       { id: '10', cat: 'Audio/MP3', desc: 'Zene/MP3' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
     },
   },
   settings: [
@@ -85,9 +85,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}cat[]={{.}}&{{end}}',
-      search: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       searchOpened: 1,
-      searchWhat: 0,
+      searchWhat: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
       filterOptions: 1,
       orderby: '{{ .Config.sort }}',
       ordertype: '{{ .Config.type }}',

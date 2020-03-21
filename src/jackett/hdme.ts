@@ -35,7 +35,7 @@ export const definition: TrackerDefinition = {
       { id: '37', cat: 'TV/HD', desc: 'TV Series 1080i' },
       { id: '38', cat: 'TV/HD', desc: 'TV Series 1080p' },
       { id: '39', cat: 'TV/HD', desc: 'TV Series 720p' },
-      { id: '57', cat: 'Movies', desc: 'UHD 2160p' },
+      { id: '57', cat: 'Movies/UHD', desc: 'UHD 2160p' },
       { id: '40', cat: 'XXX', desc: 'XXX' },
     ],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
