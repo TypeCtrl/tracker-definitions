@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentgalaxy.to/'],
+  followredirect: true,
+  links: ['https://torrentgalaxy.to/', 'https://torrentgalaxy.unblockit.pro/'],
   legacylinks: ['https://torrentgalaxy.org/', 'https://torrentgalaxy.pw/'],
   caps: {
     categorymappings: [

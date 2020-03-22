@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://btdb.io/'],
+  followredirect: true,
+  links: ['https://btdb.io/', 'https://btdb.unblockit.pro/'],
   legacylinks: ['https://btdb.to/', 'https://btdb.unblocked.app/', 'https://btdb.eu/'],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],

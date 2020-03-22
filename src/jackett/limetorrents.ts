@@ -7,12 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
+  followredirect: true,
   links: [
     'https://www.limetorrents.info/',
     'https://www.limetorrents.asia/',
     'https://www.limetorrents.co/',
     'https://limetor.com/',
     'https://www.limetor.pro/',
+    'https://limetorrents.unblockit.pro/',
   ],
   legacylinks: [
     'https://www.limetorrents.io/',

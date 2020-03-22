@@ -7,6 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
+  followredirect: true,
   links: [
     'https://1337x.to/',
     'https://1337x.gd/',
@@ -15,8 +16,9 @@ export const definition: TrackerDefinition = {
     'https://x1337x.ws/',
     'https://x1337x.eu/',
     'https://x1337x.se/',
-    'https://1337x.unblocked.earth/',
+    'https://1337x.unblockit.pro/',
   ],
+  legacylinks: ['https://1337x.unblocked.earth/'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime/Anime' },

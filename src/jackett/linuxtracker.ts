@@ -382,7 +382,7 @@ export const definition: TrackerDefinition = {
         remove: 'strong',
       },
       description: { selector: 'td:nth-child(2)', remove: 'table' },
-      downloadvolumefactor: { text: 1 },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },
   },

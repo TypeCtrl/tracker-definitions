@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://thepiratebay.org/', 'https://tpb.bike/'],
+  followredirect: true,
+  links: [
+    'https://thepiratebay.org/',
+    'https://tpb.bike/',
+    'https://pirateproxy.page/',
+    'https://tpb14.ukpass.co/',
+    'https://thepiratebay.vip/',
+  ],
   legacylinks: ['https://thepiratesbay.pw/', 'https://tproxy.pro/'],
   caps: {
     categorymappings: [

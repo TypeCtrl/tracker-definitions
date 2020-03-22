@@ -370,7 +370,7 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '02 Jan 2006, 15:04' },
         ],
       },
-      downloadvolumefactor: { text: 1 },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },
   },

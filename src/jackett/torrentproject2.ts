@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentproject2.se/'],
+  links: ['https://torrentproject.cc/'],
+  legacylinks: ['https://torrentproject2.se/'],
   caps: {
     modes: {
       search: ['q'],
@@ -74,11 +75,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '?t={{ if .Keywords }}{{ .Keywords }}{{else}}test{{end}}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{else}}{{end}}',
+          '?t={{ if .Keywords }}{{ re_replace .Keywords " " "+" }}{{else}}test{{end}}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{else}}{{end}}',
         followredirect: true,
       },
     ],
-    rows: { selector: '#similarfiles div:has(a[href^="/t0-"])' },
+    rows: { selector: '#similarfiles div:has(a[href^="/t"])' },
     fields: {
       category: {
         optional: true,

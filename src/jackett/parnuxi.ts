@@ -255,7 +255,7 @@ export const definition: TrackerDefinition = {
       date: {
         text: '{{ if .Result.find_date }}{{ .Result.find_date}}{{else}}now{{end}}',
       },
-      downloadvolumefactor: { text: 1 },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },
   },

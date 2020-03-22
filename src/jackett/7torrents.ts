@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'search' }],
     inputs: {
-      query: '{{ if .Keywords }}{{ .Keywords }}{{else}}2020{{end}}',
+      query: '{{ if .Keywords }}{{ .Keywords }}{{else}} {{end}}',
       sort: '{{ .Config.sort }}',
     },
     rows: { selector: 'div.media' },

@@ -175,13 +175,7 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2 January 2006 15:04:05' },
         ],
       },
-      downloadvolumefactor: {
-        case: {
-          'img[src="pic/freedownload.gif"]': 0,
-          'img[src="pic/silverdown.gif"]': 0,
-          '*': 1,
-        },
-      },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },
   },

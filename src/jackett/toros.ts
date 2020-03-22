@@ -23,6 +23,7 @@ export const definition: TrackerDefinition = {
       { id: '6', cat: 'TV/Anime' },
       { id: '7', cat: 'XXX' },
       { id: '8', cat: 'Books' },
+      { id: '9', cat: 'TV/Anime' },
       { id: '10', cat: 'Other' },
     ],
   },

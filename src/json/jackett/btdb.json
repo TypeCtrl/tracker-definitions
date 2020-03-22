@@ -5,7 +5,8 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://btdb.io/"],
+  "followredirect": true,
+  "links": ["https://btdb.io/", "https://btdb.unblockit.pro/"],
   "legacylinks": [
     "https://btdb.to/",
     "https://btdb.unblocked.app/",

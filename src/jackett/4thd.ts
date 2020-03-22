@@ -82,7 +82,10 @@ export const definition: TrackerDefinition = {
       taglist: '',
       tags_type: 0,
     },
-    rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
+    rows: {
+      selector:
+        'table#torrent_table > tbody > tr.torrent:has(a[href^="torrents.php?action=download&id="])',
+    },
     fields: {
       category: {
         selector: 'td.cats_col div a',

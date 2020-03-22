@@ -147,7 +147,12 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: "src=\\\\'([^\\s\\\\]+)" }],
       },
-      downloadvolumefactor: { text: 0 },
+      downloadvolumefactor: {
+        case: {
+          'a[style="color: #b9a100;"][href^="banan?"]': '0',
+          '*': '1',
+        },
+      },
       uploadvolumefactor: { text: 1 },
     },
   },

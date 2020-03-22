@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://monova.org/', 'https://monova.to/'],
+  followredirect: true,
+  links: ['https://monova.org/', 'https://monova.to/', 'https://monova.unblockit.pro/'],
   caps: {
     modes: {
       search: ['q'],
@@ -34,7 +35,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     rows: {
-      selector: 'tr.desktop:has(a[href^="//"])',
+      selector: 'tr.desktop:not(tr[class="desktop  success"])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

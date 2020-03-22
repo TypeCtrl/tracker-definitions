@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://pirateiro.com/'],
+  followredirect: true,
+  links: ['https://pirateiro.com/', 'https://pirateiro.unblockit.pro/'],
   legacylinks: ['http://pirateiro.com/'],
   caps: {
     modes: {

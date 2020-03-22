@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://katcr.co/'],
+  followredirect: true,
+  links: ['https://katcr.co/', 'https://kat.unblockit.pro/'],
   caps: {
     categorymappings: [
       { id: '118', cat: 'TV/Anime', desc: 'Anime - English Translated' },

@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentz2.eu/'],
+  followredirect: true,
+  links: ['https://torrentz2.eu/', 'https://torrentz.unblockit.pro/'],
   caps: {
     modes: {
       search: ['q'],

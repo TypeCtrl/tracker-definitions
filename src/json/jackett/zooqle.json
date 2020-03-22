@@ -5,7 +5,8 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://zooqle.com/"],
+  "followredirect": true,
+  "links": ["https://zooqle.com/", "https://zooqle.unblockit.pro/"],
   "caps": {
     "modes": {
       "search": ["q"],

@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.ettv.to/'],
+  followredirect: true,
+  links: ['https://www.ettv.to/', 'https://ettv.unblockit.pro/'],
   legacylinks: ['https://www.ettv.tv/'],
   caps: {
     categorymappings: [

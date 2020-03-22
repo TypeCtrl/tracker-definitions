@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://www.bittorrent.am/'],
+  links: ['https://www.bittorrent.am/'],
+  legacylinks: ['http://www.bittorrent.am/'],
   caps: {
     categorymappings: [
       { id: '0', cat: 'XXX', desc: 'Adult' },

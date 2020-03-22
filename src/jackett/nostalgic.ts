@@ -35,6 +35,7 @@ export const definition: TrackerDefinition = {
       { id: '34', cat: 'Movies', desc: 'Laserdiscs' },
       { id: '35', cat: 'XXX', desc: 'NSFW' },
       { id: '36', cat: 'TV', desc: 'Youtube Archives' },
+      { id: '5', cat: 'Other', desc: 'Other' },
     ],
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
