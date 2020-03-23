@@ -820,9 +820,6 @@ export const jsdbits = jjsdbits;
 import { definition as jjseedfile } from './seedfile';
 export const jseedfile = jjseedfile;
 
-import { definition as jjseedpeer } from './seedpeer';
-export const jseedpeer = jjseedpeer;
-
 import { definition as jjshareisland } from './shareisland';
 export const jshareisland = jjshareisland;
 
@@ -906,9 +903,6 @@ export const jtellytorrent = jjtellytorrent;
 
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
-
-import { definition as jjtfile } from './tfile';
-export const jtfile = jjtfile;
 
 import { definition as jjtheMadhouse } from './the-madhouse';
 export const jtheMadhouse = jjtheMadhouse;
@@ -1431,7 +1425,6 @@ export const definitions = [
   jjscenerush,
   jjsdbits,
   jjseedfile,
-  jjseedpeer,
   jjshareisland,
   jjsharespacedb,
   jjshareuniversity,
@@ -1460,7 +1453,6 @@ export const definitions = [
   jjtekno3D,
   jjtellytorrent,
   jjtenyardtracker,
-  jjtfile,
   jjtheMadhouse,
   jjtheaudioscene,
   jjtheempire,

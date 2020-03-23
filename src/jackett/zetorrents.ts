@@ -27,7 +27,9 @@ export const definition: TrackerDefinition = {
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
     paths: [{ path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}{{end}}' }],
-    rows: { selector: 'table.table > tbody > tr' },
+    rows: {
+      selector: 'table.table > tbody > tr:has(a[href^="/torrent/"])',
+    },
     fields: {
       category: { text: 1 },
       site_date: {

@@ -88,7 +88,10 @@
       "details": { "selector": "span > a", "attribute": "href" },
       "download": { "selector": "span > a", "attribute": "href" },
       "date": { "selector": "div > span:nth-child(4)" },
-      "size": { "selector": "div > span:nth-child(5)" },
+      "size": {
+        "selector": "div > span:nth-child(5)",
+        "filters": [{ "name": "re_replace", "args": ["\\.([0-9]{3})", "$1"] }]
+      },
       "seeders": {
         "selector": "div > span:nth-child(2)",
         "filters": [{ "name": "replace", "args": ["N/A", "0"] }]

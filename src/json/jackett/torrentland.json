@@ -55,6 +55,7 @@
       { "id": "51", "cat": "TV/Other", "desc": "Series - Otros Formatos" },
       { "id": "53", "cat": "TV/Documentary", "desc": "Documentales - HD" },
       { "id": "52", "cat": "TV/Documentary", "desc": "Documentales - SD" },
+      { "id": "85", "cat": "Books", "desc": "Manuales" },
       { "id": "55", "cat": "XXX/x264", "desc": "Adultos - HD" },
       { "id": "54", "cat": "XXX/XviD", "desc": "Adultos - SD" },
       { "id": "58", "cat": "Movies/HD", "desc": "Animacion - HD" },
@@ -62,12 +63,22 @@
       { "id": "76", "cat": "Movies/3D", "desc": "Animacion - 3D" },
       { "id": "61", "cat": "TV/Sport", "desc": "Deportes - HD" },
       { "id": "60", "cat": "TV/Sport", "desc": "Deportes - SD" },
-      { "id": "85", "cat": "Books", "desc": "Manuales" }
+      { "id": "37", "cat": "Books/Ebook", "desc": "Ebook" },
+      { "id": "47", "cat": "Audio/Lossless", "desc": "Music Lossless" },
+      { "id": "31", "cat": "Audio/Video", "desc": "Music Video" },
+      { "id": "19", "cat": "Audio/MP3", "desc": "Music MP3" },
+      { "id": "29", "cat": "PC/Games", "desc": "PC Game" },
+      { "id": "26", "cat": "Console/Wii", "desc": "Console Wii / WiiU" },
+      { "id": "27", "cat": "Console/Xbox360", "desc": "Console Xbox360" },
+      { "id": "28", "cat": "Console/PSP", "desc": "Console PSP / PS3" },
+      { "id": "42", "cat": "PC/ISO", "desc": "PC ISO" },
+      { "id": "44", "cat": "PC", "desc": "PC" },
+      { "id": "39", "cat": "Books/Other", "desc": "Books Other" }
     ],
     "modes": {
-      "search": ["q"],
-      "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"]
+      "search": ["q", "imdbid"],
+      "tv-search": ["q", "season", "ep", "imdbid"],
+      "movie-search": ["q", "imdbid"]
     }
   },
   "settings": [
@@ -111,9 +122,9 @@
     "inputs": {
       "page": "torrents",
       "$raw": "category={{ range .Categories }}{{.}};{{end}}",
-      "options": 0,
+      "options": "{{ if .Query.IMDBID }}2{{else}}0{{end}}",
       "active": 0,
-      "search": "{{ .Keywords }}",
+      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
       "order": "{{ .Config.sort }}",
       "by": "{{ .Config.type }}"
     },
@@ -140,7 +151,8 @@
         "attribute": "onmouseover",
         "filters": [
           { "name": "regexp", "args": "src=(.+?)width" },
-          { "name": "trim" }
+          { "name": "trim" },
+          { "name": "replace", "args": ["torrentimg/nocover.jpg", ""] }
         ]
       },
       "details": { "selector": "td:nth-child(2) a", "attribute": "href" },
@@ -165,6 +177,7 @@
         "attribute": "style",
         "filters": [
           { "name": "regexp", "args": "background: #(.*)" },
+          { "name": "replace", "args": ["f9bdbd", "0"] },
           { "name": "replace", "args": ["f9e5a5", "0"] },
           { "name": "replace", "args": ["a9a9a9", "0.5"] },
           { "name": "replace", "args": ["f6c8a6", "0.75"] }
