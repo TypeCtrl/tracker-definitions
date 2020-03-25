@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://www.nntt.org/'],
+  links: [
+    'http://www.nntt.org/',
+    'https://nntt.black-mirror.xyz/',
+    'https://nntt.unblocked.casa/',
+    'https://nntt.proxyportal.fun/',
+    'https://nntt.uk-unblock.xyz/',
+    'https://nntt.ind-unblock.xyz/',
+  ],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Кино, Видео и ТВ' },

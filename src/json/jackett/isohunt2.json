@@ -5,7 +5,7 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://isohunt2.net/"],
+  "links": ["https://isohunt2.net/", "https://isohunt.nz/"],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "TV/Anime", "desc": "Anime" },

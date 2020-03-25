@@ -81,6 +81,7 @@ export const jackettSites = [
   'datascene',
   'deildu',
   'demonoid',
+  'demonsite',
   'desireleasers',
   'desitorrents',
   'diablotorrent',

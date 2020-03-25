@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'hu-HU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://itorrent.ws/'],
+  followredirect: true,
+  links: ['https://itorrent.ws/', 'https://itorrent.unblockit.pro/'],
   caps: {
     modes: {
       search: ['q'],

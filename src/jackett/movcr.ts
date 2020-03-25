@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://movcr.to/'],
+  links: [
+    'https://movcr.to/',
+    'https://movcr.black-mirror.xyz/',
+    'https://movcr.unblocked.casa/',
+    'https://movcr.proxyportal.fun/',
+    'https://movcr.uk-unblock.xyz/',
+    'https://movcr.ind-unblock.xyz/',
+  ],
   legacylinks: ['https://movcr.tv/'],
   caps: {
     modes: {

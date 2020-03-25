@@ -12,6 +12,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torlock.com/',
     'https://www.torlock2.com/',
+    'https://www.torlock.icu/',
     'https://torlock.unblockit.pro/',
   ],
   legacylinks: ['https://torlock.com/'],

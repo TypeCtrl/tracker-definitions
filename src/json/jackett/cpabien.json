@@ -56,9 +56,11 @@
   "search": {
     "paths": [
       {
-        "path": "{{ if .Keywords }}index.php?do=search&subaction=search&story={{ .Keywords }}{{else}}{{end}}"
+        "path": "{{ if .Keywords }}index.php?do=search&subaction=search{{else}}{{end}}",
+        "method": "post"
       }
     ],
+    "inputs": { "story": "{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}" },
     "rows": { "selector": "div#gauche > table > tbody > tr:has(a)" },
     "fields": {
       "category": { "text": "other" },

@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://ext.to/'],
+  legacylinks: ['https://ext.unblockninja.com/'],
   caps: {
     modes: {
       search: ['q'],

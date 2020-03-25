@@ -61,7 +61,7 @@ export const definition: TrackerDefinition = {
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 0,
       spstate: 0,
-      search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
+      search_area: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
       search_mode: 0,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',

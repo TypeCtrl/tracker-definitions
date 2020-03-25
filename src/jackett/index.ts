@@ -244,6 +244,9 @@ export const jdeildu = jjdeildu;
 import { definition as jjdemonoid } from './demonoid';
 export const jdemonoid = jjdemonoid;
 
+import { definition as jjdemonsite } from './demonsite';
+export const jdemonsite = jjdemonsite;
+
 import { definition as jjdesireleasers } from './desireleasers';
 export const jdesireleasers = jjdesireleasers;
 
@@ -1233,6 +1236,7 @@ export const definitions = [
   jjdatascene,
   jjdeildu,
   jjdemonoid,
+  jjdemonsite,
   jjdesireleasers,
   jjdesitorrents,
   jjdiablotorrent,

@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.skytorrents.lol/'],
+  links: [
+    'https://www.skytorrents.lol/',
+    'https://skytorrents.black-mirror.xyz/',
+    'https://skytorrents.unblocked.casa/',
+    'https://skytorrents.proxyportal.fun/',
+    'https://skytorrents.uk-unblock.xyz/',
+    'https://skytorrents.ind-unblock.xyz/',
+  ],
   legacylinks: ['https://www.skytorrents.to/'],
   caps: {
     modes: {
@@ -16,6 +23,7 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
     categorymappings: [
+      { id: 'other', cat: 'Other' },
       { id: 'album', cat: 'Audio' },
       { id: 'ebook', cat: 'Books' },
       { id: 'movie', cat: 'Movies' },
@@ -57,7 +65,11 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'tr.result' },
     fields: {
       title: { selector: 'td a' },
-      category: { optional: true, selector: 'a.label[href*="type="]' },
+      category: { text: 'other' },
+      'category|noappend': {
+        selector: 'a.label[href*="type="]',
+        optional: true,
+      },
       details: { selector: 'td a', attribute: 'href' },
       magnet: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
       size: { selector: 'td:nth-child(2)' },

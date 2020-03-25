@@ -8,7 +8,15 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://zooqle.com/', 'https://zooqle.unblockit.pro/'],
+  links: [
+    'https://zooqle.com/',
+    'https://zooqle.unblockit.pro/',
+    'https://zooqle.black-mirror.xyz/',
+    'https://zooqle.unblocked.casa/',
+    'https://zooqle.proxyportal.fun/',
+    'https://zooqle.uk-unblock.xyz/',
+    'https://zooqle.ind-unblock.xyz/',
+  ],
   caps: {
     modes: {
       search: ['q'],

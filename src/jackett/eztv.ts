@@ -8,7 +8,17 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://eztv.io/', 'https://eztv.unblockit.pro/'],
+  links: [
+    'https://eztv.io/',
+    'https://eztv.unblockit.pro/',
+    'https://eztv.root.yt/',
+    'https://eztv.unblockninja.com/',
+    'https://eztv.black-mirror.xyz/',
+    'https://eztv.unblocked.casa/',
+    'https://eztv.proxyportal.fun/',
+    'https://eztv.uk-unblock.xyz/',
+    'https://eztv.ind-unblock.xyz/',
+  ],
   legacylinks: ['https://eztv.ag/', 'https://eztv.re/', 'https://eztv.it/', 'https://eztv.ch/'],
   caps: {
     modes: { 'tv-search': ['q', 'season', 'ep'] },

@@ -23,14 +23,8 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    { name: 'cookie', type: 'text', label: 'Cookie' },
-    {
-      name: 'info',
-      type: 'info',
-      label: 'How to get the Cookie',
-      default:
-        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here.</ol>",
-    },
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
     {
       name: 'sort',
       type: 'select',
@@ -52,9 +46,18 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    method: 'cookie',
-    inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: '/', selector: 'a[href$="/logout"]' },
+    path: 'login',
+    method: 'form',
+    form: 'form[action*="/login"]',
+    inputs: {
+      username: '{{ .Config.username }}',
+      password: '{{ .Config.password }}',
+      remember: 1,
+    },
+    selectorinputs: {
+      _token: { selector: 'input[name="_token"]', attribute: 'value' },
+    },
+    error: [{ selector: 'div#ERROR_COPY' }],
   },
   ratio: {
     path: '/',

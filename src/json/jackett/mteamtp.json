@@ -20,14 +20,14 @@
       { "id": "438", "cat": "TV/HD", "desc": "TV Series(影劇/綜藝)/BD" },
       { "id": "404", "cat": "TV/Documentary", "desc": "紀錄教育" },
       { "id": "405", "cat": "TV/Anime", "desc": "Anime(動畫)" },
-      { "id": "406", "cat": "Audio/Video", "desc": "MV(演唱)" },
-      { "id": "408", "cat": "Audio/Other", "desc": "Music(AAC/ALAC)" },
-      { "id": "434", "cat": "Audio", "desc": "Music(無損)" },
       { "id": "407", "cat": "TV/Sport", "desc": "Sports(運動)" },
       { "id": "422", "cat": "PC/0day", "desc": "Software(軟體)" },
       { "id": "423", "cat": "PC/Games", "desc": "PCGame(PC遊戲)" },
       { "id": "427", "cat": "Books", "desc": "eBook(電子書)" },
       { "id": "409", "cat": "Other", "desc": "Misc(其他)" },
+      { "id": "406", "cat": "Audio/Video", "desc": "MV(演唱)" },
+      { "id": "408", "cat": "Audio/Other", "desc": "Music(AAC/ALAC)" },
+      { "id": "434", "cat": "Audio", "desc": "Music(無損)" },
       { "id": "410", "cat": "XXX", "desc": "AV(有碼)/HD Censored" },
       { "id": "429", "cat": "XXX", "desc": "AV(無碼)/HD Uncensored" },
       { "id": "424", "cat": "XXX", "desc": "AV(有碼)/SD Censored" },
@@ -57,6 +57,20 @@
       "type": "info",
       "label": "",
       "default": "For best results disable the torrent name tooltip (User CP/Tracker Settings/Torrents Page). Otherwise long release names will be cut off."
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "4",
+      "options": { "1": "title", "4": "created", "5": "size", "7": "seeders" }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "desc": "desc", "asc": "asc" }
     }
   ],
   "login": {
@@ -66,8 +80,11 @@
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}"
     },
-    "error": [{ "selector": "td.embedded:has(h2:contains(\"failed\"))" }],
-    "test": { "path": "torrents.php" }
+    "error": [
+      { "selector": "td.embedded:has(h2:contains(\"登录失败\"))" },
+      { "selector": "td.embedded:has(h2:contains(\"failed\"))" }
+    ],
+    "test": { "path": "index.php", "selector": "a[href=\"logout.php\"]" }
   },
   "ratio": {
     "path": "torrents.php",
@@ -93,7 +110,10 @@
           433,
           411,
           412,
-          413
+          413,
+          406,
+          408,
+          434
         ]
       },
       {
@@ -114,16 +134,18 @@
           412,
           413
         ]
-      }
+      },
+      { "path": "music.php", "categorymappings": [406, 408, 434] }
     ],
-    "method": "post",
     "inputs": {
       "$raw": "{{ range .Categories }}cat{{.}}=1&{{end}}",
       "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
-      "incldead": 1,
+      "incldead": 0,
       "spstate": 0,
       "search_area": "{{ if .Query.IMDBID }}4{{else}}0{{end}}",
-      "search_mode": 0
+      "search_mode": 0,
+      "sort": "{{ .Config.sort }}",
+      "type": "{{ .Config.type }}"
     },
     "rows": {
       "selector": "table.torrents > tbody > tr:has(table.torrentname)"
@@ -151,6 +173,11 @@
         "selector": "img[alt=\"torrent thumbnail\"]",
         "attribute": "src",
         "filters": [{ "name": "replace", "args": ["pic/nopic.jpg", ""] }]
+      },
+      "imdb": {
+        "optional": true,
+        "selector": "a[href*=\"www.imdb.com/title/tt\"]",
+        "attribute": "href"
       },
       "size": { "selector": "td.rowfollow:nth-last-child(6)" },
       "grabs": { "selector": "td.rowfollow:nth-last-child(3)" },

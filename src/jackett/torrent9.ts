@@ -8,7 +8,15 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.oxtorrent.me/'],
+  links: [
+    'https://www.oxtorrent.me/',
+    'https://www.torrent9.pl/',
+    'https://torrent9.black-mirror.xyz/',
+    'https://torrent9.unblocked.casa/',
+    'https://torrent9.proxyportal.fun/',
+    'https://torrent9.uk-unblock.xyz/',
+    'https://torrent9.ind-unblock.xyz/',
+  ],
   legacylinks: [
     'http://www.torrent9.ec/',
     'http://www.torrent9.red/',
@@ -34,6 +42,7 @@ export const definition: TrackerDefinition = {
     'https://www.torrent9.is/',
     'https://www4.torrent9.to/',
     'https://www.torrent09.uno/',
+    'https://torrent9.unblockninja.com/',
   ],
   caps: {
     categorymappings: [

@@ -7,7 +7,18 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://glodls.to/', 'https://glodls.rocks/'],
+  followredirect: true,
+  links: [
+    'https://gtdb.to/',
+    'https://glodls.to/',
+    'https://glotorrents.unblockit.pro/',
+    'https://glodls.black-mirror.xyz/',
+    'https://glodls.unblocked.casa/',
+    'https://glodls.proxyportal.fun/',
+    'https://glodls.uk-unblock.xyz/',
+    'https://glodls.ind-unblock.xyz/',
+  ],
+  legacylinks: ['https://glodls.rocks/'],
   caps: {
     categorymappings: [
       { id: '50', cat: 'XXX', desc: 'XXX' },

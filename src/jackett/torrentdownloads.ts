@@ -7,8 +7,17 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.torrentdownloads.info/'],
-  legacylinks: ['https://www.torrentdownloads.me/'],
+  followredirect: true,
+  links: [
+    'https://www.torrentdownloads.info/',
+    'https://www.torrentdownloads.me/',
+    'https://torrentdownloads.unblockit.pro/',
+    'https://torrentdownloads.black-mirror.xyz/',
+    'https://torrentdownloads.unblocked.casa/',
+    'https://torrentdownloads.proxyportal.fun/',
+    'https://torrentdownloads.uk-unblock.xyz/',
+    'https://torrentdownloads.ind-unblock.xyz/',
+  ],
   caps: {
     categorymappings: [
       { id: '8', cat: 'TV', desc: 'TV Shows' },

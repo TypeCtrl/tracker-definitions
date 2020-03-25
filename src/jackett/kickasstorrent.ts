@@ -9,7 +9,18 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://katcr.co/', 'https://kat.unblockit.pro/'],
+  links: [
+    'https://katcr.co/',
+    'https://katcr.to/',
+    'https://kat.unblockit.pro/',
+    'https://kat.root.yt/',
+    'https://katcr.black-mirror.xyz/',
+    'https://katcr.unblocked.casa/',
+    'https://katcr.proxyportal.fun/',
+    'https://katcr.uk-unblock.xyz/',
+    'https://katcr.ind-unblock.xyz/',
+  ],
+  legacylinks: ['https://kickasstorrent.cr/'],
   caps: {
     categorymappings: [
       { id: '118', cat: 'TV/Anime', desc: 'Anime - English Translated' },

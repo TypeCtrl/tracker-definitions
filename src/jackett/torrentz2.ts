@@ -9,7 +9,16 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://torrentz2.eu/', 'https://torrentz.unblockit.pro/'],
+  links: [
+    'https://torrentz2.eu/',
+    'https://torrentz.unblockit.pro/',
+    'https://torrentz2.black-mirror.xyz/',
+    'https://torrentz2.unblocked.casa/',
+    'https://torrentz2.proxyportal.fun/',
+    'https://torrentz2.uk-unblock.xyz/',
+    'https://torrentz2.ind-unblock.xyz/',
+  ],
+  legacylinks: ['https://torrentz2.unblockninja.com/'],
   caps: {
     modes: {
       search: ['q'],
@@ -128,7 +137,8 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      category: {
+      category: { text: 'other' },
+      'category|noappend': {
         optional: true,
         selector: 'dt',
         remove: 'a',

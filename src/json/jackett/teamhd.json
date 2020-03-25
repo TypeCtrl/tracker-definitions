@@ -44,7 +44,7 @@
       "name": "info",
       "type": "info",
       "label": "How to get the Cookie",
-      "default": "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here.</ol>"
+      "default": "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>"
     },
     {
       "name": "striprussian",
@@ -56,14 +56,14 @@
   "login": {
     "method": "cookie",
     "inputs": { "cookie": "{{ .Config.cookie }}" },
-    "test": { "path": "index.php", "selector": "a[href=\"/logout.php\"]" }
+    "test": { "path": "index.php", "selector": "a[href*=\"/logout.php\"]" }
   },
   "search": {
     "paths": [{ "path": "browse" }],
     "inputs": {
-      "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
+      "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
       "search": "{{ .Keywords }}",
-      "incldead": 0,
+      "incldead": 1,
       "free": 0,
       "year": ""
     },
@@ -113,12 +113,12 @@
       "size": { "selector": "td:nth-child(5)", "remove": "strong" },
       "downloadvolumefactor": {
         "case": {
-          "a[href^=\"/details/id\"][style=\"color:#f2b101\"]": "0",
-          "a[href^=\"/details/id\"][style=\"color:#828b8b\"]": "0.5",
-          "*": "1"
+          "a[href^=\"/details/id\"][style=\"color:#f2b101\"]": 0,
+          "a[href^=\"/details/id\"][style=\"color:#828b8b\"]": 0.5,
+          "*": 1
         }
       },
-      "uploadvolumefactor": { "case": { "*": "1" } }
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

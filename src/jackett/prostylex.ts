@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://prostylex.org/'],
+  links: [
+    'https://prostylex.org/',
+    'https://prostylex.black-mirror.xyz/',
+    'https://prostylex.unblocked.casa/',
+    'https://prostylex.proxyportal.fun/',
+    'https://prostylex.uk-unblock.xyz/',
+    'https://prostylex.ind-unblock.xyz/',
+  ],
   legacylinks: ['http://prostylex.com/'],
   caps: {
     categorymappings: [

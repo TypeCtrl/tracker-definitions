@@ -8,7 +8,17 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://monova.org/', 'https://monova.to/', 'https://monova.unblockit.pro/'],
+  links: [
+    'https://monova.org/',
+    'https://monova.to/',
+    'https://monova.unblockit.pro/',
+    'https://monova.black-mirror.xyz/',
+    'https://monova.unblocked.casa/',
+    'https://monova.proxyportal.fun/',
+    'https://monova.uk-unblock.xyz/',
+    'https://monova.ind-unblock.xyz/',
+  ],
+  legacylinks: ['https://monova.unblockninja.com/'],
   caps: {
     modes: {
       search: ['q'],

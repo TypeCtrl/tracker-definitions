@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'it-IT',
   type: 'public',
   encoding: 'WINDOWS-1252',
-  links: ['https://ilcorsaronero.pw/', 'https://ilcorsaronero.fun/', 'https://ilcorsaronero.pro/'],
+  followredirect: true,
+  links: [
+    'https://ilcorsaronero.pw/',
+    'https://ilcorsaronero.fun/',
+    'https://ilcorsaronero.pro/',
+    'https://ilcorsaronero.unblockit.pro/',
+    'https://ww1-torrent9.root.yt/',
+  ],
   legacylinks: [
     'https://ilcorsaronero.live/',
     'https://ilcorsaronero.vip/',

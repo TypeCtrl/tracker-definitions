@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.tokyotosho.info/'],
+  links: [
+    'https://www.tokyotosho.info/',
+    'https://tokyotosho.black-mirror.xyz/',
+    'https://tokyotosho.unblocked.casa/',
+    'https://tokyotosho.proxyportal.fun/',
+    'https://tokyotosho.uk-unblock.xyz/',
+    'https://tokyotosho.ind-unblock.xyz/',
+  ],
   settings: [{ name: 'type-id', type: 'text', label: 'Type Id' }],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },

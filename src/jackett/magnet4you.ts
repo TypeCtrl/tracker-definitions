@@ -7,7 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://magnet4you.me/'],
+  links: [
+    'https://magnet4you.me/',
+    'https://magnet4you.black-mirror.xyz/',
+    'https://magnet4you.unblocked.casa/',
+    'https://magnet4you.proxyportal.fun/',
+    'https://magnet4you.uk-unblock.xyz/',
+    'https://magnet4you.ind-unblock.xyz/',
+  ],
   legacylinks: ['http://magnet4you.me/'],
   caps: {
     modes: {

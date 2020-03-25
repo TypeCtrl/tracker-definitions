@@ -158,6 +158,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['jour', 'day'] },
           { name: 'replace', args: ['semaine', 'week'] },
           { name: 'replace', args: ['mois', 'month'] },
+          { name: 'replace', args: ['an', 'year'] },
           { name: 'append', args: ' ago' },
         ],
       },
