@@ -58,18 +58,16 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login',
     method: 'form',
+    form: 'form[action$="/login"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
       remember: 'on',
     },
-    error: [
-      {
-        selector: 'script[nonce]:contains("Error")',
-        message: { selector: 'script[nonce]:contains("Error")' },
-      },
-    ],
-    test: { path: '/', selector: 'a[href$="/logout"]' },
+    selectorinputs: {
+      _token: { selector: 'input[name="_token"]', attribute: 'value' },
+    },
+    error: [{ selector: 'div#ERROR_COPY' }],
   },
   ratio: {
     path: '/',

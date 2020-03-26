@@ -45,6 +45,7 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login',
     method: 'form',
+    form: 'form[action$="/login"]',
     captcha: {
       type: 'text',
       selector: 'div[style*="#999999;"]',
@@ -55,8 +56,16 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       remember: 'on',
     },
-    error: [{ selector: 'div.has-error' }],
-    test: { path: 'torrents' },
+    selectorinputs: {
+      _token: { selector: 'input[name="_token"]', attribute: 'value' },
+    },
+    error: [
+      { selector: 'form[action$="/login"] .text-red' },
+      {
+        selector: 'script:contains("toastr.error")',
+        message: { selector: 'script:contains("toastr.error")' },
+      },
+    ],
   },
   search: {
     paths: [{ path: 'torrents' }],

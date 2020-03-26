@@ -46,11 +46,11 @@
   "login": {
     "path": "login",
     "method": "form",
-    "form": "form[action*=\"/login\"]",
+    "form": "form[action$=\"/login\"]",
     "inputs": {
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}",
-      "remember": 1
+      "remember": "on"
     },
     "selectorinputs": {
       "_token": { "selector": "input[name=\"_token\"]", "attribute": "value" }

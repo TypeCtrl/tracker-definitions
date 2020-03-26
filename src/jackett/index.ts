@@ -1057,6 +1057,9 @@ export const jtrezzor = jjtrezzor;
 import { definition as jjtribalmixes } from './tribalmixes';
 export const jtribalmixes = jjtribalmixes;
 
+import { definition as jjturkseed } from './turkseed';
+export const jturkseed = jjturkseed;
+
 import { definition as jjturktorrent } from './turktorrent';
 export const jturktorrent = jjturktorrent;
 
@@ -1507,6 +1510,7 @@ export const definitions = [
   jjtrancetraffic,
   jjtrezzor,
   jjtribalmixes,
+  jjturkseed,
   jjturktorrent,
   jjtvchaosuk,
   jjtwilight,

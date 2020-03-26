@@ -30,10 +30,14 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login',
     method: 'form',
+    form: 'form[action$="/login"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
       remember: 'on',
+    },
+    selectorinputs: {
+      _token: { selector: 'input[name="_token"]', attribute: 'value' },
     },
     error: [
       {
@@ -41,7 +45,6 @@ export const definition: TrackerDefinition = {
         message: { selector: 'script[nonce]:contains("Error")' },
       },
     ],
-    test: { path: '/', selector: 'a[href$="/logout"]' },
   },
   ratio: {
     path: '/',
@@ -51,8 +54,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
-      $raw: '{{range .Categories}}categories[]={{.}}&{{end}}',
-      search: '{{if .Query.IMDBID}}{{else}}{{ .Keywords }}{{end}}',
+      $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',

@@ -54,19 +54,16 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login',
     method: 'form',
+    form: 'form[action$="/login"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
       remember: 'on',
     },
     selectorinputs: {
-      _token: {
-        selector: 'meta[name="csrf-token"]',
-        attribute: 'content',
-      },
+      _token: { selector: 'input[name="_token"]', attribute: 'value' },
     },
     error: [{ selector: 'form[action$="/login"] .text-red' }],
-    test: { path: '/', selector: 'a[href$="/logout"]' },
   },
   ratio: {
     path: '/',

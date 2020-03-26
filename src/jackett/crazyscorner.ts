@@ -143,7 +143,11 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {
-        case: { 'img[src$="_flags/freedownload.gif"]': 0, '*': 1 },
+        case: {
+          'img[src$="_flags/freedownload.gif"]': 0,
+          'img[src$="_flags/silverdownload.gif"]': 0.5,
+          '*': 1,
+        },
       },
       uploadvolumefactor: {
         case: { 'img[src$="_flags/x2.gif"]': 2, '*': 1 },

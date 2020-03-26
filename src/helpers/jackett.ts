@@ -352,6 +352,7 @@ export const jackettSites = [
   'trancetraffic',
   'trezzor',
   'tribalmixes',
+  'turkseed',
   'turktorrent',
   'tvchaosuk',
   'twilight',
