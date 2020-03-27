@@ -56,11 +56,7 @@
       { "id": "45", "cat": "XXX", "desc": "Voyeur" },
       { "id": "13", "cat": "XXX", "desc": "XXX Games / Apps" }
     ],
-    "modes": {
-      "search": ["q"],
-      "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"]
-    }
+    "modes": { "search": ["q"], "tv-search": ["q"], "movie-search": ["q"] }
   },
   "login": {
     "path": "login",

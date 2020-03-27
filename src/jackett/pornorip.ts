@@ -282,7 +282,7 @@ export const definition: TrackerDefinition = {
       { id: '72', cat: 'XXX', desc: 'Форум PornoRip.biz Общение' },
       { id: '77', cat: 'XXX', desc: 'Форум PornoRip.biz ОбщениеАрхив' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [
     {

@@ -352,6 +352,9 @@ export const jfilmPaleis = jjfilmPaleis;
 import { definition as jjfilmsclub } from './filmsclub';
 export const jfilmsclub = jjfilmsclub;
 
+import { definition as jjfinelite } from './finelite';
+export const jfinelite = jjfinelite;
+
 import { definition as jjfinvip } from './finvip';
 export const jfinvip = jjfinvip;
 
@@ -760,8 +763,14 @@ export const jptfiles = jjptfiles;
 import { definition as jjpthome } from './pthome';
 export const jpthome = jjpthome;
 
+import { definition as jjptsbao } from './ptsbao';
+export const jptsbao = jjptsbao;
+
 import { definition as jjpuntotorrent } from './puntotorrent';
 export const jpuntotorrent = jjpuntotorrent;
+
+import { definition as jjpurovicio } from './purovicio';
+export const jpurovicio = jjpurovicio;
 
 import { definition as jjpwtorrents } from './pwtorrents';
 export const jpwtorrents = jjpwtorrents;
@@ -783,6 +792,9 @@ export const jredstartorrent = jjredstartorrent;
 
 import { definition as jjretroflix } from './retroflix';
 export const jretroflix = jjretroflix;
+
+import { definition as jjrintor } from './rintor';
+export const jrintor = jjrintor;
 
 import { definition as jjriperam } from './riperam';
 export const jriperam = jjriperam;
@@ -1275,6 +1287,7 @@ export const definitions = [
   jjfilebase,
   jjfilmPaleis,
   jjfilmsclub,
+  jjfinelite,
   jjfinvip,
   jjfirebit,
   jjfocusx,
@@ -1411,7 +1424,9 @@ export const definitions = [
   jjpt99,
   jjptfiles,
   jjpthome,
+  jjptsbao,
   jjpuntotorrent,
+  jjpurovicio,
   jjpwtorrents,
   jjr3Vwtf,
   jjracing4Everyone,
@@ -1419,6 +1434,7 @@ export const definitions = [
   jjrapidzona,
   jjredstartorrent,
   jjretroflix,
+  jjrintor,
   jjriperam,
   jjrns,
   jjrockbox,

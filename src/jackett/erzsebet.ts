@@ -218,7 +218,7 @@ export const definition: TrackerDefinition = {
       },
       { id: '125', cat: 'XXX', desc: 'Archive / Архив' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

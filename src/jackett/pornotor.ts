@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['http://pornotor.org/'],
   caps: {
     categorymappings: [{ id: 'XXX', cat: 'XXX', desc: 'XXX' }],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [
     {
