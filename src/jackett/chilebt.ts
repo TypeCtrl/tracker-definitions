@@ -1,23 +1,26 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'purovicio',
-  name: 'PuroVicio',
-  description: 'PuroVicio is a Latin American Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'es-419',
+  site: 'chilebt',
+  name: 'ChileBT',
+  description: 'ChileBT is a CHILEAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  language: 'es-ES',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://purovicio.pw/'],
+  links: ['https://chilebt.com/'],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'Movies', desc: 'Movies' },
-      { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '3', cat: 'Audio', desc: 'Music' },
-      { id: '4', cat: 'PC/Mac', desc: 'Mac' },
-      { id: '5', cat: 'Console', desc: 'Game' },
-      { id: '6', cat: 'PC/0day', desc: 'Soft' },
-      { id: '7', cat: 'Other', desc: 'Various' },
-      { id: '8', cat: 'XXX', desc: 'XXX' },
+      { id: '10', cat: 'Movies', desc: 'Movies' },
+      { id: '11', cat: 'TV', desc: 'TV' },
+      { id: '9', cat: 'Audio', desc: 'Music' },
+      { id: '7', cat: 'Other', desc: 'Cultura / Educativos' },
+      { id: '8', cat: 'PC/Games', desc: 'Juegos' },
+      { id: '6', cat: 'Books', desc: 'EBook' },
+      { id: '4', cat: 'TV/Anime', desc: 'Anime' },
+      { id: '5', cat: 'PC/0day', desc: 'Aplicaciones / Programas' },
+      { id: '14', cat: 'Movies', desc: 'Infantil' },
+      { id: '12', cat: 'Other/Misc', desc: 'VIP' },
+      { id: '13', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
       search: ['q', 'imdbid'],
@@ -26,21 +29,8 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    { name: 'cookie', type: 'text', label: 'Cookie' },
-    {
-      name: 'info_login',
-      type: 'info',
-      label: 'Purovicio Login',
-      default:
-        "Purovicio is using a <b>ReCaptcha</b> challenge during <b>login</b> which Jackett cannot solve.</br>So Jackett is using the <b>cookie</b> method to allow Jackett access to the site.</br>However, for this to work you need to <b>remain logged in</b> at the Purovicio website, otherwise the cookie will become invalidated. (You can close the Browser Tab, just don't <b>Logout</b>).</br>If you get no results, then <b>refresh</b> your cookie.",
-    },
-    {
-      name: 'info_cookie',
-      type: 'info',
-      label: 'How to get the Cookie',
-      default:
-        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
-    },
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
     {
       name: 'sort',
       type: 'select',
@@ -62,13 +52,27 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    method: 'cookie',
-    inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: '/' },
+    path: 'login',
+    method: 'form',
+    form: 'form[action$="/login"]',
+    inputs: {
+      username: '{{ .Config.username }}',
+      password: '{{ .Config.password }}',
+      remember: 'on',
+    },
+    selectorinputs: {
+      _token: { selector: 'input[name="_token"]', attribute: 'value' },
+    },
+    error: [
+      {
+        selector: 'script[nonce]:contains("Error")',
+        message: { selector: 'script[nonce]:contains("Error")' },
+      },
+    ],
   },
   ratio: {
     path: '/',
-    selector: 'span:has(i.fa-sync-alt)',
+    selector: 'li:has(i.fa-sync-alt)',
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
   search: {
@@ -111,23 +115,19 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      comments: {
-        selector: 'a[href*="#comments"]',
-        attribute: 'href',
-        optional: true,
+      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
+      size: { selector: 'td:nth-last-child(4)' },
+      seeders: { selector: 'td:nth-last-child(3)' },
+      leechers: { selector: 'td:nth-last-child(2)' },
+      grabs: {
+        selector: 'td:nth-last-child(1)',
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       imdb: {
         optional: true,
         selector: 'a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },
-      size: { selector: 'td:nth-last-child(4)' },
-      grabs: {
-        selector: 'td:nth-last-child(3)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
-      seeders: { selector: 'td:nth-last-child(2)' },
-      leechers: { selector: 'td:nth-last-child(1)' },
       date: {
         selector: 'time',
         filters: [

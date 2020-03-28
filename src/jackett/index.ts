@@ -193,6 +193,9 @@ export const jchannelx = jjchannelx;
 import { definition as jjchdbits } from './chdbits';
 export const jchdbits = jjchdbits;
 
+import { definition as jjchilebt } from './chilebt';
+export const jchilebt = jjchilebt;
+
 import { definition as jjcili180 } from './cili180';
 export const jcili180 = jjcili180;
 
@@ -1006,6 +1009,9 @@ export const jtorrentfunk = jjtorrentfunk;
 import { definition as jjtorrentgalaxyorg } from './torrentgalaxyorg';
 export const jtorrentgalaxyorg = jjtorrentgalaxyorg;
 
+import { definition as jjtorrenthane } from './torrenthane';
+export const jtorrenthane = jjtorrenthane;
+
 import { definition as jjtorrenthr } from './torrenthr';
 export const jtorrenthr = jjtorrenthr;
 
@@ -1234,6 +1240,7 @@ export const definitions = [
   jjccfbits,
   jjchannelx,
   jjchdbits,
+  jjchilebt,
   jjcili180,
   jjcinemageddon,
   jjcinemamovies,
@@ -1505,6 +1512,7 @@ export const definitions = [
   jjtorrentfactory,
   jjtorrentfunk,
   jjtorrentgalaxyorg,
+  jjtorrenthane,
   jjtorrenthr,
   jjtorrenting,
   jjtorrentkitty,
