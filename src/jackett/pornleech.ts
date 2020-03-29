@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-EN',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://pornleech.io/'],
+  links: ['http://pornleech.io/'],
+  legacylinks: ['https://pornleech.io/'],
   caps: {
     categorymappings: [
       { id: '64', cat: 'XXX', desc: 'Videos' },

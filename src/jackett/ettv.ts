@@ -13,10 +13,6 @@ export const definition: TrackerDefinition = {
     'https://www.ettvdl.com/',
     'https://ettv.unblockit.pro/',
     'https://ettv.unblockninja.com/',
-  ],
-  legacylinks: [
-    'https://www.ettv.tv/',
-    'https://www.ettv.to/',
     'https://ettv.root.yt/',
     'https://ettv.black-mirror.xyz/',
     'https://ettv.unblocked.casa/',
@@ -24,6 +20,7 @@ export const definition: TrackerDefinition = {
     'https://ettv.uk-unblock.xyz/',
     'https://ettv.ind-unblock.xyz/',
   ],
+  legacylinks: ['https://www.ettv.tv/', 'https://www.ettv.to/'],
   caps: {
     categorymappings: [
       { id: '88', cat: 'XXX', desc: 'Adult - Books' },

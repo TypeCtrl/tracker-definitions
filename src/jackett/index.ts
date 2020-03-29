@@ -73,9 +73,6 @@ export const jaudiobooktorrents = jjaudiobooktorrents;
 import { definition as jjaudionews } from './audionews';
 export const jaudionews = jjaudionews;
 
-import { definition as jjawesomehd } from './awesomehd';
-export const jawesomehd = jjawesomehd;
-
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
 
@@ -237,6 +234,9 @@ export const jcrnaberza = jjcrnaberza;
 
 import { definition as jjcztorrent } from './cztorrent';
 export const jcztorrent = jjcztorrent;
+
+import { definition as jjdarkShadow } from './dark-shadow';
+export const jdarkShadow = jjdarkShadow;
 
 import { definition as jjdatascene } from './datascene';
 export const jdatascene = jjdatascene;
@@ -1200,7 +1200,6 @@ export const definitions = [
   jjaudiobookbay,
   jjaudiobooktorrents,
   jjaudionews,
-  jjawesomehd,
   jjbackups,
   jjbadasstorrents,
   jjbaibako,
@@ -1255,6 +1254,7 @@ export const definitions = [
   jjcrazyspirits,
   jjcrnaberza,
   jjcztorrent,
+  jjdarkShadow,
   jjdatascene,
   jjdeildu,
   jjdemonoid,
