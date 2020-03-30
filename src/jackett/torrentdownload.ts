@@ -24,6 +24,7 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
     categorymappings: [
+      { id: 'TV', cat: 'TV' },
       { id: 'TVshows', cat: 'TV' },
       { id: 'Television', cat: 'TV' },
       { id: 'Anime', cat: 'TV/Anime' },

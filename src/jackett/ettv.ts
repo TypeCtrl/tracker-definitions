@@ -87,16 +87,6 @@ export const definition: TrackerDefinition = {
   },
   settings: [
     {
-      name: 'downloadlink',
-      type: 'select',
-      label: 'Download link',
-      default: 'magnet:',
-      options: {
-        'https://etorrent.click/': 'eTorrent.click',
-        'magnet:': 'magnet',
-      },
-    },
-    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -116,10 +106,7 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: {
-    selector: 'a[href^="{{ .Config.downloadlink }}"]',
-    attribute: 'href',
-  },
+  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
