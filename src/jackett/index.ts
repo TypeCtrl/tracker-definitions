@@ -712,6 +712,9 @@ export const jp2Pbg = jjp2Pbg;
 import { definition as jjparnuxi } from './parnuxi';
 export const jparnuxi = jjparnuxi;
 
+import { definition as jjpctorrent } from './pctorrent';
+export const jpctorrent = jjpctorrent;
+
 import { definition as jjpeersfm } from './peersfm';
 export const jpeersfm = jjpeersfm;
 
@@ -1413,6 +1416,7 @@ export const definitions = [
   jjoxtorrent,
   jjp2Pbg,
   jjparnuxi,
+  jjpctorrent,
   jjpeersfm,
   jjpiratbit,
   jjpiratbitl,

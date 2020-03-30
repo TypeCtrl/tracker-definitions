@@ -237,6 +237,7 @@ export const jackettSites = [
   'oxtorrent',
   'p2pbg',
   'parnuxi',
+  'pctorrent',
   'peersfm',
   'piratbit',
   'piratbitl',
