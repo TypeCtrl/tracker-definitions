@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   site: 'chilebt',
   name: 'ChileBT',
   description: 'ChileBT is a CHILEAN Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'es-ES',
+  language: 'es-419',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://chilebt.com/'],
