@@ -43,7 +43,8 @@
         "id": "Jeux-Consoles",
         "cat": "Console/Xbox360",
         "desc": "Console Games"
-      }
+      },
+      { "id": "Porno", "cat": "XXX", "desc": "XXX" }
     ],
     "modes": {
       "search": ["q"],

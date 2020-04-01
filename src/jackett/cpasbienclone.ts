@@ -9,7 +9,6 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://www1.cpasbiens.cm/',
     'https://cpasbien.to/',
     'https://cpasbiens.black-mirror.xyz/',
     'https://cpasbiens.unblocked.casa/',
@@ -21,6 +20,7 @@ export const definition: TrackerDefinition = {
     'https://www1.cpasbiens.ws/',
     'https://www2.cpasbiens.ws/',
     'https://cpasbiens.cm/',
+    'https://www1.cpasbiens.cm/',
   ],
   caps: {
     categorymappings: [

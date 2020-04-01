@@ -6,12 +6,13 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://torrentview6.net/"],
+  "links": ["https://torrentview7.net/"],
   "legacylinks": [
     "https://torrentview.net/",
     "https://torrentview3.net/",
     "https://torrentview4.net/",
-    "https://torrentview5.net/"
+    "https://torrentview5.net/",
+    "https://torrentview6.net/"
   ],
   "caps": {
     "categorymappings": [

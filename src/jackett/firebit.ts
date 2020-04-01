@@ -58,7 +58,7 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       category: {
-        selector: 'td:nth-child(1), div.article-indent div b a',
+        selector: 'td:nth-child(1) a, div.article-indent div b a',
         filters: [
           { name: 'replace', args: ['Новинки', ''] },
           { name: 'replace', args: [',', ''] },

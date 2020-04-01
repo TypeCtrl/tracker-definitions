@@ -46,6 +46,7 @@ export const definition: TrackerDefinition = {
         cat: 'Console/Xbox360',
         desc: 'Console Games',
       },
+      { id: 'Porno', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
       search: ['q'],
