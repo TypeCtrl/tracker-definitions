@@ -1072,13 +1072,11 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'search/?search={{ .Keywords }}' }],
     rows: { selector: 'tr[class^="tl"]' },
     fields: {
-      category: {
-        selector: 'a[href*="/category/"], a[href="#"]',
+      category: { text: 9 },
+      'category|noappend': {
+        selector: 'a[href*="/category/"]',
         attribute: 'href',
-        filters: [
-          { name: 'replace', args: ['#', '/category/9/'] },
-          { name: 'regexp', args: '/category/(\\d+)/' },
-        ],
+        filters: [{ name: 'regexp', args: '/category/(\\d+)/' }],
       },
       title: { selector: 'a[href*="/torrent/"][title^="view"]' },
       details: {

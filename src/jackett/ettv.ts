@@ -132,7 +132,8 @@ export const definition: TrackerDefinition = {
         attribute: 'title',
         filters: [{ name: 're_replace', args: ['( torrent)$', ''] }],
       },
-      category: {
+      category: { text: 78 },
+      'category|noappend': {
         optional: true,
         selector: 'a[href^="/torrents.php?cat="]',
         attribute: 'href',

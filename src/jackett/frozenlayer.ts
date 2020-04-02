@@ -93,7 +93,8 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(1) a[href^="magnet:?"]',
         attribute: 'href',
       },
-      category: { optional: true, selector: 'td.tit span' },
+      category: { text: 'Anime' },
+      'category|noappend': { optional: true, selector: 'td.tit span' },
       date: {
         optional: true,
         selector: 'td.fecha:not(:contains("d")):not(:contains("h"))',

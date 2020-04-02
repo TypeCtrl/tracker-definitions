@@ -81,7 +81,8 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: '#similarfiles div:has(a[href^="/t"])' },
     fields: {
-      category: {
+      category: { text: 'Other' },
+      'category|noappend': {
         optional: true,
         selector: 'div > span:nth-child(1) > span',
       },

@@ -64,7 +64,7 @@ export const definition: TrackerDefinition = {
       category: { text: 'other' },
       site_date: {
         selector: 'a',
-        filters: [{ name: 'regexp', args: '(\\w+)$' }],
+        filters: [{ name: 'regexp', args: '(\\d{4})$' }],
       },
       title: {
         selector: 'a',
@@ -85,7 +85,7 @@ export const definition: TrackerDefinition = {
             name: 'replace',
             args: ['VOSTFR', '{{ .Result.site_date }} VOSTFR'],
           },
-          { name: 're_replace', args: ['(\\w+)$', ''] },
+          { name: 're_replace', args: ['(\\d{4})$', ''] },
         ],
       },
       details: { selector: 'a', attribute: 'href' },

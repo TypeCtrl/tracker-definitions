@@ -189,7 +189,7 @@ export const definition: TrackerDefinition = {
         desc: ' |- Фильмы (BDRip, HDrip-AVC) (48-60 fps)',
       },
       {
-        id: 'Movies',
+        id: '1717',
         cat: 'Movies/HD',
         desc: ' |- Фильмы (HD 720p, 1080p) (48-60 fps)',
       },

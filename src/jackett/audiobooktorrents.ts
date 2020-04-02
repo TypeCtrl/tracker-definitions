@@ -91,7 +91,10 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'a[href^="details.php?id="][onmouseover]',
         attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: "Tip\\('<b>(.*?)</b>" }],
+        filters: [
+          { name: 'regexp', args: "Tip\\('<b>(.*?)</b>" },
+          { name: 'replace', args: ['\\', ''] },
+        ],
       },
       details: {
         selector: 'a[href^="details.php?id="][onmouseover]',

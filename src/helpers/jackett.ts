@@ -254,6 +254,7 @@ export const jackettSites = [
   'proaudiotorrents',
   'prostylex',
   'pt99',
+  'pterclub',
   'ptfiles',
   'pthome',
   'ptsbao',

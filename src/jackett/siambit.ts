@@ -106,6 +106,13 @@ export const definition: TrackerDefinition = {
         '15': 'created',
       },
     },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        'If you are getting the error <b>Found no results while trying to browse this tracker</b> then the most likely reason is that you have <b>Important news from the team</b> on the Web Site that must be read before you can proceed to the torrent search page.',
+    },
   ],
   login: {
     path: 'takelogin.php',

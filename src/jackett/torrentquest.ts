@@ -59,7 +59,8 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'tr:has(td.m)' },
     fields: {
       title: { selector: 'td.n a', attribute: 'title' },
-      category: { optional: true, selector: 'td[class^="t"]' },
+      category: { text: 'Other' },
+      'category|noappend': { optional: true, selector: 'td[class^="t"]' },
       details: { selector: 'td.n a', attribute: 'href' },
       magnet: { selector: 'td.m a', attribute: 'href' },
       date: {

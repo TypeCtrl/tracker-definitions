@@ -165,7 +165,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['\u000f', ''] },
         ],
       },
-      category: {
+      category: { text: 40 },
+      'category|noappend': {
         optional: true,
         selector: 'td[class^="coll-1"] a[href^="/sub/"]',
         attribute: 'href',

@@ -763,6 +763,9 @@ export const jprostylex = jjprostylex;
 import { definition as jjpt99 } from './pt99';
 export const jpt99 = jjpt99;
 
+import { definition as jjpterclub } from './pterclub';
+export const jpterclub = jjpterclub;
+
 import { definition as jjptfiles } from './ptfiles';
 export const jptfiles = jjptfiles;
 
@@ -1433,6 +1436,7 @@ export const definitions = [
   jjproaudiotorrents,
   jjprostylex,
   jjpt99,
+  jjpterclub,
   jjptfiles,
   jjpthome,
   jjptsbao,

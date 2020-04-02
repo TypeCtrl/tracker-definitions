@@ -81,7 +81,8 @@
     },
     "rows": { "selector": "table.ttable_headinner tr.t-row", "after": 1 },
     "fields": {
-      "category": {
+      "category": { "text": 33 },
+      "category|noappend": {
         "optional": true,
         "selector": "a[href^=\"/search.php?cat=\"]",
         "attribute": "href",

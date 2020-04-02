@@ -9,30 +9,31 @@
   "caps": {
     "modes": { "search": ["q"] },
     "categorymappings": [
-      { "id": "1080p", "cat": "Movies/HD" },
-      { "id": "720p", "cat": "Movies/HD" },
+      { "id": "1080P", "cat": "Movies/HD" },
+      { "id": "720P", "cat": "Movies/HD" },
       { "id": "BR-RIP", "cat": "Movies/BluRay" },
       { "id": "BR-SCREENER", "cat": "Movies/Other" },
-      { "id": "DVDRip", "cat": "Movies/DVD" },
-      { "id": "DVDScreener", "cat": "Movies/Other" },
-      { "id": "HC HDRip", "cat": "Movies/HD" },
+      { "id": "DVDRIP", "cat": "Movies/DVD" },
+      { "id": "DVDSCREENER", "cat": "Movies/Other" },
+      { "id": "HC HDRIP", "cat": "Movies/HD" },
       { "id": "HD-RIP", "cat": "Movies/HD" },
       { "id": "HD-TC", "cat": "Movies/HD" },
       { "id": "HD-TS", "cat": "Movies/HD" },
-      { "id": "HDRip", "cat": "Movies/HD" },
+      { "id": "HDRIP", "cat": "Movies/HD" },
       { "id": "HDTC-SCREENER", "cat": "Movies/Other" },
       { "id": "HDTV-SCREENER", "cat": "Movies/Other" },
       { "id": "HQ-TC", "cat": "Movies" },
       { "id": "MKV", "cat": "Movies" },
-      { "id": "TeleCine", "cat": "Movies" },
+      { "id": "TELECINE", "cat": "Movies" },
       { "id": "TS-HQ", "cat": "Movies" },
-      { "id": "TS-Screener", "cat": "Movies/Other" },
-      { "id": "V.O. Subtituladas", "cat": "Movies" },
-      { "id": "VHS-Screener", "cat": "Movies/Other" },
+      { "id": "TS-SCREENER", "cat": "Movies/Other" },
+      { "id": "V.O. SUBTITULADAS", "cat": "Movies" },
+      { "id": "VHS-SCREENER", "cat": "Movies/Other" },
       { "id": "Web DL", "cat": "Movies/WEBDL" },
       { "id": "WEB-RIP", "cat": "Movies/WEBDL" },
-      { "id": "WEB-Screener", "cat": "Movies/Other" },
-      { "id": "WEB-SCREENER HC", "cat": "Movies/Other" }
+      { "id": "WEB-SCREENER", "cat": "Movies/Other" },
+      { "id": "WEB-SCREENER HC", "cat": "Movies/Other" },
+      { "id": "NOCAT", "cat": "Movies/Other" }
     ]
   },
   "settings": [],
@@ -53,7 +54,12 @@
     "fields": {
       "title": { "selector": "div.nombre_big1 a" },
       "details": { "selector": "div.nombre_big1 a", "attribute": "href" },
-      "category": { "selector": "div.nombre_big1 p b", "optional": true },
+      "category": { "text": "NOCAT" },
+      "category|noappend": {
+        "selector": "div.nombre_big1 p b",
+        "optional": true,
+        "filters": [{ "name": "toupper" }]
+      },
       "download": { "selector": "div.nombre_big1 a", "attribute": "href" },
       "date": {
         "selector": "div.fecha p",

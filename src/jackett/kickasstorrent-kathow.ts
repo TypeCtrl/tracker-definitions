@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       { id: 'tv', cat: 'TV' },
       { id: 'music', cat: 'Audio' },
       { id: 'books', cat: 'Books' },
-      { id: 'Games', cat: 'Console' },
+      { id: 'games', cat: 'Console' },
       { id: 'applications', cat: 'PC' },
       { id: 'xxx', cat: 'XXX' },
       { id: 'other', cat: 'Other' },
@@ -60,11 +60,12 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: 'table[class="data"] tr[id]' },
     fields: {
-      category: {
+      category: { text: 'other' },
+      'category|noappend': {
         optional: true,
         selector: 'span[id^="cat_"] > strong > a',
         attribute: 'href',
-        filters: [{ name: 'trim', args: '/' }],
+        filters: [{ name: 'tolower' }, { name: 'trim', args: '/' }],
       },
       title: {
         selector: 'td:nth-child(1) > div > div > a[class="cellMainLink"]',

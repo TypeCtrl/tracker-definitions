@@ -76,7 +76,8 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'div.resultdiv' },
     fields: {
       title: { selector: 'div.resultdivtop a div.resultdivtopname' },
-      category: {
+      category: { text: 0 },
+      'category|noappend': {
         optional: true,
         selector: 'div.resultdivbotton div.resultdivbottoncategory',
         case: {
