@@ -107,7 +107,7 @@
           {
             "name": "re_replace",
             "args": [
-              "(?i)(önce|tagasi|geleden|fa|temu|siden|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)",
+              "(?i)(önce|tagasi|geleden|fa|temu|siden|há|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)",
               " ago"
             ]
           },

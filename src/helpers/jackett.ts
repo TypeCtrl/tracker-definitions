@@ -113,7 +113,6 @@ export const jackettSites = [
   'eztv',
   'fanoin',
   'fantasticheaven',
-  'feedurneed',
   'femdomcult',
   'filebase',
   'film-paleis',

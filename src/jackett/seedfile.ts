@@ -82,6 +82,13 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
+              '(?i)(önce|tagasi|geleden|fa|temu|siden|há|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)',
+              ' ago',
+            ],
+          },
+          {
+            name: 're_replace',
+            args: [
               '(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)',
               'minutes',
             ],
