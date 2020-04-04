@@ -293,6 +293,7 @@ export const jackettSites = [
   'sosulki',
   'soundpark',
   'spacetorrent',
+  'speedmasterhd',
   'speedtorrentreloaded',
   'spiritofrevolution',
   'sporthd',
