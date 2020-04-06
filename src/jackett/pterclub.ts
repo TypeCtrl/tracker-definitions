@@ -3,7 +3,8 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'pterclub',
   name: 'PTerClub',
-  description: 'PTerClub is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
+  description:
+    'PTerClub is a CHINESE Private Torrent Tracker for HD MUSIC VIDEOS, MOVIES, TV & ANIME',
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',

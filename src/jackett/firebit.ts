@@ -33,6 +33,8 @@ export const definition: TrackerDefinition = {
       { id: 'Фильмы', cat: 'Movies' },
       { id: 'Видео', cat: 'Movies' },
       { id: 'Музыка', cat: 'Audio' },
+      { id: 'Фильмы Музыка Видео', cat: 'Audio/Video' },
+      { id: 'Музыка Видео', cat: 'Audio/Video' },
       { id: 'Другие категории', cat: 'Other' },
       { id: 'Сериалы', cat: 'TV' },
     ],
@@ -46,10 +48,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}index.php?do=search&type=simple&q={{ .Keywords }}{{ else }}%D1%84%D0%B8%D0%BB%D1%8C%D0%BC/{{ end }}',
+          '{{ if .Keywords }}index.php?do=search&type=simple&q={{ .Keywords }}{{else}}%D1%84%D0%B8%D0%BB%D1%8C%D0%BC/{{end}}',
       },
       {
-        path: '{{ if .Keywords }}{{ else }}%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB/{{ end }}',
+        path:
+          '{{ if .Keywords }}index.php?do=search&type=simple&q=abcd1234{{else}}%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB/{{end}}',
       },
     ],
     rows: {
@@ -58,10 +61,10 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       category: {
-        selector: 'td:nth-child(1) a, div.article-indent div b a',
+        selector: 'td:nth-child(1), div.article-indent div b',
         filters: [
           { name: 'replace', args: ['Новинки', ''] },
-          { name: 'replace', args: [',', ''] },
+          { name: 're_replace', args: [',', ''] },
           { name: 'trim' },
         ],
       },

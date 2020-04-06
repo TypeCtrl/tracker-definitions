@@ -8,13 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'WINDOWS-1252',
   followredirect: true,
-  links: [
-    'https://ilcorsaronero.pw/',
-    'https://ilcorsaronero.fun/',
-    'https://ilcorsaronero.pro/',
-    'https://ilcorsaronero.unblockit.pro/',
-    'https://ww1-torrent9.root.yt/',
-  ],
+  links: ['https://ilcorsaronero.xyz/', 'https://ilcorsaronero.fun/', 'https://ilcorsaronero.pro/'],
   legacylinks: [
     'https://ilcorsaronero.live/',
     'https://ilcorsaronero.vip/',
@@ -22,6 +16,8 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.ch/',
     'https://ilcorsaronero.cc/',
     'https://ilcorsaronero.pizza/',
+    'https://ilcorsaronero.pw/',
+    'https://ilcorsaronero.unblockit.pro/',
   ],
   caps: {
     categorymappings: [

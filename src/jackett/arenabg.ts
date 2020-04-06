@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'bg-BG',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://arenabg.com/'],
+  links: ['https://arenabg.ch/'],
+  legacylinks: ['https://arenabg.com/'],
   caps: {
     categorymappings: [
       { id: 'movies', cat: 'Movies', desc: 'Movies' },

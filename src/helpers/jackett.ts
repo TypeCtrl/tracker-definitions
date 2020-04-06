@@ -321,6 +321,7 @@ export const jackettSites = [
   'theshow',
   'thevault',
   'tlfbits',
+  'tntvillage',
   'tokyotosho',
   'topnow',
   'torlock',

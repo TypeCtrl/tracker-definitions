@@ -964,6 +964,9 @@ export const jthevault = jjthevault;
 import { definition as jjtlfbits } from './tlfbits';
 export const jtlfbits = jjtlfbits;
 
+import { definition as jjtntvillage } from './tntvillage';
+export const jtntvillage = jjtntvillage;
+
 import { definition as jjtokyotosho } from './tokyotosho';
 export const jtokyotosho = jjtokyotosho;
 
@@ -1503,6 +1506,7 @@ export const definitions = [
   jjtheshow,
   jjthevault,
   jjtlfbits,
+  jjtntvillage,
   jjtokyotosho,
   jjtopnow,
   jjtorlock,
