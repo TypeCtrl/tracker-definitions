@@ -37,7 +37,7 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login.php',
     method: 'form',
-    form: 'form[action="secure.php"]',
+    form: 'form[action="do-login.php"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
