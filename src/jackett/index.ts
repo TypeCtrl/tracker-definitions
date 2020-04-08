@@ -778,6 +778,9 @@ export const jpuntotorrent = jjpuntotorrent;
 import { definition as jjpurovicio } from './purovicio';
 export const jpurovicio = jjpurovicio;
 
+import { definition as jjpussytorrents } from './pussytorrents';
+export const jpussytorrents = jjpussytorrents;
+
 import { definition as jjpwtorrents } from './pwtorrents';
 export const jpwtorrents = jjpwtorrents;
 
@@ -1444,6 +1447,7 @@ export const definitions = [
   jjptsbao,
   jjpuntotorrent,
   jjpurovicio,
+  jjpussytorrents,
   jjpwtorrents,
   jjr3Vwtf,
   jjracing4Everyone,

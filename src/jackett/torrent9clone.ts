@@ -8,7 +8,15 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.torrent9.pl/'],
+  links: [
+    'https://www.torrent9.pl/',
+    'https://torrent9.black-mirror.xyz/',
+    'https://torrent9.unblocked.casa/',
+    'https://torrent9.proxyportal.fun/',
+    'https://torrent9.uk-unblock.xyz/',
+    'https://torrent9.ind-unblock.xyz/',
+    'https://torrent9.unblockninja.com/',
+  ],
   legacylinks: [
     'https://www.torrents9.pw/',
     'https://www.torrent9.ch/',
@@ -62,11 +70,11 @@ export const definition: TrackerDefinition = {
         path: '{{ if .Keywords }}/recherche/{{ .Keywords }}{{else}}/top{{end}}',
       },
     ],
-    rows: { selector: 'div.table-responsive > table tbody tr' },
+    rows: { selector: 'table.table-striped > tbody > tr' },
     fields: {
       site_date: {
         selector: 'td:nth-child(1) a',
-        filters: [{ name: 'regexp', args: '(\\w+)$' }],
+        filters: [{ name: 'regexp', args: '(\\d{4})$' }],
       },
       title: {
         selector: 'td:nth-child(1) a',
@@ -87,7 +95,7 @@ export const definition: TrackerDefinition = {
             name: 'replace',
             args: ['VOSTFR', '{{ .Result.site_date }} VOSTFR'],
           },
-          { name: 're_replace', args: ['(\\w+)$', ''] },
+          { name: 're_replace', args: ['(\\d{4})$', ''] },
         ],
       },
       details: { selector: 'td:nth-child(1) a', attribute: 'href' },
@@ -95,10 +103,7 @@ export const definition: TrackerDefinition = {
       download: { selector: 'td:nth-child(1) a', attribute: 'href' },
       date: { text: 'now' },
       size: { selector: 'td:nth-child(2)' },
-      seeders: {
-        selector: 'td:nth-child(3) span.seed_ok',
-        optional: true,
-      },
+      seeders: { selector: 'td:nth-child(3)', optional: true },
       leechers: { selector: 'td:nth-child(4)', optional: true },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },

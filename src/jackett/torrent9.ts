@@ -8,15 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://www.oxtorrent.me/',
-    'https://www.torrent9.pl/',
-    'https://torrent9.black-mirror.xyz/',
-    'https://torrent9.unblocked.casa/',
-    'https://torrent9.proxyportal.fun/',
-    'https://torrent9.uk-unblock.xyz/',
-    'https://torrent9.ind-unblock.xyz/',
-  ],
+  links: ['https://www.oxtorrent.me/'],
   legacylinks: [
     'http://www.torrent9.ec/',
     'http://www.torrent9.red/',
@@ -43,6 +35,12 @@ export const definition: TrackerDefinition = {
     'https://www4.torrent9.to/',
     'https://www.torrent09.uno/',
     'https://torrent9.unblockninja.com/',
+    'https://www.torrent9.pl/',
+    'https://torrent9.black-mirror.xyz/',
+    'https://torrent9.unblocked.casa/',
+    'https://torrent9.proxyportal.fun/',
+    'https://torrent9.uk-unblock.xyz/',
+    'https://torrent9.ind-unblock.xyz/',
   ],
   caps: {
     categorymappings: [
@@ -69,18 +67,17 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}/search_torrent/{{ re_replace .Keywords "[\']+" "" }}/page-0{{else}}/top_torrent.html{{end}}',
+        path: '{{ if .Keywords }}/search_torrent/{{ .Keywords }}{{else}}{{end}}',
       },
     ],
     rows: {
-      selector: 'div.table-responsive > table tbody tr',
+      selector: 'table.table-striped > tbody > tr',
       filters: [{ name: 'andmatch' }],
     },
     fields: {
       site_date: {
         selector: 'td:nth-child(1) a',
-        filters: [{ name: 'regexp', args: '(\\w+)$' }],
+        filters: [{ name: 'regexp', args: '(\\d{4})$' }],
       },
       title: {
         selector: 'td:nth-child(1) a',
@@ -101,7 +98,7 @@ export const definition: TrackerDefinition = {
             name: 'replace',
             args: ['VOSTFR', '{{ .Result.site_date }} VOSTFR'],
           },
-          { name: 're_replace', args: ['(\\w+)$', ''] },
+          { name: 're_replace', args: ['(\\d{4})$', ''] },
         ],
       },
       details: { selector: 'td:nth-child(1) a', attribute: 'href' },
@@ -119,25 +116,8 @@ export const definition: TrackerDefinition = {
       },
       download: { selector: 'td:nth-child(1) a', attribute: 'href' },
       date: { text: 'now' },
-      size: {
-        selector: 'td:nth-child(2)',
-        filters: [
-          { name: 're_replace', args: ['\\.(\\d) Ko', '$1X00'] },
-          { name: 're_replace', args: [' Ko', '000'] },
-          { name: 're_replace', args: ['\\.(\\d) Mo', '$1X00000'] },
-          { name: 're_replace', args: [' Mo', '000000'] },
-          { name: 're_replace', args: ['\\.(\\d) Go', '$1X00000000'] },
-          { name: 're_replace', args: [' Go', '000000000'] },
-          { name: 're_replace', args: ['\\.(\\d) To', '$1X00000000000'] },
-          { name: 're_replace', args: [' To', '000000000000'] },
-          { name: 'replace', args: ['X', ''] },
-          { name: 're_replace', args: ['(\\d+)\\.\\d', '$1 MB'] },
-        ],
-      },
-      seeders: {
-        selector: 'td:nth-child(3) span.seed_ok',
-        optional: true,
-      },
+      size: { selector: 'td:nth-child(2)' },
+      seeders: { selector: 'td:nth-child(3)', optional: true },
       leechers: { selector: 'td:nth-child(4)', optional: true },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },

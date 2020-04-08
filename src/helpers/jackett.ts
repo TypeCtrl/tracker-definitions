@@ -259,6 +259,7 @@ export const jackettSites = [
   'ptsbao',
   'puntotorrent',
   'purovicio',
+  'pussytorrents',
   'pwtorrents',
   'r3vwtf',
   'racing4everyone',

@@ -41,7 +41,14 @@ export const definition: TrackerDefinition = {
       type: 'select',
       label: 'Download link',
       default: 'magnet:?xt=',
-      options: { '/get_torrents/': '.torrent', 'magnet:?xt=': 'magnet' },
+      options: { '/telecharger/': '.torrent', 'magnet:?xt=': 'magnet' },
+    },
+    {
+      name: 'info_downloadlink',
+      type: 'info',
+      label: 'About the Download Link',
+      default:
+        'Note that only <b>www.oxtorrent.com</b> supports the use of the <b>.torrent</b> download link.<br />All sites support <b>magnet</b> links.',
     },
   ],
   download: {
@@ -51,8 +58,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}{{end}}' }],
     rows: {
-      selector:
-        'div.listing-torrent > table > tbody > tr:has(a[href^="torrent/"]), div.listing-torrent > table > tbody > tr:has(a[href^="/torrent/"])',
+      selector: 'table.table-hover > tbody > tr:has(a[href*="torrent/"])',
+      filters: [{ name: 'andmatch' }],
     },
     fields: {
       category: {
@@ -70,7 +77,7 @@ export const definition: TrackerDefinition = {
       },
       site_date: {
         selector: 'td:nth-child(1) a',
-        filters: [{ name: 'regexp', args: '(\\w+)$' }],
+        filters: [{ name: 'regexp', args: '(\\d{4})$' }],
       },
       title: {
         selector: 'td:nth-child(1) a',
@@ -91,7 +98,7 @@ export const definition: TrackerDefinition = {
             name: 'replace',
             args: ['VOSTFR', '{{ .Result.site_date }} VOSTFR'],
           },
-          { name: 're_replace', args: ['(\\w+)$', ''] },
+          { name: 're_replace', args: ['(\\d{4})$', ''] },
         ],
       },
       details: { selector: 'td:nth-child(1) a', attribute: 'href' },

@@ -50,7 +50,7 @@
       "type": "select",
       "label": "Download link",
       "default": "magnet:?xt=",
-      "options": { "/get_torrents/": ".torrent", "magnet:?xt=": "magnet" }
+      "options": { "/telecharger/": ".torrent", "magnet:?xt=": "magnet" }
     }
   ],
   "download": {
@@ -61,7 +61,7 @@
     "paths": [
       { "path": "{{if .Keywords}}recherche/{{.Keywords}}{{else}}{{end}}" }
     ],
-    "rows": { "selector": "div.listing-torrent > table > tbody > tr:has(a)" },
+    "rows": { "selector": "table.table-hover > tbody > tr:has(a)" },
     "fields": {
       "category": {
         "selector": "td:nth-child(1) > i",
@@ -78,7 +78,7 @@
       },
       "site_date": {
         "selector": "td:nth-child(1) a",
-        "filters": [{ "name": "regexp", "args": "(\\w+)$" }]
+        "filters": [{ "name": "regexp", "args": "(\\d{4})$" }]
       },
       "title": {
         "selector": "td:nth-child(1) a",
@@ -99,7 +99,7 @@
             "name": "replace",
             "args": ["VOSTFR", "{{ .Result.site_date }} VOSTFR"]
           },
-          { "name": "re_replace", "args": ["(\\w+)$", ""] }
+          { "name": "re_replace", "args": ["(\\d{4})$", ""] }
         ]
       },
       "details": { "selector": "td:nth-child(1) a", "attribute": "href" },
