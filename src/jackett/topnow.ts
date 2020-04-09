@@ -25,9 +25,9 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'table.topic_table' },
     fields: {
       category: { text: 'other' },
-      title: { selector: 'a[href^="goto-"]' },
-      details: { selector: 'a[href^="goto-"]', attribute: 'href' },
-      download: { selector: 'a[href^="goto-"]', attribute: 'href' },
+      title: { selector: 'td.topic_head' },
+      details: { selector: 'td.topic_content a', attribute: 'href' },
+      download: { selector: 'td.topic_content a', attribute: 'href' },
       banner: { selector: 'img', attribute: 'src' },
       description: {
         selector: 'pre.imgDescription',

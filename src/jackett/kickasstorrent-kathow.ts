@@ -33,6 +33,9 @@ export const definition: TrackerDefinition = {
       { id: 'applications', cat: 'PC' },
       { id: 'xxx', cat: 'XXX' },
       { id: 'other', cat: 'Other' },
+      { id: 'video', cat: 'TV' },
+      { id: 'porn', cat: 'XXX' },
+      { id: 'audio', cat: 'Audio' },
     ],
   },
   settings: [
@@ -60,7 +63,11 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: 'table[class="data"] tr[id]' },
     fields: {
-      category: { text: 'other' },
+      category: {
+        optional: true,
+        selector: 'span[id^="cat_"] > strong > a:contains("Video")',
+        filters: [{ name: 'replace', args: ['Video', 'movies'] }],
+      },
       'category|noappend': {
         optional: true,
         selector: 'span[id^="cat_"] > strong > a',
@@ -75,9 +82,9 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'td:nth-child(1) > div > a[data-download=""]',
+        optional: true,
+        selector: 'a[href^="magnet:?xt="]',
         attribute: 'href',
-        filters: [{ name: 'querystring', args: 'url' }],
       },
       size: {
         selector: 'td:nth-child(2)',
@@ -92,6 +99,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['N/A', '0'] }],
       },
       leechers: {
+        optional: true,
         selector: 'td:nth-child(5)',
         filters: [{ name: 'replace', args: ['N/A', '0'] }],
       },

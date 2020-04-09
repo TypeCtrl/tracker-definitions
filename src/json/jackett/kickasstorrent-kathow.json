@@ -30,7 +30,10 @@
       { "id": "games", "cat": "Console" },
       { "id": "applications", "cat": "PC" },
       { "id": "xxx", "cat": "XXX" },
-      { "id": "other", "cat": "Other" }
+      { "id": "other", "cat": "Other" },
+      { "id": "video", "cat": "TV" },
+      { "id": "porn", "cat": "XXX" },
+      { "id": "audio", "cat": "Audio" }
     ]
   },
   "settings": [
@@ -57,7 +60,11 @@
     ],
     "rows": { "selector": "table[class=\"data\"] tr[id]" },
     "fields": {
-      "category": { "text": "other" },
+      "category": {
+        "optional": true,
+        "selector": "span[id^=\"cat_\"] > strong > a:contains(\"Video\")",
+        "filters": [{ "name": "replace", "args": ["Video", "movies"] }]
+      },
       "category|noappend": {
         "optional": true,
         "selector": "span[id^=\"cat_\"] > strong > a",
@@ -72,9 +79,9 @@
         "attribute": "href"
       },
       "download": {
-        "selector": "td:nth-child(1) > div > a[data-download=\"\"]",
-        "attribute": "href",
-        "filters": [{ "name": "querystring", "args": "url" }]
+        "optional": true,
+        "selector": "a[href^=\"magnet:?xt=\"]",
+        "attribute": "href"
       },
       "size": {
         "selector": "td:nth-child(2)",
@@ -89,6 +96,7 @@
         "filters": [{ "name": "replace", "args": ["N/A", "0"] }]
       },
       "leechers": {
+        "optional": true,
         "selector": "td:nth-child(5)",
         "filters": [{ "name": "replace", "args": ["N/A", "0"] }]
       },
