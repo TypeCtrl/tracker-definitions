@@ -54,7 +54,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '{{if .Keywords}}/search/{{else}}/today/{{end}}' }],
     inputs: {
-      $raw: 'new=1&{{range .Categories}}s_cat={{.}}&{{end}}',
+      $raw: '{{range .Categories}}s_cat={{.}}&{{end}}',
       search: '{{ .Keywords }}',
     },
     rows: {

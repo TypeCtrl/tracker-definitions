@@ -1003,6 +1003,9 @@ export const jtorrent9Clone = jjtorrent9Clone;
 import { definition as jjtorrentbd } from './torrentbd';
 export const jtorrentbd = jjtorrentbd;
 
+import { definition as jjtorrentbomb } from './torrentbomb';
+export const jtorrentbomb = jjtorrentbomb;
+
 import { definition as jjtorrentccf } from './torrentccf';
 export const jtorrentccf = jjtorrentccf;
 
@@ -1522,6 +1525,7 @@ export const definitions = [
   jjtorrent9,
   jjtorrent9Clone,
   jjtorrentbd,
+  jjtorrentbomb,
   jjtorrentccf,
   jjtorrentdownload,
   jjtorrentdownloads,

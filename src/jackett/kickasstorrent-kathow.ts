@@ -17,6 +17,8 @@ export const definition: TrackerDefinition = {
     'https://kat.how/',
     'https://kat.li/',
     'https://kickasstorrents.unblockninja.com/',
+    'https://katcr.to/',
+    'https://kickasstorrent.cr/',
   ],
   caps: {
     modes: {
