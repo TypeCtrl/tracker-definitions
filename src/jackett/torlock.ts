@@ -13,9 +13,9 @@ export const definition: TrackerDefinition = {
     'https://www.torlock.com/',
     'https://www.torlock2.com/',
     'https://www.torlock.icu/',
-    'https://torlock.unblockit.pro/',
+    'https://torlock.unblockit.one/',
   ],
-  legacylinks: ['https://torlock.com/'],
+  legacylinks: ['https://torlock.com/', 'https://torlock.unblockit.pro/'],
   caps: {
     categorymappings: [
       { id: 'TELEVISION', cat: 'TV', desc: 'TV Shows' },

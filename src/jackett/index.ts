@@ -7,6 +7,9 @@ export const j1337X = jj1337X;
 import { definition as jj2Fast4You } from './2fast4you';
 export const j2Fast4You = jj2Fast4You;
 
+import { definition as jj3Changtrai } from './3changtrai';
+export const j3Changtrai = jj3Changtrai;
+
 import { definition as jj3Dtorrents } from './3dtorrents';
 export const j3Dtorrents = jj3Dtorrents;
 
@@ -117,9 +120,6 @@ export const jbitru = jjbitru;
 
 import { definition as jjbitspyder } from './bitspyder';
 export const jbitspyder = jjbitspyder;
-
-import { definition as jjbittorrentam } from './bittorrentam';
-export const jbittorrentam = jjbittorrentam;
 
 import { definition as jjbitturk } from './bitturk';
 export const jbitturk = jjbitturk;
@@ -534,6 +534,9 @@ export const jkapaki = jjkapaki;
 
 import { definition as jjkaragarga } from './karagarga';
 export const jkaragarga = jjkaragarga;
+
+import { definition as jjkaztorka } from './kaztorka';
+export const jkaztorka = jjkaztorka;
 
 import { definition as jjkickasstorrentKathow } from './kickasstorrent-kathow';
 export const jkickasstorrentKathow = jjkickasstorrentKathow;
@@ -1193,6 +1196,7 @@ export const definitions = [
   jj0Daykiev,
   jj1337X,
   jj2Fast4You,
+  jj3Changtrai,
   jj3Dtorrents,
   jj4Thd,
   jj52Pt,
@@ -1230,7 +1234,6 @@ export const definitions = [
   jjbithumen,
   jjbitru,
   jjbitspyder,
-  jjbittorrentam,
   jjbitturk,
   jjbluebird,
   jjblutopia,
@@ -1369,6 +1372,7 @@ export const definitions = [
   jjjpopsuki,
   jjkapaki,
   jjkaragarga,
+  jjkaztorka,
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinonavse100,

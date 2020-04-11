@@ -10,14 +10,19 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://btdb.io/',
-    'https://btdb.unblockit.pro/',
+    'https://btdb.unblockit.one/',
     'https://btdb.black-mirror.xyz/',
     'https://btdb.unblocked.casa/',
     'https://btdb.proxyportal.fun/',
     'https://btdb.uk-unblock.xyz/',
     'https://btdb.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://btdb.to/', 'https://btdb.unblocked.app/', 'https://btdb.eu/'],
+  legacylinks: [
+    'https://btdb.to/',
+    'https://btdb.unblocked.app/',
+    'https://btdb.eu/',
+    'https://btdb.unblockit.pro/',
+  ],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],
     modes: {

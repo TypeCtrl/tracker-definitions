@@ -6,7 +6,7 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://kickass.ws/", "https://kickass.unblockit.pro/"],
+  "links": ["https://kickass.ws/", "https://kickass.unblockit.one/"],
   "legacylinks": [
     "https://kickass.gg/",
     "https://katcr.io/",
@@ -16,7 +16,8 @@
     "https://kat.li/",
     "https://kickasstorrents.unblockninja.com/",
     "https://katcr.to/",
-    "https://kickasstorrent.cr/"
+    "https://kickasstorrent.cr/",
+    "https://kickass.unblockit.pro/"
   ],
   "caps": {
     "modes": {

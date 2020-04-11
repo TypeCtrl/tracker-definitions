@@ -9,7 +9,8 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://extratorrent.si/', 'https://extratorrent.unblockit.pro/'],
+  links: ['https://extratorrent.si/', 'https://extratorrent.unblockit.one/'],
+  legacylinks: ['https://extratorrent.unblockit.pro/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Anime', desc: 'Anime' },

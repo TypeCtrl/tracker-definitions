@@ -17,19 +17,17 @@
       "movie-search": ["q"]
     },
     "categorymappings": [
-      { "id": "Anime", "cat": "TV/Anime" },
-      { "id": "Software", "cat": "PC" },
-      { "id": "Apps", "cat": "PC" },
-      { "id": "eBooks", "cat": "Books" },
-      { "id": "XXX", "cat": "XXX" },
-      { "id": "Adult", "cat": "XXX" },
-      { "id": "Games", "cat": "PC/Games" },
-      { "id": "Movies", "cat": "Movies" },
-      { "id": "Music", "cat": "Audio" },
-      { "id": "Television", "cat": "TV" },
-      { "id": "Series", "cat": "TV" },
-      { "id": "Other", "cat": "Other" },
-      { "id": "Pictures", "cat": "Other" }
+      { "id": "anime", "cat": "TV/Anime" },
+      { "id": "software", "cat": "PC" },
+      { "id": "ebooks", "cat": "Books" },
+      { "id": "adult", "cat": "XXX" },
+      { "id": "games", "cat": "PC/Games" },
+      { "id": "movies", "cat": "Movies" },
+      { "id": "music", "cat": "Audio" },
+      { "id": "television", "cat": "TV" },
+      { "id": "other", "cat": "Other" },
+      { "id": "photos", "cat": "Other" },
+      { "id": "pictures", "cat": "Other" }
     ]
   },
   "settings": [],
@@ -45,7 +43,11 @@
       "filters": [{ "name": "andmatch" }]
     },
     "fields": {
-      "category": { "selector": "td:nth-child(1) a", "attribute": "title" },
+      "category": {
+        "selector": "td:nth-child(1)",
+        "attribute": "onclick",
+        "filters": [{ "name": "regexp", "args": "href='/(.+?).html" }]
+      },
       "title": { "selector": "td:nth-child(2) a" },
       "details": { "selector": "td:nth-child(2) a", "attribute": "href" },
       "download": {

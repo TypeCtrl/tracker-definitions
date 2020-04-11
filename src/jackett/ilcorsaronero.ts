@@ -18,6 +18,7 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.pizza/',
     'https://ilcorsaronero.pw/',
     'https://ilcorsaronero.unblockit.pro/',
+    'https://ilcorsaronero.unblockit.one/',
   ],
   caps: {
     categorymappings: [
