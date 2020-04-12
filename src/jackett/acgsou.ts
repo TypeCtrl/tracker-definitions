@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   type: 'public',
   followredirect: true,
   encoding: 'UTF-8',
-  links: ['https://www.acgsou.com/'],
+  links: ['https://www.36dm.club/'],
+  legacylinks: ['https://www.acgsou.com/'],
   caps: {
     categorymappings: [
       { id: '2', cat: 'TV/Anime', desc: '动画 (Anime)' },

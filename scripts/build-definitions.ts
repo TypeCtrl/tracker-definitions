@@ -25,6 +25,7 @@ const PRETTIER_TYPESCRIPT: prettier.Options = {
   semi: true,
   singleQuote: true,
   printWidth: 100,
+  arrowParens: 'avoid',
 };
 
 const HELPERS_DIR = path.join(__dirname, `../src/helpers`);
@@ -88,7 +89,16 @@ function validateJson(json: any): any {
   return json;
 }
 
-const skip = ['nbtorrents', 'scenepalace', '3evils', 'vanila', 'thehorrorcharnel', 'p2pelite', 'twilightszoom', 'ttsweb'];
+const skip = [
+  'nbtorrents',
+  'scenepalace',
+  '3evils',
+  'vanila',
+  'thehorrorcharnel',
+  'p2pelite',
+  'twilightszoom',
+  'ttsweb',
+];
 
 for (const src of SOURCES) {
   const files = fs.readdirSync(src.dir);
@@ -150,7 +160,9 @@ for (const src of SOURCES) {
     `;
   }, '');
   exportedSites += `
-    export const definitions = [${sites.map(n => `${src.name[0]}${src.name[0]}${camelCase(n)}`).toString()}];
+    export const definitions = [${sites
+    .map(n => `${src.name[0]}${src.name[0]}${camelCase(n)}`)
+    .toString()}];
   `;
   fs.writeFileSync(
     path.join(moduleOutDir, `index.ts`),
