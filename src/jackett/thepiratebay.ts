@@ -9,7 +9,6 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://thepiratebay.org/',
     'https://tpb.bike/',
     'https://pirateproxy.page/',
     'https://tpb14.ukpass.co/',
@@ -33,7 +32,7 @@ export const definition: TrackerDefinition = {
     'https://thepiratebay1.top/',
     'https://thepiratebay1.info/',
   ],
-  legacylinks: ['https://thepiratesbay.pw/', 'https://tproxy.pro/'],
+  legacylinks: ['https://thepiratesbay.pw/', 'https://tproxy.pro/', 'https://thepiratebay.org/'],
   caps: {
     categorymappings: [
       { id: '100', cat: 'Audio', desc: 'Audio', default: true },
@@ -203,6 +202,10 @@ export const definition: TrackerDefinition = {
       },
     ],
     keywordsfilters: [
+      {
+        name: 're_replace',
+        args: ['([\\p{IsCJKUnifiedIdeographs}\\W]+)', '#'],
+      },
       {
         name: 're_replace',
         args: ['General Hospital S(\\d{2,3})E(\\d{2,3})', '$0 | \\(S$1 E$2\\)'],

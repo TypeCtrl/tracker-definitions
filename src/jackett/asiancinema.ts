@@ -55,21 +55,15 @@ export const definition: TrackerDefinition = {
     selectorinputs: {
       _token: { selector: 'input[name="_token"]', attribute: 'value' },
     },
-    error: [
-      {
-        selector: 'script[nonce]:contains("Error")',
-        message: { selector: 'script[nonce]:contains("Error")' },
-      },
-    ],
+    error: [{ selector: 'div#ERROR_COPY' }],
   },
   ratio: {
     path: '/',
     selector: 'li:has(i.fa-sync-alt)',
     filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
-  download: { selector: 'a[href*="/download/"]', attribute: 'href' },
   search: {
-    paths: [{ path: 'filterTorrents' }],
+    paths: [{ path: 'torrents/filter' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
       search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
@@ -79,6 +73,7 @@ export const definition: TrackerDefinition = {
       tvdb: '',
       tmdb: '',
       mal: '',
+      igdb: '',
       sorting: '{{ .Config.sort }}',
       sort: '{{ .Config.sort }}',
       direction: '{{ .Config.type }}',
@@ -89,11 +84,11 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'a[href*="/categories/"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
+        filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
       title: { selector: 'a.view-torrent' },
       download: {
-        selector: 'a[href*="/download_check/"]',
+        selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },

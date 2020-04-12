@@ -86,6 +86,7 @@ export const jackettSites = [
   'desireleasers',
   'desitorrents',
   'diablotorrent',
+  'dimeadozen',
   'divteam',
   'dmhy',
   'documentarytorrents',

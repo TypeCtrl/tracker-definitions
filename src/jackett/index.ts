@@ -259,6 +259,9 @@ export const jdesitorrents = jjdesitorrents;
 import { definition as jjdiablotorrent } from './diablotorrent';
 export const jdiablotorrent = jjdiablotorrent;
 
+import { definition as jjdimeadozen } from './dimeadozen';
+export const jdimeadozen = jjdimeadozen;
+
 import { definition as jjdivteam } from './divteam';
 export const jdivteam = jjdivteam;
 
@@ -1280,6 +1283,7 @@ export const definitions = [
   jjdesireleasers,
   jjdesitorrents,
   jjdiablotorrent,
+  jjdimeadozen,
   jjdivteam,
   jjdmhy,
   jjdocumentarytorrents,

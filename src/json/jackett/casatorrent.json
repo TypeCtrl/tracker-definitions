@@ -5,8 +5,12 @@
   "language": "fr-FR",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://teamctgame.xyz/"],
-  "legacylinks": ["https://teamctgame.co/", "http://teamctgame.xyz/"],
+  "links": ["https://tctg.in/"],
+  "legacylinks": [
+    "https://teamctgame.co/",
+    "http://teamctgame.xyz/",
+    "https://teamctgame.xyz/"
+  ],
   "caps": {
     "categorymappings": [
       { "id": "65", "cat": "Movies/HD", "desc": "BD: BD" },
