@@ -92,7 +92,7 @@
     "paths": [
       {
         "path": "torrents.php",
-        "categorymappings": [
+        "categories": [
           "!",
           410,
           429,
@@ -115,7 +115,7 @@
       },
       {
         "path": "adult.php",
-        "categorymappings": [
+        "categories": [
           410,
           429,
           424,
@@ -132,7 +132,7 @@
           413
         ]
       },
-      { "path": "music.php", "categorymappings": [406, 408, 434] }
+      { "path": "music.php", "categories": [406, 408, 434] }
     ],
     "inputs": {
       "$raw": "{{range .Categories}}cat{{.}}=1&{{end}}",

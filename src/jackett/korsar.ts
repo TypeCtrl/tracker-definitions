@@ -879,8 +879,8 @@ export const definition: TrackerDefinition = {
       },
       {
         id: '561',
-        cat: 'Audio',
-        '/MP3 desc': 'Музыка - Зарубежная музыка других жанров (Lossy)',
+        cat: 'Audio/MP3',
+        desc: 'Музыка - Зарубежная музыка других жанров (Lossy)',
       },
       {
         id: '562',

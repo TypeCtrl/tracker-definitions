@@ -43,6 +43,21 @@ export const definition: TrackerDefinition = {
       {
         path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}',
       },
+      {
+        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}&page=2',
+      },
+      {
+        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}&page=3',
+      },
+      {
+        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}&page=4',
+      },
+    ],
+    keywordsfilters: [
+      {
+        name: 're_replace',
+        args: ['(?:^|\\s)[_\\+\\/\\.\\-\\(\\)]*[\\S]{0,3}[_\\+\\/\\.\\-\\(\\)]*(?:\\s|$)', ' '],
+      },
     ],
     rows: {
       selector: 'tr.desktop:not(tr[class="desktop  success"])',

@@ -223,7 +223,6 @@ export const definition: TrackerDefinition = {
     },
   },
   search: {
-    followredirect: true,
     keywordsfilters: [
       {
         name: 're_replace',
@@ -250,10 +249,12 @@ export const definition: TrackerDefinition = {
       {
         path:
           'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+        followredirect: true,
       },
       {
         path:
           'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}&page=50',
+        followredirect: true,
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },

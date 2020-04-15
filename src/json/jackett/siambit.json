@@ -134,7 +134,7 @@
     "paths": [
       {
         "path": "viewno18.php",
-        "categorymappings": [
+        "categories": [
           "!",
           901,
           902,
@@ -151,19 +151,7 @@
       },
       {
         "path": "viewbr.php",
-        "categorymappings": [
-          901,
-          902,
-          903,
-          904,
-          905,
-          906,
-          907,
-          908,
-          910,
-          911,
-          912
-        ]
+        "categories": [901, 902, 903, 904, 905, 906, 907, 908, 910, 911, 912]
       }
     ],
     "inputs": {

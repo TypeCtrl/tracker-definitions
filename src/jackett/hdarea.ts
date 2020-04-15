@@ -73,7 +73,6 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'torrents.php' }],
-    method: 'post',
     inputs: {
       $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',

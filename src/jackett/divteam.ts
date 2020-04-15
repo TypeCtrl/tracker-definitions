@@ -112,7 +112,11 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      title: { selector: 'a[href^="index.php?page=torrent-details"]' },
+      title: {
+        selector: 'a[href^="index.php?page=torrent-details"][onmouseover]:not(:contains("VOSE"))',
+        optional: true,
+        filters: [{ name: 'append', args: ' [Spanish] [English]' }],
+      },
       banner: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details"]',
         attribute: 'onmouseover',
@@ -137,6 +141,7 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {
         case: {
+          'img[src="images/freeleech.gif"]': 0,
           'img[src="images/gold.png"]': 0,
           'img[src="images/silver.png"]': 0.5,
           '*': 1,

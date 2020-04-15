@@ -10,14 +10,13 @@ export const definition: TrackerDefinition = {
   links: [
     'http://rutor.info/',
     'http://new-rutor.org/',
-    'https://rutor.root.yt/',
     'https://rutor.black-mirror.xyz/',
     'https://rutor.unblocked.casa/',
     'https://rutor.proxyportal.fun/',
     'https://rutor.uk-unblock.xyz/',
     'https://rutor.ind-unblock.xyz/',
   ],
-  legacylinks: ['http://live-rutor.org/'],
+  legacylinks: ['http://live-rutor.org/', 'https://rutor.root.yt/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },

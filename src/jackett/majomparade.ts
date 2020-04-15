@@ -74,15 +74,15 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path: 'letoltes.php',
-        categorymappings: ['!', 70, 39, 57],
+        categories: ['!', 70, 39, 57],
         inputs: { tipus: 1 },
       },
       {
         path: 'letoltes.php',
-        categorymappings: ['!', 70, 39, 57],
+        categories: ['!', 70, 39, 57],
         inputs: { tipus: 2 },
       },
-      { path: 'xxx.php', categorymappings: [70, 39, 57] },
+      { path: 'xxx.php', categories: [70, 39, 57] },
     ],
     inputs: {
       $raw: '{{ range .Categories }}category[]={{.}}&{{end}}',

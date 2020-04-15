@@ -322,6 +322,9 @@ export const jettv = jjettv;
 import { definition as jjexkinoray } from './exkinoray';
 export const jexkinoray = jjexkinoray;
 
+import { definition as jjextratorrentAg } from './extratorrent-ag';
+export const jextratorrentAg = jjextratorrentAg;
+
 import { definition as jjextratorrentCd } from './extratorrent-cd';
 export const jextratorrentCd = jjextratorrentCd;
 
@@ -549,6 +552,9 @@ export const jkickasstorrent = jjkickasstorrent;
 
 import { definition as jjkinonavse100 } from './kinonavse100';
 export const jkinonavse100 = jjkinonavse100;
+
+import { definition as jjkinorun } from './kinorun';
+export const jkinorun = jjkinorun;
 
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
@@ -1015,6 +1021,9 @@ export const jtorrentbomb = jjtorrentbomb;
 import { definition as jjtorrentccf } from './torrentccf';
 export const jtorrentccf = jjtorrentccf;
 
+import { definition as jjtorrentdb } from './torrentdb';
+export const jtorrentdb = jjtorrentdb;
+
 import { definition as jjtorrentdownload } from './torrentdownload';
 export const jtorrentdownload = jjtorrentdownload;
 
@@ -1304,6 +1313,7 @@ export const definitions = [
   jjethor,
   jjettv,
   jjexkinoray,
+  jjextratorrentAg,
   jjextratorrentCd,
   jjextremetorrents,
   jjextremlymtorrents,
@@ -1380,6 +1390,7 @@ export const definitions = [
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinonavse100,
+  jjkinorun,
   jjkinozal,
   jjkorsar,
   jjlastfiles,
@@ -1535,6 +1546,7 @@ export const definitions = [
   jjtorrentbd,
   jjtorrentbomb,
   jjtorrentccf,
+  jjtorrentdb,
   jjtorrentdownload,
   jjtorrentdownloads,
   jjtorrentfactory,

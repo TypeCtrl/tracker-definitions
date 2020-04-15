@@ -315,6 +315,7 @@ export interface Selector {
 export interface Path {
   path: string;
   inputs?: { [key: string]: string | number };
+  categories?: Array<number | string>;
   method?: string;
   followredirect?: boolean;
   categorymappings?: Array<(string | number)>;

@@ -1,16 +1,14 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'extratorrent-cd',
-  name: 'ExtraTorrent.cd',
+  site: 'extratorrent-ag',
+  name: 'ExtraTorrent.ag',
   description:
-    'ExtraTorrent.cd is a Public tracker, a  popular alternative to the original ET site, providing Movie / TV / General magnets',
+    'ExtraTorrent.ag is a Public tracker, a  popular alternative to the original ET site, providing Movie / TV / General magnets',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  followredirect: true,
-  links: ['https://extratorrent.si/'],
-  legacylinks: ['https://extratorrent.unblockit.pro/', 'https://extratorrent.unblockit.one/'],
+  links: ['https://extratorrent.ag/', 'https://extratorrent.unblockit.one/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Anime', desc: 'Anime' },
@@ -1070,37 +1068,31 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    paths: [{ path: 'search/?search={{ .Keywords }}' }],
+    paths: [
+      {
+        path: '{{ if .Keywords }}search/?search={{ .Keywords }}{{else}}{{end}}',
+      },
+    ],
     rows: { selector: 'tr[class^="tl"]' },
     fields: {
-      category: { text: 9 },
-      'category|noappend': {
-        selector: 'a[href*="/category/"]',
+      title: { selector: 'td.tli a' },
+      category: {
+        selector: 'td a[href^="/category/"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '/category/(\\d+)/' }],
+        filters: [{ name: 'split', args: ['/', 2] }],
       },
-      title: { selector: 'a[href*="/torrent/"][title^="view"]' },
-      details: {
-        selector: 'a[href*="/torrent/"]',
-        attribute: 'href',
-        filters: [{ name: 'replace', args: ['///', '//'] }],
-      },
+      details: { selector: 'td.tli a', attribute: 'href' },
       download: {
-        selector: 'a[href^="magnet:?xt="]',
+        selector: 'td a[href^="magnet:?xt="]',
         attribute: 'href',
       },
       date: {
-        selector:
-          'td:nth-last-of-type(5):not(:contains(":")):not(:contains("Y-day-")):not(:contains("Today-"))',
-        optional: true,
-        filters: [
-          { name: 'replace', args: [' ', '-'] },
-          { name: 'dateparse', args: '01-02-2006' },
-        ],
+        selector: 'td:nth-last-of-type(5)',
+        filters: [{ name: 'timeago' }],
       },
       size: { selector: 'td:nth-last-of-type(4)' },
-      seeders: { optional: true, selector: 'td.sy, td.sn' },
-      leechers: { optional: true, selector: 'td.ly, td.ln' },
+      seeders: { optional: true, selector: 'td.sy' },
+      leechers: { optional: true, selector: 'td.ly' },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

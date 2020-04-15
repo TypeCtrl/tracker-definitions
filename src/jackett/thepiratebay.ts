@@ -9,11 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://tpb.bike/',
-    'https://pirateproxy.page/',
-    'https://tpb14.ukpass.co/',
     'https://thepiratebay.vip/',
-    'https://tpb.root.yt/?ckattempt=1/',
     'https://thepiratebay0.org/',
     'https://thepiratebay10.org/',
     'https://pirateproxy.live/',
@@ -32,7 +28,15 @@ export const definition: TrackerDefinition = {
     'https://thepiratebay1.top/',
     'https://thepiratebay1.info/',
   ],
-  legacylinks: ['https://thepiratesbay.pw/', 'https://tproxy.pro/', 'https://thepiratebay.org/'],
+  legacylinks: [
+    'https://thepiratesbay.pw/',
+    'https://tproxy.pro/',
+    'https://thepiratebay.org/',
+    'https://tpb.root.yt/?ckattempt=1/',
+    'https://tpb.bike/',
+    'https://pirateproxy.page/',
+    'https://tpb14.ukpass.co/',
+  ],
   caps: {
     categorymappings: [
       { id: '100', cat: 'Audio', desc: 'Audio', default: true },
@@ -204,7 +208,7 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [
       {
         name: 're_replace',
-        args: ['([\\p{IsCJKUnifiedIdeographs}\\W]+)', '#'],
+        args: ['([\\p{IsCJKUnifiedIdeographs}\\W]+)', '.'],
       },
       {
         name: 're_replace',

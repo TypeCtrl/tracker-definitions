@@ -137,11 +137,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path: 'viewno18.php',
-        categorymappings: ['!', 901, 902, 903, 904, 905, 906, 907, 908, 910, 911, 912],
+        categories: ['!', 901, 902, 903, 904, 905, 906, 907, 908, 910, 911, 912],
       },
       {
         path: 'viewbr.php',
-        categorymappings: [901, 902, 903, 904, 905, 906, 907, 908, 910, 911, 912],
+        categories: [901, 902, 903, 904, 905, 906, 907, 908, 910, 911, 912],
       },
     ],
     inputs: {

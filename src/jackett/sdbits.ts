@@ -40,13 +40,12 @@ export const definition: TrackerDefinition = {
     filters: [{ name: 'regexp', args: 'Ratio:[  ](.*?) ' }],
   },
   search: {
-    paths: [{ path: 'browse.php' }],
-    method: 'post',
+    paths: [{ path: 'browse.php', method: 'post' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '1',
-      descriptions: '0',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      incldead: 1,
+      descriptions: 0,
     },
     rows: { selector: 'table#torrent-list > tbody > tr[id]' },
     fields: {
@@ -78,11 +77,11 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'a[style="color:#000099"][href^="details.php?"]': '0',
-          '*': '1',
+          'a[style="color:#000099"][href^="details.php?"]': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

@@ -174,7 +174,10 @@ export const definition: TrackerDefinition = {
         },
       },
     ],
-    test: { path: 'tracker/index.php', select: 'a[href="logout.php"]' },
+    test: {
+      path: 'tracker/index.php',
+      selector: 'a[href="logout.php"]',
+    },
   },
   download: {
     before: {

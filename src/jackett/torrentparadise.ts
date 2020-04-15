@@ -35,6 +35,7 @@ export const definition: TrackerDefinition = {
       { id: 'APPS > PC', cat: 'PC' },
       { id: 'APPS', cat: 'PC' },
       { id: 'AUDIO > AUDIO BOOKS', cat: 'Audio/Audiobook' },
+      { id: 'AUDIO > MUSIC', cat: 'Audio' },
       { id: 'AUDIO', cat: 'Audio' },
       { id: 'BOOKS', cat: 'Books' },
       { id: 'DOCUMENTARIES', cat: 'TV/Documentary' },

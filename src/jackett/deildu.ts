@@ -62,8 +62,8 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       keeplogged: 1,
     },
+    test: { path: 'my.php' },
   },
-  test: { path: 'my.php' },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {

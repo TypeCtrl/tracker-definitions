@@ -96,7 +96,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path: 'torrents.php',
-        categorymappings: [
+        categories: [
           '!',
           410,
           429,
@@ -119,9 +119,9 @@ export const definition: TrackerDefinition = {
       },
       {
         path: 'adult.php',
-        categorymappings: [410, 429, 424, 430, 426, 437, 431, 432, 436, 425, 433, 411, 412, 413],
+        categories: [410, 429, 424, 430, 426, 437, 431, 432, 436, 425, 433, 411, 412, 413],
       },
-      { path: 'music.php', categorymappings: [406, 408, 434] },
+      { path: 'music.php', categories: [406, 408, 434] },
     ],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
