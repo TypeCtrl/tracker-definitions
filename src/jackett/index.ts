@@ -301,6 +301,9 @@ export const jempornium = jjempornium;
 import { definition as jjeniahd } from './eniahd';
 export const jeniahd = jjeniahd;
 
+import { definition as jjepizod } from './epizod';
+export const jepizod = jjepizod;
+
 import { definition as jjerzsebet } from './erzsebet';
 export const jerzsebet = jjerzsebet;
 
@@ -1306,6 +1309,7 @@ export const definitions = [
   jjelitetorrentBiz,
   jjempornium,
   jjeniahd,
+  jjepizod,
   jjerzsebet,
   jjesharenet,
   jjestone,

@@ -18,17 +18,22 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'other', cat: 'Other' }],
   },
   settings: [],
-  download: { selector: 'a#torrent', attribute: 'href' },
   search: {
-    paths: [{ path: 'search.php' }],
-    inputs: { dayq: '{{.Keywords}}' },
-    rows: { selector: 'table.topic_table' },
+    paths: [{ path: 'index.php' }],
+    inputs: { search: '{{ .Keywords }}' },
+    keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
+    rows: {
+      selector: 'table.each_card_table:has(a[href^="/download/"])',
+    },
     fields: {
       category: { text: 'other' },
-      title: { selector: 'td.topic_head' },
-      details: { selector: 'td.topic_content a', attribute: 'href' },
-      download: { selector: 'td.topic_content a', attribute: 'href' },
-      banner: { selector: 'img', attribute: 'src' },
+      title: { selector: 'h2.titles' },
+      details: { text: '/' },
+      download: {
+        selector: 'a[href^="/download/"]',
+        attribute: 'href',
+      },
+      banner: { selector: 'img', attribute: 'src', optional: true },
       description: {
         selector: 'pre.imgDescription',
         filters: [{ name: 'regexp', args: 'Quality: (.+?)$' }],

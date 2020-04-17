@@ -10,6 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.magnetdl.com/',
+    'https://www.magnetdl.org/',
     'https://magnetdl.unblockninja.com/',
     'https://magnetdl.unblockit.one/',
   ],
@@ -60,7 +61,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}download/movies/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
+          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}o/of/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
+      },
+      {
+        path:
+          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}o/of/{{end}}{{ .Config.sort }}/{{ .Config.type }}/2/',
       },
     ],
     rows: { selector: 'tr:has(td.m)' },
