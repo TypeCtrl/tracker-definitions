@@ -29,6 +29,7 @@ const PRETTIER_TYPESCRIPT: prettier.Options = {
 };
 
 const bangSrcSelector = /src=\\+'\(.+\)\\+'/gmi;
+// eslint-disable-next-line no-useless-escape
 const bangSrcSelectorFix = `src=\\\"(.*?)\\\"`;
 
 const HELPERS_DIR = path.join(__dirname, `../src/helpers`);
