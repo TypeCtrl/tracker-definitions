@@ -10,6 +10,8 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://torrentgalaxy.to/',
+    'https://torrentgalaxy.org/',
+    'https://torrentgalaxy.pw/',
     'https://torrentgalaxy.unblockit.one/',
     'https://torrentgalaxy.unblockninja.com/',
     'https://tgx.black-mirror.xyz/',
@@ -18,11 +20,7 @@ export const definition: TrackerDefinition = {
     'https://tgx.uk-unblock.xyz/',
     'https://tgx.ind-unblock.xyz/',
   ],
-  legacylinks: [
-    'https://torrentgalaxy.org/',
-    'https://torrentgalaxy.pw/',
-    'https://torrentgalaxy.unblockit.pro/',
-  ],
+  legacylinks: ['https://torrentgalaxy.unblockit.pro/'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime - All' },
@@ -65,6 +63,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
     },
   },
   settings: [

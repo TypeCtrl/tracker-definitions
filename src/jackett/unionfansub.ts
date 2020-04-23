@@ -30,7 +30,12 @@ export const definition: TrackerDefinition = {
       { id: '12', cat: 'TV/Other', desc: 'Otros' },
       { id: '11', cat: 'TV', desc: 'Programas' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

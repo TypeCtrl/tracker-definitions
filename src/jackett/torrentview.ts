@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://torrentview8.net/'],
+  links: ['https://torrentview9.net/'],
   legacylinks: [
     'https://torrentview.net/',
     'https://torrentview3.net/',
@@ -16,6 +16,7 @@ export const definition: TrackerDefinition = {
     'https://torrentview5.net/',
     'https://torrentview6.net/',
     'https://torrentview7.net/',
+    'https://torrentview8.net/',
   ],
   caps: {
     categorymappings: [
@@ -68,7 +69,14 @@ export const definition: TrackerDefinition = {
         attribute: 'datetime',
         filters: [{ name: 'dateparse', args: '2006-01-02T15:04:05+09:00' }],
       },
-      size: { text: '512 MB' },
+      cat: {
+        selector: 'div.media-content > a[href^="./board.php"]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'bo_table' }],
+      },
+      size: {
+        text: '{{ if ne .Result.cat "mov" }}512 MB{{else}}2 GB{{end}}',
+      },
       seeders: { text: 1 },
       leechers: { text: 1 },
       downloadvolumefactor: { text: 0 },

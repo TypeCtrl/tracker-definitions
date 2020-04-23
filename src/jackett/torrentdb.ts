@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       search: ['q', 'imdbid'],
       'tv-search': ['q', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
-      'music-search': ['q', 'imdbid'],
+      'music-search': ['q'],
     },
   },
   settings: [

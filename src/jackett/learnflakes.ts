@@ -40,11 +40,7 @@ export const definition: TrackerDefinition = {
       { id: '46', cat: 'Books', desc: 'LF VIP' },
       { id: '55', cat: 'Books', desc: 'Exclusive' },
     ],
-    modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
-    },
+    modes: { search: ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

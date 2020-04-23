@@ -20,7 +20,11 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'a#magnetOpen', attribute: 'href' },
   search: {
-    paths: [{ path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}' }],
+    paths: [
+      {
+        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
+      },
+    ],
     rows: { selector: 'div.row:has(a[href*="/detail/hash/"])' },
     fields: {
       category: { text: 'other' },

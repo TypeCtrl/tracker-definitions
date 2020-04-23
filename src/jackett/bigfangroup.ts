@@ -54,7 +54,12 @@ export const definition: TrackerDefinition = {
       { id: '42', cat: 'XXX', desc: 'Эротика' },
       { id: '9', cat: 'Other', desc: 'Разное' },
     ],
-    modes: { search: ['q'], 'movie-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     {
@@ -139,7 +144,7 @@ export const definition: TrackerDefinition = {
           },
           { name: 'replace', args: ['WEBRip', 'WEBDL'] },
           { name: 'replace', args: ['WEB DL', 'WEBDL'] },
-          { name: 'replace', args: ['WEB DLRip', 'WEBDL'] },
+          { name: 'replace', args: ['WEBDLRip', 'WEBDL'] },
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
       },

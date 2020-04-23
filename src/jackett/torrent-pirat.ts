@@ -456,7 +456,7 @@ export const definition: TrackerDefinition = {
       { id: '248', cat: 'XXX', desc: '          Правила' },
       { id: '642', cat: 'XXX', desc: '          FAQ / Вопросы и ответы' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [
     {

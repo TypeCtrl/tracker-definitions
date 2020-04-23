@@ -63,7 +63,12 @@ export const definition: TrackerDefinition = {
       { id: '23', cat: 'TV/Sport', desc: 'Smackdown' },
       { id: '25', cat: 'TV/Sport', desc: 'WWE PPV' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

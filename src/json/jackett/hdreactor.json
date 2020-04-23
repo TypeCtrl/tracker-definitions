@@ -25,7 +25,8 @@
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"]
+      "movie-search": ["q"],
+      "music-search": ["q"]
     }
   },
   "settings": [
@@ -67,7 +68,7 @@
       "subaction": "search",
       "showposts": 1,
       "titleonly": 3,
-      "story": "{{ if .Keywords }}{{ .Keywords }}{{ else }}2019{{ end }}",
+      "story": "{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}",
       "sortby": "{{ .Config.sort }}",
       "resorder": "{{ .Config.type }}"
     },
@@ -128,7 +129,7 @@
           },
           { "name": "replace", "args": ["WEBRip", "WEBDL"] },
           { "name": "replace", "args": ["WEB DL", "WEBDL"] },
-          { "name": "replace", "args": ["WEB DLRip", "WEBDL"] },
+          { "name": "replace", "args": ["WEBDLRip", "WEBDL"] },
           { "name": "replace", "args": ["HDTVRip", "HDTV"] }
         ]
       },

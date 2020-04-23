@@ -897,6 +897,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
     },
   },
   settings: [
@@ -1026,7 +1027,7 @@ export const definition: TrackerDefinition = {
           },
           { name: 'replace', args: ['WEBRip', 'WEBDL'] },
           { name: 'replace', args: ['WEB DL', 'WEBDL'] },
-          { name: 'replace', args: ['WEB DLRip', 'WEBDL'] },
+          { name: 'replace', args: ['WEBDLRip', 'WEBDL'] },
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
       },

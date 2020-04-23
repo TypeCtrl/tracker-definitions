@@ -27,7 +27,11 @@ export const definition: TrackerDefinition = {
       { id: '30', cat: 'Audio', desc: 'Lossless Music' },
       { id: '40', cat: 'Other', desc: 'Others' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },

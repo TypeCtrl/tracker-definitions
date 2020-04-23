@@ -1152,7 +1152,12 @@ export const definition: TrackerDefinition = {
       { id: '762', cat: 'Other', desc: 'Разное' },
       { id: '763', cat: 'Other', desc: 'Тестовый раздел (для новичков)' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     {
@@ -1183,7 +1188,7 @@ export const definition: TrackerDefinition = {
       tracker_search: 'torrent',
       sk: '{{ .Config.sort }}',
       sd: '{{ .Config.type }}',
-      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}',
+      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
       $raw: '{{ range .Categories }}&fid[]={{.}}{{end}}',
     },
     rows: { selector: 'table.tablebg tr.col_line' },

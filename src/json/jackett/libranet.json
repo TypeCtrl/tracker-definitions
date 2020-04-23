@@ -19,7 +19,7 @@
       { "id": "48", "cat": "Books/Magazines", "desc": "Magazin" },
       { "id": "49", "cat": "Books/Magazines", "desc": "Magazin/Hun" }
     ],
-    "modes": { "search": ["q"] }
+    "modes": { "search": ["q"], "movie-search": ["q"], "music-search": ["q"] }
   },
   "login": {
     "path": "takelogin.php",

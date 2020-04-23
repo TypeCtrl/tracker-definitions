@@ -36,7 +36,12 @@ export const definition: TrackerDefinition = {
       { id: '13', cat: 'Other', desc: 'Ostalo' },
       { id: '36', cat: 'XXX', desc: 'XXX/HD' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   login: {
     path: 'takelogin.php',

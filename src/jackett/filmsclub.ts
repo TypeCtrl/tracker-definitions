@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://films.club/'],
+  links: ['https://films4.club/'],
+  legacylinks: ['https://films.club/'],
   caps: {
     categorymappings: [
       {

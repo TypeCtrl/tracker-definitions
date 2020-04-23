@@ -42,7 +42,12 @@ export const definition: TrackerDefinition = {
       { id: '31', cat: 'Audio/Video', desc: 'Music Videos' },
       { id: '32', cat: 'PC/0day', desc: 'Appz' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   login: {
     path: 'takelogin.php',

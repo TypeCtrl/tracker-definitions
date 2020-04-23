@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://onejav.com/'],
   caps: {
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
     categorymappings: [{ id: 'XXX', cat: 'XXX' }],
   },
   settings: [],

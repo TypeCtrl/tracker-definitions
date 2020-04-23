@@ -38,7 +38,12 @@ export const definition: TrackerDefinition = {
       { id: '38', cat: 'Books/Ebook', desc: 'Books eBooks' },
       { id: '39', cat: 'Audio/Audiobook', desc: 'Books Audio' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

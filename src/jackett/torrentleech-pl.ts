@@ -41,6 +41,7 @@ export const definition: TrackerDefinition = {
       search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
+      'music-search': ['q'],
     },
   },
   settings: [
@@ -69,6 +70,12 @@ export const definition: TrackerDefinition = {
       cat_film: '',
       napisy: 0,
     },
+    keywordsfilters: [
+      {
+        name: 're_replace',
+        args: ['(^\\D.*)((?:19|20)\\d{2})(.*$)', '$1$3'],
+      },
+    ],
     rows: {
       selector:
         'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',

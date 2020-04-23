@@ -11,7 +11,8 @@
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"]
+      "movie-search": ["q"],
+      "music-search": ["q"]
     },
     "categorymappings": [
       { "id": "Movies", "cat": "Movies" },
@@ -59,7 +60,7 @@
   "search": {
     "paths": [
       {
-        "path": "torrent-search/{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}/all/{{ .Config.sortby }}:{{ .Config.order }}/1/"
+        "path": "torrent-search/{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}/all/{{ .Config.sortby }}:{{ .Config.order }}/1/"
       }
     ],
     "rows": {

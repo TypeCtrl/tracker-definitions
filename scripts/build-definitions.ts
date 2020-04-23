@@ -28,6 +28,9 @@ const PRETTIER_TYPESCRIPT: prettier.Options = {
   arrowParens: 'avoid',
 };
 
+const bangSrcSelector = /src=\\+'\(.+\)\\+'/gmi;
+const bangSrcSelectorFix = `src=\\\"(.*?)\\\"`;
+
 const HELPERS_DIR = path.join(__dirname, `../src/helpers`);
 
 const cats = Object.keys(TORZNAB_CATEGORIES);
@@ -89,16 +92,7 @@ function validateJson(json: any): any {
   return json;
 }
 
-const skip = [
-  'nbtorrents',
-  'scenepalace',
-  '3evils',
-  'vanila',
-  'thehorrorcharnel',
-  'p2pelite',
-  'twilightszoom',
-  'ttsweb',
-];
+const skip: string[] = [];
 
 for (const src of SOURCES) {
   const files = fs.readdirSync(src.dir);
@@ -120,8 +114,12 @@ for (const src of SOURCES) {
     }
 
     console.log(name, file);
-    const content = fs.readFileSync(path.join(src.dir, file), 'utf8');
-    const json = yaml.safeLoad(content, { json: true });
+    let content = fs.readFileSync(path.join(src.dir, file), 'utf8');
+
+    // fixes before parsing yml
+    content = content.replace(bangSrcSelector, bangSrcSelectorFix.toString());
+
+    const json = yaml.load(content, { json: true });
     const fixedJson = validateJson(json);
     fixedJson.source = src.name;
 
@@ -129,7 +127,7 @@ for (const src of SOURCES) {
 
     // write json
     const formattedJson = prettier.format(JSON.stringify(fixedJson), { parser: 'json' });
-    fs.writeFileSync(path.join(jsonOutDir, name + '.json'), formattedJson);
+    fs.writeFileSync(path.join(jsonOutDir, `${name}.json`), formattedJson);
 
     // write module
     const defExp = `

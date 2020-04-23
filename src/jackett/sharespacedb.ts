@@ -80,7 +80,12 @@ export const definition: TrackerDefinition = {
       },
       { id: '51', cat: 'XXX', desc: 'XXX: Tous' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   login: {
     path: 'account-login.php',

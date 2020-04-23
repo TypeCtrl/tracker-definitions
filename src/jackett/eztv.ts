@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
     'https://eztv.unblockit.one/',
   ],
   caps: {
-    modes: { 'tv-search': ['q', 'season', 'ep'] },
+    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
     categorymappings: [{ id: '1', cat: 'TV' }],
   },
   settings: [],

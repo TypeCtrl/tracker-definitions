@@ -207,7 +207,7 @@ export const definition: TrackerDefinition = {
       { id: '19040', cat: 'TV/Sport', desc: 'Drifting' },
       { id: '19050', cat: 'TV/Sport', desc: 'Other' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

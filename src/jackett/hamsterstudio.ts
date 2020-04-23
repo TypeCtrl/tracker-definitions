@@ -261,7 +261,12 @@ export const definition: TrackerDefinition = {
       { id: '289', cat: 'TV', desc: 'Боевик' },
       { id: '290', cat: 'TV', desc: 'Детектив' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

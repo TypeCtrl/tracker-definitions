@@ -47,7 +47,7 @@ export const definition: TrackerDefinition = {
       { id: '33', cat: 'Movies', desc: 'Thriller' },
       { id: '34', cat: 'Movies', desc: 'Opera and Musical' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'movie-search': ['q'] },
   },
   login: {
     path: 'takelogin.php',

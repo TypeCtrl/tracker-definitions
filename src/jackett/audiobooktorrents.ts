@@ -107,7 +107,7 @@ export const definition: TrackerDefinition = {
       banner: {
         selector: 'a[href^="details.php?id="][onmouseover]',
         attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: "src=\\'(.*?)\\'" }],
+        filters: [{ name: 'regexp', args: 'src=\\"(.*?)\\"' }],
       },
       description: {
         selector: 'td[colspan="13"]',

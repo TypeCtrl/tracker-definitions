@@ -11,7 +11,8 @@
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"]
+      "movie-search": ["q"],
+      "music-search": ["q"]
     },
     "categorymappings": [
       { "id": "ADULT LATINA", "cat": "XXX" },
@@ -33,7 +34,9 @@
       { "id": "APPS > PC", "cat": "PC" },
       { "id": "APPS", "cat": "PC" },
       { "id": "AUDIO > AUDIO BOOKS", "cat": "Audio/Audiobook" },
+      { "id": "AUDIO > FLAC", "cat": "Audio/Lossless" },
       { "id": "AUDIO > MUSIC", "cat": "Audio" },
+      { "id": "AUDIO > SOUND CLIPS", "cat": "Audio" },
       { "id": "AUDIO", "cat": "Audio" },
       { "id": "BOOKS", "cat": "Books" },
       { "id": "DOCUMENTARIES", "cat": "TV/Documentary" },
@@ -63,6 +66,7 @@
       { "id": "JUEGOS XBOX", "cat": "Console/Xbox" },
       { "id": "JUEGOS XBOX360", "cat": "Console/Xbox360" },
       { "id": "JUEGOS", "cat": "Console" },
+      { "id": "MISCELLANEOUS", "cat": "Other" },
       { "id": "MOBILE", "cat": "PC/Phone-Other" },
       { "id": "MOVIES > ENGLISH (SPANISH SUBT)", "cat": "Movies" },
       { "id": "MOVIES", "cat": "Movies" },
@@ -74,7 +78,9 @@
       { "id": "OTHER > COVERS", "cat": "Other" },
       { "id": "OTHER > E-BOOKS", "cat": "Other" },
       { "id": "OTHER > OTHER", "cat": "Other" },
+      { "id": "OTHER > PICTURES", "cat": "Other" },
       { "id": "OTHER", "cat": "Other" },
+      { "id": "PICTURES", "cat": "Other" },
       { "id": "PORN > GAMES", "cat": "XXX" },
       { "id": "PORN > MOVIE CLIPS", "cat": "XXX" },
       { "id": "PORN > MOVIES", "cat": "XXX" },
@@ -85,6 +91,7 @@
       { "id": "SOFTWARE > WINDOWS", "cat": "PC/0day" },
       { "id": "SOFTWARE", "cat": "PC" },
       { "id": "TUTORIALS", "cat": "Other" },
+      { "id": "TV > HEVC/X265", "cat": "TV" },
       { "id": "TV SHOWS", "cat": "TV" },
       { "id": "TV", "cat": "TV" },
       { "id": "VIDEO > HD - MOVIES", "cat": "Movies/HD" },
@@ -100,6 +107,7 @@
       { "id": "VIDEO > UHD - TV SHOWS", "cat": "TV/UHD" },
       { "id": "VIDEO HDRIP", "cat": "Movies" },
       { "id": "VIDEO", "cat": "Movies" },
+      { "id": "WINDOWS", "cat": "PC/0day" },
       { "id": "XXX", "cat": "XXX" }
     ]
   },

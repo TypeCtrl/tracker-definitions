@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       { id: '16', cat: 'TV/Sport', desc: "WWE PPV's" },
       { id: '17', cat: 'TV/Sport', desc: 'WWE Weekly' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

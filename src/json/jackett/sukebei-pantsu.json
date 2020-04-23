@@ -21,6 +21,7 @@
         "15": "Art - Pictures",
         "21": "Real Life - Photobooks and Pictures",
         "22": "Real Life - Videos",
+        "27": "Unknown",
         "_": "All categories",
         "1_": "Art",
         "2_": "Real Life"
@@ -51,7 +52,8 @@
       { "id": "15", "cat": "XXX", "desc": "Adult Pictures" },
       { "id": "2_", "cat": "XXX", "desc": "Adult Real Life" },
       { "id": "21", "cat": "XXX", "desc": "Adult Photobooks and Pictures" },
-      { "id": "22", "cat": "XXX", "desc": "Adult Videos" }
+      { "id": "22", "cat": "XXX", "desc": "Adult Videos" },
+      { "id": "27", "cat": "XXX", "desc": "Unknown" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q"] }
   },

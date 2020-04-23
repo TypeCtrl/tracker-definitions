@@ -18,7 +18,8 @@
     "https://www1.cpasbiens.ws/",
     "https://www2.cpasbiens.ws/",
     "https://cpasbiens.cm/",
-    "https://www1.cpasbiens.cm/"
+    "https://www1.cpasbiens.cm/",
+    "https://wwv.cpasbien.to/"
   ],
   "caps": {
     "categorymappings": [
@@ -54,7 +55,7 @@
   "search": {
     "paths": [
       {
-        "path": "{{ if .Keywords }}search_torrent/{{ .Keywords }}{{ .Config.sort }}{{else}}{{end}}"
+        "path": "{{ if .Keywords }}search_torrent/{{ .Keywords }}{{ .Config.sort }}{{else}}home/{{end}}"
       }
     ],
     "rows": { "selector": "table.table-corps > tbody > tr:has(a)" },

@@ -46,7 +46,12 @@ export const definition: TrackerDefinition = {
       { id: '29', cat: 'Movies/SD', desc: 'Upscaled DvDRips' },
       { id: '3', cat: 'Movies', desc: 'WEB-HD' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   login: {
     path: 'login.php',
@@ -95,7 +100,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
         filters: [
-          { name: 'regexp', args: "src=\\\\'(.+?)\\\\'" },
+          { name: 'regexp', args: 'src=\\"(.*?)\\"' },
           { name: 'replace', args: ['./pic/noposter.jpg', ''] },
         ],
       },

@@ -39,6 +39,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
     },
   },
   login: {
@@ -85,7 +86,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         optional: true,
         attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: "src=\\\\'(.+?)\\\\'" }],
+        filters: [{ name: 'regexp', args: 'src="(.*?)"' }],
       },
       files: { selector: 'td:nth-last-child(8)' },
       date: {

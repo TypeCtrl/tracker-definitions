@@ -33,7 +33,7 @@ export const definition: TrackerDefinition = {
       { id: '21', cat: 'Movies', desc: 'Tinfoil Hat' },
       { id: '22', cat: 'Movies', desc: 'Trailers' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'movie-search': ['q'] },
   },
   login: {
     path: 'takelogin.php',

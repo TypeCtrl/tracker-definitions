@@ -20,7 +20,12 @@ export const definition: TrackerDefinition = {
       { id: '409', cat: 'Other', desc: 'Misc' },
       { id: '408', cat: 'Audio', desc: 'HQ Audio' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   login: {
     path: 'takelogin.php',

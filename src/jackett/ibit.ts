@@ -14,6 +14,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
     },
     categorymappings: [
       { id: 'Movies', cat: 'Movies' },
@@ -63,7 +64,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'torrent-search/{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}/all/{{ .Config.sortby }}:{{ .Config.order }}/1/',
+          'torrent-search/{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}/all/{{ .Config.sortby }}:{{ .Config.order }}/1/',
       },
     ],
     rows: {

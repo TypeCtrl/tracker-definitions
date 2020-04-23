@@ -47,7 +47,19 @@
       "download": { "selector": "div.movief a", "attribute": "href" },
       "banner": { "selector": "img", "attribute": "src" },
       "date": { "text": "now" },
-      "size": { "text": "512 MB" },
+      "cat": {
+        "selector": "div.moviefilm a",
+        "attribute": "href",
+        "case": {
+          "a[href*=\"-film-\"]": 1,
+          "a[href*=\"-dizi-\"]": 2,
+          "a[href*=\"-bolum-\"]": 2,
+          "*": 3
+        }
+      },
+      "size": {
+        "text": "{{ if eq .Result.cat \"1\" }}2 GB{{else}}512 MB{{end}}"
+      },
       "seeders": { "text": 1 },
       "leechers": { "text": 1 },
       "downloadvolumefactor": { "text": 0 },

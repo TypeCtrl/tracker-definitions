@@ -172,7 +172,7 @@ export const definition: TrackerDefinition = {
       { id: '96', cat: 'TV', desc: 'Двойка' },
       { id: '97', cat: 'TV', desc: 'Тик-герой' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [
     {

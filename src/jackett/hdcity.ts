@@ -229,7 +229,12 @@ export const definition: TrackerDefinition = {
         desc: 'Series Animación - HDTV WEB-DL 4K',
       },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -316,6 +321,7 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
+          'img[src$="freeleech.gif"]': '0',
           'img[src$="gold.gif"]': '0',
           'img[src$="silver.gif"]': '0.5',
           '*': '1',

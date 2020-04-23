@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
       { id: '80', cat: 'TV', desc: 'Talkshow' },
       { id: '59', cat: 'TV', desc: 'Drama' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'] },
   },
   login: {
     path: 'login.php',

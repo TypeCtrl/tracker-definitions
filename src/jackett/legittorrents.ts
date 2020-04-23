@@ -22,7 +22,12 @@ export const definition: TrackerDefinition = {
       { id: '13', cat: 'TV', desc: 'TV' },
       { id: '14', cat: 'PC', desc: 'Linux Distributions' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     {

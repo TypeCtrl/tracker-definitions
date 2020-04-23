@@ -180,7 +180,12 @@ export const definition: TrackerDefinition = {
         default: true,
       },
     ],
-    modes: { 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     {

@@ -19,6 +19,13 @@ export const definition: TrackerDefinition = {
   ],
   settings: [
     {
+      name: 'filter-id',
+      type: 'select',
+      label: 'Filter',
+      default: '0',
+      options: { '0': 'No filter', '1': 'No remakes', '2': 'Trusted only' },
+    },
+    {
       name: 'cat-id',
       type: 'select',
       label: 'Category',
@@ -104,13 +111,13 @@ export const definition: TrackerDefinition = {
       { id: '61', cat: 'PC/ISO', desc: 'Applications' },
       { id: '62', cat: 'PC/Games', desc: 'Games' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   search: {
     paths: [{ path: '/' }],
     inputs: {
       q: '{{ .Keywords }}',
-      f: 0,
+      f: '{{ .Config.filter-id }}',
       c: '{{ .Config.cat-id }}',
       s: '{{ .Config.sort }}',
       o: '{{ .Config.type }}',

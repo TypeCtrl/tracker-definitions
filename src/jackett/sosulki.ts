@@ -37,7 +37,7 @@ export const definition: TrackerDefinition = {
         desc: 'Любительское порно фото (Amateur Picture Gallery)',
       },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },

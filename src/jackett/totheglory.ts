@@ -9,7 +9,12 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://totheglory.im/'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
     categorymappings: [
       { id: '电影DVDRip', cat: 'Movies/SD' },
       { id: '电影720p', cat: 'Movies/HD' },

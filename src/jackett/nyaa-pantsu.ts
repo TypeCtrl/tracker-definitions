@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
       { id: '615', cat: 'Other', desc: 'Pictures Graphics' },
       { id: '616', cat: 'Other', desc: 'Pictures Photos' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'music-search': ['q'] },
   },
   search: {
     paths: [{ path: 'search' }],

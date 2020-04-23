@@ -64,7 +64,7 @@ export const definition: TrackerDefinition = {
       { id: '89', cat: 'XXX', desc: 'Adult Videos' },
       { id: '90', cat: 'XXX', desc: 'Adult Pics' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'music-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

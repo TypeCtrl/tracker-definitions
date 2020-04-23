@@ -10,6 +10,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torrentkitty.tv/',
     'https://www.torrentkitty.se/',
+    'https://www.torrentkitty.vip/',
     'https://www.torrentkitty.app/',
   ],
   caps: {
@@ -22,7 +23,11 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    paths: [{ path: 'search/{{ if .Keywords }}{{ .Keywords}}{{else}}2019{{end}}' }],
+    paths: [
+      {
+        path: 'search/{{ if .Keywords }}{{ .Keywords}}{{else}}{{ .Today.Year }}{{end}}',
+      },
+    ],
     rows: {
       selector: 'table#archiveResult tbody tr:has(a[href^="magnet:?xt="])',
     },

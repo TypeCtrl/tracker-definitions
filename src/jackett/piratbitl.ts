@@ -1644,7 +1644,12 @@ export const definition: TrackerDefinition = {
       { id: '1325', cat: 'Other', desc: 'Для поглощённых раздач' },
       { id: '1256', cat: 'Other', desc: 'Архив' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

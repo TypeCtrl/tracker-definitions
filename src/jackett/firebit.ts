@@ -24,7 +24,12 @@ export const definition: TrackerDefinition = {
     'http://firebit.biz/',
   ],
   caps: {
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
     categorymappings: [
       { id: 'Мультфильмы', cat: 'TV/Anime' },
       { id: 'Программы', cat: 'PC' },

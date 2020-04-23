@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
       { id: '6', cat: 'Other', desc: 'Game-Dev' },
       { id: '7', cat: 'Other', desc: 'Miscellaneous' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: { search: ['q'] },
   },
   login: {
     path: 'login.php',

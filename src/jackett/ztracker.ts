@@ -51,6 +51,7 @@ export const definition: TrackerDefinition = {
       search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
+      'music-search': ['q'],
     },
   },
   settings: [
@@ -120,7 +121,7 @@ export const definition: TrackerDefinition = {
       banner: {
         selector: 'a[href*="details.php?id="][onmouseover]',
         attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: "img src=\\\\'(.*?)\\\\'" }],
+        filters: [{ name: 'regexp', args: 'img src=\\"(.*?)\\"' }],
       },
       imdb: {
         optional: true,

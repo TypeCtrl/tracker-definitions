@@ -81,7 +81,12 @@ export const definition: TrackerDefinition = {
       },
       { id: 'torrent_netflix', cat: 'Movies', desc: '넷플릭스 (Netflix)' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [],
   download: {
@@ -117,7 +122,15 @@ export const definition: TrackerDefinition = {
         selector: 'span.sch_datetime',
         filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
       },
-      size: { text: '512 MB' },
+      cat: {
+        selector: 'a[href^="bbs/./board.php?"]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'bo_table' }],
+      },
+      size: {
+        text:
+          '{{ if or eq .Result.cat "torrent_movie" (or eq .Result.cat "torrent_movie_etc" eq .Result.cat "torrent_movie_eng") }}2 GB{{else}}512 MB{{end}}',
+      },
       seeders: { text: 1 },
       leechers: { text: 1 },
       downloadvolumefactor: { text: 0 },

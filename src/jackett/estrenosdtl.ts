@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://www.estrenosdtl.la/'],
   caps: {
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'movie-search': ['q'] },
     categorymappings: [
       { id: '1080P', cat: 'Movies/HD' },
       { id: '720P', cat: 'Movies/HD' },

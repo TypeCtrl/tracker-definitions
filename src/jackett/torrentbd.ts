@@ -85,16 +85,26 @@ export const definition: TrackerDefinition = {
       { id: '68', cat: 'Movies/SD', desc: 'Hindi - HD-Rip' },
       { id: '59', cat: 'Movies', desc: 'Hindi - Web-Rip' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
-  },
-  login: {
-    path: 'torrent/account-login.php',
-    method: 'post',
-    inputs: {
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
     },
-    error: [{ selector: 'div.row p.red-text' }],
+  },
+  settings: [
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info_cookie',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
+    },
+  ],
+  login: {
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'torrent/', selector: 'a[href="account-logout.php"]' },
   },
   search: {

@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['http://classix-unlimited.co.uk/'],
   caps: {
     categorymappings: [{ id: '1', cat: 'Movies', desc: 'Movies' }],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'movie-search': ['q'] },
   },
   login: {
     path: 'account-login.php',

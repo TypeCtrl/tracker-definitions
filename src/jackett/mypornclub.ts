@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['https://myporn.club/'],
   caps: {
     categorymappings: [{ id: 'XXX', cat: 'XXX', desc: 'XXX' }],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },

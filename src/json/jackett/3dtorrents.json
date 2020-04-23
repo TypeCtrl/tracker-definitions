@@ -28,7 +28,7 @@
       { "id": "31", "cat": "Other", "desc": "Misc" },
       { "id": "19", "cat": "Audio", "desc": "Audio Packs" }
     ],
-    "modes": { "search": ["q"] }
+    "modes": { "search": ["q"], "movie-search": ["q"], "music-search": ["q"] }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },

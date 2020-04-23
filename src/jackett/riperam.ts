@@ -1143,6 +1143,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
     },
   },
   settings: [
@@ -1183,7 +1184,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}&fid[]={{.}}{{end}}',
       tracker_search: 'torrent',
-      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}2019{{end}}',
+      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
       terms: 'all',
       fp: 1,
       author: '',

@@ -19,7 +19,12 @@
       { "id": "8", "cat": "Audio/Lossless", "desc": "Audios" },
       { "id": "10", "cat": "XXX/x264", "desc": "XXX" }
     ],
-    "modes": { "search": ["q"] }
+    "modes": {
+      "search": ["q"],
+      "tv-search": ["q"],
+      "movie-search": ["q"],
+      "music-search": ["q"]
+    }
   },
   "login": {
     "path": "index.php",

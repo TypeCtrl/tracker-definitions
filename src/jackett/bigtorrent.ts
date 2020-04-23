@@ -38,7 +38,12 @@ export const definition: TrackerDefinition = {
       { id: '59', cat: 'Audio', desc: 'Music' },
       { id: '58', cat: 'Audio', desc: 'Hungarian Music' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   login: {
     path: 'login.php',

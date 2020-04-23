@@ -18,7 +18,12 @@ export const definition: TrackerDefinition = {
       { id: '5', cat: 'TV/Sport', desc: 'Sports' },
       { id: '2', cat: 'TV', desc: 'TV' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   login: {
     path: 'takeloginn3.php',

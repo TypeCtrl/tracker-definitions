@@ -35,7 +35,7 @@ export const definition: TrackerDefinition = {
       { id: '17', cat: 'Other/Misc', desc: 'VIP' },
       { id: '24', cat: 'Other/Misc', desc: 'SuperVIP' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'music-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

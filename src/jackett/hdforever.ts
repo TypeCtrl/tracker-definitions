@@ -19,7 +19,12 @@ export const definition: TrackerDefinition = {
     },
   ],
   caps: {
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
     categorymappings: [
       { id: '1', cat: 'Movies' },
       { id: '2', cat: 'Movies' },

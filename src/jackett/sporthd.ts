@@ -101,7 +101,7 @@ export const definition: TrackerDefinition = {
       { id: '27', cat: 'TV/Sport', desc: 'World Cup 2014' },
       { id: '48', cat: 'TV/Sport', desc: 'WWE' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'] },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },

@@ -41,7 +41,12 @@ export const definition: TrackerDefinition = {
       { id: '111', cat: 'PC/Games', desc: 'Spiele - Mac / Linux' },
       { id: '110', cat: 'PC/Games', desc: 'Spiele - PC' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

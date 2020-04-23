@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://lesaloonv2-0.net/'],
-  legacylinks: ['https://lesaloonv2-0.net/'],
+  links: ['https://lesaloonv2-0.net/'],
+  legacylinks: ['http://lesaloonv2-0.net/'],
   caps: {
     categorymappings: [
       { id: '13', cat: 'Movies/BluRay', desc: 'Films BD-Rip / BRRip' },
@@ -79,15 +79,17 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
     },
   },
   login: {
-    path: 'index.php?page=login',
+    path: 'yupy_login.php',
     method: 'form',
     form: 'form[action^="index.php?page=login"]',
     inputs: {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
+      rememberme: 'forever',
     },
     captcha: {
       type: 'image',
