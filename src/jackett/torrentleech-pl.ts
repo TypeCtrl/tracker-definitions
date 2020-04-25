@@ -70,12 +70,7 @@ export const definition: TrackerDefinition = {
       cat_film: '',
       napisy: 0,
     },
-    keywordsfilters: [
-      {
-        name: 're_replace',
-        args: ['(^\\D.*)((?:19|20)\\d{2})(.*$)', '$1$3'],
-      },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: [' +(?:19|20)\\d{2} *$', ''] }],
     rows: {
       selector:
         'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',

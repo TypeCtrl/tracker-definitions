@@ -715,6 +715,9 @@ export const jnnmClub = jjnnmClub;
 import { definition as jjnntt } from './nntt';
 export const jnntt = jjnntt;
 
+import { definition as jjnordichd } from './nordichd';
+export const jnordichd = jjnordichd;
+
 import { definition as jjnostalgic } from './nostalgic';
 export const jnostalgic = jjnostalgic;
 
@@ -1480,6 +1483,7 @@ export const definitions = [
   jjnitro,
   jjnnmClub,
   jjnntt,
+  jjnordichd,
   jjnostalgic,
   jjnyaaPantsu,
   jjnyaasi,

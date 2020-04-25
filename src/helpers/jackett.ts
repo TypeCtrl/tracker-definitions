@@ -238,6 +238,7 @@ export const jackettSites = [
   'nitro',
   'nnm-club',
   'nntt',
+  'nordichd',
   'nostalgic',
   'nyaa-pantsu',
   'nyaasi',
