@@ -3,13 +3,22 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   site: 'acgsou',
   name: 'ACGsou',
-  description: 'ACGsou is a CHINESE Public torrent tracker for ANIME',
+  description: 'ACGsou (36DM) is a CHINESE Public torrent tracker for ANIME',
   language: 'zh-CN',
   type: 'public',
   followredirect: true,
   encoding: 'UTF-8',
-  links: ['https://www.36dm.club/'],
-  legacylinks: ['https://www.acgsou.com/'],
+  links: ['https://www.36dm.club/', 'https://www.36dm.com/'],
+  legacylinks: [
+    'https://www.acgsou.com/',
+    'https://acgsou.com/',
+    'http://www.acgsou.com/',
+    'http://acgsou.com/',
+    'http://www.36dm.club/',
+    'https://36dm.com/',
+    'http://36dm.com/',
+    'http://www.36dm.com/',
+  ],
   caps: {
     categorymappings: [
       { id: '2', cat: 'TV/Anime', desc: '动画 (Anime)' },

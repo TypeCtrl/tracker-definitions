@@ -7,6 +7,9 @@ export const j1337X = jj1337X;
 import { definition as jj2Fast4You } from './2fast4you';
 export const j2Fast4You = jj2Fast4You;
 
+import { definition as jj32Pages } from './32pages';
+export const j32Pages = jj32Pages;
+
 import { definition as jj3Changtrai } from './3changtrai';
 export const j3Changtrai = jj3Changtrai;
 
@@ -1247,6 +1250,7 @@ export const definitions = [
   jj0Daykiev,
   jj1337X,
   jj2Fast4You,
+  jj32Pages,
   jj3Changtrai,
   jj3Dtorrents,
   jj3Evils,

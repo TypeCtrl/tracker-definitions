@@ -159,7 +159,7 @@
       "seeders": { "selector": "td:nth-child(5)" },
       "leechers": { "selector": "td:nth-child(6)" },
       "size": { "selector": "td:nth-child(7)" },
-      "downloadvolumefactor": { "text": 1 },
+      "downloadvolumefactor": { "case": { "span.free": 0, "*": 1 } },
       "uploadvolumefactor": { "text": 1 },
       "minimumratio": { "text": 0.8 },
       "minimumseedtime": { "text": 259200 }

@@ -2,6 +2,7 @@ export const jackettSites = [
   '0daykiev',
   '1337x',
   '2fast4you',
+  '32pages',
   '3changtrai',
   '3dtorrents',
   '3evils',
