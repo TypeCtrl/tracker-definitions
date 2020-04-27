@@ -24,6 +24,13 @@ export const definition: TrackerDefinition = {
         'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the 32Pages Web Site. Otherwise just leave it empty.',
     },
     {
+      name: 'lockip',
+      type: 'select',
+      label: 'Lock session to my IP address',
+      default: '1',
+      options: { '0': 'no', '1': 'yes' },
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -58,6 +65,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       twostep_pub: '{{ .Config.2facode }}',
       keeploggedin: 1,
+      lockip: '{{ .Config.lockip }}',
     },
     error: [{ selector: '#formerror' }],
     test: { path: 'torrents.php', selector: '#nav_userinfo' },

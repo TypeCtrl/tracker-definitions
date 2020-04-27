@@ -36,7 +36,6 @@ export const definition: TrackerDefinition = {
       { id: '113', cat: 'Console/Wii', desc: 'Games/Wii' },
       { id: '86', cat: 'PC/Games', desc: 'Games/Windows' },
       { id: '104', cat: 'Console/Xbox360', desc: 'Games/Xbox360' },
-      { id: '104', cat: 'Console/Xbox360', desc: 'Games/Xbox360' },
       { id: '116', cat: 'PC/Games', desc: 'Linux/Spiele' },
       {
         id: '53',

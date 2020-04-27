@@ -1183,6 +1183,9 @@ export const junionfansub = jjunionfansub;
 import { definition as jjuniongang } from './uniongang';
 export const juniongang = jjuniongang;
 
+import { definition as jjuniotaku } from './uniotaku';
+export const juniotaku = jjuniotaku;
+
 import { definition as jjunlimitz } from './unlimitz';
 export const junlimitz = jjunlimitz;
 
@@ -1642,6 +1645,7 @@ export const definitions = [
   jjuniondht,
   jjunionfansub,
   jjuniongang,
+  jjuniotaku,
   jjunlimitz,
   jjvizuk,
   jjwdt,

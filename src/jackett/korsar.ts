@@ -868,11 +868,6 @@ export const definition: TrackerDefinition = {
         desc: 'Музыка - Сборники отечественного шансона (Lossy)',
       },
       {
-        id: '555',
-        cat: 'Audio/Lossless',
-        desc: 'Музыка - Саундтреки к зарубежным фильмам (Lossless)',
-      },
-      {
         id: '560',
         cat: 'Audio/Lossless',
         desc: 'Музыка - Зарубежная музыка других жанров (Lossless)',
@@ -1195,7 +1190,6 @@ export const definition: TrackerDefinition = {
         desc: 'Всё, что касается аудио и видео',
       },
       { id: '769', cat: 'Other', desc: 'Ваши фотоработы' },
-      { id: '771', cat: 'Audio', desc: 'Музыка - Psychedelic Trance' },
       {
         id: '772',
         cat: 'Audio/Lossless',

@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://torrent.vizuk.li/'],
   legacylinks: ['http://torrent.vizuk.li/'],
-  certificates: ['ef305c114b583a155728ec7802f4e8c4bcd9a526'],
+  certificates: ['96E34ED4DABD2385DCE9538C80F6F0F02B44AE1A'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Películas' },

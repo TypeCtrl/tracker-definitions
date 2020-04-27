@@ -38,8 +38,7 @@
       { "id": "7", "cat": "TV/SD", "desc": "Seriály CZ/SK dabing" },
       { "id": "37", "cat": "TV/SD", "desc": "Seriály CZ/SK titulky" },
       { "id": "9", "cat": "XXX/XviD", "desc": "XXX CZ/SK dabing" },
-      { "id": "32", "cat": "XXX/x264", "desc": "XXX HD CZ/SK dabing" },
-      { "id": "27", "cat": "Other", "desc": "TreZzoR rls" }
+      { "id": "32", "cat": "XXX/x264", "desc": "XXX HD CZ/SK dabing" }
     ],
     "modes": {
       "search": ["q"],

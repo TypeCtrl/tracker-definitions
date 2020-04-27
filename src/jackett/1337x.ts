@@ -25,7 +25,11 @@ export const definition: TrackerDefinition = {
     'https://1337x.uk-unblock.xyz/',
     'https://1337x.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://1337x.unblocked.earth/', 'https://1337x.unblockit.pro/'],
+  legacylinks: [
+    'https://1337x.unblocked.earth/',
+    'https://1337x.unblockit.pro/',
+    'https://1337x.black-mirror.xyz/',
+  ],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime/Anime' },

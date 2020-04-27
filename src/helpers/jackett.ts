@@ -394,6 +394,7 @@ export const jackettSites = [
   'uniondht',
   'unionfansub',
   'uniongang',
+  'uniotaku',
   'unlimitz',
   'vizuk',
   'wdt',
