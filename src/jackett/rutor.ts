@@ -7,8 +7,10 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'http://rutor.info/',
+  links: ['http://rutor.info/'],
+  legacylinks: [
+    'http://live-rutor.org/',
+    'https://rutor.root.yt/',
     'http://new-rutor.org/',
     'https://rutor.black-mirror.xyz/',
     'https://rutor.unblocked.casa/',
@@ -16,7 +18,6 @@ export const definition: TrackerDefinition = {
     'https://rutor.uk-unblock.xyz/',
     'https://rutor.ind-unblock.xyz/',
   ],
-  legacylinks: ['http://live-rutor.org/', 'https://rutor.root.yt/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },

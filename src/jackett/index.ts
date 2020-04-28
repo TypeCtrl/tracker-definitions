@@ -58,6 +58,9 @@ export const jamigosshare = jjamigosshare;
 import { definition as jjanirena } from './anirena';
 export const janirena = jjanirena;
 
+import { definition as jjanisource } from './anisource';
+export const janisource = jjanisource;
+
 import { definition as jjarabafenice } from './arabafenice';
 export const jarabafenice = jjarabafenice;
 
@@ -303,6 +306,9 @@ export const jebooksShares = jjebooksShares;
 
 import { definition as jjefectodoppler } from './efectodoppler';
 export const jefectodoppler = jjefectodoppler;
+
+import { definition as jjehentai } from './ehentai';
+export const jehentai = jjehentai;
 
 import { definition as jjelitetorrentBiz } from './elitetorrent-biz';
 export const jelitetorrentBiz = jjelitetorrentBiz;
@@ -889,9 +895,6 @@ export const jseedfile = jjseedfile;
 import { definition as jjshareisland } from './shareisland';
 export const jshareisland = jjshareisland;
 
-import { definition as jjsharespacedb } from './sharespacedb';
-export const jsharespacedb = jjsharespacedb;
-
 import { definition as jjshareuniversity } from './shareuniversity';
 export const jshareuniversity = jjshareuniversity;
 
@@ -1270,6 +1273,7 @@ export const definitions = [
   jjalexfilm,
   jjamigosshare,
   jjanirena,
+  jjanisource,
   jjarabafenice,
   jjarabp2P,
   jjarenabg,
@@ -1352,6 +1356,7 @@ export const definitions = [
   jjebookparadijs,
   jjebooksShares,
   jjefectodoppler,
+  jjehentai,
   jjelitetorrentBiz,
   jjempornium,
   jjeniahd,
@@ -1547,7 +1552,6 @@ export const definitions = [
   jjsdbits,
   jjseedfile,
   jjshareisland,
-  jjsharespacedb,
   jjshareuniversity,
   jjsharewood,
   jjshellife,
