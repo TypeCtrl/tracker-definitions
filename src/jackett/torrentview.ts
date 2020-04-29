@@ -53,9 +53,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'bo_table' }],
       },
-      title: {
-        selector: 'div.media-content > a[href^="./board.php"] > span',
-      },
+      title: { selector: 'div.media-content > a[href^="./board.php"]' },
       details: {
         selector: 'div.media-content > a[href^="./board.php"]',
         attribute: 'href',

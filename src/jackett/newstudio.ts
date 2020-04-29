@@ -95,9 +95,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { text: 1 },
       leechers: { text: 1 },
-      downloadvolumefactor: {
-        case: { 'img[src="images/tor_gold.gif"]': 0, '*': 1 },
-      },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },
   },

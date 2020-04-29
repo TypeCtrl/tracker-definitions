@@ -403,6 +403,7 @@ export const jackettSites = [
   'world-of-tomorrow',
   'x-ite.me',
   'xbytes2',
+  'xfsub',
   'xtremefile',
   'xtremezone',
   'xwtclassics',

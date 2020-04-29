@@ -1210,6 +1210,9 @@ export const jxIteMe = jjxIteMe;
 import { definition as jjxbytes2 } from './xbytes2';
 export const jxbytes2 = jjxbytes2;
 
+import { definition as jjxfsub } from './xfsub';
+export const jxfsub = jjxfsub;
+
 import { definition as jjxtremefile } from './xtremefile';
 export const jxtremefile = jjxtremefile;
 
@@ -1657,6 +1660,7 @@ export const definitions = [
   jjworldOfTomorrow,
   jjxIteMe,
   jjxbytes2,
+  jjxfsub,
   jjxtremefile,
   jjxtremezone,
   jjxwtclassics,

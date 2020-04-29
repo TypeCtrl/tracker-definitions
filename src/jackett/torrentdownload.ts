@@ -5,7 +5,7 @@ export const definition: TrackerDefinition = {
   name: 'TorrentDownload',
   description: 'TorrentDownload is a Public general torrent index',
   language: 'en-US',
-  type: 'public',
+  type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
   links: [
@@ -48,7 +48,7 @@ export const definition: TrackerDefinition = {
       type: 'info',
       label: 'How to get the Cookie',
       default:
-        "<ol><li>Access this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
+        "<ol><li>Access this tracker with your browser<li>Solve the challenge<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
     },
     {
       name: 'sort',

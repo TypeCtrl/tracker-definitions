@@ -7,11 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'https://yourbittorrent.com/',
-    'https://yourbittorrent2.com/',
-    'https://yourbittorrent.host/',
-  ],
+  links: ['https://yourbittorrent.com/', 'https://yourbittorrent2.com/'],
+  legacylinks: ['https://yourbittorrent.host/'],
   caps: {
     modes: {
       search: ['q'],
