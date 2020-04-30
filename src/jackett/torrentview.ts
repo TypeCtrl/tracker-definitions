@@ -53,13 +53,13 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'bo_table' }],
       },
-      title: { selector: 'div.media-content > a[href^="./board.php"]' },
+      title: { selector: 'div.media-heading > a[href^="./board.php"]' },
       details: {
-        selector: 'div.media-content > a[href^="./board.php"]',
+        selector: 'div.media-heading > a[href^="./board.php"]',
         attribute: 'href',
       },
       download: {
-        selector: 'div.media-content > a[href^="./board.php"]',
+        selector: 'div.media-heading > a[href^="./board.php"]',
         attribute: 'href',
       },
       date: {
@@ -68,7 +68,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'dateparse', args: '2006-01-02T15:04:05+09:00' }],
       },
       cat: {
-        selector: 'div.media-content > a[href^="./board.php"]',
+        selector: 'div.media-heading > a[href^="./board.php"]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'bo_table' }],
       },

@@ -304,7 +304,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'search.php' }],
     inputs: {
       tracker_search: 'torrent',
-      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}2020{{end}}',
+      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
       terms: 'all',
       author: '',
       sc: 1,

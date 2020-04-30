@@ -79,7 +79,12 @@ export const definition: TrackerDefinition = {
         cat: 'Other',
         desc: '토렌트 마그넷 자료실 (Magnets)',
       },
-      { id: 'torrent_netflix', cat: 'Movies', desc: '넷플릭스 (Netflix)' },
+      {
+        id: 'torrent_netflix',
+        cat: 'Movies',
+        desc: '넷플릭스 (Netflix)',
+      },
+      { id: 'torrent', cat: 'Other', desc: '토렌트 기타 (Other)' },
     ],
     modes: {
       search: ['q'],
@@ -92,17 +97,22 @@ export const definition: TrackerDefinition = {
   download: {
     selector: 'a[href*="magnet:?xt="]',
     attribute: 'href',
-    filters: [
-      { name: 'querystring', args: 'magnet:?xt' },
-      { name: 'prepend', args: 'magnet:?xt=' },
-    ],
+    filters: [{ name: 're_replace', args: ['^(.+?\\/magnet.php\\?)(.+?)$', '$2'] }],
   },
   search: {
-    paths: [{ path: 'search.php' }],
+    paths: [
+      { path: 'search.php' },
+      { path: 'search.php', inputs: { page: 2 } },
+      { path: 'search.php', inputs: { page: 3 } },
+      { path: 'search.php', inputs: { page: 4 } },
+      { path: 'search.php', inputs: { page: 5 } },
+    ],
     inputs: {
-      keyword: '{{ if .Keywords }}{{ .Keywords }}{{else}}2020{{end}}',
+      keyword: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
     },
-    rows: { selector: 'section.sch_res_list > ul > li' },
+    rows: {
+      selector: 'section.sch_res_list > ul > li:has(span.sch_datetime:contains(":"))',
+    },
     fields: {
       category: {
         selector: 'a[href^="bbs/./board.php?"]',

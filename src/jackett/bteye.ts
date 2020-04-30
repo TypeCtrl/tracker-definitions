@@ -26,7 +26,11 @@ export const definition: TrackerDefinition = {
   ],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
-    paths: [{ path: 'q/{{ if .Keywords }}{{ .Keywords }}{{else}}2020{{end}}' }],
+    paths: [
+      {
+        path: 'q/{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
+      },
+    ],
     rows: { selector: 'div.plist', filters: [{ name: 'andmatch' }] },
     fields: {
       category: { text: 1 },

@@ -331,9 +331,6 @@ export const jesharenet = jjesharenet;
 import { definition as jjestone } from './estone';
 export const jestone = jjestone;
 
-import { definition as jjestrenosdtl } from './estrenosdtl';
-export const jestrenosdtl = jjestrenosdtl;
-
 import { definition as jjethor } from './ethor';
 export const jethor = jjethor;
 
@@ -892,6 +889,9 @@ export const jsdbits = jjsdbits;
 import { definition as jjseedfile } from './seedfile';
 export const jseedfile = jjseedfile;
 
+import { definition as jjsexypics } from './sexypics';
+export const jsexypics = jjsexypics;
+
 import { definition as jjshareisland } from './shareisland';
 export const jshareisland = jjshareisland;
 
@@ -1367,7 +1367,6 @@ export const definitions = [
   jjerzsebet,
   jjesharenet,
   jjestone,
-  jjestrenosdtl,
   jjethor,
   jjettv,
   jjexkinoray,
@@ -1554,6 +1553,7 @@ export const definitions = [
   jjscenerush,
   jjsdbits,
   jjseedfile,
+  jjsexypics,
   jjshareisland,
   jjshareuniversity,
   jjsharewood,
