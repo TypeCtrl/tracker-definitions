@@ -2,13 +2,14 @@ import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
   site: 'bitturk',
-  name: 'BitTurk',
+  name: 'BiTTuRK',
   description:
-    'BitTurk is a Turkish Private Torrent Tracker for HD MOVIES / TV / GENERAL. This Indexer is for English only.',
+    'BiTTuRK is a Turkish Private Torrent Tracker for HD MOVIES / TV / GENERAL. This Indexer is for English only.',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.bitturk.net/'],
+  links: ['http://bitturk.net/'],
+  legacylinks: ['http://www.bitturk.net/'],
   caps: {
     categorymappings: [
       { id: '69', cat: 'Movies', desc: 'BiTTuRK Altın' },

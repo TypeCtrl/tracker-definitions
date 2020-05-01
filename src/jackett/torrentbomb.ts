@@ -73,6 +73,7 @@ export const definition: TrackerDefinition = {
       },
       { id: 'torrent_game', cat: 'Console', desc: '토렌트 게임 (Games)' },
       { id: 'torrent_util', cat: 'PC', desc: '토렌트 유틸 (Software)' },
+      { id: 'torrent_etc', cat: 'Other', desc: '토렌트 기타 (Other)' },
       { id: 'etc', cat: 'Other', desc: '토렌트 기타 (Other)' },
       {
         id: 'torrent_magnet',
@@ -85,6 +86,7 @@ export const definition: TrackerDefinition = {
         desc: '넷플릭스 (Netflix)',
       },
       { id: 'torrent', cat: 'Other', desc: '토렌트 기타 (Other)' },
+      { id: 'send', cat: 'Other', desc: '토렌트 기타 (Other)' },
     ],
     modes: {
       search: ['q'],

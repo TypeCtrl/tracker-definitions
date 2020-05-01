@@ -42,7 +42,11 @@
       "type": "{{ .Config.type-id }}",
       "cat": "{{ .Config.type-id }}"
     },
-    "rows": { "selector": "table.listing tr.category_0", "after": 1 },
+    "rows": {
+      "selector": "table.listing tr.category_0",
+      "after": 1,
+      "filters": [{ "name": "andmatch" }]
+    },
     "fields": {
       "category": {
         "selector": "a[href*=\"?cat=\"]",

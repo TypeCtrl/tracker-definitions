@@ -31,6 +31,10 @@
     "categorymappings": [
       { "id": "Мультфильмы", "cat": "TV/Anime" },
       { "id": "Программы", "cat": "PC" },
+      { "id": "Программы Видео", "cat": "PC" },
+      { "id": "Программы Web Оформление", "cat": "PC" },
+      { "id": "Linux", "cat": "PC" },
+      { "id": "Мобилка", "cat": "PC" },
       { "id": "Литература", "cat": "Books" },
       { "id": "Игры", "cat": "PC/Games" },
       { "id": "Фильмы", "cat": "Movies" },

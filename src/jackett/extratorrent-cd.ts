@@ -29,7 +29,10 @@ export const definition: TrackerDefinition = {
   ],
   search: {
     paths: [{ path: 'search/?search={{ .Keywords }}' }],
-    rows: { selector: 'tr[class^="tl"]' },
+    rows: {
+      selector: 'tr[class^="tl"]',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       category: { text: 'other' },
       title: { selector: 'a[href*="/torrent/"][title^="view"]' },

@@ -21,7 +21,6 @@
         "15": "Art - Pictures",
         "21": "Real Life - Photobooks and Pictures",
         "22": "Real Life - Videos",
-        "27": "Unknown",
         "_": "All categories",
         "1_": "Art",
         "2_": "Real Life"
@@ -53,7 +52,24 @@
       { "id": "2_", "cat": "XXX", "desc": "Adult Real Life" },
       { "id": "21", "cat": "XXX", "desc": "Adult Photobooks and Pictures" },
       { "id": "22", "cat": "XXX", "desc": "Adult Videos" },
-      { "id": "27", "cat": "XXX", "desc": "Unknown" }
+      { "id": "23", "cat": "XXX", "desc": "Unknown" },
+      { "id": "24", "cat": "XXX", "desc": "Unknown" },
+      { "id": "25", "cat": "XXX", "desc": "Unknown" },
+      { "id": "26", "cat": "XXX", "desc": "Unknown" },
+      { "id": "27", "cat": "XXX", "desc": "Unknown" },
+      { "id": "31", "cat": "XXX", "desc": "Unknown" },
+      { "id": "32", "cat": "XXX", "desc": "Unknown" },
+      { "id": "33", "cat": "XXX", "desc": "Unknown" },
+      { "id": "34", "cat": "XXX", "desc": "Unknown" },
+      { "id": "35", "cat": "XXX", "desc": "Unknown" },
+      { "id": "36", "cat": "XXX", "desc": "Unknown" },
+      { "id": "37", "cat": "XXX", "desc": "Unknown" },
+      { "id": "38", "cat": "XXX", "desc": "Unknown" },
+      { "id": "39", "cat": "XXX", "desc": "Unknown" },
+      { "id": "310", "cat": "XXX", "desc": "Unknown" },
+      { "id": "311", "cat": "XXX", "desc": "Unknown" },
+      { "id": "312", "cat": "XXX", "desc": "Unknown" },
+      { "id": "313", "cat": "XXX", "desc": "Unknown" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q"] }
   },

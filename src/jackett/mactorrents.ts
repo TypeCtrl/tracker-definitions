@@ -14,17 +14,21 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: 'mac-os-apps', cat: 'PC/Mac' },
       { id: 'mac-games', cat: 'PC/Games' },
+      { id: 'uncategorized', cat: 'Other' },
     ],
   },
   settings: [],
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },
-    rows: { selector: 'div.iso-item article:has(a.download)' },
+    rows: {
+      selector: 'div.iso-item article:has(a.download)',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       title: { selector: 'div.blog-content h3 a' },
       category: {
-        selector: 'a[href*="/mac-os-apps/"], a[href*="/mac-games/"]',
+        selector: 'a[href*="/mac-os-apps/"], a[href*="/mac-games/"], a[href*="/uncategorized/"]',
         attribute: 'href',
         filters: [{ name: 'split', args: ['/', 3] }],
       },
