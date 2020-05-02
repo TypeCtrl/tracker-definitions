@@ -22,7 +22,11 @@
       "title": { "selector": "div.movief" },
       "details": { "selector": "a", "attribute": "href" },
       "download": { "selector": "a", "attribute": "href" },
-      "description": { "selector": "a > span", "attribute": "class" },
+      "description": {
+        "selector": "a > span",
+        "attribute": "class",
+        "optional": true
+      },
       "banner": { "selector": "img", "attribute": "src" },
       "date": { "text": "now" },
       "size": { "text": "512 MB" },

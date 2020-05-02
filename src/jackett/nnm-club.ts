@@ -476,6 +476,11 @@ export const definition: TrackerDefinition = {
       },
       { id: '673', cat: 'Audio', desc: ' |- Experimental Electronic' },
       {
+        id: '1315',
+        cat: 'Audio',
+        desc: ' |- Industrial, EBM, Dark Electro, Noise (Lossless)',
+      },
+      {
         id: '671',
         cat: 'Audio',
         desc: ' |- Industrial, EBM, Dark Electro',
@@ -488,6 +493,16 @@ export const definition: TrackerDefinition = {
         desc: ' |- Synthpop, New Wave (Lossless)',
       },
       { id: '672', cat: 'Audio', desc: ' |- Synthpop, New Wave' },
+      {
+        id: '1316',
+        cat: 'Audio',
+        desc: ' |- Dubstep, Future Garage, Bass Music, UK Garage (Lossless)',
+      },
+      {
+        id: '1317',
+        cat: 'Audio',
+        desc: ' |- Dubstep, Future Garage, Bass Music, UK Garage',
+      },
       {
         id: '981',
         cat: 'Audio',
@@ -652,27 +667,7 @@ export const definition: TrackerDefinition = {
       { id: '603', cat: 'TV', desc: 'Спорт и активный отдых' },
       { id: '1309', cat: 'TV', desc: ' |- Футбол. Чемпионат мира 2018' },
       { id: '1308', cat: 'TV', desc: ' |- Хоккей. Чемпионат мира 2018' },
-      {
-        id: '1301',
-        cat: 'TV',
-        desc: ' |- XXIII Зимние Олимпийские игры. Пхёнчхан 2018',
-      },
-      {
-        id: '1287',
-        cat: 'TV',
-        desc: ' |- XXXI Летние Олимпийские игры. Рио-де-Жанейро 2016',
-      },
-      {
-        id: '1282',
-        cat: 'TV',
-        desc: ' |- Футбол. Чемпионат Европы 2016',
-      },
       { id: '1206', cat: 'TV', desc: ' |- Футбол. Чемпионат Мира 2014' },
-      {
-        id: '1200',
-        cat: 'TV',
-        desc: ' |- ХI Зимние Паралимпийские игры. Сочи 2014',
-      },
       {
         id: '1194',
         cat: 'TV',
@@ -939,6 +934,7 @@ export const definition: TrackerDefinition = {
       { id: '387', cat: 'Other', desc: ' |- Xbox 360' },
       { id: '388', cat: 'Other', desc: ' |- Wii' },
       { id: '1264', cat: 'Other', desc: ' |- Wii U' },
+      { id: '1318', cat: 'Other', desc: ' |- Switch' },
       { id: '385', cat: 'Other', desc: ' |- PS1' },
       { id: '386', cat: 'Other', desc: ' |- PS2' },
       { id: '848', cat: 'Other', desc: ' |- PS3' },
@@ -1269,11 +1265,6 @@ export const definition: TrackerDefinition = {
       { id: '1073', cat: 'Other', desc: ' |- Интернет-творчество' },
       { id: '892', cat: 'Other', desc: 'Архив Мультфильмов' },
       { id: '91', cat: 'Other', desc: ' |- Архив Видео' },
-      {
-        id: '150',
-        cat: 'Other',
-        desc: ' |- Архив неактуальных Экранок и видео с Рекламой',
-      },
       {
         id: '668',
         cat: 'Other',

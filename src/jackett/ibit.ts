@@ -25,6 +25,7 @@ export const definition: TrackerDefinition = {
       { id: 'Anime', cat: 'TV/Anime' },
       { id: 'Books', cat: 'Books' },
       { id: 'Other', cat: 'Other' },
+      { id: 'Tutorials', cat: 'Other' },
     ],
   },
   settings: [

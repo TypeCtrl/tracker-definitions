@@ -973,6 +973,7 @@ export const definition: TrackerDefinition = {
       { id: '804', cat: 'XXX', desc: 'XXX - Video 3D' },
       { id: '970', cat: 'XXX', desc: 'XXX - Virtual Reality' },
       { id: '806', cat: 'XXX', desc: 'XXX - Wallpapers' },
+      { id: '811', cat: 'XXX', desc: 'XXX - Books' },
       { id: '2', cat: 'Books', desc: 'Books' },
       { id: '625', cat: 'Books', desc: 'Books - Adventure' },
       { id: '51', cat: 'Books', desc: 'Books - Audio books' },

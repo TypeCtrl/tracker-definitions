@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },
-    rows: { selector: 'article' },
+    rows: { selector: 'article:not(:has(a[title="DMCA"]))' },
     fields: {
       category: { text: 'other' },
       'category|noappend': {

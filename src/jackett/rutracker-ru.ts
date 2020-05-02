@@ -706,6 +706,7 @@ export const definition: TrackerDefinition = {
         cat: 'PC',
         desc: ' |- Разное (Программы для работы с мультимедиа и 3D)',
       },
+      { id: '1505', cat: 'PC', desc: ' |- Безопасность' },
       { id: '1287', cat: 'PC/Phone-Other', desc: 'Видео' },
       {
         id: '1307',

@@ -22,6 +22,7 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
     categorymappings: [
+      { id: '0', cat: 'Other' },
       { id: '1', cat: 'Movies' },
       { id: '2', cat: 'Audio' },
       { id: '3', cat: 'TV' },

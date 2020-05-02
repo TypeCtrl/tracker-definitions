@@ -42,6 +42,7 @@ export const definition: TrackerDefinition = {
       { id: 'Фильмы', cat: 'Movies' },
       { id: 'Видео', cat: 'Movies' },
       { id: 'Музыка', cat: 'Audio' },
+      { id: 'Музыка Фильмы', cat: 'Audio' },
       { id: 'Фильмы Музыка Видео', cat: 'Audio/Video' },
       { id: 'Музыка Видео', cat: 'Audio/Video' },
       { id: 'Другие категории', cat: 'Other' },

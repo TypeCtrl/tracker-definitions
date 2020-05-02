@@ -29,6 +29,8 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'TV/Anime', desc: 'Anime' },
       { id: '2', cat: 'Books', desc: 'Books' },
       { id: '9', cat: 'Other', desc: 'Other' },
+      { id: '0', cat: 'Other', desc: 'Other' },
+      { id: '6', cat: 'Other', desc: 'Pics' },
     ],
     modes: {
       search: ['q'],
@@ -54,9 +56,9 @@ export const definition: TrackerDefinition = {
     attribute: 'href',
   },
   search: {
-    paths: [{ path: '{{if .Keywords}}/search/{{else}}/today/{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}/search/{{else}}/today/{{end}}' }],
     inputs: {
-      $raw: '{{range .Categories}}s_cat={{.}}&{{end}}',
+      $raw: '{{ range .Categories }}s_cat={{.}}&{{end}}',
       search: '{{ .Keywords }}',
     },
     rows: {
@@ -79,7 +81,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'img[src^="/templates/new/images/icons/menu_icon"]',
         attribute: 'src',
-        filters: [{ name: 'regexp', args: '([\\d,]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
