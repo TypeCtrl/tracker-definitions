@@ -22,6 +22,7 @@ export const definition: TrackerDefinition = {
       { id: 'list', cat: 'Other' },
       { id: 'male', cat: 'XXX' },
       { id: 'music', cat: 'Audio' },
+      { id: 'sellsy', cat: 'Audio/Lossless' },
       { id: 'play-circle', cat: 'TV' },
       { id: 'smile-o', cat: 'TV/Anime' },
       { id: 'television', cat: 'TV' },

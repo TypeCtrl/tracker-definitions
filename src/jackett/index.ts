@@ -496,6 +496,9 @@ export const jhdsky = jjhdsky;
 import { definition as jjhdspain } from './hdspain';
 export const jhdspain = jjhdspain;
 
+import { definition as jjhdstreet } from './hdstreet';
+export const jhdstreet = jjhdstreet;
+
 import { definition as jjhdtime } from './hdtime';
 export const jhdtime = jjhdtime;
 
@@ -738,6 +741,9 @@ export const jonejav = jjonejav;
 
 import { definition as jjonlineselfeducation } from './onlineselfeducation';
 export const jonlineselfeducation = jjonlineselfeducation;
+
+import { definition as jjoshenpt } from './oshenpt';
+export const joshenpt = jjoshenpt;
 
 import { definition as jjourbits } from './ourbits';
 export const jourbits = jjourbits;
@@ -1422,6 +1428,7 @@ export const definitions = [
   jjhdroute,
   jjhdsky,
   jjhdspain,
+  jjhdstreet,
   jjhdtime,
   jjhdtorrentsit,
   jjhdturk,
@@ -1503,6 +1510,7 @@ export const definitions = [
   jjnyaasi,
   jjonejav,
   jjonlineselfeducation,
+  jjoshenpt,
   jjourbits,
   jjoxtorrent,
   jjp2Pbg,

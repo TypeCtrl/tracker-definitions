@@ -28,6 +28,7 @@ export const definition: TrackerDefinition = {
       { id: 'other', cat: 'Other' },
       { id: 'photos', cat: 'Other' },
       { id: 'pictures', cat: 'Other' },
+      { id: 'unknown', cat: 'Other' },
     ],
   },
   settings: [],
