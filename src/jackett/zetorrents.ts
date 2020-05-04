@@ -57,7 +57,7 @@ export const definition: TrackerDefinition = {
             name: 'replace',
             args: ['VOSTFR', '{{ .Result.site_date }} VOSTFR'],
           },
-          { name: 're_replace', args: ['(\\w+)$', ''] },
+          { name: 're_replace', args: ['(\\d{4})$', ''] },
           { name: 'replace', args: ['WEBRIP', 'WEBDL'] },
         ],
       },

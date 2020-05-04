@@ -6,7 +6,10 @@
   "type": "private",
   "encoding": "UTF-8",
   "links": ["https://takeabyte-nordic.org/"],
-  "certificates": ["8b88d216d270b9b672ba44fbbdd5ca3d8919e5fd"],
+  "certificates": [
+    "8b88d216d270b9b672ba44fbbdd5ca3d8919e5fd",
+    "a36a3d8f50b9d638a9e0d30a66ac23572acc55ed"
+  ],
   "caps": {
     "categorymappings": [
       { "id": "3", "cat": "Movies", "desc": "Movies" },

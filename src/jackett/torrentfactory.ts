@@ -80,6 +80,10 @@ export const definition: TrackerDefinition = {
         desc: 'Ebooks - Publicacion Mensual',
       },
       { id: '97', cat: 'Books/Comics', desc: 'Ebooks - Comic eBooks' },
+      { id: '50', cat: 'Other', desc: 'Desconocida' },
+      { id: '56', cat: 'Other', desc: 'Desconocida' },
+      { id: '100', cat: 'Other', desc: 'Desconocida' },
+      { id: '108', cat: 'Other', desc: 'Desconocida' },
     ],
     modes: {
       search: ['q'],

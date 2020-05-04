@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.haidan.cc/'],
+  links: ['https://www.haidan.video/'],
+  legacylinks: ['https://www.haidan.cc/'],
   caps: {
     categorymappings: [
       { id: '300', cat: 'Movies/UHD', desc: 'Movies UHD-4K' },

@@ -188,8 +188,13 @@ export const definition: TrackerDefinition = {
         selector: 'a[onmouseover][href^="torrents-details.php?id="]',
         attribute: 'onmouseover',
         filters: [
-          { name: 'regexp', args: ' Le : </b>(.*?)<br' },
-          { name: 'dateparse', args: '02-01-2006' },
+          { name: 'regexp', args: 'Partagé Voilà : </b>(.*?)<br' },
+          { name: 'replace', args: ['heure', 'hour'] },
+          { name: 'replace', args: ['jour', 'day'] },
+          { name: 'replace', args: ['semaine', 'week'] },
+          { name: 'replace', args: ['mois', 'months'] },
+          { name: 'replace', args: ['an', 'year'] },
+          { name: 'append', args: ' ago' },
         ],
       },
       downloadvolumefactor: {

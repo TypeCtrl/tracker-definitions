@@ -107,6 +107,7 @@ export const definition: TrackerDefinition = {
           ':contains("Hry")': 3,
           ':contains("Hudba")': 2,
           ':contains("Hudba DVD/HD")': 34,
+          ':contains("Hudební video")': 34,
           ':contains("Knihy")': 6,
           ':contains("Konzole")': 13,
           ':contains("Mluvené slovo")': 32,

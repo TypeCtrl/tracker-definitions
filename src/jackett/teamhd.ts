@@ -71,6 +71,7 @@ export const definition: TrackerDefinition = {
       free: 0,
       year: '',
     },
+    keywordsfilters: [{ name: 're_replace', args: [' +(?:19|20)\\d{2} *$', ''] }],
     rows: { selector: 'table.browse > tbody > tr' },
     fields: {
       download: {

@@ -40,6 +40,7 @@ export const definition: TrackerDefinition = {
       { id: '35', cat: 'Audio', desc: 'Podcast' },
       { id: '36', cat: 'Books/Magazines', desc: 'Edicola' },
       { id: '37', cat: 'PC/Phone-Other', desc: 'Mobile' },
+      { id: '0', cat: 'Other', desc: 'UnKnown' },
     ],
     modes: {
       search: ['q'],
@@ -58,7 +59,8 @@ export const definition: TrackerDefinition = {
       selector: 'div.showrelease_tb table tbody tr:not(tr:nth-child(1))',
     },
     fields: {
-      category: {
+      category: { text: 0 },
+      'category|noappend': {
         selector: 'td:nth-child(3) a',
         attribute: 'href',
         filters: [

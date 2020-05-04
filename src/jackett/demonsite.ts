@@ -96,7 +96,7 @@ export const definition: TrackerDefinition = {
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table > tbody > tr:has(a[href^="download.php?torrent="])',
+      selector: 'table[width="880px"] > tbody > tr:has(a[href^="download.php?torrent="])',
     },
     fields: {
       category: {
