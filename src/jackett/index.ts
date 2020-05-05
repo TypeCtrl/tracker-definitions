@@ -820,6 +820,9 @@ export const jptfiles = jjptfiles;
 import { definition as jjpthome } from './pthome';
 export const jpthome = jjpthome;
 
+import { definition as jjptmsg } from './ptmsg';
+export const jptmsg = jjptmsg;
+
 import { definition as jjptsbao } from './ptsbao';
 export const jptsbao = jjptsbao;
 
@@ -930,6 +933,9 @@ export const jsnowpt = jjsnowpt;
 
 import { definition as jjsosulki } from './sosulki';
 export const jsosulki = jjsosulki;
+
+import { definition as jjsoulvoice } from './soulvoice';
+export const jsoulvoice = jjsoulvoice;
 
 import { definition as jjsoundpark } from './soundpark';
 export const jsoundpark = jjsoundpark;
@@ -1536,6 +1542,7 @@ export const definitions = [
   jjpterclub,
   jjptfiles,
   jjpthome,
+  jjptmsg,
   jjptsbao,
   jjpuntotorrent,
   jjpurovicio,
@@ -1573,6 +1580,7 @@ export const definitions = [
   jjskytorrentsclone,
   jjsnowpt,
   jjsosulki,
+  jjsoulvoice,
   jjsoundpark,
   jjspacetorrent,
   jjspeedmasterhd,

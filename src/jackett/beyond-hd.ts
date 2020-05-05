@@ -47,8 +47,8 @@ export const definition: TrackerDefinition = {
     method: 'form',
     form: 'form[action$="/login"]',
     captcha: {
-      type: 'text',
-      selector: 'div[style*="#999999;"]',
+      type: 'image',
+      selector: 'img[src^="/captcha?_CAPTCHA"]',
       input: 'key',
     },
     inputs: {
