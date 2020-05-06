@@ -11,14 +11,17 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torrentdownloads.info/',
     'https://www.torrentdownloads.me/',
-    'https://torrentdownloads.unblockit.one/',
+    'https://torrentdownloads.unblockit.me/',
     'https://torrentdownloads.black-mirror.xyz/',
     'https://torrentdownloads.unblocked.casa/',
     'https://torrentdownloads.proxyportal.fun/',
     'https://torrentdownloads.uk-unblock.xyz/',
     'https://torrentdownloads.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://torrentdownloads.unblockit.pro/'],
+  legacylinks: [
+    'https://torrentdownloads.unblockit.pro/',
+    'https://torrentdownloads.unblockit.one/',
+  ],
   caps: {
     categorymappings: [
       { id: '8', cat: 'TV', desc: 'TV Shows' },

@@ -12,12 +12,13 @@ export const definition: TrackerDefinition = {
     'https://www.magnetdl.com/',
     'https://www.magnetdl.org/',
     'https://magnetdl.unblockninja.com/',
-    'https://magnetdl.unblockit.one/',
+    'https://magnetdl.unblockit.me/',
   ],
   legacylinks: [
     'http://www.magnetdl.com/',
     'https://www.magnetdl.me/',
     'https://magnetdl.unblockit.pro/',
+    'https://magnetdl.unblockit.one/',
   ],
   caps: {
     modes: {

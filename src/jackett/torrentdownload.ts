@@ -10,14 +10,14 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.torrentdownload.info/',
-    'https://torrentdownload.unblockit.one/',
+    'https://torrentdownload.unblockit.me/',
     'https://torrentdownload.black-mirror.xyz/',
     'https://torrentdownload.unblocked.casa/',
     'https://torrentdownload.proxyportal.fun/',
     'https://torrentdownload.uk-unblock.xyz/',
     'https://torrentdownload.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://torrentdownload.unblockit.pro/'],
+  legacylinks: ['https://torrentdownload.unblockit.pro/', 'https://torrentdownload.unblockit.one/'],
   caps: {
     modes: {
       search: ['q'],

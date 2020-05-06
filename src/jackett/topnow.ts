@@ -35,7 +35,7 @@ export const definition: TrackerDefinition = {
       },
       banner: { selector: 'img', attribute: 'src', optional: true },
       description: {
-        selector: 'pre.imgDescription',
+        selector: '.imgDescription',
         filters: [{ name: 'regexp', args: 'Quality: (.+?)$' }],
       },
       date: { text: 'now' },

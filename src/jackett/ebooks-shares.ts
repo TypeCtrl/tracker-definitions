@@ -749,7 +749,10 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'div.panel:contains("Access Denied")' }],
-    test: { path: 'index.php' },
+    test: {
+      path: 'index.php',
+      selector: 'a[href^="account-logout.php"]',
+    },
   },
   download: {
     selector: 'a[href^="download.php?id="]',

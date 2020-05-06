@@ -11,14 +11,18 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://torrentz2.eu/',
-    'https://torrentz.unblockit.one/',
+    'https://torrentz.unblockit.me/',
     'https://torrentz2.black-mirror.xyz/',
     'https://torrentz2.unblocked.casa/',
     'https://torrentz2.proxyportal.fun/',
     'https://torrentz2.uk-unblock.xyz/',
     'https://torrentz2.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://torrentz2.unblockninja.com/', 'https://torrentz.unblockit.pro/'],
+  legacylinks: [
+    'https://torrentz2.unblockninja.com/',
+    'https://torrentz.unblockit.pro/',
+    'https://torrentz.unblockit.one/',
+  ],
   caps: {
     modes: {
       search: ['q'],

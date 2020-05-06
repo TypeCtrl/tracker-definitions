@@ -11,14 +11,18 @@ export const definition: TrackerDefinition = {
   links: [
     'https://monova.org/',
     'https://monova.to/',
-    'https://monova.unblockit.one/',
+    'https://monova.unblockit.me/',
     'https://monova.black-mirror.xyz/',
     'https://monova.unblocked.casa/',
     'https://monova.proxyportal.fun/',
     'https://monova.uk-unblock.xyz/',
     'https://monova.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://monova.unblockninja.com/', 'https://monova.unblockit.pro/'],
+  legacylinks: [
+    'https://monova.unblockninja.com/',
+    'https://monova.unblockit.pro/',
+    'https://monova.unblockit.one/',
+  ],
   caps: {
     modes: {
       search: ['q'],

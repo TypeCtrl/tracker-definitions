@@ -6,11 +6,12 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://pirateiro.com/"],
+  "links": ["https://pirateiro.com/", "https://pirateiro.eu/"],
   "legacylinks": [
     "http://pirateiro.com/",
     "https://pirateiro.unblockit.pro/",
-    "https://pirateiro.unblockit.one/"
+    "https://pirateiro.unblockit.one/",
+    "https://pirateiro.unblockit.me/"
   ],
   "caps": {
     "modes": {

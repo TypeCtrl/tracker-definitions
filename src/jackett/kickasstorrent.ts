@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://katcr.co/',
     'https://kat.root.yt/',
-    'https://kat.unblockit.one/',
+    'https://kat.unblockit.me/',
     'https://kickasstorrents.unblockninja.com/',
     'https://katcr.black-mirror.xyz/',
     'https://katcr.unblocked.casa/',
@@ -20,7 +20,7 @@ export const definition: TrackerDefinition = {
     'https://katcr.uk-unblock.xyz/',
     'https://katcr.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://kickasstorrent.cr/', 'https://katcr.to/'],
+  legacylinks: ['https://kickasstorrent.cr/', 'https://katcr.to/', 'https://kat.unblockit.one/'],
   caps: {
     categorymappings: [
       { id: '118', cat: 'TV/Anime', desc: 'Anime - English Translated' },

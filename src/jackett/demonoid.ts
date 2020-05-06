@@ -13,6 +13,7 @@ export const definition: TrackerDefinition = {
     'https://www.dnoid.to/',
     'https://demonoid.unblockit.pro/',
     'https://demonoid.unblockit.one/',
+    'https://demonoid.unblockit.me/',
     'https://dnoid.black-mirror.xyz/',
     'https://dnoid.unblocked.casa/',
     'https://dnoid.proxyportal.fun/',

@@ -64,7 +64,7 @@ export const definition: TrackerDefinition = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
       twostep_pub: '{{ .Config.2facode }}',
-      keeploggedin: 1,
+      keeplogged: 1,
       lockip: '{{ .Config.lockip }}',
     },
     error: [{ selector: '#formerror' }],

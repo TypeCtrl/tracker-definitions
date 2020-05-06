@@ -54,7 +54,7 @@ export const definition: TrackerDefinition = {
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
     },
-    rows: { selector: 'tr.torrent' },
+    rows: { selector: 'tr.torrent', filters: [{ name: 'andmatch' }] },
     fields: {
       category: { text: 1 },
       artist: { selector: 'a[href^="artist.php?id="]', optional: true },

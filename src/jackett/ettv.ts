@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.ettvdl.com/',
-    'https://ettv.unblockit.one/',
+    'https://ettv.unblockit.me/',
     'https://ettv.unblockninja.com/',
     'https://ettv.root.yt/',
     'https://ettv.black-mirror.xyz/',
@@ -20,7 +20,12 @@ export const definition: TrackerDefinition = {
     'https://ettv.uk-unblock.xyz/',
     'https://ettv.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://www.ettv.tv/', 'https://www.ettv.to/', 'https://ettv.unblockit.pro/'],
+  legacylinks: [
+    'https://www.ettv.tv/',
+    'https://www.ettv.to/',
+    'https://ettv.unblockit.pro/',
+    'https://ettv.unblockit.one/',
+  ],
   caps: {
     categorymappings: [
       { id: '88', cat: 'XXX', desc: 'Adult - Books' },
