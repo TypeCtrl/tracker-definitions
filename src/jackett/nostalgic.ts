@@ -2,9 +2,9 @@ import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
   site: 'nostalgic',
-  name: 'Nostalgic',
+  name: 'VHSTAPES',
   description:
-    'Nostalgic Torrents (The Archive / VHSTAPES) is a Private Torrent Tracker for MOVIES / TV / GENERAL NOSTALGIA',
+    'VHSTAPES (The Archive / Nostalgic) is a Private Torrent Tracker for MOVIES / TV / GENERAL NOSTALGIA',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.seedfile.ro/'],
+  links: ['https://www.seedfile.io/'],
+  legacylinks: ['https://www.seedfile.ro/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Books/Magazines', desc: 'Cărți/Reviste' },
