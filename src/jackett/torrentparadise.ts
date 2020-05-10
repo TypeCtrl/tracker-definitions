@@ -24,6 +24,7 @@ export const definition: TrackerDefinition = {
       { id: 'ADULTHDMOVIES', cat: 'XXX' },
       { id: 'ADULTPORN', cat: 'XXX' },
       { id: 'ADULTXXX', cat: 'XXX' },
+      { id: 'ANDROID', cat: 'PC' },
       { id: 'ANIME', cat: 'TV/Anime' },
       { id: 'ANIMEDUBBEDSUBBED', cat: 'TV/Anime' },
       { id: 'APPLICATIONS', cat: 'PC' },

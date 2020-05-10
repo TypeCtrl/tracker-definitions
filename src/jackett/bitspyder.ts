@@ -63,6 +63,13 @@ export const definition: TrackerDefinition = {
       default: 'desc',
       options: { desc: 'desc', asc: 'asc' },
     },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
   ],
   login: {
     path: 'login.php',
@@ -80,7 +87,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       search: '{{ .Keywords }}',
       incldead: 1,
-      scope: 1,
+      scope: 0,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
