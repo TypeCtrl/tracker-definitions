@@ -18,7 +18,7 @@ export const definition: TrackerDefinition = {
     },
     categorymappings: [
       { id: '/anime/', cat: 'TV/Anime' },
-      { id: 'anime/english-translated/', cat: 'TV/Anime' },
+      { id: '/anime/english-translated/', cat: 'TV/Anime' },
       { id: '/applications/', cat: 'PC' },
       { id: '/applications/android/', cat: 'PC/Phone-Android' },
       { id: '/applications/ios/', cat: 'PC/Phone-IOS' },

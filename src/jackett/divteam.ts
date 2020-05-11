@@ -61,7 +61,7 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },
     {
-      name: 'info',
+      name: 'info_cookie',
       type: 'info',
       label: 'How to get the Cookie',
       default:
@@ -82,7 +82,7 @@ export const definition: TrackerDefinition = {
       options: { '1': 'asc', '2': 'desc' },
     },
     {
-      name: 'info',
+      name: 'info_results',
       type: 'info',
       label: 'Results Per Page',
       default:

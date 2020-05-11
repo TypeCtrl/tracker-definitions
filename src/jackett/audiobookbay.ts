@@ -122,21 +122,27 @@ export const definition: TrackerDefinition = {
         selector: 'div.postInfo',
         filters: [{ name: 'regexp', args: 'Category: (.+?)\\s' }],
       },
-      date: {
-        selector: 'div.postContent p:contains("Posted:")',
+      _date: {
+        selector: 'div.postContent',
         filters: [
-          { name: 'regexp', args: 'Posted: (.+?)Format:' },
+          { name: 'regexp', args: '(\\d{1,2} \\D{3} \\d{4})' },
           { name: 'dateparse', args: '2 Jan 2006' },
         ],
       },
-      size: {
-        selector: 'div.postContent p:contains("File Size:")',
+      date: {
+        text: '{{ if .Result._date }}{{ .Result._date }}{{ else }}now{{ end }}',
+      },
+      _size: {
+        selector: 'div.postContent',
         filters: [
           { name: 'regexp', args: 'File Size: (.+?)$' },
           { name: 'replace', args: ['MBs', 'MB'] },
           { name: 'replace', args: ['GBs', 'GB'] },
           { name: 'replace', args: ['KBs', 'KB'] },
         ],
+      },
+      size: {
+        text: '{{ if .Result._size }}{{ .Result._size }}{{ else }}0 B{{ end }}',
       },
       seeders: { text: 1 },
       leechers: { text: 1 },
