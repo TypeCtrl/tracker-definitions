@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'zetorrents',
+  id: 'zetorrents',
   name: 'zetorrents',
   description: 'zetorrents is a FRENCH Public site for MOVIES / TV / GENERAL',
   language: 'fr-FR',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'puntorrent',
+  id: 'puntorrent',
   name: 'PuntoTorrent',
   description: 'PuntoTorrent is a SPANISH site for General content',
   language: 'es-ES',

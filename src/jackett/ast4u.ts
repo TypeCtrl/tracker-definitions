@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ast4u',
+  id: 'ast4u',
   name: 'AST4u',
   description: 'AST4u is a GERMAN Private site for TV / MOVIES / ANIME / HENTAI',
   language: 'de-DE',

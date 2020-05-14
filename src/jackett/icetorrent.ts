@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'icetorrent',
+  id: 'icetorrent',
   name: 'ICE Torrent',
   description: 'ICE Torrent is a ratioless ROMANIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ro-RO',

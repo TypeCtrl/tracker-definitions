@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'crazyhd',
+  id: 'crazyhd',
   name: 'CrazyHD',
   description: 'CrazyHD is a BANGLADESHI Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',

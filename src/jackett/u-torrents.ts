@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'u-torrents',
+  id: 'u-torrents',
   name: 'U-Torrents',
   description: 'U-Torrents.ro (UTT) is a ROMANIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ro-RO',

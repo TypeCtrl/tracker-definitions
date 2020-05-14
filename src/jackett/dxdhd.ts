@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'dxdhd',
+  id: 'dxdhd',
   name: 'DXDHD',
   description: 'DXDHD is a Private General Tracker',
   language: 'en-US',

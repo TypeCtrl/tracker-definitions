@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: '4thd',
+  id: '4thd',
   name: '4thD',
   description: '4th Dimension is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',

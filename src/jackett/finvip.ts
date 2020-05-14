@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'finvip',
+  id: 'finvip',
   name: 'FinVip',
   description: 'FinVip is a FINNISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fi-FI',

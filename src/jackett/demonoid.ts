@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'demonoid',
+  id: 'demonoid',
   name: 'Demonoid',
   description: 'Demonoid is a Public torrent site for MOVIES / TV / GENERAL',
   language: 'en-US',

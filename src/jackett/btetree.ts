@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'btetree',
+  id: 'btetree',
   name: 'BT.etree',
   description: 'BT.etree is a Public Tracker dedicated to Bootleg FLAC MUSIC',
   language: 'en-US',

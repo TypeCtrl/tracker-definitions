@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'linkomanija',
+  id: 'linkomanija',
   name: 'LinkoManija',
   description: 'LinkoManija is an LITHUANIAN Private site for TV / MOVIES / GENERAL',
   language: 'lt-LT',

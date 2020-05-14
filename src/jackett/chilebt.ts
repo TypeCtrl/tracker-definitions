@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'chilebt',
+  id: 'chilebt',
   name: 'ChileBT',
   description: 'ChileBT is a CHILEAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'es-419',

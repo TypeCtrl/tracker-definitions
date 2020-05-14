@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ehentai',
+  id: 'ehentai',
   name: 'E-Hentai',
   description: 'E-Hentai is a Public site for Hentai doujinshi, manga.',
   language: 'en-US',

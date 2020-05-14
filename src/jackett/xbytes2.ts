@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'xbytesv2',
+  id: 'xbytesv2',
   name: 'XbytesV2',
   description: 'xbytesV2 is a SPANISH site for HD content',
   language: 'es-ES',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ourbits',
+  id: 'ourbits',
   name: 'Ourbits',
   description: 'Ourbits (HDPter) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'zh-CN',

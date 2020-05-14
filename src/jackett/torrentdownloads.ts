@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentdownloads',
+  id: 'torrentdownloads',
   name: 'Torrent Downloads',
   description: 'Torrent Downloads (TD) is a Public torrent site for all kinds of content',
   language: 'en-US',
@@ -12,15 +12,18 @@ export const definition: TrackerDefinition = {
     'https://www.torrentdownloads.info/',
     'https://www.torrentdownloads.me/',
     'https://torrentdownloads.unblockit.me/',
+    'https://torrentdownloads.unblocked.bar/',
+    'https://torrentdownloads.proxyportal.pw/',
+    'https://torrentdownloads.uk-unblock.pro/',
+  ],
+  legacylinks: [
+    'https://torrentdownloads.unblockit.pro/',
+    'https://torrentdownloads.unblockit.one/',
     'https://torrentdownloads.black-mirror.xyz/',
     'https://torrentdownloads.unblocked.casa/',
     'https://torrentdownloads.proxyportal.fun/',
     'https://torrentdownloads.uk-unblock.xyz/',
     'https://torrentdownloads.ind-unblock.xyz/',
-  ],
-  legacylinks: [
-    'https://torrentdownloads.unblockit.pro/',
-    'https://torrentdownloads.unblockit.one/',
   ],
   caps: {
     categorymappings: [

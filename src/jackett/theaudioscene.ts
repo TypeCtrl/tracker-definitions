@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'theaudioscene',
+  id: 'theaudioscene',
   name: 'TheAudioScene',
   description: 'TheAudioScene is a Private Torrent Tracker for AUDIO SOFTWARE / SAMPLES / ETC',
   language: 'en-US',

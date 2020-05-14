@@ -1,19 +1,22 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'nntt',
+  id: 'nntt',
   name: 'NNTT',
   description: 'NNTT is a RUSSIAN Public Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'http://www.nntt.org/',
+  links: ['http://www.nntt.org/'],
+  legacylinks: [
     'https://nntt.black-mirror.xyz/',
     'https://nntt.unblocked.casa/',
     'https://nntt.proxyportal.fun/',
     'https://nntt.uk-unblock.xyz/',
     'https://nntt.ind-unblock.xyz/',
+    'https://nntt.unblocked.bar/',
+    'https://nntt.proxyportal.pw/',
+    'https://nntt.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [

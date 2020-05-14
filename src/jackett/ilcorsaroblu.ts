@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ilcorsaroblu',
+  id: 'ilcorsaroblu',
   name: 'Il Corsaro Blu',
   description: 'il CorSaRo Blu is an ITALIAN Semi-Private site for TV / MOVIES / GENERAL',
   language: 'it-IT',

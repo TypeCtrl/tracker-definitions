@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ebookparadijs',
+  id: 'ebookparadijs',
   name: 'EbookParadijs',
   description: 'EbookParadijs is a DUTCH Private Tracker for EBOOKS',
   language: 'nl-NL',

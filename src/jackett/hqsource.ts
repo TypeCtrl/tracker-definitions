@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hqsource',
+  id: 'hqsource',
   name: 'HQSource',
   description: 'HQSource (HQS) is a POLISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'pl-PL',

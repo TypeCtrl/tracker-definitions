@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'racing4everyone',
+  id: 'racing4everyone',
   name: 'Racing4Everyone (R4E)',
   description: 'Racing4Everyone (R4E) is a Private Torrent Tracker for RACING',
   language: 'en-US',

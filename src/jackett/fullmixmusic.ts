@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'fullmixmusic',
+  id: 'fullmixmusic',
   name: 'FullMixMusic',
   description: 'FullMixMusic is a HUNGARIAN Private Torrent Tracker for MUSIC',
   language: 'hu-HU',

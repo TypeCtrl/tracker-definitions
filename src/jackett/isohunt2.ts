@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'isohunt2',
+  id: 'isohunt2',
   name: 'Isohunt2',
   description: 'Isohunt2 is a Public torrent search engine for MOVIES / TV / GENERAL',
   language: 'en-US',

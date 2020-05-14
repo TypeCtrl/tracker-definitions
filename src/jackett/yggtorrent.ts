@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'yggtorrent',
+  id: 'yggtorrent',
   name: 'YGGtorrent',
   description: 'YGGTorrent is a FRENCH Semi-Private Torrent Tracker for 0DAY / GENERAL',
   language: 'fr-FR',

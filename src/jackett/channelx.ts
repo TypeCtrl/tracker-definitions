@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'Channelx',
+  id: 'Channelx',
   name: 'ChannelX',
   description: 'ChannelX is a Private Torrent Tracker for High Quality Optimized HD MOVIES / TV',
   language: 'en-US',

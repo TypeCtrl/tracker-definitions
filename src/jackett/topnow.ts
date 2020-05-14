@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'topnow',
+  id: 'topnow',
   name: 'TopNow',
   description: 'TopNow is a Public torrent site for TV / MOVIES',
   language: 'en-US',

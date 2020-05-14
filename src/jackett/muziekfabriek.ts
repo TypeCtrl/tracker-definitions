@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'muziekfabriek',
+  id: 'muziekfabriek',
   name: 'MuziekFabriek',
   description: 'MuziekFabriek is a DUTCH Semi-Private Torrent Tracker for MUSIC',
   language: 'nl-NL',

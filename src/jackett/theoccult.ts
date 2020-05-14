@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'theoccult',
+  id: 'theoccult',
   name: 'The Occult',
   description: 'Cult E-Learning',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'darktracker',
+  id: 'darktracker',
   name: 'Dark Tracker',
   description: 'Dark Tracker is a RUSSIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ru-RU',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'kickasstorrent',
+  id: 'kickasstorrent',
   name: 'KickAssTorrent',
   description:
     'Kickass Torrents (KATcr) is a well-know Public torrent site indexing thousands of torrents verified and commented by a large file-sharing community',
@@ -14,13 +14,20 @@ export const definition: TrackerDefinition = {
     'https://kat.root.yt/',
     'https://kat.unblockit.me/',
     'https://kickasstorrents.unblockninja.com/',
+    'https://katcr.unblocked.bar/',
+    'https://katcr.proxyportal.pw/',
+    'https://katcr.uk-unblock.pro/',
+  ],
+  legacylinks: [
+    'https://kickasstorrent.cr/',
+    'https://katcr.to/',
+    'https://kat.unblockit.one/',
     'https://katcr.black-mirror.xyz/',
     'https://katcr.unblocked.casa/',
     'https://katcr.proxyportal.fun/',
     'https://katcr.uk-unblock.xyz/',
     'https://katcr.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://kickasstorrent.cr/', 'https://katcr.to/', 'https://kat.unblockit.one/'],
   caps: {
     categorymappings: [
       { id: '118', cat: 'TV/Anime', desc: 'Anime - English Translated' },

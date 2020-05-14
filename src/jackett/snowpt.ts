@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'snowpt',
+  id: 'snowpt',
   name: 'SnowPT',
   description: 'SnowPT (SSPT) is a CHINESE Private Torrent Tracker for ANIME',
   language: 'zh-CN',

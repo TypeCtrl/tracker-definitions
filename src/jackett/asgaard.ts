@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'asgaard',
+  id: 'asgaard',
   name: 'Asgaard',
   description: 'Asgaard (AG) is a NORDIC Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-EN',

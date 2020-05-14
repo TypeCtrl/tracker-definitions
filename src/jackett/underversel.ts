@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'underversel',
+  id: 'underversel',
   name: 'UnderverseL',
   description: 'this is the Underverse indexer with Login enabled in the config.',
   language: 'ru-RU',

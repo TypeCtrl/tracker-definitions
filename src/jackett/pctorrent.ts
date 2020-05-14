@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pctorrent',
+  id: 'pctorrent',
   name: 'PC-torrent',
   description: 'PC-torrent is a RUSSIAN Public Torrent Tracker for Games',
   language: 'ru-RU',
@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     rows: {
-      selector: 'div.dshort:has(div.d3-raz)',
+      selector: 'div.dshort:has(div.d3-raz):not(:has(div.d3-raz:contains("Анонс!")))',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

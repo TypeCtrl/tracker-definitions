@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'racingforme',
+  id: 'racingforme',
   name: 'RacingForMe',
   description: 'Racing For Me (RFM) is a Private Torrent Tracker for RACING',
   language: 'en-US',

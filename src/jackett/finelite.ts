@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'finelite',
+  id: 'finelite',
   name: 'FinElite',
   description: 'FinElite (FE) is a FINNISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fi-FI',

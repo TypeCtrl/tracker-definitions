@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rutracker-ru',
+  id: 'rutracker-ru',
   name: 'RuTracker.RU',
   description: 'RuTracker.RU is a RUSSIAN Public Torrent Tracker for MOVIES / GENERAL',
   language: 'ru-RU',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tokyotosho',
+  id: 'tokyotosho',
   name: 'Tokyo Toshokan',
   description: 'A BitTorrent Library for Japanese Media',
   language: 'en-US',
@@ -9,6 +9,11 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: [
     'https://www.tokyotosho.info/',
+    'https://tokyotosho.unblocked.bar/',
+    'https://tokyotosho.proxyportal.pw/',
+    'https://tokyotosho.uk-unblock.pro/',
+  ],
+  legacylinks: [
     'https://tokyotosho.black-mirror.xyz/',
     'https://tokyotosho.unblocked.casa/',
     'https://tokyotosho.proxyportal.fun/',

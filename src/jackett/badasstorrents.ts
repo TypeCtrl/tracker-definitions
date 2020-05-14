@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'badasstorrents',
+  id: 'badasstorrents',
   name: 'Badass Torrents',
   description: 'Badass Torrents is a Public torrent site for MOVIES / TV / GENERAL',
   language: 'en-US',

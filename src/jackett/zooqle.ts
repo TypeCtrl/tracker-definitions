@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'zooqle',
+  id: 'zooqle',
   name: 'Zooqle',
   description: 'Zooqle is a Public torrent index providing a huge database of verified torrents',
   language: 'en-US',
@@ -11,13 +11,19 @@ export const definition: TrackerDefinition = {
   links: [
     'https://zooqle.com/',
     'https://zooqle.unblockit.me/',
+    'https://zooqle.unblocked.bar/',
+    'https://zooqle.proxyportal.pw/',
+    'https://zooqle.uk-unblock.pro/',
+  ],
+  legacylinks: [
+    'https://zooqle.unblockit.pro/',
+    'https://zooqle.unblockit.one/',
     'https://zooqle.black-mirror.xyz/',
     'https://zooqle.unblocked.casa/',
     'https://zooqle.proxyportal.fun/',
     'https://zooqle.uk-unblock.xyz/',
     'https://zooqle.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://zooqle.unblockit.pro/', 'https://zooqle.unblockit.one/'],
   caps: {
     modes: {
       search: ['q'],

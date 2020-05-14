@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdsky',
+  id: 'hdsky',
   name: 'HDSky',
   description: 'HDSky is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

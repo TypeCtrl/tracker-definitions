@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'gfxpeers',
+  id: 'gfxpeers',
   name: 'GFXPeers',
   description:
     'GFXPeers is a ratio-based torrent tracker for all things graphic design and visual effects',

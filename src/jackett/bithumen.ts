@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bithumen',
+  id: 'bithumen',
   name: 'BitHUmen',
   description: 'BitHUmen is a Hungarian Private site for TV / MOVIES / GENERAL',
   language: 'hu-HU',

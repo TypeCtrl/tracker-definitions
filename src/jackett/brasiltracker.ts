@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'brasiltracker',
+  id: 'brasiltracker',
   name: 'BrasilTracker',
   description: 'BrasilTracker is a BRAZILIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'erzsebet',
+  id: 'erzsebet',
   name: 'Erzsebet',
   description: 'Erzsebet is a RUSSIAN Semi-Private Torrent Tracker for 3X',
   language: 'ru-RU',

@@ -1,5 +1,5 @@
 {
-  "site": "ilcorsaronero",
+  "id": "ilcorsaronero",
   "name": "Il Corsaro Nero",
   "description": "Il Corsaro Nero is an ITALIAN Public site for TV / MOVIES / GENERAL",
   "language": "it-IT",
@@ -9,7 +9,8 @@
   "links": [
     "https://ilcorsaronero.xyz/",
     "https://ilcorsaronero.fun/",
-    "https://ilcorsaronero.pro/"
+    "https://ilcorsaronero.pro/",
+    "https://ilcorsaronero.unblockit.me/"
   ],
   "legacylinks": [
     "https://ilcorsaronero.live/",
@@ -20,8 +21,7 @@
     "https://ilcorsaronero.pizza/",
     "https://ilcorsaronero.pw/",
     "https://ilcorsaronero.unblockit.pro/",
-    "https://ilcorsaronero.unblockit.one/",
-    "https://ilcorsaronero.unblockit.me/"
+    "https://ilcorsaronero.unblockit.one/"
   ],
   "caps": {
     "categorymappings": [

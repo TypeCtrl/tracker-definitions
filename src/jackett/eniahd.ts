@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'eniahd',
+  id: 'eniahd',
   name: 'EniaHD',
   description: 'EniaHD is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV',
   language: 'ru-RU',

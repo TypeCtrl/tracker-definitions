@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hon3yhd',
+  id: 'hon3yhd',
   name: 'Hon3y HD',
   description: 'Hon3yHD is an INDIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',

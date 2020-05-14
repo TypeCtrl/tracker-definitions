@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ibit',
+  id: 'ibit',
   name: 'IBit',
   description: 'IBit is a Public Verified Torrent Search Engine',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrenthr',
+  id: 'torrenthr',
   name: 'TorrentHR',
   description: 'TorrentHR is a ratioless CROATIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hr-HR',

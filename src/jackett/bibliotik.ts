@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bibliotik',
+  id: 'bibliotik',
   name: 'Bibliotik',
   description: 'Bibliotik is a private site for eBooks and audiobooks',
   language: 'en-US',

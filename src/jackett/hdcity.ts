@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdcity',
+  id: 'hdcity',
   name: 'HDCity',
   description: 'HDCity is a SPANISH site for HD content',
   language: 'es-ES',
@@ -265,8 +265,8 @@ export const definition: TrackerDefinition = {
     ],
     inputs: {
       page: 'torrents',
-      $raw: '&category={{range .Categories}}{{.}};{{end}}',
-      active: '1',
+      $raw: '&category={{ range .Categories }}{{.}};{{end}}',
+      active: 1,
       search: '{{ .Keywords }}',
     },
     rows: {
@@ -321,23 +321,23 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[src$="freeleech.gif"]': '0',
-          'img[src$="gold.gif"]': '0',
-          'img[src$="silver.gif"]': '0.5',
-          '*': '1',
+          'img[src$="freeleech.gif"]': 0,
+          'img[src$="gold.gif"]': 0,
+          'img[src$="silver.gif"]': 0.5,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'img[src$="2x.gif"]': '2',
-          'img[src$="3x.gif"]': '3',
-          'img[src$="4x.gif"]': '4',
-          'img[src$="5x.gif"]': '5',
-          'img[src$="6x.gif"]': '6',
-          'img[src$="7x.gif"]': '7',
-          'img[src$="8x.gif"]': '8',
-          'img[src$="9x.gif"]': '9',
-          '*': '1',
+          'img[src$="2x.gif"]': 2,
+          'img[src$="3x.gif"]': 3,
+          'img[src$="4x.gif"]': 4,
+          'img[src$="5x.gif"]': 5,
+          'img[src$="6x.gif"]': 6,
+          'img[src$="7x.gif"]': 7,
+          'img[src$="8x.gif"]': 8,
+          'img[src$="9x.gif"]': 9,
+          '*': 1,
         },
       },
     },

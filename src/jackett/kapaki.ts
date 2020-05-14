@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'kapaki',
+  id: 'kapaki',
   name: 'Kapaki',
   description: 'Kapaki is a GREEK Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'el-GR',

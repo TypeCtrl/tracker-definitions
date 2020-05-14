@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentquest',
+  id: 'torrentquest',
   name: 'TorrentQuest',
   description: 'TorrentQuest is a Public torrent Magnet Links search engine',
   language: 'en-US',

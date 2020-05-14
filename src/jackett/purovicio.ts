@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'purovicio',
+  id: 'purovicio',
   name: 'PuroVicio',
   description: 'PuroVicio is a Latin American Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'es-419',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'arabafenice',
+  id: 'arabafenice',
   name: 'ArabaFenice',
   description: 'Araba Fenice (Phoenix) is an ITALIAN Private site for TV / MOVIES / GENERAL',
   language: 'it-IT',

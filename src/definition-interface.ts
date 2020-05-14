@@ -26,7 +26,9 @@ export interface TrackerDefinition {
    * Internal name of the indexer (all lower case, typically the
    * display name without any special characters, same as filename)
    */
-  site: string;
+  id?: string;
+  // TODO: deprecate??
+  site?: string;
   /**
    * Display name (The full name of the tracker)
    */

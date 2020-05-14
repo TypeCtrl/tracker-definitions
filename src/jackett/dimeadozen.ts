@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'dimeadozen',
+  id: 'dimeadozen',
   name: 'DimeADozen',
   description: 'DimeADozen (EzTorrent) is a Semi-Private Torrent Tracker for BOOTLEG MUSIC',
   language: 'en-EN',

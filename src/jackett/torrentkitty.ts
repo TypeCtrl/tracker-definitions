@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentkitty',
+  id: 'torrentkitty',
   name: 'TorrentKitty',
   description: 'TorrentKitty is a Public torrent indexer',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: '0daykiev',
+  id: '0daykiev',
   name: '0day.kiev',
   description: '0day.kiev.ua is a RUSSIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'elitetorrent-biz',
+  id: 'elitetorrent-biz',
   name: 'EliteTorrent.biz',
   description: 'EliteTorrent.biz is a Public torrent site for TV, movies and documentaries',
   language: 'es-ES',

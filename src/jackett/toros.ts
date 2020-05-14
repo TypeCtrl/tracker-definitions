@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'toros',
+  id: 'toros',
   name: 'TOROS',
   description: 'TOROS is a Public torrent index',
   language: 'en-US',

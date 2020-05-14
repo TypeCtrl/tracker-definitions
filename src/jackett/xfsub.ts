@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'xfsub',
+  id: 'xfsub',
   name: 'XFSUB',
   description: 'XFSUB is a CHINESE Public site for ANIME',
   language: 'zh-CN',

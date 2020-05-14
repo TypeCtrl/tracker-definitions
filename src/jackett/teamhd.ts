@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'teamhd',
+  id: 'teamhd',
   name: 'TeamHD',
   description: 'TeamHD is a RUSSIAN Private Torrent Tracker for HD MOVIES / TV',
   language: 'ru-RU',

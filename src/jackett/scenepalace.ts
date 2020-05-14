@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'scenepalace',
+  id: 'scenepalace',
   name: 'ScenePalace',
   description: 'ScenePalace (SP) is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',

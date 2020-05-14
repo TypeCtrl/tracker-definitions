@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'korsar',
+  id: 'korsar',
   name: 'Korsar',
   description: 'Korsar is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',

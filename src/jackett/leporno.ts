@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'leporno',
+  id: 'leporno',
   name: 'LePorno',
   description: 'LePorno is a Public Tracker for 3X',
   language: 'en-EN',

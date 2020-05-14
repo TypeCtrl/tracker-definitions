@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pt99',
+  id: 'pt99',
   name: 'PT99',
   description: 'PT99 is a CHINESE Private Torrent Tracker for 0DAY / GENERAL',
   language: 'zh-CN',

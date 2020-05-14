@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'uniondht',
+  id: 'uniondht',
   name: 'UnionDHT',
   description: 'UnionDHT is a RUSSIAN Public Torrent Tracker for MOVIES / TV / MUSIC / GENERAL',
   language: 'ru-RU',

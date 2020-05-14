@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ethor',
+  id: 'ethor',
   name: "Ethor.net (Thor's Land)",
   description: 'A French gerneral tracker',
   language: 'fr-FR',

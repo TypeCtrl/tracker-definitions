@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'thevault',
+  id: 'thevault',
   name: 'The Vault',
   description: 'Business/Marketing E-Learning',
   language: 'en-US',

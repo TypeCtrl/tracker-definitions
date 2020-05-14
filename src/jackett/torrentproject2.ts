@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentproject2',
+  id: 'torrentproject2',
   name: 'TorrentProject2',
   description: 'TorrentProject2 is a Public torrent meta-search engine',
   language: 'en-US',
@@ -70,7 +70,11 @@ export const definition: TrackerDefinition = {
   download: {
     selector: '#download > div:nth-child(2) > div:nth-child(1) > a',
     attribute: 'href',
-    filters: [{ name: 'replace', args: ['https://mylink.cx/?url=', ''] }, { name: 'urldecode' }],
+    filters: [
+      { name: 'replace', args: ['https://mylink.me.uk/?url=', ''] },
+      { name: 'replace', args: ['https://mylink.cx/?url=', ''] },
+      { name: 'urldecode' },
+    ],
   },
   search: {
     paths: [

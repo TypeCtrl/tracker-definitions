@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'esharenet',
+  id: 'esharenet',
   name: 'eShareNet',
   description: 'eShareNet is a Private Tracker for Brittish MOVIE / TV',
   language: 'en-EN',

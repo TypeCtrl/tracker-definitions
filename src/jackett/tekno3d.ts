@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tekno3d',
+  id: 'tekno3d',
   name: 'TEKNO3D',
   description: 'TEKNO3D is a Private Torrent Tracker for MOVIES / TV',
   language: 'en-US',

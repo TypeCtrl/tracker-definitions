@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'gktorrent',
+  id: 'gktorrent',
   name: 'GkTorrent',
   description: 'GkTorrent is a French Public site for TV / MOVIES / GENERAL',
   language: 'fr-FR',

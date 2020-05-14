@@ -181,6 +181,9 @@ export const jbtschool = jjbtschool;
 import { definition as jjbtsow } from './btsow';
 export const jbtsow = jjbtsow;
 
+import { definition as jjbwtorrents } from './bwtorrents';
+export const jbwtorrents = jjbwtorrents;
+
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
 
@@ -234,9 +237,6 @@ export const jcpasbienclone = jjcpasbienclone;
 
 import { definition as jjcrazyhd } from './crazyhd';
 export const jcrazyhd = jjcrazyhd;
-
-import { definition as jjcrazyscorner } from './crazyscorner';
-export const jcrazyscorner = jjcrazyscorner;
 
 import { definition as jjcrazyspirits } from './crazyspirits';
 export const jcrazyspirits = jjcrazyspirits;
@@ -727,9 +727,6 @@ export const jnntt = jjnntt;
 import { definition as jjnordichd } from './nordichd';
 export const jnordichd = jjnordichd;
 
-import { definition as jjnostalgic } from './nostalgic';
-export const jnostalgic = jjnostalgic;
-
 import { definition as jjnyaaPantsu } from './nyaa-pantsu';
 export const jnyaaPantsu = jjnyaaPantsu;
 
@@ -991,9 +988,6 @@ export const jtellytorrent = jjtellytorrent;
 import { definition as jjtenyardtracker } from './tenyardtracker';
 export const jtenyardtracker = jjtenyardtracker;
 
-import { definition as jjtheMadhouse } from './the-madhouse';
-export const jtheMadhouse = jjtheMadhouse;
-
 import { definition as jjtheaudioscene } from './theaudioscene';
 export const jtheaudioscene = jjtheaudioscene;
 
@@ -1204,6 +1198,9 @@ export const juniotaku = jjuniotaku;
 import { definition as jjunlimitz } from './unlimitz';
 export const junlimitz = jjunlimitz;
 
+import { definition as jjvhstapes } from './vhstapes';
+export const jvhstapes = jjvhstapes;
+
 import { definition as jjvizuk } from './vizuk';
 export const jvizuk = jjvizuk;
 
@@ -1329,6 +1326,7 @@ export const definitions = [
   jjbtnext,
   jjbtschool,
   jjbtsow,
+  jjbwtorrents,
   jjcarpathians,
   jjcartoonchaos,
   jjcasatorrent,
@@ -1347,7 +1345,6 @@ export const definitions = [
   jjcpabien,
   jjcpasbienclone,
   jjcrazyhd,
-  jjcrazyscorner,
   jjcrazyspirits,
   jjcrnaberza,
   jjcztorrent,
@@ -1511,7 +1508,6 @@ export const definitions = [
   jjnnmClub,
   jjnntt,
   jjnordichd,
-  jjnostalgic,
   jjnyaaPantsu,
   jjnyaasi,
   jjonejav,
@@ -1599,7 +1595,6 @@ export const definitions = [
   jjtekno3D,
   jjtellytorrent,
   jjtenyardtracker,
-  jjtheMadhouse,
   jjtheaudioscene,
   jjtheempire,
   jjthefallingangels,
@@ -1670,6 +1665,7 @@ export const definitions = [
   jjuniongang,
   jjuniotaku,
   jjunlimitz,
+  jjvhstapes,
   jjvizuk,
   jjwdt,
   jjwihd,

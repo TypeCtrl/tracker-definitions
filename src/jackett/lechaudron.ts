@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'lechaudron',
+  id: 'lechaudron',
   name: 'LeChaudron',
   description: 'Le Chaudron is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fr-FR',

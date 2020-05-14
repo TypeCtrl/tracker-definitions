@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'newstudiol',
+  id: 'newstudiol',
   name: 'NewstudioL',
   description: 'this is the Newstudio indexer with Login enabled in the config.',
   language: 'ru-RU',

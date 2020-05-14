@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'filmsclub',
+  id: 'filmsclub',
   name: 'FilmsClub',
   description: 'FilmsClub is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV',
   language: 'ru-RU',

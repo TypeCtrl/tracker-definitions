@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bigfangroup',
+  id: 'bigfangroup',
   name: 'BigFANGroup',
   description: 'BigFANGroup is a RUSSIAN Public Torrent Tracker for MOVIES / TV',
   language: 'ru-RU',

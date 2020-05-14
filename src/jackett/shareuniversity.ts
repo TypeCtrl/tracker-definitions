@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'shareuniversity',
+  id: 'shareuniversity',
   name: 'ShareUniversity',
   description: 'ShareUniversity is a Private Torrent Tracker for High Quality Nordic Content',
   language: 'en-US',

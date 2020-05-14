@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'shareisland',
+  id: 'shareisland',
   name: 'Shareisland',
   description: 'A general italian tracker',
   language: 'it-IT',

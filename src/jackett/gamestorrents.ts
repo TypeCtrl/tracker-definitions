@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'gamestorrents',
+  id: 'gamestorrents',
   name: 'GamesTorrents',
   description: 'GamesTorrents is a SPANISH Public tracker for GAMES',
   language: 'es-ES',

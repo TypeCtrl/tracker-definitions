@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'efectodoppler',
+  id: 'efectodoppler',
   name: 'Efecto Doppler',
   description: 'Efecto Doppler is a SPANISH Private Torrent Tracker for MUSIC',
   language: 'es-ES',

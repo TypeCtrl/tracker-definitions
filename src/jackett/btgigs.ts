@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'btgigs',
+  id: 'btgigs',
   name: 'BTGigs',
   description: 'BTGigs (TG) is a POLISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'pl-PL',

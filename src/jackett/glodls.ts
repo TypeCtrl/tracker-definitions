@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'glodls',
+  id: 'glodls',
   name: 'GloDLS',
   description: 'GloDLS is a Public Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',
@@ -12,16 +12,19 @@ export const definition: TrackerDefinition = {
     'https://gtdb.to/',
     'https://glodls.to/',
     'https://glotorrents.unblockit.me/',
-    'https://glodls.black-mirror.xyz/',
-    'https://glodls.unblocked.casa/',
-    'https://glodls.proxyportal.fun/',
-    'https://glodls.uk-unblock.xyz/',
-    'https://glodls.ind-unblock.xyz/',
+    'https://glodls.unblocked.bar/',
+    'https://glodls.proxyportal.pw/',
+    'https://glodls.uk-unblock.pro/',
   ],
   legacylinks: [
     'https://glodls.rocks/',
     'https://glotorrents.unblockit.pro/',
     'https://glotorrents.unblockit.one/',
+    'https://glodls.black-mirror.xyz/',
+    'https://glodls.unblocked.casa/',
+    'https://glodls.proxyportal.fun/',
+    'https://glodls.uk-unblock.xyz/',
+    'https://glodls.ind-unblock.xyz/',
   ],
   caps: {
     categorymappings: [

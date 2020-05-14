@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdchina',
+  id: 'hdchina',
   name: 'HDChina',
   description: 'HDChina (HDWing) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

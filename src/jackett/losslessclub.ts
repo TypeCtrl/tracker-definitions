@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'losslessclub',
+  id: 'losslessclub',
   name: 'LosslessClub',
   description: 'LosslessClub is a Romanian Private site for High Quality Music',
   language: 'ru-RU',

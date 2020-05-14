@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'mteamtp2fa',
+  id: 'mteamtp2fa',
   name: 'MTeamTP2FA',
   description: 'this indexer uses a cookie login for MTeamTP for those that want to use 2FA',
   language: 'zh-CN',

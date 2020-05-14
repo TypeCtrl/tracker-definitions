@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tribalmixes',
+  id: 'tribalmixes',
   name: 'TribalMixes',
   description: 'TribalMixes is a ratioless Semi-Private Torrent Tracker for DJ MIXES',
   language: 'en-EN',

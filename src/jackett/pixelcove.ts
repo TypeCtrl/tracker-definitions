@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pixelcove',
+  id: 'pixelcove',
   name: 'PixelCove',
   description: 'PixelCove (Ultimate Gamer) is a Private Torrent Tracker for GAMES',
   language: 'en-US',

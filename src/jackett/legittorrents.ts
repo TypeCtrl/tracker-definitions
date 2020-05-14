@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'legittorrents',
+  id: 'legittorrents',
   name: 'Legit Torrents',
   description: 'Legit Torrents is a Public site for free and legal torrents',
   language: 'en-US',

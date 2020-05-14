@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bit-titan',
+  id: 'bit-titan',
   name: 'BiT-TiTAN',
   description: 'BiT-TiTAN is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'de-DE',

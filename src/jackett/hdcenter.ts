@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdcenter',
+  id: 'hdcenter',
   name: 'HDCenter',
   description: 'An German HD tracker',
   language: 'de-DE',

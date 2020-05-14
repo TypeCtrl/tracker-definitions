@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'p2pbg',
+  id: 'p2pbg',
   name: 'P2PBG',
   description: 'P2PBG is a BULGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'bg-BG',

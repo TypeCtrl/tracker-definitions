@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'audiobookbay',
+  id: 'audiobookbay',
   name: 'AudioBookBay',
   description: 'AudioBook Bay (ABB) is a public Torrent Tracker for AUDIOBOOKS',
   language: 'en-US',

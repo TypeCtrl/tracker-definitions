@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'magnetdl',
+  id: 'magnetdl',
   name: 'MagnetDL',
   description: 'MagnetDL is a Public torrent Magnet Links search engine',
   language: 'en-US',

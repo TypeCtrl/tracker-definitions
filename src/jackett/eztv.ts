@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'eztv',
+  id: 'eztv',
   name: 'EZTV',
   description: 'EZTV is a Public torrent site for TV shows',
   language: 'en-US',
@@ -13,11 +13,9 @@ export const definition: TrackerDefinition = {
     'https://eztv.root.yt/',
     'https://eztv.unblockit.me/',
     'https://eztv.unblockninja.com/',
-    'https://eztv.black-mirror.xyz/',
-    'https://eztv.unblocked.casa/',
-    'https://eztv.proxyportal.fun/',
-    'https://eztv.uk-unblock.xyz/',
-    'https://eztv.ind-unblock.xyz/',
+    'https://eztv.unblocked.bar/',
+    'https://eztv.proxyportal.pw/',
+    'https://eztv.uk-unblock.pro/',
   ],
   legacylinks: [
     'https://eztv.ag/',
@@ -26,6 +24,11 @@ export const definition: TrackerDefinition = {
     'https://eztv.ch/',
     'https://eztv.unblockit.pro/',
     'https://eztv.unblockit.one/',
+    'https://eztv.black-mirror.xyz/',
+    'https://eztv.unblocked.casa/',
+    'https://eztv.proxyportal.fun/',
+    'https://eztv.uk-unblock.xyz/',
+    'https://eztv.ind-unblock.xyz/',
   ],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },

@@ -1,13 +1,19 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rutor',
+  id: 'rutor',
   name: 'RuTor',
   description: 'RuTor is a RUSSIAN Public site for MOVIES / TV / GENERAL',
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://rutor.info/'],
+  links: [
+    'http://rutor.info/',
+    'http://rutor.is/',
+    'https://rutor.unblocked.bar/',
+    'https://rutor.proxyportal.pw/',
+    'https://rutor.uk-unblock.pro/',
+  ],
   legacylinks: [
     'http://live-rutor.org/',
     'https://rutor.root.yt/',

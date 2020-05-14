@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'onejav',
+  id: 'onejav',
   name: 'OneJAV',
   description: 'OneJAV is a Public tracker for Asian 3X (JAV)',
   language: 'en-EN',

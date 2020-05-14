@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'acgrip',
+  id: 'acgrip',
   name: 'ACG.RIP',
   description:
     'ACG.RIP is a CHINESE Public torrent tracker for the latest anime and Japanese related torrents',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'u2',
+  id: 'u2',
   name: 'U2',
   description: 'U2 (U2分享園@動漫花園) is a CHINESE Private Torrent Tracker for ANIME',
   language: 'zh-CN',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'kinorun',
+  id: 'kinorun',
   name: 'Kinorun',
   description: 'Kinorun is a RUSSIAN Semi-Private Torrent Tracker for 3X',
   language: 'ru-RU',

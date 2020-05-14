@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrent-explosiv',
+  id: 'torrent-explosiv',
   name: 'Torrent-Explosiv',
   description: 'Torrent-Explosiv is a German Private site for TV / MOVIES / GENERAL',
   language: 'de-DE',

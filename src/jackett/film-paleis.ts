@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'film-paleis',
+  id: 'film-paleis',
   name: 'Film-Paleis',
   description: 'Film-Paleis is a DUTCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'nl-NL',

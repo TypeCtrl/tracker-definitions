@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'crazyspirits',
+  id: 'crazyspirits',
   name: 'CrazySpirits',
   description: 'Crazy Spirits is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fr-FR',

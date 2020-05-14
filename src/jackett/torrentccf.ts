@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentccf',
+  id: 'torrentccf',
   name: 'TorrentCCF',
   description: 'TorrentCCF (TCCF) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

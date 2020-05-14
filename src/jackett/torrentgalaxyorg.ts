@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentgalaxyorg',
+  id: 'torrentgalaxyorg',
   name: 'TorrentGalaxy.org',
   description: 'TorrentGalaxy.org (TGx) is a Public site for TV / MOVIES / GENERAL',
   language: 'en-US',
@@ -12,15 +12,22 @@ export const definition: TrackerDefinition = {
     'https://torrentgalaxy.to/',
     'https://torrentgalaxy.org/',
     'https://torrentgalaxy.pw/',
+    'https://torrentgalaxy.root.yt/',
     'https://torrentgalaxy.unblockit.me/',
     'https://torrentgalaxy.unblockninja.com/',
+    'https://tgx.unblocked.bar/',
+    'https://tgx.proxyportal.pw/',
+    'https://tgx.uk-unblock.pro/',
+  ],
+  legacylinks: [
+    'https://torrentgalaxy.unblockit.pro/',
+    'https://torrentgalaxy.unblockit.one/',
     'https://tgx.black-mirror.xyz/',
     'https://tgx.unblocked.casa/',
     'https://tgx.proxyportal.fun/',
     'https://tgx.uk-unblock.xyz/',
     'https://tgx.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://torrentgalaxy.unblockit.pro/', 'https://torrentgalaxy.unblockit.one/'],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime - All' },
@@ -110,9 +117,22 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'div[class="tgxtablerow"]' },
     fields: {
-      title: {
+      title_full: {
         selector: 'div a[href^="/torrent/"]',
         attribute: 'title',
+      },
+      title_text: { selector: 'div a[href^="/torrent/"]' },
+      title_href: {
+        selector: 'div a[href^="/torrent/"]',
+        attribute: 'href',
+        filters: [
+          { name: 're_replace', args: ['-quot-', ' '] },
+          { name: 're_replace', args: ['-', ' '] },
+        ],
+      },
+      title: {
+        text:
+          '{{ if or .Result.title_full .Result.title_text }}{{ or .Result.title_full .Result.title_text }}{{ else }}{{ .Result.href }}{{ end }}',
       },
       category: {
         selector: 'div a[href^="/torrents.php?cat="]',

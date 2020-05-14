@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'aniRena',
+  id: 'aniRena',
   name: 'AniRena',
   description:
     'AniRena is a Public torrent tracker for the latest anime and Japanese related torrents',

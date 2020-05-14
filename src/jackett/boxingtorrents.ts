@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'boxingtorrents',
+  id: 'boxingtorrents',
   name: 'Boxing Torrents',
   description: 'Boxing Torrents is a Private Torrent Tracker for BOXING',
   language: 'en-US',

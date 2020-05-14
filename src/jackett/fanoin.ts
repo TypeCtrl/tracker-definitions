@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'fanoin',
+  id: 'fanoin',
   name: 'FANO.IN',
   description: 'Fano.in is a LATVIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'lv-LV',

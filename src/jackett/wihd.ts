@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'wihd',
+  id: 'wihd',
   name: 'World-In-HD',
   description: 'Your world in HD',
   language: 'fr-FR',

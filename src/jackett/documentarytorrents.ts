@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'documentarytorrents',
+  id: 'documentarytorrents',
   name: 'DocumentaryTorrents',
   description: 'Documentary Torrents (DT) is a Private Torrent Tracker for E-LEARNING MOVIES / TV',
   language: 'en-US',

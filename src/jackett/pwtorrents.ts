@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pwtorrents',
+  id: 'pwtorrents',
   name: 'PWTorrents',
   description: 'PWTorrents (PWT) is a Private Torrent Tracker for PROFESSIONAL WRESTLING',
   language: 'en-US',

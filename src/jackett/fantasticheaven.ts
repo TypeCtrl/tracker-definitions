@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'fantasticheaven',
+  id: 'fantasticheaven',
   name: 'Fantastic Heaven',
   description: 'Fantastic Heaven is a German Time based tracker',
   language: 'de-DE',

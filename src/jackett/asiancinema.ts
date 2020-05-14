@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'asiancinema',
+  id: 'asiancinema',
   name: 'AsianCinema',
   description: 'Tracker Movies/TV/Music',
   language: 'en-US',

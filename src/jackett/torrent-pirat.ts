@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrent-pirat',
+  id: 'torrent-pirat',
   name: 'torrent-pirat',
   description: 'torrent-pirat is a RUSSIAN Public Torrent Tracker for 3X',
   language: 'ru-RU',

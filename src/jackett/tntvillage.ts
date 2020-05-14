@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tntvillage',
+  id: 'tntvillage',
   name: 'TNTVillage',
   description: 'TNTVillage is an ITALIAN Public site for TV / MOVIES / GENERAL',
   language: 'it-IT',

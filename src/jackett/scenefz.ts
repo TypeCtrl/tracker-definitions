@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'scenefz',
+  id: 'scenefz',
   name: 'SceneFZ',
   description: 'SceneFZ is a ratioless ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',

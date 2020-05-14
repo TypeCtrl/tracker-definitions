@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'sukebeinyaasi',
+  id: 'sukebeinyaasi',
   name: 'sukebei.nyaa.si',
   description:
     'sukebei.nyaa is a Public torrent site focused on adult Eastern Asian media including anime, manga, games and JAV',

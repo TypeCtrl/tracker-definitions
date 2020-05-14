@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'totallykids',
+  id: 'totallykids',
   name: 'TotallyKids',
   description: 'TotallyKids (TK) is a Private Torrent Tracker for CHILDRENS MOVIES / TV / GENERAL',
   language: 'en-US',

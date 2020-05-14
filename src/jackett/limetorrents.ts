@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'limetorrents',
+  id: 'limetorrents',
   name: 'LimeTorrents',
   description: 'LimeTorrents is a Public general torrent index with mostly verified torrents',
   language: 'en-US',
@@ -16,11 +16,6 @@ export const definition: TrackerDefinition = {
     'https://www.limetor.pro/',
     'https://limetorrents.unblockit.me/',
     'https://limetorrents.unblockninja.com/',
-    'https://limetorrents.black-mirror.xyz/',
-    'https://limetorrents.unblocked.casa/',
-    'https://limetorrents.proxyportal.fun/',
-    'https://limetorrents.uk-unblock.xyz/',
-    'https://limetorrents.ind-unblock.xyz/',
   ],
   legacylinks: [
     'https://www.limetorrents.io/',
@@ -29,6 +24,14 @@ export const definition: TrackerDefinition = {
     'https://www.limetorrents.zone/',
     'https://limetorrents.unblockit.pro/',
     'https://limetorrents.unblockit.one/',
+    'https://limetorrents.black-mirror.xyz/',
+    'https://limetorrents.unblocked.casa/',
+    'https://limetorrents.proxyportal.fun/',
+    'https://limetorrents.uk-unblock.xyz/',
+    'https://limetorrents.ind-unblock.xyz/',
+    'https://limetorrents.unblocked.bar/',
+    'https://limetorrents.proxyportal.pw/',
+    'https://limetorrents.uk-unblock.pro/',
   ],
   caps: {
     modes: {

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'demonsite',
+  id: 'demonsite',
   name: 'Demon-Site',
   description: 'Demon-Site is a HUNGARIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'hu-HU',

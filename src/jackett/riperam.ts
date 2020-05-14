@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'riperam',
+  id: 'riperam',
   name: 'RiperAM',
   description: 'RiperAM is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV',
   language: 'ru-RU',

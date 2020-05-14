@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pornolive',
+  id: 'pornolive',
   name: 'PornoLive',
   description: 'PornoLive is a RUSSIAN Public Torrent Tracker for 3X',
   language: 'ru-RU',

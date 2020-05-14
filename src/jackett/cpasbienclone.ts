@@ -1,27 +1,25 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'cpasbienclone',
+  id: 'cpasbienclone',
   name: 'cpasbien clone',
   description: 'cpasbien clone is a FRENCH Public site for TV / MOVIES / GENERAL',
   language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://cpasbien.to/',
-    'https://cpasbiens.black-mirror.xyz/',
-    'https://cpasbiens.unblocked.casa/',
-    'https://cpasbiens.proxyportal.fun/',
-    'https://cpasbiens.uk-unblock.xyz/',
-    'https://cpasbiens.ind-unblock.xyz/',
-  ],
+  links: ['https://cpasbien.to/'],
   legacylinks: [
     'https://www1.cpasbiens.ws/',
     'https://www2.cpasbiens.ws/',
     'https://cpasbiens.cm/',
     'https://www1.cpasbiens.cm/',
     'https://wwv.cpasbien.to/',
+    'https://cpasbiens.black-mirror.xyz/',
+    'https://cpasbiens.unblocked.casa/',
+    'https://cpasbiens.proxyportal.fun/',
+    'https://cpasbiens.uk-unblock.xyz/',
+    'https://cpasbiens.ind-unblock.xyz/',
   ],
   caps: {
     categorymappings: [

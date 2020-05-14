@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'dark-shadow',
+  id: 'dark-shadow',
   name: 'Dark-Shadow',
   description: 'Dark-Shadow is a German Private site for TV / MOVIES / GENERAL',
   language: 'de-DE',

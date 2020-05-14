@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'soulvoice',
+  id: 'soulvoice',
   name: 'SoulVoice',
   description: 'SoulVoice is a CHINESE Private Torrent Tracker for Movies, TV, and e-Learning',
   language: 'zh-CN',

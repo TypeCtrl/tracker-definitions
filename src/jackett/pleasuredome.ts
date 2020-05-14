@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pleasuredome',
+  id: 'pleasuredome',
   name: 'PleasureDome',
   description: 'PleasureDome is a private site for Arcade / Console / PC Games',
   language: 'en-EN',

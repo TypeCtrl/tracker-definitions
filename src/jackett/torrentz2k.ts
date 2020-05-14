@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentz2k',
+  id: 'torrentz2k',
   name: 'Torrentz2k',
   description: 'Torrentz2k is a Public torrent indexer',
   language: 'en-US',
@@ -47,13 +47,16 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      category: {
+      _category: {
         selector: 'i',
         attribute: 'class',
         filters: [
           { name: 'split', args: [' ', 1] },
           { name: 'replace', args: ['fa-', ''] },
         ],
+      },
+      category: {
+        text: '{{ if .Result._category }}{{ .Result._category }}{{ else }}list{{ end}}',
       },
       title: { selector: 'button', attribute: 'title' },
       details: { text: '/' },

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdhome',
+  id: 'hdhome',
   name: 'HDHome',
   description: 'HDHome (HDBiger) is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

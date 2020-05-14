@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'spiritofrevolution',
+  id: 'spiritofrevolution',
   name: 'Spirit of Revolution',
   description: 'Spirit of Revolution is a German Time based tracker for 0DAY',
   language: 'de-DE',

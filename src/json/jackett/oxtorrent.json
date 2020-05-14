@@ -1,5 +1,5 @@
 {
-  "site": "oxtorrent",
+  "id": "oxtorrent",
   "name": "OxTorrent",
   "description": "OxTorrent is a French Public site for TV / MOVIES / GENERAL",
   "language": "fr-FR",
@@ -9,13 +9,19 @@
   "links": [
     "https://www.oxtorrent.com/",
     "https://www.oxtorrent.co/",
+    "https://oxtorrent.unblocked.bar/",
+    "https://oxtorrent.proxyportal.pw/",
+    "https://oxtorrent.uk-unblock.pro/"
+  ],
+  "legacylinks": [
+    "https://wwv.oxtorrent.com/",
+    "https://www.smartorrent.tv/",
     "https://oxtorrent.black-mirror.xyz/",
     "https://oxtorrent.unblocked.casa/",
     "https://oxtrorrent.proxyportal.fun/",
     "https://oxtorrent.uk-unblock.xyz/",
     "https://oxtorrent.ind-unblock.xyz/"
   ],
-  "legacylinks": ["https://wwv.oxtorrent.com/", "https://www.smartorrent.tv/"],
   "caps": {
     "categorymappings": [
       { "id": "movies", "cat": "Movies", "desc": "Movies" },

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'piratbitl',
+  id: 'piratbitl',
   name: 'PiratBitL',
   description: 'this is the PiratBit indexer with Login enabled in the config.',
   language: 'ru-RU',

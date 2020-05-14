@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'galeriens',
+  id: 'galeriens',
   name: 'Galeriens',
   description: 'Galeriens is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fr-FR',

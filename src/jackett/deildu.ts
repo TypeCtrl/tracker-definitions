@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'deildu',
+  id: 'deildu',
   name: 'Deildu',
   description: 'Deildu is an Icelandic Semi-Private site for TV / MOVIES / GENERAL',
   language: 'is-IS',

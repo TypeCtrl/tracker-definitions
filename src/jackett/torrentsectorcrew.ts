@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentsectorcrew',
+  id: 'torrentsectorcrew',
   name: 'Torrent Sector Crew',
   description:
     'Torrent Sector Crew (TSC) is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',

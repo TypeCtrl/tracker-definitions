@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hush',
+  id: 'hush',
   name: 'HuSh',
   description: 'HuSh is a community-built Movie/TV/FANRES database.',
   language: 'fr-FR',

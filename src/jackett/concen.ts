@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'concen',
+  id: 'concen',
   name: 'ConCen',
   description: 'ConCen (Conspiracy Central) is a Public conspiracy related torrent index',
   language: 'en-US',

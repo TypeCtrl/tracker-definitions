@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'nitro',
+  id: 'nitro',
   name: 'Nitro',
   description: 'Nitro is a POLISH Public Torrent Tracker',
   language: 'pl-PL',

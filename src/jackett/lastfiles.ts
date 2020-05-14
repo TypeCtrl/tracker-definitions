@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'lastfiles',
+  id: 'lastfiles',
   name: 'LastFiles',
   description: 'LastFiles (LF) is a ROMANIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ro-RO',

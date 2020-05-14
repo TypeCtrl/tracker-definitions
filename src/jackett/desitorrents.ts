@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'desitorrents',
+  id: 'desitorrents',
   name: 'DesiTorrents',
   description: 'Desitorrents is a  Private Torrent Tracker for BOLLYWOOD / TOLLYWOOD / GENERAL',
   language: 'en-US',

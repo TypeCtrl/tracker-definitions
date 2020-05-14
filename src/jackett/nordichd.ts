@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'nordichd',
+  id: 'nordichd',
   name: 'NORDiCHD',
   description: 'NORDiCHD is a Mixed Nordic HD Tracker which Encodes a lot of Tv shows and Movies',
   language: 'en-US',

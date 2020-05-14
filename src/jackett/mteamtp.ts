@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'mteamtp',
+  id: 'mteamtp',
   name: 'M-Team - TP',
   description: 'M-Team TP (MTTP) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / XXX',
   language: 'zh-CN',

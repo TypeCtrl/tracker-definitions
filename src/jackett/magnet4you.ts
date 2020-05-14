@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'magnet4you',
+  id: 'magnet4you',
   name: 'Magnet4You',
   description: 'Magnet4You is a Public magnet search engine',
   language: 'en-US',
@@ -9,13 +9,18 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: [
     'https://magnet4you.me/',
+    'https://magnet4you.unblocked.bar/',
+    'https://magnet4you.proxyportal.pw/',
+    'https://magnet4you.uk-unblock.pro/',
+  ],
+  legacylinks: [
+    'http://magnet4you.me/',
     'https://magnet4you.black-mirror.xyz/',
     'https://magnet4you.unblocked.casa/',
     'https://magnet4you.proxyportal.fun/',
     'https://magnet4you.uk-unblock.xyz/',
     'https://magnet4you.ind-unblock.xyz/',
   ],
-  legacylinks: ['http://magnet4you.me/'],
   caps: {
     modes: {
       search: ['q'],

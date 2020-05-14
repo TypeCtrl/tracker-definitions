@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrent4you',
+  id: 'torrent4you',
   name: 'Torrent4You',
   description: 'Torrent4You is a Public torrent storage cache',
   language: 'en-US',

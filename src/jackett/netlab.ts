@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'netlab',
+  id: 'netlab',
   name: 'NetLab',
   description: 'NetLab is a RUSSIAN Private Torrent Tracker',
   language: 'ru-RU',

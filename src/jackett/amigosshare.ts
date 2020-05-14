@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'amigosshare',
+  id: 'amigosshare',
   name: 'Amigos Share Club',
   description: 'Amigos Share Club is a Brazilian Private site for TV / MOVIES / GENERAL',
   language: 'pt-BR',

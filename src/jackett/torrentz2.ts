@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentz2',
+  id: 'torrentz2',
   name: 'Torrentz2',
   description:
     'Torrentz2 is a Public torrent meta-search engine combining results from dozens of torrent sites',
@@ -12,16 +12,19 @@ export const definition: TrackerDefinition = {
   links: [
     'https://torrentz2.eu/',
     'https://torrentz.unblockit.me/',
-    'https://torrentz2.black-mirror.xyz/',
-    'https://torrentz2.unblocked.casa/',
-    'https://torrentz2.proxyportal.fun/',
-    'https://torrentz2.uk-unblock.xyz/',
-    'https://torrentz2.ind-unblock.xyz/',
+    'https://torrentz2.unblocked.bar/',
+    'https://torrentz2.proxyportal.pw/',
+    'https://torrentz2.uk-unblock.pro/',
   ],
   legacylinks: [
     'https://torrentz2.unblockninja.com/',
     'https://torrentz.unblockit.pro/',
     'https://torrentz.unblockit.one/',
+    'https://torrentz2.black-mirror.xyz/',
+    'https://torrentz2.unblocked.casa/',
+    'https://torrentz2.proxyportal.fun/',
+    'https://torrentz2.uk-unblock.xyz/',
+    'https://torrentz2.ind-unblock.xyz/',
   ],
   caps: {
     modes: {

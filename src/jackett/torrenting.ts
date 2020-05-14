@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrenting',
+  id: 'torrenting',
   name: 'Torrenting',
   description: 'Torrenting (TT) is a Private site for MOVIES / TV / GENERAL',
   language: 'en-US',

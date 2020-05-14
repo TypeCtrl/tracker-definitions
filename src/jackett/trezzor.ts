@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'trezzor',
+  id: 'trezzor',
   name: 'Trezzor',
   description: 'Trezzor is a CZECH Private site for TV / MOVIES / GENERAL',
   language: 'cs-CZ',

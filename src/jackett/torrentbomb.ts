@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentbomb',
+  id: 'torrentbomb',
   name: 'TorrentBomb',
   description: 'Torrent Bomb  (토렌트봄) is a Public KOREAN tracker for Korean media.',
   language: 'ko-KR',

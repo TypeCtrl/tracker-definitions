@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rptorrents',
+  id: 'rptorrents',
   name: 'RPTorrents',
   description: 'RPTorrents is a Private tracker for MOVIES / TV / GENERAL',
   language: 'en-US',

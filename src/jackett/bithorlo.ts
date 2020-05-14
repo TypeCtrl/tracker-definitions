@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bithorlo',
+  id: 'bithorlo',
   name: 'Bithorlo',
   description: 'Bithorlo (BHO) is a HUNGARIAN Private Torrent Tracker for MOVIES / GENERAL',
   language: 'hu-HU',

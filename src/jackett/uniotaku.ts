@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'uniotaku',
+  id: 'uniotaku',
   name: 'UniOtaku',
   description: 'UniOtaku is a BRAZILIAN Semi-Private Torrent Tracker for ANIME',
   language: 'pt-BR',

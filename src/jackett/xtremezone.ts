@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'xtremezone',
+  id: 'xtremezone',
   name: 'Xtreme Zone',
   description: 'XtreMeZone (MYXZ) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',

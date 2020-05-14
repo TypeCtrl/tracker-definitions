@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'nbtorrents',
+  id: 'nbtorrents',
   name: 'NBTorrents',
   description: 'NBTorrents is an INDIAN Private site for MOVIES / TV / MUSIC',
   language: 'en-US',

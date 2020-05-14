@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'chdbits',
+  id: 'chdbits',
   name: 'CHDBits',
   description: 'CHDBits is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

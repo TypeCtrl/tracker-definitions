@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'uniongang',
+  id: 'uniongang',
   name: 'UnionGang',
   description: 'UnionGang is a RUSSIAN Private Torrent Tracker for MOVIES / GENERAL',
   language: 'ru-RU',
@@ -68,7 +68,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
       dsearch: '',
@@ -116,12 +116,12 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-last-child(1)' },
       downloadvolumefactor: {
         case: {
-          'img[src="pic/freedownload.gif"]': '0',
-          'img[src="pic/silverdownload.gif"]': '0.5',
-          '*': '1',
+          'img[src="pic/freedownload.gif"]': 0,
+          'img[src="pic/silverdownload.gif"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentfunk',
+  id: 'torrentfunk',
   name: 'TorrentFunk',
   description: 'TorrentFunk is a Public torrent index',
   language: 'en-US',
@@ -32,7 +32,8 @@ export const definition: TrackerDefinition = {
       { id: '7', cat: 'XXX' },
       { id: '8', cat: 'Other' },
       { id: '9', cat: 'Other' },
-      { id: '10', cat: 'Books' },
+      { id: '10', cat: 'Other' },
+      { id: '11', cat: 'Other' },
     ],
   },
   settings: [],

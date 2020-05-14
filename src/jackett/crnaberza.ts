@@ -1,13 +1,14 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'crnaberza',
+  id: 'crnaberza',
   name: 'CrnaBerza',
   description: 'Crna Berza is a BALKAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'sr-SP',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.crnaberza.com/'],
+  links: ['https://www.crnaberza.com/'],
+  legacylinks: ['http://www.crnaberza.com/'],
   caps: {
     categorymappings: [
       { id: '65', cat: 'Movies/3D', desc: '3D Film' },
@@ -81,6 +82,8 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      remember: 1,
+      returnto: '/',
     },
     error: [{ selector: 'h2', message: { selector: 'table tr td.text' } }],
     test: { path: 'browse.php', selector: 'a[href$="/logout.php"]' },

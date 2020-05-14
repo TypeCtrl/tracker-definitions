@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'concertos',
+  id: 'concertos',
   name: 'Concertos',
   description: 'Concertos - Private site for Live Concerts with Strict Quality Control',
   language: 'en-US',

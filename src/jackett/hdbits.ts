@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdbits',
+  id: 'hdbits',
   name: 'HDBits',
   description: 'Best HD Tracker',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'thefallingangels',
+  id: 'thefallingangels',
   name: 'The Falling Angels',
   description: 'The Falling Angels (TFA) is a German Private site for TV / MOVIES / GENERAL',
   language: 'de-DE',

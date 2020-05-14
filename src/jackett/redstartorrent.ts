@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rstorrent',
+  id: 'rstorrent',
   name: 'RedStarTorrent',
   description: 'Red Star Torrent (RST) is a POLISH Private Torrent Tracker for TV',
   language: 'pl-PL',

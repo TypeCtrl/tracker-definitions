@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'parnuxi',
+  id: 'parnuxi',
   name: 'ParnuXi',
   description: 'ParnuXi is a RUSSIAN Public Torrent Tracker for 3X',
   language: 'ru-RU',

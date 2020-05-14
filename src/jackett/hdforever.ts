@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdforever',
+  id: 'hdforever',
   name: 'HD-Forever',
   description: 'HD-Forever (HD-F) is a FRENCH Private Torrent Tracker for HD MOVIES',
   language: 'fr-FR',

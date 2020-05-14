@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bigtower',
+  id: 'bigtower',
   name: 'BigTower',
   description: 'Big Tower is an ITALIAN Private site for TV / MOVIES / GENERAL',
   language: 'it-IT',

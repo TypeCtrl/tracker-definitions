@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'datascene',
+  id: 'datascene',
   name: 'DataScene',
   description: 'DataScene (DS) is a ROMANIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ro-RO',

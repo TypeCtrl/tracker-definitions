@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'teamos',
+  id: 'teamos',
   name: 'TeamOS',
   description: 'Team OS is a Private Torrent Tracker for SOFTWARE',
   language: 'en-US',

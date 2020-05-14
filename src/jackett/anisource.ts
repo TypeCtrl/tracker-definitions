@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'anisource',
+  id: 'anisource',
   name: 'AniSource',
   description: 'AniSource is a Public site for HD Anime raws.',
   language: 'en-US',

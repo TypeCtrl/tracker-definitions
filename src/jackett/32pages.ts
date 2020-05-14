@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: '32pages',
+  id: '32pages',
   name: '32Pages',
   description: '32Pages (32P) is a Private Torrent Tracker for comic books/graphic novels',
   language: 'en-US',

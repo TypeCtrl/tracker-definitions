@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'btsow',
+  id: 'btsow',
   name: 'BTSOW',
   description: 'BTSOW is a Public torrent indexer',
   language: 'en-US',

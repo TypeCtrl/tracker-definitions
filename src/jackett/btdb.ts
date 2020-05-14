@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'btdb',
+  id: 'btdb',
   name: 'BTDB',
   description: 'BTDB is a Public BitTorrent DHT search engine.',
   language: 'en-US',
@@ -20,6 +20,9 @@ export const definition: TrackerDefinition = {
     'https://btdb.proxyportal.fun/',
     'https://btdb.uk-unblock.xyz/',
     'https://btdb.ind-unblock.xyz/',
+    'https://btdb.unblocked.bar/',
+    'https://btdb.proxyportal.pw/',
+    'https://btdb.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'thepiratebay',
+  id: 'thepiratebay',
   name: 'The Pirate Bay',
   description: 'Pirate Bay (TPB) is the galaxy’s most resilient Public BitTorrent site',
   language: 'en-US',

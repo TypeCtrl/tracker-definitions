@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'monova',
+  id: 'monova',
   name: 'Monova',
   description: 'Monova is a Public torrent index.',
   language: 'en-US',
@@ -12,16 +12,19 @@ export const definition: TrackerDefinition = {
     'https://monova.org/',
     'https://monova.to/',
     'https://monova.unblockit.me/',
-    'https://monova.black-mirror.xyz/',
-    'https://monova.unblocked.casa/',
-    'https://monova.proxyportal.fun/',
-    'https://monova.uk-unblock.xyz/',
-    'https://monova.ind-unblock.xyz/',
+    'https://monova.unblocked.bar/',
+    'https://monova.proxyportal.pw/',
+    'https://monova.uk-unblock.pro/',
   ],
   legacylinks: [
     'https://monova.unblockninja.com/',
     'https://monova.unblockit.pro/',
     'https://monova.unblockit.one/',
+    'https://monova.black-mirror.xyz/',
+    'https://monova.unblocked.casa/',
+    'https://monova.proxyportal.fun/',
+    'https://monova.uk-unblock.xyz/',
+    'https://monova.ind-unblock.xyz/',
   ],
   caps: {
     modes: {
@@ -49,13 +52,13 @@ export const definition: TrackerDefinition = {
         path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}',
       },
       {
-        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}&page=2',
+        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{end}}page=2',
       },
       {
-        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}&page=3',
+        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{end}}page=3',
       },
       {
-        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}&page=4',
+        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{end}}page=4',
       },
     ],
     keywordsfilters: [

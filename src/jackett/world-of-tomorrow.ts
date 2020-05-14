@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'world-of-tomorrow',
+  id: 'world-of-tomorrow',
   name: 'world-of-tomorrow',
   description: 'world-of-tomorrow is a Private GERMAN tracker',
   language: 'de-DE',

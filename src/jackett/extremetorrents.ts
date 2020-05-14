@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'extremetorrents',
+  id: 'extremetorrents',
   name: 'ExtremeTorrents',
   description: 'ExtremeTorrents is a DUTCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'nl-NL',

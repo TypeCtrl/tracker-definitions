@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'metaltracker',
+  id: 'metaltracker',
   name: 'Metal Tracker',
   description:
     'Metal Tracker is a Semi-Private site dedicated to HEAVY METAL MUSIC. This definition is for the English site.',

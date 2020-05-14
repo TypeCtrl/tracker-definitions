@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'kaztorka',
+  id: 'kaztorka',
   name: 'Kaztorka',
   description: 'Kaztorka is a RUSSIAN Semi-Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ru-RU',

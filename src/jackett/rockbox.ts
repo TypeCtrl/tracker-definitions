@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'RockBox',
+  id: 'RockBox',
   name: 'RockBox Rock/Metal Tracker',
   description:
     'RockBox Semi-Private site dedicated to HEAVY METAL/ROCK MUSIC. This definition is for the English site.',

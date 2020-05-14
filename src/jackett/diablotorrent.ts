@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'diablotorrent',
+  id: 'diablotorrent',
   name: 'Diablo Torrent',
   description: ' Diablo Torrent is a Hungarian Private site for TV / MOVIES / GENERAL',
   language: 'hu-HU',

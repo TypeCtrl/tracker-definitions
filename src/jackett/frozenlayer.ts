@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'frozenlayer',
+  id: 'frozenlayer',
   name: 'Frozen Layer',
   description: 'Frozen Layer is a SPANISH Public torrent site focused on ANIME',
   language: 'es-ES',

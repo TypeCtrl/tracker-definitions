@@ -1,13 +1,14 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'xwtclassics',
+  id: 'xwtclassics',
   name: 'XWT-Classics',
   description: 'XWT-Classics is a Private Torrent Tracker for CLASSIC PROFESSIONAL WRESTLING',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://xwt-classics.net/'],
+  legacylinks: ['http://xwt-classics.net/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Sport', desc: 'DVD' },

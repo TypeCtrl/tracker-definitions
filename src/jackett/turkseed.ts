@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'turkseed',
+  id: 'turkseed',
   name: 'TurkSeed',
   description: 'TurkSeed (Aturk) is a TURKISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'tr-TR',

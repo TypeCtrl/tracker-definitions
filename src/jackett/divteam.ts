@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'divteam',
+  id: 'divteam',
   name: 'DivTeam',
   description: 'DivTeam is a SPANISH Private Torrent Tracker for MOVIES / GENERAL',
   language: 'es-ES',

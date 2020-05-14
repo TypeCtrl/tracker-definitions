@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'horrorsite',
+  id: 'horrorsite',
   name: 'Horror Site',
   description: 'Horror Site is a Hungarian Private site for MOVIES / TV',
   language: 'hu-HU',
@@ -72,7 +72,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'table.browse:contains("hiba")' }],
-    test: { path: '/', selector: 'a[href="/logout.php"]' },
+    test: { path: '/', selector: 'a[href$="/logout.php"]' },
   },
   search: {
     paths: [{ path: 'browse.php' }],

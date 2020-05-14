@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'onlineselfeducation',
+  id: 'onlineselfeducation',
   name: 'OnlineSelfEducation',
   description: 'OnlineSelfEducation is a Private Torrent Tracker for E-LEARNING',
   language: 'en-US',

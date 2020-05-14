@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'dragonworldreloaded',
+  id: 'dragonworldreloaded',
   name: 'Dragonworld Reloaded',
   description: 'Dragonworld Reloaded is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'de-DE',

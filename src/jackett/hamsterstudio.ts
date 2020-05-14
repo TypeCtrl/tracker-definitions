@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hamsterstudio',
+  id: 'hamsterstudio',
   name: 'HamsterStudio',
   description: 'HamsterStudio is a RUSSIAN Semi-Private Torrent Tracker for TV',
   language: 'ru-RU',

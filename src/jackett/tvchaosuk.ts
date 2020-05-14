@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tvchaosuk',
+  id: 'tvchaosuk',
   name: 'TVChaosUK',
   description: 'TV Chaos UK (TVCUK) is a Private Torrent Tracker for UK TV',
   language: 'en-UK',

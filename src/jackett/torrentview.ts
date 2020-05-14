@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentview',
+  id: 'torrentview',
   name: 'TorrentView',
   description: 'Torrent View  (토렌트뷰) is a Public KOREAN tracker for Korean media.',
   language: 'ko-KR',

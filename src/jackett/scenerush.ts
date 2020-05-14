@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'scenerush',
+  id: 'scenerush',
   name: 'SceneRush',
   description: 'SceneRush is a PORTUGUESE Private Torrent Tracker for 0DAY / GENERAL',
   language: 'pt-PT',

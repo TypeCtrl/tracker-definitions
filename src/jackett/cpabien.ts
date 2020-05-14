@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'cpasbien',
+  id: 'cpasbien',
   name: 'cpasbien',
   description: 'cpasbien is a FRENCH Public site for TV / MOVIES / GENERAL',
   language: 'fr-FR',

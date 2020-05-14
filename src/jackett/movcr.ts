@@ -1,21 +1,24 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'movcr',
+  id: 'movcr',
   name: 'MovCr',
   description: 'MovCr is an Indian Public torrent site',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'https://movcr.to/',
+  links: ['https://movcr.to/'],
+  legacylinks: [
+    'https://movcr.tv/',
     'https://movcr.black-mirror.xyz/',
     'https://movcr.unblocked.casa/',
     'https://movcr.proxyportal.fun/',
     'https://movcr.uk-unblock.xyz/',
     'https://movcr.ind-unblock.xyz/',
+    'https://movcr.unblocked.bar/',
+    'https://movcr.proxyportal.pw/',
+    'https://movcr.uk-unblock.pro/',
   ],
-  legacylinks: ['https://movcr.tv/'],
   caps: {
     modes: {
       search: ['q'],

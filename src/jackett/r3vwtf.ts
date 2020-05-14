@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'r3vwtf',
+  id: 'r3vwtf',
   name: 'R3V WTF!',
   description: 'R3V WTF! is a Private site for MOVIES / TV / GENERAL',
   language: 'en-US',

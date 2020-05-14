@@ -1,5 +1,5 @@
 {
-  "site": "1337x",
+  "id": "1337x",
   "name": "1337x",
   "description": "1337X is a Public torrent site that offers verified torrent downloads",
   "language": "en-US",
@@ -15,6 +15,9 @@
     "https://x1337x.eu/",
     "https://x1337x.se/",
     "https://1337x.unblockit.me/",
+    "https://1337x.unblocked.bar/",
+    "https://1337x.proxyportal.pw/",
+    "https://1337x.uk-unblock.pro/",
     "https://1337.root.yt/"
   ],
   "legacylinks": [
@@ -159,11 +162,17 @@
     ],
     "rows": { "selector": "tr:has(a[href^=\"/torrent/\"])" },
     "fields": {
-      "title": {
+      "title_text": {
+        "selector": "td[class^=\"coll-1\"] a[href^=\"/torrent/\"]"
+      },
+      "title_href": {
         "selector": "td[class^=\"coll-1\"] a[href^=\"/torrent/\"]",
         "attribute": "href",
+        "filters": [{ "name": "split", "args": ["/", 3] }]
+      },
+      "title": {
+        "text": "{{ if .Result.title_href }}{{ .Result.title_href }}{{ else }}{{ .Result.title_text }}{{ end }}",
         "filters": [
-          { "name": "split", "args": ["/", 3] },
           { "name": "re_replace", "args": ["(-+)", " "] },
           { "name": "replace", "args": ["Grey's Anatomy", "Greys Anatomy"] },
           { "name": "replace", "args": ["\u000f", ""] }

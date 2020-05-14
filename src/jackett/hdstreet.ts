@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdstreet',
+  id: 'hdstreet',
   name: 'HDStreet',
   description: 'HDStreet is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

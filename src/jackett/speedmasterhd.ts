@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'speedmasterhd',
+  id: 'speedmasterhd',
   name: 'Speedmaster HD',
   description: 'Speedmaster HD is a German Time based tracker for MOVIES / TV',
   language: 'de-DE',

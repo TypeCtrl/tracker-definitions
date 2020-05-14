@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: '3changtrai',
+  id: '3changtrai',
   name: '3ChangTrai',
   description: '3ChangTrai (3CT) is a VIETNAMESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'vi-VN',

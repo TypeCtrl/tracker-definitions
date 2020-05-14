@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'p2pelite',
+  id: 'p2pelite',
   name: 'P2PElite',
   description: 'P2PElite is a Private Torrent Tracker for EBOOKS / AUDIOBOOKS',
   language: 'en-US',

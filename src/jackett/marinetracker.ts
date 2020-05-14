@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'marinetracker',
+  id: 'marinetracker',
   name: 'Marine Tracker',
   description: 'Marine Tracker is a RUSSIAN Semi-Private Torrent Tracker for MARITIME E-LEARNING',
   language: 'ru-RU',

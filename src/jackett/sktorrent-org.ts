@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'sktorrent-org',
+  id: 'sktorrent-org',
   name: 'SkTorrent-org',
   description: 'SkTorrent.org is a Semi-Private torrent site for MOVIES / TV/ GENERAL',
   language: 'en-US',

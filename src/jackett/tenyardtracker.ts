@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tenyardtracker',
+  id: 'tenyardtracker',
   name: 'TenYardTracker',
   description: 'TenYardTorrents (TYT) is a Private Torrent Tracker for AMERICAN FOOTBALL',
   language: 'en-US',
@@ -24,7 +24,7 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div:contains("Login Failed")' }],
     test: { path: 'my.php' },
   },
-  ratio: { path: 'browse.php', selector: null },
+  ratio: { path: 'browse.php', selector: '#status_bar' },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {

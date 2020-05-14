@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'extratorrent-cd',
+  id: 'extratorrent-cd',
   name: 'ExtraTorrent.cd',
   description:
     'ExtraTorrent.cd is a Public tracker, a  popular alternative to the original ET site, providing Movie / TV / General magnets',

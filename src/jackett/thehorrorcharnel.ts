@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'thehorrorcharnel',
+  id: 'thehorrorcharnel',
   name: 'The Horror Charnel',
   description:
     'The Horror Charnel (THC) is a Private Torrent Tracker for HORROR / CULT / SLEAZE / SCI FI MOVIES',

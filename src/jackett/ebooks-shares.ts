@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ebooks-shares',
+  id: 'ebooks-shares',
   name: 'Ebooks-Shares',
   description: 'Ebooks-Shares is a Private Torrent Tracker for EBOOKS / AUDIOBOOKS',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'mononokebt',
+  id: 'mononokebt',
   name: 'Mononoké-BT',
   description: 'Mononoke-BT is a FRENCH Private Torrent Tracker for ANIME',
   language: 'fr-FR',

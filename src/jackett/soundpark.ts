@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'soundpark',
+  id: 'soundpark',
   name: 'SoundPark',
   description: 'SoundPark Semi-Private RUSSIAN site dedicated to MUSIC.',
   language: 'ru-RU',

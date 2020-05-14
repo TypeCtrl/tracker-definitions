@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'broadcity',
+  id: 'broadcity',
   name: 'BroadCity',
   description: 'BroadCity is a TURKISH Private Torrent Tracker for MOVIES and TV',
   language: 'tr-TR',

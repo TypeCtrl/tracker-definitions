@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tlfbits',
+  id: 'tlfbits',
   name: 'TLFBits',
   description: 'TLFBits is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

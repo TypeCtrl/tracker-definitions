@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentdb',
+  id: 'torrentdb',
   name: 'TorrentDB',
   description: 'TorrentDB - Private site for Live Concerts with Strict Quality Control',
   language: 'en-US',

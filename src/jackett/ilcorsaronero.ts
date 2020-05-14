@@ -1,14 +1,19 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ilcorsaronero',
+  id: 'ilcorsaronero',
   name: 'Il Corsaro Nero',
   description: 'Il Corsaro Nero is an ITALIAN Public site for TV / MOVIES / GENERAL',
   language: 'it-IT',
   type: 'public',
   encoding: 'WINDOWS-1252',
   followredirect: true,
-  links: ['https://ilcorsaronero.xyz/', 'https://ilcorsaronero.fun/', 'https://ilcorsaronero.pro/'],
+  links: [
+    'https://ilcorsaronero.xyz/',
+    'https://ilcorsaronero.fun/',
+    'https://ilcorsaronero.pro/',
+    'https://ilcorsaronero.unblockit.me/',
+  ],
   legacylinks: [
     'https://ilcorsaronero.live/',
     'https://ilcorsaronero.vip/',
@@ -19,7 +24,6 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.pw/',
     'https://ilcorsaronero.unblockit.pro/',
     'https://ilcorsaronero.unblockit.one/',
-    'https://ilcorsaronero.unblockit.me/',
   ],
   caps: {
     categorymappings: [

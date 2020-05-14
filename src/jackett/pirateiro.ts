@@ -1,19 +1,18 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pirateiro',
+  id: 'pirateiro',
   name: 'Pirateiro',
   description: 'Pirateiro is a Public site for MOVIES / TV / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://pirateiro.com/', 'https://pirateiro.eu/'],
+  links: ['https://pirateiro.com/', 'https://pirateiro.eu/', 'https://pirateiro.unblockit.me/'],
   legacylinks: [
     'http://pirateiro.com/',
     'https://pirateiro.unblockit.pro/',
     'https://pirateiro.unblockit.one/',
-    'https://pirateiro.unblockit.me/',
   ],
   caps: {
     modes: {

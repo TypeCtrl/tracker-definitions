@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'pornbay',
+  id: 'pornbay',
   name: 'Pornbay',
   description: 'Pornbay is a Private Torrent Tracker for XXX',
   language: 'en-US',

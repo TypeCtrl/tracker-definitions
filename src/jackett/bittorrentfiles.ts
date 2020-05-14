@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'Bittorrentfiles',
+  id: 'Bittorrentfiles',
   name: 'Bittorrentfiles',
   description: 'Bittorrentfiles is a Private GERMAN tracker',
   language: 'de-DE',

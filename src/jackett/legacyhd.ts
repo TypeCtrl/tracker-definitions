@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'legacyhd',
+  id: 'legacyhd',
   name: 'LegacyHD',
   description: 'LegacyHD (HD4Free) is a Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'en-US',

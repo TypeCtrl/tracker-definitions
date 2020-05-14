@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'oshenpt',
+  id: 'oshenpt',
   name: 'OshenPT',
   description: 'OshenPT is a CHINESE Private Torrent Tracker for HD Movies, TV, Music',
   language: 'zh-CN',

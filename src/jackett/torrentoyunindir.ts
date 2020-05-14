@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentoyunindir',
+  id: 'torrentoyunindir',
   name: 'Torrent Oyun indir',
   description: 'Torrent Oyun indir is a TURKISH Public torrent site for GAMES',
   language: 'tr-TR',

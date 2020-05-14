@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: '52pt',
+  id: '52pt',
   name: '52PT',
   description: '52PT is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

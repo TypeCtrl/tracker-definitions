@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'casatorrent',
+  id: 'casatorrent',
   name: 'Casa-Torrent',
   description: 'Casa-Torrent is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fr-FR',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'desireleasers',
+  id: 'desireleasers',
   name: 'DesiReleasers',
   description: 'DesiReleasers is an INDIAN Private Torrent Tracker for INDIAN MOVIES',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'siambit',
+  id: 'siambit',
   name: 'SiamBIT',
   description: 'SiamBIT is a THAI Private Torrent Tracker for GENERAL',
   language: 'th-TH',

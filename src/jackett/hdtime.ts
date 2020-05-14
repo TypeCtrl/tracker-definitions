@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdtime',
+  id: 'hdtime',
   name: 'HDtime',
   description: 'HDtime is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'zh-CN',

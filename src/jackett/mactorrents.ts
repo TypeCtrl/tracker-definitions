@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'mactorrents',
+  id: 'mactorrents',
   name: 'MacTorrents',
   description: 'MacTorrents is a Public tracker for Mac software',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'filebase',
+  id: 'filebase',
   name: 'Filebase',
   description: 'Filebase is a RUSSIAN Public Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',

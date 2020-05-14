@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: '3evils',
+  id: '3evils',
   name: '3evils',
   description: '3evils is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-EN',

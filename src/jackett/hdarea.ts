@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdarea',
+  id: 'hdarea',
   name: 'HDArea',
   description: 'HDArea is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

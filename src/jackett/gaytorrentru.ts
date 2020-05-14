@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'gaytorrentru',
+  id: 'gaytorrentru',
   name: 'GAYtorrent.ru',
   description: 'GayTorrent.ru is a Private Torrent Tracker for GAY XXX',
   language: 'en-US',

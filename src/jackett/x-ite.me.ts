@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'xiteme',
+  id: 'xiteme',
   name: 'x-ite.me',
   description: 'Tracker for LGBTQ movies, TV, books, magazines, anime, PC and XXX.',
   language: 'en-US',

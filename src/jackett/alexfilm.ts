@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'alexfilm',
+  id: 'alexfilm',
   name: 'AlexFilm',
   description: 'AlexFilm is a RUSSIAN Semi-Private Torrent Tracker for TV',
   language: 'ru-RU',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrent9clone',
+  id: 'torrent9clone',
   name: 'Torrent9 clone (torrent9.ch)',
   description: 'Torrent9 is a FRENCH Public site for TV / MOVIES / GENERAL',
   language: 'fr-FR',
@@ -10,11 +10,9 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.torrent9.pl/',
-    'https://torrent9.black-mirror.xyz/',
-    'https://torrent9.unblocked.casa/',
-    'https://torrent9.proxyportal.fun/',
-    'https://torrent9.uk-unblock.xyz/',
-    'https://torrent9.ind-unblock.xyz/',
+    'https://torrent9.unblocked.bar/',
+    'https://torrent9.proxyportal.pw/',
+    'https://torrent9.uk-unblock.pro/',
     'https://torrent9.unblockninja.com/',
   ],
   legacylinks: [
@@ -40,6 +38,11 @@ export const definition: TrackerDefinition = {
     'https://www.t9.vc/',
     'https://www.torrent9.ai/',
     'https://www.torrent9.so/',
+    'https://torrent9.black-mirror.xyz/',
+    'https://torrent9.unblocked.casa/',
+    'https://torrent9.proxyportal.fun/',
+    'https://torrent9.uk-unblock.xyz/',
+    'https://torrent9.ind-unblock.xyz/',
   ],
   caps: {
     categorymappings: [

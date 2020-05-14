@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'cartoonchaos',
+  id: 'cartoonchaos',
   name: 'CartoonChaos',
   description: 'CartoonChaos (CC) is a Private Torrent Tracker for ANIMATED MOVIES / TV',
   language: 'en-US',

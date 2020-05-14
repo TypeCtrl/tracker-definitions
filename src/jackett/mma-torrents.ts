@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'mma-torrents',
+  id: 'mma-torrents',
   name: 'MMA-torrents',
   description: 'MMA-Torrents is a Private Torrent Tracker for MMA (Mixed Martial Arts)',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentleech-pl',
+  id: 'torrentleech-pl',
   name: 'Torrentleech.pl',
   description: 'Torrentleech.pl is a POLISH Private Torrent Tracker for 0DAY / GENERAL',
   language: 'pl-PL',

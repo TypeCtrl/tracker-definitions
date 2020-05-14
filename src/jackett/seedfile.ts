@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'seedfile',
+  id: 'seedfile',
   name: 'SeedFile',
   description: 'SeedFile (SF) is a ROMANIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ro-RO',

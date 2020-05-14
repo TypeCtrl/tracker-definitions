@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bigtorrent',
+  id: 'bigtorrent',
   name: 'BIGTorrent',
   description: 'BIGTorrent is a HUNGARIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'hu-HU',

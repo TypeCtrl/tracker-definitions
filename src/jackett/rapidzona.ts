@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rapidzona',
+  id: 'rapidzona',
   name: 'Rapidzona',
   description: 'Rapidzona is a RUSSIAN Public Torrent Tracker for 3X',
   language: 'ru-RU',

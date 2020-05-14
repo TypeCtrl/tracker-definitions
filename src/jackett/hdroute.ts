@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdroute',
+  id: 'hdroute',
   name: 'HDRoute',
   description: 'HDRoute is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

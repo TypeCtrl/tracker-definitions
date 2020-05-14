@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tapochek',
+  id: 'tapochek',
   name: 'Tapochek',
   description: 'Tapochek is a RUSSIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ru-RU',

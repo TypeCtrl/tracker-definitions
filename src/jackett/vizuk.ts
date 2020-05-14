@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'vizuk',
+  id: 'vizuk',
   name: 'Vizuk',
   description: 'Vizuk is a SPANISH private site for HD content',
   language: 'es-ES',

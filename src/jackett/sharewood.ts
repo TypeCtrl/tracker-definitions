@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'sharewood',
+  id: 'sharewood',
   name: 'Sharewood',
   description: 'sharewood is a Semi-Private FRENCH Torrent Tracker for GENERAL',
   language: 'fr-FR',

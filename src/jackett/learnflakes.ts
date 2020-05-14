@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'learnflakes',
+  id: 'learnflakes',
   name: 'LearnFlakes',
   description: 'LearnFlakes is a Private Torrent Tracker for CERTIFICATE / TRAINING E-LEARNING',
   language: 'en-US',

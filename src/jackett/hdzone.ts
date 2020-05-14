@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdzone',
+  id: 'hdzone',
   name: 'HDZone',
   description: 'HDZone is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',

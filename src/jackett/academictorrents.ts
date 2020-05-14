@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'academictorrents',
+  id: 'academictorrents',
   name: 'AcademicTorrents',
   description:
     'AcademicTorrents is a Public Community-Maintained Distributed Repository for datasets and scientific knowledge.',

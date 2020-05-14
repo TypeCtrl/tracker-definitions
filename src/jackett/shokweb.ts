@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'shokweb',
+  id: 'shokweb',
   name: 'shokweb',
   description: 'shokweb is a CHINESE Public tracker',
   language: 'zh-CN',

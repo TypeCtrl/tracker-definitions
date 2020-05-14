@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'baibako',
+  id: 'baibako',
   name: 'BaibaKo',
   description: 'BaibaKo is a RUSSIAN Semi-Private Torrent Tracker for TV',
   language: 'ru-RU',

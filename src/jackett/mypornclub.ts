@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'mypornclub',
+  id: 'mypornclub',
   name: 'MyPornClub',
   description: 'MyPornClub is a Public Torrent Tracker for 3X',
   language: 'en-EN',

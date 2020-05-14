@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'empornium',
+  id: 'empornium',
   name: 'Empornium',
   description: 'Empornium (EMP) is a Private Torrent Tracker for XXX',
   language: 'en-US',

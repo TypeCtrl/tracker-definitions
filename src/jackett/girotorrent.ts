@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'girotorrent',
+  id: 'girotorrent',
   name: 'Girotorrent',
   description: 'Girotorrent is an ITALIAN Private site for TV / MOVIES / GENERAL',
   language: 'it-IT',

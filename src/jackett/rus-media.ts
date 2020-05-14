@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rus-media',
+  id: 'rus-media',
   name: 'Rus-media',
   description: 'Rus-media is a RUSSIAN Public Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',

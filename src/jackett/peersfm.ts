@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'peersfm',
+  id: 'peersfm',
   name: 'Peers.FM',
   description: 'Peers.FM is a RUSSIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',

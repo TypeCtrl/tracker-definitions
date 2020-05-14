@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdreactor',
+  id: 'hdreactor',
   name: 'HDReactor',
   description: 'HDReactor is a RUSSIAN Public Torrent Tracker for MOVIES / TV',
   language: 'ru-RU',

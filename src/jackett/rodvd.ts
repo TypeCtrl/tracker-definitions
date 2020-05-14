@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rodvd',
+  id: 'rodvd',
   name: 'RoDVD',
   description: 'RoDVD (Cinefiles) is a ROMANIAN Private Torrent Tracker for DVD-R / HD MOVIES',
   language: 'ro-RO',

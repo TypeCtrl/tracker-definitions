@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'prostylex',
+  id: 'prostylex',
   name: 'ProStyleX',
   description: 'ProStyleX is a Semi-Private torrent site for 0Day and General',
   language: 'en-US',
@@ -9,13 +9,18 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: [
     'https://prostylex.org/',
+    'https://prostylex.unblocked.bar/',
+    'https://prostylex.proxyportal.pw/',
+    'https://prostylex.uk-unblock.pro/',
+  ],
+  legacylinks: [
+    'http://prostylex.com/',
     'https://prostylex.black-mirror.xyz/',
     'https://prostylex.unblocked.casa/',
     'https://prostylex.proxyportal.fun/',
     'https://prostylex.uk-unblock.xyz/',
     'https://prostylex.ind-unblock.xyz/',
   ],
-  legacylinks: ['http://prostylex.com/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies/SD', desc: 'Movies - Divx/Xvid' },

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'greekteam',
+  id: 'greekteam',
   name: 'Greek Team',
   language: 'el-GR',
   description: 'Greek Team is a GREEK Private site for TV / MOVIES / GENERAL',

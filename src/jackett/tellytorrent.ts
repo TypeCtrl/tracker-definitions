@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tellytorrent',
+  id: 'tellytorrent',
   name: 'TellyTorrent',
   description: 'TellyTorrent is an INDIAN Private Tracker for MOVIES / TV',
   language: 'en-EN',

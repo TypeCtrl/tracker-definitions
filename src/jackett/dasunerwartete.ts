@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'Das-Unerwartete',
+  id: 'Das-Unerwartete',
   name: 'Das Unerwartete',
   description: 'Das Unerwartete is a Private GERMAN tracker',
   language: 'de-DE',

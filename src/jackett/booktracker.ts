@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'booktracker',
+  id: 'booktracker',
   name: 'BookTracker',
   description: 'BookTracker is a RUSSIAN Semi-Private Torrent Tracker for EBOOKS',
   language: 'ru-RU',

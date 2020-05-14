@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'acgsou',
+  id: 'acgsou',
   name: 'ACGsou',
   description: 'ACGsou (36DM) is a CHINESE Public torrent tracker for ANIME',
   language: 'zh-CN',

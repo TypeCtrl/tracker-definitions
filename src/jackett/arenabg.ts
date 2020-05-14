@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'arenabg',
+  id: 'arenabg',
   name: 'ArenaBG',
   description: 'ArenaBG is a BULGARIAN Semi-Private Torrent Tracker for 0DAY / GENERAL',
   language: 'bg-BG',

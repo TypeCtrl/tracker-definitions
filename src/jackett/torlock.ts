@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torlock',
+  id: 'torlock',
   name: 'Torlock',
   description:
     'Torlock is a torrent search site that lists verified torrents only for TV series and movies',

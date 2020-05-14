@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'nostalgic',
+  id: 'vhstapes',
   name: 'VHSTAPES',
   description:
     'VHSTAPES (The Archive / Nostalgic) is a Private Torrent Tracker for MOVIES / TV / GENERAL NOSTALGIA',
@@ -72,6 +72,7 @@ export const definition: TrackerDefinition = {
       token: { selector: 'input[name="token"]', attribute: 'value' },
     },
     error: [{ selector: 'table#maincontent tr td div div#messagebarA' }],
+    test: { path: 'index.php', selector: 'a[href="/logout"]' },
   },
   search: {
     paths: [{ path: 'torrents.php' }],

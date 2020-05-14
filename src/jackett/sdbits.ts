@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'sdbits',
+  id: 'sdbits',
   name: 'SDBits',
   description: 'SDBits is a small tracker that focuses on SD movies and tv.',
   language: 'en-US',

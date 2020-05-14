@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'jpopsuki',
+  id: 'jpopsuki',
   name: 'JPopsuki',
   description: 'JPopSuki is a Private Torrent Tracker for ASIAN MUSIC',
   language: 'en-US',

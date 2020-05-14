@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'metaliplayro',
+  id: 'metaliplayro',
   name: 'Romanian Metal Torrent',
   description:
     'Romanian Metal Torrent (RMT) is a Private site dedicated to METAL MUSIC. This definition is for the English site.',

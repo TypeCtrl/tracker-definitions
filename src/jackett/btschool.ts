@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'btschool',
+  id: 'btschool',
   name: 'BTSCHOOL',
   description: 'BTSCHOOL is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'zh-CN',

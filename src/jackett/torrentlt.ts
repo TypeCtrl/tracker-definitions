@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentlt',
+  id: 'torrentlt',
   name: 'Torrent.LT',
   description: 'Torrent.LT is a LITHUANIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'lt-LT',

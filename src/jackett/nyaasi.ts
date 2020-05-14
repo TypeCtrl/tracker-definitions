@@ -1,21 +1,23 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'nyaasi',
+  id: 'nyaasi',
   name: 'Nyaa.si',
   description:
     'Nyaa is a Public torrent site focused on Eastern Asian media including anime, manga, literature and music',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'https://nyaa.si/',
-    'https://nyaa.root.yt/',
+  links: ['https://nyaa.si/', 'https://nyaa.root.yt/'],
+  legacylinks: [
     'https://nyaa.black-mirror.xyz/',
     'https://nyaa.unblocked.casa/',
     'https://nyaa.proxyportal.fun/',
     'https://nyaa.uk-unblock.xyz/',
     'https://nyaa.ind-unblock.xyz/',
+    'https://nyaa.unblocked.bar/',
+    'https://nyaa.proxyportal.pw/',
+    'https://nyaa.uk-unblock.pro/',
   ],
   settings: [
     {

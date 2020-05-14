@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'tasmanit',
+  id: 'tasmanit',
   name: 'Tasmanit',
   description: 'Tasmanit.es is a AUSTRALIAN / NEW ZEALAND Private Torrent Tracker for AUS / NZ TV',
   language: 'en-US',

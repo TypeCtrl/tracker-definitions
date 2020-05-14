@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'immortuos',
+  id: 'immortuos',
   name: 'Immortuos',
   description: 'Immortuos is a GERMAN Private Tracker for MOVIES / TV',
   language: 'de-DE',

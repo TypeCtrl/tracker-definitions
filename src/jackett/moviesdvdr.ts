@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'moviesdvdr',
+  id: 'moviesdvdr',
   name: 'MoviesDVDR',
   description: 'MoviesDVDR is a SPANISH Public tracker for MOVIES',
   language: 'es-ES',

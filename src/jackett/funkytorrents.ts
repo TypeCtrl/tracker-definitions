@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'funkytorrents',
+  id: 'funkytorrents',
   name: 'FunkyTorrents',
   description: 'FunkyTorrents (FT) is a Private Torrent Tracker for MUSIC',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentv',
+  id: 'torrentv',
   name: 'Torrentv',
   description: 'Torrentv is a Public tracker for MOVIES',
   language: 'en-US',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ptfiles',
+  id: 'ptfiles',
   name: 'PTFiles',
   description: 'PTFiles (PTF) is a Private site for TV / MOVIES / GENERAL',
   language: 'en-US',

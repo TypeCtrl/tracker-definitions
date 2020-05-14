@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'gigatorrents',
+  id: 'gigatorrents',
   name: 'GigaTorrents',
   description: 'Giga Torrents is a Hungarian Private site for TV / MOVIES / GENERAL',
   language: 'hu-HU',

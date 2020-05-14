@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ttsweb',
+  id: 'ttsweb',
   name: 'TTsWeb',
   description: 'TTsWeb is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-EN',

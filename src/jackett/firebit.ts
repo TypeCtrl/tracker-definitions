@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'firebit',
+  id: 'firebit',
   name: 'FireBit',
   description: 'FireBit is an UKRAINIAN / RUSSIAN Public Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',
@@ -42,6 +42,7 @@ export const definition: TrackerDefinition = {
       { id: 'Литература', cat: 'Books' },
       { id: 'Игры', cat: 'PC/Games' },
       { id: 'Фильмы', cat: 'Movies' },
+      { id: 'Фильмы Видео', cat: 'Movies' },
       { id: 'Фильмы Сериалы', cat: 'Movies' },
       { id: 'Фильмы Скоро на трекере', cat: 'Movies' },
       { id: 'Видео', cat: 'Movies' },
@@ -92,7 +93,10 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(2) a, span.article-title a',
         attribute: 'href',
       },
-      size: { selector: 'td.td-size, li.meta-size' },
+      size: {
+        selector: 'td.td-size, li.meta-size',
+        filters: [{ name: 'replace', args: ['-', '0 B'] }],
+      },
       date: {
         selector: 'td:nth-child(5), li.meta-date',
         filters: [{ name: 'dateparse', args: '02.01.2006 15:04:05' }],

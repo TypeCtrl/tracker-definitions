@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentdownload',
+  id: 'torrentdownload',
   name: 'TorrentDownload',
   description: 'TorrentDownload is a Public general torrent index',
   language: 'en-US',
@@ -11,13 +11,19 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torrentdownload.info/',
     'https://torrentdownload.unblockit.me/',
+    'https://torrentdownload.unblocked.bar/',
+    'https://torrentdownload.proxyportal.pw/',
+    'https://torrentdownload.uk-unblock.pro/',
+  ],
+  legacylinks: [
+    'https://torrentdownload.unblockit.pro/',
+    'https://torrentdownload.unblockit.one/',
     'https://torrentdownload.black-mirror.xyz/',
     'https://torrentdownload.unblocked.casa/',
     'https://torrentdownload.proxyportal.fun/',
     'https://torrentdownload.uk-unblock.xyz/',
     'https://torrentdownload.ind-unblock.xyz/',
   ],
-  legacylinks: ['https://torrentdownload.unblockit.pro/', 'https://torrentdownload.unblockit.one/'],
   caps: {
     modes: {
       search: ['q'],

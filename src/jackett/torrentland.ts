@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentland',
+  id: 'torrentland',
   name: 'Torrentland',
   description: 'Torrentland is a SPANISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'es-ES',
@@ -84,6 +84,8 @@ export const definition: TrackerDefinition = {
       { id: '25', cat: 'Books/Ebook', desc: 'Ebook' },
       { id: '0', cat: 'Books/Ebook', desc: 'Ebook' },
       { id: '24', cat: 'XXX', desc: 'Adultos' },
+      { id: '64', cat: 'PC/Phone-Android', desc: 'PC Android' },
+      { id: '21', cat: 'TV/Documentary', desc: 'Documentales' },
     ],
     modes: {
       search: ['q', 'imdbid'],

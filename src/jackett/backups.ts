@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'backups',
+  id: 'backups',
   name: 'Back-ups',
   description: 'Back-Ups is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',

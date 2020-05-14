@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'xwtorrents',
+  id: 'xwtorrents',
   name: 'XWtorrents',
   description:
     'XtremeWrestlingTorrents (XWT) is a Private Torrent Tracker for PROFESSIONAL WRESTLING / MMA',
@@ -9,6 +9,7 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'WINDOWS-1252',
   links: ['https://xtremewrestlingtorrents.net/'],
+  legacylinks: ['http://xtremewrestlingtorrents.net/'],
   caps: {
     categorymappings: [
       { id: '47', cat: 'TV/Sport', desc: 'Boxing' },

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'kinonavse100',
+  id: 'kinonavse100',
   name: 'KinoNaVse100',
   description: 'Кино на все 100 is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / MUSIC',
   language: 'ru-RU',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'linuxtracker',
+  id: 'linuxtracker',
   name: 'LinuxTracker',
   description: 'LinuxTracker is a Public Linux ISO Torrent Repository',
   language: 'en-US',

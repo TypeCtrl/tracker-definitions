@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'kickasstorrent-kathow',
+  id: 'kickasstorrent-kathow',
   name: 'KickAssTorrent (kat.li)',
   description: 'kat.li is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
   language: 'en-US',

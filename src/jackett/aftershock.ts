@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'aftershock',
+  id: 'aftershock',
   name: 'Aftershock',
   description: 'Aftershock is a HUNGARIAN Private Torrent Tracker for MOVIES / GENERAL',
   language: 'hu-HU',

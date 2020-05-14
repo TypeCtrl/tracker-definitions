@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'rintor',
+  id: 'rintor',
   name: 'RinTor',
   description: 'RinTor is a Semi-Private Tracker for 3X',
   language: 'ru-RU',

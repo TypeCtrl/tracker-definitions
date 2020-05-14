@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'kinozal',
+  id: 'kinozal',
   name: 'Kinozal',
   description: 'Kinozal is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / MUSIC',
   language: 'ru-RU',

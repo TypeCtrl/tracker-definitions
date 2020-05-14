@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'ztracker',
+  id: 'ztracker',
   name: 'Ztracker',
   description: 'Ztracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-HU',

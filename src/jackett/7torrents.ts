@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: '7torrents',
+  id: '7torrents',
   name: '7torrents',
   description: '7torrents is a Public BitTorrent DHT search engine.',
   language: 'en-US',

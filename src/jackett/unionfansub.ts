@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'unionfansub',
+  id: 'unionfansub',
   name: 'Union Fansub',
   description: 'Union Fansub is a SPANISH Semi private torrent site focused on ANIME',
   language: 'es-ES',

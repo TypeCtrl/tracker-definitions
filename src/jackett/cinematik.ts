@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'cinematik',
+  id: 'cinematik',
   name: 'Cinematik',
   description: 'Tracker for non-hollywood movies.',
   language: 'en-US',

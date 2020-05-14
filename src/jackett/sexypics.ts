@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'sexypics',
+  id: 'sexypics',
   name: 'Sexy-Pics',
   description: 'Sexy-Pics is a Public Magnet Links site for 3X MP4',
   language: 'en-US',

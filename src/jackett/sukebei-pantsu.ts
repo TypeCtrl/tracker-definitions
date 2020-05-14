@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'sukebei-pantsu',
+  id: 'sukebei-pantsu',
   name: 'Sukebei-pantsu',
   description: 'Sukebei-pantsu is a Public site dedicated to Adult Asian content',
   language: 'en-EN',

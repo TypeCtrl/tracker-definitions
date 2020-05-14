@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'exkinoray',
+  id: 'exkinoray',
   name: 'ExKinoRay',
   description: 'ExKinoRay is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV',
   language: 'ru-RU',

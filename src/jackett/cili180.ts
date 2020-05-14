@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'cili180',
+  id: 'cili180',
   name: 'Cili180',
   description: 'Cili180 is a Public BitTorrent DHT search engine.',
   language: 'en-US',

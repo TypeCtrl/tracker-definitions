@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'idope',
+  id: 'idope',
   name: 'Idope',
   description: 'iDope is a Public torrent search engine presenting direct magnet links',
   language: 'en-US',
@@ -9,6 +9,11 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: [
     'https://idope.se/',
+    'https://idope.unblocked.bar/',
+    'https://idope.proxyportal.pw/',
+    'https://idope.uk-unblock.pro/',
+  ],
+  legacylinks: [
     'https://idope.black-mirror.xyz/',
     'https://idope.unblocked.casa/',
     'https://idope.proxyportal.fun/',

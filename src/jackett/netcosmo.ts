@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'netcosmo',
+  id: 'netcosmo',
   name: 'NetCosmo',
   description: 'NetCosmo is an ITALIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'it-IT',

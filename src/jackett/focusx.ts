@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'focusx',
+  id: 'focusx',
   name: 'FocusX',
   description: 'FocusX is a RUSSIAN Public torrent site for MOVIES and TV',
   language: 'ru-RU',

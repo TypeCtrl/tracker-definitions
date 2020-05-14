@@ -1,21 +1,24 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'skytorrentsclone',
+  id: 'skytorrentsclone',
   name: 'SkyTorrentsClone',
   description: 'SkyTorrents.lol is a Public SkyTorrents clone for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'https://www.skytorrents.lol/',
+  links: ['https://www.skytorrents.lol/'],
+  legacylinks: [
+    'https://www.skytorrents.to/',
     'https://skytorrents.black-mirror.xyz/',
     'https://skytorrents.unblocked.casa/',
     'https://skytorrents.proxyportal.fun/',
     'https://skytorrents.uk-unblock.xyz/',
     'https://skytorrents.ind-unblock.xyz/',
+    'https://skytorrents.unblocked.bar/',
+    'https://skytorrents.proxyportal.pw/',
+    'https://skytorrents.uk-unblock.pro/',
   ],
-  legacylinks: ['https://www.skytorrents.to/'],
   caps: {
     modes: {
       search: ['q'],

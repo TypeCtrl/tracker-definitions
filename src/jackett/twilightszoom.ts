@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'twilightszoom',
+  id: 'twilightszoom',
   name: 'Twilights Zoom',
   description: 'Twilights Zoom is a Private Torrent Tracker for MUSIC',
   language: 'en-US',

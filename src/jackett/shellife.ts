@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'shellife',
+  id: 'shellife',
   name: 'Shellife',
   description: 'Shellife (SL) is a Private Torrent Tracker for NON MAINSTREAM MUSIC',
   language: 'en-US',

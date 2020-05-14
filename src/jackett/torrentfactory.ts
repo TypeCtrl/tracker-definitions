@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'torrentfactory',
+  id: 'torrentfactory',
   name: 'TorrentFactory',
   description: 'TorrentFactory is a SPANISH site for General content',
   language: 'es-ES',

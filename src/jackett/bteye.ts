@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'bteye',
+  id: 'bteye',
   name: 'BTeye',
   description: 'BTeye is a Public BitTorrent DHT search engine.',
   language: 'en-US',

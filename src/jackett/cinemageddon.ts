@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'cinemageddon',
+  id: 'cinemageddon',
   name: 'Cinemageddon',
   description: 'B-movie tracker',
   language: 'en-US',

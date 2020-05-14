@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'arabp2p',
+  id: 'arabp2p',
   name: 'ArabP2P',
   description: 'ArabP2P is an ARABIC Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ar-AR',

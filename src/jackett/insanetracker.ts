@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'insanetracker',
+  id: 'insanetracker',
   name: 'Insane Tracker',
   description: 'Insane Tracker is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-HU',

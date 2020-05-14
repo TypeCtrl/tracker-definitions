@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hdturk',
+  id: 'hdturk',
   name: 'HDTurk',
   description: 'HDTurk is a TURKISH Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'tr-TR',

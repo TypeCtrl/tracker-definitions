@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'majomparade',
+  id: 'majomparade',
   name: 'Majomparádé',
   description: 'Majomparádé (TurkDepo) is a HUNGARIAN Private Torrent Tracker for 0DAY / GENERAL',
   language: 'hu-HU',

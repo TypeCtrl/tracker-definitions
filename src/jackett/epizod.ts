@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'epizod',
+  id: 'epizod',
   name: 'Epizod',
   description: 'Epizod is a FRENCH Public tracker for MOVIES / TV',
   language: 'fr-FR',

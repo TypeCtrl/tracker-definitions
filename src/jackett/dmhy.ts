@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'dmhy',
+  id: 'dmhy',
   name: 'dmhy',
   description: 'dmhy is a TAIWANESE Public magnet tracker for ANIME',
   language: 'zh-TW',

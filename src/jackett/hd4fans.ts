@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'hd4fans',
+  id: 'hd4fans',
   name: 'HD4FANS',
   description: 'HD4FANS is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'zh-CN',

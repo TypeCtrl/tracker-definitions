@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'beyond-hd',
+  id: 'beyond-hd',
   name: 'Beyond-HD',
   description: 'Without BeyondHD, your HDTV is just a TV',
   language: 'en-US',

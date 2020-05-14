@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'retroflix',
+  id: 'retroflix',
   name: 'RetroFlix',
   description: 'Private Torrent Tracker for Classic Movies / TV / General Releases.',
   language: 'en-US',

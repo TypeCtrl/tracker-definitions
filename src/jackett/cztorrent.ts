@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'cztorrent',
+  id: 'cztorrent',
   name: 'CzTorrent',
   description: 'CzTorrent is a Czech Semi-Private site for TV / MOVIES / GENERAL',
   language: 'cs-CZ',

@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'iv-torrents',
+  id: 'iv-torrents',
   name: 'IV-Torrents',
   description: 'IV-Torrents is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',

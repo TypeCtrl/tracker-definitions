@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  site: 'magico',
+  id: 'magico',
   name: 'Magico',
   description: 'Magico (Trellas) is a GREEK Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'el-GR',
