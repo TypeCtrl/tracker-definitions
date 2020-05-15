@@ -3,16 +3,16 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'totheglory',
   name: 'ToTheGlory',
-  description: 'A chinese tracker',
+  description: 'ToTheGlory (TTG) A Chinese tracker',
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://totheglory.im/'],
   caps: {
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
     },
     categorymappings: [
@@ -20,6 +20,8 @@ export const definition: TrackerDefinition = {
       { id: '电影720p', cat: 'Movies/HD' },
       { id: '电影1080i/p', cat: 'Movies/HD' },
       { id: 'BluRay原盘', cat: 'Movies/BluRay' },
+      { id: '影视2160p', cat: 'Movies/UHD' },
+      { id: 'UHD原盘', cat: 'Movies/UHD' },
       { id: '纪录片720p', cat: 'Movies/HD' },
       { id: '纪录片1080i/p', cat: 'Movies/HD' },
       { id: '纪录片BluRay原盘', cat: 'Movies/BluRay' },
@@ -39,19 +41,66 @@ export const definition: TrackerDefinition = {
       { id: '高清体育节目', cat: 'TV/Sport' },
       { id: '高清动漫', cat: 'TV/Anime' },
       { id: '韩国综艺', cat: 'TV/HD' },
-      { id: '日本综艺', cat: 'TV/HD' },
       { id: '高清综艺', cat: 'TV/HD' },
+      { id: '日本综艺', cat: 'TV/HD' },
       { id: 'MiniVideo', cat: 'Other' },
       { id: '补充音轨', cat: 'Audio' },
       { id: 'iPhone/iPad视频', cat: 'PC/Phone-Other' },
     ],
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    { name: '2facode', type: 'text', label: '2FA code' },
+    {
+      name: 'info_2fa',
+      type: 'info',
+      label: 'About 2FA code',
+      default:
+        'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the TTG Web Site. Otherwise just leave it empty.',
+    },
+    {
+      name: 'passid',
+      type: 'select',
+      label: 'Security Question ID',
+      default: '0',
+      options: {
+        '0': 'Security question (Ignore not set)',
+        '1': 'When did your start using PT?',
+        '2': 'How did you get to know about TTG?',
+        '3': "What's the name of the first movie you watched in a cinema?",
+        '4': "What's your favorite movie?",
+        '5': "Who's your favorite porn star?",
+        '6': "Who's your favorite actor/actress?",
+        '7': "What's your most anticipated movie?",
+      },
+    },
+    {
+      name: 'info_passid',
+      type: 'info',
+      label: 'About Security ID',
+      default:
+        'Only select the <b>Security Question ID</b> from the pulldown if you have set it on the TTG Web Site. Otherwise just leave it as ignore not set.',
+    },
+    { name: 'passan', type: 'text', label: 'Security Question Answer' },
+    {
+      name: 'info_passan',
+      type: 'info',
+      label: 'About Security Question Answer',
+      default:
+        'Only fill in the <b>Security Question Answer</b> box if you have set it on the TTG Web Site. Dont forget to write your answer in the same language you saved it on the TTG Web Site. Otherwise just leave it empty.',
+    },
+  ],
   login: {
     path: 'login.php?returnto=',
     method: 'form',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      rememberme: 'yes',
+      otp: '{{ .Config.2facode }}',
+      passid: '{{ .Config.passid }}',
+      passan: '{{ .Config.passan }}',
     },
     error: [{ selector: 'form#loginform > span.warning' }],
     test: { path: 'my.php' },
@@ -64,7 +113,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      search_field: '{{range .Categories}}分类:`{{.}}` {{end}}{{ .Query.Keywords }}',
+      search_field:
+        '{{ range .Categories }}分类:`{{.}}` {{end}}{{ if .Query.IMDBID }}imdb{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
       c: 'M',
     },
     rows: { selector: 'table#torrent_table > tbody > tr[id]' },
@@ -109,13 +159,13 @@ export const definition: TrackerDefinition = {
       imdb: { selector: 'span.imdb_rate > a', attribute: 'href' },
       downloadvolumefactor: {
         case: {
-          'img[alt="free"]': '0',
-          'img[alt="50%"]': '0.5',
-          'img[alt="30%"]': '0.3',
-          '*': '1',
+          'img[alt="free"]': 0,
+          'img[alt="50%"]': 0.5,
+          'img[alt="30%"]': 0.3,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { case: { 'img[alt="200%"]': 2, '*': 1 } },
     },
   },
   source: 'jackett',
