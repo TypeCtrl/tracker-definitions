@@ -7,12 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'WINDOWS-1251',
-  links: [
-    'https://hdreactor.net/',
-    'https://hdreactor.club/',
-    'https://hdreactor.guru/',
-    'https://hdreactor.su/',
-  ],
+  links: ['https://hdreactor.net/', 'https://hdreactor.club/', 'https://hdreactor.su/'],
+  legacylinks: ['https://hdreactor.guru/'],
   caps: {
     categorymappings: [
       { id: '2001', cat: 'Movies/HD', desc: 'Кино HD' },

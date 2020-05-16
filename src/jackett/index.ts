@@ -316,6 +316,9 @@ export const jelitetorrentBiz = jjelitetorrentBiz;
 import { definition as jjempornium } from './empornium';
 export const jempornium = jjempornium;
 
+import { definition as jjempornium2Fa } from './empornium2fa';
+export const jempornium2Fa = jjempornium2Fa;
+
 import { definition as jjeniahd } from './eniahd';
 export const jeniahd = jjeniahd;
 
@@ -339,6 +342,9 @@ export const jettv = jjettv;
 
 import { definition as jjexkinoray } from './exkinoray';
 export const jexkinoray = jjexkinoray;
+
+import { definition as jjexoticaz } from './exoticaz';
+export const jexoticaz = jjexoticaz;
 
 import { definition as jjextratorrentAg } from './extratorrent-ag';
 export const jextratorrentAg = jjextratorrentAg;
@@ -1246,9 +1252,6 @@ export const jyggtorrent = jjyggtorrent;
 import { definition as jjyourbittorrent } from './yourbittorrent';
 export const jyourbittorrent = jjyourbittorrent;
 
-import { definition as jjyourexotic } from './yourexotic';
-export const jyourexotic = jjyourexotic;
-
 import { definition as jjzamundanet } from './zamundanet';
 export const jzamundanet = jjzamundanet;
 
@@ -1371,6 +1374,7 @@ export const definitions = [
   jjehentai,
   jjelitetorrentBiz,
   jjempornium,
+  jjempornium2Fa,
   jjeniahd,
   jjepizod,
   jjerzsebet,
@@ -1379,6 +1383,7 @@ export const definitions = [
   jjethor,
   jjettv,
   jjexkinoray,
+  jjexoticaz,
   jjextratorrentAg,
   jjextratorrentCd,
   jjextremetorrents,
@@ -1681,7 +1686,6 @@ export const definitions = [
   jjyggcookie,
   jjyggtorrent,
   jjyourbittorrent,
-  jjyourexotic,
   jjzamundanet,
   jjzelkaorg,
   jjzetorrents,

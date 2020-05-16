@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://www.torrent9.pl/',
+    'https://www.torrent9.ac/',
     'https://torrent9.unblocked.bar/',
     'https://torrent9.proxyportal.pw/',
     'https://torrent9.uk-unblock.pro/',
@@ -43,6 +43,7 @@ export const definition: TrackerDefinition = {
     'https://torrent9.proxyportal.fun/',
     'https://torrent9.uk-unblock.xyz/',
     'https://torrent9.ind-unblock.xyz/',
+    'https://www.torrent9.pl/',
   ],
   caps: {
     categorymappings: [

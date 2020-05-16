@@ -5,7 +5,8 @@
   "language": "en-US",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["http://funkytorrents.com/"],
+  "links": ["https://funkytorrents.com/"],
+  "legacylinks": ["http://funkytorrents.com/"],
   "caps": {
     "modes": {
       "search": ["q"],

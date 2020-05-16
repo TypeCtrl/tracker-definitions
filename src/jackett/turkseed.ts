@@ -67,18 +67,31 @@ export const definition: TrackerDefinition = {
       default: 'desc',
       options: { desc: 'desc', asc: 'asc' },
     },
+    {
+      name: 'info_captcha',
+      type: 'info',
+      label: 'Captcha Text Note',
+      default: 'The <i>Captcha Text</i> code is <b>case sensitive</b>.',
+    },
   ],
   login: {
     path: 'login.php',
     method: 'form',
-    form: 'form[action="takelogin.php"]',
+    form: 'form[action$="takelogin.php"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
       logout: '',
-      submit: 'GİRİŞ',
     },
-    error: [{ selector: 'table:contains("HATA")' }],
+    captcha: {
+      type: 'image',
+      selector: 'img#regimage',
+      input: 'imagestring',
+    },
+    error: [
+      { selector: 'table:contains("Hata")' },
+      { selector: 'table:contains("Login Giriş Kilitlendi!")' },
+    ],
     test: {
       path: 'index.php',
       selector: 'a[href*="/logout.php?logouthash="]',
@@ -139,14 +152,12 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {
         case: {
-          'img[src$="_flags/freedownload.gif"]': 0,
-          'img[src$="_flags/silverdownload.gif"]': 0.5,
+          'img[src$="/freedownload.gif"]': 0,
+          'img[src$="/silverdownload.gif"]': 0.5,
           '*': 1,
         },
       },
-      uploadvolumefactor: {
-        case: { 'img[src$="_flags/x2.gif"]': 2, '*': 1 },
-      },
+      uploadvolumefactor: { case: { 'img[src$="/x2.gif"]': 2, '*': 1 } },
     },
   },
   source: 'jackett',

@@ -94,7 +94,7 @@ export const definition: TrackerDefinition = {
       selector: 'img#regimage2',
       input: 'imagestring',
     },
-    error: [{ selector: 'table:contains("Bir hata oluştu!")' }],
+    error: [{ selector: 'table:contains("hata")' }],
     test: {
       path: 'index.php',
       selector: 'a[href*="/logout.php?logouthash="]',

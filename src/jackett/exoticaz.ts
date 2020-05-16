@@ -1,7 +1,7 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'yourexotic',
+  id: 'exoticaz',
   name: 'ExoticaZ',
   description: 'ExoticaZ (YourExotic) is a Private Torrent Tracker for 3X',
   language: 'en-US',

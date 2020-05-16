@@ -34,17 +34,19 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'div.error' }],
-    test: { path: 'browse.php' },
+    test: { path: 'browse.php', selector: 'a[href="logout.php"]' },
   },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '1',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      incldead: 1,
+      stype: 'and',
     },
     rows: {
-      selector: 'table > tbody > tr:has(a[href^="details.php?id="])',
+      selector:
+        'table[class="embedded"][cellspacing="0"][cellpadding="5"][width="100%"] > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       title: { selector: 'a[href^="details.php?id="]' },
@@ -76,15 +78,15 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[src="pic/diamond.png"]': '0',
-          'img[src="pic/freedownload.gif"]': '0',
-          'img[src="pic/silver.gif"]': '0.5',
-          'img[src="pic/bronze.gif"]': '0.75',
-          '*': '1',
+          'img[src="pic/diamond.png"]': 0,
+          'img[src="pic/freedownload.gif"]': 0,
+          'img[src="pic/silver.gif"]': 0.5,
+          'img[src="pic/bronze.gif"]': 0.75,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'img[src="pic/diamond.png"]': '2', '*': '1' },
+        case: { 'img[src="pic/diamond.png"]': 2, '*': 1 },
       },
     },
   },

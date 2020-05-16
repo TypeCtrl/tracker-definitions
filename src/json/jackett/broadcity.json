@@ -5,8 +5,8 @@
   "language": "tr-TR",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://broadcity.in/"],
-  "legacylinks": ["http://broadcity.in/"],
+  "links": ["http://broadcity.in/"],
+  "legacylinks": ["https://broadcity.in/"],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "Movies/UHD", "desc": "UHD" },
@@ -63,8 +63,7 @@
       "input": "imagestring"
     },
     "error": [
-      { "selector": "table:contains(\"Bir Hata oluştu!\")" },
-      { "selector": "table:contains(\"Bir Hata Oluştu!\")" },
+      { "selector": "table:contains(\"Hata\")" },
       { "selector": "table:contains(\"Login Giriş Kilitlendi!\")" }
     ],
     "test": {
