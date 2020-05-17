@@ -328,6 +328,9 @@ export const jepizod = jjepizod;
 import { definition as jjerzsebet } from './erzsebet';
 export const jerzsebet = jjerzsebet;
 
+import { definition as jjerzsebetpl } from './erzsebetpl';
+export const jerzsebetpl = jjerzsebetpl;
+
 import { definition as jjesharenet } from './esharenet';
 export const jesharenet = jjesharenet;
 
@@ -792,6 +795,9 @@ export const jpornbay = jjpornbay;
 
 import { definition as jjpornbits } from './pornbits';
 export const jpornbits = jjpornbits;
+
+import { definition as jjpornforall } from './pornforall';
+export const jpornforall = jjpornforall;
 
 import { definition as jjpornleech } from './pornleech';
 export const jpornleech = jjpornleech;
@@ -1378,6 +1384,7 @@ export const definitions = [
   jjeniahd,
   jjepizod,
   jjerzsebet,
+  jjerzsebetpl,
   jjesharenet,
   jjestone,
   jjethor,
@@ -1533,6 +1540,7 @@ export const definitions = [
   jjpolishsource,
   jjpornbay,
   jjpornbits,
+  jjpornforall,
   jjpornleech,
   jjpornolive,
   jjpornorip,
