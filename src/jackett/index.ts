@@ -580,6 +580,9 @@ export const jkaragarga = jjkaragarga;
 import { definition as jjkaztorka } from './kaztorka';
 export const jkaztorka = jjkaztorka;
 
+import { definition as jjkeepfriends } from './keepfriends';
+export const jkeepfriends = jjkeepfriends;
+
 import { definition as jjkickasstorrentKathow } from './kickasstorrent-kathow';
 export const jkickasstorrentKathow = jjkickasstorrentKathow;
 
@@ -1033,6 +1036,9 @@ export const jtheshow = jjtheshow;
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
 
+import { definition as jjtjupt } from './tjupt';
+export const jtjupt = jjtjupt;
+
 import { definition as jjtlfbits } from './tlfbits';
 export const jtlfbits = jjtlfbits;
 
@@ -1248,6 +1254,9 @@ export const jxwtorrents = jjxwtorrents;
 
 import { definition as jjxxxtor } from './xxxtor';
 export const jxxxtor = jjxxxtor;
+
+import { definition as jjydypt } from './ydypt';
+export const jydypt = jjydypt;
 
 import { definition as jjyggcookie } from './yggcookie';
 export const jyggcookie = jjyggcookie;
@@ -1468,6 +1477,7 @@ export const definitions = [
   jjkapaki,
   jjkaragarga,
   jjkaztorka,
+  jjkeepfriends,
   jjkickasstorrentKathow,
   jjkickasstorrent,
   jjkinonavse100,
@@ -1619,6 +1629,7 @@ export const definitions = [
   jjtheshinning,
   jjtheshow,
   jjthevault,
+  jjtjupt,
   jjtlfbits,
   jjtntvillage,
   jjtokyotosho,
@@ -1691,6 +1702,7 @@ export const definitions = [
   jjxwtclassics,
   jjxwtorrents,
   jjxxxtor,
+  jjydypt,
   jjyggcookie,
   jjyggtorrent,
   jjyourbittorrent,
