@@ -19,8 +19,11 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    paths: [{ path: 'index.php' }],
-    inputs: { search: '{{ .Keywords }}' },
+    paths: [
+      {
+        path: 'index.php{{if .Keywords}}?search={{ .Keywords }}{{else}}{{end}}',
+      },
+    ],
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
     rows: {
       selector: 'div.grid-item:has(a[href^="/download.php?torrent="])',

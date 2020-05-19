@@ -206,7 +206,7 @@ export const definition: TrackerDefinition = {
     attribute: 'href',
   },
   search: {
-    paths: [{ path: 'torrents-search.php' }, { path: 'torrents-search.php', inputs: { page: 1 } }],
+    paths: [{ path: 'torrents-search.php' }],
     inputs: {
       cat: 0,
       search: '{{ .Keywords }}',

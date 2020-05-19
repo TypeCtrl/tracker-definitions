@@ -57,6 +57,12 @@ export const definition: TrackerDefinition = {
         'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the KeepFriends Web Site. Otherwise just leave it empty.',
     },
     {
+      name: 'english_title',
+      type: 'checkbox',
+      label: 'Use English titles instead of Chinese ones (when available).',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -104,7 +110,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      title: {
+      title_raw: {
         optional: true,
         selector: 'a[title][href^="details.php?id="]',
         attribute: 'title',
@@ -153,6 +159,13 @@ export const definition: TrackerDefinition = {
         },
       },
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },
+      title_english: {
+        selector: 'table.torrentname > tbody > tr > td.embedded',
+      },
+      title: {
+        text:
+          '{{ if and .Config.english_title .Result.title_english }}{{ .Result.title_english }}{{ else }}{{ .Result.title_raw }}{{ end }}',
+      },
     },
   },
   source: 'jackett',
