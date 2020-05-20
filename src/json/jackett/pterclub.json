@@ -120,17 +120,17 @@
         "attribute": "href"
       },
       "date": {
-        "selector": "td.rowfollow:nth-last-of-type(6):not(:has(span))",
+        "selector": "td.rowfollow:nth-of-type(4):not(:has(span))",
         "optional": true,
         "filters": [
           { "name": "append", "args": " +08:00" },
           { "name": "dateparse", "args": "2006-01-0215:04:05 -07:00" }
         ]
       },
-      "size": { "selector": "td.rowfollow:nth-last-of-type(5)" },
-      "seeders": { "selector": "td.rowfollow:nth-last-of-type(4)" },
-      "leechers": { "selector": "td.rowfollow.rowfollow:nth-last-of-type(3)" },
-      "grabs": { "selector": "td.rowfollow:nth-last-of-type(2)" },
+      "size": { "selector": "td.rowfollow:nth-of-type(5)" },
+      "seeders": { "selector": "td.rowfollow:nth-of-type(6)" },
+      "leechers": { "selector": "td.rowfollow.rowfollow:nth-of-type(7)" },
+      "grabs": { "selector": "td.rowfollow:nth-of-type(8)" },
       "downloadvolumefactor": {
         "case": {
           "img.pro_free": 0,

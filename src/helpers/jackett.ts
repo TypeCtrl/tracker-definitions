@@ -16,6 +16,7 @@ export const jackettSites = [
   'acgsou',
   'acidlounge',
   'aftershock',
+  'aither',
   'alexfilm',
   'amigosshare',
   'anirena',

@@ -49,6 +49,9 @@ export const jacidlounge = jjacidlounge;
 import { definition as jjaftershock } from './aftershock';
 export const jaftershock = jjaftershock;
 
+import { definition as jjaither } from './aither';
+export const jaither = jjaither;
+
 import { definition as jjalexfilm } from './alexfilm';
 export const jalexfilm = jjalexfilm;
 
@@ -1300,6 +1303,7 @@ export const definitions = [
   jjacgsou,
   jjacidlounge,
   jjaftershock,
+  jjaither,
   jjalexfilm,
   jjamigosshare,
   jjanirena,

@@ -83,7 +83,14 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
     rows: { selector: '.table2 > tbody > tr[bgcolor]' },
     fields: {
-      title: { selector: 'div.tt-name > a[href^="/"]' },
+      title: {
+        selector: 'div.tt-name > a[href^="/"]',
+        attribute: 'href',
+        filters: [
+          { name: 'regexp', args: '/(.+?)-torrent-\\d+\\.html' },
+          { name: 're_replace', args: ['-', ' '] },
+        ],
+      },
       details: {
         selector: 'div.tt-name > a[href^="/"]',
         attribute: 'href',
