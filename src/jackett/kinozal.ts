@@ -106,7 +106,6 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     keywordsfilters: [
-      { name: 'diacritics', args: 'replace' },
       { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', '$1'] },
       {
         name: 're_replace',
