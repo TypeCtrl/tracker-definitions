@@ -75,10 +75,7 @@ export const definition: TrackerDefinition = {
       ssl: 'yes',
       trackerssl: 'yes',
     },
-    error: [
-      { selector: 'td.embedded:has(h2:contains("失败"))' },
-      { selector: 'td.embedded:has(h2:contains("登录失败"))' },
-    ],
+    error: [{ selector: 'td.embedded:has(h2:contains("失败"))' }],
     test: { path: 'index.php', selector: 'a[href*="logout.php"]' },
   },
   search: {

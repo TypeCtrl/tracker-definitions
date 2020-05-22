@@ -41,6 +41,7 @@ export const definition: TrackerDefinition = {
       { id: 'Мобилка Игры', cat: 'PC/Phone-Other' },
       { id: 'Литература', cat: 'Books' },
       { id: 'Игры', cat: 'PC/Games' },
+      { id: 'Игры Мобилка', cat: 'PC/Games' },
       { id: 'Фильмы', cat: 'Movies' },
       { id: 'Фильмы Видео', cat: 'Movies' },
       { id: 'Фильмы Сериалы', cat: 'Movies' },

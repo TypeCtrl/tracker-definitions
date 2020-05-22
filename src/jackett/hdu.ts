@@ -41,11 +41,10 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      ssl: 'yes',
+      trackerssl: '',
     },
-    error: [
-      { selector: 'td.embedded:has(h2:contains("登录失败"))' },
-      { selector: 'td.embedded:has(h2:contains("失败"))' },
-    ],
+    error: [{ selector: 'td.embedded:has(h2:contains("失败"))' }],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   ratio: {

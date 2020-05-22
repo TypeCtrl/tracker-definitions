@@ -58,11 +58,12 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      logout: '',
+      securelogin: '',
+      ssl: 'yes',
+      trackerssl: 'yes',
     },
-    error: [
-      { selector: 'td.embedded:has(h2:contains("失败"))' },
-      { selector: 'td.embedded:has(h2:contains("登录失败"))' },
-    ],
+    error: [{ selector: 'td.embedded:has(h2:contains("失败"))' }],
     test: { path: 'index.php', selector: 'a[href*="logout.php"]' },
   },
   search: {

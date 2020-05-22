@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: {
-        selector: 'font',
+        selector: 'font[color="grey"]',
         filters: [{ name: 'regexp', args: 'Размер: (.+?)$' }],
       },
       seeders: {

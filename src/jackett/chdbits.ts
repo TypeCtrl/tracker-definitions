@@ -33,8 +33,15 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      logout: '',
+      securelogin: '',
+      ssl: 'yes',
+      trackerssl: 'yes',
     },
-    error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
+    error: [
+      { selector: 'td.embedded:has(h2:contains("失败"))' },
+      { selector: 'td.embedded:has(h2:contains("failed"))' },
+    ],
     test: { path: 'torrents.php' },
   },
   ratio: {
@@ -45,23 +52,23 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '1',
+      $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      incldead: 1,
     },
     rows: {
       selector: 'table.torrents > tbody > tr:has(table.torrentname)',
     },
     fields: {
-      title: {
-        optional: true,
-        selector: 'a[title][href^="details.php?id="]',
-        attribute: 'title',
-      },
       category: {
         selector: 'a[href^="?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
+      },
+      title: {
+        optional: true,
+        selector: 'a[title][href^="details.php?id="]',
+        attribute: 'title',
       },
       details: {
         selector: 'a[href^="details.php?id="]',
@@ -85,20 +92,20 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img.pro_free': '0',
-          'img.pro_free2up': '0',
-          'img.pro_50pctdown': '0.5',
-          'img.pro_50pctdown2up': '0.5',
-          'img.pro_30pctdown': '0.3',
-          '*': '1',
+          'img.pro_free': 0,
+          'img.pro_free2up': 0,
+          'img.pro_50pctdown': 0.5,
+          'img.pro_50pctdown2up': 0.5,
+          'img.pro_30pctdown': 0.3,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
         case: {
-          'img.pro_50pctdown2up': '2',
-          'img.pro_free2up': '2',
-          'img.pro_2up': '2',
-          '*': '1',
+          'img.pro_50pctdown2up': 2,
+          'img.pro_free2up': 2,
+          'img.pro_2up': 2,
+          '*': 1,
         },
       },
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },

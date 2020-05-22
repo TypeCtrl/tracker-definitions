@@ -53,6 +53,10 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      logout: '',
+      securelogin: '',
+      ssl: '',
+      trackerssl: '',
     },
     error: [{ selector: 'form#loginform > span.warning' }],
     test: { path: 'torrents.php' },

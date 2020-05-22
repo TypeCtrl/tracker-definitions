@@ -83,7 +83,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      g2fa_code: '{{ .Config.2facode }}',
+      token: '{{ .Config.2facode }}',
       logout: '',
     },
     error: [{ selector: 'td.embedded:has(h2:contains("失败"))' }],

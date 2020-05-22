@@ -47,16 +47,14 @@
       "filters": [{ "name": "andmatch" }]
     },
     "fields": {
-      "_category": {
+      "category": {
         "selector": "i",
         "attribute": "class",
         "filters": [
+          { "name": "append", "args": " list" },
           { "name": "split", "args": [" ", 1] },
           { "name": "replace", "args": ["fa-", ""] }
         ]
-      },
-      "category": {
-        "text": "{{ if .Result._category }}{{ .Result._category }}{{ else }}list{{ end}}"
       },
       "title": { "selector": "button", "attribute": "title" },
       "details": { "text": "/" },
