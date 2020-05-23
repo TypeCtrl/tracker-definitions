@@ -91,7 +91,7 @@ export const definition: TrackerDefinition = {
       title_raw: { selector: 'a[href^="details.php?id="]' },
       title_stripped: {
         selector: 'a[href^="details.php?id="]',
-        filters: [{ name: 're_replace', args: ['^(.* / )(.*)$', '$2'] }],
+        filters: [{ name: 're_replace', args: ['^(.*/)(.*)$', '$2'] }, { name: 'trim' }],
       },
       title: {
         text:

@@ -39,22 +39,51 @@ export const definition: TrackerDefinition = {
       { id: '40', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'added',
+      options: {
+        added: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'DESC',
+      options: { DESC: 'desc', ASC: 'asc' },
+    },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile. The default is 15.',
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
-    form: 'form',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
     error: [{ selector: 'td.embedded', message: { selector: 'td.text' } }],
-    test: { path: 'my.php' },
+    test: { path: 'my.php', selector: 'a[href="logout.php"]' },
   },
   ratio: {
     path: 'my.php',
@@ -67,10 +96,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
-      incldead: '1',
-      blah: '0',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      incldead: 1,
+      blah: '{{ if .Query.IMDBID }}1{{ else }}0{{ end }}',
+      sort: '{{ .Config.sort }}',
+      d: '{{ .Config.type }}',
     },
     rows: {
       selector:
@@ -100,9 +131,11 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
-        case: { 'font:contains("(FreeLeech)")': '0', '*': '1' },
+        case: { 'font:contains("(FreeLeech)")': 0, '*': 1 },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1.1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',
