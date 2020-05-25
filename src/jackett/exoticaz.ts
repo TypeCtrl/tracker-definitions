@@ -21,6 +21,11 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       remember: 'on',
     },
+    captcha: {
+      type: 'image',
+      selector: 'img[alt="Captcha Image"]',
+      input: 'captcha',
+    },
     error: [{ selector: 'div.invalid-feedback' }],
     test: { selector: 'div.ratio-bar' },
   },
