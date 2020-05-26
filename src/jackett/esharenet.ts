@@ -145,7 +145,7 @@ export const definition: TrackerDefinition = {
       },
       imdb: {
         optional: true,
-        selector: 'a[href*="www.imdb.com/title/tt"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       date: {

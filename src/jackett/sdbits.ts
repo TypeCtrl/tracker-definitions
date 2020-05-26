@@ -77,7 +77,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'append', args: ' ago' }],
       },
       imdb: {
-        selector: 'a[href*="www.imdb.com/title/tt"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       downloadvolumefactor: {

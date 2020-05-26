@@ -92,7 +92,7 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'a[href$="/history"]' },
       imdb: {
         optional: true,
-        selector: 'a[href*="www.imdb.com/title/tt"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       downloadvolumefactor: {

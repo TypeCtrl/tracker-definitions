@@ -1,23 +1,19 @@
 {
-  "id": "immortuos",
-  "name": "Immortuos",
-  "description": "Immortuos is a GERMAN Private Tracker for MOVIES / TV",
-  "language": "de-DE",
+  "id": "onlyscene",
+  "name": "ONLYscene",
+  "description": "ONLYscene is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL",
+  "language": "fr-FR",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://immortuos.life/"],
-  "legacylinks": ["https://www.immortuos.life/"],
+  "links": ["https://www.onlyscene.org/"],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "Movies", "desc": "Movies" },
       { "id": "2", "cat": "TV", "desc": "TV" },
       { "id": "3", "cat": "Audio", "desc": "Music" },
-      { "id": "4", "cat": "PC", "desc": "Apps" },
-      { "id": "5", "cat": "XXX", "desc": "XXX" },
-      { "id": "6", "cat": "TV/Documentary", "desc": "Doku" },
-      { "id": "7", "cat": "Console", "desc": "Games" },
-      { "id": "8", "cat": "Other", "desc": "Sonstiges" },
-      { "id": "9", "cat": "Movies", "desc": "Kino" }
+      { "id": "4", "cat": "Console", "desc": "Games" },
+      { "id": "5", "cat": "TV/Anime", "desc": "Anime" },
+      { "id": "6", "cat": "PC/Games", "desc": "Games-ssIDGB" }
     ],
     "modes": {
       "search": ["q", "imdbid"],
@@ -26,6 +22,29 @@
       "music-search": ["q"]
     }
   },
+  "settings": [
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "created_at",
+      "options": {
+        "created_at": "created",
+        "seeders": "seeders",
+        "size": "size",
+        "name": "title"
+      }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "desc",
+      "options": { "desc": "desc", "asc": "asc" }
+    }
+  ],
   "login": {
     "path": "login",
     "method": "form",
@@ -38,12 +57,7 @@
     "selectorinputs": {
       "_token": { "selector": "input[name=\"_token\"]", "attribute": "value" }
     },
-    "error": [
-      {
-        "selector": "script[nonce]:contains(\"Error\")",
-        "message": { "selector": "script[nonce]:contains(\"Error\")" }
-      }
-    ]
+    "error": [{ "selector": "div#ERROR_COPY" }]
   },
   "ratio": {
     "path": "/",
@@ -51,7 +65,7 @@
     "filters": [{ "name": "regexp", "args": "Ratio : (\\d+)" }]
   },
   "search": {
-    "paths": [{ "path": "filterTorrents" }],
+    "paths": [{ "path": "torrents/filter" }],
     "inputs": {
       "$raw": "{{ range .Categories }}categories[]={{.}}&{{end}}",
       "search": "{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
@@ -61,8 +75,10 @@
       "tvdb": "",
       "tmdb": "",
       "mal": "",
-      "sort": "created_at",
-      "direction": "desc",
+      "igdb": "",
+      "sorting": "{{ .Config.sort }}",
+      "sort": "{{ .Config.sort }}",
+      "direction": "{{ .Config.type }}",
       "qty": 100
     },
     "rows": { "selector": "table > tbody > tr" },
@@ -70,7 +86,7 @@
       "category": {
         "selector": "a[href*=\"/categories/\"]",
         "attribute": "href",
-        "filters": [{ "name": "regexp", "args": "/categories/.*?\\.(\\d+)" }]
+        "filters": [{ "name": "regexp", "args": "/categories/(\\d+)" }]
       },
       "title": { "selector": "a.view-torrent" },
       "download": {

@@ -472,6 +472,9 @@ export const jhdbits = jjhdbits;
 import { definition as jjhdbitscom } from './hdbitscom';
 export const jhdbitscom = jjhdbitscom;
 
+import { definition as jjhdc } from './hdc';
+export const jhdc = jjhdc;
+
 import { definition as jjhdcenter } from './hdcenter';
 export const jhdcenter = jjhdcenter;
 
@@ -753,6 +756,9 @@ export const jonejav = jjonejav;
 
 import { definition as jjonlineselfeducation } from './onlineselfeducation';
 export const jonlineselfeducation = jjonlineselfeducation;
+
+import { definition as jjonlyscene } from './onlyscene';
+export const jonlyscene = jjonlyscene;
 
 import { definition as jjoshenpt } from './oshenpt';
 export const joshenpt = jjoshenpt;
@@ -1444,6 +1450,7 @@ export const definitions = [
   jjhdarea,
   jjhdbits,
   jjhdbitscom,
+  jjhdc,
   jjhdcenter,
   jjhdchina,
   jjhdcity,
@@ -1538,6 +1545,7 @@ export const definitions = [
   jjnyaasi,
   jjonejav,
   jjonlineselfeducation,
+  jjonlyscene,
   jjoshenpt,
   jjourbits,
   jjoxtorrent,

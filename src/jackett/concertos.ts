@@ -96,7 +96,7 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-last-child(1)' },
       imdb: {
         optional: true,
-        selector: 'a[href*="www.imdb.com/title/tt"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       downloadvolumefactor: {

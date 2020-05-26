@@ -47,6 +47,13 @@ export const definition: TrackerDefinition = {
       default: 'desc',
       options: { desc: 'desc', asc: 'asc' },
     },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
   ],
   login: {
     path: 'takelogin.php',
@@ -97,7 +104,7 @@ export const definition: TrackerDefinition = {
       },
       imdb: {
         optional: true,
-        selector: 'a[href*="www.imdb.com/title/tt"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       date: {

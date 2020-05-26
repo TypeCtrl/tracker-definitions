@@ -40,6 +40,13 @@ export const definition: TrackerDefinition = {
       default:
         'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the OurBits Web Site. Otherwise just leave it empty.',
     },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
   ],
   login: {
     path: 'takelogin.php',

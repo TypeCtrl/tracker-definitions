@@ -98,7 +98,7 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'a.torrentlink', attribute: 'href' },
       imdb: {
-        selector: 'a[href*="www.imdb.com/title/tt"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         optional: true,
         attribute: 'href',
       },
