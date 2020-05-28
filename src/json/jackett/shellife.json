@@ -26,7 +26,7 @@
   "search": {
     "paths": [{ "path": "browse.php" }],
     "inputs": {
-      "search": "{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}",
+      "search": "{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}",
       "incldead": 1
     },
     "rows": {
@@ -34,34 +34,30 @@
       "filters": [{ "name": "andmatch" }]
     },
     "fields": {
+      "category": { "text": 1 },
+      "title": { "selector": "a.altlink" },
+      "title|append|1": { "text": " - " },
+      "title|append|2": { "selector": "a[href^=\"details.php?id=\"]" },
+      "details": {
+        "selector": "a[href^=\"details.php?id=\"]",
+        "attribute": "href"
+      },
       "download": {
         "selector": "a[href^=\"download.php?id=\"]",
         "attribute": "href"
       },
-      "title": { "selector": "a.altlink" },
-      "title|append|1": { "text": " - " },
-      "title|append|2": { "selector": "a[name]" },
-      "details": {
-        "selector": "a[name]",
-        "attribute": "href",
-        "filters": [{ "name": "replace", "args": ["#", "/details.php?id="] }]
-      },
-      "category": { "text": 1 },
+      "date": { "text": "now" },
+      "size": { "selector": "td:nth-child(5)" },
+      "grabs": { "selector": "td:nth-child(6)" },
       "seeders": { "selector": "td:nth-child(7)" },
       "leechers": { "selector": "td:nth-child(8)" },
-      "grabs": { "selector": "td:nth-child(6)" },
-      "size": { "selector": "td:nth-child(5)" },
       "downloadvolumefactor": {
-        "case": {
-          "img[alt=\"Freeleech\"]": "0",
-          "img[alt=\"Free\"]": "0",
-          "*": "1"
-        }
+        "case": { "img[alt=\"Freeleech\"]": 0, "img[alt=\"Free\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "case": { "*": "1" } },
+      "uploadvolumefactor": { "text": 1 },
       "description": {
         "selector": "td:nth-child(2)",
-        "remove": "a.altlink, a[name], div[id^=\"news\"]",
+        "remove": "a.altlink, a[href^=\"details.php?id=\"], div[id^=\"news\"]",
         "filters": [
           { "name": "trim", "args": "-" },
           { "name": "trim", "args": " " }

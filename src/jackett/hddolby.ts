@@ -32,6 +32,14 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    { name: '2facode', type: 'text', label: '2FA code' },
+    {
+      name: 'info_2fa',
+      type: 'info',
+      label: 'About 2FA code',
+      default:
+        'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the HDDolby Web Site. Otherwise just leave it empty.',
+    },
     {
       name: 'info_tpp',
       type: 'info',
@@ -41,11 +49,18 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'takelogin.php',
-    method: 'post',
+    path: 'login.php',
+    method: 'form',
+    form: 'form[action="takelogin.php"]',
+    captcha: {
+      type: 'image',
+      selector: 'img[alt="CAPTCHA"]',
+      input: 'imagestring',
+    },
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      scode: '{{ .Config.2facode }}',
       logout: '',
       securelogin: '',
       ssl: 'yes',
