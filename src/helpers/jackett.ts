@@ -119,6 +119,7 @@ export const jackettSites = [
   'exoticaz',
   'extratorrent-ag',
   'extratorrent-cd',
+  'extremebits',
   'extremetorrents',
   'extremlymtorrents',
   'exttorrents',

@@ -358,6 +358,9 @@ export const jextratorrentAg = jjextratorrentAg;
 import { definition as jjextratorrentCd } from './extratorrent-cd';
 export const jextratorrentCd = jjextratorrentCd;
 
+import { definition as jjextremebits } from './extremebits';
+export const jextremebits = jjextremebits;
+
 import { definition as jjextremetorrents } from './extremetorrents';
 export const jextremetorrents = jjextremetorrents;
 
@@ -1412,6 +1415,7 @@ export const definitions = [
   jjexoticaz,
   jjextratorrentAg,
   jjextratorrentCd,
+  jjextremebits,
   jjextremetorrents,
   jjextremlymtorrents,
   jjexttorrents,
