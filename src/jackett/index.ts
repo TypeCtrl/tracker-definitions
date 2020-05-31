@@ -547,9 +547,6 @@ export const jhush = jjhush;
 import { definition as jjibit } from './ibit';
 export const jibit = jjibit;
 
-import { definition as jjicetorrent } from './icetorrent';
-export const jicetorrent = jjicetorrent;
-
 import { definition as jjidope } from './idope';
 export const jidope = jjidope;
 
@@ -907,9 +904,6 @@ export const jrutor = jjrutor;
 import { definition as jjrutrackerRu } from './rutracker-ru';
 export const jrutrackerRu = jjrutrackerRu;
 
-import { definition as jjscenefz } from './scenefz';
-export const jscenefz = jjscenefz;
-
 import { definition as jjscenepalace } from './scenepalace';
 export const jscenepalace = jjscenepalace;
 
@@ -1255,9 +1249,6 @@ export const jxfsub = jjxfsub;
 import { definition as jjxtremefile } from './xtremefile';
 export const jxtremefile = jjxtremefile;
 
-import { definition as jjxtremezone } from './xtremezone';
-export const jxtremezone = jjxtremezone;
-
 import { definition as jjxwtclassics } from './xwtclassics';
 export const jxwtclassics = jjxwtclassics;
 
@@ -1478,7 +1469,6 @@ export const definitions = [
   jjhqsource,
   jjhush,
   jjibit,
-  jjicetorrent,
   jjidope,
   jjilcorsaroblu,
   jjilcorsaronero,
@@ -1598,7 +1588,6 @@ export const definitions = [
   jjrustorka,
   jjrutor,
   jjrutrackerRu,
-  jjscenefz,
   jjscenepalace,
   jjscenerush,
   jjsdbits,
@@ -1714,7 +1703,6 @@ export const definitions = [
   jjxbytes2,
   jjxfsub,
   jjxtremefile,
-  jjxtremezone,
   jjxwtclassics,
   jjxwtorrents,
   jjxxxtor,

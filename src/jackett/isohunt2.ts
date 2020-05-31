@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://isohunt2.net/', 'https://isohunt.nz/'],
+  links: ['https://isohunt.nz/'],
+  legacylinks: ['https://isohunt2.net/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Anime', desc: 'Anime' },

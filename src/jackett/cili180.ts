@@ -8,7 +8,22 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: [
+    'https://www.lrcili1.xyz/',
+    'https://www.lrcili2.xyz/',
+    'https://www.lrcili3.xyz/',
+    'https://www.lrcili4.xyz/',
+    'https://www.lrcili5.xyz/',
+    'https://www.lrcili6.xyz/',
+    'https://www.lrcili7.xyz/',
+    'https://www.lrcili8.xyz/',
+    'https://www.lrcili9.xyz/',
+    'https://www.lrcili10.xyz/',
+  ],
+  legacylinks: [
+    'http://www.cili180.com/',
+    'http://www.cilijj.xyz/',
     'https://www.cilijj.xyz/',
+    'https://www.liaorenso.xyz/',
     'https://www.liaorenso11.xyz/',
     'https://www.liaorenso12.xyz/',
     'https://www.liaorenso13.xyz/',
@@ -17,12 +32,9 @@ export const definition: TrackerDefinition = {
     'https://www.liaorenso16.xyz/',
     'https://www.liaorenso17.xyz/',
     'https://www.liaorenso18.xyz/',
-  ],
-  legacylinks: [
-    'http://www.cili180.com/',
-    'http://www.cilijj.xyz/',
-    'https://www.liaorenso.xyz/',
     'https://www.liaorenso19.xyz/',
+    'http://lrcili.xyz/',
+    'http://www.lrcili.xyz/',
   ],
   caps: {
     modes: {
