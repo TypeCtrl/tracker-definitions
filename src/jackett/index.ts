@@ -1267,6 +1267,9 @@ export const jyggcookie = jjyggcookie;
 import { definition as jjyggtorrent } from './yggtorrent';
 export const jyggtorrent = jjyggtorrent;
 
+import { definition as jjyingk } from './yingk';
+export const jyingk = jjyingk;
+
 import { definition as jjyourbittorrent } from './yourbittorrent';
 export const jyourbittorrent = jjyourbittorrent;
 
@@ -1709,6 +1712,7 @@ export const definitions = [
   jjydypt,
   jjyggcookie,
   jjyggtorrent,
+  jjyingk,
   jjyourbittorrent,
   jjzamundanet,
   jjzelkaorg,

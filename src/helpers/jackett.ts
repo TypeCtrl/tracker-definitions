@@ -422,6 +422,7 @@ export const jackettSites = [
   'ydypt',
   'yggcookie',
   'yggtorrent',
+  'yingk',
   'yourbittorrent',
   'zamundanet',
   'zelkaorg',

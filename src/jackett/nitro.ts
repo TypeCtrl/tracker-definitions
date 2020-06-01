@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'pl-PL',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://nitro.to/'],
-  legacylinks: ['http://nitro.to/'],
+  links: ['http://nitro.to/'],
+  legacylinks: ['https://nitro.to/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV', desc: 'Seriale' },
