@@ -57,6 +57,13 @@ export const definition: TrackerDefinition = {
       default: 'desc',
       options: { desc: 'desc', asc: 'asc' },
     },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        'Use your browser, login to VHSTAPES and access the torrent search page, and make sure the results are displayed in <b>List View</b>. If in the correct mode, the page will have a link showing <i>Gallery View</i>. If the link is showing <i>List View</i> then click it to switch modes.',
+    },
   ],
   login: {
     path: 'login',
@@ -78,7 +85,6 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      view: 'list',
       $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',

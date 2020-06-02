@@ -71,7 +71,11 @@ export const definition: TrackerDefinition = {
       selector: 'div.inner_container > div:has(p:has(a[href^="/torrent/"]))',
     },
     fields: {
-      title: { selector: 'p:nth-child(1) > a' },
+      title: {
+        selector: 'p:nth-child(1) > a',
+        attribute: 'title',
+        filters: [{ name: 'replace', args: ['View torrent info : ', ''] }],
+      },
       details: {
         selector: 'p:nth-child(1) > a[href^="/torrent/"]',
         attribute: 'href',

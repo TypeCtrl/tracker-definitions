@@ -104,7 +104,7 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'login.php',
     method: 'form',
-    form: 'form[action="/login.php"]',
+    form: 'form[method="post"]',
     cookies: ['JAVA=OK'],
     inputs: {
       username: '{{ .Config.username }}',
