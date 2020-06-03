@@ -63,11 +63,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}o/of/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
+          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}2/{{ .Today.Year }}/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
       },
       {
         path:
-          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}o/of/{{end}}{{ .Config.sort }}/{{ .Config.type }}/2/',
+          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}2/{{ .Today.Year }}/{{end}}{{ .Config.sort }}/{{ .Config.type }}/2/',
       },
     ],
     rows: { selector: 'tr:has(td.m)' },
