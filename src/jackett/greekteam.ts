@@ -94,7 +94,7 @@ export const definition: TrackerDefinition = {
     path: 'login.php',
     method: 'post',
     inputs: {
-      take_login: '1',
+      take_login: 1,
       logout: 'no',
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
@@ -105,10 +105,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: '1',
-      blah: '0',
+      incldead: 1,
+      blah: 0,
     },
     rows: { selector: 'table.row1 > tbody > tr:has(a.torname)' },
     fields: {
@@ -136,16 +136,20 @@ export const definition: TrackerDefinition = {
       size: {
         selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td',
       },
-      seeders: {
+      grabs: {
         selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td ~ td',
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
-      leechers: {
+      seeders: {
         selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td ~ td ~ td',
       },
-      downloadvolumefactor: {
-        case: { 'img[src="pic/free.png"]': '0', '*': '1' },
+      leechers: {
+        selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td ~ td ~ td ~ td',
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: {
+        case: { 'img[src="pic/free.png"]': 0, '*': 1 },
+      },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
