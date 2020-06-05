@@ -6,11 +6,10 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://btdb.io/", "https://btdb.unblockit.me/"],
+  "links": ["https://btdb.eu/"],
   "legacylinks": [
     "https://btdb.to/",
     "https://btdb.unblocked.app/",
-    "https://btdb.eu/",
     "https://btdb.unblockit.pro/",
     "https://btdb.unblockit.one/",
     "https://btdb.black-mirror.xyz/",
@@ -20,7 +19,9 @@
     "https://btdb.ind-unblock.xyz/",
     "https://btdb.unblocked.bar/",
     "https://btdb.proxyportal.pw/",
-    "https://btdb.uk-unblock.pro/"
+    "https://btdb.uk-unblock.pro/",
+    "https://btdb.unblockit.me/",
+    "https://btdb.io/"
   ],
   "caps": {
     "categorymappings": [{ "id": "1", "cat": "Other", "desc": "Other" }],
