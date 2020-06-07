@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'WINDOWS-1252',
   followredirect: true,
   links: [
-    'https://ilcorsaronero.xyz/',
+    'https://ilcorsaronero.link/',
     'https://ilcorsaronero.fun/',
     'https://ilcorsaronero.pro/',
     'https://ilcorsaronero.unblockit.me/',
@@ -24,6 +24,7 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.pw/',
     'https://ilcorsaronero.unblockit.pro/',
     'https://ilcorsaronero.unblockit.one/',
+    'https://ilcorsaronero.xyz/',
   ],
   caps: {
     categorymappings: [

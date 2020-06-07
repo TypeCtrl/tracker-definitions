@@ -211,9 +211,6 @@ export const jchdbits = jjchdbits;
 import { definition as jjchilebt } from './chilebt';
 export const jchilebt = jjchilebt;
 
-import { definition as jjcili180 } from './cili180';
-export const jcili180 = jjcili180;
-
 import { definition as jjcinemageddon } from './cinemageddon';
 export const jcinemageddon = jjcinemageddon;
 
@@ -631,6 +628,9 @@ export const jleporno = jjleporno;
 import { definition as jjlesaloon } from './lesaloon';
 export const jlesaloon = jjlesaloon;
 
+import { definition as jjliaorencili } from './liaorencili';
+export const jliaorencili = jjliaorencili;
+
 import { definition as jjlibranet } from './libranet';
 export const jlibranet = jjlibranet;
 
@@ -663,9 +663,6 @@ export const jmajomparade = jjmajomparade;
 
 import { definition as jjmarinetracker } from './marinetracker';
 export const jmarinetracker = jjmarinetracker;
-
-import { definition as jjmetalIplayRo } from './metal-iplay-ro';
-export const jmetalIplayRo = jjmetalIplayRo;
 
 import { definition as jjmetaltracker } from './metaltracker';
 export const jmetaltracker = jjmetaltracker;
@@ -736,11 +733,11 @@ export const jnewstudiol = jjnewstudiol;
 import { definition as jjnitro } from './nitro';
 export const jnitro = jjnitro;
 
-import { definition as jjnnmClub } from './nnm-club';
-export const jnnmClub = jjnnmClub;
-
 import { definition as jjnntt } from './nntt';
 export const jnntt = jjnntt;
+
+import { definition as jjnonameClub } from './noname-club';
+export const jnonameClub = jjnonameClub;
 
 import { definition as jjnordichd } from './nordichd';
 export const jnordichd = jjnordichd;
@@ -888,6 +885,9 @@ export const jrockbox = jjrockbox;
 
 import { definition as jjrodvd } from './rodvd';
 export const jrodvd = jjrodvd;
+
+import { definition as jjromanianmetaltorrents } from './romanianmetaltorrents';
+export const jromanianmetaltorrents = jjromanianmetaltorrents;
 
 import { definition as jjrptorrents } from './rptorrents';
 export const jrptorrents = jjrptorrents;
@@ -1360,7 +1360,6 @@ export const definitions = [
   jjchannelx,
   jjchdbits,
   jjchilebt,
-  jjcili180,
   jjcinemageddon,
   jjcinemamovies,
   jjcinematik,
@@ -1500,6 +1499,7 @@ export const definitions = [
   jjlegittorrents,
   jjleporno,
   jjlesaloon,
+  jjliaorencili,
   jjlibranet,
   jjlimetorrents,
   jjlinkomanija,
@@ -1511,7 +1511,6 @@ export const definitions = [
   jjmagnetdl,
   jjmajomparade,
   jjmarinetracker,
-  jjmetalIplayRo,
   jjmetaltracker,
   jjmicrobit,
   jjmmaTorrents,
@@ -1535,8 +1534,8 @@ export const definitions = [
   jjnewstudio,
   jjnewstudiol,
   jjnitro,
-  jjnnmClub,
   jjnntt,
+  jjnonameClub,
   jjnordichd,
   jjnyaaPantsu,
   jjnyaasi,
@@ -1586,6 +1585,7 @@ export const definitions = [
   jjriperam,
   jjrockbox,
   jjrodvd,
+  jjromanianmetaltorrents,
   jjrptorrents,
   jjrusMedia,
   jjrustorka,

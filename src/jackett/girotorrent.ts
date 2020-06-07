@@ -90,6 +90,13 @@ export const definition: TrackerDefinition = {
       default: '2',
       options: { '1': 'asc', '2': 'desc' },
     },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile. The default is <i>15</i>.',
+    },
   ],
   login: {
     path: 'index.php?page=login',
@@ -115,13 +122,7 @@ export const definition: TrackerDefinition = {
     attribute: 'href',
   },
   search: {
-    paths: [
-      { path: 'index.php', inputs: { pages: 1 } },
-      { path: 'index.php', inputs: { pages: 2 } },
-      { path: 'index.php', inputs: { pages: 3 } },
-      { path: 'index.php', inputs: { pages: 4 } },
-      { path: 'index.php', inputs: { pages: 5 } },
-    ],
+    paths: [{ path: 'index.php' }],
     inputs: {
       search: '{{ .Keywords }}',
       category: '{{ range .Categories }}{{.}};{{end}}',

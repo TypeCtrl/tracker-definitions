@@ -1,9 +1,9 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'nnm-club',
-  name: 'NoName Club',
-  description: 'NoName Club (NNM-Club) is a RUSSIAN Public Tracker for TV / MOVIES / MUSIC',
+  id: 'noname-club',
+  name: 'NoNaMe Club',
+  description: 'NoNaMe Club (NNM-Club) is a RUSSIAN Public Tracker for TV / MOVIES / MUSIC',
   language: 'ru-RU',
   type: 'public',
   encoding: 'WINDOWS-1251',
