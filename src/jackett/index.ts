@@ -346,9 +346,6 @@ export const jettv = jjettv;
 import { definition as jjexkinoray } from './exkinoray';
 export const jexkinoray = jjexkinoray;
 
-import { definition as jjexoticaz } from './exoticaz';
-export const jexoticaz = jjexoticaz;
-
 import { definition as jjextratorrentAg } from './extratorrent-ag';
 export const jextratorrentAg = jjextratorrentAg;
 
@@ -1405,7 +1402,6 @@ export const definitions = [
   jjethor,
   jjettv,
   jjexkinoray,
-  jjexoticaz,
   jjextratorrentAg,
   jjextratorrentCd,
   jjextremebits,

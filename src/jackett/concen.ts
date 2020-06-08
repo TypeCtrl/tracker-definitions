@@ -53,11 +53,7 @@ export const definition: TrackerDefinition = {
         selector: 'td.views-field-field-torrent a',
         attribute: 'href',
       },
-      magnet: {
-        selector: 'td.views-field-name a',
-        attribute: 'href',
-        filters: [{ name: 'prepend', args: 'magnet:' }],
-      },
+      magnet: { selector: 'td.views-field-name a', attribute: 'href' },
       date: { selector: 'td.views-field-created' },
       size: { selector: 'td.views-field-size' },
       seeders: { selector: 'td.views-field-seeds' },

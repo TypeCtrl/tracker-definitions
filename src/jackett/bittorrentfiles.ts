@@ -124,7 +124,7 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table.tableinborder > tbody > tr:has(a[href^="details.php"])',
+      selector: 'table.tableinborder > tbody > tr:has(a[href^="/download.php"])',
     },
     fields: {
       title: { selector: 'a[href^="details.php"]', attribute: 'title' },
