@@ -104,9 +104,9 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'index.php?page=login',
+    path: 'index.php',
     method: 'form',
-    form: 'form[action^="index.php?page=login"]',
+    form: 'form[action="index.php?page=login"]',
     inputs: {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',

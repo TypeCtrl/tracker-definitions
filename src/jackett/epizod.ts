@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.epizod.tv/'],
+  links: ['https://wwv.epizod.tv/'],
+  legacylinks: ['https://www.epizod.tv/'],
   caps: {
     modes: {
       search: ['q'],
