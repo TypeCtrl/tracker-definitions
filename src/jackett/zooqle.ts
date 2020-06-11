@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://zooqle.com/',
-    'https://zooqle.unblockit.me/',
+    'https://zooqle.unblockit.pw/',
     'https://zooqle.unblocked.bar/',
     'https://zooqle.proxyportal.pw/',
     'https://zooqle.uk-unblock.pro/',
@@ -23,6 +23,7 @@ export const definition: TrackerDefinition = {
     'https://zooqle.proxyportal.fun/',
     'https://zooqle.uk-unblock.xyz/',
     'https://zooqle.ind-unblock.xyz/',
+    'https://zooqle.unblockit.me/',
   ],
   caps: {
     modes: {

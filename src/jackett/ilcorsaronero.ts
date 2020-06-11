@@ -12,7 +12,6 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.link/',
     'https://ilcorsaronero.fun/',
     'https://ilcorsaronero.pro/',
-    'https://ilcorsaronero.unblockit.me/',
   ],
   legacylinks: [
     'https://ilcorsaronero.live/',
@@ -25,6 +24,8 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.unblockit.pro/',
     'https://ilcorsaronero.unblockit.one/',
     'https://ilcorsaronero.xyz/',
+    'https://ilcorsaronero.unblockit.me/',
+    'https://ilcorsaronero.unblockit.pw/',
   ],
   caps: {
     categorymappings: [

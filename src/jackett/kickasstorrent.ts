@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://katcr.co/',
     'https://kat.root.yt/',
-    'https://kat.unblockit.me/',
+    'https://kat.unblockit.pw/',
     'https://kickasstorrents.unblockninja.com/',
     'https://katcr.unblocked.bar/',
     'https://katcr.proxyportal.pw/',
@@ -27,6 +27,7 @@ export const definition: TrackerDefinition = {
     'https://katcr.proxyportal.fun/',
     'https://katcr.uk-unblock.xyz/',
     'https://katcr.ind-unblock.xyz/',
+    'https://kat.unblockit.me/',
   ],
   caps: {
     categorymappings: [

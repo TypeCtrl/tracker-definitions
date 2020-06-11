@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.demonoid.is/'],
+  links: ['https://www.demonoid.is/', 'https://demonoid.unblockit.pw/'],
   legacylinks: [
     'https://www.dnoid.to/',
     'https://demonoid.unblockit.pro/',

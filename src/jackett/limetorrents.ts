@@ -14,8 +14,7 @@ export const definition: TrackerDefinition = {
     'https://www.limetorrents.co/',
     'https://limetor.com/',
     'https://www.limetor.pro/',
-    'https://limetorrents.unblockit.me/',
-    'https://limetorrents.unblockninja.com/',
+    'https://limetorrents.unblockit.pw/',
   ],
   legacylinks: [
     'https://www.limetorrents.io/',
@@ -32,6 +31,8 @@ export const definition: TrackerDefinition = {
     'https://limetorrents.unblocked.bar/',
     'https://limetorrents.proxyportal.pw/',
     'https://limetorrents.uk-unblock.pro/',
+    'https://limetorrents.unblockninja.com/',
+    'https://limetorrents.unblockit.me/',
   ],
   caps: {
     modes: {

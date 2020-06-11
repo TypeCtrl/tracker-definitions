@@ -8,8 +8,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://extratorrent.ag/', 'https://extratorrent.unblockit.me/'],
-  legacylinks: ['https://extratorrent.unblockit.one/'],
+  links: ['https://extratorrent.ag/', 'https://extratorrent.unblockit.pw/'],
+  legacylinks: ['https://extratorrent.unblockit.one/', 'https://extratorrent.unblockit.me/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Anime', desc: 'Anime' },

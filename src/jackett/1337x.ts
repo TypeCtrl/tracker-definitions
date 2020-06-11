@@ -16,7 +16,7 @@ export const definition: TrackerDefinition = {
     'https://x1337x.ws/',
     'https://x1337x.eu/',
     'https://x1337x.se/',
-    'https://1337x.unblockit.me/',
+    'https://1337x.unblockit.pw/',
     'https://1337x.unblocked.bar/',
     'https://1337x.proxyportal.pw/',
     'https://1337x.uk-unblock.pro/',
@@ -32,6 +32,7 @@ export const definition: TrackerDefinition = {
     'https://1337x.uk-unblock.xyz/',
     'https://1337x.ind-unblock.xyz/',
     'https://1337x.unblockninja.com/',
+    'https://1337x.unblockit.me/',
   ],
   caps: {
     categorymappings: [

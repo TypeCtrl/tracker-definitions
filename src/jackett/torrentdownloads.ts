@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torrentdownloads.info/',
     'https://www.torrentdownloads.me/',
-    'https://torrentdownloads.unblockit.me/',
+    'https://torrentdownloads.unblockit.pw/',
     'https://torrentdownloads.unblocked.bar/',
     'https://torrentdownloads.proxyportal.pw/',
     'https://torrentdownloads.uk-unblock.pro/',
@@ -24,6 +24,7 @@ export const definition: TrackerDefinition = {
     'https://torrentdownloads.proxyportal.fun/',
     'https://torrentdownloads.uk-unblock.xyz/',
     'https://torrentdownloads.ind-unblock.xyz/',
+    'https://torrentdownloads.unblockit.me/',
   ],
   caps: {
     categorymappings: [
