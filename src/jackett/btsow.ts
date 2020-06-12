@@ -7,8 +7,13 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://bteve.com/'],
-  legacylinks: ['https://btos.pw/', 'https://btio.pw/', 'https://btsow.club/'],
+  links: ['https://btsow.fun/'],
+  legacylinks: [
+    'https://btos.pw/',
+    'https://btio.pw/',
+    'https://btsow.club/',
+    'https://bteve.com/',
+  ],
   caps: {
     modes: {
       search: ['q'],
