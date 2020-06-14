@@ -248,6 +248,7 @@ export const jackettSites = [
   'nordichd',
   'nyaa-pantsu',
   'nyaasi',
+  'omgwtftrackr',
   'onejav',
   'onlineselfeducation',
   'onlyscene',
