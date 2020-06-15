@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://www.oxtorrent.com/',
+    'https://www.oxtorrent.pw/',
     'https://www.oxtorrent.co/',
     'https://oxtorrent.unblocked.bar/',
     'https://oxtorrent.proxyportal.pw/',
@@ -23,6 +23,7 @@ export const definition: TrackerDefinition = {
     'https://oxtrorrent.proxyportal.fun/',
     'https://oxtorrent.uk-unblock.xyz/',
     'https://oxtorrent.ind-unblock.xyz/',
+    'https://www.oxtorrent.com/',
   ],
   caps: {
     categorymappings: [
@@ -55,7 +56,7 @@ export const definition: TrackerDefinition = {
       type: 'info',
       label: 'About the Download Link',
       default:
-        'Note that only <b>www.oxtorrent.com</b> supports the use of the <b>.torrent</b> download link.<br />All sites support <b>magnet</b> links.',
+        'Note that only <b>www.oxtorrent.pw</b> supports the use of the <b>.torrent</b> download link.<br />All sites support <b>magnet</b> links.',
     },
   ],
   download: {
