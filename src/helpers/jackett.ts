@@ -294,7 +294,6 @@ export const jackettSites = [
   'rintor',
   'riperam',
   'rockbox',
-  'rodvd',
   'romanianmetaltorrents',
   'rptorrents',
   'rus-media',

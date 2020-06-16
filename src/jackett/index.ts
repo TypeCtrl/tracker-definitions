@@ -883,9 +883,6 @@ export const jriperam = jjriperam;
 import { definition as jjrockbox } from './rockbox';
 export const jrockbox = jjrockbox;
 
-import { definition as jjrodvd } from './rodvd';
-export const jrodvd = jjrodvd;
-
 import { definition as jjromanianmetaltorrents } from './romanianmetaltorrents';
 export const jromanianmetaltorrents = jjromanianmetaltorrents;
 
@@ -1584,7 +1581,6 @@ export const definitions = [
   jjrintor,
   jjriperam,
   jjrockbox,
-  jjrodvd,
   jjromanianmetaltorrents,
   jjrptorrents,
   jjrusMedia,
