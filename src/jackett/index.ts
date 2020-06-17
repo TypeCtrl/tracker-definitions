@@ -346,9 +346,6 @@ export const jettv = jjettv;
 import { definition as jjexkinoray } from './exkinoray';
 export const jexkinoray = jjexkinoray;
 
-import { definition as jjextratorrentAg } from './extratorrent-ag';
-export const jextratorrentAg = jjextratorrentAg;
-
 import { definition as jjextratorrentCd } from './extratorrent-cd';
 export const jextratorrentCd = jjextratorrentCd;
 
@@ -1255,6 +1252,9 @@ export const jxwtorrents = jjxwtorrents;
 import { definition as jjxxxtor } from './xxxtor';
 export const jxxxtor = jjxxxtor;
 
+import { definition as jjxxxtorrents } from './xxxtorrents';
+export const jxxxtorrents = jjxxxtorrents;
+
 import { definition as jjydypt } from './ydypt';
 export const jydypt = jjydypt;
 
@@ -1402,7 +1402,6 @@ export const definitions = [
   jjethor,
   jjettv,
   jjexkinoray,
-  jjextratorrentAg,
   jjextratorrentCd,
   jjextremebits,
   jjextremetorrents,
@@ -1705,6 +1704,7 @@ export const definitions = [
   jjxwtclassics,
   jjxwtorrents,
   jjxxxtor,
+  jjxxxtorrents,
   jjydypt,
   jjyggcookie,
   jjyggtorrent,

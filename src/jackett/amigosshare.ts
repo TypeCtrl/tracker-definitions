@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'pt-BR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://amigos-share.club/'],
-  legacylinks: ['http://amigos-share.club/'],
+  links: ['https://cliente.amigos-share.club/'],
+  legacylinks: ['http://amigos-share.club/', 'https://amigos-share.club/'],
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
