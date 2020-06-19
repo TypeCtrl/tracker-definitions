@@ -22,11 +22,7 @@ export const definition: TrackerDefinition = {
     'https://cpasbiens.ind-unblock.xyz/',
   ],
   caps: {
-    categorymappings: [
-      { id: 'films', cat: 'Movies', desc: 'Movies' },
-      { id: 'series', cat: 'TV', desc: 'TV' },
-      { id: 'other', cat: 'Other', desc: 'Other' },
-    ],
+    categorymappings: [{ id: 'other', cat: 'Other', desc: 'Movies/TV/Other' }],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -49,6 +45,13 @@ export const definition: TrackerDefinition = {
         '?trie-nom-d': 'title desc',
         '?trie-nom-a': 'title asc',
       },
+    },
+    {
+      name: 'info_categories',
+      type: 'info',
+      label: 'About categories',
+      default:
+        'cpasbien clone does not show <b>Categories</b> in its Search Results.<br />To use this indexer with Sonarr/Radarr set your indexer category to <b>7000</b>.',
     },
   ],
   download: { selector: 'a[href^="magnet:"]', attribute: 'href' },

@@ -42,11 +42,7 @@ export const definition: TrackerDefinition = {
     'https://vww.cpasbien-fr.fr/',
   ],
   caps: {
-    categorymappings: [
-      { id: 'films', cat: 'Movies', desc: 'Movies' },
-      { id: 'series', cat: 'TV', desc: 'TV' },
-      { id: 'other', cat: 'Other', desc: 'Other' },
-    ],
+    categorymappings: [{ id: 'other', cat: 'Other', desc: 'Movies/TV/Other' }],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -69,6 +65,13 @@ export const definition: TrackerDefinition = {
       label: 'How to get the User-Agent',
       default:
         "<ol><li>From the same place you fetched the cookie,<li>Find <b>'user-agent:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole user-agent string <i>(everything after 'user-agent: ')</i> and <b>Paste</b> here.</ol>",
+    },
+    {
+      name: 'info_categories',
+      type: 'info',
+      label: 'About categories',
+      default:
+        'cpasbien does not show <b>Categories</b> in its Search Results.<br />To use this indexer with Sonarr/Radarr set your indexer category to <b>7000</b>.',
     },
   ],
   login: {
