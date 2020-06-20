@@ -9,7 +9,6 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://thepiratebay.vip/',
     'https://thepiratebay0.org/',
     'https://thepiratebay10.org/',
     'https://pirateproxy.live/',
@@ -36,6 +35,7 @@ export const definition: TrackerDefinition = {
     'https://tpb.bike/',
     'https://pirateproxy.page/',
     'https://tpb14.ukpass.co/',
+    'https://thepiratebay.vip/',
   ],
   caps: {
     categorymappings: [

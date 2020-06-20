@@ -29,6 +29,7 @@ export const definition: TrackerDefinition = {
   ],
   search: {
     paths: [{ path: 'search/?search={{ .Keywords }}' }],
+    keywordsfilters: [{ name: 're_replace', args: ['[\\s]+', '.'] }],
     rows: {
       selector: 'tr[class^="tl"]',
       filters: [{ name: 'andmatch' }],
