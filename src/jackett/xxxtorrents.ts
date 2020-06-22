@@ -306,7 +306,10 @@ export const definition: TrackerDefinition = {
       pn: '',
       allw: 0,
     },
-    rows: { selector: 'tr[id^="tor_"]:has(a[href^="magnet:?xt="])' },
+    rows: {
+      selector: 'tr[id^="tor_"]:has(a[href^="magnet:?xt="])',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       category: {
         selector: 'a.gen',
@@ -321,7 +324,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td.leechmed > b' },
       grabs: { selector: 'td:nth-child(9)' },
       date: { selector: 'td:last-child > u' },
-      downloadvolumefactor: { text: 1 },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },
   },

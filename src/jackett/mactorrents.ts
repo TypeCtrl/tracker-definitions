@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
     categorymappings: [
       { id: 'mac-os-apps', cat: 'PC/Mac' },
-      { id: 'mac-games', cat: 'PC/Games' },
+      { id: 'games', cat: 'PC/Games' },
       { id: 'uncategorized', cat: 'Other' },
     ],
   },
@@ -28,7 +28,7 @@ export const definition: TrackerDefinition = {
     fields: {
       title: { selector: 'div.blog-content h3 a' },
       category: {
-        selector: 'a[href*="/mac-os-apps/"], a[href*="/mac-games/"], a[href*="/uncategorized/"]',
+        selector: 'a[href*="/mac-os-apps/"], a[href*="/games/"], a[href*="/uncategorized/"]',
         attribute: 'href',
         filters: [{ name: 'split', args: ['/', 3] }],
       },
