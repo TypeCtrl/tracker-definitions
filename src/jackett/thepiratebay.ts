@@ -211,6 +211,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     keywordsfilters: [
+      { name: 're_replace', args: ["(?i)(it's\\s)", ''] },
       {
         name: 're_replace',
         args: ['([\\p{IsCJKUnifiedIdeographs}\\W]+)', '.'],
