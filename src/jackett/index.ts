@@ -493,6 +493,9 @@ export const jhdhome = jjhdhome;
 import { definition as jjhdme } from './hdme';
 export const jhdme = jjhdme;
 
+import { definition as jjhdolimpo } from './hdolimpo';
+export const jhdolimpo = jjhdolimpo;
+
 import { definition as jjhdreactor } from './hdreactor';
 export const jhdreactor = jjhdreactor;
 
@@ -1451,6 +1454,7 @@ export const definitions = [
   jjhdforever,
   jjhdhome,
   jjhdme,
+  jjhdolimpo,
   jjhdreactor,
   jjhdroute,
   jjhdsky,

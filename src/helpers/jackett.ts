@@ -164,6 +164,7 @@ export const jackettSites = [
   'hdforever',
   'hdhome',
   'hdme',
+  'hdolimpo',
   'hdreactor',
   'hdroute',
   'hdsky',
