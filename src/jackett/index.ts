@@ -736,9 +736,6 @@ export const jnntt = jjnntt;
 import { definition as jjnonameClub } from './noname-club';
 export const jnonameClub = jjnonameClub;
 
-import { definition as jjnordichd } from './nordichd';
-export const jnordichd = jjnordichd;
-
 import { definition as jjnyaaPantsu } from './nyaa-pantsu';
 export const jnyaaPantsu = jjnyaaPantsu;
 
@@ -1044,9 +1041,6 @@ export const jtjupt = jjtjupt;
 
 import { definition as jjtlfbits } from './tlfbits';
 export const jtlfbits = jjtlfbits;
-
-import { definition as jjtntvillage } from './tntvillage';
-export const jtntvillage = jjtntvillage;
 
 import { definition as jjtokyotosho } from './tokyotosho';
 export const jtokyotosho = jjtokyotosho;
@@ -1535,7 +1529,6 @@ export const definitions = [
   jjnitro,
   jjnntt,
   jjnonameClub,
-  jjnordichd,
   jjnyaaPantsu,
   jjnyaasi,
   jjomgwtftrackr,
@@ -1638,7 +1631,6 @@ export const definitions = [
   jjthevault,
   jjtjupt,
   jjtlfbits,
-  jjtntvillage,
   jjtokyotosho,
   jjtopnow,
   jjtorlock,

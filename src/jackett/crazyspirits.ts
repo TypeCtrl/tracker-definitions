@@ -176,9 +176,9 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?)><' }],
       },
-      grabs: { selector: 'td:nth-last-child(4)' },
-      seeders: { selector: 'td:nth-last-child(3)' },
-      leechers: { selector: 'td:nth-last-child(2)' },
+      grabs: { selector: 'td:nth-last-child(5)' },
+      seeders: { selector: 'td:nth-last-child(4)' },
+      leechers: { selector: 'td:nth-last-child(3)' },
       size: {
         selector: 'a[onmouseover][href^="torrents-details.php?id="]',
         attribute: 'onmouseover',
@@ -189,12 +189,7 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [
           { name: 'regexp', args: 'Partagé Voilà : </b>(.*?)<br' },
-          { name: 'replace', args: ['heure', 'hour'] },
-          { name: 'replace', args: ['jour', 'day'] },
-          { name: 'replace', args: ['semaine', 'week'] },
-          { name: 'replace', args: ['mois', 'months'] },
-          { name: 'replace', args: ['an', 'year'] },
-          { name: 'append', args: ' ago' },
+          { name: 'dateparse', args: '01-02-2006' },
         ],
       },
       downloadvolumefactor: {
