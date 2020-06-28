@@ -13,10 +13,10 @@ export const definition: TrackerDefinition = {
     'https://rutor.unblocked.bar/',
     'https://rutor.proxyportal.pw/',
     'https://rutor.uk-unblock.pro/',
+    'https://rutor.root.yt/',
   ],
   legacylinks: [
     'http://live-rutor.org/',
-    'https://rutor.root.yt/',
     'http://new-rutor.org/',
     'https://rutor.black-mirror.xyz/',
     'https://rutor.unblocked.casa/',

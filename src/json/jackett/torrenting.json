@@ -9,10 +9,10 @@
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "Movies", "desc": "Movies" },
-      { "id": "2", "cat": "Movies/DVD", "desc": "Movies/DVD-R" },
-      { "id": "3", "cat": "Movies/BluRay", "desc": "BluRay Movies" },
+      { "id": "2", "cat": "XXX", "desc": "XXX" },
+      { "id": "3", "cat": "Movies/BluRay", "desc": "Movies/BluRay" },
       { "id": "4", "cat": "TV/SD", "desc": "TV/SD-x264" },
-      { "id": "5", "cat": "TV/HD", "desc": "TV/X264 HD" },
+      { "id": "5", "cat": "TV/HD", "desc": "TV/HD-x264" },
       { "id": "11", "cat": "Movies/HD", "desc": "Movies/HD" },
       { "id": "18", "cat": "TV", "desc": "TV/Packs" },
       { "id": "21", "cat": "Console", "desc": "Games/Consoles" },
@@ -20,11 +20,16 @@
       { "id": "27", "cat": "Audio", "desc": "Music/Audio" },
       { "id": "29", "cat": "TV/Anime", "desc": "Anime/Toons" },
       { "id": "30", "cat": "Books", "desc": "Books" },
-      { "id": "34", "cat": "PC/0day", "desc": "Applications/0-day" },
+      { "id": "34", "cat": "PC/0day", "desc": "Applications" },
       { "id": "35", "cat": "PC/Games", "desc": "Games/PC" },
-      { "id": "40", "cat": "XXX", "desc": "XXX" },
+      { "id": "38", "cat": "Movies/Foreign", "desc": "Movies/Non-English" },
+      { "id": "40", "cat": "Movies/DVD", "desc": "Movies/DVD-R" },
       { "id": "47", "cat": "Movies", "desc": "Movies/Packs" },
-      { "id": "49", "cat": "Movies/HD", "desc": "x265 (HEVC)" }
+      { "id": "49", "cat": "Movies/HD", "desc": "Movies/x265" },
+      { "id": "55", "cat": "TV/Sport", "desc": "Sports" },
+      { "id": "82", "cat": "TV/Foreign", "desc": "TV/Non-English" },
+      { "id": "93", "cat": "Audio", "desc": "Music/Packs" },
+      { "id": "99", "cat": "TV/HD", "desc": "TV/x265" }
     ],
     "modes": {
       "search": ["q", "imdbid"],
@@ -49,7 +54,7 @@
     "inputs": {
       "$raw": "{{ range .Categories }}{{.}}=&{{end}}",
       "q": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
-      "incldead": 1
+      "qf": "{{ if .Query.IMDBID }}adv{{else}}ti{{end}}"
     },
     "rows": {
       "selector": "table#torrentsTable > tbody > tr:has(td.torrentNameInfo)"
@@ -82,7 +87,9 @@
       "downloadvolumefactor": {
         "case": { "span:contains(\"FreeLeech\")": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 1.1 },
+      "minimumseedtime": { "text": 259200 }
     }
   },
   "source": "jackett"
