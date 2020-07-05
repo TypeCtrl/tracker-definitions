@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'darktracker',
   name: 'Dark Tracker',
-  description: 'Dark Tracker is a RUSSIAN Private Torrent Tracker for 0DAY / GENERAL',
+  description: 'Dark Tracker is a RUSSIAN Semi-Private Torrent Tracker for 0DAY / GENERAL',
   language: 'ru-RU',
-  type: 'private',
+  type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://darkos.club/', 'https://dark-os.com/'],
   caps: {

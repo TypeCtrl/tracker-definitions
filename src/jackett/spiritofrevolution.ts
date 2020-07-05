@@ -143,7 +143,13 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'div.selection_unter_ad',
-        filters: [{ name: 'replace', args: [',', '.'] }],
+        filters: [
+          { name: 'replace', args: [',', '.'] },
+          {
+            name: 're_replace',
+            args: ['(\\d+)\\.(\\d{3})(\\.\\d{2})', '$1$2$3'],
+          },
+        ],
       },
       grabs: {
         selector: 'div.selection_unter_ae',

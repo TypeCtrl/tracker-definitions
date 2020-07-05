@@ -11,23 +11,11 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://www.haidan.cc/'],
   caps: {
     categorymappings: [
-      { id: '300', cat: 'Movies/UHD', desc: 'Movies UHD-4K' },
-      { id: '412', cat: 'Movies/WEBDL', desc: 'Movies WEB-DL' },
-      { id: '413', cat: 'TV/HD', desc: 'Movies HDTV' },
-      { id: '414', cat: 'Movies/DVD', desc: 'Movies DVD' },
-      { id: '415', cat: 'Movies', desc: 'Movies REMUX' },
-      { id: '416', cat: 'Movies/3D', desc: 'Movies 3D' },
-      { id: '417', cat: 'Movies', desc: 'Movies iPad' },
-      { id: '418', cat: 'Movies/WEBDL', desc: 'Netflix WEB-DL' },
-      { id: '419', cat: 'Movies/WEBDL', desc: 'VIU WEB-DL' },
-      { id: '301', cat: 'Movies/UHD', desc: 'Movies 2160p' },
       { id: '404', cat: 'TV/Documentary', desc: 'Documentaries(纪录片)' },
-      { id: '401', cat: 'Movies/BluRay', desc: 'Movies Blu-ray' },
+      { id: '401', cat: 'Movies', desc: 'Movies(电影)' },
       { id: '405', cat: 'TV/Anime', desc: 'Animations(动画片)' },
       { id: '402', cat: 'TV', desc: 'TV Series(电视剧)' },
-      { id: '410', cat: 'Movies/HD', desc: 'Movies 1080p' },
       { id: '403', cat: 'TV', desc: 'TV Shows(综艺)' },
-      { id: '411', cat: 'Movies/HD', desc: 'Movies 720p' },
       { id: '406', cat: 'Audio/Video', desc: 'Music Videos(MV)' },
       { id: '407', cat: 'TV/Sport', desc: 'Sports(体育)' },
       { id: '409', cat: 'Other', desc: 'Misc(其他)' },
@@ -64,6 +52,13 @@ export const definition: TrackerDefinition = {
       default:
         'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
+    {
+      name: 'info_indexer',
+      type: 'info',
+      label: 'Alert',
+      default:
+        'HaiDan has switched to a <b>group</b> torrent list, which means this Indexer can only display the first item in each group.<br>This <b>yml</b> Indexer will eventually be re-written in c# as soon as a c# dev volunteers, to display all items in a group.',
+    },
   ],
   login: {
     path: 'login.php',
@@ -92,13 +87,13 @@ export const definition: TrackerDefinition = {
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
       incldead: 0,
       spstate: 0,
-      search_area: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
+      search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
       search_mode: 0,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table.torrents > tbody > tr:has(table.torrentname)',
+      selector: 'div.torrent_panel > div.torrent_group > div.group_content',
     },
     fields: {
       category: {
@@ -106,36 +101,47 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      title: {
+      year: {
         optional: true,
-        selector: 'a[title][href^="details.php?id="]',
-        attribute: 'title',
+        selector: 'div.video_year',
+        filters: [{ name: 'replace', args: ['年份:', ' '] }],
       },
-      details: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
-      },
+      _title: { selector: 'a.video_name_str' },
+      title: { text: '{{ .Result._title }}{{ .Result.year }}' },
+      details: { selector: 'a.video_name_str', attribute: 'href' },
       download: {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      imdb: {
+      description: {
         optional: true,
-        selector: 'a[href*="imdb.com/title/tt"]',
-        attribute: 'href',
+        selector: 'div.torrent_name_col > a',
+      },
+      banner: {
+        optional: true,
+        selector: 'img#poster',
+        attribute: 'data-src',
       },
       date: {
-        selector: 'td:nth-child(4):not(:has(span))',
+        selector: 'div.time_col:not(:has(span))',
         optional: true,
         filters: [
           { name: 'append', args: ' +08:00' },
-          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
-      size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(6)' },
-      leechers: { selector: 'td:nth-child(7)' },
-      grabs: { selector: 'td:nth-child(8)' },
+      size: {
+        selector: 'div.group > div.video_size, div.torrent_item > div.video_size',
+      },
+      seeders: {
+        selector: 'div.group > div.seeder_col, div.torrent_item > div.seeder_col',
+      },
+      leechers: {
+        selector: 'div.group > div.leecher_col, div.torrent_item > div.leecher_col',
+      },
+      grabs: {
+        selector: 'div.group > div.snatched_col, div.torrent_item > div.snatched_col',
+      },
       downloadvolumefactor: {
         case: {
           'img.pro_free': 0,
@@ -154,7 +160,6 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      description: { selector: 'td:nth-child(2)', remove: 'a, img' },
     },
   },
   source: 'jackett',

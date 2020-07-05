@@ -373,14 +373,13 @@
       "type": "select",
       "label": "Sort requested from site",
       "default": "added",
-      "options": { "added": "created", "seeders": "seeders", "size": "size" }
-    },
-    {
-      "name": "type",
-      "type": "select",
-      "label": "Order requested from site",
-      "default": "desc",
-      "options": { "desc": "desc", "asc": "asc" }
+      "options": {
+        "_": "created",
+        "S": "seeders desc",
+        "s": "seeders asc",
+        "B": "size desc",
+        "b": "size asc"
+      }
     }
   ],
   "login": { "method": "cookie", "test": { "path": "files/" } },
@@ -390,12 +389,11 @@
     "inputs": {
       "$raw": "{{ range .Categories }}c{{.}}&{{end}}",
       "seeded": 2,
-      "language": 0,
       "quality": 0,
+      "external": 2,
       "to": "{{ if .Query.IMDBID }}{{else}}1{{end}}",
       "query": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
-      "sort": "{{ .Config.sort }}",
-      "order": "{{ .Config.type }}"
+      "sort": "{{ re_replace .Config.sort \"_\" \"\" }}"
     },
     "rows": {
       "selector": "table.font_12px tr:has(td[class^=\"tone_1\"])",

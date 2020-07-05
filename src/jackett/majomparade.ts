@@ -106,7 +106,7 @@ export const definition: TrackerDefinition = {
       tipuska: 1,
     },
     rows: {
-      selector: 'table#table > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table#table > tbody > tr:has(a[href^="download.php?torrent="])',
     },
     fields: {
       download: {

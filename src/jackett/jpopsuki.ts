@@ -62,7 +62,7 @@ export const definition: TrackerDefinition = {
       },
       description: { selector: 'div.tags' },
       title: {
-        selector: 'td:nth-child(3)',
+        selector: 'td:nth-child(2)',
         remove: 'span, div.tags, a[title="View Comments"]',
         filters: [
           { name: 'replace', args: [' ()', ''] },
@@ -80,19 +80,19 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       banner: { selector: 'td:nth-child(2) img', attribute: 'src' },
-      files: { selector: 'td:nth-child(4)' },
+      files: { selector: 'td:nth-child(3)' },
       date: {
-        selector: 'td:nth-child(5)',
+        selector: 'td:nth-child(4)',
         attribute: 'title',
         filters: [
           { name: 'append', args: ' +00:00' },
           { name: 'dateparse', args: 'Jan 02 2006, 15:04 -07:00' },
         ],
       },
-      size: { selector: 'td:nth-child(6)' },
-      grabs: { selector: 'td:nth-child(7)' },
-      seeders: { selector: 'td:nth-child(8)' },
-      leechers: { selector: 'td:nth-child(9)' },
+      size: { selector: 'td:nth-child(5)' },
+      grabs: { selector: 'td:nth-child(6)' },
+      seeders: { selector: 'td:nth-child(7)' },
+      leechers: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: { 'strong:contains("Freeleech!")': '0', '*': '1' },
       },

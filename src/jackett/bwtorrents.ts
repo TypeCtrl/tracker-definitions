@@ -145,7 +145,9 @@ export const definition: TrackerDefinition = {
       incldead: 1,
       blah: 0,
     },
-    rows: { selector: 'table[width="1200"] > tbody > tr' },
+    rows: {
+      selector: 'table[width="1200"] > tbody > tr:has(a[href^="download.php/"])',
+    },
     fields: {
       category: {
         selector: 'a[href^="index.php?cat="]',

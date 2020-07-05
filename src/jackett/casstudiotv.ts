@@ -453,7 +453,9 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td.forumtopics span.leech' },
       grabs: { selector: 'td.forumposts span.complet' },
       date: {
-        selector: 'td.forumdetails span.forum-descriptions',
+        selector:
+          'td.forumdetails span.forum-descriptions:not(:contains("Сегодня")):not(:contains("Вчера"))',
+        optional: true,
         filters: [
           { name: 'regexp', args: '(\\d{2} \\D{3} \\d{4}, \\d{2}:\\d{2})' },
           { name: 'replace', args: ['янв', 'Jan'] },
@@ -468,7 +470,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['окт', 'Oct'] },
           { name: 'replace', args: ['ноя', 'Nov'] },
           { name: 'replace', args: ['дек', 'Dec'] },
-          { name: 'dateparse', args: '02 Jan 06, 15:04' },
+          { name: 'dateparse', args: '02 Jan 2006, 15:04' },
         ],
       },
       downloadvolumefactor: { text: 1 },

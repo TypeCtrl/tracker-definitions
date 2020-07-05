@@ -378,6 +378,7 @@ export const jackettSites = [
   'torrentproject2',
   'torrentquest',
   'torrentsectorcrew',
+  'torrentseed',
   'torrentslocal',
   'torrentv',
   'torrentview',

@@ -1135,6 +1135,9 @@ export const jtorrentquest = jjtorrentquest;
 import { definition as jjtorrentsectorcrew } from './torrentsectorcrew';
 export const jtorrentsectorcrew = jjtorrentsectorcrew;
 
+import { definition as jjtorrentseed } from './torrentseed';
+export const jtorrentseed = jjtorrentseed;
+
 import { definition as jjtorrentslocal } from './torrentslocal';
 export const jtorrentslocal = jjtorrentslocal;
 
@@ -1662,6 +1665,7 @@ export const definitions = [
   jjtorrentproject2,
   jjtorrentquest,
   jjtorrentsectorcrew,
+  jjtorrentseed,
   jjtorrentslocal,
   jjtorrentv,
   jjtorrentview,

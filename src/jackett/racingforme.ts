@@ -269,7 +269,13 @@ export const definition: TrackerDefinition = {
       details: { selector: 'span.browseTitle a', attribute: 'href' },
       size: {
         selector: 'span.torrentData span.torrentFiles',
-        filters: [{ name: 'regexp', args: '(.+?) in' }],
+        filters: [
+          { name: 'regexp', args: '(.+?) in' },
+          {
+            name: 're_replace',
+            args: ['(\\d+)\\.(\\d{3})(\\.\\d{2})', '$1$2$3'],
+          },
+        ],
       },
       files: {
         selector: 'span.torrentData span.torrentFiles',
