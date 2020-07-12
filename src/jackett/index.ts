@@ -229,6 +229,9 @@ export const jconcen = jjconcen;
 import { definition as jjconcertos } from './concertos';
 export const jconcertos = jjconcertos;
 
+import { definition as jjcooltorrent } from './cooltorrent';
+export const jcooltorrent = jjcooltorrent;
+
 import { definition as jjcpabien } from './cpabien';
 export const jcpabien = jjcpabien;
 
@@ -252,6 +255,9 @@ export const jdarkShadow = jjdarkShadow;
 
 import { definition as jjdarktracker } from './darktracker';
 export const jdarktracker = jjdarktracker;
+
+import { definition as jjdarmowetorenty } from './darmowetorenty';
+export const jdarmowetorenty = jjdarmowetorenty;
 
 import { definition as jjdatascene } from './datascene';
 export const jdatascene = jjdatascene;
@@ -552,9 +558,6 @@ export const jilcorsaronero = jjilcorsaronero;
 
 import { definition as jjimmortuos } from './immortuos';
 export const jimmortuos = jjimmortuos;
-
-import { definition as jjinperil } from './inperil';
-export const jinperil = jjinperil;
 
 import { definition as jjinsanetracker } from './insanetracker';
 export const jinsanetracker = jjinsanetracker;
@@ -1171,6 +1174,9 @@ export const jtribalmixes = jjtribalmixes;
 import { definition as jjttsweb } from './ttsweb';
 export const jttsweb = jjttsweb;
 
+import { definition as jjturknova } from './turknova';
+export const jturknova = jjturknova;
+
 import { definition as jjturkseed } from './turkseed';
 export const jturkseed = jjturkseed;
 
@@ -1363,6 +1369,7 @@ export const definitions = [
   jjclassix,
   jjconcen,
   jjconcertos,
+  jjcooltorrent,
   jjcpabien,
   jjcpasbienclone,
   jjcrazyhd,
@@ -1371,6 +1378,7 @@ export const definitions = [
   jjcztorrent,
   jjdarkShadow,
   jjdarktracker,
+  jjdarmowetorenty,
   jjdatascene,
   jjdeildu,
   jjdemonoid,
@@ -1471,7 +1479,6 @@ export const definitions = [
   jjilcorsaroblu,
   jjilcorsaronero,
   jjimmortuos,
-  jjinperil,
   jjinsanetracker,
   jjisohunt2,
   jjitorrent,
@@ -1677,6 +1684,7 @@ export const definitions = [
   jjtrezzor,
   jjtribalmixes,
   jjttsweb,
+  jjturknova,
   jjturkseed,
   jjturktorrent,
   jjtvchaosuk,

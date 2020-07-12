@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'WINDOWS-1251',
-  links: ['http://pornolive.org/'],
+  links: ['https://pornolive.org/'],
+  legacylinks: ['http://pornolive.org/'],
   caps: {
     categorymappings: [{ id: 'XXX', cat: 'XXX', desc: 'XXX' }],
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },

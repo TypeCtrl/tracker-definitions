@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://yggtorrent.se/'],
+  links: ['https://www.yggtorrent.si/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -33,6 +33,7 @@ export const definition: TrackerDefinition = {
     'https://www3.yggtorrent.pe/',
     'https://www5.yggtorrent.pe/',
     'https://yggtorrent.ws/',
+    'https://yggtorrent.se/',
   ],
   caps: {
     categorymappings: [
@@ -105,7 +106,7 @@ export const definition: TrackerDefinition = {
       name: 'searchanddlurl',
       label: 'Search and download URL',
       type: 'text',
-      default: 'www2.yggtorrent.se',
+      default: 'www2.yggtorrent.si',
     },
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
@@ -227,23 +228,24 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [
       {
         name: 're_replace',
-        args: ['(.*)[sS]([1-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
+        args: ['(?i)(.*)s([1-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
       },
       {
         name: 're_replace',
-        args: ['(.*)[sS]([1-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
+        args: ['(?i)(.*)s([1-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
       },
       {
         name: 're_replace',
-        args: ['(.*)[sS]([1-9][0-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
+        args: ['(?i)(.*)s([1-9][0-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
       },
       {
         name: 're_replace',
-        args: ['(.*)[sS]([1-9][0-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
+        args: ['(?i)(.*)s([1-9][0-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
       },
-      { name: 're_replace', args: ['(.*)[sS]([1-9])$', '$1 S0$2'] },
-      { name: 're_replace', args: ['(.*)[sS]([1-9][0-9])$', '$1 S$2'] },
+      { name: 're_replace', args: ['(?i)(.*)s([1-9])$', '$1 S0$2'] },
+      { name: 're_replace', args: ['(?i)(.*)s([1-9][0-9])$', '$1 S$2'] },
       { name: 'replace', args: ['"', ''] },
+      { name: 'replace', args: ['  ', ' '] },
       { name: 'trim' },
     ],
     paths: [
@@ -254,7 +256,7 @@ export const definition: TrackerDefinition = {
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}&page=50',
+          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
     ],
@@ -265,9 +267,43 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'regexp', args: '/(\\d+)-' }],
       },
-      title_normal: { selector: 'td:nth-child(2) > a' },
-      title_filtered: {
+      title_normal: {
         selector: 'td:nth-child(2) > a',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(.*)s([1-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(.*)s([1-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(.*)s([1-9][0-9])\\s(\\d{2,3})$', '$1 S0$2E$3'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(.*)s([1-9][0-9])\\s(\\d{1})$', '$1 S0$2E0$3'],
+          },
+          { name: 're_replace', args: ['(?i)(.*)s([1-9])$', '$1 S0$2'] },
+          {
+            name: 're_replace',
+            args: ['(?i)(.*)s([1-9][0-9])$', '$1 S$2'],
+          },
+          { name: 're_replace', args: ['(?i)(multi)', 'MULTi'] },
+          {
+            name: 're_replace',
+            args: ['(?i)(saison|saison )([1-9])', 'S0$2'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(saison|saison )(\\d{1,4})', 'S$2'],
+          },
+        ],
+      },
+      title_filtered: {
+        text: '{{ .Result.title_normal }}',
         filters: [
           {
             name: 're_replace',
@@ -276,15 +312,6 @@ export const definition: TrackerDefinition = {
               '$1 $3 $2 $4 $5',
             ],
           },
-          {
-            name: 're_replace',
-            args: ['([Ss]aison|[Ss]aison )(\\d{1,4})', 'S$2'],
-          },
-          {
-            name: 're_replace',
-            args: ['S(\\d+)E(\\d+)(\\D+)', 'S$1E$2 $3'],
-          },
-          { name: 're_replace', args: ['([Mm][Uu][Ll][Tt][Ii])', 'MULTi'] },
           { name: 'replace', args: ['.', ' '] },
           { name: 'trim' },
           {
@@ -297,17 +324,14 @@ export const definition: TrackerDefinition = {
       },
       title_phase1: {
         text:
-          '{{ if .Config.filter_title }}{{ .Result.title_filtered }}{{else}}{{ .Result.title_normal }}{{end}}',
+          '{{ if .Config.filter_title }}{{ .Result.title_filtered }}{{ else }}{{ .Result.title_normal }}{{ end }}',
       },
       title_multilang: {
         text: '{{ .Result.title_phase1 }}',
         filters: [
           {
             name: 're_replace',
-            args: [
-              '[\\.\\s\\[\\-][Mm][Uu][Ll][Tt][Ii][\\.\\s\\]\\-]',
-              '.{{ .Config.multilanguage }}.',
-            ],
+            args: ['(?i)[\\.\\s\\[\\-]multi[\\.\\s\\]\\-]', '.{{ .Config.multilanguage }}.'],
           },
         ],
       },
@@ -320,11 +344,11 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 're_replace',
-            args: ['[\\.\\s\\[\\-][Vv][Oo][Ss][Tt][Ff][Rr][\\.\\s\\]\\-]', '.ENGLISH.'],
+            args: ['(?i)[\\.\\s\\[\\-]vostfr[\\.\\s\\]\\-]', '.ENGLISH.'],
           },
           {
             name: 're_replace',
-            args: ['[\\.\\s\\[\\-][Ss][Uu][Bb][Ff][Rr][Ee][Nn][Cc][Hh][\\.\\s\\]\\-]', '.ENGLISH.'],
+            args: ['(?i)[\\.\\s\\[\\-]subfrench[\\.\\s\\]\\-]', '.ENGLISH.'],
           },
         ],
       },
