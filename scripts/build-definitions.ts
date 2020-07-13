@@ -85,7 +85,7 @@ function validateJson(json: any): any {
   // parse and normalize search.paths
   // some are search.path some are search.paths
   // always return array
-  if (json.search && json.search.path) {
+  if (json.search?.path) {
     json.search.paths = [{ path: json.search.path }];
     delete json.search.path;
   }

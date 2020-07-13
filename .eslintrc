@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "parserOptions": {
+    "project": "tsconfig.eslint.json",
+  },
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "extends": ["@ctrl/eslint-config"],
+  "rules": {
+    "quote-props": 0,
+    "@typescript-eslint/quotes": 0,
+    "no-script-url": 0
+  }
+}
