@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'WINDOWS-1251',
-  links: ['http://baibako.tv/'],
+  links: ['https://baibako.tv/'],
+  legacylinks: ['http://baibako.tv/'],
   caps: {
     categorymappings: [{ id: '1', cat: 'TV', desc: 'TV' }],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },

@@ -11,6 +11,8 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://torrentz2.is/',
+    'https://torrentsmirror.com/',
+    'https://torrentz.pl/',
     'https://torrentz.unblockit.id/',
     'https://torrentz2.unblocked.bar/',
     'https://torrentz2.proxyportal.pw/',

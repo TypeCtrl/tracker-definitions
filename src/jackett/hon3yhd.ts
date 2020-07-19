@@ -14,9 +14,11 @@ export const definition: TrackerDefinition = {
       { id: '70', cat: 'Movies/3D', desc: '3D Movies' },
       { id: '30', cat: 'Movies/BluRay', desc: '720p BluRay' },
       { id: '68', cat: 'TV/Anime', desc: 'Animation' },
+      { id: '73', cat: 'TV/Anime', desc: 'Anime' },
       { id: '9', cat: 'Movies/BluRay', desc: 'BD25' },
       { id: '10', cat: 'Movies/BluRay', desc: 'BD50' },
       { id: '8', cat: 'Movies/DVD', desc: 'DVD5' },
+      { id: '71', cat: 'Movies', desc: 'Bengali Movies' },
       { id: '7', cat: 'Movies/DVD', desc: 'DvD9' },
       { id: '1', cat: 'Movies/SD', desc: 'DVDRips' },
       { id: '26', cat: 'Books', desc: 'Ebooks' },
@@ -28,6 +30,7 @@ export const definition: TrackerDefinition = {
       { id: '21', cat: 'TV', desc: 'Hollywood TV' },
       { id: '20', cat: 'TV', desc: 'Indian TV' },
       { id: '18', cat: 'Movies', desc: 'Malayalam Movies' },
+      { id: '72', cat: 'Movies', desc: 'Marathi Movies' },
       { id: '25', cat: 'Audio', desc: 'Music' },
       { id: '24', cat: 'Audio/Video', desc: 'Music Videos' },
       { id: '5', cat: 'Movies', desc: 'Pakistani Movies' },
@@ -70,10 +73,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       searchin: 'title',
-      incldead: '1',
+      incldead: 1,
     },
     keywordsfilters: [
       { name: 're_replace', args: ['[^\\w\\d]+', ' +'] },
@@ -114,9 +117,13 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(10)' },
       date: { selector: 'td:nth-child(6)' },
       downloadvolumefactor: {
-        case: { 'a.info > b:contains("Free")': '0', '*': '1' },
+        case: { 'a.info > b:contains("Free")': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: {
+        case: { 'a.info > b:contains("Double Upload")': 2, '*': 1 },
+      },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

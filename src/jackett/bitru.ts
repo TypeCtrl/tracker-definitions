@@ -28,8 +28,8 @@ export const definition: TrackerDefinition = {
       name: 'adverts',
       type: 'select',
       label: 'Include Advertising',
-      default: 'yes',
-      options: { yes: 'yes', no: 'no' },
+      default: '_',
+      options: { _: 'yes', no: 'no' },
     },
     {
       name: 'sort',
@@ -43,8 +43,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       s: '{{ .Keywords }}',
-      rek: '{{ .Config.adverts }}',
-      sort: '{{ re_replace .Config.sort "_" ""}}',
+      rek: '{{ re_replace .Config.adverts "_" "" }}',
+      sort: '{{ re_replace .Config.sort "_" "" }}',
     },
     rows: { selector: 'table.browse-list > tbody > tr' },
     fields: {
@@ -88,7 +88,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: [' в ', ' '] },
           { name: 'replace', args: ['января', 'January'] },
           { name: 'replace', args: ['февраля', 'February'] },
-          { name: 'replace', args: ['марта ', 'March'] },
+          { name: 'replace', args: ['марта', 'March'] },
           { name: 'replace', args: ['апреля', 'April'] },
           { name: 'replace', args: ['мая', 'May'] },
           { name: 'replace', args: ['июня', 'June'] },

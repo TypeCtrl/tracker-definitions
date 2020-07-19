@@ -9,14 +9,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://katcr.co/',
-    'https://kat.root.yt/',
-    'https://kat.unblockit.id/',
-    'https://katcr.unblocked.bar/',
-    'https://katcr.proxyportal.pw/',
-    'https://katcr.uk-unblock.pro/',
-  ],
+  links: ['https://newkatcr.co/'],
   legacylinks: [
     'https://kickasstorrent.cr/',
     'https://katcr.to/',
@@ -29,6 +22,12 @@ export const definition: TrackerDefinition = {
     'https://kat.unblockit.me/',
     'https://kat.unblockit.pw/',
     'https://kickasstorrents.unblockninja.com/',
+    'https://katcr.co/',
+    'https://kat.root.yt/',
+    'https://kat.unblockit.id/',
+    'https://katcr.unblocked.bar/',
+    'https://katcr.proxyportal.pw/',
+    'https://katcr.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [
@@ -121,7 +120,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}katsearch/page/1/{{ .Keywords }}{{else}}category/latest/page/1{{end}}',
+          '{{ if .Keywords }}search/?q={{ .Keywords }}{{ else }}v2/category/latest/1/6/{{ end }}',
       },
     ],
     rows: {
@@ -138,8 +137,10 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="magnet:?xt="]',
         attribute: 'href',
       },
-      category: {
+      category: { text: 138 },
+      'category|noappend': {
         selector: 'span.torrents_table__upload_info',
+        optional: true,
         case: {
           ':has(a:contains("Anime")):contains("English Translated")': 118,
           ':has(a:contains("Anime")):contains("Other")': 133,
@@ -219,10 +220,12 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td[data-title="Size"]' },
       files: { selector: 'td[data-title="Files"]' },
       date: {
-        selector: 'td[data-title="Age"]:not(:contains("-"))',
+        selector: 'td[data-title="Age"][title]',
         attribute: 'title',
-        optional: true,
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
+        filters: [
+          { name: 'replace', args: ['(UTC)', '+00:00'] },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       seeders: { selector: 'td[data-title="Seed"]' },
       leechers: { selector: 'td[data-title="Leech"]' },

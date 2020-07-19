@@ -42,15 +42,15 @@ export const definition: TrackerDefinition = {
   },
   ratio: { path: 'torrents.php', selector: 'li#stats_ratio > span' },
   search: {
-    paths: [{ path: 'torrents.php' }],
+    paths: [{ path: 'ajax.php' }],
     inputs: {
-      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      $raw:
+        '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}{{ if or .Query.Artist .Keywords }}{{ else }}searchtags=japanese&tags_type=0&{{ end }}',
       searchstr: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       order_by: 's3',
       order_way: 'desc',
-      action: 'basic',
-      searchtags: 0,
       disablegrouping: 1,
+      section: 'torrents',
     },
     rows: {
       selector: 'table#torrent_table > tbody > tr[class^="torrent"]',

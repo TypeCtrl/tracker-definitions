@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://hdf.world/'],
+  certificates: ['27c3fedf8c79ea2a90e9b09353053080f861364b'],
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },

@@ -268,9 +268,6 @@ export const jdeildu = jjdeildu;
 import { definition as jjdemonoid } from './demonoid';
 export const jdemonoid = jjdemonoid;
 
-import { definition as jjdemonsite } from './demonsite';
-export const jdemonsite = jjdemonsite;
-
 import { definition as jjdesireleasers } from './desireleasers';
 export const jdesireleasers = jjdesireleasers;
 
@@ -865,6 +862,9 @@ export const jracing4Everyone = jjracing4Everyone;
 import { definition as jjracingforme } from './racingforme';
 export const jracingforme = jjracingforme;
 
+import { definition as jjrainbowtracker } from './rainbowtracker';
+export const jrainbowtracker = jjrainbowtracker;
+
 import { definition as jjrapidzona } from './rapidzona';
 export const jrapidzona = jjrapidzona;
 
@@ -1382,7 +1382,6 @@ export const definitions = [
   jjdatascene,
   jjdeildu,
   jjdemonoid,
-  jjdemonsite,
   jjdesireleasers,
   jjdesitorrents,
   jjdiablotorrent,
@@ -1581,6 +1580,7 @@ export const definitions = [
   jjr3Vwtf,
   jjracing4Everyone,
   jjracingforme,
+  jjrainbowtracker,
   jjrapidzona,
   jjredstartorrent,
   jjretroflix,

@@ -9,6 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://films4.club/'],
   legacylinks: ['https://films.club/'],
+  certificates: ['0e622f1944b4c12c0d9930f30f5720e7c18011b8'],
   caps: {
     categorymappings: [
       {
