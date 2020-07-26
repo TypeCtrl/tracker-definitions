@@ -101,7 +101,7 @@ export const definition: TrackerDefinition = {
   download: {
     selector: 'a[href*="magnet:?xt="]',
     attribute: 'href',
-    filters: [{ name: 're_replace', args: ['^(.+?\\/magnet.php\\?)(.+?)$', '$2'] }],
+    filters: [{ name: 're_replace', args: ['^(.+?\\/magnetgo.php\\?)(.+?)$', '$2'] }],
   },
   search: {
     paths: [

@@ -65,6 +65,7 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'torrents' }],
+    keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       s: '{{ .Keywords }}',
@@ -72,7 +73,6 @@ export const definition: TrackerDefinition = {
       o: '{{ .Config.sort }}',
     },
     rows: { selector: 'tr.torr_hover' },
-    keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
     fields: {
       title: {
         selector: 'td.detaily a',

@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.zetorrents.io/'],
-  legacylinks: ['https://www.zetorrents.co/'],
+  links: ['https://wvw.zetorrents.io/'],
+  legacylinks: ['https://www.zetorrents.co/', 'https://www.zetorrents.io/'],
   caps: {
     modes: {
       search: ['q'],

@@ -913,6 +913,9 @@ export const jsdbits = jjsdbits;
 import { definition as jjseedfile } from './seedfile';
 export const jseedfile = jjseedfile;
 
+import { definition as jjselezen } from './selezen';
+export const jselezen = jjselezen;
+
 import { definition as jjsexypics } from './sexypics';
 export const jsexypics = jjsexypics;
 
@@ -1102,9 +1105,6 @@ export const jtorrentfunk = jjtorrentfunk;
 import { definition as jjtorrentgalaxyorg } from './torrentgalaxyorg';
 export const jtorrentgalaxyorg = jjtorrentgalaxyorg;
 
-import { definition as jjtorrenthane } from './torrenthane';
-export const jtorrenthane = jjtorrenthane;
-
 import { definition as jjtorrenthr } from './torrenthr';
 export const jtorrenthr = jjtorrenthr;
 
@@ -1174,9 +1174,6 @@ export const jtribalmixes = jjtribalmixes;
 import { definition as jjttsweb } from './ttsweb';
 export const jttsweb = jjttsweb;
 
-import { definition as jjturknova } from './turknova';
-export const jturknova = jjturknova;
-
 import { definition as jjturkseed } from './turkseed';
 export const jturkseed = jjturkseed;
 
@@ -1191,9 +1188,6 @@ export const jtwilight = jjtwilight;
 
 import { definition as jjtwilightszoom } from './twilightszoom';
 export const jtwilightszoom = jjtwilightszoom;
-
-import { definition as jjuTorrents } from './u-torrents';
-export const juTorrents = jjuTorrents;
 
 import { definition as jju2 } from './u2';
 export const ju2 = jju2;
@@ -1233,6 +1227,9 @@ export const jwdt = jjwdt;
 
 import { definition as jjwihd } from './wihd';
 export const jwihd = jjwihd;
+
+import { definition as jjwitchhunter } from './witchhunter';
+export const jwitchhunter = jjwitchhunter;
 
 import { definition as jjworldOfTomorrow } from './world-of-tomorrow';
 export const jworldOfTomorrow = jjworldOfTomorrow;
@@ -1597,6 +1594,7 @@ export const definitions = [
   jjscenerush,
   jjsdbits,
   jjseedfile,
+  jjselezen,
   jjsexypics,
   jjshareisland,
   jjshareuniversity,
@@ -1660,7 +1658,6 @@ export const definitions = [
   jjtorrentfactory,
   jjtorrentfunk,
   jjtorrentgalaxyorg,
-  jjtorrenthane,
   jjtorrenthr,
   jjtorrenting,
   jjtorrentkitty,
@@ -1684,13 +1681,11 @@ export const definitions = [
   jjtrezzor,
   jjtribalmixes,
   jjttsweb,
-  jjturknova,
   jjturkseed,
   jjturktorrent,
   jjtvchaosuk,
   jjtwilight,
   jjtwilightszoom,
-  jjuTorrents,
   jju2,
   jjuhdbits,
   jjunderverse,
@@ -1704,6 +1699,7 @@ export const definitions = [
   jjvizuk,
   jjwdt,
   jjwihd,
+  jjwitchhunter,
   jjworldOfTomorrow,
   jjxIteMe,
   jjxbytes2,

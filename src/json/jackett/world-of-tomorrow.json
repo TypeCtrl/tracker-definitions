@@ -57,23 +57,21 @@
     { "name": "secure_code", "type": "password", "label": "Secure Code" }
   ],
   "login": {
-    "path": "login.php",
-    "method": "form",
-    "form": "form",
+    "path": "takelogin.php",
+    "method": "post",
     "inputs": {
-      "take": "yes",
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}",
-      "secure_code": "{{ .Config.secure_code }}"
+      "pin": "{{ .Config.secure_code }}"
     },
-    "test": { "path": "sessioncheck.php" }
+    "error": [
+      { "selector": "table.tableinborder:contains(\"Fehler\")" },
+      { "selector": "table.tableinborder:contains(\"gebannt\")" }
+    ],
+    "test": { "path": "tfiles.php" }
   },
   "search": {
-    "inputs": {
-      "search": "{{ .Query.Keywords }}",
-      "incldead": "1",
-      "showsearch": 0
-    },
+    "inputs": { "search": "{{ .Keywords }}", "incldead": 1, "showsearch": 0 },
     "rows": { "selector": "table.table-bordered > tbody > tr" },
     "fields": {
       "title": { "selector": "a[href^=\"details.php\"]" },

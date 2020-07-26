@@ -88,7 +88,7 @@ export const definition: TrackerDefinition = {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
-    test: { path: 'index.php' },
+    test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   search: {
     keywordsfilters: [{ name: 're_replace', args: ['S(\\d{1,2})E(\\d{1,2})', 'S$1/E$2'] }],

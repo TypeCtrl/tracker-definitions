@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '47', cat: 'TV/Sport', desc: 'Boxing' },
-      { id: '14', cat: 'TV/Sport', desc: 'Documentary' },
+      { id: '14', cat: 'Movies', desc: 'Documentary' },
       { id: '20', cat: 'TV/Sport', desc: 'DVD' },
       { id: '2', cat: 'TV/Sport', desc: 'ECW Original' },
       { id: '26', cat: 'TV/Sport', desc: 'ECW Weekly' },
@@ -63,7 +63,11 @@ export const definition: TrackerDefinition = {
       { id: '74', cat: 'TV/Sport', desc: 'AEW' },
       { id: '75', cat: 'TV/Sport', desc: 'AEW HD' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

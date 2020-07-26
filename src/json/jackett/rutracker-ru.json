@@ -372,6 +372,11 @@
         "desc": " |- Детская аудиокнига"
       },
       {
+        "id": "1177",
+        "cat": "Audio/MP3",
+        "desc": "Неофициальные и внежанровые сборники"
+      },
+      {
         "id": "1179",
         "cat": "Audio/MP3",
         "desc": " |- Сборники поп музыки (50/50 общие)"
@@ -380,6 +385,16 @@
         "id": "1178",
         "cat": "Audio/MP3",
         "desc": " |- Зарубежные поп сборники"
+      },
+      {
+        "id": "1606",
+        "cat": "Audio/MP3",
+        "desc": " |- Eurodance, Disco, Hi-NRG, Technopop (Сборники)"
+      },
+      {
+        "id": "1603",
+        "cat": "Audio/MP3",
+        "desc": " |- Club, Dance, Hands Up (Сборники)"
       },
       {
         "id": "1427",
@@ -391,15 +406,16 @@
         "cat": "Audio/MP3",
         "desc": " |- Сборники Русского шансона"
       },
+      { "id": "1168", "cat": "Audio/MP3", "desc": "Рок музыка" },
       {
         "id": "1200",
         "cat": "Audio/MP3",
-        "desc": " |- Зарубежный Classic Rock &amp;Hard Rock"
+        "desc": " |- Зарубежный Classic Rock&Hard Rock"
       },
       {
         "id": "1552",
         "cat": "Audio/MP3",
-        "desc": " |- Зарубежный Progressive &amp;Art-Rock"
+        "desc": " |- Зарубежный Progressive&Art-Rock"
       },
       {
         "id": "1565",
@@ -414,7 +430,7 @@
       {
         "id": "1553",
         "cat": "Audio/MP3",
-        "desc": " |- Зарубежный Pop-Rock &amp;Soft Rock"
+        "desc": " |- Зарубежный Pop-Rock&Soft Rock"
       },
       {
         "id": "1567",
@@ -424,35 +440,111 @@
       {
         "id": "1566",
         "cat": "Audio/MP3",
-        "desc": " |- Зарубежный Rockabilly, Rock &#039;n &#039;Roll"
+        "desc": " |- Зарубежный Rockabilly, Rock'n'Roll"
       },
-      { "id": "1485", "cat": "Audio/MP3", "desc": " |- Зарубежный Metal" },
       {
         "id": "1556",
         "cat": "Audio/MP3",
         "desc": " |- Сборники зарубежного рока"
       },
-      { "id": "1555", "cat": "Audio/MP3", "desc": " |- Русский рок, метал" },
+      { "id": "1579", "cat": "Audio/MP3", "desc": "Зарубежный Metal" },
+      {
+        "id": "1588",
+        "cat": "Audio/MP3",
+        "desc": " |- Avant-garde, Experimental Metal"
+      },
+      { "id": "1580", "cat": "Audio/MP3", "desc": " |- Black Metal" },
+      { "id": "1581", "cat": "Audio/MP3", "desc": " |- Death, Doom" },
+      { "id": "1582", "cat": "Audio/MP3", "desc": " |- Folk, Pagan, Viking" },
+      { "id": "1583", "cat": "Audio/MP3", "desc": " |- Gothic Metal" },
+      { "id": "1584", "cat": "Audio/MP3", "desc": " |- Grind, Brutal Death" },
+      {
+        "id": "1585",
+        "cat": "Audio/MP3",
+        "desc": " |- Heavy, Power, Progressive"
+      },
+      {
+        "id": "1586",
+        "cat": "Audio/MP3",
+        "desc": " |- Sludge, Stoner, Post-Metal"
+      },
+      { "id": "1587", "cat": "Audio/MP3", "desc": " |- Thrash, Speed" },
+      { "id": "1602", "cat": "Audio/MP3", "desc": " |- Сборники Metal" },
+      {
+        "id": "1589",
+        "cat": "Audio/MP3",
+        "desc": "Зарубежные Alternative, Punk, Independent"
+      },
+      { "id": "1590", "cat": "Audio/MP3", "desc": " |- Alternative&Nu-metal" },
+      { "id": "1591", "cat": "Audio/MP3", "desc": " |- Punk" },
+      { "id": "1592", "cat": "Audio/MP3", "desc": " |- Hardcore" },
+      {
+        "id": "1593",
+        "cat": "Audio/MP3",
+        "desc": " |- Indie, Post-Rock&Post-Punk"
+      },
+      {
+        "id": "1594",
+        "cat": "Audio/MP3",
+        "desc": " |- Industrial&Post-industrial"
+      },
+      {
+        "id": "1595",
+        "cat": "Audio/MP3",
+        "desc": " |- Emocore, Post-hardcore, Metalcore, Deathcore"
+      },
+      { "id": "1596", "cat": "Audio/MP3", "desc": " |- Gothic Rock&Dark Folk" },
+      {
+        "id": "1597",
+        "cat": "Audio/MP3",
+        "desc": " |- Avant-garde, Experimental Rock"
+      },
+      { "id": "1598", "cat": "Audio/MP3", "desc": "Отечественный Rock, Metal" },
+      { "id": "1599", "cat": "Audio/MP3", "desc": " |- Отечественный Rock" },
+      { "id": "1600", "cat": "Audio/MP3", "desc": " |- Отечественный Metal" },
+      { "id": "1601", "cat": "Audio/MP3", "desc": " |- Сборники Rock, Metal" },
       { "id": "1171", "cat": "Audio/MP3", "desc": "Электронная музыка" },
       {
-        "id": "1457",
+        "id": "1610",
         "cat": "Audio/MP3",
-        "desc": " |- Trance, Goa Trance, Psy-Trance, PsyChill, Ambient, Dub"
+        "desc": " |- Goa Trance, Psy-Trance"
       },
       {
-        "id": "1203",
+        "id": "1611",
         "cat": "Audio/MP3",
-        "desc": " |- House, Techno, Hardcore, Hardstyle, Jumpstyle"
+        "desc": " |- PsyChill, Ambient, Dub"
+      },
+      { "id": "1457", "cat": "Audio/MP3", "desc": " |- Trance" },
+      {
+        "id": "1613",
+        "cat": "Audio/MP3",
+        "desc": " |- Hardcore, Hardstyle, Jumpstyle"
+      },
+      { "id": "1614", "cat": "Audio/MP3", "desc": " |- House" },
+      { "id": "1203", "cat": "Audio/MP3", "desc": " |- Techno" },
+      {
+        "id": "1615",
+        "cat": "Audio/MP3",
+        "desc": " |- Electro, Electro-Freestyle, Nu Electro"
+      },
+      { "id": "1616", "cat": "Audio/MP3", "desc": " |- Drum&Bass, Jungle" },
+      { "id": "1617", "cat": "Audio/MP3", "desc": " |- Breakbeat" },
+      { "id": "1618", "cat": "Audio/MP3", "desc": " |- Dubstep" },
+      { "id": "1205", "cat": "Audio/MP3", "desc": " |- IDM" },
+      {
+        "id": "1619",
+        "cat": "Audio/MP3",
+        "desc": " |- Chillout, Lounge, Downtempo"
       },
       {
-        "id": "1205",
+        "id": "1620",
         "cat": "Audio/MP3",
-        "desc": " |- Drum &amp;Bass, Jungle, Breakbeat, Dubstep, IDM, Electro"
+        "desc": " |- Nu Jazz, Acid Jazz, Future Jazz"
       },
       {
         "id": "1206",
         "cat": "Audio/MP3",
-        "desc": " |- Chillout, Lounge, Downtempo, Trip-Hop"
+        "desc": " |- Trip Hop, Abstract Hip-Hop"
       },
       {
         "id": "1575",
@@ -476,11 +568,6 @@
         "desc": "Остальные муз. жанры, + Видео"
       },
       {
-        "id": "1183",
-        "cat": "Audio/MP3",
-        "desc": " |- Музыкальное видео (все жанры)"
-      },
-      {
         "id": "1578",
         "cat": "Audio/MP3",
         "desc": " |- Российская попса (альбомы, синглы)"
@@ -489,14 +576,13 @@
       {
         "id": "1167",
         "cat": "Audio/MP3",
-        "desc": " |- Зарубежная попса (альбомы, синглы)"
+        "desc": " |- Отечественный Рэп, Хип-Хоп"
       },
-      {
-        "id": "1173",
-        "cat": "Audio/MP3",
-        "desc": " |- Rap, Hip-hop, R &#039;n &#039;B"
-      },
+      { "id": "1173", "cat": "Audio/MP3", "desc": " |- Rap, Hip-hop, R'n'B" },
+      { "id": "1607", "cat": "Audio/MP3", "desc": " |- Rap, Hip-hop, R'n'B" },
       { "id": "1563", "cat": "Audio/MP3", "desc": " |- Jazz, Blues, Swing" },
+      { "id": "1605", "cat": "Audio/MP3", "desc": " |- Blues" },
+      { "id": "1604", "cat": "Audio/MP3", "desc": " |- Reggae, Ska, Dub" },
       {
         "id": "1562",
         "cat": "Audio/MP3",
@@ -506,6 +592,11 @@
         "id": "1185",
         "cat": "Audio/MP3",
         "desc": " |- New Age, Relax, Meditative"
+      },
+      {
+        "id": "1183",
+        "cat": "Audio/MP3",
+        "desc": " |- Музыкальное видео (все жанры)"
       },
       {
         "id": "1210",
@@ -564,6 +655,7 @@
         "cat": "Audio/Lossless",
         "desc": " |- Other musical genres"
       },
+      { "id": "105", "cat": "PC", "desc": "Операционные системы" },
       { "id": "1120", "cat": "PC", "desc": " |- Windows 10" },
       { "id": "706", "cat": "PC", "desc": " |- Windows 8, 8.1" },
       { "id": "212", "cat": "PC", "desc": " |- Windows 7" },
@@ -760,7 +852,7 @@
       {
         "id": "1537",
         "cat": "XXX",
-        "desc": " |-  Лесбо-фильмы / All Girl &amp;Solo"
+        "desc": " |-  Лесбо-фильмы / All Girl&Solo"
       },
       {
         "id": "1444",
@@ -839,7 +931,7 @@
       {
         "id": "1431",
         "cat": "XXX",
-        "desc": " |-  Женское доминирование и страпон / Femdom &amp;Strapon"
+        "desc": " |-  Женское доминирование и страпон / Femdom&Strapon"
       },
       {
         "id": "1432",
@@ -859,7 +951,7 @@
       {
         "id": "1434",
         "cat": "XXX",
-        "desc": " |-  Фистинг и дилдо / Fisting &amp;Dildo"
+        "desc": " |-  Фистинг и дилдо / Fisting&Dildo"
       },
       {
         "id": "1469",
@@ -873,7 +965,7 @@
       {
         "id": "1480",
         "cat": "XXX",
-        "desc": "Мультфильмы ХХХ &amp;Хентай &amp;Порно игры"
+        "desc": "Мультфильмы ХХХ&Хентай&Порно игры"
       },
       { "id": "1542", "cat": "XXX", "desc": " |-  Порно игры / Porno games" },
       { "id": "1481", "cat": "XXX", "desc": " |-  Мультфильмы / Cartoons" },

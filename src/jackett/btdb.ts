@@ -79,7 +79,7 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'div.media' },
     fields: {
       category: { text: 1 },
-      title: { selector: 'a[href*="/torrent/"]' },
+      title: { selector: 'a[href*="/torrent/"]', attribute: 'title' },
       details: { selector: 'a[href*="/torrent/"]', attribute: 'href' },
       download: {
         selector: 'a[href$=".torrent"]',
