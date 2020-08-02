@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://kickass.ws/', 'https://kickass.unblockit.id/'],
+  links: ['https://kickass.ws/', 'https://kickass.unblockit.win/'],
   legacylinks: [
     'https://kickass.gg/',
     'https://katcr.io/',
@@ -23,6 +23,7 @@ export const definition: TrackerDefinition = {
     'https://kickass.unblockit.one/',
     'https://kickass.unblockit.me/',
     'https://kickass.unblockit.pw/',
+    'https://kickass.unblockit.id/',
   ],
   caps: {
     modes: {

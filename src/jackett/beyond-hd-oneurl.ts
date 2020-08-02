@@ -8,6 +8,17 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://beyond-hd.me/'],
+  caps: {
+    categorymappings: [
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'TV', desc: 'TV' },
+    ],
+    modes: {
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
+    },
+  },
   settings: [
     { name: 'oneurl', type: 'text', label: 'OneURL' },
     {
@@ -30,17 +41,6 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  caps: {
-    categorymappings: [
-      { id: '1', cat: 'Movies', desc: 'Movies' },
-      { id: '2', cat: 'TV', desc: 'TV' },
-    ],
-    modes: {
-      search: ['q', 'imdbid'],
-      'tv-search': ['q', 'season', 'ep', 'imdbid'],
-      'movie-search': ['q', 'imdbid'],
-    },
-  },
   login: {
     method: 'oneurl',
     inputs: { oneurl: '{{ .Config.oneurl }}' },
@@ -50,8 +50,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      description: '',
+      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
       tmdb: '',
@@ -59,7 +58,10 @@ export const definition: TrackerDefinition = {
       direction: '{{ .Config.type }}',
       qty: 100,
     },
-    rows: { selector: 'table > tbody > tr', after: 1 },
+    rows: {
+      selector: 'div.table-torrents > table > tbody > tr',
+      after: 1,
+    },
     fields: {
       _category: {
         selector: 'a[href*="/categories/"]',
@@ -68,7 +70,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '/categories/.*?\\.(\\d+)' }],
       },
       category: {
-        text: '{{if .Result._category}}{{.Result._category}}{{else}}1{{end}}',
+        text: '{{ if .Result._category }}{{ .Result._category }}{{ else }}1{{ end }}',
       },
       title: { selector: 'a.torrent-name' },
       download: {

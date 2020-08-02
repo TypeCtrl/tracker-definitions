@@ -206,7 +206,10 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: ['(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟)', ' minute'],
+            args: [
+              '(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟|分)',
+              ' minute',
+            ],
           },
           {
             name: 're_replace',
@@ -218,7 +221,7 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时)',
+              '(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时|時間)',
               ' hour',
             ],
           },
@@ -231,7 +234,10 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: ['(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天)', ' day'],
+            args: [
+              '(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天|日)',
+              ' day',
+            ],
           },
           {
             name: 're_replace',
@@ -243,7 +249,7 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(hafta|nädal|uge|settimana|tydzień|uke|semana|týden|неделю|săptămână|semaine|Woche|седмица|周)',
+              '(?i)(hafta|nädal|uge|settimana|tydzień|uke|semana|týden|неделю|săptămână|semaine|Woche|седмица|周|週間)',
               ' week',
             ],
           },
@@ -258,7 +264,7 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月)',
+              '(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月|ヶ月)',
               ' month',
             ],
           },
@@ -293,6 +299,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumseedtime: { text: 518400 },
     },
   },
   source: 'jackett',

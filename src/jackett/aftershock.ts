@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'hu-HU',
   type: 'private',
   encoding: 'ISO-8859-1',
-  links: ['https://aftershock-tracker.eu/'],
+  links: ['https://aftershock-tracker.net/'],
+  legacylinks: ['https://aftershock-tracker.eu/'],
   caps: {
     categorymappings: [
       { id: '7', cat: 'Movies/SD', desc: 'XvidEng' },

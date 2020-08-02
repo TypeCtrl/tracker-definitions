@@ -86,7 +86,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'form[action^="download.php?id="]',
+        selector: 'form[action*="/download.php?id="]',
         attribute: 'action',
       },
       imdb: {

@@ -138,7 +138,8 @@
           "i[class*=\"fa-certificate text-pink\"]": 2,
           "*": 1
         }
-      }
+      },
+      "minimumseedtime": { "text": 604800 }
     }
   },
   "source": "jackett"

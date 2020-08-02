@@ -59,6 +59,13 @@ export const definition: TrackerDefinition = {
       default: 'desc',
       options: { desc: 'desc', asc: 'asc' },
     },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        'If you are getting the error <b>Found no results while trying to browse this tracker</b> then first access the site with your browser and check that you are not being forced to change your password because it has expired after 180 days.',
+    },
   ],
   login: {
     path: '?p=home&pid=1',

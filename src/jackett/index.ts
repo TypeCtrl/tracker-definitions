@@ -571,6 +571,9 @@ export const jivTorrents = jjivTorrents;
 import { definition as jjjpopsuki } from './jpopsuki';
 export const jjpopsuki = jjjpopsuki;
 
+import { definition as jjjptv } from './jptv';
+export const jjptv = jjjptv;
+
 import { definition as jjkapaki } from './kapaki';
 export const jkapaki = jjkapaki;
 
@@ -772,9 +775,6 @@ export const jp2Pelite = jjp2Pelite;
 import { definition as jjparnuxi } from './parnuxi';
 export const jparnuxi = jjparnuxi;
 
-import { definition as jjpctorrent } from './pctorrent';
-export const jpctorrent = jjpctorrent;
-
 import { definition as jjpeersfm } from './peersfm';
 export const jpeersfm = jjpeersfm;
 
@@ -909,6 +909,9 @@ export const jscenerush = jjscenerush;
 
 import { definition as jjsdbits } from './sdbits';
 export const jsdbits = jjsdbits;
+
+import { definition as jjsdkino } from './sdkino';
+export const jsdkino = jjsdkino;
 
 import { definition as jjseedfile } from './seedfile';
 export const jseedfile = jjseedfile;
@@ -1161,6 +1164,9 @@ export const jtotallykids = jjtotallykids;
 
 import { definition as jjtotheglory } from './totheglory';
 export const jtotheglory = jjtotheglory;
+
+import { definition as jjtotheglorycookie } from './totheglorycookie';
+export const jtotheglorycookie = jjtotheglorycookie;
 
 import { definition as jjtrancetraffic } from './trancetraffic';
 export const jtrancetraffic = jjtrancetraffic;
@@ -1480,6 +1486,7 @@ export const definitions = [
   jjitorrent,
   jjivTorrents,
   jjjpopsuki,
+  jjjptv,
   jjkapaki,
   jjkaragarga,
   jjkaztorka,
@@ -1547,7 +1554,6 @@ export const definitions = [
   jjp2Pbg,
   jjp2Pelite,
   jjparnuxi,
-  jjpctorrent,
   jjpeersfm,
   jjpiratbit,
   jjpiratbitl,
@@ -1593,6 +1599,7 @@ export const definitions = [
   jjscenepalace,
   jjscenerush,
   jjsdbits,
+  jjsdkino,
   jjseedfile,
   jjselezen,
   jjsexypics,
@@ -1677,6 +1684,7 @@ export const definitions = [
   jjtorrentz2K,
   jjtotallykids,
   jjtotheglory,
+  jjtotheglorycookie,
   jjtrancetraffic,
   jjtrezzor,
   jjtribalmixes,

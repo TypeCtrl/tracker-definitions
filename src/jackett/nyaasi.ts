@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://nyaa.si/', 'https://nyaa.root.yt/'],
+  links: ['https://nyaa.si/'],
   legacylinks: [
     'https://nyaa.black-mirror.xyz/',
     'https://nyaa.unblocked.casa/',
@@ -18,6 +18,7 @@ export const definition: TrackerDefinition = {
     'https://nyaa.unblocked.bar/',
     'https://nyaa.proxyportal.pw/',
     'https://nyaa.uk-unblock.pro/',
+    'https://nyaa.root.yt/',
   ],
   settings: [
     {

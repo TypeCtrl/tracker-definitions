@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
     'https://btdb.unblocked.bar/',
     'https://btdb.proxyportal.pw/',
     'https://btdb.uk-unblock.pro/',
-    'https://btdb.unblockit.id/',
+    'https://btdb.unblockit.win/',
   ],
   legacylinks: [
     'https://btdb.to/',
@@ -28,6 +28,7 @@ export const definition: TrackerDefinition = {
     'https://btdb.io/',
     'https://btdb.unblockit.me/',
     'https://btdb.unblockit.pw/',
+    'https://btdb.unblockit.id/',
   ],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],

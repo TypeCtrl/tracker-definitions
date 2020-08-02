@@ -12,6 +12,7 @@ export const definition: TrackerDefinition = {
     'https://eztv.io/',
     'https://eztv.root.yt/',
     'https://eztv.unblockninja.com/',
+    'https://eztv.unblockit.win/',
     'https://eztv.unblocked.bar/',
     'https://eztv.proxyportal.pw/',
     'https://eztv.uk-unblock.pro/',

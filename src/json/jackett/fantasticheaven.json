@@ -127,11 +127,17 @@
     "method": "form",
     "form": "form[action=\"/login.php\"]",
     "cookies": ["JAVA=OK"],
+    "captcha": {
+      "type": "image",
+      "selector": "img[src^=\"cap/captcha_math.php?codeCaptcha=\"]",
+      "input": "stringCaptcha"
+    },
     "inputs": {
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}",
       "loggiin": "einloggen"
     },
+    "error": [{ "selector": "div#login_error" }],
     "test": { "path": "index.php", "selector": "a[href=\"logout.php\"]" }
   },
   "search": {
