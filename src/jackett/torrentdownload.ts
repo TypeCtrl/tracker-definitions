@@ -37,6 +37,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: 'Adult', cat: 'XXX' },
       { id: 'Anime', cat: 'TV/Anime' },
+      { id: 'AnimeAnimeOther', cat: 'TV/Anime' },
       { id: 'Applications', cat: 'PC/0day' },
       { id: 'AudioBooks', cat: 'Audio/Audiobook' },
       { id: 'BooksAcademic', cat: 'Books' },
@@ -46,6 +47,7 @@ export const definition: TrackerDefinition = {
       { id: 'Games', cat: 'Console' },
       { id: 'GamesWindows', cat: 'PC/Games' },
       { id: 'Movies', cat: 'Movies' },
+      { id: 'MoviesConcerts', cat: 'Movies' },
       { id: 'MoviesDocumentary', cat: 'TV/Documentary' },
       { id: 'Music', cat: 'Audio' },
       { id: 'Other', cat: 'Other/Misc' },

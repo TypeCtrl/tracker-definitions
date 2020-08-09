@@ -10,6 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://eztv.io/',
+    'https://eztv.yt/',
     'https://eztv.root.yt/',
     'https://eztv.unblockninja.com/',
     'https://eztv.unblockit.win/',

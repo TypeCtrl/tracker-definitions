@@ -252,6 +252,12 @@ export const definition: TrackerDefinition = {
         inputs: { offset: 40 },
       },
     ],
+    keywordsfilters: [
+      {
+        name: 're_replace',
+        args: ['S(\\d{1,4})E(\\d{1,2})', '$1 Round $2'],
+      },
+    ],
     inputs: { c: -1, ob: '{{ .Config.sort }}' },
     rows: { selector: 'div#torrentBorder' },
     fields: {
