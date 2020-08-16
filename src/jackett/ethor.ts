@@ -101,10 +101,15 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'replace', args: ['/details.php', '/download.php'] }],
       },
-      _title_original: {
+      _title_original_b: { selector: 'a[href^="/details.php"] b' },
+      _title_original_title: {
         selector: 'a[href^="/details.php"][title]',
         attribute: 'title',
         optional: true,
+      },
+      _title_original: {
+        text:
+          '{{ if .Result._title_original_title }}{{ .Result._title_original_title }}{{ else }}{{ .Result._title_original_b }}{{ end }}',
       },
       _title_normalized: {
         text: '{{ .Result._title_original }}',

@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://korsar.info/'],
-  legacylinks: ['http://korsar.tv/', 'http://korsar.info/'],
+  links: ['http://korsar.tv/'],
+  legacylinks: ['https://korsar.tv/', 'http://korsar.info/', 'https://korsar.info/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Все Кинофильмы' },

@@ -168,6 +168,7 @@ export const definition: TrackerDefinition = {
         case: { 'a.info > b:contains("[FREE]")': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumseedtime: { text: 1209600 },
     },
   },
   source: 'jackett',
