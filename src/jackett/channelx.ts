@@ -18,8 +18,8 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q', 'imdbid'],
-      'tv-search': ['q', 'season', 'ep', 'imdbid'],
-      'movie-search': ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
+      'movie-search': ['q', 'imdbid', 'tmdbid'],
     },
   },
   settings: [
@@ -72,8 +72,8 @@ export const definition: TrackerDefinition = {
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
-      tvdb: '',
-      tmdb: '',
+      tvdb: '{{ .Query.TVDBID }}',
+      tmdb: '{{ .Query.TMDBID }}',
       mal: '',
       igdb: '',
       sorting: '{{ .Config.sort }}',

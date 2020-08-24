@@ -1,4 +1,3 @@
-// tslint:disable:type-literal-delimiter
 import { Categories } from './categories';
 import { Filters } from './filters';
 
@@ -137,6 +136,7 @@ export interface Modes {
   'music-search'?: string[];
   'tv-search'?: string[];
   'movie-search'?: string[];
+  'book-search'?: string[];
 }
 
 export interface Download {

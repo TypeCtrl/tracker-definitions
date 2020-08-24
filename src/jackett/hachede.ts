@@ -173,7 +173,7 @@ export const definition: TrackerDefinition = {
       },
       title: {
         selector: 'td.torrent_name > a, .newIndicator > a',
-        filters: [{ name: 'append', args: ' [spanish]' }],
+        filters: [{ name: 'append', args: ' SPANISH' }],
       },
       details: {
         selector: 'td.torrent_name > a, .newIndicator > a',

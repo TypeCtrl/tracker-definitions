@@ -130,6 +130,7 @@ export const definition: TrackerDefinition = {
       { id: '1300', cat: 'TV', desc: ' |- Сериалы ближнего зарубежья' },
       { id: '770', cat: 'TV', desc: ' |- Латиноамериканские сериалы' },
       { id: '922', cat: 'TV', desc: ' |- Азиатские сериалы' },
+      { id: '1320', cat: 'TV', desc: ' |- Турецкие сериалы' },
       {
         id: '780',
         cat: 'TV',
@@ -153,7 +154,6 @@ export const definition: TrackerDefinition = {
       { id: '796', cat: 'TV', desc: ' |- Солдаты' },
       { id: '792', cat: 'TV', desc: ' |- Счастливы вместе' },
       { id: '795', cat: 'TV', desc: ' |- Универ' },
-      { id: '1307', cat: 'TV', desc: 'Релизы от FTP85' },
       { id: '615', cat: 'TV/Anime', desc: 'Манга и Арт' },
       { id: '616', cat: 'TV/Anime', desc: ' |- Манга' },
       { id: '1297', cat: 'TV/Anime', desc: ' |- Ранобэ' },

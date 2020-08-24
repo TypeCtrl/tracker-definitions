@@ -16,7 +16,7 @@ export const definition: TrackerDefinition = {
       { id: '5', cat: 'Books/Ebook', desc: 'eBooks' },
       { id: '7', cat: 'Books/Magazines', desc: 'Magazines' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q', 'author', 'title'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -49,14 +49,12 @@ export const definition: TrackerDefinition = {
   ],
   login: {
     path: '/',
-    method: 'form',
-    form: 'form#loginform',
-    submitpath: '/',
+    method: 'post',
     inputs: {
-      action: 'login',
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      keeploggedin: 1,
+      keeplogged: 1,
+      login: 'Log In!',
     },
     error: [{ selector: 'center:first-of-type' }],
     test: { path: 'torrents/', selector: 'div#pre_header' },
@@ -64,7 +62,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents/' }],
     inputs: {
-      search: '{{ .Keywords }}',
+      search:
+        '{{ if .Query.Author }} @authors {{ .Query.Author }}{{else}}{{end}}{{ if .Query.Title }} @title {{ .Query.Title }}{{else}}{{end}}{{ .Keywords }}',
       $raw: '{{ range .Categories }}cat[]={{.}}&{{end}}',
       orderby: '{{ .Config.orderby }}',
       order: '{{ .Config.order }}',
@@ -81,15 +80,20 @@ export const definition: TrackerDefinition = {
           'div[title="Magazines"]': 7,
         },
       },
+      _author: { selector: '.authorLink', optional: true },
+      _editor: { selector: '.editorLink', optional: true },
+      author: { text: '{{ or (.Result._author) (.Result._editor) }}' },
       _year: { selector: '.torYear', optional: true },
       _filetype: { selector: '.torFormat', optional: true },
+      _retail: { selector: '.torRetail', optional: true },
+      booktitle: { selector: '.title a' },
       title: {
-        selector: '.title a',
+        text: '{{.Result.booktitle}}',
         filters: [
           {
             name: 'append',
             args:
-              '{{ if .Result._year }} {{ .Result._year }}{{else}}{{end}}{{ if .Result._filetype }} {{ .Result._filetype }}{{else}}{{end}}',
+              '{{ if .Result.author }} by {{ .Result.author }}{{else}}{{end}}{{ if .Result._year }} {{ .Result._year }}{{else}}{{end}}{{ if .Result._filetype }} {{ .Result._filetype }}{{else}}{{end}}{{ if .Result._retail }} {{ .Result._retail }}{{else}}{{end}}',
           },
         ],
       },
@@ -97,12 +101,16 @@ export const definition: TrackerDefinition = {
       date: {
         optional: true,
         selector: '.t_files_size_added time',
-        filters: [{ name: 'timeago' }],
+        attribute: 'datetime',
       },
       download: { selector: 'a[title="Download"]', attribute: 'href' },
-      size: {
+      files: {
         selector: '.t_files_size_added',
-        filters: [{ name: 'split', args: [',', 1] }, { name: 'trim' }],
+        filters: [{ name: 'regexp', args: '^\\s*(\\d+)\\s*file' }],
+      },
+      size: {
+        selector: '.t_files_size_added span',
+        attribute: 'data-bytecount',
       },
       seeders: { optional: true, selector: '.seeders' },
       leechers: { optional: true, selector: '.leechers' },

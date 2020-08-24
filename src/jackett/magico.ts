@@ -126,8 +126,9 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     keywordsfilters: [
+      { name: 're_replace', args: ['\\(*((19|20)\\d{2})\\)*', '($1)'] },
       { name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] },
-      { name: 're_replace', args: ['[^\\w\\d]+', '%'] },
+      { name: 're_replace', args: ['[^\\w\\d\\(\\)]+', '%'] },
     ],
     inputs: {
       p: 'torrents',

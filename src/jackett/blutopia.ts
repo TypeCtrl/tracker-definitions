@@ -18,8 +18,8 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q', 'imdbid'],
-      'tv-search': ['q', 'season', 'ep', 'imdbid'],
-      'movie-search': ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
+      'movie-search': ['q', 'imdbid', 'tmdbid'],
     },
   },
   settings: [
@@ -72,8 +72,8 @@ export const definition: TrackerDefinition = {
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
-      tvdb: '',
-      tmdb: '',
+      tvdb: '{{ .Query.TVDBID }}',
+      tmdb: '{{ .Query.TMDBID }}',
       mal: '',
       igdb: '',
       sorting: '{{ .Config.sort }}',
@@ -116,6 +116,11 @@ export const definition: TrackerDefinition = {
       imdb: {
         optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
+        attribute: 'href',
+      },
+      tmdbid: {
+        optional: true,
+        selector: 'a[href*="themoviedb.org/movie/"]',
         attribute: 'href',
       },
       date: {

@@ -775,6 +775,9 @@ export const jp2Pelite = jjp2Pelite;
 import { definition as jjparnuxi } from './parnuxi';
 export const jparnuxi = jjparnuxi;
 
+import { definition as jjpctorrent } from './pctorrent';
+export const jpctorrent = jjpctorrent;
+
 import { definition as jjpeersfm } from './peersfm';
 export const jpeersfm = jjpeersfm;
 
@@ -972,9 +975,6 @@ export const jspeedtorrentreloaded = jjspeedtorrentreloaded;
 
 import { definition as jjspiritofrevolution } from './spiritofrevolution';
 export const jspiritofrevolution = jjspiritofrevolution;
-
-import { definition as jjsporthd } from './sporthd';
-export const jsporthd = jjsporthd;
 
 import { definition as jjsportscult } from './sportscult';
 export const jsportscult = jjsportscult;
@@ -1248,9 +1248,6 @@ export const jxbytes2 = jjxbytes2;
 
 import { definition as jjxfsub } from './xfsub';
 export const jxfsub = jjxfsub;
-
-import { definition as jjxtremefile } from './xtremefile';
-export const jxtremefile = jjxtremefile;
 
 import { definition as jjxwtclassics } from './xwtclassics';
 export const jxwtclassics = jjxwtclassics;
@@ -1554,6 +1551,7 @@ export const definitions = [
   jjp2Pbg,
   jjp2Pelite,
   jjparnuxi,
+  jjpctorrent,
   jjpeersfm,
   jjpiratbit,
   jjpiratbitl,
@@ -1620,7 +1618,6 @@ export const definitions = [
   jjspeedmasterhd,
   jjspeedtorrentreloaded,
   jjspiritofrevolution,
-  jjsporthd,
   jjsportscult,
   jjspringsunday,
   jjsukebeiPantsu,
@@ -1712,7 +1709,6 @@ export const definitions = [
   jjxIteMe,
   jjxbytes2,
   jjxfsub,
-  jjxtremefile,
   jjxwtclassics,
   jjxwtorrents,
   jjxxxtor,

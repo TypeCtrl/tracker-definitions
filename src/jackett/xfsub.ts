@@ -7,8 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://share.xfapi.top:88/'],
-  legacylinks: ['https://bt.xfsub.org/'],
+  links: ['http://share.xfapi.top:88/', 'https://bt.xfsub.org/'],
   settings: [],
   caps: {
     categorymappings: [

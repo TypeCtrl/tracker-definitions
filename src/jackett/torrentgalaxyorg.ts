@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
     'https://torrentgalaxy.pw/',
     'https://torrentgalaxy.root.yt/',
     'https://torrentgalaxy.unblockninja.com/',
-    'https://torrentgalaxy.unblockit.win/',
+    'https://torrentgalaxy.unblockit.top/',
     'https://tgx.unblocked.bar/',
     'https://tgx.proxyportal.pw/',
     'https://tgx.uk-unblock.pro/',
@@ -30,6 +30,7 @@ export const definition: TrackerDefinition = {
     'https://torrentgalaxy.unblockit.me/',
     'https://torrentgalaxy.unblockit.pw/',
     'https://torrentgalaxy.unblockit.id/',
+    'https://torrentgalaxy.unblockit.win/',
   ],
   caps: {
     categorymappings: [

@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torrentfunk.com/',
     'https://www.torrentfunk2.com/',
-    'https://torrentfunk.unblockit.win/',
+    'https://torrentfunk.unblockit.top/',
   ],
   legacylinks: [
     'https://torrentfunk.unblockit.pro/',
@@ -19,6 +19,7 @@ export const definition: TrackerDefinition = {
     'https://torrentfunk.unblockit.me/',
     'https://torrentfunk.unblockit.pw/',
     'https://torrentfunk.unblockit.id/',
+    'https://torrentfunk.unblockit.win/',
   ],
   caps: {
     modes: {
