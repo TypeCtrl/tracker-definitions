@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'pt-PT',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.scene-rush.pt/'],
+  links: ['https://www.scene-rush.pt/', 'https://www.scene-rush.com/'],
   legacylinks: ['http://www.scene-rush.pt/'],
   caps: {
     categorymappings: [

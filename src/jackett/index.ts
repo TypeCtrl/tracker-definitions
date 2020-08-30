@@ -94,9 +94,6 @@ export const jaudionews = jjaudionews;
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
 
-import { definition as jjbadasstorrents } from './badasstorrents';
-export const jbadasstorrents = jjbadasstorrents;
-
 import { definition as jjbaibako } from './baibako';
 export const jbaibako = jjbaibako;
 
@@ -1216,9 +1213,6 @@ export const junionfansub = jjunionfansub;
 import { definition as jjuniongang } from './uniongang';
 export const juniongang = jjuniongang;
 
-import { definition as jjuniotaku } from './uniotaku';
-export const juniotaku = jjuniotaku;
-
 import { definition as jjunlimitz } from './unlimitz';
 export const junlimitz = jjunlimitz;
 
@@ -1324,7 +1318,6 @@ export const definitions = [
   jjaudiobooktorrents,
   jjaudionews,
   jjbackups,
-  jjbadasstorrents,
   jjbaibako,
   jjbeitai,
   jjbeyondHdOneurl,
@@ -1698,7 +1691,6 @@ export const definitions = [
   jjuniondht,
   jjunionfansub,
   jjuniongang,
-  jjuniotaku,
   jjunlimitz,
   jjvhstapes,
   jjvizuk,
