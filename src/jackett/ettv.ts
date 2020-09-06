@@ -11,6 +11,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.ettvdl.com/',
+    'https://www.ettvcentral.com/',
     'https://ettv.unblockninja.com/',
     'https://ettv.root.yt/',
     'https://ettv.unblockit.top/',

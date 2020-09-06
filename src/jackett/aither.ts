@@ -11,20 +11,14 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
-      { id: '15', cat: 'Movies', desc: 'Movie Packs' },
-      { id: '7', cat: 'TV/Documentary', desc: 'Documentary' },
       { id: '9', cat: 'TV/Sport', desc: 'Sports' },
-      { id: '12', cat: 'TV/Anime', desc: 'Anime Movies' },
       { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '13', cat: 'TV/Anime', desc: 'Anime TV' },
       { id: '3', cat: 'Audio', desc: 'Music' },
       { id: '4', cat: 'Console', desc: 'Games' },
       { id: '10', cat: 'PC', desc: 'Apps' },
       { id: '11', cat: 'Books', desc: 'Ebooks & Magazines' },
       { id: '14', cat: 'Audio/Audiobook', desc: 'Audiobooks' },
-      { id: '8', cat: 'Other', desc: 'Unrated' },
       { id: '6', cat: 'XXX', desc: 'XXX' },
-      { id: '5', cat: 'Other', desc: 'Test' },
     ],
     modes: {
       search: ['q', 'imdbid'],
@@ -78,7 +72,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents/filter' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
@@ -126,6 +120,11 @@ export const definition: TrackerDefinition = {
       imdb: {
         optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
+        attribute: 'href',
+      },
+      tmdbid: {
+        optional: true,
+        selector: 'a[href*="themoviedb.org/movie/"]',
         attribute: 'href',
       },
       date: {

@@ -118,6 +118,11 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
+      tmdbid: {
+        optional: true,
+        selector: 'a[href*="themoviedb.org/movie/"]',
+        attribute: 'href',
+      },
       date: {
         selector: 'time',
         filters: [

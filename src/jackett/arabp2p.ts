@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ar-AR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.arabp2p.com/'],
-  legacylinks: ['https://www.arabp2p.com/'],
+  links: ['https://www.arabp2p.com/'],
+  legacylinks: ['http://www.arabp2p.com/'],
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },

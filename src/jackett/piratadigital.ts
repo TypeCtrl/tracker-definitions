@@ -1,30 +1,25 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'tellytorrent',
-  name: 'TellyTorrent',
-  description: 'TellyTorrent is an INDIAN Private Tracker for MOVIES / TV',
-  language: 'en-EN',
+  id: 'piratadigital',
+  name: 'Pirata Digital',
+  description: 'Pirata Digital (PD) is a Private Torrent Tracker for HD MOVIES / TV',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://telly.cc/'],
-  legacylinks: ['https://tellytorrent.net/'],
+  links: ['https://pirata.digital/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
       { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '3', cat: 'Audio', desc: 'Music' },
-      { id: '4', cat: 'Movies', desc: 'Web Originals' },
-      { id: '5', cat: 'PC/Games', desc: 'Games' },
-      { id: '6', cat: 'PC/0day', desc: 'Application' },
-      { id: '7', cat: 'PC/Phone-Other', desc: 'Mobile App' },
-      { id: '8', cat: 'Other', desc: 'IPL 2019' },
+      { id: '6', cat: 'TV/Anime', desc: 'Animes' },
+      { id: '4', cat: 'Console', desc: 'Games' },
+      { id: '5', cat: 'PC', desc: 'Software' },
     ],
     modes: {
       search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
       'movie-search': ['q', 'imdbid', 'tmdbid'],
-      'music-search': ['q'],
     },
   },
   settings: [
@@ -240,8 +235,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      minimumratio: { text: 1 },
-      minimumseedtime: { text: 86400 },
+      minimumseedtime: { text: 432000 },
     },
   },
   source: 'jackett',

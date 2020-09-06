@@ -442,6 +442,9 @@ export const jgktorrent = jjgktorrent;
 import { definition as jjglodls } from './glodls';
 export const jglodls = jjglodls;
 
+import { definition as jjgreekdiamond } from './greekdiamond';
+export const jgreekdiamond = jjgreekdiamond;
+
 import { definition as jjgreekteam } from './greekteam';
 export const jgreekteam = jjgreekteam;
 
@@ -525,6 +528,9 @@ export const jhdu = jjhdu;
 
 import { definition as jjhdzone } from './hdzone';
 export const jhdzone = jjhdzone;
+
+import { definition as jjhellastz } from './hellastz';
+export const jhellastz = jjhellastz;
 
 import { definition as jjhon3Yhd } from './hon3yhd';
 export const jhon3Yhd = jjhon3Yhd;
@@ -777,6 +783,9 @@ export const jpctorrent = jjpctorrent;
 
 import { definition as jjpeersfm } from './peersfm';
 export const jpeersfm = jjpeersfm;
+
+import { definition as jjpiratadigital } from './piratadigital';
+export const jpiratadigital = jjpiratadigital;
 
 import { definition as jjpiratbit } from './piratbit';
 export const jpiratbit = jjpiratbit;
@@ -1216,9 +1225,6 @@ export const juniongang = jjuniongang;
 import { definition as jjunlimitz } from './unlimitz';
 export const junlimitz = jjunlimitz;
 
-import { definition as jjvhstapes } from './vhstapes';
-export const jvhstapes = jjvhstapes;
-
 import { definition as jjvizuk } from './vizuk';
 export const jvizuk = jjvizuk;
 
@@ -1434,6 +1440,7 @@ export const definitions = [
   jjgirotorrent,
   jjgktorrent,
   jjglodls,
+  jjgreekdiamond,
   jjgreekteam,
   jjhachede,
   jjhaidan,
@@ -1462,6 +1469,7 @@ export const definitions = [
   jjhdturk,
   jjhdu,
   jjhdzone,
+  jjhellastz,
   jjhon3Yhd,
   jjhorrorsite,
   jjhqsource,
@@ -1546,6 +1554,7 @@ export const definitions = [
   jjparnuxi,
   jjpctorrent,
   jjpeersfm,
+  jjpiratadigital,
   jjpiratbit,
   jjpiratbitl,
   jjpirateiro,
@@ -1692,7 +1701,6 @@ export const definitions = [
   jjunionfansub,
   jjuniongang,
   jjunlimitz,
-  jjvhstapes,
   jjvizuk,
   jjwdt,
   jjwihd,
