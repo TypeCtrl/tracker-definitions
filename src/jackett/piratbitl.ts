@@ -7,12 +7,12 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://piratbit.top/'],
+  links: ['https://piratbit.top/'],
   legacylinks: [
     'https://pb.wtf/',
     'https://piratbit.pw/',
     'https://piratbit.ml/',
-    'https://piratbit.top/',
+    'http://piratbit.top/',
   ],
   caps: {
     categorymappings: [

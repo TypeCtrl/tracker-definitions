@@ -116,11 +116,11 @@ export const definition: TrackerDefinition = {
       remember: 'yes',
     },
     error: [{ selector: 'div.myFrame:contains("Access Denied")' }],
-    test: { path: 'torrents-search.php' },
+    test: { path: 'search.php' },
   },
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
-    paths: [{ path: 'torrents-search.php' }],
+    paths: [{ path: 'search.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',

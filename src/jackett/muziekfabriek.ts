@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'muziekfabriek',
   name: 'MuziekFabriek',
-  description: 'MuziekFabriek is a DUTCH Semi-Private Torrent Tracker for MUSIC',
+  description: 'MuziekFabriek is a DUTCH Private Torrent Tracker for MUSIC',
   language: 'nl-NL',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.muziekfabriek.org/'],
   caps: {
@@ -54,6 +54,10 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: '/', selector: ':has(a[href="logout.php"])' },
   },
+  download: {
+    selector: 'a[href^="download.php?id="]',
+    attribute: 'href',
+  },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
@@ -77,7 +81,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="download.php?id="]',
+        selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
       banner: { selector: 'div[id^="Style"] img', attribute: 'src' },

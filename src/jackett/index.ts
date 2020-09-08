@@ -886,6 +886,9 @@ export const jretroflix = jjretroflix;
 import { definition as jjrintor } from './rintor';
 export const jrintor = jjrintor;
 
+import { definition as jjrintornet } from './rintornet';
+export const jrintornet = jjrintornet;
+
 import { definition as jjriperam } from './riperam';
 export const jriperam = jjriperam;
 
@@ -1183,6 +1186,9 @@ export const jtrezzor = jjtrezzor;
 import { definition as jjtribalmixes } from './tribalmixes';
 export const jtribalmixes = jjtribalmixes;
 
+import { definition as jjtrupornolabs } from './trupornolabs';
+export const jtrupornolabs = jjtrupornolabs;
+
 import { definition as jjttsweb } from './ttsweb';
 export const jttsweb = jjttsweb;
 
@@ -1254,6 +1260,9 @@ export const jxwtclassics = jjxwtclassics;
 
 import { definition as jjxwtorrents } from './xwtorrents';
 export const jxwtorrents = jjxwtorrents;
+
+import { definition as jjxxxadulttorrent } from './xxxadulttorrent';
+export const jxxxadulttorrent = jjxxxadulttorrent;
 
 import { definition as jjxxxtor } from './xxxtor';
 export const jxxxtor = jjxxxtor;
@@ -1588,6 +1597,7 @@ export const definitions = [
   jjredstartorrent,
   jjretroflix,
   jjrintor,
+  jjrintornet,
   jjriperam,
   jjrockbox,
   jjromanianmetaltorrents,
@@ -1687,6 +1697,7 @@ export const definitions = [
   jjtrancetraffic,
   jjtrezzor,
   jjtribalmixes,
+  jjtrupornolabs,
   jjttsweb,
   jjturkseed,
   jjturktorrent,
@@ -1711,6 +1722,7 @@ export const definitions = [
   jjxfsub,
   jjxwtclassics,
   jjxwtorrents,
+  jjxxxadulttorrent,
   jjxxxtor,
   jjxxxtorrents,
   jjydypt,
