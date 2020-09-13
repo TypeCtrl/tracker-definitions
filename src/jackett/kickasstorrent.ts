@@ -13,9 +13,7 @@ export const definition: TrackerDefinition = {
     'https://newkatcr.co/',
     'https://kat.root.yt/',
     'https://kat.unblockit.top/',
-    'https://katcr.unblocked.bar/',
-    'https://katcr.proxyportal.pw/',
-    'https://katcr.uk-unblock.pro/',
+    'https://katcr.unblocked.rest/',
   ],
   legacylinks: [
     'https://kickasstorrent.cr/',
@@ -32,6 +30,9 @@ export const definition: TrackerDefinition = {
     'https://kat.unblockit.id/',
     'https://kat.unblockit.win/',
     'https://kickasstorrents.unblockninja.com/',
+    'https://katcr.unblocked.bar/',
+    'https://katcr.proxyportal.pw/',
+    'https://katcr.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [

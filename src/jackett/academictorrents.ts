@@ -39,6 +39,7 @@ export const definition: TrackerDefinition = {
     },
   ],
   search: {
+    headers: { Cookie: ['check=1872638182319'] },
     paths: [{ path: 'browse.php' }, { path: 'browse.php', inputs: { page: 1 } }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',

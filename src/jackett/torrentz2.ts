@@ -15,9 +15,7 @@ export const definition: TrackerDefinition = {
     'https://torrentz.pl/',
     'https://torrentz2.unblockninja.com/',
     'https://torrentz.unblockit.top/',
-    'https://torrentz2.unblocked.bar/',
-    'https://torrentz2.proxyportal.pw/',
-    'https://torrentz2.uk-unblock.pro/',
+    'https://torrentz2.unblocked.rest/',
   ],
   legacylinks: [
     'https://torrentz.unblockit.pro/',
@@ -32,6 +30,9 @@ export const definition: TrackerDefinition = {
     'https://torrentz2.eu/',
     'https://torrentz.unblockit.id/',
     'https://torrentz.unblockit.win/',
+    'https://torrentz2.unblocked.bar/',
+    'https://torrentz2.proxyportal.pw/',
+    'https://torrentz2.uk-unblock.pro/',
   ],
   caps: {
     modes: {

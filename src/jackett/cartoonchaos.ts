@@ -12,6 +12,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
@@ -74,15 +80,16 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'index.php' }],
     inputs: {
       page: 'torrents',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
-      options: '{{ if .Query.IMDBID }}2{{else}}0{{end}}',
+      options: '{{ if .Query.IMDBID }}2{{ else }}0{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table.lista tr td table.lista tr:has(a[href^="index.php?page=torrent-details"])',
+      selector:
+        'table.lista tr td table.lista tr:has(a[href^="index.php?page=torrent-details"]){{ if .Config.freeleech }}:has(img[src="gold/gold.gif"]){{ else }}{{ end }}',
     },
     fields: {
       title: { selector: 'td a[href^="index.php?page=torrent-details"]' },
@@ -135,6 +142,8 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="gold/gold.gif"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 604800 },
     },
   },
   source: 'jackett',

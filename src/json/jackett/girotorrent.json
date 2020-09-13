@@ -75,6 +75,12 @@
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
     {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
+    {
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
@@ -125,7 +131,7 @@
       "category": "{{ range .Categories }}{{.}};{{end}}",
       "page": "torrents",
       "active": 0,
-      "options": 0,
+      "options": "{{ if .Config.freeleech }}5{{ else }}0{{ end }}",
       "order": "{{ .Config.sort }}",
       "by": "{{ .Config.type }}"
     },
@@ -235,7 +241,8 @@
         "selector": "img[alt$=\"x Upload Multiplier\"]",
         "attribute": "alt",
         "filters": [{ "name": "replace", "args": ["x Upload Multiplier", ""] }]
-      }
+      },
+      "minimumratio": { "text": 0.5 }
     }
   },
   "source": "jackett"

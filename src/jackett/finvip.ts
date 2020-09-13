@@ -9,31 +9,6 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   certificates: ['646731cb7f3a332c1a1442302589480c46152ef6'],
   links: ['https://finvip.org/'],
-  settings: [
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
-    {
-      name: 'info_results',
-      type: 'info',
-      label: 'Search results',
-      default:
-        '<ol><li>Only the Xbtit style is supported.</li><ul>Make sure to set the <b>Style</b> option in your profile to <b>Xbtit</b>.</ul><li>For best results, increase the torrents number in your profile to 100.</li><ul>Set the <b>Torrents Per Page</b> option to <b>100</b>.</ul></ol>',
-    },
-    {
-      name: 'sort',
-      type: 'select',
-      label: 'Sort requested from site',
-      default: '3',
-      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
-    },
-    {
-      name: 'type',
-      type: 'select',
-      label: 'Order requested from site',
-      default: '2',
-      options: { '1': 'asc', '2': 'desc' },
-    },
-  ],
   caps: {
     categorymappings: [
       { id: '5', cat: 'TV/Anime', desc: 'Anime' },
@@ -75,6 +50,37 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        '<ol><li>Only the Xbtit style is supported.</li><ul>Make sure to set the <b>Style</b> option in your profile to <b>Xbtit</b>.</ul><li>For best results, increase the torrents number in your profile to 100.</li><ul>Set the <b>Torrents Per Page</b> option to <b>100</b>.</ul></ol>',
+    },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: '3',
+      options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: '2',
+      options: { '1': 'asc', '2': 'desc' },
+    },
+  ],
   login: {
     path: 'index.php?page=login',
     method: 'post',
@@ -94,11 +100,11 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'index.php' }],
     inputs: {
       page: 'torrents',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
-      options: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
+      options: '{{ if .Query.IMDBID }}1{{ else }}0{{ end }}',
       active: 0,
-      gold: 0,
+      gold: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
     },
@@ -149,6 +155,8 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

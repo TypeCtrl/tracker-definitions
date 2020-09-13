@@ -7,18 +7,16 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'https://idope.se/',
-    'https://idope.unblocked.bar/',
-    'https://idope.proxyportal.pw/',
-    'https://idope.uk-unblock.pro/',
-  ],
+  links: ['https://idope.se/', 'https://idope.unblocked.rest/'],
   legacylinks: [
     'https://idope.black-mirror.xyz/',
     'https://idope.unblocked.casa/',
     'https://idope.proxyportal.fun/',
     'https://idope.uk-unblock.xyz/',
     'https://idope.ind-unblock.xyz/',
+    'https://idope.unblocked.bar/',
+    'https://idope.proxyportal.pw/',
+    'https://idope.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [

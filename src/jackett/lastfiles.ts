@@ -65,6 +65,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -97,9 +103,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      genre: '{{ if .Query.IMDBID }}2{{else}}0{{end}}',
-      incldead: 1,
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      genre: '{{ if .Query.IMDBID }}2{{ else }}0{{ end }}',
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -144,7 +150,11 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { 'span:contains("2XUP")': 2, '*': 1 } },
+      uploadvolumefactor: {
+        case: { 'span:contains("2XUP")': 2, '*': 1 },
+      },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 129600 },
     },
   },
   source: 'jackett',

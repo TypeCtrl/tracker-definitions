@@ -27,8 +27,8 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '2',
-      options: { '2': 'created', '3': 'size' },
+      default: '0',
+      options: { '0': 'relevance', '2': 'created', '3': 'size' },
     },
   ],
   search: {

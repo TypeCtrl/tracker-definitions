@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
         path: '{{ if .Keywords }}search/{{ .Keywords }}{{ else }}browse/0/0/0/0{{ end }}',
       },
     ],
-    rows: { selector: 'tr.gai' },
+    rows: { selector: 'tr.gai:has(a[href^="/torrent/"])' },
     fields: {
       category: { text: 'XXX' },
       title: { selector: 'a[href^="/torrent/"]' },

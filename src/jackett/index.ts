@@ -49,6 +49,9 @@ export const jacidlounge = jjacidlounge;
 import { definition as jjaftershock } from './aftershock';
 export const jaftershock = jjaftershock;
 
+import { definition as jjaidoruonline } from './aidoruonline';
+export const jaidoruonline = jjaidoruonline;
+
 import { definition as jjaither } from './aither';
 export const jaither = jjaither;
 
@@ -577,14 +580,8 @@ export const jjpopsuki = jjjpopsuki;
 import { definition as jjjptv } from './jptv';
 export const jjptv = jjjptv;
 
-import { definition as jjkapaki } from './kapaki';
-export const jkapaki = jjkapaki;
-
 import { definition as jjkaragarga } from './karagarga';
 export const jkaragarga = jjkaragarga;
-
-import { definition as jjkaztorka } from './kaztorka';
-export const jkaztorka = jjkaztorka;
 
 import { definition as jjkeepfriends } from './keepfriends';
 export const jkeepfriends = jjkeepfriends;
@@ -1318,6 +1315,7 @@ export const definitions = [
   jjacgsou,
   jjacidlounge,
   jjaftershock,
+  jjaidoruonline,
   jjaither,
   jjalexfilm,
   jjamigosshare,
@@ -1494,9 +1492,7 @@ export const definitions = [
   jjivTorrents,
   jjjpopsuki,
   jjjptv,
-  jjkapaki,
   jjkaragarga,
-  jjkaztorka,
   jjkeepfriends,
   jjkickasstorrentKathow,
   jjkickasstorrent,

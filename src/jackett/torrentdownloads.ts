@@ -12,9 +12,7 @@ export const definition: TrackerDefinition = {
     'https://www.torrentdownloads.info/',
     'https://www.torrentdownloads.me/',
     'https://torrentdownloads.unblockit.top/',
-    'https://torrentdownloads.unblocked.bar/',
-    'https://torrentdownloads.proxyportal.pw/',
-    'https://torrentdownloads.uk-unblock.pro/',
+    'https://torrentdownloads.unblocked.rest/',
   ],
   legacylinks: [
     'https://torrentdownloads.unblockit.pro/',
@@ -28,6 +26,9 @@ export const definition: TrackerDefinition = {
     'https://torrentdownloads.unblockit.pw/',
     'https://torrentdownloads.unblockit.id/',
     'https://torrentdownloads.unblockit.win/',
+    'https://torrentdownloads.unblocked.bar/',
+    'https://torrentdownloads.proxyportal.pw/',
+    'https://torrentdownloads.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [

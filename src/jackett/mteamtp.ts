@@ -56,6 +56,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'info',
       type: 'info',
       label: '',
@@ -135,10 +141,10 @@ export const definition: TrackerDefinition = {
     ],
     inputs: {
       $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 0,
-      spstate: 0,
-      search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
+      spstate: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
+      search_area: '{{ if .Query.IMDBID }}4{{ else }}0{{ end }}',
       search_mode: 0,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',

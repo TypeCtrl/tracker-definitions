@@ -63,6 +63,16 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+  ],
   login: {
     path: 'TTV3/Connexion',
     method: 'post',
@@ -92,7 +102,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       search: '{{ .Keywords }}',
       incldead: 1,
-      freeleech: 0,
+      freeleech: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
       lang: 0,
     },
     rows: { selector: 'tr:has(a[onmouseover])' },

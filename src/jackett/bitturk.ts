@@ -67,6 +67,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'info',
       type: 'info',
       label: 'Layout',
@@ -127,7 +133,8 @@ export const definition: TrackerDefinition = {
       },
     ],
     rows: {
-      selector: 'table#torrents_table_classic tr:has(td.torrent_name)',
+      selector:
+        'table#torrents_table_classic tr:has(td.torrent_name){{ if .Config.freeleech }}:has(img[src$="/torrent_free.png"]){{ else }}{{ end }}',
     },
     fields: {
       title: { selector: 'a[href*="?p=torrents&pid=10&action=details"]' },
@@ -162,11 +169,17 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       downloadvolumefactor: {
-        case: { 'img[src$="/torrent_free.png"]': 0.5, '*': 1 },
+        case: {
+          'img[src$="/silver.gif"]': 0.5,
+          'img[src$="/torrent_free.png"]': 0,
+          '*': 1,
+        },
       },
       uploadvolumefactor: {
         case: { 'img[src$="/torrent_multiple_upload.png"]': 2, '*': 1 },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

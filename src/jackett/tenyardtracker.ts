@@ -7,9 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  certificates: ['C77A88F4AC9798E3E5B18C4AA6CE2ABF32ECF025'],
-  links: ['https://tenyardtracker.com/'],
-  legacylinks: ['http://tenyardtracker.com/'],
+  links: ['https://talk.tenyardtracker.com/'],
+  legacylinks: ['http://tenyardtracker.com/', 'https://tenyardtracker.com/'],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
     categorymappings: [{ id: '1', cat: 'TV' }],

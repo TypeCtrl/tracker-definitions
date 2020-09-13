@@ -63,6 +63,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -95,13 +101,16 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ if .Categories}}{{ range .Categories }}c{{.}}=1&{{end}}{{else}}cat=0{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 2,
-      blah: '{{ if .Query.IMDBID }}3{{else}}0{{end}}',
+      blah: '{{ if .Query.IMDBID }}3{{ else }}0{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
-    rows: { selector: 'div.ncls > table > tbody > tr:has(a.tname)' },
+    rows: {
+      selector:
+        'div.ncls > table > tbody > tr:has(a.tname){{ if .Config.freeleech }}:has(a#free-btn){{ else }}{{ end }}',
+    },
     fields: {
       title: { selector: 'a.tname' },
       details: { selector: 'a.tname', attribute: 'href' },
@@ -137,6 +146,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: { case: { 'a#free-btn': 0, '*': 1 } },
       uploadvolumefactor: { text: 1 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

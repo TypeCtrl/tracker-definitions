@@ -87,6 +87,12 @@ export const definition: TrackerDefinition = {
     { name: 'user', type: 'text', label: 'Username' },
     { name: 'pass', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -117,9 +123,9 @@ export const definition: TrackerDefinition = {
   search: {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      search_where: '{{ if .Query.IMDBID }}3{{else}}0{{end}}',
-      status: 1,
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      search_where: '{{ if .Query.IMDBID }}3{{ else }}0{{ end }}',
+      status: '{{ if .Config.freeleech }}4{{ else }}1{{ end }}',
       orderby: '{{ .Config.sort }}',
       sort: '{{ .Config.type }}',
     },
@@ -169,6 +175,8 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { case: { 'img[alt="2xU"]': 2, '*': 1 } },
+      minimumratio: { text: 0.8 },
+      minimumseedtime: { text: 216000 },
     },
     paths: [{ path: 'browse.php' }],
   },

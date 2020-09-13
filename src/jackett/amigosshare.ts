@@ -9,36 +9,6 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://cliente.amigos-share.club/'],
   legacylinks: ['http://amigos-share.club/', 'https://amigos-share.club/'],
-  settings: [
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
-    {
-      name: 'info_results',
-      type: 'info',
-      label: 'Search results',
-      default:
-        'Set <b>Exibição De Torrents</b> to <b>Lista</b> in your <b>Minhas Configurações</b>.<br />Using <b>Capas</b> is not supported and will return 0 results.',
-    },
-    {
-      name: 'sort',
-      type: 'select',
-      label: 'Sort requested from site',
-      default: 'id',
-      options: {
-        id: 'created',
-        seeders: 'seeders',
-        size: 'size',
-        name: 'title',
-      },
-    },
-    {
-      name: 'type',
-      type: 'select',
-      label: 'Order requested from site',
-      default: 'desc',
-      options: { desc: 'desc', asc: 'asc' },
-    },
-  ],
   caps: {
     categorymappings: [
       { id: '107', cat: 'XXX', desc: 'Adultos: Gay' },
@@ -124,6 +94,42 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default:
+        'Set <b>Exibição De Torrents</b> to <b>Lista</b> in your <b>Minhas Configurações</b>.<br />Using <b>Capas</b> is not supported and will return 0 results.',
+    },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'id',
+      options: {
+        id: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
   login: {
     path: 'account-login.php',
     method: 'post',
@@ -157,7 +163,8 @@ export const definition: TrackerDefinition = {
     },
     keywordsfilters: [{ name: 're_replace', args: ['(19|20[0-9]{2})', ''] }],
     rows: {
-      selector: 'div#fancy-list-group ul.list-group li.list-group-item',
+      selector:
+        'div#fancy-list-group ul.list-group li.list-group-item{{ if .Config.freeleech }}:has(span.badge-success:contains("FREE")){{ else }}{{ end }}',
     },
     fields: {
       _quality: {
@@ -179,7 +186,7 @@ export const definition: TrackerDefinition = {
         optional: true,
       },
       title: {
-        selector: 'a[href*="torrents-details.php?id="]',
+        selector: 'a[href*="torrents-details.php?id="], a[href*="details-misc.php?id="]',
         filters: [
           {
             name: 're_replace',
@@ -208,7 +215,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       details: {
-        selector: 'a[href*="torrents-details.php?id="]',
+        selector: 'a[href*="torrents-details.php?id="], a[href*="details-misc.php?id="]',
         attribute: 'href',
       },
       download: {
@@ -291,6 +298,7 @@ export const definition: TrackerDefinition = {
           '[src$="/Plug-ins.png"]': 122,
           '[src$="/Scripts.png"]': 128,
           '[src$="/Vetores.png"]': 124,
+          '[src$="/outros2.png"]': 130,
         },
       },
       date: {

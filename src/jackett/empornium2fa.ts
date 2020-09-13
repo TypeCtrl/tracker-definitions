@@ -65,9 +65,15 @@ export const definition: TrackerDefinition = {
     {
       name: 'infocookie',
       type: 'info',
-      label: 'How to get the Cookie',
+      label: 'Password',
       default:
         "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
+    },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
     },
   ],
   login: {
@@ -79,11 +85,14 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
+      searchtext: '',
       title: '{{ .Keywords }}',
       order_by: 'time',
       order_way: 'desc',
-      action: 'basic',
-      searchsubmit: 1,
+      action: 'advanced',
+      filter_freeleech: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      filelist: '',
+      taglist: '',
     },
     rows: {
       selector: 'table#torrent_table > tbody > tr[class^="torrent row"]',

@@ -7,12 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: [
-    'https://prostylex.org/',
-    'https://prostylex.unblocked.bar/',
-    'https://prostylex.proxyportal.pw/',
-    'https://prostylex.uk-unblock.pro/',
-  ],
+  links: ['https://prostylex.org/', 'https://prostylex.unblocked.rest/'],
   legacylinks: [
     'http://prostylex.com/',
     'https://prostylex.black-mirror.xyz/',
@@ -20,6 +15,9 @@ export const definition: TrackerDefinition = {
     'https://prostylex.proxyportal.fun/',
     'https://prostylex.uk-unblock.xyz/',
     'https://prostylex.ind-unblock.xyz/',
+    'https://prostylex.unblocked.bar/',
+    'https://prostylex.proxyportal.pw/',
+    'https://prostylex.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [

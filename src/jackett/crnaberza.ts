@@ -61,6 +61,12 @@ export const definition: TrackerDefinition = {
         "For best results, change the 'Torrents per page' setting to 100 on your 'Personal Options' from the 'Personal' menu on the Crna Berza webpage.",
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -103,7 +109,10 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
-    rows: { selector: 'tr:has(td.trowtorrent)' },
+    rows: {
+      selector:
+        'tr:has(td.trowtorrent){{ if .Config.freeleech }}:has(img[src$="/pic/freedownload.gif"]){{ else }}{{ end }}',
+    },
     fields: {
       category: {
         selector: 'td:nth-of-type(1) a',
@@ -130,6 +139,8 @@ export const definition: TrackerDefinition = {
         case: { 'img[src$="/pic/freedownload.gif"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 604800 },
     },
   },
   source: 'jackett',

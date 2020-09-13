@@ -49,6 +49,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -98,7 +104,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
-      incldead: 1,
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       blah: '{{ if .Query.IMDBID }}1{{ else }}0{{ end }}',
       sort: '{{ .Config.sort }}',
       d: '{{ .Config.type }}',
@@ -131,7 +137,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
-        case: { 'font:contains("(FreeLeech)")': 0, '*': 1 },
+        case: { 'font[color="#D4A017"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
       minimumratio: { text: 1.1 },

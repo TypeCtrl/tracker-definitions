@@ -19,6 +19,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -53,6 +59,7 @@ export const definition: TrackerDefinition = {
       groupname: '{{ .Query.Album }}',
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
+      freetorrent: '{{ if .Config.freeleech }}3{{ else }}{{ end }}',
     },
     rows: { selector: 'tr.torrent', filters: [{ name: 'andmatch' }] },
     fields: {

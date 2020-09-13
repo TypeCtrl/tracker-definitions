@@ -62,6 +62,12 @@ export const definition: TrackerDefinition = {
     { name: 'uid', type: 'text', label: 'Username' },
     { name: 'pwd', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -104,7 +110,7 @@ export const definition: TrackerDefinition = {
       category: '{{ range .Categories }}{{.}};{{end}}',
       options: 0,
       active: 0,
-      gold: 0,
+      gold: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
     },

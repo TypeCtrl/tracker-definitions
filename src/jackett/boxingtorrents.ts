@@ -10,6 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['https://tc-boxing.com/'],
   caps: {
     categorymappings: [
+      { id: '17', cat: 'TV/Sport', desc: '4K' },
       { id: '15', cat: 'TV/Sport', desc: '3D' },
       { id: '9', cat: 'TV/Sport', desc: 'Amateur - Full' },
       { id: '16', cat: 'TV/Sport', desc: 'Blu-ray' },
@@ -31,6 +32,12 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
     {
       name: 'sort',
       type: 'select',
@@ -74,6 +81,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ if .Categories }}{{ range .Categories }}c{{.}}=1&{{end}}{{else}}cat=0{{end}}',
       incldead: 1,
+      free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
       search: '{{ .Keywords }}',
       sort: '{{ .Config.sort }}',
       d: '{{ .Config.type }}',
@@ -113,6 +121,8 @@ export const definition: TrackerDefinition = {
         case: { 'b:contains("FreeLeech")': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

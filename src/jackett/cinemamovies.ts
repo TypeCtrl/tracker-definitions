@@ -47,6 +47,12 @@ export const definition: TrackerDefinition = {
         "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'drop_polish_prefix',
       type: 'checkbox',
       label: 'Drop the Polish title prefix',
@@ -76,9 +82,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      incldead: 1,
-      blah: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      incldead: '{{ if .Config.freeleech }}8{{ else }}1{{ end }}',
+      blah: '{{ if .Query.IMDBID }}1{{ else }}0{{ end }}',
       gatunek: 0,
       quality: 'none',
       sort: '{{ .Config.sort }}',
@@ -143,6 +149,7 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'img[src="pic/double.png"]': 2, '*': 1 },
       },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

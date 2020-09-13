@@ -50,6 +50,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -86,7 +92,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incl: 1,
+      incl: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       searchin: 0,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
@@ -132,6 +138,7 @@ export const definition: TrackerDefinition = {
         remove: 'a',
         filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
       },
+      minimumratio: { text: 0.6 },
     },
   },
   source: 'jackett',

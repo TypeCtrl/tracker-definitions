@@ -29,6 +29,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -70,8 +76,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      title: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      title: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       imdb: '{{ .Query.IMDBIDShort }}',
+      freeleech: '{{ if .Config.freeleech }}on{{ else }}{{ end }}',
       order_by: '{{ .Config.sort }}',
       direction: '{{ .Config.type }}',
     },
@@ -105,6 +112,8 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'i.fa-certificate': 2, 'i.fa-gem': 2, '*': 1 },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 604800 },
     },
   },
   source: 'jackett',

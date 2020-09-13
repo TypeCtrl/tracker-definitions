@@ -51,6 +51,12 @@ export const definition: TrackerDefinition = {
         "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'striprussian',
       type: 'checkbox',
       label: 'Strip Russian Letters',
@@ -66,9 +72,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
+      search: '{{ re_replace .Keywords "[\\s]+" "%" }}',
       incldead: 1,
-      free: 0,
+      free: '{{ if .Config.freeleech }}1{{ else }}0{{ end }}',
       year: '',
     },
     keywordsfilters: [{ name: 're_replace', args: [' +(?:19|20)\\d{2} *$', ''] }],
@@ -124,6 +130,7 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

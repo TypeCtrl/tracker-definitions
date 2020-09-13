@@ -42,6 +42,12 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
     { name: 'thankyou', type: 'text', label: 'Thank You Comment' },
     {
       name: 'info',
@@ -87,7 +93,8 @@ export const definition: TrackerDefinition = {
       incldead: 1,
     },
     rows: {
-      selector: 'table.mainouter',
+      selector:
+        'table.mainouter{{ if .Config.freeleech }}:has(img[src="pic/freedlfsu.gif"]){{ else }}{{ end }}',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

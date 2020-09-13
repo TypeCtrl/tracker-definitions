@@ -9,12 +9,10 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://gtdb.to/',
+    'https://www.gtdb.to/',
     'https://glodls.to/',
     'https://glotorrents.unblockit.top/',
-    'https://glodls.unblocked.bar/',
-    'https://glodls.proxyportal.pw/',
-    'https://glodls.uk-unblock.pro/',
+    'https://glodls.unblocked.rest/',
   ],
   legacylinks: [
     'https://glodls.rocks/',
@@ -29,6 +27,10 @@ export const definition: TrackerDefinition = {
     'https://glotorrents.unblockit.pw/',
     'https://glotorrents.unblockit.id/',
     'https://glotorrents.unblockit.win/',
+    'https://glodls.unblocked.bar/',
+    'https://glodls.proxyportal.pw/',
+    'https://glodls.uk-unblock.pro/',
+    'https://gtdb.to/',
   ],
   caps: {
     categorymappings: [

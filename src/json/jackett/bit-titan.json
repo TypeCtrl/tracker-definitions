@@ -86,15 +86,21 @@
       { "id": "9999", "cat": "Other", "desc": "unsort" }
     ],
     "modes": {
-      "search": ["q"],
+      "search": ["q", "imdbid"],
       "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"],
+      "movie-search": ["q", "imdbid"],
       "music-search": ["q"]
     }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
     {
       "name": "sort",
       "type": "select",
@@ -141,9 +147,9 @@
       "suchfeld": 2,
       "alleanzeigen": 1,
       "$raw": "{{ range .Categories }}kategorie[]={{.}}&{{end}}",
-      "suche": "{{ .Keywords }}",
-      "durchsuche": 1,
-      "suchein": 2,
+      "suche": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
+      "durchsuche": "{{ if .Query.IMDBID }}11{{ else }}1{{ end }}",
+      "suchein": "{{ if .Config.freeleech }}6{{ else }}2{{ end }}",
       "sucheaus": 1,
       "sortierenach": "{{ .Config.sort }}",
       "sortierung": "{{ .Config.type }}"
@@ -190,7 +196,8 @@
           "font.fl": 0,
           "*": 1
         }
-      }
+      },
+      "minimumseedtime": { "text": 172800 }
     }
   },
   "source": "jackett"

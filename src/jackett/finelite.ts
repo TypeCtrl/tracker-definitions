@@ -12,6 +12,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -74,9 +80,10 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'selaa.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       hae: 1,
       incldead: 1,
+      freeleech: '{{ if .Config.freeleech }}yes{{ else }}{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -119,6 +126,8 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(1)' },
       downloadvolumefactor: { case: { 'span.label-free': 0, '*': 1 } },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

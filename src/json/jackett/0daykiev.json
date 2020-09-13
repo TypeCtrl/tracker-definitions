@@ -85,6 +85,12 @@
       "default": true
     },
     {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
+    {
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
@@ -128,7 +134,7 @@
     "inputs": {
       "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
       "search": "{{ .Keywords }}",
-      "incldead": 1,
+      "incldead": "{{ if .Config.freeleech }}3{{ else }}1{{ end }}",
       "where": 0,
       "sort": "{{ .Config.sort}}",
       "type": "{{ .Config.type}}"

@@ -18,9 +18,7 @@ export const definition: TrackerDefinition = {
     'https://x1337x.se/',
     'https://1337.root.yt/',
     'https://1337x.unblockit.top/',
-    'https://1337x.unblocked.bar/',
-    'https://1337x.proxyportal.pw/',
-    'https://1337x.uk-unblock.pro/',
+    'https://1337x.unblocked.rest/',
   ],
   legacylinks: [
     'https://1337x.unblocked.earth/',
@@ -36,6 +34,9 @@ export const definition: TrackerDefinition = {
     'https://1337x.unblockit.pw/',
     'https://1337x.unblockit.id/',
     'https://1337x.unblockit.win/',
+    'https://1337x.unblocked.bar/',
+    'https://1337x.proxyportal.pw/',
+    'https://1337x.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [

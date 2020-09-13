@@ -236,6 +236,12 @@ export const definition: TrackerDefinition = {
         "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'torrentlanguage',
       type: 'select',
       label: 'Torrent Language',
@@ -288,7 +294,7 @@ export const definition: TrackerDefinition = {
       type: 'tout',
       endroit: 'nomtorrent',
       langue: '{{ .Config.torrentlanguage }}',
-      tl: 'peuimporte',
+      tl: '{{ if .Config.freeleech }}oui{{ else }}peuimporte{{ end }}',
     },
     rows: { selector: 'table.sortable tbody tr' },
     fields: {
@@ -326,9 +332,11 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: {
-        case: { 'img[src$="/images/Torrents/TLibre.png"]': '0', '*': '1' },
+        case: { 'img[src$="/images/Torrents/TLibre.png"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

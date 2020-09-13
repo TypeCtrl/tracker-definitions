@@ -41,6 +41,12 @@ export const definition: TrackerDefinition = {
         'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the HDDolby Web Site. Otherwise just leave it empty.',
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'info_tpp',
       type: 'info',
       label: 'Results Per Page',
@@ -86,10 +92,10 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 0,
-      spstate: 0,
-      search_area: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
+      spstate: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
+      search_area: '{{ if .Query.IMDBID }}4{{ else }}0{{ end }}',
       search_mode: 0,
     },
     rows: {

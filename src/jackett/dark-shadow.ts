@@ -11,8 +11,8 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://dark-shadow.ml/'],
   caps: {
     categorymappings: [
-      { id: '32', cat: 'Movies/HD', desc: 'Film HD' },
-      { id: '28', cat: 'Movies/SD', desc: 'Film SD' },
+      { id: '32', cat: 'Movies/HD', desc: 'Film 720p/1080p' },
+      { id: '28', cat: 'Movies/SD', desc: 'Film XviD/x264' },
       { id: '119', cat: 'Movies/DVD', desc: 'Film DVD' },
       { id: '114', cat: 'Movies/UHD', desc: 'Film 4K/2160p' },
       { id: '26', cat: 'Movies/3D', desc: 'Film 3D' },
@@ -49,6 +49,7 @@ export const definition: TrackerDefinition = {
       { id: '75', cat: 'XXX/Packs', desc: 'XXX Pack' },
       { id: '76', cat: 'XXX/XviD', desc: 'XXX SD' },
       { id: '124', cat: 'XXX/Other', desc: 'XXX Clips' },
+      { id: '133', cat: 'XXX/Other', desc: 'XXX A/E-book' },
     ],
     modes: {
       search: ['q', 'imdbid'],
@@ -67,6 +68,12 @@ export const definition: TrackerDefinition = {
       default: 'If you have not set a Pin for your account then leave this box empty.',
     },
     { name: 'pin', type: 'text', label: 'Pin' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
     {
       name: 'sort',
       type: 'select',
@@ -125,7 +132,10 @@ export const definition: TrackerDefinition = {
       orderby: '{{ .Config.sort }}',
       sort: '{{ .Config.type }}',
     },
-    rows: { selector: 'div.selection_wrap' },
+    rows: {
+      selector:
+        'div.selection_wrap{{ if .Config.freeleech }}:root:has(div.onlyup){{ else }}{{ end }}',
+    },
     fields: {
       category: {
         selector: 'div.kat_cat_pic',
@@ -134,9 +144,9 @@ export const definition: TrackerDefinition = {
             '119',
           ':has(div.kat_cat_pic_name:contains("Movie")):has(div.kat_cat_pic_name_b:contains("4K/2160p"))':
             '114',
-          ':has(div.kat_cat_pic_name:contains("Movie")):has(div.kat_cat_pic_name_b:contains("SD"))':
+          ':has(div.kat_cat_pic_name:contains("Movie")):has(div.kat_cat_pic_name_b:contains("x264"))':
             '28',
-          ':has(div.kat_cat_pic_name:contains("Movie")):has(div.kat_cat_pic_name_b:contains("HD"))':
+          ':has(div.kat_cat_pic_name:contains("Movie")):has(div.kat_cat_pic_name_b:contains("1080p"))':
             '32',
           ':has(div.kat_cat_pic_name:contains("Movie")):has(div.kat_cat_pic_name_b:contains("3D"))':
             '26',
@@ -196,6 +206,8 @@ export const definition: TrackerDefinition = {
             '76',
           ':has(div.kat_cat_pic_name:contains("XXX")):has(div.kat_cat_pic_name_b:contains("Clips"))':
             '124',
+          ':has(div.kat_cat_pic_name:contains("XXX")):has(div.kat_cat_pic_name_b:contains("book"))':
+            '133',
           ':has(div.kat_cat_pic_name:contains("Internal")):has(div.kat_cat_pic_name_b:contains("Film HD"))':
             '128',
           ':has(div.kat_cat_pic_name:contains("Internal")):has(div.kat_cat_pic_name_b:contains("Film SD"))':

@@ -11,9 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.oxtorrent.cc/',
     'https://www.oxtorrent.co/',
-    'https://oxtorrent.unblocked.bar/',
-    'https://oxtorrent.proxyportal.pw/',
-    'https://oxtorrent.uk-unblock.pro/',
+    'https://oxtorrent.unblocked.rest/',
   ],
   legacylinks: [
     'https://wwv.oxtorrent.com/',
@@ -25,6 +23,9 @@ export const definition: TrackerDefinition = {
     'https://oxtorrent.ind-unblock.xyz/',
     'https://www.oxtorrent.com/',
     'https://www.oxtorrent.pw/',
+    'https://oxtorrent.unblocked.bar/',
+    'https://oxtorrent.proxyportal.pw/',
+    'https://oxtorrent.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [

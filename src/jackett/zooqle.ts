@@ -12,9 +12,7 @@ export const definition: TrackerDefinition = {
     'https://zooqle.com/',
     'https://zooqle.unblockninja.com/',
     'https://zooqle.unblockit.top/',
-    'https://zooqle.unblocked.bar/',
-    'https://zooqle.proxyportal.pw/',
-    'https://zooqle.uk-unblock.pro/',
+    'https://zooqle.unblocked.rest/',
   ],
   legacylinks: [
     'https://zooqle.unblockit.pro/',
@@ -28,6 +26,9 @@ export const definition: TrackerDefinition = {
     'https://zooqle.unblockit.pw/',
     'https://zooqle.unblockit.id/',
     'https://zooqle.unblockit.win/',
+    'https://zooqle.unblocked.bar/',
+    'https://zooqle.proxyportal.pw/',
+    'https://zooqle.uk-unblock.pro/',
   ],
   caps: {
     modes: {

@@ -80,6 +80,12 @@
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
     {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
+    {
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
@@ -121,7 +127,7 @@
       "search": "{{ .Keywords }}",
       "cat": 0,
       "incldead": 1,
-      "freeleech": 0,
+      "freeleech": "{{ if .Config.freeleech }}2{{ else }}0{{ end }}",
       "lang": 0,
       "sort": "{{ .Config.sort }}",
       "order": "{{ .Config.type }}"
@@ -155,7 +161,8 @@
       "downloadvolumefactor": {
         "case": { "img[src=\"images/freeleech_star.gif\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 0.4 }
     }
   },
   "source": "jackett"

@@ -79,7 +79,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
@@ -152,7 +152,9 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-02 15:04' },
         ],
       },
-      downloadvolumefactor: { text: 0 },
+      downloadvolumefactor: {
+        case: { 'a[href^="?nohnr=1"]': 0, '*': 1 },
+      },
       uploadvolumefactor: {
         case: {
           'a[href^="?doubleup=four"]': 4,
@@ -166,6 +168,8 @@ export const definition: TrackerDefinition = {
         optional: true,
         remove: 'div.contenttitle',
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 86400 },
     },
   },
   source: 'jackett',

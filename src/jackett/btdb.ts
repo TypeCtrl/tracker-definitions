@@ -8,13 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://btdb.eu/',
-    'https://btdb.unblocked.bar/',
-    'https://btdb.proxyportal.pw/',
-    'https://btdb.uk-unblock.pro/',
-    'https://btdb.unblockit.top/',
-  ],
+  links: ['https://btdb.eu/', 'https://btdb.unblockit.top/'],
   legacylinks: [
     'https://btdb.to/',
     'https://btdb.unblocked.app/',
@@ -30,6 +24,9 @@ export const definition: TrackerDefinition = {
     'https://btdb.unblockit.pw/',
     'https://btdb.unblockit.id/',
     'https://btdb.unblockit.win/',
+    'https://btdb.unblocked.bar/',
+    'https://btdb.proxyportal.pw/',
+    'https://btdb.uk-unblock.pro/',
   ],
   caps: {
     categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],

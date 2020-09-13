@@ -105,6 +105,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
@@ -135,6 +141,7 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       searchin: 'title',
       incldead: 1,
+      only_free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
     },
     rows: {
       selector: 'table.table-striped > tbody > tr:has(a[href^="download.php?torrent="])',
@@ -164,9 +171,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-last-child(4)' },
       leechers: { selector: 'td:nth-last-child(3)' },
-      downloadvolumefactor: {
-        case: { 'a.info > b:contains("[FREE]")': 0, '*': 1 },
-      },
+      downloadvolumefactor: { case: { 'tr.freeleech_color': 0, '*': 1 } },
       uploadvolumefactor: { text: 1 },
       minimumseedtime: { text: 1209600 },
     },

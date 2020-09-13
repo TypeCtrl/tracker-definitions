@@ -28,6 +28,16 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+  ],
   login: {
     path: 'login',
     method: 'form',
@@ -66,6 +76,7 @@ export const definition: TrackerDefinition = {
       sort: 'created_at',
       direction: 'desc',
       qty: 100,
+      freeleech: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
     },
     rows: { selector: 'table > tbody > tr' },
     fields: {

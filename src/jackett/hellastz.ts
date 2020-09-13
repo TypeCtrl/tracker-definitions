@@ -72,6 +72,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -131,7 +137,8 @@ export const definition: TrackerDefinition = {
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="])',
+      selector:
+        'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]){{ if .Config.freeleech }}:has(img[alt="Gold 100% Free"]){{ else }}{{ end }}',
     },
     fields: {
       category: {

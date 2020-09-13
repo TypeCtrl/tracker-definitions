@@ -44,6 +44,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -91,7 +97,10 @@ export const definition: TrackerDefinition = {
       miben: 0,
       cimke: '',
     },
-    rows: { selector: 'body > div[id^="torrent_"]' },
+    rows: {
+      selector:
+        'body > div[id^="torrent_"]{{ if .Config.freeleech }}:has(img[src="pic/free.png"]){{ else }}{{ end }}',
+    },
     fields: {
       title: { selector: 'a[title]', attribute: 'title' },
       category: {
@@ -131,6 +140,8 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="pic/dupla_up.png"]': 2, '*': 1 },
       },
       description: { selector: 'div:nth-child(2)', remove: 'a' },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 86400 },
     },
   },
   source: 'jackett',

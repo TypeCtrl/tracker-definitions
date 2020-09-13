@@ -35,16 +35,26 @@
         "cat": "Movies/WEBDL",
         "desc": "Bollywood-Untouched WEB-DLs"
       },
-      { "id": "120", "cat": "Movies/WEBDL", "desc": "Bollywood-WEB-Rips" },
+      {
+        "id": "120",
+        "cat": "Movies/WEBDL",
+        "desc": "Bollywood-1080p WEB-Rips"
+      },
+      { "id": "188", "cat": "Movies/WEBDL", "desc": "Bollywood-720p WEB-Rips" },
       { "id": "121", "cat": "Movies/DVD", "desc": "Bollywood-Untouched DVDs" },
       {
         "id": "122",
         "cat": "Movies/WEBDL",
-        "desc": "Bollywood-Upscaled DVDRips"
+        "desc": "Bollywood-DVDRips 1080p/720p"
       },
-      { "id": "123", "cat": "Movies/WEBDL", "desc": "Bollywood-DVDRips" },
+      {
+        "id": "123",
+        "cat": "Movies/WEBDL",
+        "desc": "Bollywood-SDRips WEB/DVD"
+      },
       { "id": "124", "cat": "Movies/3D", "desc": "Bollywood-3D-Movies" },
-      { "id": "125", "cat": "Movies/WEBDL", "desc": "Bollywood-WEB Series" },
+      { "id": "190", "cat": "Movies", "desc": "Bollywood-Movies packs" },
+      { "id": "125", "cat": "Movies/WEBDL", "desc": "Bollywood-WEB Originals" },
       {
         "id": "126",
         "cat": "Movies/UHD",
@@ -69,9 +79,15 @@
       },
       { "id": "132", "cat": "Movies", "desc": "Hollywood-WEB-Rips" },
       { "id": "133", "cat": "Movies/DVD", "desc": "Hollywood-Untouched DVDs" },
-      { "id": "134", "cat": "Movies/WEBDL", "desc": "Hollywood-DVDRips" },
+      { "id": "191", "cat": "Movies/WEBDL", "desc": "Hollywood-Encoded DVDs" },
+      {
+        "id": "134",
+        "cat": "Movies/WEBDL",
+        "desc": "Hollywood-DVDRips 1080p/720p"
+      },
       { "id": "135", "cat": "Movies/3D", "desc": "Hollywood-3D-Movies" },
       { "id": "136", "cat": "Movies", "desc": "Hollywood-Pre-Release" },
+      { "id": "194", "cat": "Movies", "desc": "Hollywood-Movies packs" },
       { "id": "137", "cat": "Movies", "desc": "Malayalam-Movies" },
       { "id": "138", "cat": "Movies", "desc": "Telugu-Movies" },
       { "id": "139", "cat": "Movies", "desc": "Tamil-Movies" },
@@ -98,6 +114,7 @@
       { "id": "156", "cat": "TV/Documentary", "desc": "TV-Documentary" },
       { "id": "157", "cat": "TV", "desc": "TV-Hollywood" },
       { "id": "158", "cat": "TV", "desc": "TV-Others" },
+      { "id": "195", "cat": "TV", "desc": "TV-Packs" },
       { "id": "159", "cat": "TV", "desc": "Religion &Spirituality " },
       { "id": "160", "cat": "Audio", "desc": "Music-Classical" },
       { "id": "161", "cat": "Audio/Lossless", "desc": "Music-Flacs" },
@@ -114,13 +131,15 @@
       { "id": "172", "cat": "Audio", "desc": "Music-Remix" },
       { "id": "173", "cat": "Audio", "desc": "Music-Tamil" },
       { "id": "174", "cat": "Audio", "desc": "Music-Telugu" },
+      { "id": "196", "cat": "Audio", "desc": "Music-Packs" },
       { "id": "175", "cat": "Books/Ebook", "desc": "EBooks" },
       { "id": "176", "cat": "PC/Games", "desc": "Games PC" },
       { "id": "177", "cat": "Console", "desc": "Games Console" },
       { "id": "178", "cat": "TV/Anime", "desc": "Anime" },
       { "id": "179", "cat": "PC", "desc": "Appz" },
       { "id": "180", "cat": "PC/Phone-Other", "desc": "Mobile Stuff" },
-      { "id": "181", "cat": "Other", "desc": "Pics/Wallpapers" }
+      { "id": "181", "cat": "Other", "desc": "Pics/Wallpapers" },
+      { "id": "187", "cat": "XXX", "desc": "Adult XXX 18+" }
     ],
     "modes": {
       "search": ["q"],
@@ -129,6 +148,16 @@
       "music-search": ["q"]
     }
   },
+  "settings": [
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    }
+  ],
   "login": {
     "path": "takelogin.php",
     "method": "post",
@@ -144,7 +173,7 @@
     "inputs": {
       "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
       "search": "{{ .Keywords }}",
-      "incldead": 1,
+      "incldead": "{{ if .Config.freeleech }}3{{ else }}1{{ end }}",
       "blah": 0
     },
     "rows": {
@@ -179,7 +208,9 @@
       },
       "uploadvolumefactor": {
         "case": { "img[src=\"pic/double_upload.png\"]": 2, "*": 1 }
-      }
+      },
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 259200 }
     }
   },
   "source": "jackett"
