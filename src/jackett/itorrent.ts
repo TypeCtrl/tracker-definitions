@@ -9,11 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: ['https://itorrent.ws/'],
-  legacylinks: [
-    'https://itorrent.unblockit.pro/',
-    'https://itorrent.unblockit.one/',
-    'https://itorrent.unblockit.me/',
-  ],
+  legacylinks: ['https://itorrent.unblockit.pro/', 'https://itorrent.unblockit.one/', 'https://itorrent.unblockit.me/'],
   caps: {
     modes: {
       search: ['q'],

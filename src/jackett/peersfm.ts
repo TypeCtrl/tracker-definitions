@@ -42,6 +42,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -72,7 +78,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: 1,
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -129,6 +135,7 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.5 },
     },
   },
   source: 'jackett',

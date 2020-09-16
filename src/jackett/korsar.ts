@@ -501,8 +501,7 @@ export const definition: TrackerDefinition = {
       {
         id: '421',
         cat: 'Books',
-        desc:
-          'Книги и журналы - Учебная литература для детского сада и начальной школы (до 4 класса)',
+        desc: 'Книги и журналы - Учебная литература для детского сада и начальной школы (до 4 класса)',
       },
       {
         id: '422',
@@ -1467,8 +1466,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'prepend', args: '({{ .Result.description_category }}) ' }],
       },
       date: {
-        selector:
-          'dd:last-of-type:not(:contains("назад")):not(:contains("Сегодня,")):not(:contains("Вчера,"))',
+        selector: 'dd:last-of-type:not(:contains("назад")):not(:contains("Сегодня,")):not(:contains("Вчера,"))',
         remove: 'a',
         optional: true,
         filters: [

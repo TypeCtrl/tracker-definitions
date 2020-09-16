@@ -122,6 +122,7 @@ export const definition: TrackerDefinition = {
         cat: 'Movies/HD',
         desc: ' |- Отечественные фильмы в 1080р (2017)',
       },
+      { id: '820', cat: 'Movies/HD', desc: 'Зарубежные фильмы' },
       {
         id: '1346',
         cat: 'Movies/UHD',
@@ -159,6 +160,11 @@ export const definition: TrackerDefinition = {
       { id: '836', cat: 'Movies', desc: ' |- Фантастика' },
       { id: '832', cat: 'Movies', desc: ' |- Классика зарубежного кино' },
       {
+        id: '1608',
+        cat: 'Movies',
+        desc: ' |- Классика зарубежного кино (720p, 1080p)',
+      },
+      {
         id: '1317',
         cat: 'Movies',
         desc: ' |- Детские фильмы, сказки, сериалы',
@@ -175,6 +181,7 @@ export const definition: TrackerDefinition = {
         cat: 'Movies',
         desc: ' |- | - фильмы с переводом UKR',
       },
+      { id: '798', cat: 'Movies/HD', desc: 'Российские фильмы' },
       {
         id: '817',
         cat: 'Movies/HD',
@@ -297,6 +304,8 @@ export const definition: TrackerDefinition = {
       },
       { id: '12', cat: 'TV', desc: 'Развлекательные телепередачи' },
       { id: '13', cat: 'TV/Sport', desc: 'Спорт' },
+      { id: '1621', cat: 'TV/Sport', desc: ' |- Формула 1' },
+      { id: '1622', cat: 'TV/Sport', desc: ' |- Автоспорт' },
       {
         id: '726',
         cat: 'Books',
@@ -333,11 +342,6 @@ export const definition: TrackerDefinition = {
       { id: '1020', cat: 'Books', desc: ' |- Сварка, Пайка' },
       { id: '730', cat: 'Audio/Audiobook', desc: 'Аудиокниги' },
       {
-        id: '1223',
-        cat: 'Audio/Audiobook',
-        desc: ' |- Аудиокниги Учебная, Научная и Техническая литература',
-      },
-      {
         id: '776',
         cat: 'Audio/Audiobook',
         desc: ' |- Фантастика Фэнтези',
@@ -372,6 +376,11 @@ export const definition: TrackerDefinition = {
         id: '1315',
         cat: 'Audio/Audiobook',
         desc: ' |- Детская аудиокнига',
+      },
+      {
+        id: '1223',
+        cat: 'Audio/Audiobook',
+        desc: ' |- Аудиокниги Учебная, Научная и Техническая литература',
       },
       {
         id: '1177',
@@ -558,7 +567,6 @@ export const definition: TrackerDefinition = {
         cat: 'Audio/MP3',
         desc: ' |- Industrial, Noise, EBM, Dark Electro, Aggrotech,...',
       },
-      { id: '1458', cat: 'Audio/MP3', desc: ' |- Dance, Club, Hands Up' },
       {
         id: '1577',
         cat: 'Audio/MP3',
@@ -673,6 +681,7 @@ export const definition: TrackerDefinition = {
         desc: ' |- Разное (RC, Beta, Service Packs, Cracks)',
       },
       { id: '1395', cat: 'PC', desc: ' |- Linux, Unix, Mac и другие ОС' },
+      { id: '107', cat: 'PC', desc: 'Системные программы' },
       { id: '1405', cat: 'PC', desc: ' |- Драйверы' },
       {
         id: '1398',
@@ -706,6 +715,7 @@ export const definition: TrackerDefinition = {
         desc: ' |- WPI и прочие сборники программ',
       },
       { id: '1523', cat: 'PC', desc: ' |- LiveCD/DVD/USB' },
+      { id: '1505', cat: 'PC', desc: 'Безопасность' },
       { id: '201', cat: 'PC', desc: ' |- Антивирусы' },
       { id: '1506', cat: 'PC', desc: ' |- Фаерволы, брандмауэры' },
       {
@@ -715,6 +725,11 @@ export const definition: TrackerDefinition = {
       },
       { id: '1509', cat: 'PC', desc: ' |- Средства защиты информации' },
       { id: '1507', cat: 'PC', desc: ' |- Комплексная защита ПК' },
+      {
+        id: '108',
+        cat: 'PC',
+        desc: 'Программы для бизнеса, офиса, научной и проектной работы',
+      },
       { id: '217', cat: 'PC', desc: ' |- Офисные системы' },
       { id: '218', cat: 'PC', desc: ' |- Системы для бизнеса' },
       { id: '222', cat: 'PC', desc: ' |- Системы для научной работы' },
@@ -749,6 +764,11 @@ export const definition: TrackerDefinition = {
         desc: ' |- Распознавание текста, звука и синтез речи',
       },
       {
+        id: '1511',
+        cat: 'PC',
+        desc: 'Программирование и веб-разработка',
+      },
+      {
         id: '1512',
         cat: 'PC',
         desc: ' |- WYSIWYG-редакторы для веб-дизайна',
@@ -769,6 +789,11 @@ export const definition: TrackerDefinition = {
         desc: ' |- Системы управления базами данных (СУБД)',
       },
       { id: '1516', cat: 'PC', desc: ' |- Скрипты и шаблоны' },
+      {
+        id: '110',
+        cat: 'PC',
+        desc: 'Программы для работы с мультимедиа и 3D',
+      },
       {
         id: '966',
         cat: 'PC',
@@ -798,7 +823,6 @@ export const definition: TrackerDefinition = {
         cat: 'PC',
         desc: ' |- Разное (Программы для работы с мультимедиа и 3D)',
       },
-      { id: '1505', cat: 'PC', desc: ' |- Безопасность' },
       { id: '1287', cat: 'PC/Phone-Other', desc: 'Видео' },
       {
         id: '1307',
@@ -1091,17 +1115,11 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: [
-              '(.*)[CСcс]езон\\s*(\\d+)\\s*[CСcс]ери[ияй]\\s*(\\d+)\\s*(\\d+)\\s*(.*)',
-              '$1 S$2E$3-$4 rus $5',
-            ],
+            args: ['(.*)[CСcс]езон\\s*(\\d+)\\s*[CСcс]ери[ияй]\\s*(\\d+)\\s*(\\d+)\\s*(.*)', '$1 S$2E$3-$4 rus $5'],
           },
           {
             name: 're_replace',
-            args: [
-              '(.*)[CСcс]езон\\s*(\\d+)\\s*[CСcс]ери[ияй]\\s*(\\d+)\\s*из\\s*\\d+(.*)',
-              '$1 S$2E$3 rus $4',
-            ],
+            args: ['(.*)[CСcс]езон\\s*(\\d+)\\s*[CСcс]ери[ияй]\\s*(\\d+)\\s*из\\s*\\d+(.*)', '$1 S$2E$3 rus $4'],
           },
           {
             name: 're_replace',

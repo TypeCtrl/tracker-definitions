@@ -102,6 +102,12 @@ export const definition: TrackerDefinition = {
     { name: 'password', type: 'password', label: 'Password' },
     { name: 'staffpass', type: 'text', label: 'Staff Pass' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -156,7 +162,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
+        'table[border=1][cellspacing=0][cellpadding=5] > tbody > tr:has(a[href^="details.php?id="]){{ if .Config.freeleech }}:has(img[src="pic/freedownload.gif"]){{ else }}{{ end }}',
     },
     fields: {
       category: {
@@ -195,6 +201,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

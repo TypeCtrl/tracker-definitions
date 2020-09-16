@@ -8,12 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://piratbit.top/'],
-  legacylinks: [
-    'https://pb.wtf/',
-    'https://piratbit.pw/',
-    'https://piratbit.ml/',
-    'http://piratbit.top/',
-  ],
+  legacylinks: ['https://pb.wtf/', 'https://piratbit.pw/', 'https://piratbit.ml/', 'http://piratbit.top/'],
   caps: {
     categorymappings: [
       {
@@ -1773,10 +1768,7 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: [
-              '(.+)\\s+[CСcс]езон\\s+(\\d+)\\s+[CСcс]ери[ия]\\s+(\\d+)\\s+из\\s+\\d+(.+)',
-              '$1 S$2E$3 rus $4',
-            ],
+            args: ['(.+)\\s+[CСcс]езон\\s+(\\d+)\\s+[CСcс]ери[ия]\\s+(\\d+)\\s+из\\s+\\d+(.+)', '$1 S$2E$3 rus $4'],
           },
           {
             name: 're_replace',

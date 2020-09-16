@@ -59,8 +59,7 @@ export const definition: TrackerDefinition = {
       uid: 0,
     },
     rows: {
-      selector:
-        '.ctable_content_no_pad > table > tbody > tr:not([align]):not(:nth-last-child(-n+3))',
+      selector: '.ctable_content_no_pad > table > tbody > tr:not([align]):not(:nth-last-child(-n+3))',
       after: 1,
       dateheaders: {
         selector: "[align='left']",

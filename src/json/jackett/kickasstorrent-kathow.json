@@ -112,7 +112,6 @@
         "selector": "td:nth-child(5)",
         "filters": [{ "name": "replace", "args": ["N/A", "0"] }]
       },
-      "description": { "selector": "td:nth-child(1) > div > div > span" },
       "downloadvolumefactor": { "text": 0 },
       "uploadvolumefactor": { "text": 1 }
     }

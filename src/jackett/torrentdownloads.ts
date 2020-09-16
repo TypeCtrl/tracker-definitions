@@ -73,8 +73,7 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
     },
     rows: {
-      selector:
-        'div.inner_container > div:has(p:has(a[href^="/torrent/"])):not(:has(span.__cf_email__))',
+      selector: 'div.inner_container > div:has(p:has(a[href^="/torrent/"])):not(:has(span.__cf_email__))',
     },
     fields: {
       category: {

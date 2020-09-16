@@ -93,8 +93,7 @@ export const definition: TrackerDefinition = {
       incldead: 1,
     },
     rows: {
-      selector:
-        'table.mainouter{{ if .Config.freeleech }}:has(img[src="pic/freedlfsu.gif"]){{ else }}{{ end }}',
+      selector: 'table.mainouter{{ if .Config.freeleech }}:has(img[src="pic/freedlfsu.gif"]){{ else }}{{ end }}',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

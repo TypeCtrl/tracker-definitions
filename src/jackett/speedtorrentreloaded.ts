@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'speedtorrentreloaded',
   name: 'SpeedTorrent Reloaded',
-  description:
-    'SpeedTorrent Reloaded is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'SpeedTorrent Reloaded is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'de-DE',
   type: 'private',
   encoding: 'UTF-8',

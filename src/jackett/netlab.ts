@@ -58,12 +58,11 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
     },
     rows: {
-      selector:
-        'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       category: {
@@ -111,6 +110,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: { text: 1 },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.15 },
     },
   },
   source: 'jackett',

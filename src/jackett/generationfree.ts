@@ -231,8 +231,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: {
-        text:
-          '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_original }}{{end}}',
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_original }}{{end}}',
       },
       category: {
         selector: 'a[href^="torrents.php?cat="]',

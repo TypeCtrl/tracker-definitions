@@ -71,8 +71,7 @@ export const definition: TrackerDefinition = {
       active: 0,
     },
     rows: {
-      selector:
-        'div.b-content > table.lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
+      selector: 'div.b-content > table.lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
     },
     fields: {
       download: {

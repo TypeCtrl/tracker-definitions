@@ -70,8 +70,7 @@ export const definition: TrackerDefinition = {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
     {
       name: 'sort',
@@ -104,7 +103,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       page: 'torrents',
       category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0;{{end}}',
-      search: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}',
+      search: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
@@ -151,8 +150,9 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       grabs: { selector: 'td:nth-child(10)' },
-      downloadvolumefactor: { text: 0 },
+      downloadvolumefactor: { text: 1 },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

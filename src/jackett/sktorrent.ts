@@ -69,8 +69,7 @@ export const definition: TrackerDefinition = {
     },
     keywordsfilters: [{ name: 'diacritics', args: 'replace' }],
     rows: {
-      selector:
-        'table.lista > tbody > tr > td > table.lista > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table.lista > tbody > tr > td > table.lista > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       title: {

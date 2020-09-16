@@ -70,8 +70,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'append', args: '&usetoken=1' }],
       },
       download: {
-        text:
-          '{{if .Config.usetoken}}{{ .Result.download-usetoken }}{{else}}{{ .Result.download-regular }}{{end}}',
+        text: '{{if .Config.usetoken}}{{ .Result.download-usetoken }}{{else}}{{ .Result.download-regular }}{{end}}',
       },
       title: {
         selector: 'div.group_info',
@@ -80,10 +79,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['\n', ''] },
           {
             name: 're_replace',
-            args: [
-              '^(.+)                                                                            (.+)',
-              '$2-$1',
-            ],
+            args: ['^(.+)                                                                            (.+)', '$2-$1'],
           },
           { name: 'replace', args: ['                         ', ' '] },
           {

@@ -35,6 +35,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -52,8 +58,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -87,17 +92,16 @@ export const definition: TrackerDefinition = {
       { name: 'replace', args: ['-', ''] },
     ],
     inputs: {
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
       page: 'torrents',
       category: '{{ range .Categories }}{{.}};{{end}}',
-      options: 0,
+      options: '{{ if .Config.freeleech }}5{{ else }}0{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table > tbody > tr > td > table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="])',
+      selector: 'table > tbody > tr > td > table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="])',
     },
     fields: {
       category: {
@@ -161,6 +165,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 0.9 },
     },
   },
   source: 'jackett',

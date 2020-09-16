@@ -35,6 +35,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'seedbox',
       type: 'checkbox',
       label: 'Use SeedBox Download Link',
@@ -74,14 +80,13 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      incldead: '1',
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       search: '{{ .Keywords }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table[border="1"][cellspacing="0"][cellpadding="5"] tr:has(a[href^="download.php?id="])',
+      selector: 'table[border="1"][cellspacing="0"][cellpadding="5"] tr:has(a[href^="download.php?id="])',
     },
     fields: {
       category: {
@@ -103,8 +108,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        text:
-          '{{ if .Config.seedbox }}{{ .Result.download2 }}{{else}}{{ .Result.download1 }}{{end}}',
+        text: '{{ if .Config.seedbox }}{{ .Result.download2 }}{{ else }}{{ .Result.download1 }}{{ end }}',
       },
       date: {
         selector: 'td:nth-child(4)',
@@ -117,8 +121,18 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
-      downloadvolumefactor: { text: 1 },
-      uploadvolumefactor: { text: 1 },
+      downloadvolumefactor: {
+        case: { 'img[src="pic/freeleech.png"]': 0, '*': 1 },
+      },
+      uploadvolumefactor: {
+        case: {
+          'img[src="gold.png"]': 2,
+          'img[src="silver.png"]': 1.5,
+          'img[src="bronze.png"]': 1.25,
+          '*': 1,
+        },
+      },
+      minimumratio: { text: 0.7 },
     },
   },
   source: 'jackett',

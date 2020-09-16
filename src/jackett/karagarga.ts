@@ -129,8 +129,7 @@ export const definition: TrackerDefinition = {
         optional: true,
       },
       description: {
-        text:
-          '{{ .Result.subs }} {{ .Result.genre }}{{ if .Result.mom }} Current MoM{{ else }}{{ end }}',
+        text: '{{ .Result.subs }} {{ .Result.genre }}{{ if .Result.mom }} Current MoM{{ else }}{{ end }}',
       },
       downloadvolumefactor: {
         case: {

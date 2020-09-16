@@ -50,8 +50,7 @@ export const definition: TrackerDefinition = {
   },
   search: {
     inputs: {
-      $raw:
-        'searchsubmit=1&{{range .Categories}}filter_cat[]={{.}}&{{end}}searchstr={{ .Query.Keywords }}',
+      $raw: 'searchsubmit=1&{{range .Categories}}filter_cat[]={{.}}&{{end}}searchstr={{ .Query.Keywords }}',
     },
     rows: { selector: 'table#torrent_table tr.torrent' },
     fields: {

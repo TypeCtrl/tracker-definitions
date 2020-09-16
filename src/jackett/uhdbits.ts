@@ -35,6 +35,26 @@ export const definition: TrackerDefinition = {
       default:
         'Only fill in the <b>2FA code</b> box if you have enabled <b>2FA</b> on the UHDBits Web Site. Otherwise just leave it empty.',
     },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'time',
+      options: { time: 'created', seeders: 'seeders', size: 'size' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   login: {
     path: 'login.php',
@@ -53,11 +73,12 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
-      searchstr: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      searchstr: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       imdbid: '{{ .Query.IMDBIDShort }}',
       tags_type: 1,
-      order_by: 'time',
-      order_way: 'desc',
+      freetorrent: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      order_by: '{{ .Config.sort }}',
+      order_way: '{{ .Config.type }}',
       action: 'advanced',
       searchsubmit: 1,
     },
@@ -132,6 +153,7 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'strong.blink_me:contains("2x")': 2, '*': 1 },
       },
+      minimumratio: { text: 0.6 },
     },
   },
   source: 'jackett',

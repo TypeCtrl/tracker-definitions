@@ -49,6 +49,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -85,11 +91,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{ range .Categories }}cat[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       searchOpened: 1,
-      searchWhat: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
-      filterOptions: 1,
+      searchWhat: '{{ if .Query.IMDBID }}1{{ else }}0{{ end }}',
+      filterOptions: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       orderby: '{{ .Config.sort }}',
       ordertype: '{{ .Config.type }}',
     },
@@ -131,13 +136,15 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         optional: true,
         selector: 'b:has(img[src="templates/default/images/header/arrowdown.gif"])',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+\\.*\\d*)' }],
       },
       uploadvolumefactor: {
         optional: true,
         selector: 'b:has(img[src="templates/default/images/header/arrowup.gif"])',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
+      minimumratio: { text: 0.6 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

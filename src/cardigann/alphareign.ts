@@ -60,8 +60,7 @@ export const definition: TrackerDefinition = {
             'TV/HD',
           'a[class="label label-primary"]:contains("video") + a[class="label label-success"]:contains("show") + a[class="label label-info"]:contains("SD")':
             'TV/SD',
-          'a[class="label label-primary"]:contains("video") + a[class="label label-success"]:contains("show")':
-            'TV',
+          'a[class="label label-primary"]:contains("video") + a[class="label label-success"]:contains("show")': 'TV',
           '*': 'Other',
         },
       },

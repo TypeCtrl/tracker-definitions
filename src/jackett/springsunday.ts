@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'springsunday',
   name: 'SpringSunday',
-  description:
-    'SpringSunday (SSD) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
+  description: 'SpringSunday (SSD) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
@@ -61,8 +60,7 @@ export const definition: TrackerDefinition = {
       name: 'info_tpp',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {

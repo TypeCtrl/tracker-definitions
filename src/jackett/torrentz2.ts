@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'torrentz2',
   name: 'Torrentz2',
-  description:
-    'Torrentz2 is a Public torrent meta-search engine combining results from dozens of torrent sites',
+  description: 'Torrentz2 is a Public torrent meta-search engine combining results from dozens of torrent sites',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
@@ -111,8 +110,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{if .Config.filter-verified }}verified{{else}}search{{end}}{{ re_replace .Config.sort "_" "" }}',
+        path: '{{if .Config.filter-verified }}verified{{else}}search{{end}}{{ re_replace .Config.sort "_" "" }}',
       },
     ],
     inputs: {

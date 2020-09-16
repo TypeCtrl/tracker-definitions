@@ -8,11 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'WINDOWS-1252',
   followredirect: true,
-  links: [
-    'https://ilcorsaronero.link/',
-    'https://ilcorsaronero.fun/',
-    'https://ilcorsaronero.pro/',
-  ],
+  links: ['https://ilcorsaronero.link/', 'https://ilcorsaronero.fun/', 'https://ilcorsaronero.pro/'],
   legacylinks: [
     'https://ilcorsaronero.live/',
     'https://ilcorsaronero.vip/',

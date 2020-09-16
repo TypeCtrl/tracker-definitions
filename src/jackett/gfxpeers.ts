@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'gfxpeers',
   name: 'GFXPeers',
-  description:
-    'GFXPeers is a ratio-based torrent tracker for all things graphic design and visual effects',
+  description: 'GFXPeers is a ratio-based torrent tracker for all things graphic design and visual effects',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

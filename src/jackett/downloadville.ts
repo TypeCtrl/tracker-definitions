@@ -156,8 +156,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -167,11 +166,9 @@ export const definition: TrackerDefinition = {
     inputs: { uid: '{{ .Config.uid }}', pwd: '{{ .Config.pwd }}' },
     error: [
       {
-        selector:
-          'form[action="index.php?page=login&returnto=index.php"] table tr:nth-of-type(2) td',
+        selector: 'form[action="index.php?page=login&returnto=index.php"] table tr:nth-of-type(2) td',
         message: {
-          selector:
-            'form[action="index.php?page=login&returnto=index.php"] table tr:nth-of-type(2) td span',
+          selector: 'form[action="index.php?page=login&returnto=index.php"] table tr:nth-of-type(2) td span',
         },
       },
     ],
@@ -196,9 +193,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'tracker/index.php' }],
     headers: {
-      Referer: [
-        'https://downloadville.net/tracker/index.php?page=torrents&search=fake_referer&active=0',
-      ],
+      Referer: ['https://downloadville.net/tracker/index.php?page=torrents&search=fake_referer&active=0'],
     },
     inputs: {
       page: 'torrents',
@@ -211,8 +206,7 @@ export const definition: TrackerDefinition = {
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table > tbody > tr > td > table.lista > tbody > tr:has(td[onmouseover="this.className=\'post\'"])',
+      selector: 'table > tbody > tr > td > table.lista > tbody > tr:has(td[onmouseover="this.className=\'post\'"])',
     },
     fields: {
       title_phase1: {
@@ -223,16 +217,12 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 're_replace',
-            args: [
-              '[\\.\\s\\[\\-][Mm][Uu][Ll][Tt][Ii][\\.\\s\\]\\-]',
-              '.{{ .Config.multilanguage }}.',
-            ],
+            args: ['[\\.\\s\\[\\-][Mm][Uu][Ll][Tt][Ii][\\.\\s\\]\\-]', '.{{ .Config.multilanguage }}.'],
           },
         ],
       },
       title: {
-        text:
-          '{{if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_phase1 }}{{end}}',
+        text: '{{if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_phase1 }}{{end}}',
       },
       details: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',

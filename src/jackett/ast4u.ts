@@ -124,8 +124,7 @@ export const definition: TrackerDefinition = {
           'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) > b:nth-child(3), a[href*="&todlers=1"]',
       },
       date: {
-        selector:
-          'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(5), td:nth-child(5):has(br)',
+        selector: 'td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(5), td:nth-child(5):has(br)',
         filters: [
           { name: 'replace', args: [' ', ''] },
           { name: 'append', args: ' +2:00' },

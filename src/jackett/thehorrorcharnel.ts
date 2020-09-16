@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'thehorrorcharnel',
   name: 'The Horror Charnel',
-  description:
-    'The Horror Charnel (THC) is a Private Torrent Tracker for HORROR / CULT / SLEAZE / SCI FI MOVIES',
+  description: 'The Horror Charnel (THC) is a Private Torrent Tracker for HORROR / CULT / SLEAZE / SCI FI MOVIES',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -102,6 +101,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -129,8 +134,7 @@ export const definition: TrackerDefinition = {
     },
     error: [
       {
-        selector:
-          'div#base_content > table.mainouter > tbody > tr > td.outer > table.main > tbody > tr > td:has(h2)',
+        selector: 'div#base_content > table.mainouter > tbody > tr > td.outer > table.main > tbody > tr > td:has(h2)',
       },
     ],
     test: { path: 'usercp.php' },
@@ -148,8 +152,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
-      incldead: 1,
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -202,6 +206,8 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="free.gif"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.65 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

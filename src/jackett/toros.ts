@@ -73,8 +73,7 @@ export const definition: TrackerDefinition = {
       details: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
       download: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
       date: {
-        selector:
-          'td:nth-child(2):not(:contains("ago")):not(:contains("Yesterday")):not(:contains("Today"))',
+        selector: 'td:nth-child(2):not(:contains("ago")):not(:contains("Yesterday")):not(:contains("Today"))',
         optional: true,
         filters: [{ name: 'dateparse', args: '2 Jan' }],
       },

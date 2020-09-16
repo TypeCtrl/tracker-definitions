@@ -31,9 +31,7 @@ export const definition: TrackerDefinition = {
   ],
   search: {
     headers: {
-      Accept: [
-        'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-      ],
+      Accept: ['text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'],
     },
     keywordsfilters: [{ name: 're_replace', args: [' ', '-'] }, { name: 'tolower' }],
     paths: [

@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'torlock',
   name: 'Torlock',
-  description:
-    'Torlock is a torrent search site that lists verified torrents only for TV series and movies',
+  description: 'Torlock is a torrent search site that lists verified torrents only for TV series and movies',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
@@ -108,8 +107,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       date: {
-        selector:
-          'td:nth-child(2):not(:contains("Today")):not(:contains("Yesterday")):not(:contains("/"))',
+        selector: 'td:nth-child(2):not(:contains("Today")):not(:contains("Yesterday")):not(:contains("/"))',
         optional: true,
         filters: [{ name: 're_replace', args: ['(min|mins)', 'minutes'] }, { name: 'timeago' }],
       },

@@ -453,8 +453,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td.forumtopics span.leech' },
       grabs: { selector: 'td.forumposts span.complet' },
       date: {
-        selector:
-          'td.forumdetails span.forum-descriptions:not(:contains("Сегодня")):not(:contains("Вчера"))',
+        selector: 'td.forumdetails span.forum-descriptions:not(:contains("Сегодня")):not(:contains("Вчера"))',
         optional: true,
         filters: [
           { name: 'regexp', args: '(\\d{2} \\D{3} \\d{4}, \\d{2}:\\d{2})' },

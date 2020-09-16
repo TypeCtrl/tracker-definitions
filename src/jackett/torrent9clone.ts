@@ -8,11 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://www.torrent9.so/',
-    'https://torrent9.unblocked.rest/',
-    'https://torrent9.unblockninja.com/',
-  ],
+  links: ['https://www.torrent9.so/', 'https://torrent9.unblocked.rest/', 'https://torrent9.unblockninja.com/'],
   legacylinks: [
     'https://www.torrents9.pw/',
     'https://www.torrent9.ch/',

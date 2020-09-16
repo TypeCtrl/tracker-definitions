@@ -33,6 +33,12 @@
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
     {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
+    {
       "name": "seedbox",
       "type": "checkbox",
       "label": "Use SeedBox Download Link",
@@ -72,7 +78,7 @@
     "paths": [{ "path": "browse.php" }],
     "inputs": {
       "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
-      "incldead": "1",
+      "incldead": "{{ if .Config.freeleech }}3{{ else }}1{{ end }}",
       "search": "{{ .Keywords }}",
       "sort": "{{ .Config.sort }}",
       "type": "{{ .Config.type }}"
@@ -100,7 +106,7 @@
         "attribute": "href"
       },
       "download": {
-        "text": "{{ if .Config.seedbox }}{{ .Result.download2 }}{{else}}{{ .Result.download1 }}{{end}}"
+        "text": "{{ if .Config.seedbox }}{{ .Result.download2 }}{{ else }}{{ .Result.download1 }}{{ end }}"
       },
       "date": {
         "selector": "td:nth-child(4)",
@@ -113,8 +119,18 @@
       },
       "seeders": { "selector": "td:nth-child(9)" },
       "leechers": { "selector": "td:nth-child(10)" },
-      "downloadvolumefactor": { "text": 1 },
-      "uploadvolumefactor": { "text": 1 }
+      "downloadvolumefactor": {
+        "case": { "img[src=\"pic/freeleech.png\"]": 0, "*": 1 }
+      },
+      "uploadvolumefactor": {
+        "case": {
+          "img[src=\"gold.png\"]": 2,
+          "img[src=\"silver.png\"]": 1.5,
+          "img[src=\"bronze.png\"]": 1.25,
+          "*": 1
+        }
+      },
+      "minimumratio": { "text": 0.7 }
     }
   },
   "source": "jackett"

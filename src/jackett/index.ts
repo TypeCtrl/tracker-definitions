@@ -190,6 +190,9 @@ export const jbwtorrents = jjbwtorrents;
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
 
+import { definition as jjcarphunter } from './carphunter';
+export const jcarphunter = jjcarphunter;
+
 import { definition as jjcartoonchaos } from './cartoonchaos';
 export const jcartoonchaos = jjcartoonchaos;
 
@@ -781,6 +784,9 @@ export const jpctorrent = jjpctorrent;
 import { definition as jjpeersfm } from './peersfm';
 export const jpeersfm = jjpeersfm;
 
+import { definition as jjpier720 } from './pier720';
+export const jpier720 = jjpier720;
+
 import { definition as jjpiratadigital } from './piratadigital';
 export const jpiratadigital = jjpiratadigital;
 
@@ -1362,6 +1368,7 @@ export const definitions = [
   jjbtsow,
   jjbwtorrents,
   jjcarpathians,
+  jjcarphunter,
   jjcartoonchaos,
   jjcasatorrent,
   jjcasstudiotv,
@@ -1559,6 +1566,7 @@ export const definitions = [
   jjparnuxi,
   jjpctorrent,
   jjpeersfm,
+  jjpier720,
   jjpiratadigital,
   jjpiratbit,
   jjpiratbitl,

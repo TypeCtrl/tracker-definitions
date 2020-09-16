@@ -70,10 +70,7 @@ export const definition: TrackerDefinition = {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
     },
-    error: [
-      { selector: 'td.embedded:contains("Virhe")' },
-      { selector: 'td.embedded:contains("epäonnistui")' },
-    ],
+    error: [{ selector: 'td.embedded:contains("Virhe")' }, { selector: 'td.embedded:contains("epäonnistui")' }],
     test: { path: '/', selector: 'a[href="ulos.php"]' },
   },
   search: {

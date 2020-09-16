@@ -23,8 +23,7 @@ export const definition: TrackerDefinition = {
     {
       name: 'info',
       type: 'info',
-      default:
-        'ExtraTorrent-cd does not use categories. In your software Indexer settings, set the category to 7000.',
+      default: 'ExtraTorrent-cd does not use categories. In your software Indexer settings, set the category to 7000.',
     },
   ],
   search: {
@@ -47,8 +46,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector:
-          'td:nth-last-of-type(5):not(:contains(":")):not(:contains("Y-day-")):not(:contains("Today-"))',
+        selector: 'td:nth-last-of-type(5):not(:contains(":")):not(:contains("Y-day-")):not(:contains("Today-"))',
         optional: true,
         filters: [
           { name: 'replace', args: [' ', '-'] },

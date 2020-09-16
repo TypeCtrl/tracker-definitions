@@ -116,7 +116,9 @@
           { "name": "replace", "args": ["Uploaded ", ""] },
           { "name": "timeago" }
         ]
-      }
+      },
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 86400 }
     }
   },
   "source": "jackett"

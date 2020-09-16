@@ -99,9 +99,8 @@ export const definition: TrackerDefinition = {
     ],
     inputs: {
       $raw: '{{ range .Categories }}category[]={{.}}&{{end}}',
-      name:
-        '{{ if .Query.IMDBID }}http://www.imdb.com/title/{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      imdb_search: '{{ if .Query.IMDBID }}yes{{else}}{{end}}',
+      name: '{{ if .Query.IMDBID }}http://www.imdb.com/title/{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      imdb_search: '{{ if .Query.IMDBID }}yes{{ else }}{{ end }}',
       k: 'yes',
       tipuska: 1,
     },
@@ -140,8 +139,7 @@ export const definition: TrackerDefinition = {
       },
       banner: {
         optional: true,
-        selector:
-          'img[src="pic/borito.png"], a[href^="details.php?id="] > b[title*="Torrent neve:"]',
+        selector: 'img[src="pic/borito.png"], a[href^="details.php?id="] > b[title*="Torrent neve:"]',
         attribute: 'title',
         filters: [{ name: 'regexp', args: "src='(.*?)'" }],
       },

@@ -221,8 +221,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'span.leech' },
       grabs: { selector: 'span.complet' },
       date: {
-        selector:
-          'td:last-of-type p:first-of-type:not(:contains("Сегодня")):not(:contains("Вчера"))',
+        selector: 'td:last-of-type p:first-of-type:not(:contains("Сегодня")):not(:contains("Вчера"))',
         optional: true,
         filters: [
           { name: 'replace', args: ['янв', 'Jan'] },

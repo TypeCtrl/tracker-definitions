@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'ettv',
   name: 'ETTV',
-  description:
-    'ETTV is a Public torrent site for TV / MOVIES, home of the  ETTV, ETHD and DTOne groups.',
+  description: 'ETTV is a Public torrent site for TV / MOVIES, home of the  ETTV, ETHD and DTOne groups.',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',

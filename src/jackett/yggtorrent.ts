@@ -323,8 +323,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title_phase1: {
-        text:
-          '{{ if .Config.filter_title }}{{ .Result.title_filtered }}{{ else }}{{ .Result.title_normal }}{{ end }}',
+        text: '{{ if .Config.filter_title }}{{ .Result.title_filtered }}{{ else }}{{ .Result.title_normal }}{{ end }}',
       },
       title_multilang: {
         text: '{{ .Result.title_phase1 }}',
@@ -336,8 +335,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title_phase2: {
-        text:
-          '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_phase1 }}{{end}}',
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_phase1 }}{{end}}',
       },
       title_vostfr: {
         text: '{{ .Result.title_phase2 }}',
@@ -353,8 +351,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title_phase3: {
-        text:
-          '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{else}}{{ .Result.title_phase2 }}{{end}}',
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{else}}{{ .Result.title_phase2 }}{{end}}',
       },
       title_anime: {
         text: '{{ .Result.title_phase3 }}',
@@ -366,8 +363,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: {
-        text:
-          '{{ if .Config.enhancedAnime }}{{ .Result.title_anime }}{{else}}{{ .Result.title_phase3 }}{{end}}',
+        text: '{{ if .Config.enhancedAnime }}{{ .Result.title_anime }}{{else}}{{ .Result.title_phase3 }}{{end}}',
       },
       details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       category: { selector: ':nth-child(1) > div.hidden' },

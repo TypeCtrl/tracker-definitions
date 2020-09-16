@@ -80,8 +80,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}search/all/{{ .Keywords }}/{{ .Config.sort }}/1/{{else}}/latest100{{end}}',
+        path: '{{ if .Keywords }}search/all/{{ .Keywords }}/{{ .Config.sort }}/1/{{else}}/latest100{{end}}',
       },
     ],
     keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],

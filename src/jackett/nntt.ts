@@ -1085,8 +1085,7 @@ export const definition: TrackerDefinition = {
       {
         id: '720',
         cat: 'Other',
-        desc:
-          "Сцены из фильмов и Сайтрипы с русскими актрисами / Russian Movie Scenes &amp; SiteRip's",
+        desc: "Сцены из фильмов и Сайтрипы с русскими актрисами / Russian Movie Scenes &amp; SiteRip's",
       },
       {
         id: '691',

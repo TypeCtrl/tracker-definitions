@@ -107,8 +107,7 @@ export const definition: TrackerDefinition = {
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table.mainouter tbody tr table[width="85%"] > tbody > tr:has(a[href^="download.php?torrent="])',
+      selector: 'table.mainouter tbody tr table[width="85%"] > tbody > tr:has(a[href^="download.php?torrent="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

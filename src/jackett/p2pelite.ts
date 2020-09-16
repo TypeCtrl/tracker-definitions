@@ -60,6 +60,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -101,7 +107,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table[border="1"][cellspacing="0"][cellpadding="5"]  > tbody > tr:has(a[href^="download.php?torrent="])',
+        'table[border="1"][cellspacing="0"][cellpadding="5"]  > tbody > tr:has(a[href^="download.php?torrent="]){{ if .Config.freeleech }}:has(a.info:contains("[FREE]")){{ else }}{{ end }}',
     },
     fields: {
       category: {
@@ -147,6 +153,7 @@ export const definition: TrackerDefinition = {
         case: { 'a.info:contains("[FREE]")': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.5 },
     },
   },
   source: 'jackett',

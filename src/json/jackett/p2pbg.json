@@ -101,7 +101,7 @@
     "inputs": {
       "page": "torrents",
       "category": "{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0;{{end}}",
-      "search": "{{ if .Keywords }}{{ .Keywords }}{{else}}{{end}}",
+      "search": "{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ end }}",
       "active": 0,
       "order": "{{ .Config.sort }}",
       "by": "{{ .Config.type }}"
@@ -148,8 +148,9 @@
       "seeders": { "selector": "td:nth-child(8)" },
       "leechers": { "selector": "td:nth-child(9)" },
       "grabs": { "selector": "td:nth-child(10)" },
-      "downloadvolumefactor": { "text": 0 },
-      "uploadvolumefactor": { "text": 1 }
+      "downloadvolumefactor": { "text": 1 },
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 1 }
     }
   },
   "source": "jackett"

@@ -84,6 +84,12 @@ export const definition: TrackerDefinition = {
         '<ol><li>Only the English Classic profile is supported.<li>Make sure to set the <b>Torrent Listing (Listeleme Biçimi)</b> option in your profile to <b>Classic (Klasik)</b><li>And set the <b>Language (Dil)</b> to <b>English</b><li>Using the <i>Modern</i> theme will prevent results, and using <i>Turkish</i> will prevent upload dates.</ol>',
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -130,7 +136,8 @@ export const definition: TrackerDefinition = {
       'sortOptions[sortOrder]': '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table#torrents_table_classic > tbody > tr:has(td.torrent_name)',
+      selector:
+        'table#torrents_table_classic > tbody > tr:has(td.torrent_name){{ if .Config.freeleech }}:has(img[src$="/freedownload.gif"]){{ else }}{{ end }}',
     },
     fields: {
       category: {
@@ -171,14 +178,15 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[title="FREE!"]': 0,
-          'img[title="Download Multiplier: 0.5"]': 0.5,
+          'img[src$="/freedownload.gif"]': 0,
+          'img[src$="/silverdownload.gif"]': 0.5,
           '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'img[title="Upload Multiplier: 2"]': 2, '*': 1 },
+        case: { 'img[src$="/torrent_x2.png"]': 2, '*': 1 },
       },
+      minimumratio: { text: 0.5 },
     },
   },
   source: 'jackett',

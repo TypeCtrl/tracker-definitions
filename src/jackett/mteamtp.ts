@@ -86,8 +86,7 @@ export const definition: TrackerDefinition = {
       name: 'info_tpp',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -112,26 +111,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path: 'torrents.php',
-        categories: [
-          '!',
-          410,
-          429,
-          424,
-          430,
-          426,
-          437,
-          431,
-          432,
-          436,
-          425,
-          433,
-          411,
-          412,
-          413,
-          406,
-          408,
-          434,
-        ],
+        categories: ['!', 410, 429, 424, 430, 426, 437, 431, 432, 436, 425, 433, 411, 412, 413, 406, 408, 434],
       },
       {
         path: 'adult.php',

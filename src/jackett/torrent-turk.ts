@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'torrent-turk',
   name: 'TOrrent-tuRK',
-  description:
-    'TOrrent-tuRK (TORK) is a Turkish Private Torrent Tracker for HD MOVIES / TV / GENERAL',
+  description: 'TOrrent-tuRK (TORK) is a Turkish Private Torrent Tracker for HD MOVIES / TV / GENERAL',
   language: 'tr-TR',
   type: 'private',
   encoding: 'UTF-8',
@@ -71,6 +70,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'info',
       type: 'info',
       label: 'Layout',
@@ -131,13 +136,13 @@ export const definition: TrackerDefinition = {
       $raw: '{{ range .Categories }}cid[]={{.}}&{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
-      searchin: 'title',
       'sortOptions[sortBy]': '{{ .Config.sort }}',
       'sortOptions[sortOrder]': '{{ .Config.type }}',
     },
     error: [{ selector: 'div.error:not(:contains("Hiçbir sonuç bulunamadı."))' }],
     rows: {
-      selector: 'table#torrents_table_classic > tbody > tr:has(td.torrent_name)',
+      selector:
+        'table#torrents_table_classic > tbody > tr:has(td.torrent_name){{ if .Config.freeleech }}:has(img[title="FREE!"]){{ else }}{{ end }}',
     },
     fields: {
       title: { selector: 'a[href*="?p=torrents&pid=10&action=details"]' },
@@ -181,6 +186,7 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'img[title="Upload Multiplier: 2"]': 2, '*': 1 },
       },
+      minimumratio: { text: 0.5 },
     },
   },
   source: 'jackett',

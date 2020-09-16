@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'proaudiotorrents',
   name: 'ProAudioTorrents',
-  description:
-    'ProAudioTorrents (PAT) is a Private Torrent Tracker for AUDIO SOFTWARE / SAMPLES / TUTORIALS / ETC',
+  description: 'ProAudioTorrents (PAT) is a Private Torrent Tracker for AUDIO SOFTWARE / SAMPLES / TUTORIALS / ETC',
   language: 'en-EN',
   type: 'private',
   encoding: 'UTF-8',
@@ -117,6 +116,8 @@ export const definition: TrackerDefinition = {
         remove: 'a',
         filters: [{ name: 'replace', args: ['Uploaded ', ''] }, { name: 'timeago' }],
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 86400 },
     },
   },
   source: 'jackett',

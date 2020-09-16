@@ -11,31 +11,24 @@ export const definition: TrackerDefinition = {
   links: ['https://ultimatewrestlingtorrents.com/'],
   caps: {
     categorymappings: [
-      { id: '3', cat: 'Audio', desc: 'Audio' },
       { id: '14', cat: 'Audio/Audiobook', desc: 'Audiobooks' },
       { id: '16', cat: 'Audio', desc: 'Music Audio' },
       { id: '13', cat: 'Audio', desc: 'Podcasts' },
       { id: '15', cat: 'Audio', desc: 'Wrestling Themes' },
-      { id: '5', cat: 'Books/Ebook', desc: 'EbooksAndMagazines' },
       { id: '29', cat: 'Books/Ebook', desc: 'Ebooks' },
       { id: '28', cat: 'Books/Magazines', desc: 'Magazines' },
       { id: '30', cat: 'Books/Other', desc: 'Misc' },
       { id: '18', cat: 'Books/Other', desc: 'Wrestling Newsletters' },
-      { id: '1', cat: 'TV/Sport', desc: 'Impact Wrestling' },
       {
         id: '34',
         cat: 'TV/Sport',
         desc: 'Impact Wrestling PPV / One Nig',
       },
-      { id: '2', cat: 'TV', desc: 'Videos' },
       { id: '9', cat: 'TV/Sport', desc: 'Weekly' },
-      { id: '4', cat: 'TV/Sport', desc: 'WWE' },
       { id: '33', cat: 'TV/Sport', desc: 'Xplosion' },
       { id: '32', cat: 'TV/Sport', desc: 'DVDRips' },
       { id: '31', cat: 'TV/Sport', desc: 'DVDs' },
-      { id: '6', cat: 'TV/Sport', desc: 'Packs And DVDs' },
       { id: '20', cat: 'TV/Sport', desc: 'Packs' },
-      { id: '7', cat: 'PC', desc: 'Programs And Games' },
       { id: '19', cat: 'PC', desc: 'Computer Programs' },
       { id: '35', cat: 'PC/Games', desc: 'Games' },
       { id: '36', cat: 'PC/Phone-Other', desc: 'Mobile Apps' },
@@ -68,6 +61,12 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
     {
       name: 'sort',
       type: 'select',
@@ -112,10 +111,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw:
+        'cats3[]=14&cats3[]=16&cats3[]=13&cats3[]=15&cats5[]=29&cats5[]=28&cats5[]=30&cats5[]=18&cats1[]=34&cats1[]=9&cats1[]=33&cats6[]=32&cats6[]=31&cats6[]=20&cats7[]=19&cats7[]=35&cats7[]=36&cats2[]=37&cats2[]=38&cats2[]=12&cats2[]=40&cats2[]=44&cats2[]=11&cats2[]=42&cats2[]=43&cats2[]=21&cats2[]=22&cats2[]=41&cats2[]=10&cats4[]=26&cats4[]=24&cats4[]=27&cats4[]=17&cats4[]=23&cats4[]=25',
       search: '{{.Keywords}}',
       searchin: 'title',
       incldead: 1,
+      only_free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -161,6 +162,8 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { case: { '*': 1 } },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

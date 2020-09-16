@@ -144,6 +144,12 @@ export const definition: TrackerDefinition = {
       default:
         "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
     },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
   ],
   login: {
     method: 'cookie',
@@ -152,10 +158,18 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [
-      { path: 'torrents/?filename={{ .Keywords }}' },
-      { path: 'torrents/?filename={{ .Keywords }}&page=2' },
-      { path: 'torrents/?filename={{ .Keywords }}&page=3' },
-      { path: 'torrents/?filename={{ .Keywords }}&page=4' },
+      {
+        path: 'torrents/?filename={{ .Keywords }}&freeleech={{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      },
+      {
+        path: 'torrents/?filename={{ .Keywords }}&page=2&freeleech={{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      },
+      {
+        path: 'torrents/?filename={{ .Keywords }}&page=3&freeleech={{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      },
+      {
+        path: 'torrents/?filename={{ .Keywords }}&page=4&freeleech={{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      },
     ],
     rows: { selector: 'tr.dataList-row:has(td.download)' },
     fields: {
@@ -179,6 +193,7 @@ export const definition: TrackerDefinition = {
         case: { 'span.label:contains("Freeleech")': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.4 },
     },
   },
   source: 'jackett',

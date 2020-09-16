@@ -1667,10 +1667,7 @@ export const definition: TrackerDefinition = {
           { name: 're_replace', args: ['[\\:\\-\\/\\|]', ' '] },
           {
             name: 're_replace',
-            args: [
-              '(.*)\\([CСcс]езон\\s+(\\d+).+[CСcс]ери[ия]\\s+(\\d+)\\s+(\\d+).+\\)(.*)',
-              '$1 S$2E$3-$4 rus $5',
-            ],
+            args: ['(.*)\\([CСcс]езон\\s+(\\d+).+[CСcс]ери[ия]\\s+(\\d+)\\s+(\\d+).+\\)(.*)', '$1 S$2E$3-$4 rus $5'],
           },
           {
             name: 're_replace',

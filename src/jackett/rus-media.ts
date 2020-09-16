@@ -441,8 +441,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'span.seed', optional: true },
       leechers: { selector: 'span.leech', optional: true },
       date: {
-        selector:
-          'td:nth-of-type(6) p:nth-of-type(1):not(:contains("Сегодня")):not(:contains("Вчера"))',
+        selector: 'td:nth-of-type(6) p:nth-of-type(1):not(:contains("Сегодня")):not(:contains("Вчера"))',
         optional: true,
         filters: [
           { name: 'replace', args: ['янв', 'Jan'] },

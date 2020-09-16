@@ -40,6 +40,16 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -52,12 +62,12 @@ export const definition: TrackerDefinition = {
     test: { path: 't' },
   },
   search: {
-    paths: [{ path: 't' }],
-    inputs: {
-      $raw: '{{ range .Categories }}{{.}}=&{{end}}',
-      q: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      qf: '{{ if .Query.IMDBID }}adv{{else}}ti{{end}}',
-    },
+    paths: [
+      {
+        path:
+          't?{{ range .Categories }}{{.}}=&{{end}}{{ if .Config.freeleech }}free=on&{{ else }}{{ end }}q={{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}&qf={{ if .Query.IMDBID }}adv{{ else }}ti{{ end }}',
+      },
+    ],
     rows: {
       selector: 'table#torrentsTable > tbody > tr:has(td.torrentNameInfo)',
     },

@@ -41,6 +41,16 @@
       "music-search": ["q"]
     }
   },
+  "settings": [
+    { "name": "username", "type": "text", "label": "Username" },
+    { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    }
+  ],
   "login": {
     "path": "takelogin.php",
     "method": "post",
@@ -57,7 +67,7 @@
     "inputs": {
       "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
       "search": "{{ .Keywords }}",
-      "incldead": 1
+      "incldead": "{{ if .Config.freeleech }}3{{ else }}1{{ end }}"
     },
     "rows": { "selector": "tr.browse" },
     "fields": {
@@ -181,7 +191,9 @@
       "downloadvolumefactor": {
         "case": { "img[src=\"./pic/freeleech.png\"]": 0, "*": "1" }
       },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 259200 }
     }
   },
   "source": "jackett"

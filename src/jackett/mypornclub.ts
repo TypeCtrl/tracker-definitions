@@ -14,12 +14,15 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selector: 'a[href^="magnet:?xt="]',
+    attribute: 'href',
+    filters: [{ name: 're_replace', args: ['\\s+', ' '] }],
+  },
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}search/{{ re_replace .Keywords "\\s+" "-" }}{{else}}torrents{{end}}',
+        path: '{{ if .Keywords }}search/{{ re_replace .Keywords "\\s+" "-" }}{{else}}torrents{{end}}',
       },
     ],
     rows: {

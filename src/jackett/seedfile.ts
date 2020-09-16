@@ -43,6 +43,16 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+  ],
   login: {
     path: 'takelogin.php',
     method: 'post',
@@ -59,7 +69,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: 1,
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
     },
     rows: { selector: 'tr.browse' },
     fields: {
@@ -90,45 +100,27 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)',
-              'minutes',
-            ],
+            args: ['(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)', 'minutes'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟|分)',
-              ' minute',
-            ],
+            args: ['(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟|分)', ' minute'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)',
-              'hours',
-            ],
+            args: ['(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)', 'hours'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时|時間)',
-              ' hour',
-            ],
+            args: ['(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时|時間)', ' hour'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)',
-              'days',
-            ],
+            args: ['(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)', 'days'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天|日)',
-              ' day',
-            ],
+            args: ['(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天|日)', ' day'],
           },
           {
             name: 're_replace',
@@ -154,10 +146,7 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月|ヶ月)',
-              ' month',
-            ],
+            args: ['(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月|ヶ月)', ' month'],
           },
           {
             name: 're_replace',
@@ -178,6 +167,8 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="./pic/freeleech.png"]': 0, '*': '1' },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

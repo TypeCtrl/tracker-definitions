@@ -37,15 +37,21 @@ export const definition: TrackerDefinition = {
       { id: '36', cat: 'TV', desc: 'Tv' },
     ],
     modes: {
-      search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
-      'movie-search': ['q'],
+      search: ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid'],
+      'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
     },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
     {
       name: 'sort',
       type: 'select',
@@ -77,8 +83,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}',
-      incldead: 1,
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -126,6 +132,7 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.51 },
     },
   },
   source: 'jackett',

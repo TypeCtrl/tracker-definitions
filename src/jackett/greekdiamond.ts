@@ -85,8 +85,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -96,8 +95,7 @@ export const definition: TrackerDefinition = {
     inputs: { uid: '{{ .Config.uid }}', pwd: '{{ .Config.pwd }}' },
     error: [
       {
-        selector:
-          'form[action="index.php?page=login&returnto=index.php"] table tr:nth-of-type(2) td span',
+        selector: 'form[action="index.php?page=login&returnto=index.php"] table tr:nth-of-type(2) td span',
       },
     ],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
@@ -115,8 +113,7 @@ export const definition: TrackerDefinition = {
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table > tbody > tr > td > table.lista > tbody > tr:has(td[onmouseover="this.className=\'post\'"])',
+      selector: 'table > tbody > tr > td > table.lista > tbody > tr:has(td[onmouseover="this.className=\'post\'"])',
     },
     fields: {
       category: {

@@ -69,8 +69,7 @@ export const definition: TrackerDefinition = {
       search: '{{ .Query.Keywords }}',
     },
     rows: {
-      selector:
-        'div.article > table:nth-child(11) > tbody > tr:has(a[href^="download.php?torrent="])',
+      selector: 'div.article > table:nth-child(11) > tbody > tr:has(a[href^="download.php?torrent="])',
     },
     fields: {
       title: { selector: 'a[href^="details.php?id="]' },

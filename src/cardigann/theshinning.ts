@@ -81,8 +81,7 @@ export const definition: TrackerDefinition = {
       sort: 'desc',
     },
     rows: {
-      selector:
-        'table.main > tbody > tr:contains("Alle Torrents") + tr > td > table.tableinborder > tbody > tr',
+      selector: 'table.main > tbody > tr:contains("Alle Torrents") + tr > td > table.tableinborder > tbody > tr',
     },
     fields: {
       download: {

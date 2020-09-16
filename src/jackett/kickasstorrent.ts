@@ -124,8 +124,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}search/?q={{ .Keywords }}{{ else }}v2/category/latest/1/6/{{ end }}',
+        path: '{{ if .Keywords }}search/?q={{ .Keywords }}{{ else }}v2/category/latest/1/6/{{ end }}',
       },
     ],
     rows: {

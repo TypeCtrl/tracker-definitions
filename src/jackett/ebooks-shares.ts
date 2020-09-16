@@ -299,6 +299,7 @@ export const definition: TrackerDefinition = {
       { id: '270', cat: 'Books/Ebook', desc: 'Fiction: Historical ' },
       { id: '312', cat: 'Books/Ebook', desc: 'Fiction: Various Authors' },
       { id: '303', cat: 'Books/Ebook', desc: 'Fiction: Poetry' },
+      { id: '313', cat: 'Books/Ebook', desc: 'Fiction: Dystopian' },
       { id: '140', cat: 'Books/Ebook', desc: 'Hobby/Pastime: Art' },
       { id: '141', cat: 'Books/Ebook', desc: 'Hobby/Pastime: Boating' },
       {
@@ -737,8 +738,7 @@ export const definition: TrackerDefinition = {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
-      default:
-        'If you are not getting results, then access the site with your browser and mark as read all PMs.',
+      default: 'If you are not getting results, then access the site with your browser and mark as read all PMs.',
     },
   ],
   login: {

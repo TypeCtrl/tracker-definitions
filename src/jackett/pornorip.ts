@@ -107,14 +107,12 @@ export const definition: TrackerDefinition = {
       {
         id: '39',
         cat: 'XXX',
-        desc:
-          'Русское порно / Russian Porn Русское любительское порно видео / Russian Amateur Porn Video',
+        desc: 'Русское порно / Russian Porn Русское любительское порно видео / Russian Amateur Porn Video',
       },
       {
         id: '4',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix',
       },
       {
         id: '46',
@@ -193,8 +191,7 @@ export const definition: TrackerDefinition = {
       {
         id: '59',
         cat: 'XXX',
-        desc:
-          'Нетрадиционное порно / Special Interest Porn Женское доминирование и страпон / Femdom & Strapon',
+        desc: 'Нетрадиционное порно / Special Interest Porn Женское доминирование и страпон / Femdom & Strapon',
       },
       {
         id: '60',
@@ -260,8 +257,7 @@ export const definition: TrackerDefinition = {
       {
         id: '68',
         cat: 'XXX',
-        desc:
-          "Гей-порно / Gay porn Ролики, SiteRip'ы и сцены из гей-фильмов / Gay Clips & Movie Scenes",
+        desc: "Гей-порно / Gay porn Ролики, SiteRip'ы и сцены из гей-фильмов / Gay Clips & Movie Scenes",
       },
       { id: '16', cat: 'XXX', desc: 'Форум PornoRip.biz' },
       {
@@ -319,8 +315,7 @@ export const definition: TrackerDefinition = {
       $raw: '{{range .Categories}}&fid[]={{.}}{{end}}',
     },
     rows: {
-      selector:
-        'div.forumbg > div.inner > ul.topiclist > li.row > dl.icon:has(a[href^="./download/file.php?id="])',
+      selector: 'div.forumbg > div.inner > ul.topiclist > li.row > dl.icon:has(a[href^="./download/file.php?id="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

@@ -179,8 +179,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'split', args: ['/', 3] }],
       },
       title: {
-        text:
-          '{{ if .Result.title_href }}{{ .Result.title_href }}{{ else }}{{ .Result.title_text }}{{ end }}',
+        text: '{{ if .Result.title_href }}{{ .Result.title_href }}{{ else }}{{ .Result.title_text }}{{ end }}',
         filters: [
           { name: 're_replace', args: ['(-+)', ' '] },
           { name: 'replace', args: ["Grey's Anatomy", 'Greys Anatomy'] },

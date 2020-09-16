@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'darmowetorenty',
   name: 'Darmowe torrenty',
-  description:
-    'Darmowe torrenty is a POLISH Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Darmowe torrenty is a POLISH Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'pl-PL',
   type: 'semi-private',
   encoding: 'ISO-8859-2',

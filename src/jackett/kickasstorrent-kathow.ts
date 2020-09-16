@@ -8,11 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://kickass.ws/',
-    'https://kickass.unblockit.top/',
-    'https://kickasstorrents.unblockninja.com/',
-  ],
+  links: ['https://kickass.ws/', 'https://kickass.unblockit.top/', 'https://kickasstorrents.unblockninja.com/'],
   legacylinks: [
     'https://kickass.gg/',
     'https://katcr.io/',
@@ -115,7 +111,6 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(5)',
         filters: [{ name: 'replace', args: ['N/A', '0'] }],
       },
-      description: { selector: 'td:nth-child(1) > div > div > span' },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

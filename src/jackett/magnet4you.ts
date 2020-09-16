@@ -31,8 +31,7 @@ export const definition: TrackerDefinition = {
     {
       name: 'info',
       type: 'info',
-      default:
-        'Magnet4You does not use categories. In your software Indexer settings, set the category to 7000.',
+      default: 'Magnet4You does not use categories. In your software Indexer settings, set the category to 7000.',
     },
     {
       name: 'sort',

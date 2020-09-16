@@ -8,11 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://www.oxtorrent.cc/',
-    'https://www.oxtorrent.co/',
-    'https://oxtorrent.unblocked.rest/',
-  ],
+  links: ['https://www.oxtorrent.cc/', 'https://www.oxtorrent.co/', 'https://oxtorrent.unblocked.rest/'],
   legacylinks: [
     'https://wwv.oxtorrent.com/',
     'https://www.smartorrent.tv/',

@@ -73,21 +73,21 @@
       "category": {
         "selector": "img[src^=\"/images/categories/\"]",
         "case": {
-          "img[title=\"Tutorial\"]": "1",
-          "img[title=\"Addon\"]": "2",
-          "img[title=\"Hybrid Update\"]": "3",
-          "img[title=\"Hybrid Win/Mac\"]": "4",
-          "img[title=\"Mac App\"]": "5",
-          "img[title=\"Mac Update\"]": "6",
-          "img[title=\"Mac VST\"]": "7",
-          "img[title=\"Mac VSTi\"]": "8",
-          "img[title=\"Unknown\"]": "9",
-          "img[title=\"SampleCD\"]": "10",
-          "img[title=\"Win App\"]": "11",
-          "img[title=\"Win Update\"]": "12",
-          "img[title=\"Win VST\"]": "13",
-          "img[title=\"Win VSTi\"]": "14",
-          "img[title=\"Handheld App\"]": "15"
+          "img[title=\"Tutorial\"]": 1,
+          "img[title=\"Addon\"]": 2,
+          "img[title=\"Hybrid Update\"]": 3,
+          "img[title=\"Hybrid Win/Mac\"]": 4,
+          "img[title=\"Mac App\"]": 5,
+          "img[title=\"Mac Update\"]": 6,
+          "img[title=\"Mac VST\"]": 7,
+          "img[title=\"Mac VSTi\"]": 8,
+          "img[title=\"Unknown\"]": 9,
+          "img[title=\"SampleCD\"]": 10,
+          "img[title=\"Win App\"]": 11,
+          "img[title=\"Win Update\"]": 12,
+          "img[title=\"Win VST\"]": 13,
+          "img[title=\"Win VSTi\"]": 14,
+          "img[title=\"Handheld App\"]": 15
         }
       },
       "size": { "selector": "td[id$=\"_6\"]" },
@@ -95,7 +95,8 @@
       "leechers": { "selector": "td[id$=\"_11\"]" },
       "grabs": { "selector": "td[id$=\"_12\"]" },
       "downloadvolumefactor": { "text": 1 },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 1 }
     }
   },
   "source": "jackett"

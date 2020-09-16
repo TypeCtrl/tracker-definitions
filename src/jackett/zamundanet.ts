@@ -63,6 +63,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
@@ -103,7 +109,10 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
-    rows: { selector: '.responsetop > tbody > tr:has(td.td_newborder)' },
+    rows: {
+      selector:
+        '.responsetop > tbody > tr:has(td.td_newborder){{ if .Config.freeleech }}:has(a[style="color: #b9a100;"][href^="banan?"]){{ else }}{{ end }}',
+    },
     fields: {
       title: {
         selector: 'a:has(i.fa-download)',
@@ -148,10 +157,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: "src=\\\\'([^\\s\\\\]+)" }],
       },
       downloadvolumefactor: {
-        case: {
-          'a[style="color: #b9a100;"][href^="banan?"]': '0',
-          '*': '1',
-        },
+        case: { 'a[style="color: #b9a100;"][href^="banan?"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
     },

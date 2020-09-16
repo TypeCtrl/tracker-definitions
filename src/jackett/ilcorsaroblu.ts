@@ -8,11 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://ilcorsaroblu.org/'],
-  legacylinks: [
-    'http://ilcorsaroblu.org/',
-    'https://www.ilcorsaroblu.info/',
-    'https://www.ilcorsaroblu.org/',
-  ],
+  legacylinks: ['http://ilcorsaroblu.org/', 'https://www.ilcorsaroblu.info/', 'https://www.ilcorsaroblu.org/'],
   caps: {
     categorymappings: [
       { id: '12', cat: 'XXX', desc: 'Adult' },
@@ -93,8 +89,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {

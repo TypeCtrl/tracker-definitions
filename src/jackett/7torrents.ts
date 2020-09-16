@@ -20,8 +20,7 @@ export const definition: TrackerDefinition = {
     {
       name: 'info',
       type: 'info',
-      default:
-        '7torrents does not use categories. In your software Indexer settings, set the category to 7000.',
+      default: '7torrents does not use categories. In your software Indexer settings, set the category to 7000.',
     },
     {
       name: 'sort',
@@ -46,10 +45,6 @@ export const definition: TrackerDefinition = {
       category: { text: 1 },
       title: { selector: 'div.media', attribute: 'data-name' },
       details: { selector: 'div.media h5 a', attribute: 'href' },
-      download: {
-        selector: 'div.media-right a[href*="/torrent/"]',
-        attribute: 'href',
-      },
       magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
       date: {
         selector: 'div.media',

@@ -73,6 +73,7 @@
       { "id": "28", "cat": "Console/PSP", "desc": "Console PSP / PS3" },
       { "id": "42", "cat": "PC/ISO", "desc": "PC ISO" },
       { "id": "44", "cat": "PC", "desc": "PC" },
+      { "id": "38", "cat": "Books/Other", "desc": "Books Other" },
       { "id": "39", "cat": "Books/Other", "desc": "Books Other" },
       { "id": "70", "cat": "Movies/SD", "desc": "Screener" },
       { "id": "17", "cat": "PC", "desc": "PC Other" },
@@ -95,6 +96,12 @@
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Filter freeleech only",
+      "default": false
+    },
     {
       "name": "sort",
       "type": "select",
@@ -133,14 +140,14 @@
     "inputs": {
       "page": "torrents",
       "$raw": "category={{ range .Categories }}{{.}};{{end}}",
-      "options": "{{ if .Query.IMDBID }}2{{else}}0{{end}}",
+      "options": "{{ if .Query.IMDBID }}2{{ else }}0{{ end }}",
       "active": 0,
-      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
+      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
       "order": "{{ .Config.sort }}",
       "by": "{{ .Config.type }}"
     },
     "rows": {
-      "selector": "#Mcol table.table-inverse ~ table.table-inverse > tbody > tr:has(a[href^=\"index.php?page=torrent-details\"])"
+      "selector": "#Mcol table.table-inverse ~ table.table-inverse > tbody > tr{{ if .Config.freeleech }}[style=\"background: #f9e5a5\"]{{ else }}{{ end }}:has(a[href^=\"index.php?page=torrent-details\"])"
     },
     "fields": {
       "category": {
@@ -212,7 +219,9 @@
           "img[src$=\"7x.gif\"]": 7,
           "*": 1
         }
-      }
+      },
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 345600 }
     },
     "paths": [{ "path": "index.php" }]
   },

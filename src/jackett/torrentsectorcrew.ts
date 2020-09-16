@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'torrentsectorcrew',
   name: 'Torrent Sector Crew',
-  description:
-    'Torrent Sector Crew (TSC) is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Torrent Sector Crew (TSC) is a GERMAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'de-DE',
   type: 'private',
   encoding: 'ISO-8859-1',
@@ -79,6 +78,12 @@ export const definition: TrackerDefinition = {
     { name: 'password', type: 'password', label: 'Password' },
     { name: 'pin', type: 'text', label: 'Pin' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'info_results',
       type: 'info',
       label: 'Search results',
@@ -136,7 +141,8 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table.tablebrowse > tbody > tr:has(a[href^="download_ssl.php"])',
+      selector:
+        'table.tablebrowse > tbody > tr:has(a[href^="download_ssl.php"]){{ if .Config.freeleech }}:has(font[color="#730d1e"]:contains("[OnlyUpload]")){{ else }}{{ end }}',
     },
     fields: {
       title: {
@@ -187,7 +193,9 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.7 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

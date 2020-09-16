@@ -120,8 +120,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['×', ''] }],
       },
       date: {
-        selector:
-          "td:nth-child(5):contains('ma'), td:nth-child(5):contains(\"tegnap\"), td:nth-child(5):contains('-')",
+        selector: "td:nth-child(5):contains('ma'), td:nth-child(5):contains(\"tegnap\"), td:nth-child(5):contains('-')",
         optional: true,
         remove: 'font',
         filters: [

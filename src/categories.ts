@@ -142,4 +142,3 @@ export const TORZNAB_CATEGORIES: Record<Categories, number> = {
   'Books/Other': 8050,
   'Books/Foreign': 8060,
 };
-

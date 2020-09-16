@@ -58,8 +58,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}search_torrent/{{ .Keywords }}{{ .Config.sort }}{{else}}home/{{end}}',
+        path: '{{ if .Keywords }}search_torrent/{{ .Keywords }}{{ .Config.sort }}{{else}}home/{{end}}',
       },
     ],
     rows: { selector: 'table.table-corps > tbody > tr:has(a)' },

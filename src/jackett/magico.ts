@@ -103,6 +103,16 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+  ],
   login: {
     path: '?p=home&pid=1',
     method: 'form',
@@ -136,12 +146,11 @@ export const definition: TrackerDefinition = {
       $raw: '{{ range .Categories }}cid[]={{.}}&{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
-      searchin: 'title',
     },
     error: [{ selector: 'div#show_error font' }],
     rows: {
       selector:
-        'div#content > div.torrent-box[id^="torrent_"], tr:has(a[href*="?p=torrents"][href*="&action=details"])',
+        'div#content > div.torrent-box[id^="torrent_"]{{ if .Config.freeleech }}:has(img[title="No Record!"]){{ else }}{{ end }}, tr:has(a[href*="?p=torrents"][href*="&action=details"]){{ if .Config.freeleech }}:has(img[title="No Record!"]){{ else }}{{ end }}',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

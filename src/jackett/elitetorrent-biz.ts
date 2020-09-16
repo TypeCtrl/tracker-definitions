@@ -33,6 +33,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: 'series', cat: 'TV' },
       { id: 'peliculas', cat: 'Movies' },
+      { id: 'other', cat: 'Other' },
     ],
   },
   settings: [],
@@ -40,8 +41,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }, { path: '/page/2/' }, { path: '/page/3/' }],
     keywordsfilters: [
-      { name: 're_replace', args: ['S0?(\\d{1,2})', ' $1 '] },
-      { name: 're_replace', args: ['E(\\d{2,3})', ' $1 '] },
+      { name: 're_replace', args: ['(?i)S0?(\\d{1,2})', ' $1 '] },
+      { name: 're_replace', args: ['(?i)E(\\d{2,3})', ' $1 '] },
     ],
     inputs: { s: '{{ .Keywords }}', $raw: '&x=0&y=0' },
     rows: {
@@ -49,15 +50,33 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      title: {
-        selector: '.meta a',
-        attribute: 'href',
+      quality: {
+        selector: 'span:nth-of-type(2) > i',
+        filters: [{ name: 'replace', args: ['---', ''] }],
+      },
+      language: {
+        selector: 'span#idiomacio > i > img',
+        attribute: 'title',
         filters: [
-          { name: 're_replace', args: ['.*/([^/]*)/$', '$1'] },
-          { name: 'replace', args: ['-', ' '] },
+          { name: 'replace', args: ['Pelicula en ', ''] },
+          { name: 'replace', args: ['Español', 'Spanish'] },
+          { name: 'replace', args: ['Ingles', 'English'] },
+          { name: 'replace', args: ['Subtitulado', 'Subtitled'] },
+        ],
+      },
+      _title: {
+        selector: 'div.imagen > a',
+        attribute: 'title',
+        filters: [
+          { name: 'replace', args: [' – ', ' '] },
+          { name: 'replace', args: ['(', ''] },
+          { name: 'replace', args: [')', ''] },
           { name: 're_replace', args: ['(\\d{2})×(\\d{2})', 'S$1E$2'] },
           { name: 're_replace', args: ['(\\d{1})×(\\d{2})', 'S0$1E$2'] },
         ],
+      },
+      title: {
+        text: '{{ .Result._title}} {{ .Result.quality }} {{ .Result.language }}',
       },
       details: { selector: '.meta a', attribute: 'href' },
       download: { selector: '.meta a', attribute: 'href' },
@@ -74,7 +93,7 @@ export const definition: TrackerDefinition = {
       },
       category: {
         text:
-          '{{ if or .Result.category_movie .Result.category_tv }}{{ or .Result.category_movie .Result.category_tv }}{{ else }}{{ end }}',
+          '{{ if or .Result.category_movie .Result.category_tv }}{{ or .Result.category_movie .Result.category_tv }}{{ else }}other{{ end }}',
       },
       size: {
         optional: true,

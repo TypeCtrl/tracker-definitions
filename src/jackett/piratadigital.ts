@@ -142,45 +142,27 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)',
-              'minutes',
-            ],
+            args: ['(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)', 'minutes'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟|分)',
-              ' minute',
-            ],
+            args: ['(?i)(dakika|minut|minuto|minuta|minutt|минута|Minute|minuut|分钟|分)', ' minute'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)',
-              'hours',
-            ],
+            args: ['(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)', 'hours'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时|時間)',
-              ' hour',
-            ],
+            args: ['(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时|時間)', ' hour'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)',
-              'days',
-            ],
+            args: ['(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)', 'days'],
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天|日)',
-              ' day',
-            ],
+            args: ['(?i)(gün|päev|dag|giorno|dzień|dia|den|день|zi|día|jour|Tag|ден|天|日)', ' day'],
           },
           {
             name: 're_replace',
@@ -206,10 +188,7 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: [
-              '(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月|ヶ月)',
-              ' month',
-            ],
+            args: ['(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月|ヶ月)', ' month'],
           },
           {
             name: 're_replace',

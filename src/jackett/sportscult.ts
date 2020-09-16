@@ -82,8 +82,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -104,13 +103,12 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       page: 'torrents',
       category: 0,
-      active: 1,
+      active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table[cellspacing!="1"].lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
+      selector: 'table[cellspacing!="1"].lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
     },
     fields: {
       category: {
@@ -140,8 +138,16 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(5)',
         filters: [{ name: 'dateparse', args: '02/01/2006' }],
       },
-      downloadvolumefactor: { case: { '*': 1 } },
-      uploadvolumefactor: { case: { '*': 1 } },
+      downloadvolumefactor: {
+        case: {
+          'img[src="gold/gold.gif"]': 0,
+          'img[src="gold/silver.gif"]': 0.5,
+          '*': 1,
+        },
+      },
+      uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.9 },
+      minimumseedtime: { text: 129600 },
     },
   },
   source: 'jackett',

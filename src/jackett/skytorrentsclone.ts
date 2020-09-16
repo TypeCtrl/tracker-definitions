@@ -54,16 +54,13 @@ export const definition: TrackerDefinition = {
           '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}{{else}}top100?sort={{ .Config.sort }}{{end}}',
       },
       {
-        path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{else}}{{end}}',
       },
       {
-        path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{else}}{{end}}',
       },
       {
-        path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{else}}{{end}}',
       },
     ],
     rows: { selector: 'tr.result' },

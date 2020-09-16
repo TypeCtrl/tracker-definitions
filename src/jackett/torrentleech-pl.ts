@@ -78,8 +78,7 @@ export const definition: TrackerDefinition = {
     },
     keywordsfilters: [{ name: 're_replace', args: [' +(?:19|20)\\d{2} *$', ''] }],
     rows: {
-      selector:
-        'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table[border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href^="details.php?id="])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

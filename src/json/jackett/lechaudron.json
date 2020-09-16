@@ -150,23 +150,10 @@
       "default": "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>"
     },
     {
-      "name": "sort",
-      "type": "select",
-      "label": "Sort requested from site",
-      "default": "id",
-      "options": {
-        "id": "created",
-        "seeders": "seeders",
-        "size": "size",
-        "name": "title"
-      }
-    },
-    {
-      "name": "order",
-      "type": "select",
-      "label": "Order requested from site",
-      "default": "desc",
-      "options": { "desc": "desc", "asc": "asc" }
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
     }
   ],
   "login": {
@@ -185,12 +172,9 @@
     "paths": [{ "path": "TTV3/Torrents/Recherche" }],
     "inputs": {
       "search": "{{ .Keywords }}",
-      "cat": 0,
-      "incldead": 1,
-      "freeleech": 0,
-      "lang": 0,
-      "sort": "{{ .Config.sort }}",
-      "order": "{{ .Config.order }}"
+      "endroit": "nomtorrent",
+      "tl": "{{ if .Config.freeleech }}oui{{ else }}peuimporte{{ end }}",
+      "langue": 0
     },
     "rows": { "selector": "tr:has(a[onmouseover])" },
     "fields": {
@@ -232,13 +216,10 @@
       "seeders": { "selector": "td:nth-last-child(3)" },
       "leechers": { "selector": "td:nth-last-child(2)" },
       "downloadvolumefactor": {
-        "case": {
-          "img[src$=\"/images/Torrents/TLibre.png\"]": 0,
-          "img[src$=\"/images/Torrents/freeleech.png\"]": 0,
-          "*": 1
-        }
+        "case": { "img[src$=\"/images/Torrents/freeleech.png\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 0.8 }
     }
   },
   "source": "jackett"

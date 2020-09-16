@@ -162,8 +162,7 @@ export const definition: TrackerDefinition = {
       'sortOptions[sortOrder]': '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table#torrents_table_classic > tbody > tr:not(:first-child), .torrent-box[id^="torrent_"]',
+      selector: 'table#torrents_table_classic > tbody > tr:not(:first-child), .torrent-box[id^="torrent_"]',
     },
     fields: {
       category: {

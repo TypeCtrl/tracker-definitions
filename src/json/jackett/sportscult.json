@@ -101,7 +101,7 @@
       "search": "{{ .Keywords }}",
       "page": "torrents",
       "category": 0,
-      "active": 1,
+      "active": 0,
       "order": "{{ .Config.sort }}",
       "by": "{{ .Config.type }}"
     },
@@ -136,8 +136,16 @@
         "selector": "td:nth-child(5)",
         "filters": [{ "name": "dateparse", "args": "02/01/2006" }]
       },
-      "downloadvolumefactor": { "case": { "*": 1 } },
-      "uploadvolumefactor": { "case": { "*": 1 } }
+      "downloadvolumefactor": {
+        "case": {
+          "img[src=\"gold/gold.gif\"]": 0,
+          "img[src=\"gold/silver.gif\"]": 0.5,
+          "*": 1
+        }
+      },
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 0.9 },
+      "minimumseedtime": { "text": 129600 }
     }
   },
   "source": "jackett"

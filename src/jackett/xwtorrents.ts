@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'xwtorrents',
   name: 'XWtorrents',
-  description:
-    'XtremeWrestlingTorrents (XWT) is a Private Torrent Tracker for PROFESSIONAL WRESTLING / MMA',
+  description: 'XtremeWrestlingTorrents (XWT) is a Private Torrent Tracker for PROFESSIONAL WRESTLING / MMA',
   language: 'en-US',
   type: 'private',
   encoding: 'WINDOWS-1252',
@@ -120,8 +119,7 @@ export const definition: TrackerDefinition = {
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table[border="0"][cellspacing="0"][cellpadding="5"] tr:has(a[href^="download.php?id="])',
+      selector: 'table[border="0"][cellspacing="0"][cellpadding="5"] tr:has(a[href^="download.php?id="])',
     },
     fields: {
       category: {

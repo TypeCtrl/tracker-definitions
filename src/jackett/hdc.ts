@@ -81,8 +81,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'pt' }],
     inputs: {
       $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
-      iwannaseethis:
-        '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
+      iwannaseethis: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 0,
       spstate: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
       search_area: '{{ if .Query.IMDBID }}4{{ else }}0{{ end }}',

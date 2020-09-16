@@ -108,8 +108,7 @@ export const definition: TrackerDefinition = {
       searchsubmit: 1,
     },
     rows: {
-      selector:
-        'table#torrent_table > tbody > tr.torrent:has(a[href^="torrents.php?action=download&id="])',
+      selector: 'table#torrent_table > tbody > tr.torrent:has(a[href^="torrents.php?action=download&id="])',
     },
     fields: {
       category: {

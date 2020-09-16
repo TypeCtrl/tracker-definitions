@@ -110,8 +110,7 @@ export const definition: TrackerDefinition = {
       d: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table[width="100%"] > tbody > tr:has(td.bottom[background="_images/bg_torrent.jpg"])',
+      selector: 'table[width="100%"] > tbody > tr:has(td.bottom[background="_images/bg_torrent.jpg"])',
     },
     fields: {
       category: {

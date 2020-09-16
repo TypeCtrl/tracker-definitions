@@ -79,6 +79,12 @@ export const definition: TrackerDefinition = {
         "<ol><li>Login to this tracker in your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button<li>Refresh the page by pressing <b>F5</b><li>Select the <b>Headers</b> tab<li>Find 'cookie:' in the <b>Request Headers</b> section<li>Copy & paste the whole cookie string to here</ol>",
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -105,6 +111,7 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
+      free: '{{ if .Config.freeleech }}on{{ else }}{{ end }}',
     },
     keywordsfilters: [{ name: 'replace', args: ['.', ' '] }],
     rows: {
@@ -139,6 +146,7 @@ export const definition: TrackerDefinition = {
         remove: 'div, i',
         filters: [{ name: 'dateparse', args: '2006-01-02 15:04' }],
       },
+      minimumratio: { text: 0.41 },
     },
   },
   source: 'jackett',

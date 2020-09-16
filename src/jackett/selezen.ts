@@ -60,8 +60,7 @@ export const definition: TrackerDefinition = {
       subaction: 'search',
       showposts: 1,
       titleonly: '{{ if .Query.IMDBID }}0{{else}}3{{end}}',
-      story:
-        '{{ if or .Query.IMDBID .Keywords }}{{ or .Query.IMDBID .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
+      story: '{{ if or .Query.IMDBID .Keywords }}{{ or .Query.IMDBID .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       sortby: '{{ .Config.sort }}',
       resorder: '{{ .Config.type }}',
     },

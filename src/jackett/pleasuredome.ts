@@ -65,6 +65,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -100,7 +106,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       search: '{{ .Keywords }}',
       category: 0,
-      active: 0,
+      active: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
     },
@@ -143,6 +149,7 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'img[src="images/2x.gif"]': 2, '*': 1 },
       },
+      minimumratio: { text: 0.5 },
     },
   },
   source: 'jackett',

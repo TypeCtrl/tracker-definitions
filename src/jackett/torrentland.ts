@@ -75,6 +75,7 @@ export const definition: TrackerDefinition = {
       { id: '28', cat: 'Console/PSP', desc: 'Console PSP / PS3' },
       { id: '42', cat: 'PC/ISO', desc: 'PC ISO' },
       { id: '44', cat: 'PC', desc: 'PC' },
+      { id: '38', cat: 'Books/Other', desc: 'Books Other' },
       { id: '39', cat: 'Books/Other', desc: 'Books Other' },
       { id: '70', cat: 'Movies/SD', desc: 'Screener' },
       { id: '17', cat: 'PC', desc: 'PC Other' },
@@ -98,6 +99,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -115,8 +122,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -134,15 +140,15 @@ export const definition: TrackerDefinition = {
     inputs: {
       page: 'torrents',
       $raw: 'category={{ range .Categories }}{{.}};{{end}}',
-      options: '{{ if .Query.IMDBID }}2{{else}}0{{end}}',
+      options: '{{ if .Query.IMDBID }}2{{ else }}0{{ end }}',
       active: 0,
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
     },
     rows: {
       selector:
-        '#Mcol table.table-inverse ~ table.table-inverse > tbody > tr:has(a[href^="index.php?page=torrent-details"])',
+        '#Mcol table.table-inverse ~ table.table-inverse > tbody > tr{{ if .Config.freeleech }}[style="background: #f9e5a5"]{{ else }}{{ end }}:has(a[href^="index.php?page=torrent-details"])',
     },
     fields: {
       category: {
@@ -215,6 +221,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 345600 },
     },
     paths: [{ path: 'index.php' }],
   },

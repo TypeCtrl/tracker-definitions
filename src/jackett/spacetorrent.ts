@@ -25,6 +25,16 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+  ],
   login: {
     method: 'post',
     path: 'ajax/takelogin.php',
@@ -32,14 +42,22 @@ export const definition: TrackerDefinition = {
       snlo: 'certified',
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      returnto: '/my.php',
+      returnto: '/recherche',
     },
-    test: { path: 'my.php', selector: 'a[href="../logout"]' },
+    test: { path: 'recherche', selector: 'a[href="../logout"]' },
   },
-  ratio: { path: 'my.php', selector: 'a.nav-link i[class="ti-pulse"]' },
+  ratio: {
+    path: 'recherche',
+    selector: 'a.nav-link i[class="ti-pulse"]',
+  },
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
-    inputs: { search: '{{ .Keywords }}', cat: 0 },
+    inputs: {
+      advanced_search: true,
+      advanced_search_term: '{{ .Keywords }}',
+      cat: 0,
+      freemium: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+    },
     rows: { selector: 'table#table-1 tbody tr' },
     fields: {
       download: {
@@ -70,8 +88,9 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(5)' },
       seeders: { optional: true, selector: 'td:nth-child(6)' },
       leechers: { optional: true, selector: 'td:nth-child(7)' },
-      downloadvolumefactor: { case: { 'i.fa-star': '0', '*': '1' } },
+      downloadvolumefactor: { case: { 'i.fa-star': 0, '*': 1 } },
       uploadvolumefactor: { text: 1 },
+      minimumseedtime: { text: 86400 },
     },
     paths: [{ path: 'recherche' }],
   },

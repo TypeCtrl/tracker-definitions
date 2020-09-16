@@ -143,8 +143,7 @@ export const definition: TrackerDefinition = {
         text: '{{ re_replace .Result.title_with_year "\\([1|2][0-9]{3}\\)" "" }}',
       },
       title: {
-        text:
-          '{{ if .Config.stripyear }}{{ .Result.title_without_year }}{{else}}{{ .Result.title_with_year }}{{end}}',
+        text: '{{ if .Config.stripyear }}{{ .Result.title_without_year }}{{else}}{{ .Result.title_with_year }}{{end}}',
       },
       details: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
       download: {

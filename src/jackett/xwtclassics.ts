@@ -76,8 +76,7 @@ export const definition: TrackerDefinition = {
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        'table[border="0"][cellspacing="0"][cellpadding="5"] tr:has(a[href^="download.php?id="])',
+      selector: 'table[border="0"][cellspacing="0"][cellpadding="5"] tr:has(a[href^="download.php?id="])',
     },
     fields: {
       category: {

@@ -95,6 +95,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Filter freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -153,7 +159,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table[width="100%"][border="1"][cellspacing="0"][cellpadding="5"] > tbody > tr:has(a[href*="hashinfo="])',
+        'table[width="100%"][border=1][cellspacing=0][cellpadding=5] > tbody > tr:has(a[href*="hashinfo="]){{ if .Config.freeleech }}:has(td:nth-child(3):contains("100%")){{ else }}{{ end }}',
     },
     fields: {
       title: { selector: 'a[href^="details.php?id="]' },
@@ -225,6 +231,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

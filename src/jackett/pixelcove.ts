@@ -52,6 +52,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -82,11 +88,14 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
-      title: '{{ .Keywords }}',
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
-      action: 'basic',
-      searchsubmit: 1,
+      action: 'advanced',
+      filter_freeleech: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      searchtext: '',
+      title: '{{ .Keywords }}',
+      filelist: '',
+      taglist: '',
     },
     rows: {
       selector: 'table#torrent_table > tbody > tr[class^="torrent row"]',
@@ -132,8 +141,11 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
-      downloadvolumefactor: { case: { 'span.fltag': 0, '*': 1 } },
+      downloadvolumefactor: {
+        case: { 'img[src$="/freedownload.gif"]': 0, '*': 1 },
+      },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.5 },
     },
   },
   source: 'jackett',

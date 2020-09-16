@@ -388,14 +388,12 @@ export const definition: TrackerDefinition = {
       {
         id: '595',
         cat: 'TV/Anime',
-        desc:
-          'Zero no Tsukaima: Futatsuki no Kishi TV-2 / Подручный бездарной Луизы: Рыцарь Двух Лун ТВ-2',
+        desc: 'Zero no Tsukaima: Futatsuki no Kishi TV-2 / Подручный бездарной Луизы: Рыцарь Двух Лун ТВ-2',
       },
       {
         id: '596',
         cat: 'TV/Anime',
-        desc:
-          'Zero no Tsukaima Princess no Rondo TV-3 / Подручный бездарной Луизы: Рондо Принцессы ТВ-3',
+        desc: 'Zero no Tsukaima Princess no Rondo TV-3 / Подручный бездарной Луизы: Рондо Принцессы ТВ-3',
       },
       {
         id: '597',

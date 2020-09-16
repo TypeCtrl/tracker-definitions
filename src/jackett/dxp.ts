@@ -3,8 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'dxp',
   name: 'DXP',
-  description:
-    'Deaf Experts (DXP) is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV with Russian Subtitles.',
+  description: 'Deaf Experts (DXP) is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV with Russian Subtitles.',
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'WINDOWS-1251',

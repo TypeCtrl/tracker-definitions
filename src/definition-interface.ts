@@ -168,11 +168,13 @@ export interface Req {
    * e.g. if a CSRF token is hidden in JavaScript).
    */
   selectorinputs?: {
-    [key: string]: {
-      selector: string;
-      attribute?: string;
-      filters?: Filters[];
-    } | undefined;
+    [key: string]:
+      | {
+          selector: string;
+          attribute?: string;
+          filters?: Filters[];
+        }
+      | undefined;
     cookie_test?: {
       selector: string;
       attribute: string;
@@ -320,5 +322,5 @@ export interface Path {
   categories?: Array<number | string>;
   method?: string;
   followredirect?: boolean;
-  categorymappings?: Array<(string | number)>;
+  categorymappings?: Array<string | number>;
 }

@@ -140,8 +140,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -169,8 +168,7 @@ export const definition: TrackerDefinition = {
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector:
-        '#mcol .block-content-l table table.lista > tbody > tr:not(:first-child):not(.descripcion)',
+      selector: '#mcol .block-content-l table table.lista > tbody > tr:not(:first-child):not(.descripcion)',
     },
     fields: {
       category: {
@@ -185,10 +183,7 @@ export const definition: TrackerDefinition = {
           { name: 'append', args: ' [Spanish]' },
           {
             name: 're_replace',
-            args: [
-              '(?i)T[\\s-_]?(\\d{1,2})(.*)\\[(\\d{1,2})[x|\\/|\\\\](\\d{1,2})\\]',
-              'S$1E$3 $2',
-            ],
+            args: ['(?i)T[\\s-_]?(\\d{1,2})(.*)\\[(\\d{1,2})[x|\\/|\\\\](\\d{1,2})\\]', 'S$1E$3 $2'],
           },
           {
             name: 're_replace',

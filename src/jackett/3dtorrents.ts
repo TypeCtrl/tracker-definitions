@@ -39,8 +39,7 @@ export const definition: TrackerDefinition = {
       name: 'info',
       type: 'info',
       label: 'Results Per Page',
-      default:
-        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
   ],
   login: {
@@ -70,8 +69,7 @@ export const definition: TrackerDefinition = {
       active: 1,
     },
     rows: {
-      selector:
-        'table[cellspacing!="1"].lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
+      selector: 'table[cellspacing!="1"].lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
     },
     fields: {
       category: {

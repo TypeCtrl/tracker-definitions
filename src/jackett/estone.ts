@@ -98,8 +98,7 @@ export const definition: TrackerDefinition = {
       cimke: '',
     },
     rows: {
-      selector:
-        'body > div[id^="torrent_"]{{ if .Config.freeleech }}:has(img[src="pic/free.png"]){{ else }}{{ end }}',
+      selector: 'body > div[id^="torrent_"]{{ if .Config.freeleech }}:has(img[src="pic/free.png"]){{ else }}{{ end }}',
     },
     fields: {
       title: { selector: 'a[title]', attribute: 'title' },

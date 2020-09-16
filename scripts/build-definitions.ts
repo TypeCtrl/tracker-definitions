@@ -20,15 +20,15 @@ const SOURCES = [
 
 const PRETTIER_TYPESCRIPT: prettier.Options = {
   parser: 'typescript',
-  trailingComma: 'all',
-  bracketSpacing: true,
   semi: true,
   singleQuote: true,
-  printWidth: 100,
+  trailingComma: 'all',
+  bracketSpacing: true,
+  printWidth: 120,
   arrowParens: 'avoid',
 };
 
-const bangSrcSelector = /src=\\+'\(.+\)\\+'/gmi;
+const bangSrcSelector = /src=\\+'\(.+\)\\+'/gim;
 // eslint-disable-next-line no-useless-escape
 const bangSrcSelectorFix = `src=\\\"(.*?)\\\"`;
 
@@ -127,7 +127,9 @@ for (const src of SOURCES) {
     sites.push(name);
 
     // write json
-    const formattedJson = prettier.format(JSON.stringify(fixedJson), { parser: 'json' });
+    const formattedJson = prettier.format(JSON.stringify(fixedJson), {
+      parser: 'json',
+    });
     fs.writeFileSync(path.join(jsonOutDir, `${name}.json`), formattedJson);
 
     // write module
@@ -136,19 +138,15 @@ for (const src of SOURCES) {
 
       export const definition: TrackerDefinition = ${formattedJson};
     `;
-    fs.writeFileSync(
-      path.join(moduleOutDir, name + '.ts'),
-      prettier.format(defExp, PRETTIER_TYPESCRIPT),
-    );
+    fs.writeFileSync(path.join(moduleOutDir, name + '.ts'), prettier.format(defExp, PRETTIER_TYPESCRIPT));
   }
 
   // helpers
-  const formattedSites = prettier.format(JSON.stringify(sites), { parser: 'json' });
+  const formattedSites = prettier.format(JSON.stringify(sites), {
+    parser: 'json',
+  });
   const siteExp = `export const ${src.name}Sites = ${formattedSites};`;
-  fs.writeFileSync(
-    path.join(HELPERS_DIR, `${src.name}.ts`),
-    prettier.format(siteExp, PRETTIER_TYPESCRIPT),
-  );
+  fs.writeFileSync(path.join(HELPERS_DIR, `${src.name}.ts`), prettier.format(siteExp, PRETTIER_TYPESCRIPT));
 
   // site export
   let exportedSites = sites.reduce((pre, cur) => {
@@ -159,12 +157,7 @@ for (const src of SOURCES) {
     `;
   }, '');
   exportedSites += `
-    export const definitions = [${sites
-    .map(n => `${src.name[0]}${src.name[0]}${camelCase(n)}`)
-    .toString()}];
+    export const definitions = [${sites.map(n => `${src.name[0]}${src.name[0]}${camelCase(n)}`).toString()}];
   `;
-  fs.writeFileSync(
-    path.join(moduleOutDir, `index.ts`),
-    prettier.format(exportedSites, PRETTIER_TYPESCRIPT),
-  );
+  fs.writeFileSync(path.join(moduleOutDir, `index.ts`), prettier.format(exportedSites, PRETTIER_TYPESCRIPT));
 }

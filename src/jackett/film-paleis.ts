@@ -97,10 +97,7 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: [
-              '([Aa]fl.|[Aa]fl. | [Aa]fl. |[Aa]flevering|[Aa]flevering | [Aa]flevering )(\\d{1,2})',
-              'E$2',
-            ],
+            args: ['([Aa]fl.|[Aa]fl. | [Aa]fl. |[Aa]flevering|[Aa]flevering | [Aa]flevering )(\\d{1,2})', 'E$2'],
           },
           { name: 're_replace', args: ['[Cc]ompleet', 'Complete'] },
         ],

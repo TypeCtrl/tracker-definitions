@@ -99,6 +99,12 @@
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
     {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
+    {
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
@@ -144,8 +150,8 @@
     "paths": [{ "path": "browse.php" }],
     "inputs": {
       "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
-      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}",
-      "incldead": 1,
+      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}",
+      "incldead": "{{ if .Config.freeleech }}3{{ else }}1{{ end }}",
       "sort": "{{ .Config.sort }}",
       "type": "{{ .Config.type }}"
     },
@@ -196,7 +202,9 @@
       "downloadvolumefactor": {
         "case": { "img[src=\"free.gif\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 0.65 },
+      "minimumseedtime": { "text": 259200 }
     }
   },
   "source": "jackett"

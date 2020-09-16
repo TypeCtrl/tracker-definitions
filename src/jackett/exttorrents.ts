@@ -90,7 +90,7 @@ export const definition: TrackerDefinition = {
       details: { selector: 'td:nth-child(1) div a', attribute: 'href' },
       download: { selector: 'td:nth-child(1) div a', attribute: 'href' },
       size: { selector: 'td:nth-child(2)' },
-      files: { selector: 'td:nth-child(3)' },
+      files: { selector: 'td:nth-child(3)', optional: true },
       date: { selector: 'td:nth-child(4)' },
       seeders: { selector: 'td:nth-child(5)' },
       leechers: { selector: 'td:nth-child(6)' },
