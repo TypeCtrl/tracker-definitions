@@ -56,6 +56,32 @@ export const definition: TrackerDefinition = {
       default:
         'Note that only <b>www.oxtorrent.pw</b> supports the use of the <b>.torrent</b> download link.<br />All sites support <b>magnet</b> links.',
     },
+    {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'FRENCH',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI.FRENCH': 'MULTI.FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI.ENGLISH': 'MULTI.ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI.VOSTFR': 'MULTI.VOSTFR',
+      },
+    },
+    {
+      name: 'vostfr',
+      type: 'checkbox',
+      label: 'Replace VOSTFR with ENGLISH',
+      default: false,
+    },
   ],
   download: {
     selector: 'a[href*="{{ .Config.downloadlink }}"]',
@@ -83,29 +109,58 @@ export const definition: TrackerDefinition = {
       },
       site_date: {
         selector: 'td:nth-child(1) a',
-        filters: [{ name: 'regexp', args: '(\\d{4})$' }],
+        filters: [{ name: 'regexp', args: '(19|20\\d{2})$' }],
       },
-      title: {
+      title_phase1: {
         selector: 'td:nth-child(1) a',
         filters: [
           {
-            name: 'replace',
-            args: [' FRENCH', ' {{ .Result.site_date }} FRENCH'],
+            name: 're_replace',
+            args: ['(?i)( FRENCH)', ' {{ .Result.site_date }} FRENCH'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)( MULTI)', ' {{ .Result.site_date }} MULTI'],
           },
           {
             name: 'replace',
-            args: ['MULTI', '{{ .Result.site_date }} MULTI'],
+            args: ['(?i)( TRUEFRENCH)', ' {{ .Result.site_date }} TRUEFRENCH'],
           },
           {
-            name: 'replace',
-            args: ['TRUEFRENCH', '{{ .Result.site_date }} TRUEFRENCH'],
+            name: 're_replace',
+            args: ['(?i)( VOSTFR)', ' {{ .Result.site_date }} VOSTFR'],
           },
           {
-            name: 'replace',
-            args: ['VOSTFR', '{{ .Result.site_date }} VOSTFR'],
+            name: 're_replace',
+            args: ['(?i)( SUBFRENCH)', ' {{ .Result.site_date }} SUBFRENCH'],
           },
-          { name: 're_replace', args: ['(\\d{4})$', ''] },
+          { name: 're_replace', args: ['(19|20\\d{2})$', ''] },
         ],
+      },
+      title_multilang: {
+        text: '{{ .Result.title_phase1 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title_phase2: {
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
+      },
+      title_vostfr: {
+        text: '{{ .Result.title_phase2 }}',
+        filters: [
+          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
+          {
+            name: 're_replace',
+            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
+          },
+        ],
+      },
+      title: {
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
       details: { selector: 'td:nth-child(1) a', attribute: 'href' },
       download: { selector: 'td:nth-child(1) a', attribute: 'href' },

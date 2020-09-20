@@ -72,6 +72,32 @@ export const definition: TrackerDefinition = {
       label: 'Search freeleech only',
       default: false,
     },
+    {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'FRENCH',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI.FRENCH': 'MULTI.FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI.ENGLISH': 'MULTI.ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI.VOSTFR': 'MULTI.VOSTFR',
+      },
+    },
+    {
+      name: 'vostfr',
+      type: 'checkbox',
+      label: 'Replace VOSTFR with ENGLISH',
+      default: false,
+    },
   ],
   login: {
     path: 'TTV3/Connexion',
@@ -112,13 +138,38 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'regexp', args: '(\\d+)$' }],
       },
-      title: {
+      title_phase1: {
         selector: 'a[href*="/SousCategories/"]',
         attribute: 'alt',
         filters: [
           { name: 'regexp', args: '^..(.+)' },
           { name: 're_replace', args: ['\\.', ' '] },
         ],
+      },
+      title_multilang: {
+        text: '{{ .Result.title_phase1 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title_phase2: {
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
+      },
+      title_vostfr: {
+        text: '{{ .Result.title_phase2 }}',
+        filters: [
+          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
+          {
+            name: 're_replace',
+            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
+          },
+        ],
+      },
+      title: {
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
       details: { selector: 'a[onmouseover]', attribute: 'href' },
       download: { selector: 'a[onmouseover]', attribute: 'href' },
@@ -151,6 +202,7 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.95 },
     },
   },
   source: 'jackett',

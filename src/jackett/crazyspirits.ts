@@ -113,6 +113,32 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'FRENCH',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI.FRENCH': 'MULTI.FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI.ENGLISH': 'MULTI.ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI.VOSTFR': 'MULTI.VOSTFR',
+      },
+    },
+    {
+      name: 'vostfr',
+      type: 'checkbox',
+      label: 'Replace VOSTFR with ENGLISH',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -150,7 +176,7 @@ export const definition: TrackerDefinition = {
         torrent: '{{ .DownloadUri.Query.id }}',
       },
     },
-    selector: 'a:contains("Télécharger ce torrent")',
+    selector: 'a[href^="/{{ .DownloadUri.Query.id }}/"]',
     attribute: 'href',
   },
   search: {
@@ -166,7 +192,41 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'table.border_table > tbody > tr.t-row' },
     fields: {
-      title: { selector: 'a[href^="torrents-details.php?id="] b' },
+      title_phase0: { selector: 'a[href^="torrents-details.php?id="] b' },
+      title_phase1: {
+        selector: 'a[rel="prettyPhoto"] img',
+        attribute: 'alt',
+        optional: true,
+        filters: [{ name: 'replace', args: ['-NoTag', ''] }],
+      },
+      title_phase2: {
+        text: '{{ if .Result.title_phase1 }}{{ .Result.title_phase1 }}{{ else }}{{ .Result.title_phase0 }}{{ end }}',
+      },
+      title_multilang: {
+        text: '{{ .Result.title_phase2 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title_phase3: {
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
+      },
+      title_vostfr: {
+        text: '{{ .Result.title_phase3 }}',
+        filters: [
+          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
+          {
+            name: 're_replace',
+            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
+          },
+        ],
+      },
+      title: {
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase3 }}{{ end }}',
+      },
       category: {
         selector: 'a[href^="torrents.php?cat="]',
         attribute: 'href',
@@ -205,6 +265,7 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="images/Torrents/free.png"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.5 },
       minimumseedtime: { text: 172800 },
     },
   },

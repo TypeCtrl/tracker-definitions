@@ -34,9 +34,6 @@ export const jbittorrentfiles = jjbittorrentfiles;
 import { definition as jjdasunerwartete } from './dasunerwartete';
 export const jdasunerwartete = jjdasunerwartete;
 
-import { definition as jjacademictorrents } from './academictorrents';
-export const jacademictorrents = jjacademictorrents;
-
 import { definition as jjacgrip } from './acgrip';
 export const jacgrip = jjacgrip;
 
@@ -291,9 +288,6 @@ export const jdmhy = jjdmhy;
 
 import { definition as jjdocumentarytorrents } from './documentarytorrents';
 export const jdocumentarytorrents = jjdocumentarytorrents;
-
-import { definition as jjdownloadville } from './downloadville';
-export const jdownloadville = jjdownloadville;
 
 import { definition as jjdragonworldreloaded } from './dragonworldreloaded';
 export const jdragonworldreloaded = jjdragonworldreloaded;
@@ -676,9 +670,6 @@ export const jmicrobit = jjmicrobit;
 import { definition as jjmmaTorrents } from './mma-torrents';
 export const jmmaTorrents = jjmmaTorrents;
 
-import { definition as jjmoecat } from './moecat';
-export const jmoecat = jjmoecat;
-
 import { definition as jjmononokebt } from './mononokebt';
 export const jmononokebt = jjmononokebt;
 
@@ -834,9 +825,6 @@ export const jproaudiotorrents = jjproaudiotorrents;
 
 import { definition as jjprostylex } from './prostylex';
 export const jprostylex = jjprostylex;
-
-import { definition as jjpt99 } from './pt99';
-export const jpt99 = jjpt99;
 
 import { definition as jjpterclub } from './pterclub';
 export const jpterclub = jjpterclub;
@@ -1316,7 +1304,6 @@ export const definitions = [
   jj7Torrents,
   jjbittorrentfiles,
   jjdasunerwartete,
-  jjacademictorrents,
   jjacgrip,
   jjacgsou,
   jjacidlounge,
@@ -1402,7 +1389,6 @@ export const definitions = [
   jjdivteam,
   jjdmhy,
   jjdocumentarytorrents,
-  jjdownloadville,
   jjdragonworldreloaded,
   jjdxdhd,
   jjdxp,
@@ -1530,7 +1516,6 @@ export const definitions = [
   jjmetaltracker,
   jjmicrobit,
   jjmmaTorrents,
-  jjmoecat,
   jjmononokebt,
   jjmonova,
   jjmovcr,
@@ -1583,7 +1568,6 @@ export const definitions = [
   jjpornotor,
   jjproaudiotorrents,
   jjprostylex,
-  jjpt99,
   jjpterclub,
   jjptfiles,
   jjpthome,

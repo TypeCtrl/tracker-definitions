@@ -97,6 +97,42 @@ export const definition: TrackerDefinition = {
       'movie-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'FRENCH',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI.FRENCH': 'MULTI.FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI.ENGLISH': 'MULTI.ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI.VOSTFR': 'MULTI.VOSTFR',
+      },
+    },
+    {
+      name: 'vostfr',
+      type: 'checkbox',
+      label: 'Replace VOSTFR with ENGLISH',
+      default: false,
+    },
+  ],
   login: {
     path: 'login',
     method: 'form',
@@ -114,16 +150,16 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['^$', 'null'] }],
     inputs: {
       $raw: '{{range .Categories}}subcat[]={{.}}&{{end}}',
-      exclu: '0',
-      freeleech: '0',
-      reseed: '0',
+      exclu: 0,
+      freeleech: '{{ if .Config.freeleech }}1{{ else }}0{{ end }}',
+      reseed: 0,
     },
     rows: {
       selector: 'div.torrent-item',
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      title: {
+      title_phase1: {
         selector: 'a.torrentlink',
         attribute: 'title',
         filters: [
@@ -135,8 +171,32 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: ['(?i)(SEASON|SAISON) (\\d)', 'S0$2'],
           },
-          { name: 're_replace', args: ['(?i) (MULTI) ', ' $1 FRENCH '] },
         ],
+      },
+      title_multilang: {
+        text: '{{ .Result.title_phase1 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title_phase2: {
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
+      },
+      title_vostfr: {
+        text: '{{ .Result.title_phase2 }}',
+        filters: [
+          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
+          {
+            name: 're_replace',
+            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
+          },
+        ],
+      },
+      title: {
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
       banner: {
         selector: 'a.torrentlink > img.img-responsive',
@@ -221,9 +281,8 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 're_replace', args: ['^$', '999'] }],
       },
       grabs: { selector: 'div.completed' },
-      downloadvolumefactor: { case: { 'div.fl-label': '0', '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
-      date: { text: 'now' },
+      downloadvolumefactor: { case: { 'div.fl-label': 0, '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

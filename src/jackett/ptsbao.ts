@@ -29,19 +29,25 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
+    { name: 'cookie', type: 'text', label: 'Cookie' },
     {
-      name: 'info_email',
+      name: 'info',
       type: 'info',
-      label: 'About the Username field',
-      default: 'Enter your <b>Email address</b> in the username field.',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
     },
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
     {
       name: 'freeleech',
       type: 'checkbox',
       label: 'Search freeleech only',
       default: false,
+    },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
     {
       name: 'sort',
@@ -65,26 +71,17 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'login.php',
-    method: 'form',
-    form: 'form[action="takelogin.php"]',
-    captcha: {
-      type: 'image',
-      selector: 'img[alt="CAPTCHA"]',
-      input: 'imagestring',
-    },
-    inputs: {
-      loginmethod: 'email',
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
-      dutime: 'month',
-      logout: '',
-      securelogin: '',
-      ssl: 'yes',
-      trackerssl: '',
-    },
-    error: [{ selector: 'td.embeddeds:has(h2:contains("失败"))' }],
-    test: { path: 'index.php', selector: 'a[href="logout.php"]' },
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
+    test: { path: 'index.php' },
+  },
+  ratio: {
+    path: 'index.php',
+    selector: 'table tr td.bottom',
+    filters: [
+      { name: 'replace', args: ['分享率:', 'Ratio:'] },
+      { name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' },
+    ],
   },
   search: {
     paths: [{ path: 'torrents.php' }],

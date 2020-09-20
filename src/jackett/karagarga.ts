@@ -20,6 +20,16 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -47,6 +57,8 @@ export const definition: TrackerDefinition = {
       country: 0,
       hdrip: '',
       incldead: '',
+      source: '',
+      fl: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
       sort: '{{ if .Keywords }}{{ else }}added{{ end }}',
       d: '{{ if .Keywords }}{{ else }}DESC{{ end }}',
     },
@@ -141,6 +153,7 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'img[title^="CURRENT"]': 1.6, '*': 1.1 },
       },
+      minimumratio: { text: 0.25 },
     },
   },
   source: 'jackett',

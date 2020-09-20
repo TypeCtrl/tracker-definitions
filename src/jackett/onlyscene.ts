@@ -13,9 +13,18 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'Movies', desc: 'Movies' },
       { id: '2', cat: 'TV', desc: 'TV' },
       { id: '3', cat: 'Audio', desc: 'Music' },
-      { id: '4', cat: 'Console', desc: 'Games' },
       { id: '5', cat: 'TV/Anime', desc: 'Anime' },
-      { id: '6', cat: 'PC/Games', desc: 'Games-ssIDGB' },
+      { id: '9', cat: 'TV/Anime', desc: 'TV Anime' },
+      { id: '10', cat: 'TV/Documentary', desc: 'DOC' },
+      { id: '12', cat: 'Other', desc: 'Attente-Classement' },
+      { id: '13', cat: 'PC/Games', desc: 'jeux' },
+      { id: '14', cat: 'Other', desc: 'Dox' },
+      { id: '15', cat: 'PC/0day', desc: 'APPS' },
+      { id: '16', cat: 'Books/Magazines', desc: 'Journaux-Mags' },
+      { id: '17', cat: 'Books/Ebook', desc: 'Ebooks' },
+      { id: '18', cat: 'TV', desc: 'Spectacles' },
+      { id: '19', cat: 'TV', desc: 'TV Spectacles' },
+      { id: '20', cat: 'TV/Documentary', desc: 'TV DOC' },
     ],
     modes: {
       search: ['q', 'imdbid'],
@@ -31,6 +40,32 @@ export const definition: TrackerDefinition = {
       name: 'freeleech',
       type: 'checkbox',
       label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'FRENCH',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI.FRENCH': 'MULTI.FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI.ENGLISH': 'MULTI.ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI.VOSTFR': 'MULTI.VOSTFR',
+      },
+    },
+    {
+      name: 'vostfr',
+      type: 'checkbox',
+      label: 'Replace VOSTFR with ENGLISH',
       default: false,
     },
     {
@@ -76,7 +111,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents/filter' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
@@ -97,7 +132,35 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
-      title: { selector: 'a.view-torrent' },
+      title_phase1: {
+        selector: 'a.view-torrent',
+        filters: [{ name: 're_replace', args: ['([\\.]+)', ' '] }],
+      },
+      title_multilang: {
+        text: '{{ .Result.title_phase1 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title_phase2: {
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
+      },
+      title_vostfr: {
+        text: '{{ .Result.title_phase2 }}',
+        filters: [
+          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
+          {
+            name: 're_replace',
+            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
+          },
+        ],
+      },
+      title: {
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
+      },
       download: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
@@ -218,6 +281,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

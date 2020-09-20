@@ -51,7 +51,7 @@ export const definition: TrackerDefinition = {
       page: 'torrents',
       search: '{{ .Keywords }}',
       category: '{{ range .Categories }}{{.}};{{end}}',
-      active: 1,
+      active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
     },

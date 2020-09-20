@@ -17,6 +17,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -46,7 +52,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'browse/{{ if .Keywords }}search/{{ .Config.sort }}/name/{{ .Keywords }}{{else}}index/{{ .Config.sort }}{{end}}',
+          'browse/{{ if or .Keywords .Config.freeleech }}search/{{ .Config.sort }}/{{ else }}index/{{ .Config.sort }}/{{ end }}{{ if .Config.freeleech }}free{{ else }}name{{ end }}{{ if .Keywords }}/{{ .Keywords }}{{ else }}{{ end }}',
       },
     ],
     rows: { selector: 'tr.default, tr.danger, tr.success' },
@@ -82,6 +88,7 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="/images/glyphicons_069_gift.png"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.9 },
     },
   },
   source: 'jackett',

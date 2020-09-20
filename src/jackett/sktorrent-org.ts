@@ -64,6 +64,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -103,7 +109,7 @@ export const definition: TrackerDefinition = {
       search: '{{ .Keywords }}',
       cat: 0,
       incldead: 1,
-      freeleech: 0,
+      freeleech: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
       inclexternal: 0,
       lang: 0,
       sort: '{{ .Config.sort }}',

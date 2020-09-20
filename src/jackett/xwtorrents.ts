@@ -72,6 +72,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'seedbox',
       type: 'checkbox',
       label: 'Use SeedBox Download Link',
@@ -113,7 +119,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      incldead: 1,
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       search: '{{ .Keywords }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
@@ -162,6 +168,8 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="pic/freeleech.png"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.7 },
+      minimumseedtime: { text: 86400 },
     },
   },
   source: 'jackett',

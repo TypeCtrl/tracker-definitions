@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentz2k.pw/'],
-  legacylinks: ['https://torrentz2k.xyz/'],
+  links: ['https://torrentz2k.xyz/'],
+  legacylinks: ['https://torrentz2k.pw/'],
   caps: {
     modes: {
       search: ['q'],
@@ -17,17 +17,17 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
     categorymappings: [
-      { id: 'movies', cat: 'Movies' },
-      { id: 'games', cat: 'Console' },
-      { id: 'xxx', cat: 'XXX' },
+      { id: 'book', cat: 'Books' },
+      { id: 'film', cat: 'Movies' },
+      { id: 'gamepad', cat: 'Console' },
+      { id: 'list', cat: 'Other' },
+      { id: 'male', cat: 'XXX' },
       { id: 'music', cat: 'Audio' },
-      { id: 'anime', cat: 'TV/Anime' },
-      { id: 'tv', cat: 'TV' },
-      { id: 'applications', cat: 'PC' },
-      { id: 'apps', cat: 'PC' },
-      { id: 'windows', cat: 'PC/0day' },
-      { id: 'android', cat: 'PC/Phone-Android' },
-      { id: 'other', cat: 'Other' },
+      { id: 'sellsy', cat: 'Audio/Lossless' },
+      { id: 'play-circle', cat: 'TV' },
+      { id: 'smile-o', cat: 'TV/Anime' },
+      { id: 'television', cat: 'TV' },
+      { id: 'wrench', cat: 'PC' },
     ],
   },
   settings: [],
@@ -49,29 +49,19 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       category: {
-        selector: 'a[href^="/category/"]',
-        attribute: 'href',
-        filters: [{ name: 'split', args: ['/', 2] }],
+        selector: 'i',
+        attribute: 'class',
+        filters: [
+          { name: 'append', args: ' list' },
+          { name: 'split', args: [' ', 1] },
+          { name: 'replace', args: ['fa-', ''] },
+        ],
       },
       title: { selector: 'span.btntitle', attribute: 'title' },
-      details: { selector: 'td > a', attribute: 'href' },
-      _magnetfilename: {
-        text: '{{ .Result.title }}',
-        filters: [{ name: 'validfilename' }, { name: 'urlencode' }],
-      },
-      magnet: {
-        optional: true,
-        selector: 'td > a',
+      details: { text: '/' },
+      download: {
+        selector: 'a[href^="magnet:?xt="]',
         attribute: 'href',
-        filters: [
-          { name: 'replace', args: ['/', ''] },
-          { name: 'prepend', args: 'magnet:?xt=urn:btih:' },
-          {
-            name: 'append',
-            args:
-              '&dn={{ .Result._magnetfilename }}.torrent&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.leechers-paradise.org:6969&tr=udp://tracker.opentrackr.org:1337',
-          },
-        ],
       },
       date: {
         selector: 'td:nth-child(5)',

@@ -72,6 +72,38 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'FRENCH',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI.FRENCH': 'MULTI.FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI.ENGLISH': 'MULTI.ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI.VOSTFR': 'MULTI.VOSTFR',
+      },
+    },
+    {
+      name: 'vostfr',
+      type: 'checkbox',
+      label: 'Replace VOSTFR with ENGLISH',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -111,7 +143,7 @@ export const definition: TrackerDefinition = {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
-      freeleech: 0,
+      freeleech: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
       lang: 0,
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
@@ -119,11 +151,36 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     rows: { selector: 'table.ttable_headinner > tbody > tr.t-row' },
     fields: {
-      title: { selector: 'a[href^="torrents-details.php?id="] b' },
       category: {
         selector: 'a[href^="torrents.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
+      },
+      title_phase1: { selector: 'a[href^="torrents-details.php?id="] b' },
+      title_multilang: {
+        text: '{{ .Result.title_phase1 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title_phase2: {
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
+      },
+      title_vostfr: {
+        text: '{{ .Result.title_phase2 }}',
+        filters: [
+          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
+          {
+            name: 're_replace',
+            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
+          },
+        ],
+      },
+      title: {
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
       details: {
         selector: 'a[href^="torrents-details.php?id="]',
@@ -156,7 +213,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src="images/free.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

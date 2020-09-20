@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://wvw.cpasbien-fr.fr/'],
+  links: ['https://wwwv.cpasbien-fr.fr/'],
   legacylinks: [
     'http://www.cpasbiens.cc/',
     'http://www.cpabien.cm/',
@@ -40,6 +40,7 @@ export const definition: TrackerDefinition = {
     'https://www.cpasbien.lol/',
     'https://www.gktorrent.biz/',
     'https://vww.cpasbien-fr.fr/',
+    'https://wvw.cpasbien-fr.fr/',
   ],
   caps: {
     categorymappings: [{ id: 'other', cat: 'Other', desc: 'Movies/TV/Other' }],
@@ -73,6 +74,32 @@ export const definition: TrackerDefinition = {
       default:
         'cpasbien does not show <b>Categories</b> in its Search Results.<br />To use this indexer with Sonarr/Radarr set your indexer category to <b>7000</b>.',
     },
+    {
+      name: 'multilang',
+      type: 'checkbox',
+      label: 'Replace MULTI by another language in release name',
+      default: false,
+    },
+    {
+      name: 'multilanguage',
+      type: 'select',
+      label: 'Replace MULTI by this language',
+      default: 'FRENCH',
+      options: {
+        FRENCH: 'FRENCH',
+        'MULTI.FRENCH': 'MULTI.FRENCH',
+        ENGLISH: 'ENGLISH',
+        'MULTI.ENGLISH': 'MULTI.ENGLISH',
+        VOSTFR: 'VOSTFR',
+        'MULTI.VOSTFR': 'MULTI.VOSTFR',
+      },
+    },
+    {
+      name: 'vostfr',
+      type: 'checkbox',
+      label: 'Replace VOSTFR with ENGLISH',
+      default: false,
+    },
   ],
   login: {
     method: 'cookie',
@@ -95,29 +122,58 @@ export const definition: TrackerDefinition = {
       category: { text: 'other' },
       site_date: {
         selector: 'a',
-        filters: [{ name: 'regexp', args: '(\\w+)$' }],
+        filters: [{ name: 'regexp', args: '(19|20\\d{2})$' }],
       },
-      title: {
+      title_phase1: {
         selector: 'a',
         filters: [
           {
-            name: 'replace',
-            args: [' FRENCH', ' {{ .Result.site_date }} FRENCH'],
+            name: 're_replace',
+            args: ['(?i)( FRENCH)', ' {{ .Result.site_date }} FRENCH'],
           },
           {
-            name: 'replace',
-            args: ['MULTI', '{{ .Result.site_date }} MULTI'],
+            name: 're_replace',
+            args: ['(?i)( MULTI)', ' {{ .Result.site_date }} MULTI'],
           },
           {
-            name: 'replace',
-            args: ['TRUEFRENCH', '{{ .Result.site_date }} TRUEFRENCH'],
+            name: 're_replace',
+            args: ['(?i)( TRUEFRENCH)', ' {{ .Result.site_date }} TRUEFRENCH'],
           },
           {
-            name: 'replace',
-            args: ['VOSTFR', '{{ .Result.site_date }} VOSTFR'],
+            name: 're_replace',
+            args: ['(?i)( VOSTFR)', ' {{ .Result.site_date }} VOSTFR'],
           },
-          { name: 're_replace', args: ['(\\w+)$', ''] },
+          {
+            name: 're_replace',
+            args: ['(?i)( SUBFRENCH)', ' {{ .Result.site_date }} SUBFRENCH'],
+          },
+          { name: 're_replace', args: ['(19|20\\d{2})$', ''] },
         ],
+      },
+      title_multilang: {
+        text: '{{ .Result.title_phase1 }}',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
+          },
+        ],
+      },
+      title_phase2: {
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
+      },
+      title_vostfr: {
+        text: '{{ .Result.title_phase2 }}',
+        filters: [
+          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
+          {
+            name: 're_replace',
+            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
+          },
+        ],
+      },
+      title: {
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
       details: { selector: 'a', attribute: 'href' },
       download: { selector: 'a', attribute: 'href' },

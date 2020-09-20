@@ -716,6 +716,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -762,9 +768,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{if .Keywords}}"{{.Keywords}}"{{else}}{{end}}',
+      search: '{{ if .Keywords }}"{{ .Keywords }}"{{ else }}{{ end }}',
       incldead: 0,
-      freeleech: 0,
+      freeleech: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
       lang: 0,
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
@@ -799,7 +805,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src="images/free.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

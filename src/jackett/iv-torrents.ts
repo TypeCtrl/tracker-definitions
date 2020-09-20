@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://iv-torrents.ru/'],
+  links: ['https://iv-torrents.com/'],
+  legacylinks: ['https://iv-torrents.ru/'],
   caps: {
     categorymappings: [
       { id: '710', cat: 'Other', desc: 'Навител/Navitel ' },

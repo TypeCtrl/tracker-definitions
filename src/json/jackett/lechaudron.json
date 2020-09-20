@@ -154,6 +154,32 @@
       "type": "checkbox",
       "label": "Search freeleech only",
       "default": false
+    },
+    {
+      "name": "multilang",
+      "type": "checkbox",
+      "label": "Replace MULTI by another language in release name",
+      "default": false
+    },
+    {
+      "name": "multilanguage",
+      "type": "select",
+      "label": "Replace MULTI by this language",
+      "default": "FRENCH",
+      "options": {
+        "FRENCH": "FRENCH",
+        "MULTI.FRENCH": "MULTI.FRENCH",
+        "ENGLISH": "ENGLISH",
+        "MULTI.ENGLISH": "MULTI.ENGLISH",
+        "VOSTFR": "VOSTFR",
+        "MULTI.VOSTFR": "MULTI.VOSTFR"
+      }
+    },
+    {
+      "name": "vostfr",
+      "type": "checkbox",
+      "label": "Replace VOSTFR with ENGLISH",
+      "default": false
     }
   ],
   "login": {
@@ -165,6 +191,13 @@
     }
   },
   "download": {
+    "before": {
+      "path": "/TTV3/Torrents/{{ re_replace .DownloadUri.PathAndQuery \"^(.+?)(\\d+)$\" \"$2\" }}/remercier",
+      "method": "post",
+      "inputs": {
+        "torrent": "{{ re_replace .DownloadUri.PathAndQuery \"^(.+?)(\\d+)$\" \"$2\" }}"
+      }
+    },
     "selector": "a[href*=\"/Telechargement/\"]",
     "attribute": "href"
   },
@@ -183,10 +216,35 @@
         "attribute": "href",
         "filters": [{ "name": "regexp", "args": "(\\d+)$" }]
       },
-      "title": {
+      "title_phase1": {
         "selector": "a[href*=\"/SousCategories/\"]",
         "attribute": "alt",
         "filters": [{ "name": "regexp", "args": "^..(.+)" }]
+      },
+      "title_multilang": {
+        "text": "{{ .Result.title_phase1 }}",
+        "filters": [
+          {
+            "name": "re_replace",
+            "args": ["(?i)(\\smulti\\s)", " {{ .Config.multilanguage }} "]
+          }
+        ]
+      },
+      "title_phase2": {
+        "text": "{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}"
+      },
+      "title_vostfr": {
+        "text": "{{ .Result.title_phase2 }}",
+        "filters": [
+          { "name": "re_replace", "args": ["(?i)(\\svostfr\\s)", " ENGLISH "] },
+          {
+            "name": "re_replace",
+            "args": ["(?i)(\\ssubfrench\\s)", " ENGLISH "]
+          }
+        ]
+      },
+      "title": {
+        "text": "{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}"
       },
       "details": { "selector": "a[onmouseover]", "attribute": "href" },
       "download": { "selector": "a[onmouseover]", "attribute": "href" },
@@ -219,7 +277,8 @@
         "case": { "img[src$=\"/images/Torrents/freeleech.png\"]": 0, "*": 1 }
       },
       "uploadvolumefactor": { "text": 1 },
-      "minimumratio": { "text": 0.8 }
+      "minimumratio": { "text": 0.95 },
+      "minimumseedtime": { "text": 172800 }
     }
   },
   "source": "jackett"

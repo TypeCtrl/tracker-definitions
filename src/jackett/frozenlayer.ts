@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://www.frozen-layer.com/'],
+  certificates: ['f10b172547eee4b73d7b8f2ea66311134033faa8'],
   settings: [
     {
       name: 'category',

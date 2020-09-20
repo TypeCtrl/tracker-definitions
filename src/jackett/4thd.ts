@@ -45,6 +45,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -77,7 +83,7 @@ export const definition: TrackerDefinition = {
       $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
-      filter_freeleech: 0,
+      filter_freeleech: '{{ if .Config.freeleech }}1{{ else }}0{{ end }}',
       title: '{{ .Keywords }}',
       search_type: 1,
       taglist: '',
@@ -122,7 +128,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src$="/freedownload.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',
