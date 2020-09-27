@@ -47,14 +47,14 @@ export const definition: TrackerDefinition = {
       type: 'select',
       label: 'Download link',
       default: 'magnet:?xt=',
-      options: { '/telecharger/': '.torrent', 'magnet:?xt=': 'magnet' },
+      options: { get_torrents: '.torrent', 'magnet:?xt=': 'magnet' },
     },
     {
       name: 'info_downloadlink',
       type: 'info',
       label: 'About the Download Link',
       default:
-        'Note that only <b>www.oxtorrent.pw</b> supports the use of the <b>.torrent</b> download link.<br />All sites support <b>magnet</b> links.',
+        'Note that only <b>www.oxtorrent.cc</b> supports the use of the <b>.torrent</b> download link.<br />All sites support <b>magnet</b> links.',
     },
     {
       name: 'multilang',

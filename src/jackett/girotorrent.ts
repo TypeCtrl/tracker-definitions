@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
-    error: [{ selector: 'div.error' }],
+    error: [{ selector: 'div.error' }, { selector: 'span[style="color:#FF0000;"]' }],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   download: {

@@ -8,7 +8,6 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://focu.sx/'],
-  certificates: ['dbd67d579c0a9b5f3e354fdcfe41f13f78c44487'],
   caps: {
     categorymappings: [
       { id: '111', cat: 'Movies', desc: '1922' },

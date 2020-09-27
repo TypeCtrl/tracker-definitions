@@ -4,6 +4,9 @@ export const j0Daykiev = jj0Daykiev;
 import { definition as jj1337X } from './1337x';
 export const j1337X = jj1337X;
 
+import { definition as jj1Ptbar } from './1ptbar';
+export const j1Ptbar = jj1Ptbar;
+
 import { definition as jj2Fast4You } from './2fast4you';
 export const j2Fast4You = jj2Fast4You;
 
@@ -51,9 +54,6 @@ export const jaidoruonline = jjaidoruonline;
 
 import { definition as jjaither } from './aither';
 export const jaither = jjaither;
-
-import { definition as jjalexfilm } from './alexfilm';
-export const jalexfilm = jjalexfilm;
 
 import { definition as jjamigosshare } from './amigosshare';
 export const jamigosshare = jjamigosshare;
@@ -166,9 +166,6 @@ export const jbtdigg = jjbtdigg;
 import { definition as jjbtetree } from './btetree';
 export const jbtetree = jjbtetree;
 
-import { definition as jjbteye } from './bteye';
-export const jbteye = jjbteye;
-
 import { definition as jjbtgigs } from './btgigs';
 export const jbtgigs = jjbtgigs;
 
@@ -210,6 +207,9 @@ export const jchdbits = jjchdbits;
 
 import { definition as jjchilebt } from './chilebt';
 export const jchilebt = jjchilebt;
+
+import { definition as jjcilipro } from './cilipro';
+export const jcilipro = jjcilipro;
 
 import { definition as jjcinemageddon } from './cinemageddon';
 export const jcinemageddon = jjcinemageddon;
@@ -378,9 +378,6 @@ export const jfilebase = jjfilebase;
 
 import { definition as jjfilmPaleis } from './film-paleis';
 export const jfilmPaleis = jjfilmPaleis;
-
-import { definition as jjfilmsclub } from './filmsclub';
-export const jfilmsclub = jjfilmsclub;
 
 import { definition as jjfinelite } from './finelite';
 export const jfinelite = jjfinelite;
@@ -624,9 +621,6 @@ export const jleporno = jjleporno;
 
 import { definition as jjlesaloon } from './lesaloon';
 export const jlesaloon = jjlesaloon;
-
-import { definition as jjliaorencili } from './liaorencili';
-export const jliaorencili = jjliaorencili;
 
 import { definition as jjlibranet } from './libranet';
 export const jlibranet = jjlibranet;
@@ -1030,9 +1024,6 @@ export const jthehorrorcharnel = jjthehorrorcharnel;
 import { definition as jjtheoccult } from './theoccult';
 export const jtheoccult = jjtheoccult;
 
-import { definition as jjthepiratebay } from './thepiratebay';
-export const jthepiratebay = jjthepiratebay;
-
 import { definition as jjtheplace } from './theplace';
 export const jtheplace = jjtheplace;
 
@@ -1294,6 +1285,7 @@ export const jztracker = jjztracker;
 export const definitions = [
   jj0Daykiev,
   jj1337X,
+  jj1Ptbar,
   jj2Fast4You,
   jj32Pages,
   jj3Changtrai,
@@ -1310,7 +1302,6 @@ export const definitions = [
   jjaftershock,
   jjaidoruonline,
   jjaither,
-  jjalexfilm,
   jjamigosshare,
   jjanirena,
   jjanisource,
@@ -1348,7 +1339,6 @@ export const definitions = [
   jjbtdb,
   jjbtdigg,
   jjbtetree,
-  jjbteye,
   jjbtgigs,
   jjbtnext,
   jjbtschool,
@@ -1363,6 +1353,7 @@ export const definitions = [
   jjchannelx,
   jjchdbits,
   jjchilebt,
+  jjcilipro,
   jjcinemageddon,
   jjcinemamovies,
   jjcinematik,
@@ -1419,7 +1410,6 @@ export const definitions = [
   jjfemdomcult,
   jjfilebase,
   jjfilmPaleis,
-  jjfilmsclub,
   jjfinelite,
   jjfinvip,
   jjfirebit,
@@ -1501,7 +1491,6 @@ export const definitions = [
   jjlegittorrents,
   jjleporno,
   jjlesaloon,
-  jjliaorencili,
   jjlibranet,
   jjlimetorrents,
   jjlinkomanija,
@@ -1636,7 +1625,6 @@ export const definitions = [
   jjthegeeks,
   jjthehorrorcharnel,
   jjtheoccult,
-  jjthepiratebay,
   jjtheplace,
   jjtheshinning,
   jjtheshow,

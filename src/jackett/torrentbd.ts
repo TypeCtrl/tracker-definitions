@@ -107,13 +107,10 @@ export const definition: TrackerDefinition = {
   login: {
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
-    test: {
-      path: 'torrent/',
-      selector: 'button[href="account-logout.php"]',
-    },
+    test: { path: '/', selector: 'button[href="account-logout.php"]' },
   },
   search: {
-    paths: [{ path: 'torrent/ajgettorrents.php', method: 'post' }],
+    paths: [{ path: 'ajgettorrents.php', method: 'post' }],
     inputs: {
       page: 1,
       origin: 'home',
@@ -147,7 +144,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       download: {
-        selector: 'a[href^="download.php?id="]',
+        selector: 'a[href*="download.php?id="]',
         attribute: 'href',
       },
       comments: { selector: 'a[href*="#comments"]', attribute: 'href' },

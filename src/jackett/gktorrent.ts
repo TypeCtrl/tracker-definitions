@@ -55,7 +55,7 @@ export const definition: TrackerDefinition = {
       type: 'select',
       label: 'Download link',
       default: 'magnet:?xt=',
-      options: { '/telecharger/': '.torrent', 'magnet:?xt=': 'magnet' },
+      options: { get_torrent: '.torrent', 'magnet:?xt=': 'magnet' },
     },
     {
       name: 'multilang',

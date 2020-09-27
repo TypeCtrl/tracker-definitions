@@ -7,7 +7,6 @@ export const definition: TrackerDefinition = {
   language: 'fi-FI',
   type: 'private',
   encoding: 'UTF-8',
-  certificates: ['646731cb7f3a332c1a1442302589480c46152ef6'],
   links: ['https://finvip.org/'],
   caps: {
     categorymappings: [

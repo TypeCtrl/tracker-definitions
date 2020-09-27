@@ -8,7 +8,6 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://myporn.club/'],
-  certificates: ['da470bec581812000ee09a68fd62dff7a3f50127'],
   caps: {
     categorymappings: [{ id: 'XXX', cat: 'XXX', desc: 'XXX' }],
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
