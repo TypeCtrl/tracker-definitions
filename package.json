@@ -32,7 +32,7 @@
     "@babel/plugin-transform-modules-commonjs": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
     "@ctrl/eslint-config": "1.2.1",
-    "@types/jest": "26.0.13",
+    "@types/jest": "26.0.14",
     "@types/js-yaml": "3.12.5",
     "@types/lodash": "4.14.161",
     "@types/node": "14.10.2",
