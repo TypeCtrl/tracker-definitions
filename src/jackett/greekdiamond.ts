@@ -140,8 +140,8 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-last-of-type(11)',
         filters: [
-          { name: 'append', args: ' 12:00:00 +02:00' },
-          { name: 'dateparse', args: '02/01/2006 15:04:05 -07:00' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
         ],
       },
       seeders: { selector: 'td:nth-last-of-type(9)' },

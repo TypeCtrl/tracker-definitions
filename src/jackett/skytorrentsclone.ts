@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.skytorrents.lol/'],
+  links: ['https://skytorrents.to/', 'https://skytorrents.org/', 'https://skytorrents.net/'],
   legacylinks: [
     'https://www.skytorrents.to/',
     'https://skytorrents.black-mirror.xyz/',
@@ -18,6 +18,7 @@ export const definition: TrackerDefinition = {
     'https://skytorrents.unblocked.bar/',
     'https://skytorrents.proxyportal.pw/',
     'https://skytorrents.uk-unblock.pro/',
+    'https://www.skytorrents.lol/',
   ],
   caps: {
     modes: {
@@ -51,16 +52,16 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}{{else}}top100?sort={{ .Config.sort }}{{end}}',
+          '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}{{else}}top100?sort={{ .Config.sort }}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{else}}{{end}}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{else}}{{end}}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{else}}{{end}}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{else}}{{end}}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{else}}{{end}}',
       },
     ],
     rows: { selector: 'tr.result' },

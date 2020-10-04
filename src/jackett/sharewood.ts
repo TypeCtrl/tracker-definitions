@@ -213,6 +213,7 @@ export const definition: TrackerDefinition = {
         selector: 'div.col-detail div.row div span',
         filters: [
           { name: 'replace', args: ['il y a ', ''] },
+          { name: 'replace', args: ['seconde', 'second'] },
           { name: 'replace', args: ['heure', 'hour'] },
           { name: 'replace', args: ['jour', 'day'] },
           { name: 'replace', args: ['semaine', 'week'] },

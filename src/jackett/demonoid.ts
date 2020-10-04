@@ -400,8 +400,8 @@ export const definition: TrackerDefinition = {
       seeded: 2,
       quality: 0,
       external: 2,
-      to: '{{ if .Query.IMDBID }}{{else}}1{{end}}',
-      query: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      to: '{{ if .Query.IMDBID }}{{ else }}1{{ end }}',
+      query: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       sort: '{{ re_replace .Config.sort "_" "" }}',
     },
     rows: {

@@ -24,7 +24,12 @@ export const definition: TrackerDefinition = {
       { id: '11', cat: 'Audio', desc: 'Radio' },
       { id: '12', cat: 'Other', desc: 'Misc' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },
@@ -123,7 +128,7 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:last-child',
         filters: [
-          { name: 'append', args: ' +09:00' },
+          { name: 'append', args: ' +00:00' },
           { name: 'dateparse', args: '060102 15:04:05 -07:00' },
         ],
       },
@@ -137,6 +142,7 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'img[src="images/freeleech2.png"]': 2, '*': 1 },
       },
+      minimumratio: { text: 0.8 },
     },
   },
   source: 'jackett',

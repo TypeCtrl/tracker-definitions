@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://www.moviesdvdr.me/'],
   caps: {
     modes: { search: ['q'], 'movie-search': ['q'] },
-    categorymappings: [{ id: 'Movies', cat: 'Movies' }],
+    categorymappings: [{ id: '1', cat: 'Movies/DVD' }],
   },
   settings: [],
   download: { selector: 'a.torrent_download', attribute: 'href' },
@@ -20,8 +20,12 @@ export const definition: TrackerDefinition = {
     inputs: { s: '{{ .Keywords }}' },
     rows: { selector: 'div.hitem', filters: [{ name: 'andmatch' }] },
     fields: {
-      category: { text: 'Movies' },
-      title: { selector: 'div.titulo' },
+      category: { text: 1 },
+      title: {
+        selector: 'div.titulo',
+        filters: [{ name: 'append', args: ' ' }],
+      },
+      'title|append': { text: 'DVDRiP XViD' },
       details: { selector: 'a', attribute: 'href' },
       download: { selector: 'a', attribute: 'href' },
       banner: {

@@ -59,9 +59,11 @@ export const definition: TrackerDefinition = {
         attribute: 'title',
         filters: [
           { name: 'replace', args: ['Pelicula en ', ''] },
-          { name: 'replace', args: ['Español', 'Spanish'] },
+          { name: 'replace', args: ['Español Latino', 'LATiN SPANiSH'] },
+          { name: 'replace', args: ['Español Castellano', 'SPANiSH'] },
           { name: 'replace', args: ['Ingles', 'English'] },
-          { name: 'replace', args: ['Subtitulado', 'Subtitled'] },
+          { name: 'replace', args: ['Subtitulado', ' SPASUBS'] },
+          { name: 'replace', args: ['VOSE', ''] },
         ],
       },
       _title: {
@@ -76,7 +78,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: {
-        text: '{{ .Result._title}} {{ .Result.quality }} {{ .Result.language }}',
+        text: '{{ .Result._title}} {{ .Result.language }} {{ .Result.quality }}',
       },
       details: { selector: '.meta a', attribute: 'href' },
       download: { selector: '.meta a', attribute: 'href' },

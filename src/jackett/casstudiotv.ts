@@ -79,7 +79,6 @@ export const definition: TrackerDefinition = {
       },
       { id: '280', cat: 'TV', desc: 'Тик / The Tick' },
       { id: '328', cat: 'TV', desc: 'AMC' },
-      { id: '103', cat: 'TV', desc: 'Ад На Колёсах / Hell On Wheels' },
       { id: '122', cat: 'TV', desc: 'Безумцы / Mad Men' },
       {
         id: '208',
@@ -263,7 +262,6 @@ export const definition: TrackerDefinition = {
         desc: 'Оранжевый - хит сезона / Orange is the New Black',
       },
       { id: '194', cat: 'TV', desc: 'Сорвиголова / Daredevil' },
-      { id: '115', cat: 'TV', desc: 'Чёрное зеркало / Black Mirror' },
       { id: '333', cat: 'TV', desc: 'Showtime' },
       {
         id: '154',
@@ -321,7 +319,6 @@ export const definition: TrackerDefinition = {
       { id: '134', cat: 'TV', desc: 'Белый воротничок / White Collar' },
       { id: '230', cat: 'TV', desc: 'Колония / Colony' },
       { id: '291', cat: 'TV', desc: 'Королева Юга / Queen of the South' },
-      { id: '200', cat: 'TV', desc: 'Мистер робот / Mr. Robot' },
       {
         id: '236',
         cat: 'TV',
@@ -331,8 +328,6 @@ export const definition: TrackerDefinition = {
       { id: '352', cat: 'TV', desc: 'YouTube' },
       { id: '370', cat: 'TV', desc: 'Британские сериалы' },
       { id: '69', cat: 'TV', desc: 'Мушкетеры / The Musketeers' },
-      { id: '139', cat: 'TV', desc: 'Острые козырьки / Peaky Blinders' },
-      { id: '165', cat: 'TV', desc: 'Лютер / Luther' },
       { id: '272', cat: 'TV', desc: 'Поворот / TURN' },
       { id: '373', cat: 'TV', desc: 'Датские и Шведские сериалы' },
       { id: '381', cat: 'TV', desc: 'Ирландские сериалы' },
@@ -371,6 +366,8 @@ export const definition: TrackerDefinition = {
       { id: '265', cat: 'TV', desc: 'V8 supercars' },
       { id: '31', cat: 'TV', desc: 'Пользователи' },
       { id: '188', cat: 'TV', desc: 'Поздравления' },
+      { id: '24', cat: 'TV', desc: 'Чат' },
+      { id: '23', cat: 'TV', desc: 'Общий' },
     ],
     modes: {
       search: ['q'],
@@ -469,7 +466,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['окт', 'Oct'] },
           { name: 'replace', args: ['ноя', 'Nov'] },
           { name: 'replace', args: ['дек', 'Dec'] },
-          { name: 'dateparse', args: '02 Jan 2006, 15:04' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02 Jan 2006, 15:04 -07:00' },
         ],
       },
       downloadvolumefactor: { text: 1 },

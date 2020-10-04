@@ -42,6 +42,7 @@
       },
       { "id": "188", "cat": "Movies/WEBDL", "desc": "Bollywood-720p WEB-Rips" },
       { "id": "121", "cat": "Movies/DVD", "desc": "Bollywood-Untouched DVDs" },
+      { "id": "189", "cat": "Movies/DVD", "desc": "Bollywood-Encoded DVDs" },
       {
         "id": "122",
         "cat": "Movies/WEBDL",
@@ -85,6 +86,7 @@
         "cat": "Movies/WEBDL",
         "desc": "Hollywood-DVDRips 1080p/720p"
       },
+      { "id": "193", "cat": "Movies/SD", "desc": "Hollywood-SDRips - WEB/DVD" },
       { "id": "135", "cat": "Movies/3D", "desc": "Hollywood-3D-Movies" },
       { "id": "136", "cat": "Movies", "desc": "Hollywood-Pre-Release" },
       { "id": "194", "cat": "Movies", "desc": "Hollywood-Movies packs" },
@@ -100,6 +102,8 @@
       { "id": "185", "cat": "Movies", "desc": "Gujarati-Movies" },
       { "id": "184", "cat": "Movies", "desc": "Bollywood-South Hindi Dubbed" },
       { "id": "183", "cat": "Movies", "desc": "Hindi Dubbed Movies" },
+      { "id": "197", "cat": "Movies", "desc": "Turkish Hindi Dubbed" },
+      { "id": "198", "cat": "Movies", "desc": "TV-MTV" },
       { "id": "182", "cat": "Movies", "desc": "Other Movies" },
       { "id": "146", "cat": "TV", "desc": "TV-Colors" },
       { "id": "147", "cat": "TV", "desc": "TV-TV" },
@@ -193,7 +197,10 @@
       "files": { "selector": "td:nth-child(3)" },
       "date": {
         "selector": "td:nth-child(5)",
-        "filters": [{ "name": "dateparse", "args": "02-01-200615:04:05" }]
+        "filters": [
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "02-01-200615:04:05 -07:00" }
+        ]
       },
       "size": { "selector": "td:nth-child(6)" },
       "download": {

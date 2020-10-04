@@ -125,8 +125,8 @@
     "paths": [{ "path": "selection.php" }],
     "inputs": {
       "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
-      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
-      "blah": "{{ if .Query.IMDBID }}4{{else}}0{{end}}",
+      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
+      "blah": "{{ if .Query.IMDBID }}4{{ else }}0{{ end }}",
       "orderby": "{{ .Config.sort }}",
       "sort": "{{ .Config.type }}"
     },
@@ -220,7 +220,8 @@
         "optional": true,
         "filters": [
           { "name": "replace", "args": [" um", ""] },
-          { "name": "dateparse", "args": "02.01.2006 15:04:05" }
+          { "name": "append", "args": " +01:00" },
+          { "name": "dateparse", "args": "02.01.2006 15:04:05 -07:00" }
         ]
       },
       "description": { "selector": "selection_unter_af", "optional": true },

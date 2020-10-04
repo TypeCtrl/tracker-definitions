@@ -152,7 +152,8 @@ export const definition: TrackerDefinition = {
         remove: 'br',
         filters: [
           { name: 'regexp', args: 'Dodano: (\\d{2}\\/\\d{2}\\/\\d{4})' },
-          { name: 'dateparse', args: '02/01/2006' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
         ],
       },
       size: {

@@ -10,6 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['https://darkos.club/', 'https://dark-os.com/'],
   caps: {
     categorymappings: [
+      { id: '511', cat: 'Movies/HD', desc: 'Форум HD Video/RIP' },
       { id: '801', cat: 'Movies/3D', desc: ' | Фильмы в формате 3D' },
       {
         id: '802',

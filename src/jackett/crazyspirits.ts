@@ -258,7 +258,8 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [
           { name: 'regexp', args: 'Partagé Voilà : </b>(.*?)<br' },
-          { name: 'dateparse', args: '01-02-2006' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '01-02-2006 -07:00' },
         ],
       },
       downloadvolumefactor: {

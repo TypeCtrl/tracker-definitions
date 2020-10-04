@@ -72,7 +72,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{.Keywords}}',
+      search: '{{ .Keywords }}',
       searchin: 'title',
       incldead: 1,
       only_free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
@@ -120,7 +120,10 @@ export const definition: TrackerDefinition = {
       date: {
         optional: true,
         selector: 'td[data-label="Added"]:not(:contains("day"))',
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       seeders: { selector: 'td[data-label="Seeders"]' },
       leechers: { selector: 'td[data-label="Leechers"]' },

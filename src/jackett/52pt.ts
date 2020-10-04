@@ -20,6 +20,7 @@ export const definition: TrackerDefinition = {
       { id: '409', cat: 'Other', desc: 'Misc/其他' },
       { id: '410', cat: 'Other', desc: 'Opera/戏曲 曲艺' },
       { id: '408', cat: 'Audio', desc: 'HQ Audio/无损音乐' },
+      { id: '411', cat: 'XXX', desc: 'Erotic/情色' },
     ],
     modes: {
       search: ['q', 'imdbid'],
@@ -153,6 +154,8 @@ export const definition: TrackerDefinition = {
         },
       },
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 86400 },
     },
   },
   source: 'jackett',

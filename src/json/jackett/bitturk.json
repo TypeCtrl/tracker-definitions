@@ -153,7 +153,8 @@
         "selector": "td.torrent_name:contains(\" at \")",
         "filters": [
           { "name": "regexp", "args": "Uploaded (.+?) by" },
-          { "name": "replace", "args": [" at ", " "] }
+          { "name": "replace", "args": [" at ", " "] },
+          { "name": "append", "args": " +00:00" }
         ]
       },
       "size": { "selector": "a[rel=\"torrent_size\"]" },

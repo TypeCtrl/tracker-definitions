@@ -155,7 +155,7 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(4) span',
         attribute: 'title',
         filters: [
-          { name: 'append', args: ' +03:00' },
+          { name: 'append', args: ' +00:00' },
           { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },

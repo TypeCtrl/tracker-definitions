@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'es-419',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://purovicio.pw/'],
+  links: ['https://purovicio.in/'],
+  legacylinks: ['https://purovicio.pw/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
@@ -144,6 +145,13 @@ export const definition: TrackerDefinition = {
             args: [
               '(?i)(önce|tagasi|geleden|fa|temu|siden|há|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)',
               ' ago',
+            ],
+          },
+          {
+            name: 're_replace',
+            args: [
+              '(?i)(saniye|sekundit|sekunder|secondi|sekund|segundos|sekundami|секунд|secunde|secondes|Sekunden|секунди|seconden|秒前)',
+              'seconds',
             ],
           },
           {

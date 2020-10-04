@@ -123,6 +123,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -162,7 +168,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       page: 'torrents',
       $raw: '&category={{ range .Categories }}{{.}};{{end}}',
-      active: 1,
+      active: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
       search: '{{ .Keywords }}',
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
@@ -177,10 +183,10 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'category' }],
       },
       title: {
-        selector: 'td:nth-child(2) a:not(:contains("VOSE"))',
+        selector: 'td:nth-child(2) a:contains("VOSE")',
         optional: true,
         filters: [
-          { name: 'append', args: ' [Spanish]' },
+          { name: 'append', args: ' | English' },
           {
             name: 're_replace',
             args: ['(?i)T[\\s-_]?(\\d{1,2})(.*)\\[(\\d{1,2})[x|\\/|\\\\](\\d{1,2})\\]', 'S$1E$3 $2'],
@@ -199,16 +205,16 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: ['(?i)(\\d{1,2})(ª|\\D)?\\s?\\w*Temp\\w*\\b', ' S$1 '],
-          },
-          {
-            name: 're_replace',
             args: ['(?i)(\\d{1,2})[x|\\/|\\\\](\\d{1,2})', 'S$1E$2'],
           },
-          {
-            name: 're_replace',
-            args: ['(?i)S(\\d{1,2})[/x]?C(\\d{1,2})', 'S$1E$2'],
-          },
+        ],
+      },
+      'title|append': {
+        selector: 'td:nth-child(2) a:contains("Xvid"),a:contains("XVID"),a:contains("xvid")',
+        optional: true,
+        filters: [
+          { name: 're_replace', args: ['.', ''] },
+          { name: 'append', args: '480.Spanish-PuntoTorrent' },
         ],
       },
       details: {

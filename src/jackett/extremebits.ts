@@ -136,7 +136,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-of-type(2)',
         remove: 'a',
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       minimumratio: { text: 0.6 },
     },

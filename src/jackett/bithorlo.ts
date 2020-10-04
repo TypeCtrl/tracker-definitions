@@ -121,6 +121,10 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(7)' },
       date: {
         selector: 'a[style="font-size: 8pt;cursor: pointer;"][title]',
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       downloadvolumefactor: {
         case: { 'img[title="Ingyenes letöltés"]': 0, '*': 1 },

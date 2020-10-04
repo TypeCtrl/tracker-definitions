@@ -8,7 +8,7 @@
   "links": ["https://booktracker.org/"],
   "caps": {
     "categorymappings": [{ "id": "1", "cat": "Books/Ebook", "desc": "Ebooks" }],
-    "modes": { "search": ["q"] }
+    "modes": { "search": ["q"], "book-search": ["q"] }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
@@ -63,13 +63,13 @@
       "selector": "tr[id^=\"tor_\"]:has(a[href^=\"./download.php?id=\"])"
     },
     "fields": {
+      "category": { "text": 1 },
       "title": { "selector": "a.tLink" },
       "details": { "selector": "a.tLink", "attribute": "href" },
       "download": {
         "selector": "a[href^=\"./download.php?id=\"]",
         "attribute": "href"
       },
-      "category": { "text": 1 },
       "size": { "selector": "td:nth-child(6) > u" },
       "seeders": { "selector": "td.seedmed > b" },
       "leechers": { "selector": "td.leechmed > b" },

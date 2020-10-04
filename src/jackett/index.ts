@@ -82,6 +82,9 @@ export const jasiancinema = jjasiancinema;
 import { definition as jjast4U } from './ast4u';
 export const jast4U = jjast4U;
 
+import { definition as jjasylumshare } from './asylumshare';
+export const jasylumshare = jjasylumshare;
+
 import { definition as jjaudiobookbay } from './audiobookbay';
 export const jaudiobookbay = jjaudiobookbay;
 
@@ -817,6 +820,9 @@ export const jpornotor = jjpornotor;
 import { definition as jjproaudiotorrents } from './proaudiotorrents';
 export const jproaudiotorrents = jjproaudiotorrents;
 
+import { definition as jjproporno } from './proporno';
+export const jproporno = jjproporno;
+
 import { definition as jjprostylex } from './prostylex';
 export const jprostylex = jjprostylex;
 
@@ -1032,6 +1038,9 @@ export const jtheshinning = jjtheshinning;
 
 import { definition as jjtheshow } from './theshow';
 export const jtheshow = jjtheshow;
+
+import { definition as jjtheunknown } from './theunknown';
+export const jtheunknown = jjtheunknown;
 
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
@@ -1311,6 +1320,7 @@ export const definitions = [
   jjasgaard,
   jjasiancinema,
   jjast4U,
+  jjasylumshare,
   jjaudiobookbay,
   jjaudiobooktorrents,
   jjaudionews,
@@ -1556,6 +1566,7 @@ export const definitions = [
   jjpornorip,
   jjpornotor,
   jjproaudiotorrents,
+  jjproporno,
   jjprostylex,
   jjpterclub,
   jjptfiles,
@@ -1628,6 +1639,7 @@ export const definitions = [
   jjtheplace,
   jjtheshinning,
   jjtheshow,
+  jjtheunknown,
   jjthevault,
   jjtjupt,
   jjtlfbits,

@@ -1,7 +1,7 @@
 {
   "id": "extremlymtorrents",
   "name": "ExtremlymTorrents",
-  "description": "ExtremlymTorrents is a Semi-Private tracker for MOVIES / TV / GENERAL",
+  "description": "ExtremlymTorrents (XTR) is a Semi-Private tracker for MOVIES / TV / GENERAL",
   "language": "en-US",
   "type": "semi-private",
   "encoding": "UTF-8",
@@ -12,11 +12,12 @@
       { "id": "15", "cat": "Movies/HD", "desc": "1080p HD" },
       { "id": "40", "cat": "Movies/UHD", "desc": "4K UHD 2160p" },
       { "id": "12", "cat": "Movies/BluRay", "desc": "BluRay" },
-      { "id": "5", "cat": "Movies/DVD", "desc": "DVDRip " },
+      { "id": "5", "cat": "Movies/DVD", "desc": "DVDRip" },
       { "id": "16", "cat": "Movies/3D", "desc": "BluRay 3D" },
       { "id": "13", "cat": "TV/HD", "desc": "HDTV" },
       { "id": "47", "cat": "XXX", "desc": "Porn UHD 4K -[+18]- xXx" },
       { "id": "11", "cat": "XXX", "desc": "Porn -[+18]- xXx" },
+      { "id": "50", "cat": "XXX", "desc": "xXx iMAGESET (+18)" },
       { "id": "41", "cat": "TV", "desc": "TVRip" },
       { "id": "6", "cat": "Audio", "desc": "Music Mp3 | FLAC" },
       { "id": "9", "cat": "TV", "desc": "Kidz | Cartoons" },
@@ -152,7 +153,10 @@
       },
       "date": {
         "selector": "td:nth-last-child(1)",
-        "filters": [{ "name": "dateparse", "args": "02.01.200615:04:05" }]
+        "filters": [
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "02.01.200615:04:05 -07:00" }
+        ]
       },
       "leechers": { "selector": "td:nth-last-child(2)" },
       "seeders": { "selector": "td:nth-last-child(3)" },
@@ -160,7 +164,9 @@
       "downloadvolumefactor": {
         "case": { "img[src=\"/images/free.png\"]": 0, "*": 1 }
       },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 86400 }
     }
   },
   "source": "jackett"

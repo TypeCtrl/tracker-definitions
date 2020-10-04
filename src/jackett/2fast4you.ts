@@ -226,6 +226,7 @@ export const definition: TrackerDefinition = {
       },
       banner: { selector: 'img.rounded-img', attribute: 'src' },
       size: { selector: 'td:nth-child(5)' },
+      grabs: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
       date: { text: 'now' },

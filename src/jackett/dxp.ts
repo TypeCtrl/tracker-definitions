@@ -34,7 +34,13 @@ export const definition: TrackerDefinition = {
       { id: '17', cat: 'Other/Misc', desc: 'VIP' },
       { id: '24', cat: 'Other/Misc', desc: 'SuperVIP' },
     ],
-    modes: { search: ['q'], 'music-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -72,7 +78,9 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
+      incldead: 1,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -92,7 +100,10 @@ export const definition: TrackerDefinition = {
       details: { selector: 'a[href^="torrent-"]', attribute: 'href' },
       date: {
         selector: 'i',
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       files: { selector: 'td:nth-child(4)' },
       size: { selector: 'td:nth-child(6)' },
@@ -112,6 +123,7 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.3 },
     },
   },
   source: 'jackett',

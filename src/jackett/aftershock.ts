@@ -154,6 +154,7 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: { case: { 'span.icon_gift': 0, '*': 1 } },
       uploadvolumefactor: { case: { 'span.icon_upload': 2, '*': 1 } },
+      minimumratio: { text: 0.31 },
     },
   },
   source: 'jackett',

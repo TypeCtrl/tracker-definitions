@@ -69,9 +69,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
-      Lysing: '{{ if .Query.IMDBID }}1{{else}}{{end}}',
+      Lysing: '{{ if .Query.IMDBID }}1{{ else }}{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -104,7 +104,10 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(10)' },
       date: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       downloadvolumefactor: { text: 1 },
       uploadvolumefactor: { text: 1 },

@@ -67,7 +67,12 @@ export const definition: TrackerDefinition = {
       artist: { selector: 'a[href^="artist.php?id="]', optional: true },
       title: {
         selector: 'a[href^="torrents.php?id="]',
-        filters: [{ name: 'prepend', args: '{{.Result.artist}} - ' }],
+        filters: [
+          {
+            name: 'prepend',
+            args: '{{ if .Result.artist }}{{ .Result.artist }}{{ else }}Varios artistas{{ end }} - ',
+          },
+        ],
       },
       details: {
         selector: 'a[href^="torrents.php?id="]',
@@ -83,7 +88,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(4) span',
         attribute: 'title',
-        filters: [{ name: 'dateparse', args: 'Jan 02 2006, 15:04' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: 'Jan 02 2006, 15:04 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(6)' },
@@ -99,6 +107,8 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'strong.torrent_label[title*="Neutral"]': 0, '*': 1 },
       },
+      minimumratio: { text: 0.6 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

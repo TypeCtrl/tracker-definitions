@@ -5,8 +5,8 @@
   "language": "el-GR",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://magico.one/"],
-  "legacylinks": ["https://magico.info/"],
+  "links": ["https://magico.club/"],
+  "legacylinks": ["https://magico.info/", "https://magico.one/"],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "Movies", "desc": "Movies" },

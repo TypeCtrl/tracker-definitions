@@ -24,6 +24,7 @@ export const definition: TrackerDefinition = {
       search: ['q', 'imdbid'],
       'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
       'movie-search': ['q', 'imdbid', 'tmdbid'],
+      'music-search': ['q'],
     },
   },
   settings: [
@@ -142,6 +143,13 @@ export const definition: TrackerDefinition = {
             args: [
               '(?i)(önce|tagasi|geleden|fa|temu|siden|há|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)',
               ' ago',
+            ],
+          },
+          {
+            name: 're_replace',
+            args: [
+              '(?i)(saniye|sekundit|sekunder|secondi|sekund|segundos|sekundami|секунд|secunde|secondes|Sekunden|секунди|seconden|秒前)',
+              'seconds',
             ],
           },
           {

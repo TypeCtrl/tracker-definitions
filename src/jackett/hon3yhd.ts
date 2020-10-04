@@ -126,7 +126,14 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
-      date: { selector: 'td:nth-child(6)' },
+      date: {
+        selector: 'td:nth-child(6):not(:contains("day"))',
+        optional: true,
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
+      },
       downloadvolumefactor: {
         case: { 'a.info > b:contains("Free")': 0, '*': 1 },
       },

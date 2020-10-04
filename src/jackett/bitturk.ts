@@ -157,6 +157,7 @@ export const definition: TrackerDefinition = {
         filters: [
           { name: 'regexp', args: 'Uploaded (.+?) by' },
           { name: 'replace', args: [' at ', ' '] },
+          { name: 'append', args: ' +00:00' },
         ],
       },
       size: { selector: 'a[rel="torrent_size"]' },

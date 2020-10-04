@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'TV/SD', desc: 'Sarjat DVD (series)' },
       { id: '30', cat: 'TV', desc: 'Sarjat (series)' },
       { id: '41', cat: 'TV/HD', desc: 'Sarjat HD (series)' },
-      { id: '43', cat: 'TV', desc: 'Salkkarit (?)' },
+      { id: '43', cat: 'TV', desc: 'Salkkarit (Soap Opera)' },
       { id: '40', cat: 'TV/Sport', desc: 'Urheilu (sport)' },
       { id: '31', cat: 'Other', desc: 'Muut (other)' },
     ],
@@ -139,7 +139,10 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-last-child(3)' },
       date: {
         selector: 'td:nth-last-child(4)',
-        filters: [{ name: 'dateparse', args: '02/01/2006 15:04' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/2006 15:04 -07:00' },
+        ],
       },
       description: {
         selector: 'td a[href^="index.php?page=torrent-details"]',

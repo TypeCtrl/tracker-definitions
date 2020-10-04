@@ -93,7 +93,18 @@
         "attribute": "href",
         "filters": [{ "name": "regexp", "args": "/categories/(\\d+)" }]
       },
-      "title": { "selector": "a.view-torrent" },
+      "title": {
+        "selector": "a.view-torrent",
+        "filters": [
+          { "name": "re_replace", "args": ["(?i)full", "BRDISK."] },
+          { "name": "re_replace", "args": ["HDOlimpo", ""] },
+          { "name": "re_replace", "args": ["HD-Olimpo", ""] },
+          { "name": "re_replace", "args": ["\\W", "."] },
+          { "name": "append", "args": ".Spanish-HDOlimpo" },
+          { "name": "re_replace", "args": ["\\.+", "."] },
+          { "name": "re_replace", "args": ["^\\.", ""] }
+        ]
+      },
       "download": {
         "selector": "a[href*=\"/download/\"]",
         "attribute": "href"
@@ -131,6 +142,13 @@
             "args": [
               "(?i)(önce|tagasi|geleden|fa|temu|siden|há|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)",
               " ago"
+            ]
+          },
+          {
+            "name": "re_replace",
+            "args": [
+              "(?i)(saniye|sekundit|sekunder|secondi|sekund|segundos|sekundami|секунд|secunde|secondes|Sekunden|секунди|seconden|秒前)",
+              "seconds"
             ]
           },
           {

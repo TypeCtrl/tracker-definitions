@@ -184,7 +184,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(2) i',
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       size: {
         selector: 'td:nth-child(4)',
@@ -217,6 +220,7 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.2 },
     },
   },
   source: 'jackett',

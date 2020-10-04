@@ -121,7 +121,12 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'a[href^="index.php?page=torrent-details"][onmouseover]:not(:contains("VOSE"))',
         optional: true,
-        filters: [{ name: 'append', args: ' [Spanish] [English]' }],
+        filters: [
+          { name: 're_replace', args: ['\\W', '.'] },
+          { name: 'append', args: '.Spanish-DivTeam' },
+          { name: 're_replace', args: ['\\.+', '.'] },
+          { name: 're_replace', args: ['^\\.', ''] },
+        ],
       },
       banner: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details"]',
@@ -140,7 +145,10 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(4)' },
       date: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       seeders: { selector: 'td:nth-last-child(4)' },
       leechers: { selector: 'td:nth-last-child(3)' },
@@ -162,6 +170,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 0.7 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

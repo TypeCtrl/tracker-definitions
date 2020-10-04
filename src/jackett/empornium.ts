@@ -147,6 +147,7 @@ export const definition: TrackerDefinition = {
         },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.5 },
     },
   },
   source: 'jackett',

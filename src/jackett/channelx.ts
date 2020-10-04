@@ -142,6 +142,13 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
+            args: [
+              '(?i)(saniye|sekundit|sekunder|secondi|sekund|segundos|sekundami|секунд|secunde|secondes|Sekunden|секунди|seconden|秒前)',
+              'seconds',
+            ],
+          },
+          {
+            name: 're_replace',
             args: ['(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)', 'minutes'],
           },
           {
@@ -221,6 +228,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 0.4 },
+      minimumseedtime: { text: 604800 },
     },
   },
   source: 'jackett',

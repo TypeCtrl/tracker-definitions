@@ -115,7 +115,8 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-last-child(4)',
         filters: [
           { name: 're_replace', args: [' (\\d{1}):(\\d{2})', ' 0$1:$2'] },
-          { name: 'dateparse', args: '2.01.2006 15:04' },
+          { name: 'append', args: ' +02:00' },
+          { name: 'dateparse', args: '2.01.2006 15:04 -07:00' },
         ],
       },
       size: { selector: 'td:nth-last-child(3)' },

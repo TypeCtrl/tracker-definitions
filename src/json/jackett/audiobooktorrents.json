@@ -160,7 +160,13 @@
       },
       "banner": { "selector": "img[src*=\"/img.php?\"]", "attribute": "src" },
       "files": { "selector": "td:nth-last-child(8)" },
-      "date": { "selector": "td:nth-last-child(7)" },
+      "date": {
+        "selector": "td:nth-last-child(7)",
+        "filters": [
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "Jan 2 2006 03:04 PM -07:00" }
+        ]
+      },
       "size": { "selector": "td:nth-last-child(6)" },
       "grabs": {
         "selector": "td:nth-last-child(5)",

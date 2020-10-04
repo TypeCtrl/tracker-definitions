@@ -213,7 +213,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-last-child(8)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       seeders: { selector: 'td:nth-last-child(7)' },
       leechers: { selector: 'td:nth-last-child(6)' },

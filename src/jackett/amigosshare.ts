@@ -307,7 +307,8 @@ export const definition: TrackerDefinition = {
         filters: [
           { name: 'regexp', args: 'Lançado: (.+?)$' },
           { name: 're_replace', args: [' (\\d:)', ' 0$1'] },
-          { name: 'dateparse', args: '02/01/06 15:04:05' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/06 15:04:05 -07:00' },
         ],
       },
       size: {
@@ -320,6 +321,7 @@ export const definition: TrackerDefinition = {
         case: { 'span.badge-success:contains("FREE")': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'brasiltracker',
   name: 'BrasilTracker',
   description: 'BrasilTracker is a BRAZILIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'en-US',
+  language: 'pt-BR',
   encoding: 'UTF-8',
   type: 'private',
   links: ['https://brasiltracker.org/'],
@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
     {
       name: 'freeleech',
       type: 'checkbox',
-      label: 'Filter freeleech only',
+      label: 'Search freeleech only',
       default: false,
     },
     {
@@ -73,12 +73,10 @@ export const definition: TrackerDefinition = {
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
       action: 'basic',
+      freetorrent: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
       searchsubmit: 1,
     },
-    rows: {
-      selector:
-        'table#torrent_table > tbody > tr.torrent{{ if .Config.freeleech }}:has(strong.tl_free){{ else }}{{ end }}',
-    },
+    rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
     fields: {
       category: { text: 1 },
       details: {
@@ -104,7 +102,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'span.time',
         attribute: 'title',
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006, 15:04' }],
+        filters: [
+          { name: 'append', args: ' -03:00' },
+          { name: 'dateparse', args: 'Jan 2 2006, 15:04 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(6)' },
@@ -117,6 +118,8 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="torrents.php?id="]',
         filters: [{ name: 'append', args: ' {{ .Result.title_details }}' }],
       },
+      minimumratio: { text: 0.6 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

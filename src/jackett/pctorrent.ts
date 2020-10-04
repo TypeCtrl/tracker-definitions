@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'WINDOWS-1251',
-  links: ['https://pc-torrent.pro/'],
-  legacylinks: ['https://pc-torrent.org/'],
+  links: ['https://pc-torrents.games/'],
+  legacylinks: ['https://pc-torrent.org/', 'https://pc-torrent.pro/'],
   caps: {
     categorymappings: [{ id: '1', cat: 'PC/Games', desc: 'Games' }],
     modes: { search: ['q'] },

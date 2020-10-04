@@ -174,6 +174,13 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
+            args: [
+              '(?i)(saniye|sekundit|sekunder|secondi|sekund|segundos|sekundami|секунд|secunde|secondes|Sekunden|секунди|seconden|秒前)',
+              'seconds',
+            ],
+          },
+          {
+            name: 're_replace',
             args: ['(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)', 'minutes'],
           },
           {

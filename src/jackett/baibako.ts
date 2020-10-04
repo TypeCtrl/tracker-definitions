@@ -23,6 +23,12 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -51,7 +57,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       search: '{{.Keywords }}',
-      incldead: 1,
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -60,6 +66,7 @@ export const definition: TrackerDefinition = {
       selector: 'table > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
+      category: { text: 1 },
       title: {
         selector: 'a[href^="details.php?id="]',
         filters: [
@@ -87,7 +94,6 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
-      category: { text: 1 },
       banner: { selector: 'img[src^="/posters/"]', attribute: 'src' },
       download: {
         selector: 'a[href^="download.php?id="]',
@@ -110,7 +116,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['октября', 'October'] },
           { name: 'replace', args: ['ноября', 'November'] },
           { name: 'replace', args: ['декабря', 'December'] },
-          { name: 'dateparse', args: '2 January 2006 15:04:05' },
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2 January 2006 15:04:05 -07:00' },
         ],
       },
       files: { selector: 'td:nth-last-child(5)' },
@@ -130,7 +137,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.3 },
     },
   },
   source: 'jackett',

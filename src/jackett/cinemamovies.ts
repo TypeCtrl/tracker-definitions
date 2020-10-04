@@ -135,7 +135,7 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td[width="66%"] > span > span',
         filters: [
-          { name: 'append', args: ' +00:00' },
+          { name: 'append', args: ' +02:00' },
           { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
@@ -150,6 +150,7 @@ export const definition: TrackerDefinition = {
         case: { 'img[src="pic/double.png"]': 2, '*': 1 },
       },
       minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

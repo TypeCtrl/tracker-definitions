@@ -126,7 +126,10 @@ export const definition: TrackerDefinition = {
       date: {
         optional: true,
         selector: 'td:nth-of-type(6):not(:contains("Juče")):not(:contains("Danas"))',
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       size: { selector: 'td:nth-of-type(7)' },
       grabs: {

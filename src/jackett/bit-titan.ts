@@ -177,7 +177,8 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [
           { name: 'replace', args: [' ', ''] },
-          { name: 'dateparse', args: '02.01.2006 15:04:05' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
         ],
       },
       size: {

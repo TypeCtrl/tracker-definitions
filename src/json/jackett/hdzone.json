@@ -147,11 +147,11 @@
       },
       "comments": { "selector": "td:nth-child(3) a", "attribute": "href" },
       "date": {
-        "selector": "td:nth-child(4) > span[title]",
-        "attribute": "title",
+        "selector": "td:nth-child(4):not(:has(span))",
+        "optional": true,
         "filters": [
           { "name": "append", "args": " +08:00" },
-          { "name": "dateparse", "args": "2006-01-02 15:04:05 -07:00" }
+          { "name": "dateparse", "args": "2006-01-0215:04:05 -07:00" }
         ]
       },
       "size": { "selector": "td:nth-child(5)" },

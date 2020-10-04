@@ -132,7 +132,11 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [
           { name: 're_replace', args: ['[,]|[\\s+]|[// ],\\/g', ' '] },
-          { name: 'dateparse', args: 'January 02  2006  03:04:05 PM' },
+          { name: 'append', args: ' +00:00' },
+          {
+            name: 'dateparse',
+            args: 'January 02  2006  03:04:05 PM -07:00',
+          },
         ],
       },
       seeders: { selector: 'td:nth-child(6)' },

@@ -119,7 +119,10 @@ export const definition: TrackerDefinition = {
       files: { selector: 'td:nth-child(3)' },
       date: {
         selector: 'td:nth-child(5)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' -00:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(6)' },
       grabs: {
@@ -130,6 +133,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: { text: 1 },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.25 },
     },
   },
   source: 'jackett',
