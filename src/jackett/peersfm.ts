@@ -36,6 +36,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -120,7 +121,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['окт', 'Oct'] },
           { name: 'replace', args: ['ноя', 'Nov'] },
           { name: 'replace', args: ['дек', 'Dec'] },
-          { name: 'dateparse', args: '15:04:0502 Jan 2006' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '15:04:0502 Jan 2006 -07:00' },
         ],
       },
       seeders: { selector: 'td:nth-child(8)' },

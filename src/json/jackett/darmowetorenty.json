@@ -108,6 +108,18 @@
       "selector": "a[href^=\"logout.php?check_hash=\"]"
     }
   },
+  "download": {
+    "selector": "table[align=\"center\"][width=\"100%\"] tbody tr:nth-child(2) td:nth-child(2)",
+    "filters": [
+      { "name": "toupper" },
+      { "name": "trim" },
+      { "name": "prepend", "args": "magnet:?xt=urn:btih:" },
+      {
+        "name": "append",
+        "args": "&tr=udp://tracker.opentrackr.org:1337&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.internetwarriors.net:1337&tr=udp://tracker.leechers-paradise.org:6969"
+      }
+    ]
+  },
   "search": {
     "paths": [{ "path": "torrenty.php" }],
     "inputs": {
@@ -116,7 +128,7 @@
       "erotyka": 1,
       "strona": 0
     },
-    "rows": { "selector": "table.header > tbody > tr > td", "after": 2 },
+    "rows": { "selector": "table.header > tbody > tr:has(td)", "after": 1 },
     "fields": {
       "category": {
         "selector": "a[href^=\"/torrenty.php?category=\"]",
@@ -128,18 +140,9 @@
         "selector": "a[href^=\"details.php?id=\"]:has(span)",
         "attribute": "href"
       },
-      "id": {
-        "selector": "img[src^=\"./imgtorrent/\"]",
-        "attribute": "src",
-        "filters": [
-          {
-            "name": "regexp",
-            "args": "\\.\\/imgtorrent\\/tmp\\/(.+?)-darmowe-torenty.jpg"
-          }
-        ]
-      },
       "download": {
-        "text": "download.php?id={{ .Result.id }}&f={{ .Result.title }}.torrent"
+        "selector": "a[href^=\"details.php?id=\"]:has(span)",
+        "attribute": "href"
       },
       "banner": {
         "selector": "img[src^=\"./imgtorrent/\"]",

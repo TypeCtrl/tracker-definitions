@@ -8,8 +8,7 @@
   "followredirect": true,
   "links": [
     "https://newkatcr.co/",
-    "https://kat.root.yt/",
-    "https://kat.unblockit.top/",
+    "https://kat.unblockit.lat/",
     "https://katcr.unblocked.rest/"
   ],
   "legacylinks": [
@@ -29,7 +28,9 @@
     "https://kickasstorrents.unblockninja.com/",
     "https://katcr.unblocked.bar/",
     "https://katcr.proxyportal.pw/",
-    "https://katcr.uk-unblock.pro/"
+    "https://katcr.uk-unblock.pro/",
+    "https://kat.unblockit.top/",
+    "https://kat.root.yt/"
   ],
   "caps": {
     "categorymappings": [
@@ -231,7 +232,15 @@
       "seeders": { "selector": "td[data-title=\"Seed\"]" },
       "leechers": { "selector": "td[data-title=\"Leech\"]" },
       "downloadvolumefactor": { "text": 0 },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "imdb": {
+        "selector": "a[href^=\"/find/content/ttimdb/tt\"]",
+        "attribute": "href",
+        "filters": [
+          { "name": "regexp", "args": "/(tt\\d+)/" },
+          { "name": "append", "args": "https://www.imdb.com/title/" }
+        ]
+      }
     }
   },
   "source": "jackett"

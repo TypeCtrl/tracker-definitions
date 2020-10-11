@@ -31,6 +31,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q'],
       'movie-search': ['q'],
       'music-search': ['q', 'album', 'artist', 'label', 'year'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -99,7 +100,10 @@ export const definition: TrackerDefinition = {
       files: { selector: 'td:nth-child(3)' },
       date: {
         selector: 'td:nth-child(4)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(5)' },
       grabs: {
@@ -108,7 +112,9 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
-      downloadvolumefactor: { text: 1 },
+      downloadvolumefactor: {
+        case: { 'img[src$="_gold.png"]': 0.65, '*': 1 },
+      },
       uploadvolumefactor: { text: 1 },
       minimumratio: { text: 0.15 },
     },

@@ -97,6 +97,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'vip',
+      type: 'checkbox',
+      label: "Show VIP torrent? (Enable if you're VIP)",
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -138,7 +144,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        '#Mcol > div > div.block-content > div > div > div > table > tbody > tr:nth-child(3) > td > table tr:not(:first-child)',
+        '#Mcol > div > div.block-content > div > div > div > table > tbody > tr:nth-child(3) > td > table tr:not(:first-child){{ if .Config.vip  }}{{ else }}:not(:has(a[href*="category=107"])){{ end }}',
     },
     fields: {
       category: {

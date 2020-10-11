@@ -157,20 +157,21 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'forumtracker.php' }],
     inputs: {
-      seed: '{{ if .Config.seed }}1{{else}}0{{end}}',
+      seed: '{{ if .Config.seed }}1{{ else }}0{{ end }}',
       withsubs: '{{ re_replace .Config.withsubs "_" "" }}',
-      filter: '{{ if .Config.hidef }}hd+{{else}}{{end}}{{ .Keywords }}',
+      filter: '{{ if .Config.hidef }}hd+{{ else }}{{ end }}{{ .Keywords }}',
       orderby: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
     },
     keywordsfilters: [
       {
         name: 're_replace',
-        args: ['S01E01', '{{ if .Config.stripS01E01 }}{{else}}S01E01{{end}}'],
+        args: ['S01E01', '{{ if .Config.stripS01E01 }}{{ else }}S01E01{{ end }}'],
       },
     ],
     rows: { selector: 'tr:has(a.magnetlink)' },
     fields: {
+      category: { text: 1 },
       title: {
         optional: true,
         selector: 'td.doubleindent, td.singleindent a[href^="/index.php?showtopic="]',
@@ -181,7 +182,7 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 'append',
-            args: '{{ if .Config.stripS01E01 }}{{else}} S01E01{{end}}',
+            args: '{{ if .Config.stripS01E01 }}{{ else }} S01E01{{ end }}',
           },
         ],
       },
@@ -192,11 +193,13 @@ export const definition: TrackerDefinition = {
       },
       download: { selector: 'td a.torrentlink', attribute: 'href' },
       magnet: { selector: 'td a.magnetlink', attribute: 'href' },
-      category: { text: 1 },
       size: { text: '500 MB' },
       date: {
         selector: 'td:nth-of-type(3)',
-        filters: [{ name: 'dateparse', args: '2006/01/02' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '2006/01/02 -07:00' },
+        ],
       },
       seeders: { selector: 'td:nth-of-type(4)' },
       leechers: { selector: 'td:nth-of-type(5)' },

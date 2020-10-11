@@ -72,6 +72,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -117,7 +123,7 @@ export const definition: TrackerDefinition = {
       page: 'torrents',
       search: '{{ .Keywords }}',
       category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
-      options: 0,
+      options: '{{ if .Config.freeleech }}5{{ else }}0{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
@@ -198,7 +204,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: "td:nth-last-child(7):contains('/')",
         optional: true,
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       grabs: {
         selector: 'td:nth-last-child(4)',

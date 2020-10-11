@@ -54,7 +54,7 @@ export const definition: TrackerDefinition = {
       { id: '38', cat: 'Books/Ebook', desc: 'Urban Fantasy' },
       { id: '31', cat: 'Books/Ebook', desc: 'Western' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -140,7 +140,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-last-child(6):not(:contains("day"))',
         optional: true,
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       size: { selector: 'td:nth-last-child(5)' },
       grabs: {

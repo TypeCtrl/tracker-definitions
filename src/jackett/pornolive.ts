@@ -56,7 +56,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'font.mnav',
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(3)' },
       seeders: {
@@ -69,6 +72,7 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.31 },
     },
   },
   source: 'jackett',

@@ -62,7 +62,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.Artist }}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
     },
     rows: {
@@ -113,7 +113,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['november', 'November'] },
           { name: 'replace', args: ['december', 'December'] },
           { name: 're_replace', args: ['\\s*om\\s*', ' '] },
-          { name: 'dateparse', args: '2 January 2006 15:04:05' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2 January 2006 15:04:05 -07:00' },
         ],
       },
       seeders: {

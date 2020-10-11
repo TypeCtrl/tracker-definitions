@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
     'https://torrentgalaxy.su/',
     'https://torrentgalaxy.root.yt/',
     'https://torrentgalaxy.unblockninja.com/',
-    'https://torrentgalaxy.unblockit.top/',
+    'https://torrentgalaxy.unblockit.lat/',
     'https://tgx.unblocked.rest/',
   ],
   legacylinks: [
@@ -34,6 +34,7 @@ export const definition: TrackerDefinition = {
     'https://tgx.unblocked.bar/',
     'https://tgx.proxyportal.pw/',
     'https://tgx.uk-unblock.pro/',
+    'https://torrentgalaxy.unblockit.top/',
   ],
   caps: {
     categorymappings: [

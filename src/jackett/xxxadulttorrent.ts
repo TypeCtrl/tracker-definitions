@@ -20,7 +20,10 @@ export const definition: TrackerDefinition = {
         path: '{{ if .Keywords }}search/{{ .Keywords }}{{ else }}browse/0/0/0/0{{ end }}',
       },
     ],
-    rows: { selector: 'li.content__item' },
+    rows: {
+      selector:
+        'li.content__item:has(div#torrent_info > div:contains("GB")), li.content__item:has(div#torrent_info > div:contains("MB"))',
+    },
     fields: {
       category: { text: 'XXX' },
       title: { selector: 'h1' },

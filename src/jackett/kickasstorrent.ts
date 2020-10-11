@@ -9,12 +9,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://newkatcr.co/',
-    'https://kat.root.yt/',
-    'https://kat.unblockit.top/',
-    'https://katcr.unblocked.rest/',
-  ],
+  links: ['https://newkatcr.co/', 'https://kat.unblockit.lat/', 'https://katcr.unblocked.rest/'],
   legacylinks: [
     'https://kickasstorrent.cr/',
     'https://katcr.to/',
@@ -33,6 +28,8 @@ export const definition: TrackerDefinition = {
     'https://katcr.unblocked.bar/',
     'https://katcr.proxyportal.pw/',
     'https://katcr.uk-unblock.pro/',
+    'https://kat.unblockit.top/',
+    'https://kat.root.yt/',
   ],
   caps: {
     categorymappings: [
@@ -235,6 +232,14 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td[data-title="Leech"]' },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
+      imdb: {
+        selector: 'a[href^="/find/content/ttimdb/tt"]',
+        attribute: 'href',
+        filters: [
+          { name: 'regexp', args: '/(tt\\d+)/' },
+          { name: 'append', args: 'https://www.imdb.com/title/' },
+        ],
+      },
     },
   },
   source: 'jackett',

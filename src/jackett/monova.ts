@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://monova.org/',
     'https://monova.to/',
-    'https://monova.unblockit.id/',
+    'https://monova.unblockit.lat/',
     'https://monova.unblocked.rest/',
   ],
   legacylinks: [
@@ -28,6 +28,7 @@ export const definition: TrackerDefinition = {
     'https://monova.unblocked.bar/',
     'https://monova.proxyportal.pw/',
     'https://monova.uk-unblock.pro/',
+    'https://monova.unblockit.id/',
   ],
   caps: {
     modes: {
@@ -35,6 +36,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
     categorymappings: [
       { id: 'venus-mars', cat: 'XXX' },
@@ -48,7 +50,6 @@ export const definition: TrackerDefinition = {
     ],
   },
   settings: [],
-  download: { selector: 'a#download-file', attribute: 'href' },
   search: {
     paths: [
       {
@@ -82,7 +83,27 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['fa fa-', ''] }],
       },
       details: { selector: 'td.torrent_name a', attribute: 'href' },
-      download: { selector: 'td.torrent_name a', attribute: 'href' },
+      _magnetfilename: {
+        text: '{{ .Result.title }}',
+        filters: [{ name: 'validfilename' }, { name: 'urlencode' }],
+      },
+      magnet: {
+        selector: 'td.torrent_name a',
+        attribute: 'href',
+        filters: [
+          { name: 'regexp', args: '([0-9A-Fa-f]{40})' },
+          { name: 'prepend', args: 'magnet:?xt=urn:btih:' },
+          {
+            name: 'append',
+            args: '&dn={{ .Result._magnetfilename }}.torrent',
+          },
+          {
+            name: 'append',
+            args:
+              '&tr=udp://tracker.opentrackr.org:1337&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.internetwarriors.net:1337&tr=udp://tracker.leechers-paradise.org:6969',
+          },
+        ],
+      },
       size: {
         optional: true,
         selector: 'td.center-align',

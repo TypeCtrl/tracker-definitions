@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.torrentdownload.info/',
-    'https://torrentdownload.unblockit.top/',
+    'https://torrentdownload.unblockit.lat/',
     'https://torrentdownload.unblocked.rest/',
   ],
   legacylinks: [
@@ -28,6 +28,7 @@ export const definition: TrackerDefinition = {
     'https://torrentdownload.unblocked.bar/',
     'https://torrentdownload.proxyportal.pw/',
     'https://torrentdownload.uk-unblock.pro/',
+    'https://torrentdownload.unblockit.top/',
   ],
   caps: {
     modes: {
@@ -76,6 +77,7 @@ export const definition: TrackerDefinition = {
       { id: 'Television', cat: 'TV' },
       { id: 'VideoMobile', cat: 'Movies' },
       { id: 'XXX', cat: 'XXX' },
+      { id: 'XXXVideo', cat: 'XXX' },
     ],
   },
   settings: [

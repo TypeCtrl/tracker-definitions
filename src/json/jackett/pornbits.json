@@ -71,7 +71,10 @@
       "date": {
         "selector": "td:nth-child(4) div:nth-child(2):contains(\"-\")",
         "optional": true,
-        "filters": [{ "name": "dateparse", "args": "3:04pm 2006-01-02" }]
+        "filters": [
+          { "name": "append", "args": " -07:00" },
+          { "name": "dateparse", "args": "3:04pm 2006-01-02 -07:00" }
+        ]
       },
       "size": { "selector": "td:nth-child(5) div:nth-child(1)" },
       "files": {

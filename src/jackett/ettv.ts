@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.ettvcentral.com/',
     'https://ettv.unblockninja.com/',
-    'https://ettv.unblockit.top/',
+    'https://ettv.unblockit.lat/',
     'https://ettv.unblocked.rest/',
   ],
   legacylinks: [
@@ -34,6 +34,7 @@ export const definition: TrackerDefinition = {
     'https://ettv.uk-unblock.pro/',
     'https://ettv.root.yt/',
     'https://www.ettv.be/',
+    'https://ettv.unblockit.top/',
   ],
   caps: {
     categorymappings: [

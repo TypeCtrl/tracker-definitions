@@ -253,6 +253,9 @@ export const jcrnaberza = jjcrnaberza;
 import { definition as jjcztorrent } from './cztorrent';
 export const jcztorrent = jjcztorrent;
 
+import { definition as jjdariustracker } from './dariustracker';
+export const jdariustracker = jjdariustracker;
+
 import { definition as jjdarkShadow } from './dark-shadow';
 export const jdarkShadow = jjdarkShadow;
 
@@ -619,9 +622,6 @@ export const jlegacyhd = jjlegacyhd;
 import { definition as jjlegittorrents } from './legittorrents';
 export const jlegittorrents = jjlegittorrents;
 
-import { definition as jjleporno } from './leporno';
-export const jleporno = jjleporno;
-
 import { definition as jjlesaloon } from './lesaloon';
 export const jlesaloon = jjlesaloon;
 
@@ -667,6 +667,9 @@ export const jmicrobit = jjmicrobit;
 import { definition as jjmmaTorrents } from './mma-torrents';
 export const jmmaTorrents = jjmmaTorrents;
 
+import { definition as jjmnv } from './mnv';
+export const jmnv = jjmnv;
+
 import { definition as jjmononokebt } from './mononokebt';
 export const jmononokebt = jjmononokebt;
 
@@ -678,6 +681,9 @@ export const jmovcr = jjmovcr;
 
 import { definition as jjmoviesdvdr } from './moviesdvdr';
 export const jmoviesdvdr = jjmoviesdvdr;
+
+import { definition as jjmoviezone } from './moviezone';
+export const jmoviezone = jjmoviezone;
 
 import { definition as jjmteamtp } from './mteamtp';
 export const jmteamtp = jjmteamtp;
@@ -850,6 +856,9 @@ export const jpurovicio = jjpurovicio;
 import { definition as jjpussytorrents } from './pussytorrents';
 export const jpussytorrents = jjpussytorrents;
 
+import { definition as jjpuurhollands } from './puurhollands';
+export const jpuurhollands = jjpuurhollands;
+
 import { definition as jjpwtorrents } from './pwtorrents';
 export const jpwtorrents = jjpwtorrents;
 
@@ -961,9 +970,6 @@ export const jsosulki = jjsosulki;
 import { definition as jjsoulvoice } from './soulvoice';
 export const jsoulvoice = jjsoulvoice;
 
-import { definition as jjsoundpark } from './soundpark';
-export const jsoundpark = jjsoundpark;
-
 import { definition as jjspacetorrent } from './spacetorrent';
 export const jspacetorrent = jjspacetorrent;
 
@@ -975,6 +981,9 @@ export const jspeedtorrentreloaded = jjspeedtorrentreloaded;
 
 import { definition as jjspiritofrevolution } from './spiritofrevolution';
 export const jspiritofrevolution = jjspiritofrevolution;
+
+import { definition as jjsporthd } from './sporthd';
+export const jsporthd = jjsporthd;
 
 import { definition as jjsportscult } from './sportscult';
 export const jsportscult = jjsportscult;
@@ -1225,6 +1234,9 @@ export const junlimitz = jjunlimitz;
 import { definition as jjvizuk } from './vizuk';
 export const jvizuk = jjvizuk;
 
+import { definition as jjvsttorrents } from './vsttorrents';
+export const jvsttorrents = jjvsttorrents;
+
 import { definition as jjwdt } from './wdt';
 export const jwdt = jjwdt;
 
@@ -1377,6 +1389,7 @@ export const definitions = [
   jjcrazyspirits,
   jjcrnaberza,
   jjcztorrent,
+  jjdariustracker,
   jjdarkShadow,
   jjdarktracker,
   jjdarmowetorenty,
@@ -1499,7 +1512,6 @@ export const definitions = [
   jjlechaudron,
   jjlegacyhd,
   jjlegittorrents,
-  jjleporno,
   jjlesaloon,
   jjlibranet,
   jjlimetorrents,
@@ -1515,10 +1527,12 @@ export const definitions = [
   jjmetaltracker,
   jjmicrobit,
   jjmmaTorrents,
+  jjmnv,
   jjmononokebt,
   jjmonova,
   jjmovcr,
   jjmoviesdvdr,
+  jjmoviezone,
   jjmteamtp,
   jjmteamtp2Fa,
   jjmuziekfabriek,
@@ -1576,6 +1590,7 @@ export const definitions = [
   jjpuntotorrent,
   jjpurovicio,
   jjpussytorrents,
+  jjpuurhollands,
   jjpwtorrents,
   jjr3Vwtf,
   jjracing4Everyone,
@@ -1613,11 +1628,11 @@ export const definitions = [
   jjsnowpt,
   jjsosulki,
   jjsoulvoice,
-  jjsoundpark,
   jjspacetorrent,
   jjspeedmasterhd,
   jjspeedtorrentreloaded,
   jjspiritofrevolution,
+  jjsporthd,
   jjsportscult,
   jjspringsunday,
   jjsukebeiPantsu,
@@ -1701,6 +1716,7 @@ export const definitions = [
   jjuniongang,
   jjunlimitz,
   jjvizuk,
+  jjvsttorrents,
   jjwdt,
   jjwihd,
   jjwitchhunter,

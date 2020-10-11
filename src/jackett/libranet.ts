@@ -16,12 +16,18 @@ export const definition: TrackerDefinition = {
       { id: '4', cat: 'Audio/Audiobook', desc: 'Hangoskönyv/Hun' },
       { id: '1', cat: 'Books/Ebook', desc: 'Könyv' },
       { id: '2', cat: 'Books/Ebook', desc: 'Könyv/Hun' },
+      { id: '55', cat: 'Other', desc: 'Mûhelysarok' },
       { id: '56', cat: 'Audio/Lossless', desc: 'LossLess' },
       { id: '57', cat: 'Audio/Lossless', desc: 'LossLess/Hun' },
       { id: '48', cat: 'Books/Magazines', desc: 'Magazin' },
       { id: '49', cat: 'Books/Magazines', desc: 'Magazin/Hun' },
     ],
-    modes: { search: ['q'], 'movie-search': ['q'], 'music-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
+    },
   },
   login: {
     path: 'takelogin.php',
@@ -47,6 +53,7 @@ export const definition: TrackerDefinition = {
       subcat: '',
       musicstyle: '',
       format: '',
+      incldead: 1,
     },
     rows: {
       selector: 'table.rounded tr:has(a[href^="browse.php?cat="])',
@@ -79,7 +86,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-last-child(7)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-last-child(6)' },
       grabs: {

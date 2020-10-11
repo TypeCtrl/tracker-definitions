@@ -44,11 +44,18 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
     {
       name: 'sort',
       type: 'select',
@@ -70,7 +77,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      notsecure: 1,
+      notsecure: '',
     },
     error: [{ selector: 'div.login_error_content_text' }],
     test: { path: 'browse.php' },
@@ -81,6 +88,7 @@ export const definition: TrackerDefinition = {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
+      nohnr: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -145,11 +153,8 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td.center.date',
         filters: [
-          {
-            name: 're_replace',
-            args: ['(\\-)(\\d{2})(\\d{2})(\\:)', '-$2 $3:'],
-          },
-          { name: 'dateparse', args: '2006-01-02 15:04' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2006-01-0215:04 -07:00' },
         ],
       },
       downloadvolumefactor: {

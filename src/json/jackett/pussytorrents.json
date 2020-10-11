@@ -68,7 +68,8 @@
         "selector": "span.subnote",
         "filters": [
           { "name": "replace", "args": ["Added on ", ""] },
-          { "name": "dateparse", "args": "2006-01-02 15:04:05" }
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "2006-01-02 15:04:05 -07:00" }
         ]
       },
       "size": { "selector": "td:nth-last-child(5)" },

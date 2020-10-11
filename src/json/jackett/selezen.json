@@ -57,12 +57,12 @@
       "do": "search",
       "subaction": "search",
       "showposts": 1,
-      "titleonly": "{{ if .Query.IMDBID }}0{{else}}3{{end}}",
+      "titleonly": "{{ if .Query.IMDBID }}0{{ else }}3{{ end }}",
       "story": "{{ if or .Query.IMDBID .Keywords }}{{ or .Query.IMDBID .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}",
       "sortby": "{{ .Config.sort }}",
       "resorder": "{{ .Config.type }}"
     },
-    "rows": { "selector": "div.card-default" },
+    "rows": { "selector": "div.card-default:has(i.fa-file-video-o)" },
     "fields": {
       "category": {
         "selector": "div.noimg > a",

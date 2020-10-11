@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'pornbay',
   name: 'Pornbay',
-  description: 'Pornbay is a Private Torrent Tracker for XXX',
+  description: 'Pornbay is a Private Torrent Tracker for 3X',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -21,6 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '32', cat: 'XXX', desc: 'Classic' },
       { id: '8', cat: 'XXX', desc: 'Clips' },
       { id: '9', cat: 'XXX', desc: 'Creampie' },
+      { id: '10', cat: 'XXX', desc: 'DVD-R' },
       { id: '11', cat: 'XXX', desc: 'Feature' },
       { id: '12', cat: 'XXX', desc: 'Fetish' },
       { id: '13', cat: 'XXX', desc: 'Foreign' },
@@ -35,6 +36,7 @@ export const definition: TrackerDefinition = {
       { id: '22', cat: 'XXX', desc: 'Lesbian' },
       { id: '23', cat: 'XXX', desc: 'Mature' },
       { id: '47', cat: 'XXX', desc: 'Megapack' },
+      { id: '49', cat: 'XXX', desc: 'Old+Young' },
       { id: '24', cat: 'XXX', desc: 'Orgy' },
       { id: '25', cat: 'XXX', desc: 'Other' },
       { id: '26', cat: 'XXX', desc: 'Pics' },
@@ -45,9 +47,34 @@ export const definition: TrackerDefinition = {
       { id: '28', cat: 'XXX', desc: 'Straight' },
       { id: '29', cat: 'XXX', desc: 'Teen' },
       { id: '51', cat: 'XXX', desc: 'VR Porn' },
+      { id: '33', cat: 'XXX', desc: 'Transsexual' },
     ],
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'info_grid',
+      type: 'info',
+      label: 'GRID view',
+      default:
+        'This indexer does not support the GRID view on the torrent search page. Change the <b>GRID</b> setting to <b>OFF</b> on your account profile. If set to <i>ON</i> will cause no results to be returned.',
+    },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default:
+        'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile. The default is <i>25</i>.',
+    },
+  ],
   login: {
     path: 'login.php',
     method: 'form',
@@ -63,11 +90,14 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      title: '{{ .Query.Keywords }}',
+      searchtext: '',
+      title: '{{ .Keywords }}',
       order_by: 'time',
       order_way: 'desc',
-      action: 'basic',
-      searchsubmit: 1,
+      action: 'advanced',
+      filter_freeleech: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      filelist: '',
+      taglist: '',
     },
     rows: {
       selector: 'table#torrent_table > tbody > tr[class^="torrent row"]',
@@ -116,11 +146,11 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: {
           'span.icon[title*="Freeleech"]': 0,
-          'img[alt="Freeleech"]': '0',
-          '*': '1',
+          'img[alt="Freeleech"]': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

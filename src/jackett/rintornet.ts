@@ -37,6 +37,7 @@ export const definition: TrackerDefinition = {
         desc: 'Инцест (Инсценировка) | Incest (Simulation)',
       },
       { id: '22', cat: 'XXX', desc: 'Лесбиянки | Lesbians' },
+      { id: '26', cat: 'XXX', desc: 'Порно Кастинг | Porno Casting' },
       {
         id: '23',
         cat: 'XXX',
@@ -104,6 +105,7 @@ export const definition: TrackerDefinition = {
           'a:last-of-type:contains("Amateur")': 10,
           'a:last-of-type:contains("Incest")': 24,
           'a:last-of-type:contains("Lesbians")': 22,
+          'a:last-of-type:contains("Casting")': 26,
           'a:last-of-type:contains("Classic")': 23,
           'a:last-of-type:contains("Femdom")': 21,
           'a:last-of-type:contains("BDSM")': 17,

@@ -210,11 +210,8 @@ export const definition: TrackerDefinition = {
       { id: '807', cat: 'Movies', desc: ' |- Мистика , Фэнтези' },
       { id: '806', cat: 'Movies', desc: ' |- Ужасы , Триллер' },
       { id: '805', cat: 'Movies', desc: ' |- Фантастика' },
-      {
-        id: '810',
-        cat: 'Movies',
-        desc: ' |- Классика отечественного кино',
-      },
+      { id: '810', cat: 'Movies', desc: 'Кино СССР' },
+      { id: '1609', cat: 'Movies', desc: ' |- Кино СССР (720p, 1080p)' },
       {
         id: '1318',
         cat: 'Movies',

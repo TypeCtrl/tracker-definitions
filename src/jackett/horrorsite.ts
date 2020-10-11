@@ -41,6 +41,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -137,7 +138,8 @@ export const definition: TrackerDefinition = {
             args: '(\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2})',
           },
           { name: 'replace', args: [' ', ' '] },
-          { name: 'dateparse', args: '2006-01-02 15:04:05' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
       size: { selector: 'td:nth-last-child(5) > u' },

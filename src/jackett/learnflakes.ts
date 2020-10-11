@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
       { id: '46', cat: 'Books', desc: 'LF VIP' },
       { id: '55', cat: 'Books', desc: 'Exclusive' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -143,7 +143,8 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [
           { name: 'regexp', args: 'Uploaded (.+?) by' },
-          { name: 'dateparse', args: '02-01-2006 15:04' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02-01-2006 15:04 -07:00' },
         ],
       },
       downloadvolumefactor: {

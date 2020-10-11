@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://korsar.tv/'],
-  legacylinks: ['https://korsar.tv/', 'http://korsar.info/', 'https://korsar.info/'],
+  links: ['http://korsar.rest/'],
+  legacylinks: ['https://korsar.tv/', 'http://korsar.info/', 'https://korsar.info/', 'http://korsar.tv/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Все Кинофильмы' },
@@ -1387,6 +1387,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -1423,7 +1424,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'search.php' }],
     inputs: {
-      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}2020{{end}}',
+      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
       sr: 'topics',
       sf: 'titleonly',
       tracker_search: 'torrent',
@@ -1432,10 +1433,12 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'li.row' },
     fields: {
-      category: {
-        selector: 'dt a:last-of-type',
+      category: { text: 408 },
+      'category|noappend': {
+        selector: 'dt a[href*="/viewtopic.php?f="]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '-f(\\d+).html' }],
+        optional: true,
+        filters: [{ name: 'querystring', args: 'f' }],
       },
       title: { selector: 'a.topictitle' },
       details: { selector: 'a.topictitle', attribute: 'href' },
@@ -1456,15 +1459,6 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'dd.posts span.seed' },
       leechers: { selector: 'dd.posts span.leech' },
       grabs: { selector: 'dd.posts span.complet' },
-      description_category: {
-        selector: 'dt a:last-of-type',
-        attribute: 'href',
-        filters: [{ name: 'regexp', args: '-f(\\d+).html' }],
-      },
-      description: {
-        selector: 'dt a:last-of-type',
-        filters: [{ name: 'prepend', args: '({{ .Result.description_category }}) ' }],
-      },
       date: {
         selector: 'dd:last-of-type:not(:contains("назад")):not(:contains("Сегодня,")):not(:contains("Вчера,"))',
         remove: 'a',
@@ -1484,7 +1478,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['окт', 'Oct'] },
           { name: 'replace', args: ['ноя', 'Nov'] },
           { name: 'replace', args: ['дек', 'Dec'] },
-          { name: 'dateparse', args: '02 Jan 2006, 15:04' },
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02 Jan 2006, 15:04 -07:00' },
         ],
       },
       downloadvolumefactor: { text: 0 },

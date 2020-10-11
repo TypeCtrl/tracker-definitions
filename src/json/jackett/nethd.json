@@ -19,12 +19,19 @@
       "search": ["q", "imdbid"],
       "tv-search": ["q", "season", "ep", "imdbid"],
       "movie-search": ["q", "imdbid"],
-      "music-search": ["q"]
+      "music-search": ["q"],
+      "book-search": ["q"]
     }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
     {
       "name": "sort",
       "type": "select",
@@ -73,12 +80,11 @@
     "paths": [{ "path": "torrents.php" }],
     "inputs": {
       "$raw": "{{ range .Categories }}cat={{.}}&{{end}}",
-      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
-      "search_area": "{{ if .Query.IMDBID }}4{{else}}0{{end}}",
+      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
+      "search_area": "{{ if .Query.IMDBID }}4{{ else }}0{{ end }}",
       "search_mode": 0,
-      "spstate": 0,
-      "inclbookmarked": 0,
-      "incldead": 1,
+      "spstate": "{{ if .Config.freeleech }}2{{ else }}0{{ end }}",
+      "incldead": 0,
       "sort": "{{ .Config.sort }}",
       "type": "{{ .Config.type }}"
     },
@@ -87,14 +93,14 @@
       "filters": [{ "name": "andmatch" }]
     },
     "fields": {
-      "title": {
-        "selector": "td.name > div > a[href*=\"-torrent-\"][title]",
-        "attribute": "title"
-      },
       "category": {
         "selector": "td.category > a",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "cat" }]
+      },
+      "title": {
+        "selector": "td.name > div > a[href*=\"-torrent-\"][title]",
+        "attribute": "title"
       },
       "details": {
         "selector": "td.name > div > a[href*=\"-torrent-\"][title]",
@@ -114,8 +120,18 @@
         ]
       },
       "date": {
-        "selector": "td:nth-child(5)",
-        "filters": [{ "name": "timeago" }]
+        "selector": "td:nth-child(5):not(:contains(\"-\"))",
+        "optional": true,
+        "filters": [
+          { "name": "re_replace", "args": ["year|years", "years "] },
+          { "name": "re_replace", "args": ["month|months", "months "] },
+          { "name": "re_replace", "args": ["week|weeks", "weeks "] },
+          { "name": "re_replace", "args": ["day|days", "days "] },
+          { "name": "re_replace", "args": ["second|seconds", "seconds "] },
+          { "name": "re_replace", "args": ["minute|minutes", "minutes "] },
+          { "name": "re_replace", "args": ["hour|hours", "hours "] },
+          { "name": "timeago" }
+        ]
       },
       "size": { "selector": "td:nth-child(6)" },
       "seeders": { "selector": "td:nth-child(7)" },
@@ -131,7 +147,8 @@
       },
       "uploadvolumefactor": {
         "case": { "span.label:contains(\"2X\")": 2, "*": 1 }
-      }
+      },
+      "minimumratio": { "text": 0.5 }
     }
   },
   "source": "jackett"

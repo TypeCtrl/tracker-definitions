@@ -47,24 +47,31 @@
       { "id": "4", "cat": "Audio", "desc": "Music - Russian" },
       { "id": "5", "cat": "Audio", "desc": "Music - Collections" },
       { "id": "42", "cat": "Audio", "desc": "Music - Classical" },
-      { "id": "1006", "cat": "Other", "desc": "Shows, Concerts, Sports" },
-      { "id": "2", "cat": "Other", "desc": "Other - AudioBooks" },
-      { "id": "1", "cat": "Other", "desc": "Other - Music Video's" },
-      { "id": "23", "cat": "Other", "desc": "Other - Games" },
-      { "id": "32", "cat": "Other", "desc": "Other - Programs" },
+      { "id": "1006", "cat": "TV/Other", "desc": "Shows, Concerts, Sports" },
+      { "id": "2", "cat": "Audio/Audiobook", "desc": "Other - AudioBooks" },
+      { "id": "1", "cat": "Audio/Video", "desc": "Other - Music Video's" },
+      { "id": "23", "cat": "Console", "desc": "Other - Games" },
+      { "id": "32", "cat": "PC", "desc": "Other - Programs" },
       { "id": "40", "cat": "Other", "desc": "Other - Design / Graphics" },
-      { "id": "41", "cat": "Other", "desc": "Other - Library" }
+      { "id": "41", "cat": "Books", "desc": "Other - Library" }
     ],
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"],
-      "music-search": ["q"]
+      "music-search": ["q"],
+      "book-search": ["q"]
     }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
     {
       "name": "striprussian",
       "type": "checkbox",
@@ -116,7 +123,7 @@
       "g": 0,
       "v": 0,
       "d": 0,
-      "w": 0,
+      "w": "{{ if .Config.freeleech }}11{{ else }}0{{ end }}",
       "t": "{{ .Config.sort }}",
       "f": "{{ .Config.type }}"
     },
@@ -180,11 +187,13 @@
         "optional": true,
         "filters": [
           { "name": "replace", "args": [" в", ""] },
-          { "name": "dateparse", "args": "02.01.2006 15:04" }
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "02.01.2006 15:04 -07:00" }
         ]
       },
       "downloadvolumefactor": { "case": { "a.r1": 0, "a.r2": 0.5, "*": 1 } },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 1 }
     }
   },
   "source": "jackett"

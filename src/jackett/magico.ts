@@ -101,6 +101,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -201,7 +202,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['Uploaded ', ''] },
           { name: 'replace', args: [' by', ''] },
           { name: 'replace', args: ['at ', ''] },
-          { name: 'dateparse', args: '02-01-2006 15:04' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02-01-2006 15:04 -07:00' },
         ],
       },
     },

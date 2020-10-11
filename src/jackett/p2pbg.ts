@@ -61,6 +61,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -144,7 +145,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(6):contains("/")',
         optional: true,
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(8)' },
