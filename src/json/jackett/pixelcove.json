@@ -44,7 +44,7 @@
       { "id": "72", "cat": "Other", "desc": "Board Games" },
       { "id": "75", "cat": "Other", "desc": "Paper Crafting" }
     ],
-    "modes": { "search": ["q"] }
+    "modes": { "search": ["q"], "book-search": ["q"] }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },

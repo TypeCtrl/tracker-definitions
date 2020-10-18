@@ -40,6 +40,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -83,7 +84,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: ':contains("\\"status\\":\\"error\\"")' }],
     test: { path: 'browse.php' },
   },
-  ratio: { path: 'browse.php', selector: 'span#ratioRatio' },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {

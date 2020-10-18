@@ -62,14 +62,6 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
-  ratio: {
-    path: 'index.php',
-    selector: 'span.medium:has(a[href="logout.php"])',
-    filters: [
-      { name: 'replace', args: ['分享率：', 'Ratio: '] },
-      { name: 'regexp', args: 'Ratio: (\\d+)' },
-    ],
-  },
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {

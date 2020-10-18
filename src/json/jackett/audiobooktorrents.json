@@ -97,7 +97,7 @@
       { "id": "710", "cat": "Books/Ebook", "desc": "[E] Young Adult" },
       { "id": "720", "cat": "Books/Ebook", "desc": "[E] Young Children" }
     ],
-    "modes": { "search": ["q"] }
+    "modes": { "search": ["q"], "book-search": ["q"] }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },

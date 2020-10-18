@@ -23,7 +23,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div:contains("Login Failed")' }],
     test: { path: 'my.php' },
   },
-  ratio: { path: 'browse.php', selector: '#status_bar' },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {

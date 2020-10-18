@@ -305,7 +305,7 @@ export const definition: TrackerDefinition = {
       { id: '238', cat: 'Other', desc: 'GFXNEWS VECTOR GRAPHICS' },
       { id: '221', cat: 'Other', desc: 'GFXNEWS VIDEO PRODUCTION' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

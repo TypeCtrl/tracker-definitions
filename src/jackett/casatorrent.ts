@@ -66,6 +66,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -136,7 +137,6 @@ export const definition: TrackerDefinition = {
       selector: 'a[href="account-logout.php"]',
     },
   },
-  ratio: { path: 'torrents-search.php', selector: 'div#infobar b' },
   search: {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {

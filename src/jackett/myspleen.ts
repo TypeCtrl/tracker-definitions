@@ -37,10 +37,6 @@ export const definition: TrackerDefinition = {
       selector: 'span.key:contains("Ratio") + span.value',
     },
   },
-  ratio: {
-    path: 'browse.php',
-    selector: 'span.key:contains("Ratio") + span.value',
-  },
   search: {
     paths: [{ path: 'browse.php', method: 'get' }],
     inputs: {

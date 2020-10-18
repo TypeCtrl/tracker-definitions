@@ -59,11 +59,6 @@ export const definition: TrackerDefinition = {
       selector: 'a[href*="/logout.php?logouthash="]',
     },
   },
-  ratio: {
-    path: 'index.php',
-    selector: 'div#top div:nth-child(2) span:nth-child(2)',
-    filters: [{ name: 'regexp', args: 'Ratio: (.+?) Bonus:' }],
-  },
   search: {
     paths: [{ path: 'browse.php' }],
     keywordsfilters: [{ name: 're_replace', args: ['(?i)\\bE(\\d+)\\b', 'E$1'] }],

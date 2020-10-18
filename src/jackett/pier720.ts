@@ -171,7 +171,10 @@ export const definition: TrackerDefinition = {
       t: 0,
       submit: 'Search',
     },
-    rows: { selector: 'li.row', filters: [{ name: 'andmatch' }] },
+    rows: {
+      selector: 'li.row:has(div.list-inner div[style="float:right;"])',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       title: { selector: 'a.topictitle' },
       details: { selector: 'a.topictitle', attribute: 'href' },

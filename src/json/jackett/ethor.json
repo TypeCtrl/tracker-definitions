@@ -37,7 +37,8 @@
       "search": ["q", "imdbid"],
       "tv-search": ["q", "season", "ep", "imdbid"],
       "movie-search": ["q", "imdbid"],
-      "music-search": ["q"]
+      "music-search": ["q"],
+      "book-search": ["q"]
     }
   },
   "settings": [
@@ -81,7 +82,6 @@
     "error": [{ "selector": ":contains(\"\\\"status\\\":\\\"error\\\"\")" }],
     "test": { "path": "browse.php" }
   },
-  "ratio": { "path": "browse.php", "selector": "span#ratioRatio" },
   "search": {
     "paths": [{ "path": "browse.php" }],
     "inputs": {

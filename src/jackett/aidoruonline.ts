@@ -71,7 +71,6 @@ export const definition: TrackerDefinition = {
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: '/', selector: 'a[href="account-logout.php"]' },
   },
-  ratio: { path: '/', selector: 'td:contains("Ratio") ~ td' },
   search: {
     paths: [{ path: 'get_ttable.php' }],
     inputs: {

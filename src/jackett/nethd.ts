@@ -74,10 +74,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'form#loginform > span.warning' }],
     test: { path: 'torrents.php' },
   },
-  ratio: {
-    path: 'torrents.php',
-    selector: 'div.user-info-extend > dl > dt:contains("Ratio:") + dd',
-  },
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {

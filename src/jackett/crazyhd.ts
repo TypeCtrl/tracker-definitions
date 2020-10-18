@@ -84,6 +84,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -120,11 +121,6 @@ export const definition: TrackerDefinition = {
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
-  },
-  ratio: {
-    path: 'index.php',
-    selector: 'span:contains("Ratio ")',
-    filters: [{ name: 'replace', args: ['Ratio ', ''] }],
   },
   search: {
     paths: [{ path: 'index.php?page=searchlist', method: 'post' }],

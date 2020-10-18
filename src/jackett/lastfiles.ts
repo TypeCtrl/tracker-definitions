@@ -59,6 +59,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -94,10 +95,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
     test: { path: 'browse.php' },
-  },
-  ratio: {
-    path: 'browse.php',
-    selector: 'font:contains("Ratio:") ~ font',
   },
   search: {
     paths: [{ path: 'browse.php' }],

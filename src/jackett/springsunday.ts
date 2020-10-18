@@ -68,14 +68,6 @@ export const definition: TrackerDefinition = {
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
-  ratio: {
-    path: 'index.php',
-    selector: 'span.medium:has(a[href^="userdetails.php"])',
-    filters: [
-      { name: 'replace', args: ['分享率：', 'Ratio: '] },
-      { name: 'regexp', args: 'Ratio: (\\d+)' },
-    ],
-  },
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {

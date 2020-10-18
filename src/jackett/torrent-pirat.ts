@@ -104,6 +104,16 @@ export const definition: TrackerDefinition = {
       { id: '639', cat: 'XXX', desc: '    Public &amp;Reality' },
       { id: '659', cat: 'XXX', desc: '    Incest / Taboo' },
       {
+        id: '685',
+        cat: 'XXX',
+        desc: '    Анал и ДП / Anal&DP - Сцены и ролики',
+      },
+      {
+        id: '684',
+        cat: 'XXX',
+        desc: '    Анал и ДП / Anal&DP - HD Сцены и ролики',
+      },
+      {
         id: '679',
         cat: 'XXX',
         desc: '    Молоденькие / Legal Teens - Сцены и ролики',

@@ -71,11 +71,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'table.main:contains("Login failed!")' }],
     test: { path: 'my.php', selector: 'a[href="logout.php"]' },
   },
-  ratio: {
-    path: 'browse.php',
-    selector: 'span.smallfont:has(a[href="logout.php"])',
-    filters: [{ name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' }],
-  },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
@@ -112,7 +107,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(4)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(5)' },
       grabs: {

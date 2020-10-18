@@ -67,7 +67,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'form[action$="/login"] .text-red' }],
   },
-  ratio: { path: '/', selector: 'span[title="Ratio"]' },
   search: {
     paths: [
       {

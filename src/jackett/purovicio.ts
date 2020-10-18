@@ -74,11 +74,6 @@ export const definition: TrackerDefinition = {
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: '/' },
   },
-  ratio: {
-    path: '/',
-    selector: 'span:has(i.fa-sync-alt)',
-    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
-  },
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {

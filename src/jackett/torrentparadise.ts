@@ -15,6 +15,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
     categorymappings: [
       { id: '', cat: 'Other' },
@@ -160,6 +161,7 @@ export const definition: TrackerDefinition = {
       { id: 'TVSDX264X265', cat: 'TV/SD' },
       { id: 'TVSHOWS', cat: 'TV' },
       { id: 'TVSPORT', cat: 'TV/Sport' },
+      { id: 'TVULTRAHD4K', cat: 'TV/UHD' },
       { id: 'TVTVPACKS', cat: 'TV' },
       { id: 'VIDEO', cat: 'Movies' },
       { id: 'UNSORTEDUNSORTED', cat: 'Other' },

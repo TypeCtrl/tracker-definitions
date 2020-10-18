@@ -14,6 +14,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
     categorymappings: [
       { id: '电影DVDRip', cat: 'Movies/SD' },
@@ -130,11 +131,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'form#loginform > span.warning' }],
     test: { path: 'my.php' },
-  },
-  ratio: {
-    path: 'my.php',
-    selector: 'span.smallfont:has(span#sp_signed)',
-    filters: [{ name: 'regexp', args: '分享率 : (.*?)  ' }],
   },
   search: {
     paths: [

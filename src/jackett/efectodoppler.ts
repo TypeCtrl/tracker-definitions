@@ -50,7 +50,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'form > span.warning' }],
     test: { path: 'index.php', selector: 'a[href^="logout.php?auth="]' },
   },
-  ratio: { path: 'index.php', selector: 'li#stats_ratio span.stat span' },
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {

@@ -54,6 +54,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -64,6 +65,12 @@ export const definition: TrackerDefinition = {
       type: 'checkbox',
       label: 'Search freeleech only',
       default: false,
+    },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
     {
       name: 'sort',
@@ -94,11 +101,6 @@ export const definition: TrackerDefinition = {
       },
     ],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
-  },
-  ratio: {
-    path: 'browse.php',
-    selector: 'td.text:contains("Ratio")',
-    filters: [{ name: 'regexp', args: 'Ratio actual ›(.*?) ]' }],
   },
   search: {
     paths: [{ path: 'browse.php' }],
@@ -139,12 +141,14 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: ['(\\d{4}-\\d{2}-\\d{2})(\\d{2}:\\d{2}:\\d{2})', '$1 $2'],
           },
-          { name: 'dateparse', args: '2006-01-02 15:04:05' },
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
       downloadvolumefactor: { case: { 'i.fg-gold': 0, '*': 1 } },
       uploadvolumefactor: { text: 1 },
       minimumratio: { text: 0.6 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

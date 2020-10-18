@@ -9,7 +9,12 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['http://bitru.org/'],
   caps: {
-    modes: { search: ['q'], 'movie-search': ['q'], 'music-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
+    },
     categorymappings: [
       { id: 'movie', cat: 'Movies' },
       { id: 'serial', cat: 'TV' },

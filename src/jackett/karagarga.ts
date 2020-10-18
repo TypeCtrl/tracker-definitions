@@ -18,6 +18,7 @@ export const definition: TrackerDefinition = {
       search: ['q', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [

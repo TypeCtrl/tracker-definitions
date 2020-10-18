@@ -82,6 +82,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -136,11 +137,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'tr td span[style="color:#FF0000;"]' }],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
-  },
-  ratio: {
-    path: 'index.php',
-    selector: 'table tr td:contains("Ratio")',
-    filters: [{ name: 'regexp', args: 'Ratio:\\s\\s(.*?)\\s\\s' }],
   },
   search: {
     paths: [{ path: 'index.php' }],

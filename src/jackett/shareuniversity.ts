@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://shareuniversity.org/'],
+  certificates: ['bc8d87bd28d61e24c4c1ee6c6a4105e4cc298380'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
@@ -30,6 +31,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -79,11 +81,6 @@ export const definition: TrackerDefinition = {
         message: { selector: 'script[nonce]:contains("Error")' },
       },
     ],
-  },
-  ratio: {
-    path: '/',
-    selector: 'li:has(i.fa-sync-alt)',
-    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
   search: {
     paths: [{ path: 'filterTorrents' }],

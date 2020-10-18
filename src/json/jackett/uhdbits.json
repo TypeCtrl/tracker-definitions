@@ -65,7 +65,6 @@
     "error": [{ "selector": ".auth_form > .warning" }],
     "test": { "path": "top10.php" }
   },
-  "ratio": { "path": "top10.php", "selector": "span.r99" },
   "search": {
     "paths": [{ "path": "torrents.php" }],
     "inputs": {

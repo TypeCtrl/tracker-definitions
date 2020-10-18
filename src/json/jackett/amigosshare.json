@@ -89,7 +89,8 @@
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"],
-      "music-search": ["q"]
+      "music-search": ["q"],
+      "book-search": ["q"]
     }
   },
   "settings": [
@@ -140,10 +141,6 @@
       "path": "torrents-search.php",
       "selector": "a[href=\"account-logout.php\"]"
     }
-  },
-  "ratio": {
-    "path": "torrents-search.php",
-    "selector": "li:contains(\"Ratio:\") a b"
   },
   "search": {
     "paths": [

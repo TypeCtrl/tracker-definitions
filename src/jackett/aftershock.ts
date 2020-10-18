@@ -54,6 +54,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -94,11 +95,6 @@ export const definition: TrackerDefinition = {
       },
     ],
     test: { path: '/', selector: 'a[href="/logout.php"]' },
-  },
-  ratio: {
-    path: '/',
-    selector: 'p.sajatadatok font',
-    filters: [{ name: 'replace', args: [',', ''] }],
   },
   search: {
     paths: [{ path: 'browse.php' }],

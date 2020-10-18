@@ -92,6 +92,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -134,14 +135,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'div#login_error' }],
     test: { path: 'browse.php', selector: 'a[href="logout.php"]' },
-  },
-  ratio: {
-    path: 'browse.php',
-    selector: 'div#tom-b-t8',
-    filters: [
-      { name: 'replace', args: ['.', ''] },
-      { name: 'replace', args: [',', '.'] },
-    ],
   },
   search: {
     paths: [{ path: 'browse.php' }],

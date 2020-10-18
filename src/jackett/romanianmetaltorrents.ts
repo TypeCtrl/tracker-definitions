@@ -34,10 +34,6 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: 'browse.php', selector: 'a[href="logout.php"]' },
   },
-  ratio: {
-    path: 'browse.php',
-    selector: 'img:contains("Ratio =") > img',
-  },
   download: {
     method: 'get',
     before: {

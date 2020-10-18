@@ -36,6 +36,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -46,6 +47,12 @@ export const definition: TrackerDefinition = {
       type: 'checkbox',
       label: 'Filter freeleech only',
       default: false,
+    },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
     },
     {
       name: 'sort',
@@ -91,15 +98,15 @@ export const definition: TrackerDefinition = {
         'table[border=1][cellpadding=5] > tbody > tr:has(a[href^="download.php?torrent="]){{ if .Config.freeleech }}:has(img[src$="/free.jpg"]){{ else }}{{ end }}',
     },
     fields: {
-      title: { selector: 'a[href^="details.php?id="]' },
-      details: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
-      },
       category: {
         selector: 'a[href^="browse.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
+      },
+      title: { selector: 'a[href^="details.php?id="]' },
+      details: {
+        selector: 'a[href^="details.php?id="]',
+        attribute: 'href',
       },
       download: {
         selector: 'a[href^="download.php?torrent="]',
@@ -117,7 +124,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-last-child(6):not(:contains("day"))',
         optional: true,
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       size: { selector: 'td:nth-last-child(5)' },
       grabs: {

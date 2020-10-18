@@ -114,7 +114,12 @@ export const definition: TrackerDefinition = {
       { id: '61', cat: 'PC/ISO', desc: 'Applications' },
       { id: '62', cat: 'PC/Games', desc: 'Games' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'book-search': ['q'],
+    },
   },
   search: {
     paths: [{ path: '/' }],

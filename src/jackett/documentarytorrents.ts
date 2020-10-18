@@ -76,7 +76,12 @@ export const definition: TrackerDefinition = {
       { id: '89', cat: 'TV/HD', desc: 'War: HD' },
       { id: '88', cat: 'TV/SD', desc: 'War: Xvid / x264' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'book-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -121,7 +126,6 @@ export const definition: TrackerDefinition = {
       selector: 'a[href$="/account-logout.php"]',
     },
   },
-  ratio: { path: 'index.php', selector: 'img[title="Ratio"]' },
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {

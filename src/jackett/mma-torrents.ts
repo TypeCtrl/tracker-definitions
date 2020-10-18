@@ -65,7 +65,11 @@ export const definition: TrackerDefinition = {
       { id: '94', cat: 'TV/Sport', desc: 'TV Show - Episode/SD' },
       { id: '127', cat: 'TV/Sport', desc: 'TV Show - WebRip' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'book-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

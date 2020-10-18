@@ -2,7 +2,7 @@ import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
   id: 'RockBox',
-  name: 'RockBox Rock/Metal Tracker',
+  name: 'RockBox',
   description:
     'RockBox Semi-Private site dedicated to HEAVY METAL/ROCK MUSIC. This definition is for the English site.',
   language: 'en-US',
@@ -59,7 +59,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       search:
-        '{{ if or (.Query.Artist) (.Query.Album) }}{{ or (.Query.Artist) (.Query.Album) }}{{else}}{{ .Keywords }}{{end}}',
+        '{{ if or (.Query.Artist) (.Query.Album) }}{{ or (.Query.Artist) (.Query.Album) }}{{ else }}{{ .Keywords }}{{ end }}',
       active: 0,
       options: 0,
       order: '{{ .Config.sort }}',
@@ -69,6 +69,7 @@ export const definition: TrackerDefinition = {
       selector: 'table.lista[width="100%"] tbody tr:has(a[href^="download.php?id="])',
     },
     fields: {
+      category: { text: 'Music' },
       title: { selector: 'td a[href^="details.php?id="]' },
       details: {
         selector: 'td a[href^="details.php?id="]',
@@ -91,9 +92,10 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
       grabs: { selector: 'td:nth-child(11)' },
-      category: { text: 'Music' },
       downloadvolumefactor: { text: 1 },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 86400 },
     },
   },
   source: 'jackett',

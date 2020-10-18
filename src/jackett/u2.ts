@@ -31,6 +31,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [

@@ -23,7 +23,11 @@ export const definition: TrackerDefinition = {
       { id: '8', cat: 'Audio', desc: 'Audio' },
       { id: '11', cat: 'Other', desc: 'Other' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'book-search': ['q'],
+    },
   },
   search: {
     paths: [{ path: '{{if .Keywords}}?s={{ .Keywords}}{{else}}{{end}}' }],

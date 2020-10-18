@@ -270,13 +270,15 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [
-      { path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}*{{end}}' },
       {
-        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}*{{end}}',
+        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{ else }}*{{ end }}',
+      },
+      {
+        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{ else }}*{{ end }}',
         inputs: { offset: 20 },
       },
       {
-        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}*{{end}}',
+        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{ else }}*{{ end }}',
         inputs: { offset: 40 },
       },
     ],

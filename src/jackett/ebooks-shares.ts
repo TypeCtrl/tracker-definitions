@@ -710,7 +710,7 @@ export const definition: TrackerDefinition = {
       { id: '217', cat: 'Books/Other', desc: 'VIP: Original Content' },
       { id: '218', cat: 'Books/Other', desc: 'VIP: RPG' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

@@ -13,6 +13,7 @@ export const definition: TrackerDefinition = {
     modes: {
       search: ['q'],
       'music-search': ['q', 'album', 'artist', 'label', 'year'],
+      'book-search': ['q'],
     },
     categorymappings: [
       { id: '1', cat: 'PC' },

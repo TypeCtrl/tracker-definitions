@@ -11,7 +11,12 @@ export const definition: TrackerDefinition = {
   certificates: ['ba7fb6290a9d7d821e73efb0eac4ed95a7fd2d11'],
   settings: [],
   caps: {
-    modes: { search: ['q'], 'movie-search': ['q'], 'music-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
+    },
     categorymappings: [
       { id: '影视', cat: 'Movies' },
       { id: '安装包', cat: 'PC/ISO' },

@@ -20,7 +20,11 @@ export const definition: TrackerDefinition = {
   ],
   settings: [{ name: 'type-id', type: 'text', label: 'Type Id' }],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'book-search': ['q'],
+    },
     categorymappings: [
       { id: '1', cat: 'TV/Anime' },
       { id: '2', cat: 'Audio' },

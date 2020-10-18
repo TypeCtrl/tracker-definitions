@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://32pag.es/'],
   caps: {
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
     categorymappings: [{ id: 'Comics', cat: 'Books/Comics' }],
   },
   settings: [

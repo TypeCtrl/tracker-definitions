@@ -48,6 +48,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -93,11 +94,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'h2', message: { selector: 'table tr td.text' } }],
     test: { path: 'browse.php', selector: 'a[href$="/logout.php"]' },
-  },
-  ratio: {
-    path: 'browse.php',
-    selector: 'div div font:contains("Ratio:")',
-    filters: [{ name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' }],
   },
   search: {
     paths: [{ path: 'browse.php' }],

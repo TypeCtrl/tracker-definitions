@@ -78,11 +78,6 @@ export const definition: TrackerDefinition = {
       },
     ],
   },
-  ratio: {
-    path: '/',
-    selector: 'li:has(i.fa-sync-alt)',
-    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
-  },
   search: {
     paths: [{ path: 'filterTorrents' }],
     inputs: {

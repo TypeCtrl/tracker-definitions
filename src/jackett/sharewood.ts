@@ -76,6 +76,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -149,11 +150,6 @@ export const definition: TrackerDefinition = {
       { selector: 'form[action$="/login"] .text-red' },
       { selector: 'h1:contains("503 Service Temporarily Unavailable")' },
     ],
-  },
-  ratio: {
-    path: '/',
-    selector: 'li:has(i.fa-signal)',
-    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
   },
   search: {
     paths: [{ path: 'filterTorrents' }],

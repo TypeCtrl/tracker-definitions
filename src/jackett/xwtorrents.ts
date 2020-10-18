@@ -114,7 +114,6 @@ export const definition: TrackerDefinition = {
     ],
     test: { path: 'browse.php', selector: 'a[href="logout.php"]' },
   },
-  ratio: { path: 'browse.php', selector: 'div#wel-radio b:nth-child(2)' },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {

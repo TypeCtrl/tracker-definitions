@@ -67,7 +67,8 @@
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
-      "movie-search": ["q"]
+      "movie-search": ["q"],
+      "book-search": ["q"]
     }
   },
   "settings": [
@@ -138,7 +139,6 @@
       "selector": "a[href=\"account-logout.php\"]"
     }
   },
-  "ratio": { "path": "torrents-search.php", "selector": "div#infobar b" },
   "search": {
     "paths": [{ "path": "torrents-search.php" }],
     "inputs": {

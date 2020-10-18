@@ -21,6 +21,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -59,7 +65,7 @@ export const definition: TrackerDefinition = {
     ],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      incldead: 1,
+      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
       search: '{{ .Keywords }}',
@@ -134,15 +140,25 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'span:has(i.fa-calendar-o)',
-        filters: [{ name: 'dateparse', args: '2006.1.2' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2006.1.2 -07:00' },
+        ],
       },
       files: { selector: 'span:has(i.fa-files-o)' },
       size: { selector: 'span:has(i.fa-folder-open-o)' },
       grabs: { selector: 'span:has(span.fa-check-square-o)' },
       seeders: { selector: 'span:has(i.fa-upload)' },
       leechers: { selector: 'span:has(i.fa-download)' },
-      downloadvolumefactor: { text: 0 },
+      downloadvolumefactor: {
+        case: {
+          'span:contains("Золотой")': 0,
+          'span:contains("Серебряный")': 0.5,
+          '*': 1,
+        },
+      },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

@@ -23,6 +23,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -64,7 +65,7 @@ export const definition: TrackerDefinition = {
   login: {
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: 'torrents.php' },
+    test: { path: 'torrents1.php' },
   },
   search: {
     paths: [{ path: 'torrents1.php' }],
@@ -116,7 +117,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         selector: 'tr[onmouseover]',
         attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: 'src="(.*?)"' }],
+        filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
       },
       imdb: {
         optional: true,
@@ -153,6 +154,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

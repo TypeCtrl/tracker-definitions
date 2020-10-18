@@ -138,7 +138,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'src=(.*?) width' }],
       },
       date: {
-        selector: 'td.tablea table tbody tr:nth-child(2) td:nth-child(2) b',
+        selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(2) > b',
         filters: [
           { name: 'append', args: ' +01:00' },
           { name: 'replace', args: [' ', ' '] },

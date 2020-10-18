@@ -24,10 +24,11 @@
       { "id": "37", "cat": "Other", "desc": "Tutte le saghe" }
     ],
     "modes": {
-      "search": ["q", "imdbid"],
-      "tv-search": ["q", "season", "ep", "imdbid"],
-      "movie-search": ["q", "imdbid"],
-      "music-search": ["q"]
+      "search": ["q"],
+      "tv-search": ["q", "season", "ep"],
+      "movie-search": ["q"],
+      "music-search": ["q"],
+      "book-search": ["q"]
     }
   },
   "settings": [
@@ -61,9 +62,8 @@
     }
   ],
   "login": {
-    "path": "sbg_login_new.php",
-    "method": "form",
-    "form": "form[action=\"index.php?page=login\"]",
+    "path": "index.php?page=login",
+    "method": "post",
     "inputs": {
       "uid": "{{ .Config.username }}",
       "pwd": "{{ .Config.password }}"
@@ -91,11 +91,11 @@
       { "name": "replace", "args": ["-", ""] }
     ],
     "inputs": {
-      "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}",
+      "search": "{{ .Keywords }}",
       "page": "torrents",
       "category": "{{ range .Categories }}{{.}};{{end}}",
-      "options": "{{ if .Config.freeleech }}5{{ else }}0{{ end }}",
       "active": 0,
+      "options": "{{ if .Config.freeleech }}5{{ else }}0{{ end }}",
       "order": "{{ .Config.sort }}",
       "by": "{{ .Config.type }}"
     },

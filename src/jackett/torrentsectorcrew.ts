@@ -71,6 +71,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -121,15 +122,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: '#login_box_desc' }],
     test: { path: 'my.php' },
-  },
-  ratio: {
-    path: 'my.php',
-    selector: 'td.navi_top:contains("Deine Ratio:")',
-    filters: [
-      { name: 'replace', args: ['Deine Ratio: ', ''] },
-      { name: 'replace', args: ['.', ''] },
-      { name: 'replace', args: [',', '.'] },
-    ],
   },
   search: {
     paths: [{ path: 'browse.php' }],

@@ -61,7 +61,7 @@ export const definition: TrackerDefinition = {
       { id: 'nonporn/Thriller', cat: 'Movies', desc: 'Thriller' },
       { id: 'nonporn/TV-Episode', cat: 'TV', desc: 'TV-Episode' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   login: {
     path: 'login.php',

@@ -133,7 +133,7 @@ export const definition: TrackerDefinition = {
       { id: '140', cat: 'PC/Mac', desc: 'MacOS' },
       { id: '141', cat: 'PC/Mac', desc: 'Mac Apps' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },

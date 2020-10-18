@@ -41,6 +41,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -164,7 +165,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {
-        case: { 'img[src="./pic/freeleech.png"]': 0, '*': '1' },
+        case: { 'img[src="./pic/freeleech.png"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
       minimumratio: { text: 1 },

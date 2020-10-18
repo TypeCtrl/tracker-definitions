@@ -272,7 +272,7 @@ export const definition: TrackerDefinition = {
       { id: '187', cat: 'Books', desc: 'Others (not maritime)' },
       { id: '162', cat: 'Books', desc: 'Archive' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

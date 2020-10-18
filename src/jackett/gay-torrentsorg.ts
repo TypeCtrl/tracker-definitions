@@ -69,7 +69,7 @@ export const definition: TrackerDefinition = {
       { id: '41', cat: 'TV', desc: 'Non-Porn' },
       { id: '41', cat: 'Other', desc: 'Non-Porn' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   login: {
     method: 'post',

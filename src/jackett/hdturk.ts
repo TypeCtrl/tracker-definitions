@@ -79,6 +79,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -98,11 +99,6 @@ export const definition: TrackerDefinition = {
       path: 'index.php',
       selector: 'a[href*="/logout.php?logouthash="]',
     },
-  },
-  ratio: {
-    path: 'index.php',
-    selector: 'div#top div:nth-child(2) span:nth-child(2)',
-    filters: [{ name: 'regexp', args: 'Ratio: (.+?) Bonus:' }],
   },
   search: {
     paths: [{ path: 'browse.php' }],

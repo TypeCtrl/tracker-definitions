@@ -67,11 +67,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'form[action$="/login"] .text-red' }],
   },
-  ratio: {
-    path: '/',
-    selector: 'span:has(i.fa-percent)',
-    filters: [{ name: 'regexp', args: 'Ratio : (\\d+)' }],
-  },
   search: {
     paths: [{ path: 'torrents' }],
     inputs: {

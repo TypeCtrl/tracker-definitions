@@ -40,7 +40,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'form#loginform > span.warning, font[color="red"]' }],
     test: { path: 'torrents.php' },
   },
-  ratio: { path: 'torrents.php', selector: 'li#stats_ratio > span' },
   search: {
     paths: [{ path: 'ajax.php' }],
     inputs: {

@@ -46,6 +46,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -69,14 +70,6 @@ export const definition: TrackerDefinition = {
       },
     ],
     test: { path: 'usercp.php' },
-  },
-  ratio: {
-    path: 'usercp.php',
-    selector: 'div#lmtd table > tbody > tr:contains("Ratio:") > td:nth-child(2)',
-    filters: [
-      { name: 'replace', args: ['.', ''] },
-      { name: 'replace', args: [',', '.'] },
-    ],
   },
   search: {
     paths: [{ path: 'browse.php' }],

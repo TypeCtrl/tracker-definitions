@@ -10,21 +10,17 @@ export const definition: TrackerDefinition = {
   links: ['https://rintor.org/'],
   caps: {
     categorymappings: [
+      {
+        id: '71',
+        cat: 'XXX',
+        desc: 'Фильмы UHD | 4K UHD (2160p) Movies',
+      },
       { id: '26', cat: 'XXX', desc: 'HD порнофильмы | HD Porn Movies' },
       { id: '20', cat: 'XXX', desc: 'Гонзо Фильмы | Gonzo &  All Sex' },
       { id: '22', cat: 'XXX', desc: 'Лесбо Фильмы | Lesbo Movies' },
-      { id: '23', cat: 'XXX', desc: 'Этнические фильмы | Ethnic' },
+      { id: '23', cat: 'XXX', desc: 'Этнические фильмы | Ethnic Movies' },
       { id: '21', cat: 'XXX', desc: 'Фильмы с сюжетом | Feature' },
-      {
-        id: '24',
-        cat: 'XXX',
-        desc: 'Эротические фильмы (с переводом Rus)',
-      },
-      {
-        id: '64',
-        cat: 'XXX',
-        desc: 'Эротические фильмы в оригинале | Original Erotic Films',
-      },
+      { id: '64', cat: 'XXX', desc: 'Эротические фильмы | Erotic Films' },
       { id: '25', cat: 'XXX', desc: 'Классика | Classic Porn' },
       {
         id: '65',

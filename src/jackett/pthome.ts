@@ -29,6 +29,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -57,14 +58,6 @@ export const definition: TrackerDefinition = {
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'index.php' },
-  },
-  ratio: {
-    path: 'index.php',
-    selector: 'table tr td.bottom',
-    filters: [
-      { name: 'replace', args: ['分享率:', 'Ratio:'] },
-      { name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' },
-    ],
   },
   search: {
     paths: [{ path: 'torrents.php' }],

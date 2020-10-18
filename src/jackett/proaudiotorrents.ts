@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
       { id: '11', cat: 'PC', desc: 'VST Instruments' },
       { id: '13', cat: 'PC', desc: 'VST Plug-ins' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

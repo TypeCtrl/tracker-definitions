@@ -55,11 +55,6 @@ export const definition: TrackerDefinition = {
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'torrents.php' },
   },
-  ratio: {
-    path: 'torrents.php',
-    selector: 'table#info_block',
-    filters: [{ name: 'regexp', args: 'Ratio:\\s(.*?)\\s\\s' }],
-  },
   download: { method: 'post' },
   search: {
     paths: [{ path: 'torrents.php' }],

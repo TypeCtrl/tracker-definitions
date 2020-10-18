@@ -56,6 +56,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -85,10 +86,6 @@ export const definition: TrackerDefinition = {
     },
     error: [{ selector: 'td.embedded:has(h2:contains("failed"))' }],
     test: { path: 'browse_old.php' },
-  },
-  ratio: {
-    path: 'browse_old.php',
-    selector: 'img[title="Reitings:"]+font',
   },
   search: {
     paths: [{ path: 'browse_old.php' }],

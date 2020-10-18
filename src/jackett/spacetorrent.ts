@@ -23,6 +23,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -71,10 +72,6 @@ export const definition: TrackerDefinition = {
       returnto: '/recherche',
     },
     test: { path: 'recherche', selector: 'a[href="../logout"]' },
-  },
-  ratio: {
-    path: 'recherche',
-    selector: 'a.nav-link i[class="ti-pulse"]',
   },
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {

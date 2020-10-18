@@ -39,11 +39,6 @@ export const definition: TrackerDefinition = {
       selector: 'span.smallfont:has(a[href="logout.php"])',
     },
   },
-  ratio: {
-    path: 'browse.php',
-    selector: 'span.smallfont:has(a[href="logout.php"])',
-    filters: [{ name: 'regexp', args: 'Ratio:[  ](.*?) ' }],
-  },
   search: {
     paths: [{ path: 'browse.php', method: 'post' }],
     inputs: {

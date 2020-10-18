@@ -91,14 +91,6 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'td.embedded', message: { selector: 'td.text' } }],
     test: { path: 'my.php', selector: 'a[href="logout.php"]' },
   },
-  ratio: {
-    path: 'my.php',
-    selector: 'span.smallfont > font',
-    filters: [
-      { name: 'regexp', args: 'Ratio:(.+?)Uploaded' },
-      { name: 'replace', args: [',', ''] },
-    ],
-  },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
