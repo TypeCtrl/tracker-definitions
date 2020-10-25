@@ -16,7 +16,7 @@ export const definition: TrackerDefinition = {
       { id: '5', cat: 'Books/Ebook', desc: 'eBooks' },
       { id: '7', cat: 'Books/Magazines', desc: 'Magazines' },
     ],
-    modes: { search: ['q'], 'book-search': ['q', 'author', 'title'] },
+    modes: { search: ['q'], 'book-search': ['q', 'title', 'author'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

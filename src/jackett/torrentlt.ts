@@ -29,8 +29,8 @@ export const definition: TrackerDefinition = {
       { id: '53', cat: 'TV/Documentary', desc: 'HD / Dokumentika' },
       { id: '54', cat: 'Movies/HD', desc: 'HD / Filmai' },
       { id: '55', cat: 'Audio/Video', desc: 'HD / Music videos' },
-      { id: '56', cat: 'TV/HD', desc: 'HD / Serialai' },
       { id: '72', cat: 'Movies/3D', desc: 'HD / 3D' },
+      { id: '56', cat: 'TV/HD', desc: 'HD / Serialai' },
       { id: '74', cat: 'TV/HD', desc: 'HD / Filmai LT' },
       { id: '79', cat: 'TV/HD', desc: 'HD / Serialai LT' },
       { id: '78', cat: 'TV/HD', desc: 'HD / Filmai RU' },
@@ -59,8 +59,8 @@ export const definition: TrackerDefinition = {
       { id: '21', cat: 'XXX', desc: 'pr0n' },
       { id: '71', cat: 'XXX/Packs', desc: 'pr0n / pack' },
       { id: '30', cat: 'Other', desc: 'Kita' },
-      { id: '41', cat: 'Books', desc: 'E-Books' },
       { id: '77', cat: 'Other', desc: 'Educational' },
+      { id: '41', cat: 'Books', desc: 'E-Books' },
     ],
     modes: {
       search: ['q'],
@@ -86,10 +86,16 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '0',
+      default: 0,
       options: { '0': 'created', '4': 'size', '6': 'seeders' },
     },
     {
@@ -120,23 +126,23 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch', args: 50 }],
     },
     fields: {
-      title: { selector: 'td[class$="torrent_info"] a' },
-      details: {
-        selector: 'td[class$="torrent_info"] a',
-        attribute: 'href',
-      },
-      banner: {
-        selector: 'td[class$="torrent_info"] a',
-        attribute: 'data-poster-preview',
-      },
       category: {
         selector: 'td[class^="torrent_cat_image"] a',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cats[]' }],
       },
+      title: { selector: 'td[class$="torrent_info"] a' },
+      details: {
+        selector: 'td[class$="torrent_info"] a',
+        attribute: 'href',
+      },
+      download: { selector: 'td a.torrent_size', attribute: 'href' },
+      banner: {
+        selector: 'td[class$="torrent_info"] a',
+        attribute: 'data-poster-preview',
+      },
       seeders: { selector: 'td span.torrent_seeders' },
       leechers: { selector: 'td span.torrent_leechers' },
-      download: { selector: 'td a.torrent_size', attribute: 'href' },
       size: { selector: 'td a.torrent_size' },
       downloadvolumefactor: {
         case: { 'img[src$="/freedownload.gif"]': 0, '*': 1 },
@@ -145,7 +151,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td[class$="torrent_info"] span',
         remove: 'div, i',
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04' }],
+        filters: [
+          { name: 'append', args: ' +02:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       minimumratio: { text: 0.41 },
     },

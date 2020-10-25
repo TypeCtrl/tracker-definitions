@@ -10,10 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['https://fullmixmusic.org/'],
   legacylinks: ['http://fullmixmusic.org/'],
   caps: {
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'artist'] },
     categorymappings: [{ id: '1', cat: 'Audio' }],
   },
   login: {

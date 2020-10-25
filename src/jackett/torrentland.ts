@@ -89,7 +89,7 @@ export const definition: TrackerDefinition = {
       { id: '21', cat: 'TV/Documentary', desc: 'Documentales' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -109,14 +109,14 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '3',
+      default: 3,
       options: { '2': 'title', '3': 'created', '4': 'size', '5': 'seeders' },
     },
     {
       name: 'type',
       type: 'select',
       label: 'Order requested from site',
-      default: '2',
+      default: 2,
       options: { '1': 'asc', '2': 'desc' },
     },
     {
@@ -193,7 +193,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(7)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       download: {
         selector: 'a[href^="download.php"]',

@@ -42,7 +42,7 @@ export const definition: TrackerDefinition = {
       { id: '27', cat: 'Other', desc: 'Klipek' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

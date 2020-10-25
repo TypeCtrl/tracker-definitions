@@ -8,7 +8,7 @@
   "links": ["https://pussytorrents.org/"],
   "caps": {
     "categorymappings": [{ "id": "1", "cat": "XXX", "desc": "XXX" }],
-    "modes": { "search": ["q"], "tv-search": ["q"], "movie-search": ["q"] }
+    "modes": { "search": ["q"] }
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },

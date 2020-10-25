@@ -49,7 +49,7 @@ export const definition: TrackerDefinition = {
       { id: '51', cat: 'XXX', desc: 'VR Porn' },
       { id: '33', cat: 'XXX', desc: 'Transsexual' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

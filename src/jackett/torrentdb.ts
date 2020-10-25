@@ -18,7 +18,7 @@ export const definition: TrackerDefinition = {
       { id: '6', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -68,12 +68,16 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'form[action$="/login"] .text-red' }],
   },
   search: {
-    paths: [
-      {
-        path:
-          'filter/torrents?{{ range .Categories }}categories[]={{.}}&{{end}}{{ if .Config.freeleech }}freeleech=1&{{ else }}{{ end }}search={{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}&tags=&sorting={{ .Config.sort }}&direction={{ .Config.type }}&qty=100',
-      },
-    ],
+    paths: [{ path: 'filter/torrents' }],
+    inputs: {
+      $raw:
+        '{{ range .Categories }}categories[]={{.}}&{{end}}{{ if .Config.freeleech }}freeleech=1&{{ else }}{{ end }}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
+      tags: '',
+      sorting: '{{ .Config.sort }}',
+      direction: '{{ .Config.type }}',
+      qty: 100,
+    },
     rows: {
       selector: 'table > tbody > tr',
       filters: [{ name: 'andmatch' }],

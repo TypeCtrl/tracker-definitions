@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'beyond-hd-oneurl',
   name: 'Beyond-HD (OneURL)',
-  description: 'Without BeyondHD, your HDTV is just a TV',
+  description: 'This is BeyondHD using OneURL (for those that have enabled 2FA)',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -14,13 +14,20 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'TV', desc: 'TV' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
     },
   },
   settings: [
     { name: 'oneurl', type: 'text', label: 'OneURL' },
+    {
+      name: 'info_oid',
+      type: 'info',
+      label: 'About One-URL',
+      default:
+        "<li>OneURL is found by accessing your Beyond-HD web site,</li><li>hovering over the <b>user icon</b></li><li>and going to <b>My Security</b></li><li>then going to the <b>One URL (OID)</b> tab,</li><li>and if it's not already active, you need to hit <b>Reset One URL</b> to activate it.</li><li>Then use that link here.</li>",
+    },
     {
       name: 'sort',
       type: 'select',

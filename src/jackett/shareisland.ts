@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '23', cat: 'PC', desc: 'Software' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
       'movie-search': ['q', 'imdbid', 'tmdbid'],
       'music-search': ['q'],

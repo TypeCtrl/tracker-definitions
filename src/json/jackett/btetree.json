@@ -8,10 +8,7 @@
   "links": ["https://bt.etree.org/"],
   "legacylinks": ["http://bt.etree.org/"],
   "caps": {
-    "modes": {
-      "search": ["q"],
-      "music-search": ["q", "album", "artist", "label", "year"]
-    },
+    "modes": { "search": ["q"], "music-search": ["q", "artist"] },
     "categorymappings": [{ "id": "Music", "cat": "Audio/Lossless" }]
   },
   "settings": [

@@ -26,9 +26,22 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [{ id: 'other', cat: 'Other' }],
+    categorymappings: [
+      { id: 'tv', cat: 'TV' },
+      { id: 'movies', cat: 'Movies' },
+      { id: 'other', cat: 'Other' },
+    ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'category-id',
+      type: 'select',
+      label:
+        'The MovCr web site does not provide categories. Select the category you want Jackett to set on all results returned.',
+      default: 'other',
+      options: { tv: 'TV', movies: 'Movies', other: 'Other' },
+    },
+  ],
   download: { selector: 'a[href^="/torrents/"]', attribute: 'href' },
   search: {
     paths: [
@@ -41,7 +54,7 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      category: { text: 'other' },
+      category: { text: '{{ .Config.category-id }}' },
       title: { selector: 'td.name a:nth-child(2)' },
       details: { selector: 'td.name a', attribute: 'href' },
       download: { selector: 'td.name a', attribute: 'href' },

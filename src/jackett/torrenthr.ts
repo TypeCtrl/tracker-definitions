@@ -59,9 +59,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '1',
-      sort: '4',
+      search: '{{ .Keywords }}',
+      incldead: 1,
+      sort: 4,
       type: 'desc',
     },
     rows: {
@@ -98,8 +98,8 @@ export const definition: TrackerDefinition = {
       grabs: {
         selector: 'td:nth-child(7)',
         filters: [
-          { name: 'regexp', args: '([\\d,]+)' },
           { name: 'replace', args: [',', ''] },
+          { name: 'regexp', args: '(\\d+)' },
         ],
       },
       seeders: { selector: 'td:nth-child(9)' },
@@ -110,8 +110,8 @@ export const definition: TrackerDefinition = {
         attribute: 'onmousemove',
         filters: [{ name: 'regexp', args: "return overlibImage\\('.*','(.*)'\\);" }],
       },
-      downloadvolumefactor: { text: '0' },
-      uploadvolumefactor: { text: '1' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
       date: {
         selector: 'td:nth-child(2) > small',
         filters: [

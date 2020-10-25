@@ -8,16 +8,27 @@
   "links": ["https://forums.mvgroup.org/"],
   "legacylinks": ["http://forums.mvgroup.org/"],
   "caps": {
-    "categorymappings": [{ "id": "1", "cat": "TV", "desc": "TV" }],
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"]
-    }
+    },
+    "categorymappings": [
+      { "id": "1", "cat": "TV" },
+      { "id": "2", "cat": "Movies" },
+      { "id": "3", "cat": "Other" }
+    ]
   },
   "settings": [
     { "name": "username", "type": "text", "label": "Username" },
     { "name": "password", "type": "password", "label": "Password" },
+    {
+      "name": "category-id",
+      "type": "select",
+      "label": "The MVGroup web site does not provide categories. Select the category you want Jackett to set on all results returned.",
+      "default": 3,
+      "options": { "1": "TV", "2": "Movies", "3": "Other" }
+    },
     {
       "name": "hidef",
       "type": "checkbox",
@@ -102,12 +113,6 @@
       "default": false
     },
     {
-      "name": "info",
-      "type": "info",
-      "label": "Category for Sonarr and Radarr",
-      "default": "MVGroup does not use categories. In your Sonarr or Radarr Torznab Indexer settings, set the category to 100001."
-    },
-    {
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
@@ -170,7 +175,7 @@
     ],
     "rows": { "selector": "tr:has(a.magnetlink)" },
     "fields": {
-      "category": { "text": 1 },
+      "category": { "text": "{{ .Config.category-id }}" },
       "title": {
         "optional": true,
         "selector": "td.doubleindent, td.singleindent a[href^=\"/index.php?showtopic=\"]",

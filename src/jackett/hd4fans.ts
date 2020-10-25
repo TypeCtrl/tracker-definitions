@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '408', cat: 'Audio', desc: 'Music' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

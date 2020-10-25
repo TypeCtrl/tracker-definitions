@@ -10,6 +10,7 @@
     "categorymappings": [
       { "id": "47", "cat": "TV/Sport", "desc": "EPL" },
       { "id": "41", "cat": "TV/Sport", "desc": "American Football" },
+      { "id": "54", "cat": "TV/Sport", "desc": "AutoMotoRacing" },
       { "id": "17", "cat": "TV/Sport", "desc": "Athletics" },
       { "id": "51", "cat": "TV/Sport", "desc": "Baseball" },
       { "id": "34", "cat": "TV/Sport", "desc": "Bodybuilding/Fitness" },
@@ -66,14 +67,14 @@
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
-      "default": "3",
+      "default": 3,
       "options": { "2": "title", "3": "created", "4": "size", "5": "seeders" }
     },
     {
       "name": "type",
       "type": "select",
       "label": "Order requested from site",
-      "default": "2",
+      "default": 2,
       "options": { "1": "asc", "2": "desc" }
     },
     {
@@ -134,7 +135,10 @@
       "grabs": { "selector": "td:nth-child(8)" },
       "date": {
         "selector": "td:nth-child(5)",
-        "filters": [{ "name": "dateparse", "args": "02/01/2006" }]
+        "filters": [
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "02/01/2006 -07:00" }
+        ]
       },
       "downloadvolumefactor": {
         "case": {

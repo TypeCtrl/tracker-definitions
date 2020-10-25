@@ -5,7 +5,7 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["http://audiobookbay.nl/"],
+  "links": ["http://audiobookbay.nl/", "https://audiobookbay.unblockit.lat/"],
   "legacylinks": ["https://audiobookbay.la/"],
   "caps": {
     "categorymappings": [
@@ -88,7 +88,7 @@
       { "id": "Violence", "cat": "Audio/Audiobook", "desc": "Violence" },
       { "id": "Westerns", "cat": "Audio/Audiobook", "desc": "Westerns" }
     ],
-    "modes": { "search": ["q"] }
+    "modes": { "search": ["q"], "book-search": ["q"] }
   },
   "settings": [],
   "download": {

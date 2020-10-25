@@ -10,6 +10,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torrentkitty.tv/',
     'https://www.torrentkitty.se/',
+    'https://www.torrentkitty.io/',
     'https://www.torrentkitty.vip/',
     'https://www.torrentkitty.app/',
   ],
@@ -19,9 +20,22 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [{ id: 'other', cat: 'Other' }],
+    categorymappings: [
+      { id: 'tv', cat: 'TV' },
+      { id: 'movies', cat: 'Movies' },
+      { id: 'other', cat: 'Other' },
+    ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'category-id',
+      type: 'select',
+      label:
+        'The TorrentKitty web site does not provide categories. Select the category you want Jackett to set on all results returned.',
+      default: 'other',
+      options: { tv: 'TV', movies: 'Movies', other: 'Other' },
+    },
+  ],
   search: {
     paths: [
       {
@@ -32,7 +46,7 @@ export const definition: TrackerDefinition = {
       selector: 'table#archiveResult tbody tr:has(a[href^="magnet:?xt="])',
     },
     fields: {
-      category: { text: 'other' },
+      category: { text: '{{ .Config.category-id }}' },
       title: { selector: 'td.name' },
       details: { selector: 'td.action a', attribute: 'href' },
       download: {

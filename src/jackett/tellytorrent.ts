@@ -18,10 +18,9 @@ export const definition: TrackerDefinition = {
       { id: '5', cat: 'PC/Games', desc: 'Games' },
       { id: '6', cat: 'PC/0day', desc: 'Application' },
       { id: '7', cat: 'PC/Phone-Other', desc: 'Mobile App' },
-      { id: '8', cat: 'Other', desc: 'IPL 2019' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
       'movie-search': ['q', 'imdbid', 'tmdbid'],
       'music-search': ['q'],
@@ -74,7 +73,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents/filter' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',

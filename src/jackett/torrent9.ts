@@ -98,6 +98,10 @@ export const definition: TrackerDefinition = {
         path: '{{ if .Keywords }}/search_torrent/{{ .Keywords }}{{ else }}/top_torrent/{{ end }}',
       },
     ],
+    keywordsfilters: [
+      { name: 're_replace', args: ['(?i)(S0)(\\d{1,2})$', 'saison $2'] },
+      { name: 're_replace', args: ['(?i)(S)(\\d{1,3})$', 'saison $2'] },
+    ],
     rows: {
       selector: 'table.table-striped > tbody > tr',
       filters: [{ name: 'andmatch' }],

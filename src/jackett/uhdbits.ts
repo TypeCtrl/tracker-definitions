@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['https://uhdbits.org/'],
   caps: {
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -19,9 +19,6 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'Movies' },
       { id: '2', cat: 'Audio' },
       { id: '3', cat: 'TV' },
-      { id: '4', cat: 'Audio' },
-      { id: '5', cat: 'PC' },
-      { id: '6', cat: 'Other' },
     ],
   },
   settings: [

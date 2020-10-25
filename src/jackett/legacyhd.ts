@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '9', cat: 'TV/Anime', desc: 'Animation' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

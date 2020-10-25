@@ -89,7 +89,15 @@ export const definition: TrackerDefinition = {
     attribute: 'href',
   },
   search: {
-    paths: [{ path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}{{end}}' }],
+    paths: [
+      {
+        path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{ else }}{{ end }}',
+      },
+    ],
+    keywordsfilters: [
+      { name: 're_replace', args: ['(?i)(S0)(\\d{1,2})$', 'saison $2'] },
+      { name: 're_replace', args: ['(?i)(S)(\\d{1,3})$', 'saison $2'] },
+    ],
     rows: {
       selector: 'table.table-hover > tbody > tr:has(a[href*="torrent/"])',
       filters: [{ name: 'andmatch' }],

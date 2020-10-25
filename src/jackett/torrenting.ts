@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
       { id: '99', cat: 'TV/HD', desc: 'TV/x265' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -63,12 +63,12 @@ export const definition: TrackerDefinition = {
     test: { path: 't' },
   },
   search: {
-    paths: [
-      {
-        path:
-          't?{{ range .Categories }}{{.}}=&{{end}}{{ if .Config.freeleech }}free=on&{{ else }}{{ end }}q={{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}&qf={{ if .Query.IMDBID }}adv{{ else }}ti{{ end }}',
-      },
-    ],
+    paths: [{ path: 't' }],
+    inputs: {
+      $raw: '{{ range .Categories }}{{.}}=&{{end}}{{ if .Config.freeleech }}free=on&{{ else }}{{ end }}',
+      q: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      qf: '{{ if .Query.IMDBID }}adv{{ else }}ti{{ end }}',
+    },
     rows: {
       selector: 'table#torrentsTable > tbody > tr:has(td.torrentNameInfo)',
     },

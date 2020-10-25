@@ -10,7 +10,6 @@ export const definition: TrackerDefinition = {
   links: ['https://tvchaosuk.com/'],
   caps: {
     categorymappings: [
-      { id: '53', cat: 'Other', desc: 'None' },
       { id: '29', cat: 'TV', desc: 'Comedy' },
       { id: '5', cat: 'TV/Documentary', desc: 'Documentary' },
       { id: '11', cat: 'TV', desc: 'Drama' },
@@ -28,7 +27,7 @@ export const definition: TrackerDefinition = {
       { id: '4', cat: 'TV', desc: 'Holding Bin' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

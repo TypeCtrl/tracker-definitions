@@ -57,14 +57,14 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
       name: 'type',
       type: 'select',
       label: 'Order requested from site',
-      default: '2',
+      default: 2,
       options: { '1': 'asc', '2': 'desc' },
     },
     {

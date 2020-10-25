@@ -17,13 +17,20 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [{ id: 'other', cat: 'Other' }],
+    categorymappings: [
+      { id: '1', cat: 'TV' },
+      { id: '2', cat: 'Movies' },
+      { id: '3', cat: 'Other' },
+    ],
   },
   settings: [
     {
-      name: 'info',
-      type: 'info',
-      default: 'ExtraTorrent-cd does not use categories. In your software Indexer settings, set the category to 7000.',
+      name: 'category-id',
+      type: 'select',
+      label:
+        'The ExtraTorrent web site does not provide categories. Select the category you want Jackett to set on all results returned.',
+      default: 3,
+      options: { '1': 'TV', '2': 'Movies', '3': 'Other' },
     },
   ],
   search: {
@@ -34,7 +41,7 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      category: { text: 'other' },
+      category: { text: '{{ .Config.category-id }}' },
       title: { selector: 'a[href*="/torrent/"][title^="view"]' },
       details: {
         selector: 'a[href*="/torrent/"]',
@@ -46,11 +53,12 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'td:nth-last-of-type(5):not(:contains(":")):not(:contains("Y-day-")):not(:contains("Today-"))',
+        selector: 'td:nth-last-of-type(5):not(:contains(":")):not(:contains("day"))',
         optional: true,
         filters: [
           { name: 'replace', args: [' ', '-'] },
-          { name: 'dateparse', args: '01-02-2006' },
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '01-02-2006 -07:00' },
         ],
       },
       size: { selector: 'td:nth-last-of-type(4)' },

@@ -24,7 +24,7 @@ export const definition: TrackerDefinition = {
       { id: '422', cat: 'XXX', desc: '其他' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -43,7 +43,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
@@ -143,6 +143,7 @@ export const definition: TrackerDefinition = {
         },
       },
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },
+      minimumratio: { text: 0.8 },
     },
   },
   source: 'jackett',

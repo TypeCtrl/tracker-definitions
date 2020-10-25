@@ -283,6 +283,7 @@
       },
       { "id": "908", "cat": "Movies", "desc": "Экранки и Low-рипы с рекламой" },
       { "id": "74", "cat": "Movies/Foreign", "desc": "Зарубежное кино" },
+      { "id": "963", "cat": "Movies/UHD", "desc": "Зарубежное кино | UHD 4K" },
       {
         "id": "121",
         "cat": "Movies/BluRay",
@@ -724,19 +725,24 @@
       { "id": "202", "cat": "PC/Mac", "desc": "Mac OS (для Apple Macintosh)" },
       { "id": "203", "cat": "PC/Mac", "desc": "Mac OS (для РС-Hackintosh)" },
       {
+        "id": "208",
+        "cat": "PC/Mac",
+        "desc": "[macOS] Архиваторы и файловые менеджеры"
+      },
+      {
         "id": "204",
         "cat": "PC/Mac",
-        "desc": "Программы для просмотра и обработки видео Mac OS"
+        "desc": "[macOS] Проигрыватели и кодеки"
       },
       {
         "id": "205",
         "cat": "PC/Mac",
-        "desc": "Программы для создания и обработки графики Mac OS"
+        "desc": "[macOS] Офисные приложения и редакторы"
       },
       {
         "id": "206",
         "cat": "PC/Mac",
-        "desc": "Аудио редакторы и конверторы для Mac OS"
+        "desc": "[macOS] Работа с носителями и медиа"
       },
       {
         "id": "939",
@@ -1063,14 +1069,14 @@
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
-      "default": "1",
+      "default": 1,
       "options": { "1": "created", "2": "title", "7": "size", "10": "seeders" }
     },
     {
       "name": "type",
       "type": "select",
       "label": "Order requested from site",
-      "default": "2",
+      "default": 2,
       "options": { "1": "asc", "2": "desc" }
     }
   ],
@@ -1153,7 +1159,8 @@
           "*": 1
         }
       },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumratio": { "text": 0.5 }
     }
   },
   "source": "jackett"

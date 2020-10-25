@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
       { id: '103', cat: 'Books/Ebook', desc: 'E-Book Mixed' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

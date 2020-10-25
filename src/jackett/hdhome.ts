@@ -63,7 +63,7 @@ export const definition: TrackerDefinition = {
       { id: '501', cat: 'TV/Anime', desc: 'Anime UHD Blu-ray' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

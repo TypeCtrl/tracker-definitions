@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['https://totheglory.im/'],
   caps: {
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -90,7 +90,7 @@ export const definition: TrackerDefinition = {
       name: 'passid',
       type: 'select',
       label: 'Security Question ID',
-      default: '0',
+      default: 0,
       options: {
         '0': 'Security question (Ignore not set)',
         '1': 'When did your start using PT?',
@@ -215,8 +215,8 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(5)',
         filters: [
-          { name: 'append', args: ' +0800' },
-          { name: 'dateparse', args: '2006-01-0215:04:05 -0700' },
+          { name: 'append', args: ' +08:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
       imdb: {

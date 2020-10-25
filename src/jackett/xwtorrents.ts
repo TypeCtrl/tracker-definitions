@@ -11,6 +11,8 @@ export const definition: TrackerDefinition = {
   legacylinks: ['http://xtremewrestlingtorrents.net/'],
   caps: {
     categorymappings: [
+      { id: '74', cat: 'TV/Sport', desc: 'AEW' },
+      { id: '75', cat: 'TV/Sport', desc: 'AEW HD' },
       { id: '47', cat: 'TV/Sport', desc: 'Boxing' },
       { id: '14', cat: 'Movies', desc: 'Documentary' },
       { id: '20', cat: 'TV/Sport', desc: 'DVD' },
@@ -59,8 +61,6 @@ export const definition: TrackerDefinition = {
       { id: '54', cat: 'TV/Sport', desc: 'WWE Superstars HD' },
       { id: '19', cat: 'TV/Sport', desc: 'WWE Velocity' },
       { id: '31', cat: 'TV/Sport', desc: 'WWE Vintage' },
-      { id: '74', cat: 'TV/Sport', desc: 'AEW' },
-      { id: '75', cat: 'TV/Sport', desc: 'AEW HD' },
     ],
     modes: {
       search: ['q'],
@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
@@ -161,7 +161,10 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       date: {
         selector: 'td:nth-child(5)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       downloadvolumefactor: {
         case: { 'img[src="pic/freeleech.png"]': 0, '*': 1 },

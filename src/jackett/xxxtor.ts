@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://xxxtor.org/', 'https://xxxtor.info/'],
   caps: {
     categorymappings: [{ id: 'XXX', cat: 'XXX', desc: 'XXX' }],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
   },
   settings: [],
   search: {

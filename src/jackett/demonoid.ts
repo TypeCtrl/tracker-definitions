@@ -363,7 +363,7 @@ export const definition: TrackerDefinition = {
       { id: '235', cat: 'TV', desc: 'TV Western' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -383,7 +383,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: 'added',
+      default: '_',
       options: {
         _: 'created',
         S: 'seeders desc',

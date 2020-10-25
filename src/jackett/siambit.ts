@@ -105,7 +105,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '15',
+      default: 15,
       options: {
         '1': 'title desc',
         '5': 'size',

@@ -77,7 +77,7 @@ export const definition: TrackerDefinition = {
         desc: 'Гей и Бисекс Порно | Gay and Bisex Porn',
       },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },

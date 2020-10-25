@@ -85,7 +85,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
       incldead: 1,
     },
     rows: { selector: '.test > tbody > tr:has(a[href^="browse.php"])' },
@@ -126,10 +126,8 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(5)',
         filters: [
-          {
-            name: 'regexp',
-            args: '([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))',
-          },
+          { name: 'append', args: ' +02:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
       seeders: { selector: 'td:nth-child(8)' },
@@ -141,11 +139,11 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'a[style="color: #b9a100;"][href^="details.php?"]': '0',
-          '*': '1',
+          'a[style="color: #b9a100;"][href^="details.php?"]': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

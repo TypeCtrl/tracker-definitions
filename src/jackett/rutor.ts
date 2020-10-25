@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site (Applies only to Search with Keywords)',
-      default: '0',
+      default: 0,
       options: {
         '0': 'created desc',
         '1': 'created asc',

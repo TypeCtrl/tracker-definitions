@@ -131,6 +131,7 @@ export const definition: TrackerDefinition = {
       { name: 'replace', args: ['{"torrent_html":"', ''] },
       { name: 'replace', args: ['\\', ''] },
       { name: 're_replace', args: ['","paging.*', ''] },
+      { name: 're_replace', args: ['</th<th>', '</th><th>'] },
       { name: 'prepend', args: '<table>' },
       { name: 'append', args: '</table>' },
     ],
@@ -222,17 +223,10 @@ export const definition: TrackerDefinition = {
       files: { selector: 'th:nth-child(8)' },
       seeders: { selector: 'th:nth-child(9)' },
       leechers: { selector: 'th:nth-child(10)' },
-      grabs: {
-        selector: 'th:nth-child(11)',
-        filters: [{ name: 'regexp', args: '^(\\d+)\\d{4}-' }],
-      },
+      grabs: { selector: 'th:nth-child(11)' },
       date: {
-        selector: 'th:nth-child(11)',
+        selector: 'th:nth-child(12)',
         filters: [
-          {
-            name: 'regexp',
-            args: '(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})',
-          },
           { name: 'append', args: ' +00:00' },
           { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],

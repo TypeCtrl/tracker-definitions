@@ -107,7 +107,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td > div > small',
-        filters: [{ name: 'dateparse', args: '02-01-2006 15:04' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: '02-01-2006 15:04 -07:00' },
+        ],
       },
       seeders: {
         selector: 'td:nth-child(4)',

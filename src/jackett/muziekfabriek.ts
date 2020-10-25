@@ -35,10 +35,7 @@ export const definition: TrackerDefinition = {
       { id: '23', cat: 'Audio', desc: 'Sint' },
       { id: '24', cat: 'Audio', desc: 'Kerstfeest' },
     ],
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'artist'] },
   },
   login: {
     path: 'takelogin.php',

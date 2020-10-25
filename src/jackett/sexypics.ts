@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: ['https://www.sexy-pics.us/'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
     categorymappings: [{ id: 'XXX', cat: 'XXX' }],
   },
   settings: [

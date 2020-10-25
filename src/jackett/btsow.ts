@@ -27,9 +27,22 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [{ id: 'other', cat: 'Other' }],
+    categorymappings: [
+      { id: 'tv', cat: 'TV' },
+      { id: 'movies', cat: 'Movies' },
+      { id: 'other', cat: 'Other' },
+    ],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'category-id',
+      type: 'select',
+      label:
+        'The BTSOW web site does not provide categories. Select the category you want Jackett to set on all results returned.',
+      default: 'other',
+      options: { tv: 'TV', movies: 'Movies', other: 'Other' },
+    },
+  ],
   download: { selector: 'a#magnetOpen', attribute: 'href' },
   search: {
     paths: [
@@ -39,7 +52,7 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: 'div.row:has(a[href*="/detail/hash/"])' },
     fields: {
-      category: { text: 'other' },
+      category: { text: '{{ .Config.category-id }}' },
       title: {
         selector: 'a[href*="/detail/hash/"]',
         attribute: 'title',

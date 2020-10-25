@@ -30,7 +30,7 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q'],
       'movie-search': ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
+      'music-search': ['q', 'artist'],
       'book-search': ['q'],
     },
   },

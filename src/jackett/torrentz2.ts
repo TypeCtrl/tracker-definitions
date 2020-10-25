@@ -112,12 +112,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Config.filter-verified }}verified{{else}}search{{end}}{{ re_replace .Config.sort "_" "" }}',
+        path: '{{if .Config.filter-verified }}verified{{ else }}search{{ end }}{{ re_replace .Config.sort "_" "" }}',
       },
     ],
     inputs: {
-      f: '{{ if .Keywords }}title: {{ .Keywords }}{{else}}{{end}}',
-      safe: '{{ if .Config.filter-safe }}1{{else}}0{{end}}',
+      f: '{{ if .Keywords }}title: {{ .Keywords }}{{ else }}{{ end }}',
+      safe: '{{ if .Config.filter-safe }}1{{ else }}0{{ end }}',
     },
     rows: { selector: 'html body #wrap .results dl:has(a)' },
     fields: {
@@ -134,7 +134,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       download: {
-        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
+        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{ else }}{{ end }}',
       },
       magfile: {
         text: '{{ .Result.title }}',

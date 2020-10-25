@@ -15,7 +15,7 @@ export const definition: TrackerDefinition = {
   settings: [],
   download: { selector: 'div.facepaylas a', attribute: 'href' },
   search: {
-    paths: [{ path: '{{ if .Keywords }}?s={{ .Keywords }}{{else}}{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}?s={{ .Keywords }}{{ else }}{{ end }}' }],
     rows: { selector: 'div.moviefilm' },
     fields: {
       category: { text: 1 },

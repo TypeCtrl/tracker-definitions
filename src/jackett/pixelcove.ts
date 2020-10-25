@@ -46,7 +46,7 @@ export const definition: TrackerDefinition = {
       { id: '72', cat: 'Other', desc: 'Board Games' },
       { id: '75', cat: 'Other', desc: 'Paper Crafting' },
     ],
-    modes: { search: ['q'], 'book-search': ['q'] },
+    modes: { search: ['q'], 'music-search': ['q'], 'book-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

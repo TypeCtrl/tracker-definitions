@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
@@ -102,7 +102,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        text: '{{if .Config.seedbox}}{{ .Result.download2 }}{{else}}{{ .Result.download1 }}{{end}}',
+        text: '{{if .Config.seedbox}}{{ .Result.download2 }}{{ else }}{{ .Result.download1 }}{{ end }}',
       },
       details: {
         selector: 'a[href^="details.php?id="]',
@@ -118,7 +118,10 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       date: {
         selector: 'td:nth-child(5)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       downloadvolumefactor: {
         case: { 'img[src="pic/freeleech.png"]': 0, '*': 1 },

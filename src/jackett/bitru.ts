@@ -11,6 +11,7 @@ export const definition: TrackerDefinition = {
   caps: {
     modes: {
       search: ['q'],
+      'tv-search': ['q'],
       'movie-search': ['q'],
       'music-search': ['q'],
       'book-search': ['q'],

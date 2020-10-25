@@ -62,7 +62,7 @@ export const definition: TrackerDefinition = {
       { id: '108', cat: 'Other', desc: 'Net: Search Engine Optimizing' },
       { id: '91', cat: 'Other', desc: 'TTC Lectures' },
     ],
-    modes: { search: ['q'], 'book-search': ['q'] },
+    modes: { search: ['q'] },
   },
   login: {
     path: 'login.php',

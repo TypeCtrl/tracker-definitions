@@ -184,6 +184,9 @@ export const jbtsow = jjbtsow;
 import { definition as jjbwtorrents } from './bwtorrents';
 export const jbwtorrents = jjbwtorrents;
 
+import { definition as jjbyrutor } from './byrutor';
+export const jbyrutor = jjbyrutor;
+
 import { definition as jjcarpathians } from './carpathians';
 export const jcarpathians = jjcarpathians;
 
@@ -309,9 +312,6 @@ export const jefectodoppler = jjefectodoppler;
 
 import { definition as jjehentai } from './ehentai';
 export const jehentai = jjehentai;
-
-import { definition as jjelitetorrentBiz } from './elitetorrent-biz';
-export const jelitetorrentBiz = jjelitetorrentBiz;
 
 import { definition as jjempornium } from './empornium';
 export const jempornium = jjempornium;
@@ -447,6 +447,9 @@ export const jgreekdiamond = jjgreekdiamond;
 
 import { definition as jjgreekteam } from './greekteam';
 export const jgreekteam = jjgreekteam;
+
+import { definition as jjgtorrent } from './gtorrent';
+export const jgtorrent = jjgtorrent;
 
 import { definition as jjhachede } from './hachede';
 export const jhachede = jjhachede;
@@ -624,6 +627,9 @@ export const jlegacyhd = jjlegacyhd;
 
 import { definition as jjlegittorrents } from './legittorrents';
 export const jlegittorrents = jjlegittorrents;
+
+import { definition as jjlepornoinfo } from './lepornoinfo';
+export const jlepornoinfo = jjlepornoinfo;
 
 import { definition as jjlesaloon } from './lesaloon';
 export const jlesaloon = jjlesaloon;
@@ -1054,9 +1060,6 @@ export const jtheshinning = jjtheshinning;
 import { definition as jjtheshow } from './theshow';
 export const jtheshow = jjtheshow;
 
-import { definition as jjtheunknown } from './theunknown';
-export const jtheunknown = jjtheunknown;
-
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
 
@@ -1237,6 +1240,9 @@ export const junlimitz = jjunlimitz;
 import { definition as jjvizuk } from './vizuk';
 export const jvizuk = jjvizuk;
 
+import { definition as jjvsthouse } from './vsthouse';
+export const jvsthouse = jjvsthouse;
+
 import { definition as jjvsttorrents } from './vsttorrents';
 export const jvsttorrents = jjvsttorrents;
 
@@ -1369,6 +1375,7 @@ export const definitions = [
   jjbtschool,
   jjbtsow,
   jjbwtorrents,
+  jjbyrutor,
   jjcarpathians,
   jjcarphunter,
   jjcartoonchaos,
@@ -1411,7 +1418,6 @@ export const definitions = [
   jjebooksShares,
   jjefectodoppler,
   jjehentai,
-  jjelitetorrentBiz,
   jjempornium,
   jjempornium2Fa,
   jjeniahd,
@@ -1457,6 +1463,7 @@ export const definitions = [
   jjglodls,
   jjgreekdiamond,
   jjgreekteam,
+  jjgtorrent,
   jjhachede,
   jjhaidan,
   jjhamsterstudio,
@@ -1516,6 +1523,7 @@ export const definitions = [
   jjlechaudron,
   jjlegacyhd,
   jjlegittorrents,
+  jjlepornoinfo,
   jjlesaloon,
   jjlibranet,
   jjlimetorrents,
@@ -1659,7 +1667,6 @@ export const definitions = [
   jjtheplace,
   jjtheshinning,
   jjtheshow,
-  jjtheunknown,
   jjthevault,
   jjtjupt,
   jjtlfbits,
@@ -1720,6 +1727,7 @@ export const definitions = [
   jjuniongang,
   jjunlimitz,
   jjvizuk,
+  jjvsthouse,
   jjvsttorrents,
   jjwdt,
   jjwihd,

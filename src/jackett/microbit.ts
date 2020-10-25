@@ -39,7 +39,7 @@ export const definition: TrackerDefinition = {
       { id: '10', cat: 'Audio/MP3', desc: 'Zene/MP3' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

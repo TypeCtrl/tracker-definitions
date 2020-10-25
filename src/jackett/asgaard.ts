@@ -57,7 +57,7 @@ export const definition: TrackerDefinition = {
       { id: '43', cat: 'Books/Technical', desc: 'Books Education' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -83,7 +83,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '2',
+      default: 2,
       options: { '1': 'title', '2': 'created', '5': 'size', '7': 'seeders' },
     },
     {

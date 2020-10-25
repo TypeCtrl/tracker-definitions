@@ -27,7 +27,7 @@
       { "id": "27", "cat": "XXX", "desc": "убойная эротика (killer erotica)" },
       { "id": "26", "cat": "XXX", "desc": "онлайн порно (online)" }
     ],
-    "modes": { "search": ["q"], "tv-search": ["q"], "movie-search": ["q"] }
+    "modes": { "search": ["q"] }
   },
   "settings": [],
   "download": { "selector": "a[href^=\"magnet:?xt=\"]", "attribute": "href" },

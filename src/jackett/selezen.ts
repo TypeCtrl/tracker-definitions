@@ -33,7 +33,7 @@ export const definition: TrackerDefinition = {
       { id: '64', cat: 'Movies/3D', desc: '3D BDRemux 1080p' },
       { id: '65', cat: 'Movies/3D', desc: '3D Blu-Ray 1080p' },
     ],
-    modes: { search: ['q', 'imdbid'], 'movie-search': ['q', 'imdbid'] },
+    modes: { search: ['q'], 'movie-search': ['q', 'imdbid'] },
   },
   settings: [
     {

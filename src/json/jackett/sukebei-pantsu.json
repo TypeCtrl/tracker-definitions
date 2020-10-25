@@ -30,14 +30,14 @@
       "name": "sort",
       "type": "select",
       "label": "Sort requested from site",
-      "default": "2",
+      "default": 2,
       "options": { "1": "title", "2": "created", "4": "size", "5": "seeders" }
     },
     {
       "name": "type",
       "type": "select",
       "label": "Order requested from site",
-      "default": "false",
+      "default": false,
       "options": { "false": "desc", "true": "asc" }
     }
   ],

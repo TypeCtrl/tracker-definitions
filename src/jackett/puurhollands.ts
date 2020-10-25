@@ -18,10 +18,7 @@ export const definition: TrackerDefinition = {
       { id: '8', cat: 'Audio', desc: 'Nederlandse Instrumentaal' },
       { id: '9', cat: 'Audio', desc: 'Nederlandse Dvds' },
     ],
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'artist'] },
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },

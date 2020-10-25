@@ -50,8 +50,9 @@ export const definition: TrackerDefinition = {
       { id: '82', cat: 'TV/Sport', desc: 'TV Sport SD' },
       { id: '16', cat: 'TV/Anime', desc: 'TV Anime' },
       { id: '32', cat: 'TV/HD', desc: 'TV Bluray' },
-      { id: '23', cat: 'TV/Documentary', desc: 'TV Docs' },
-      { id: '35', cat: 'TV/HD', desc: 'TV HD X264' },
+      { id: '76', cat: 'TV/Documentary', desc: 'TV Docs' },
+      { id: '23', cat: 'TV/SD', desc: 'TV DVDR' },
+      { id: '35', cat: 'TV/HD', desc: 'TV HD H264' },
       { id: '37', cat: 'TV/HD', desc: 'TV HD H265' },
       { id: '47', cat: 'TV', desc: 'TV Packs' },
       { id: '31', cat: 'TV', desc: 'TV Rips' },
@@ -79,7 +80,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
@@ -154,7 +155,10 @@ export const definition: TrackerDefinition = {
       date: {
         optional: true,
         selector: 'td:nth-last-child(6):not(:contains("day"))',
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       size: { selector: 'td:nth-last-child(5)' },
       grabs: {

@@ -78,10 +78,7 @@ export const definition: TrackerDefinition = {
       { id: '41', cat: 'Audio', desc: 'Trance' },
       { id: '38', cat: 'Audio', desc: 'World Music' },
     ],
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'album', 'artist'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -96,7 +93,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
@@ -167,7 +164,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-last-child(6):not(:contains("day"))',
         optional: true,
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       size: { selector: 'td:nth-last-child(5)' },
       grabs: {

@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'WINDOWS-1251',
   links: ['https://pornforall.net/'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
     categorymappings: [{ id: 'XXX', cat: 'XXX' }],
   },
   settings: [],

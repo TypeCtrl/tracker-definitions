@@ -70,7 +70,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'name', '4': 'added', '5': 'size', '7': 'seeders' },
     },
     {

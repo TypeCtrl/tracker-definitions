@@ -201,7 +201,8 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [
           { name: 'replace', args: [' um', ''] },
-          { name: 'dateparse', args: '02.01.2006 15:04:05' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
         ],
       },
       description: { selector: 'selection_unter_af', optional: true },
@@ -222,7 +223,9 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { ':root:has(div.onlyup)': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.7 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

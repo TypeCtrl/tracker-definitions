@@ -61,7 +61,12 @@ export const definition: TrackerDefinition = {
       { id: 'nonporn/Thriller', cat: 'Movies', desc: 'Thriller' },
       { id: 'nonporn/TV-Episode', cat: 'TV', desc: 'TV-Episode' },
     ],
-    modes: { search: ['q'], 'book-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'book-search': ['q'],
+    },
   },
   login: {
     path: 'login.php',
@@ -69,20 +74,21 @@ export const definition: TrackerDefinition = {
     inputs: {
       vb_login_username: '{{ .Config.username }}',
       vb_login_password: '{{ .Config.password }}',
-      cookieuser: '1',
+      cookieuser: 1,
       do: 'login',
     },
+    error: [{ selector: 'div.blockrow:contains("invalid")' }],
     test: { path: 'torrentslist.php', selector: 'ul.isuser' },
   },
   search: {
     paths: [
       {
-        path: '{{if .Query.Keywords}}search.php{{else}}torrentslist.php{{end}}',
+        path: '{{if .Query.Keywords}}search.php{{ else }}torrentslist.php{{ end }}',
       },
     ],
     inputs: {
       $raw: '{{range .Categories}}type={{.}}&{{end}}',
-      textsearch: '{{ .Query.Keywords }}',
+      textsearch: '{{ .Keywords }}',
     },
     rows: { selector: 'ul.TorrentList' },
     fields: {
@@ -103,12 +109,15 @@ export const definition: TrackerDefinition = {
       leechers: { selector: '.TorrentList7' },
       date: {
         selector: 'li.TorrentList8',
-        filters: [{ name: 'dateparse', args: '02 Jan 06, 15:04' }],
+        filters: [
+          { name: 'append', args: ' +02:00' },
+          { name: 'dateparse', args: '02 Jan 06, 15:04 -07:00' },
+        ],
       },
       downloadvolumefactor: {
-        case: { '.TorrentList2 > a:contains("[FFL]")': '0', '*': '1' },
+        case: { '.TorrentList2 > a:contains("[FFL]")': '0', '*': 1 },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

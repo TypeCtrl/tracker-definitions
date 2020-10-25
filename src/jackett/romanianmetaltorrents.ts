@@ -11,10 +11,7 @@ export const definition: TrackerDefinition = {
   links: ['https://metal.iplay.ro/'],
   legacylinks: ['https://metal.stream.bike/'],
   caps: {
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'artist'] },
     categorymappings: [{ id: 'Music', cat: 'Audio' }],
   },
   login: {

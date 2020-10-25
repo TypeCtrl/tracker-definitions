@@ -46,7 +46,12 @@ export const definition: TrackerDefinition = {
       { id: 'music', cat: 'Audio', desc: '음원 (Music)' },
       { id: 'comm_2', cat: 'Other', desc: '커뮤니티 (Community)' },
     ],
-    modes: { search: ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+    },
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },

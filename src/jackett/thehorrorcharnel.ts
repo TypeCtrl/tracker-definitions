@@ -91,7 +91,7 @@ export const definition: TrackerDefinition = {
       { id: '48', cat: 'Movies', desc: 'Zombie' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
@@ -185,7 +185,14 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       files: { selector: 'td:nth-child(6)' },
-      date: { selector: 'td:nth-child(8)' },
+      date: {
+        selector: 'td:nth-child(8):not(:contains("day"))',
+        optional: true,
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 02 2006 03:04 PM -07:00' },
+        ],
+      },
       size: { selector: 'td:nth-child(9)' },
       grabs: {
         selector: 'td:nth-child(10)',

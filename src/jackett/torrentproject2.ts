@@ -81,7 +81,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '?t={{ if .Keywords }}{{ re_replace .Keywords " " "+" }}{{else}}test{{end}}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{else}}{{end}}',
+          '?t={{ if .Keywords }}{{ re_replace .Keywords " " "+" }}{{ else }}test{{ end }}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{ else }}{{ end }}',
         followredirect: true,
       },
     ],

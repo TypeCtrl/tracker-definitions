@@ -39,13 +39,6 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
-      name: 'incldead',
-      type: 'select',
-      label: 'Search Torrents that are:',
-      default: '0',
-      options: { '0': 'Active', '1': 'Including Dead', '2': 'Only Dead' },
-    },
-    {
       name: 'onlyfree',
       type: 'checkbox',
       label: 'Show only Free torrents',
@@ -80,7 +73,7 @@ export const definition: TrackerDefinition = {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       searchin: 'title',
-      incldead: '{{ .Config.incldead }}',
+      incldead: 1,
       only_free: '{{ if .Config.onlyfree }}1{{else}}0{{end}}',
     },
     keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],

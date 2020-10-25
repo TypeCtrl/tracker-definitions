@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '56', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -70,7 +70,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
       titlesearch: '{{ if .Query.IMDBID }}1{{else}}0{{end}}',
       polish: 0,

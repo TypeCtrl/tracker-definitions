@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://vsttorrents.net/'],
   caps: {
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'music-search': ['q'] },
     categorymappings: [{ id: 'Audio', cat: 'Audio' }],
   },
   settings: [],
@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },
-    rows: { selector: 'article' },
+    rows: { selector: 'article:has(h3)' },
     fields: {
       category: { text: 'Audio' },
       title: { selector: 'h3' },

@@ -88,8 +88,8 @@ export const definition: TrackerDefinition = {
   search: {
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '1',
+      search: '{{ .Keywords }}',
+      incldead: 1,
     },
     rows: {
       selector: 'table.tableinborder > tbody > tr:has(a[href^="download.php"])',
@@ -132,7 +132,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src="pic/oupic.gif"]': '0', '*': '1' },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
     paths: [{ path: 'browse.php' }],
   },

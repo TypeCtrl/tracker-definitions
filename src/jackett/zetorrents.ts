@@ -15,13 +15,20 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [{ id: '1', cat: 'Other' }],
+    categorymappings: [
+      { id: '1', cat: 'TV' },
+      { id: '2', cat: 'Movies' },
+      { id: '3', cat: 'Other' },
+    ],
   },
   settings: [
     {
-      name: 'info',
-      type: 'info',
-      default: 'zetorrents does not use categories. In your software Indexer settings, set the category to 7000.',
+      name: 'category-id',
+      type: 'select',
+      label:
+        'The zetorrents web site does not provide categories. Select the category you want Jackett to set on all results returned.',
+      default: 3,
+      options: { '1': 'TV', '2': 'Movies', '3': 'Other' },
     },
     {
       name: 'multilang',
@@ -52,12 +59,20 @@ export const definition: TrackerDefinition = {
   ],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
-    paths: [{ path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{else}}{{end}}' }],
+    paths: [
+      {
+        path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{ else }}{{ end }}',
+      },
+    ],
+    keywordsfilters: [
+      { name: 're_replace', args: ['(?i)(S0)(\\d{1,2})$', 'saison $2'] },
+      { name: 're_replace', args: ['(?i)(S)(\\d{1,3})$', 'saison $2'] },
+    ],
     rows: {
       selector: 'table.table > tbody > tr:has(a[href^="/torrent/"])',
     },
     fields: {
-      category: { text: 1 },
+      category: { text: '{{ .Config.category-id }}' },
       site_date: {
         selector: 'a[href^="/torrent/"]',
         filters: [{ name: 'regexp', args: '(19|20\\d{2})$' }],

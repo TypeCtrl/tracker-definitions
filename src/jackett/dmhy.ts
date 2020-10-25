@@ -38,7 +38,12 @@ export const definition: TrackerDefinition = {
       { id: '12', cat: 'Other/Misc', desc: '特攝 (special photo)' },
       { id: '1', cat: 'Other', desc: '其他 (other)' },
     ],
-    modes: { search: ['q'], 'music-search': ['q'], 'book-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
+    },
   },
   settings: [],
   search: {

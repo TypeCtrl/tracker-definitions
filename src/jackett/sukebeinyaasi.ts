@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
       name: 'cat-id',
       type: 'select',
       label: 'Category',
-      default: '0_0',
+      default: 0,
       options: {
         '0': 'All categories',
         '10': 'Art',

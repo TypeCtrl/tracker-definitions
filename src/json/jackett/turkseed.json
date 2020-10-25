@@ -23,21 +23,22 @@
       { "id": "64", "cat": "Books", "desc": "Eğitim" },
       { "id": "55", "cat": "Audio/Lossless", "desc": "FLAC" },
       { "id": "52", "cat": "Movies/HD", "desc": "HD" },
+      { "id": "66", "cat": "Movies/HD", "desc": "Netflix" },
       { "id": "26", "cat": "PC/Games", "desc": "Oyunlar" },
       { "id": "30", "cat": "PC", "desc": "Programlar" },
       { "id": "53", "cat": "Movies/SD", "desc": "SD" },
       { "id": "54", "cat": "Movies", "desc": "Türk Filmi" },
       { "id": "58", "cat": "Audio/Video", "desc": "Video Klip" },
-      { "id": "63", "cat": "Movies", "desc": "Vip Film" },
-      { "id": "62", "cat": "Audio", "desc": "Vip Ses Dosyaları" },
       { "id": "43", "cat": "TV", "desc": "Yabancı Dizi" },
       { "id": "57", "cat": "Movies", "desc": "Yabancı Müzik" },
       { "id": "45", "cat": "TV", "desc": "Yarışma - Show" },
       { "id": "44", "cat": "TV", "desc": "Yerli Dizi" },
-      { "id": "56", "cat": "Audio", "desc": "Yerli Müzik" }
+      { "id": "56", "cat": "Audio", "desc": "Yerli Müzik" },
+      { "id": "63", "cat": "Movies", "desc": "Vip Film" },
+      { "id": "62", "cat": "Audio", "desc": "Vip Ses Dosyaları" }
     ],
     "modes": {
-      "search": ["q", "imdbid"],
+      "search": ["q"],
       "tv-search": ["q", "season", "ep", "imdbid"],
       "movie-search": ["q", "imdbid"],
       "music-search": ["q"],
@@ -132,7 +133,8 @@
         "selector": "td:nth-child(2)",
         "filters": [
           { "name": "regexp", "args": "(\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2})" },
-          { "name": "dateparse", "args": "02-01-2006 15:04" }
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "02-01-2006 15:04 -07:00" }
         ]
       },
       "size": { "selector": "td:nth-last-child(5)" },

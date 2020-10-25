@@ -74,7 +74,7 @@ export const definition: TrackerDefinition = {
       name: 'cat',
       type: 'select',
       label: 'Category',
-      default: '0',
+      default: 0,
       options: {
         '0': 'all',
         cartoons: 'Мультики (cartoons)',

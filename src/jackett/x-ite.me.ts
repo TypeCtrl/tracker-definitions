@@ -11,13 +11,6 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
-    {
-      name: 'incldead',
-      type: 'select',
-      label: 'Status',
-      default: 1,
-      options: { '0': 'Active', '1': 'Active and Inactive', '2': 'Inactive' },
-    },
   ],
   caps: {
     categorymappings: [
@@ -121,7 +114,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{range .Categories}}&c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: '{{ .Config.incldead }}',
+      incldead: 1,
     },
     rows: { selector: 'tr.t-row' },
     fields: {
@@ -166,7 +159,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

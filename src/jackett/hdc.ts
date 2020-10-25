@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       { id: '409', cat: 'Other', desc: 'Other/其他' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -54,7 +54,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {

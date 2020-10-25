@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
       name: 'lockip',
       type: 'select',
       label: 'Lock session to my IP address',
-      default: '1',
+      default: 1,
       options: { '0': 'no', '1': 'yes' },
     },
     {

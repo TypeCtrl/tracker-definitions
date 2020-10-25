@@ -9,10 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://efectodoppler.pw/'],
   caps: {
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'album', 'artist'] },
     categorymappings: [{ id: '1', cat: 'Audio' }],
   },
   settings: [

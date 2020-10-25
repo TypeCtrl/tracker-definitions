@@ -23,7 +23,7 @@ export const definition: TrackerDefinition = {
       { id: '10', cat: 'TV/Documentary', desc: 'Doku' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
@@ -76,7 +76,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'filterTorrents' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
@@ -132,7 +132,10 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(1)' },
       date: {
         selector: 'time',
-        filters: [{ name: 'dateparse', args: '02/01/2006 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02/01/2006 15:04:05 -07:00' },
+        ],
       },
       downloadvolumefactor: {
         case: {

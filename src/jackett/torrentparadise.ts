@@ -60,6 +60,7 @@ export const definition: TrackerDefinition = {
       { id: 'BOOKSNONFICTION', cat: 'Books' },
       { id: 'BOOKSTEXTBOOKS', cat: 'Books' },
       { id: 'COMICSNEM43COMICS', cat: 'Books/Comics' },
+      { id: 'DESIPORN', cat: 'XXX' },
       { id: 'DOCUMENTARIES', cat: 'TV/Documentary' },
       { id: 'DVDRVIDEO', cat: 'Movies/DVD' },
       { id: 'EBOOKS', cat: 'Books/Ebook' },

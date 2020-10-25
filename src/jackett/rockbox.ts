@@ -10,10 +10,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://rawkbawx.rocks/'],
   caps: {
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'album', 'artist'] },
     categorymappings: [{ id: 'Music', cat: 'Audio' }],
   },
   settings: [
@@ -47,12 +44,7 @@ export const definition: TrackerDefinition = {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
-    error: [
-      {
-        selector: 'div.errorSummary',
-        message: { selector: 'div.errorSummary ul li' },
-      },
-    ],
+    error: [{ selector: 'div > font[color="#FF0000"]' }],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   search: {

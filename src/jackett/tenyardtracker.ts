@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   legacylinks: ['http://tenyardtracker.com/', 'https://tenyardtracker.com/'],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
-    categorymappings: [{ id: '1', cat: 'TV' }],
+    categorymappings: [{ id: '1', cat: 'TV/Sport' }],
   },
   login: {
     path: 'members.php?action=takelogin',
@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
     },
     rows: { selector: 'table[border="1"] tr:not(:first-child)' },
     fields: {
@@ -52,8 +52,8 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

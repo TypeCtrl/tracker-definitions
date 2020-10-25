@@ -180,7 +180,7 @@ export const definition: TrackerDefinition = {
       { id: '141', cat: 'XXX', desc: '    Furry and Yiff Рассказы' },
       { id: '151', cat: 'XXX', desc: '  Мусор' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
   },
   settings: [
     {

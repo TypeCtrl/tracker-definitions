@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['http://trupornolabs.org/'],
   caps: {
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
     categorymappings: [{ id: 'XXX', cat: 'XXX' }],
   },
   settings: [],

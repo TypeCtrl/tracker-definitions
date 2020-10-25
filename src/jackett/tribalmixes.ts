@@ -33,10 +33,7 @@ export const definition: TrackerDefinition = {
       { id: '30', cat: 'Audio', desc: '(tm) mixes' },
       { id: '31', cat: 'Audio', desc: '(tm) ONLY' },
     ],
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'artist'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -69,7 +66,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       sort: '{{ re_replace .Config.sort "_" "" }}',
       type: '{{ .Config.type }}',
     },

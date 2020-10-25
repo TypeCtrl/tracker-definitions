@@ -56,7 +56,7 @@ export const definition: TrackerDefinition = {
       { id: '87', cat: 'XXX', desc: '   Images & Wallpaper' },
       { id: '105', cat: 'XXX', desc: '   Порно игры' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
   },
   settings: [
     {

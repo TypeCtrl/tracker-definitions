@@ -74,10 +74,10 @@
       "referer": "",
       "nev": "{{ .Config.username }}",
       "jelszo": "{{ .Config.password }}",
-      "fsv": "0",
-      "login": "1",
-      "belepes": "1",
-      "rhash": "123"
+      "fsv": 0,
+      "login": 1,
+      "belepes": 1,
+      "rhash": 123
     },
     "test": { "path": "browse" }
   },
@@ -86,7 +86,7 @@
     "inputs": {
       "$raw": "{{range .Categories}}category[]={{.}}&{{end}}",
       "search": "{{ .Keywords }}",
-      "s_alapjan": "7",
+      "s_alapjan": 7,
       "s_sorrend": "desc"
     },
     "rows": { "selector": "div.torrent_row, div.torrent_details", "after": 1 },
@@ -126,8 +126,8 @@
         "selector": "div.torrent_row_magyarcim",
         "remove": "span.torrent_row_new"
       },
-      "downloadvolumefactor": { "text": "0" },
-      "uploadvolumefactor": { "case": { "*": "1" } }
+      "downloadvolumefactor": { "text": 0 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

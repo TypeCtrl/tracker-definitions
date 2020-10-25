@@ -71,7 +71,7 @@ export const definition: TrackerDefinition = {
       { id: '60', cat: 'XXX', desc: 'Straight younger' },
       { id: '64', cat: 'XXX', desc: 'Scat' },
     ],
-    modes: { search: ['q'], 'book-search': ['q'] },
+    modes: { search: ['q'], 'movie-search': ['q'], 'book-search': ['q'] },
   },
   login: {
     path: 'takelogin.php',

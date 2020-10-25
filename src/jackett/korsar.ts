@@ -3,12 +3,18 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'korsar',
   name: 'Korsar',
-  description: 'Korsar is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Korsar is a RUSSIAN Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'ru-RU',
-  type: 'semi-private',
+  type: 'private',
   encoding: 'UTF-8',
-  links: ['http://korsar.rest/'],
-  legacylinks: ['https://korsar.tv/', 'http://korsar.info/', 'https://korsar.info/', 'http://korsar.tv/'],
+  links: ['http://filbi1976.org/'],
+  legacylinks: [
+    'https://korsar.tv/',
+    'http://korsar.info/',
+    'https://korsar.info/',
+    'http://korsar.tv/',
+    'http://korsar.rest/',
+  ],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Все Кинофильмы' },

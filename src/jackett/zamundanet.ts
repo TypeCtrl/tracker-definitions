@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '6',
+      default: 6,
       options: { '2': 'title', '6': 'created', '7': 'size', '9': 'seeders' },
     },
     {
@@ -144,10 +144,8 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(5)',
         filters: [
-          {
-            name: 'regexp',
-            args: '([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))',
-          },
+          { name: 'append', args: ' +02:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
       seeders: { selector: 'td:nth-child(8)' },

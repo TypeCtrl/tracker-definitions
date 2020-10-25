@@ -24,7 +24,7 @@ export const definition: TrackerDefinition = {
       {
         id: '632',
         cat: 'XXX',
-        desc: '    Зарубежное любительское порно / Amateur &amp;Homemade',
+        desc: '    Зарубежное любительское порно / Amateur & Homemade',
       },
       {
         id: '396',
@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
       {
         id: '268',
         cat: 'XXX',
-        desc: "    Сцены из фильмов и ролики с Русскими актрисами / Russian Movie Scenes &amp;SiteRip's",
+        desc: "    Сцены из фильмов и ролики с Русскими актрисами / Russian Movie Scenes & SiteRip's",
       },
       {
         id: '269',
@@ -76,7 +76,7 @@ export const definition: TrackerDefinition = {
       {
         id: '530',
         cat: 'XXX',
-        desc: '    Азиатские и этнические фильмы / Asian &amp;Ethnic-Themed',
+        desc: '    Азиатские и этнические фильмы / Asian & Ethnic-Themed',
       },
       {
         id: '207',
@@ -91,7 +91,7 @@ export const definition: TrackerDefinition = {
       {
         id: '580',
         cat: 'XXX',
-        desc: '    Документальные фильмы 18+ / Documentary &amp;Reality',
+        desc: '    Документальные фильмы 18+ / Documentary & Reality',
       },
       {
         id: '206',
@@ -101,7 +101,7 @@ export const definition: TrackerDefinition = {
       { id: '270', cat: 'XXX', desc: '  Зарубежные ролики 18+' },
       { id: '273', cat: 'XXX', desc: '    Сцены из фильмов' },
       { id: '638', cat: 'XXX', desc: '    Порно-кастинг / Casting' },
-      { id: '639', cat: 'XXX', desc: '    Public &amp;Reality' },
+      { id: '639', cat: 'XXX', desc: '    Public & Reality' },
       { id: '659', cat: 'XXX', desc: '    Incest / Taboo' },
       {
         id: '685',
@@ -112,6 +112,26 @@ export const definition: TrackerDefinition = {
         id: '684',
         cat: 'XXX',
         desc: '    Анал и ДП / Anal&DP - HD Сцены и ролики',
+      },
+      {
+        id: '687',
+        cat: 'XXX',
+        desc: '    Секс втроём / Threesomes - Сцены и ролики',
+      },
+      {
+        id: '686',
+        cat: 'XXX',
+        desc: '    Секс втроём / Threesomes - HD Сцены и ролики',
+      },
+      {
+        id: '689',
+        cat: 'XXX',
+        desc: '    Группавуха / Group &  Gangbang - Сцены и ролики',
+      },
+      {
+        id: '688',
+        cat: 'XXX',
+        desc: '    Группавуха / Group &  Gangbang - HD Сцены и ролики',
       },
       {
         id: '679',
@@ -126,12 +146,12 @@ export const definition: TrackerDefinition = {
       {
         id: '681',
         cat: 'XXX',
-        desc: '    Мамочки / MILF &amp;Mature - Сцены и ролики',
+        desc: '    Мамочки / MILF & Mature - Сцены и ролики',
       },
       {
         id: '682',
         cat: 'XXX',
-        desc: '    Мамочки / MILF &amp;Mature - HD Сцены и ролики',
+        desc: '    Мамочки / MILF & Mature - HD Сцены и ролики',
       },
       {
         id: '683',
@@ -203,7 +223,7 @@ export const definition: TrackerDefinition = {
       {
         id: '664',
         cat: 'XXX',
-        desc: '    Негритянки и Темнокожие / Ebony &amp;Arab',
+        desc: '    Негритянки и Темнокожие / Ebony & Arab',
       },
       {
         id: '633',
@@ -213,22 +233,22 @@ export const definition: TrackerDefinition = {
       {
         id: '398',
         cat: 'XXX',
-        desc: '    Bukkake &amp;Blowbang - Сцены и ролики',
+        desc: '    Bukkake & Blowbang - Сцены и ролики',
       },
       {
         id: '634',
         cat: 'XXX',
-        desc: '    Oral &amp;Deep Throat - Сцены и ролики',
+        desc: '    Oral & Deep Throat - Сцены и ролики',
       },
       {
         id: '635',
         cat: 'XXX',
-        desc: '    Oral Sex / Blowbang &amp;Bukkake - Полнометражные фильмы',
+        desc: '    Oral Sex / Blowbang & Bukkake - Полнометражные фильмы',
       },
       {
         id: '667',
         cat: 'XXX',
-        desc: '    Oral Sex / Bukkake &amp;Blowbang - Паки порнороликов',
+        desc: '    Oral Sex / Bukkake & Blowbang - Паки порнороликов',
       },
       { id: '668', cat: 'XXX', desc: '  BDSM / Bondage, Rough Sex' },
       {
@@ -249,12 +269,12 @@ export const definition: TrackerDefinition = {
       {
         id: '397',
         cat: 'XXX',
-        desc: '    Fisting &amp;Dildo - Ролики и сцены',
+        desc: '    Fisting & Dildo - Ролики и сцены',
       },
       {
         id: '395',
         cat: 'XXX',
-        desc: '    Femdom &amp;Strap-On - Ролики и сцены',
+        desc: '    Femdom & Strap-On - Ролики и сцены',
       },
       { id: '665', cat: 'XXX', desc: '  Лесбиянки / Lesbians' },
       {
@@ -291,33 +311,33 @@ export const definition: TrackerDefinition = {
       {
         id: '585',
         cat: 'XXX',
-        desc: '    Big Boobs &amp;Big Ass - Ролики и сцены',
+        desc: '    Big Boobs & Big Ass - Ролики и сцены',
       },
       {
         id: '647',
         cat: 'XXX',
-        desc: '    Толстушки / BBW &amp;Plump Woman - Ролики и сцены',
+        desc: '    Толстушки / BBW & Plump Woman - Ролики и сцены',
       },
       {
         id: '648',
         cat: 'XXX',
-        desc: '    Худенькие / Skinny &amp;Petite - Ролики и сцены',
+        desc: '    Худенькие / Skinny & Petite - Ролики и сцены',
       },
       {
         id: '672',
         cat: 'XXX',
-        desc: '    Foot Fetish &amp;Footjob - Ролики и сцены',
+        desc: '    Foot Fetish & Footjob - Ролики и сцены',
       },
       {
         id: '674',
         cat: 'XXX',
-        desc: '    Fetish Wear / Uniform, Lingerie, Pantyhose &amp;Stockings - Ролики и сцены',
+        desc: '    Fetish Wear / Uniform, Lingerie, Pantyhose & Stockings - Ролики и сцены',
       },
       { id: '673', cat: 'XXX', desc: '    Hairy Pussy - Ролики и сцены' },
       {
         id: '399',
         cat: 'XXX',
-        desc: '    Сквирт &amp;Золотой дождь - Ролики и сцены',
+        desc: '    Сквирт & Золотой дождь - Ролики и сцены',
       },
       {
         id: '624',
@@ -332,14 +352,14 @@ export const definition: TrackerDefinition = {
       {
         id: '677',
         cat: 'XXX',
-        desc: '  Masturbation, Solo &amp;Posing - Video clips &amp;Movies',
+        desc: '  Masturbation, Solo & Posing - Video clips & Movies',
       },
       {
         id: '637',
         cat: 'XXX',
-        desc: '    Соло и мастурбация / Solo &amp;Masturbation',
+        desc: '    Соло и мастурбация / Solo & Masturbation',
       },
-      { id: '678', cat: 'XXX', desc: '    Striptease &amp;Posing' },
+      { id: '678', cat: 'XXX', desc: '    Striptease & Posing' },
       { id: '450', cat: 'XXX', desc: '  Анимация и игры' },
       { id: '451', cat: 'XXX', desc: '    Хентай / Hentai' },
       {
@@ -349,7 +369,7 @@ export const definition: TrackerDefinition = {
       },
       { id: '472', cat: 'XXX', desc: '    Порно-игры / Games XXX' },
       { id: '457', cat: 'XXX', desc: '    Манга / Manga' },
-      { id: '471', cat: 'XXX', desc: '    Арт и HCG / Artwork &amp;HCG' },
+      { id: '471', cat: 'XXX', desc: '    Арт и HCG / Artwork & HCG' },
       { id: '403', cat: 'XXX', desc: '  Фото, журналы, комиксы' },
       { id: '408', cat: 'XXX', desc: '    Любительское фото' },
       {
@@ -391,7 +411,7 @@ export const definition: TrackerDefinition = {
       {
         id: '458',
         cat: 'XXX',
-        desc: '          Видео для телефонов и КПК +18 / Pocket РС &amp;Phone Video',
+        desc: '          Видео для телефонов и КПК +18 / Pocket РС & Phone Video',
       },
       { id: '599', cat: 'XXX', desc: '          Ролики и фильмы онлайн' },
       {
@@ -402,7 +422,7 @@ export const definition: TrackerDefinition = {
       {
         id: '651',
         cat: 'XXX',
-        desc: '            Любительское / Amateur &amp;Homemade',
+        desc: '            Любительское / Amateur & Homemade',
       },
       { id: '601', cat: 'XXX', desc: '            Вебкамеры / WEBCam' },
       {
@@ -418,7 +438,7 @@ export const definition: TrackerDefinition = {
       {
         id: '657',
         cat: 'XXX',
-        desc: '            Группавуха / Group &amp;Orgy, Gangbang',
+        desc: '            Группавуха / Group & Orgy, Gangbang',
       },
       {
         id: '614',
@@ -428,7 +448,7 @@ export const definition: TrackerDefinition = {
       {
         id: '620',
         cat: 'XXX',
-        desc: '            Мамочки / MILF &amp;Mature',
+        desc: '            Мамочки / MILF & Mature',
       },
       {
         id: '615',
@@ -443,7 +463,7 @@ export const definition: TrackerDefinition = {
       {
         id: '649',
         cat: 'XXX',
-        desc: '            Негритянки и темнокожие / Black &amp;Ebony',
+        desc: '            Негритянки и темнокожие / Black & Ebony',
       },
       { id: '606', cat: 'XXX', desc: '            Азиатки / Asian' },
       { id: '610', cat: 'XXX', desc: '            Латинки / Latin' },
@@ -460,11 +480,11 @@ export const definition: TrackerDefinition = {
       },
       { id: '650', cat: 'XXX', desc: '            Толстушки / BBW' },
       { id: '612', cat: 'XXX', desc: '            Фетиш / Fetish' },
-      { id: '652', cat: 'XXX', desc: '            BDSM &amp;Bondage' },
+      { id: '652', cat: 'XXX', desc: '            BDSM & Bondage' },
       {
         id: '621',
         cat: 'XXX',
-        desc: '            Секс на публике / Public &amp;Reality',
+        desc: '            Секс на публике / Public & Reality',
       },
       {
         id: '613',
@@ -482,7 +502,7 @@ export const definition: TrackerDefinition = {
       { id: '248', cat: 'XXX', desc: '        Правила' },
       { id: '642', cat: 'XXX', desc: '        FAQ / Вопросы и ответы' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
+    modes: { search: ['q'] },
   },
   settings: [
     {
@@ -504,7 +524,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'search.php' }],
     inputs: {
       tracker_search: 'torrent',
-      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}2020{{end}}',
+      keywords: '{{ if .Keywords }}{{ .Keywords }}{{ else }}2020{{ end }}',
       terms: 'all',
       fp: 1,
       author: '',
@@ -560,7 +580,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       date: {
-        text: '{{ if .Result.find_date }}{{ .Result.find_date}}{{else}}now{{end}}',
+        text: '{{ if .Result.find_date }}{{ .Result.find_date}}{{ else }}now{{ end }}',
       },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },

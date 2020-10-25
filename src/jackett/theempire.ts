@@ -63,7 +63,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
     },
     rows: {
       selector: 'table[border="0"] > tbody > tr.ttable:has(a[href^="browse.php?cat="])',
@@ -88,7 +88,7 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(8)',
         filters: [
           { name: 'replace', args: ['Never', '0'] },
-          { name: 'regexp', args: '([\\d,]+)' },
+          { name: 'regexp', args: '(\\d+)' },
         ],
       },
       files: { selector: 'td:nth-child(4)' },
@@ -101,14 +101,12 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'font[color="green"]': '0',
-          'font[color="blue"]': '0',
-          '*': '1',
+          'font[color="green"]': 0,
+          'font[color="blue"]': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: {
-        case: { 'font[color="green"]': '0', '*': '1' },
-      },
+      uploadvolumefactor: { case: { 'font[color="green"]': 0, '*': 1 } },
     },
   },
   source: 'jackett',

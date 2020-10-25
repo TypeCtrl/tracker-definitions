@@ -9,10 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://www.trancetraffic.com/'],
   caps: {
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'artist'] },
     categorymappings: [{ id: '1', cat: 'Audio' }],
   },
   login: {
@@ -28,12 +25,13 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
     },
     rows: {
       selector: 'table.mainouter table > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
+      category: { text: 1 },
       download: {
         selector: 'a[href^="download.php/"]',
         attribute: 'href',
@@ -43,7 +41,6 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
-      category: { text: 1 },
       date: {
         selector: 'td:nth-child(6)',
         filters: [
@@ -55,12 +52,12 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(10)' },
       grabs: {
         selector: 'td:nth-child(8)',
-        filters: [{ name: 'regexp', args: '([\\d,]+)' }],
+        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       files: { selector: 'td:nth-child(4)' },
       size: { selector: 'td:nth-child(7)' },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

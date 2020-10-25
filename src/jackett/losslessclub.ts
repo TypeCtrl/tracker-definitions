@@ -9,10 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'WINDOWS-1251',
   links: ['https://losslessclub.com/'],
   caps: {
-    modes: {
-      search: ['q'],
-      'music-search': ['q', 'album', 'artist', 'label', 'year'],
-    },
+    modes: { search: ['q'], 'music-search': ['q', 'artist'] },
     categorymappings: [{ id: '1', cat: 'Audio/Lossless' }],
   },
   login: {

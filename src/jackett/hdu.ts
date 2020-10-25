@@ -23,7 +23,7 @@ export const definition: TrackerDefinition = {
       { id: '410', cat: 'PC/Games', desc: 'Games/游戏' },
     ],
     modes: {
-      search: ['q', 'imdbid'],
+      search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],

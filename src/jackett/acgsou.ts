@@ -54,7 +54,11 @@ export const definition: TrackerDefinition = {
       { id: '19', cat: 'Other', desc: '动漫资讯 (Anime Information)' },
       { id: '18', cat: 'PC/Games', desc: '游戏 (Games)' },
     ],
-    modes: { search: ['q'], 'book-search': ['q'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'book-search': ['q'],
+    },
   },
   settings: [],
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
