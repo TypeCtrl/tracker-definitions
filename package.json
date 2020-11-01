@@ -35,7 +35,7 @@
     "@types/jest": "26.0.14",
     "@types/js-yaml": "3.12.5",
     "@types/lodash": "4.14.164",
-    "@types/node": "14.11.2",
+    "@types/node": "14.14.6",
     "@types/prettier": "2.1.5",
     "del": "5.1.0",
     "jest": "26.4.2",
