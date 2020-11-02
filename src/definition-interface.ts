@@ -120,7 +120,7 @@ export interface Setting {
   type: string;
   label?: string;
   default?: string | number | boolean;
-  options?: { [key: string]: string };
+  options?: Record<string, string>;
 }
 
 /**
@@ -151,14 +151,14 @@ export interface Req {
   path?: string;
   method?: 'cookie' | 'post' | 'form' | 'get' | 'oneurl';
   submitpath?: string;
-  inputs?: { [key: string]: string | number };
+  inputs?: Record<string, string | number>;
   captcha?: Captcha;
   /**
    * multiple selectors for errors
    */
   error?: Error[];
   test?: Test;
-  headers?: { [key: string]: string };
+  headers?: Record<string, string>;
   form?: string;
   cookies?: string[];
   selectors?: boolean;
@@ -274,12 +274,12 @@ export interface Search {
    */
   fields: Fields;
   method?: string;
-  inputs?: { [key: string]: string | number | boolean | null };
+  inputs?: Record<string, string | number | boolean | null>;
   error?: Error[];
   followredirect?: boolean;
   preprocessingfilters?: Filters[];
   keywordsfilters?: Filters[];
-  headers?: { [key: string]: string | string[] };
+  headers?: Record<string, string | string[]>;
 }
 
 export interface RowsSelector {
@@ -311,14 +311,14 @@ export interface Selector {
   ffilters?: Filters[];
   optional?: boolean;
   attribute?: string;
-  case?: { [key: string]: string | number };
+  case?: Record<string, string | number>;
   text?: string | number;
   remove?: string;
 }
 
 export interface Path {
   path: string;
-  inputs?: { [key: string]: string | number };
+  inputs?: Record<string, string | number>;
   categories?: Array<number | string>;
   method?: string;
   followredirect?: boolean;
