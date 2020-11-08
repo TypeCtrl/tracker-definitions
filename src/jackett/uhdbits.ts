@@ -9,17 +9,17 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://uhdbits.org/'],
   caps: {
+    categorymappings: [
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'Audio', desc: 'Music' },
+      { id: '3', cat: 'TV', desc: 'TV' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
       'movie-search': ['q', 'imdbid'],
       'music-search': ['q'],
     },
-    categorymappings: [
-      { id: '1', cat: 'Movies' },
-      { id: '2', cat: 'Audio' },
-      { id: '3', cat: 'TV' },
-    ],
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -83,7 +83,7 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'a[href^="torrents.php?filter_cat"]',
         attribute: 'href',
-        filters: [{ name: 'regexp', args: '\\[(\\d+?)\\]' }],
+        filters: [{ name: 'regexp', args: '\\[(\\d+)\\]' }],
       },
       download: {
         selector: 'a[title="Download"]',
@@ -107,11 +107,6 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: [' / 2x', ''] },
           { name: 're_replace', args: [' / ', ' '] },
         ],
-      },
-      comments: {
-        selector: 'a.torrent_name',
-        attribute: 'href',
-        filters: [{ name: 'replace', args: ['\t', ' '] }],
       },
       details: {
         selector: 'a.torrent_name',

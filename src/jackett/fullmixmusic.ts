@@ -43,7 +43,7 @@ export const definition: TrackerDefinition = {
         attribute: 'title',
         filters: [{ name: 'regexp', args: '^(.*?)<br />' }],
       },
-      banner: {
+      poster: {
         selector: 'a[href^="details.php?id="][title]',
         attribute: 'title',
         filters: [{ name: 'regexp', args: 'src="(.*?)">' }],

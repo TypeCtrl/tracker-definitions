@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
       { id: '85', cat: 'TV/Sport', desc: 'JJ/BJJ - Misc/Other' },
       { id: '99', cat: 'TV/Sport', desc: 'Kickboxing - HD' },
       { id: '84', cat: 'TV/Sport', desc: 'Kickboxing - SD' },
-      { id: '111', cat: 'Books/Magazines', desc: 'Magazines - All' },
+      { id: '111', cat: 'Books/Mags', desc: 'Magazines - All' },
       { id: '58', cat: 'Other/Misc', desc: 'Misc - All' },
       { id: '63', cat: 'TV/Sport', desc: 'Misc - MMA Special' },
       { id: '62', cat: 'Movies/Other', desc: 'Movies - MMA Related' },
@@ -141,10 +141,6 @@ export const definition: TrackerDefinition = {
       },
       details: {
         selector: 'a[href^="torrents-details.php?id="]',
-        attribute: 'href',
-      },
-      comments: {
-        selector: 'a[href^="comments.php?type=torrent&id="]',
         attribute: 'href',
       },
       download: {

@@ -10,7 +10,7 @@
     "categorymappings": [
       { "id": "1", "cat": "Movies/DVD", "desc": "DVD5" },
       { "id": "4", "cat": "Movies/DVD", "desc": "DVD9" },
-      { "id": "5", "cat": "Movies/WEBDL", "desc": "MPEG/AVI" },
+      { "id": "5", "cat": "Movies/WEB-DL", "desc": "MPEG/AVI" },
       { "id": "6", "cat": "Audio", "desc": "Музыка (Music)" },
       { "id": "7", "cat": "PC/Games", "desc": "Игры (Games)" },
       { "id": "9", "cat": "PC/0day", "desc": "Программы (Apps)" },

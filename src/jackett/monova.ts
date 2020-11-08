@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'monova',
   name: 'Monova',
-  description: 'Monova is a Public torrent index.',
+  description: 'Monova is a Public torrent index',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://monova.org/',
     'https://monova.to/',
-    'https://monova.unblockit.lat/',
+    'https://monova.unblockit.app/',
     'https://monova.unblocked.rest/',
   ],
   legacylinks: [
@@ -29,8 +29,19 @@ export const definition: TrackerDefinition = {
     'https://monova.proxyportal.pw/',
     'https://monova.uk-unblock.pro/',
     'https://monova.unblockit.id/',
+    'https://monova.unblockit.lat/',
   ],
   caps: {
+    categorymappings: [
+      { id: 'venus-mars', cat: 'XXX', desc: 'Adult' },
+      { id: 'video-camera', cat: 'Movies', desc: 'Video' },
+      { id: 'music', cat: 'Audio', desc: 'Audio' },
+      { id: 'book', cat: 'Books', desc: 'Books' },
+      { id: 'gamepad', cat: 'PC/Games', desc: 'Games' },
+      { id: 'cog', cat: 'PC/0day', desc: 'Software' },
+      { id: 'list', cat: 'Other', desc: 'Others' },
+      { id: 'picture-o', cat: 'Other/Misc', desc: 'Photos' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -38,31 +49,21 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'venus-mars', cat: 'XXX' },
-      { id: 'video-camera', cat: 'Movies' },
-      { id: 'music', cat: 'Audio' },
-      { id: 'book', cat: 'Books' },
-      { id: 'gamepad', cat: 'PC/Games' },
-      { id: 'cog', cat: 'PC/0day' },
-      { id: 'list', cat: 'Other' },
-      { id: 'picture-o', cat: 'Other/Misc' },
-    ],
   },
   settings: [],
   search: {
     paths: [
       {
-        path: '{{if .Keywords}}search?term={{.Keywords}}{{else}}video{{end}}',
+        path: '{{ if .Keywords }}search?term={{ .Keywords }}{{ else }}video{{ end }}',
       },
       {
-        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{end}}page=2',
+        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{ end }}page=2',
       },
       {
-        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{end}}page=3',
+        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{ end }}page=3',
       },
       {
-        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{end}}page=4',
+        path: '{{ if .Keywords }}search?term={{ .Keywords }}&{{ else }}video?{{ end }}page=4',
       },
     ],
     keywordsfilters: [
@@ -76,38 +77,22 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      title: { selector: 'td.torrent_name a' },
       category: {
         selector: 'td.torrent_name i',
         attribute: 'class',
         filters: [{ name: 'replace', args: ['fa fa-', ''] }],
       },
+      title: { selector: 'td.torrent_name a' },
       details: { selector: 'td.torrent_name a', attribute: 'href' },
-      _magnetfilename: {
-        text: '{{ .Result.title }}',
-        filters: [{ name: 'validfilename' }, { name: 'urlencode' }],
-      },
-      magnet: {
+      infohash: {
         selector: 'td.torrent_name a',
         attribute: 'href',
-        filters: [
-          { name: 'regexp', args: '([0-9A-Fa-f]{40})' },
-          { name: 'prepend', args: 'magnet:?xt=urn:btih:' },
-          {
-            name: 'append',
-            args: '&dn={{ .Result._magnetfilename }}.torrent',
-          },
-          {
-            name: 'append',
-            args:
-              '&tr=udp://tracker.opentrackr.org:1337&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.internetwarriors.net:1337&tr=udp://tracker.leechers-paradise.org:6969',
-          },
-        ],
+        filters: [{ name: 'regexp', args: '([0-9A-Fa-f]{40})' }],
       },
       size: {
         optional: true,
         selector: 'td.center-align',
-        filters: [{ name: 'replace', args: ['N/A', '500 MB'] }],
+        filters: [{ name: 'replace', args: ['N/A', '512 MB'] }],
       },
       seeders: { text: 1 },
       leechers: { text: 1 },

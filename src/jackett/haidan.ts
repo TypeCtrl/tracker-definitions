@@ -122,7 +122,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         selector: 'div.torrent_name_col > a',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'img#poster',
         attribute: 'data-src',

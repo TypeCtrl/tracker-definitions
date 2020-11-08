@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
       { id: '74', cat: 'Audio/Lossless', desc: 'Lossless/Magyar' },
       { id: '40', cat: 'Audio/Other', desc: 'Zene/Külföldi' },
       { id: '41', cat: 'Audio/Other', desc: 'Zene/Magyar' },
-      { id: '34', cat: 'PC/Phone-Other', desc: 'Mobil' },
+      { id: '34', cat: 'PC/Mobile-Other', desc: 'Mobil' },
       { id: '35', cat: 'PC/ISO', desc: 'Programok/ISO' },
       { id: '46', cat: 'PC/0day', desc: 'Programok/RIP' },
       { id: '70', cat: 'XXX/DVD', desc: 'XXX/DVD' },
@@ -138,7 +138,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'img[src="pic/borito.png"], a[href^="details.php?id="] > b[title*="Torrent neve:"]',
         attribute: 'title',

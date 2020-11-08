@@ -20,6 +20,7 @@ export const definition: TrackerDefinition = {
       { id: '7', cat: 'Other', desc: 'Various' },
       { id: '8', cat: 'XXX', desc: 'XXX' },
       { id: '9', cat: 'Other', desc: 'Cursos' },
+      { id: '10', cat: 'PC/ISO', desc: 'Sistemas Operativos' },
     ],
     modes: {
       search: ['q'],
@@ -105,7 +106,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'div.torrent-poster img',
         attribute: 'src',
@@ -115,11 +116,6 @@ export const definition: TrackerDefinition = {
             args: ['https://via.placeholder.com/600x900', ''],
           },
         ],
-      },
-      comments: {
-        selector: 'a[href*="#comments"]',
-        attribute: 'href',
-        optional: true,
       },
       imdb: {
         optional: true,

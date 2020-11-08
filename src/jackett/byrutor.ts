@@ -273,7 +273,7 @@ export const definition: TrackerDefinition = {
       resorder: 'desc',
     },
     rows: {
-      selector: 'div.short_search:not(div.shor_subtitles span:nth-child(2):empty)',
+      selector: 'div.short_search:has(div.shor_subtitles span:nth-child(2):contains("Б"))',
     },
     fields: {
       category: { text: 1 },
@@ -287,7 +287,7 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'div.short_titles > a', attribute: 'href' },
       download: { selector: 'div.short_titles > a', attribute: 'href' },
-      banner: { selector: 'img', attribute: 'src', optional: true },
+      poster: { selector: 'img', attribute: 'src', optional: true },
       description: { selector: 'div.shor_desc', optional: true },
       date: { text: 'now' },
       seeders: { text: 1 },

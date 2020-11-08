@@ -30,7 +30,7 @@ export const definition: TrackerDefinition = {
       { id: '28', cat: 'TV', desc: 'TV-Series' },
       { id: '27', cat: 'TV/Other', desc: 'TV Boxset' },
       { id: '30', cat: 'PC/Mac', desc: 'Apps Mac' },
-      { id: '31', cat: 'PC/Phone-Other', desc: 'Apps Mobile' },
+      { id: '31', cat: 'PC/Mobile-Other', desc: 'Apps Mobile' },
       { id: '1', cat: 'PC/0day', desc: 'Apps Windows' },
       { id: '35', cat: 'Audio/Lossless', desc: 'Music Flac' },
       { id: '22', cat: 'Audio/MP3', desc: 'Music MP3' },

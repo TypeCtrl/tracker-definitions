@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
       { id: 'porn/Bisexual', cat: 'XXX', desc: 'Bisexual' },
       { id: 'porn/Black-Men', cat: 'XXX', desc: 'Black-Men' },
       { id: 'porn/Chubs', cat: 'XXX', desc: 'Chubs' },
-      { id: 'porn/Clips', cat: 'XXX/Packs', desc: 'Clips' },
+      { id: 'porn/Clips', cat: 'XXX/Pack', desc: 'Clips' },
       {
         id: 'porn/Cross-Generation',
         cat: 'XXX',
@@ -90,6 +90,7 @@ export const definition: TrackerDefinition = {
       $raw: '{{range .Categories}}type={{.}}&{{end}}',
       textsearch: '{{ .Keywords }}',
     },
+    keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     rows: { selector: 'ul.TorrentList' },
     fields: {
       category: {

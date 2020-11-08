@@ -121,7 +121,7 @@ export const definition: TrackerDefinition = {
       title: { selector: 'div.h2 > a' },
       details: { selector: 'div.h2 > a', attribute: 'href' },
       download: { selector: 'div.h2 > a', attribute: 'href' },
-      banner: {
+      poster: {
         selector: 'div.entry_content a.entry__content-image img',
         attribute: 'src',
         optional: true,

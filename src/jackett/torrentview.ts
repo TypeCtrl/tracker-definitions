@@ -61,7 +61,7 @@ export const definition: TrackerDefinition = {
       srows: 100,
       gr_id: '',
       sfl: 'wr_subject',
-      stx: '{{ if .Keywords }}{{ .Keywords }}{{else}}금요일{{end}}',
+      stx: '{{ if .Keywords }}{{ .Keywords }}{{ else }}금요일{{ end }}',
       sop: 'and',
     },
     rows: { selector: 'div.search-media > div.media' },
@@ -83,7 +83,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'time',
         attribute: 'datetime',
-        filters: [{ name: 'dateparse', args: '2006-01-02T15:04:05+09:00' }],
+        filters: [
+          { name: 'replace', args: ['T', ' '] },
+          { name: 'dateparse', args: '2006-01-02 15:04:05+09:00' },
+        ],
       },
       cat: {
         selector: 'div.media-heading > a[href^="./board.php"]',
@@ -91,7 +94,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'bo_table' }],
       },
       size: {
-        text: '{{ if ne .Result.cat "mov" }}512 MB{{else}}2 GB{{end}}',
+        text: '{{ if ne .Result.cat "mov" }}512 MB{{ else }}2 GB{{ end }}',
       },
       seeders: { text: 1 },
       leechers: { text: 1 },

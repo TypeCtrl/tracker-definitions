@@ -82,11 +82,11 @@ export const definition: TrackerDefinition = {
       { id: '67', cat: 'Books', desc: 'Books Photos' },
       { id: '6', cat: 'PC', desc: 'Programs' },
       { id: '18', cat: 'PC/0day', desc: 'Programs PC' },
-      { id: '40', cat: 'PC/Phone-Android', desc: 'Programs Android' },
+      { id: '40', cat: 'PC/Mobile-Android', desc: 'Programs Android' },
       { id: '19', cat: 'PC/Mac', desc: 'Programs Mac' },
       { id: '2', cat: 'PC/Games', desc: 'Games' },
       { id: '27', cat: 'PC/Games', desc: 'Games PC' },
-      { id: '68', cat: 'PC/Phone-Android', desc: 'Games Android' },
+      { id: '68', cat: 'PC/Mobile-Android', desc: 'Games Android' },
       {
         id: '88',
         cat: 'Other',
@@ -181,7 +181,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'a[rel="torrent_seeders"]' },
       leechers: { selector: 'a[rel="torrent_leechers"]' },
       grabs: { selector: 'a[rel="times_completed"]' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'a[rel="fancybox"]',
         attribute: 'href',

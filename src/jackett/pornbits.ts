@@ -67,7 +67,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/torrent/download/"]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'div.torrent-name-hover img',
         attribute: 'src',
       },

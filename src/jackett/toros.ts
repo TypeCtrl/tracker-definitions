@@ -9,6 +9,19 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://www.toros.co/'],
   caps: {
+    categorymappings: [
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'Audio', desc: 'Music' },
+      { id: '3', cat: 'TV', desc: 'Television' },
+      { id: '4', cat: 'PC/Games', desc: 'Games' },
+      { id: '5', cat: 'PC', desc: 'Software' },
+      { id: '6', cat: 'TV/Anime', desc: 'Anime' },
+      { id: '7', cat: 'XXX', desc: 'Adult' },
+      { id: '8', cat: 'Books', desc: 'Ebooks' },
+      { id: '9', cat: 'TV/Anime', desc: 'Animation' },
+      { id: '10', cat: 'Other', desc: 'Other' },
+      { id: '0', cat: 'Other', desc: 'TBC' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -16,19 +29,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: '0', cat: 'Other' },
-      { id: '1', cat: 'Movies' },
-      { id: '2', cat: 'Audio' },
-      { id: '3', cat: 'TV' },
-      { id: '4', cat: 'PC/Games' },
-      { id: '5', cat: 'PC' },
-      { id: '6', cat: 'TV/Anime' },
-      { id: '7', cat: 'XXX' },
-      { id: '8', cat: 'Books' },
-      { id: '9', cat: 'TV/Anime' },
-      { id: '10', cat: 'Other' },
-    ],
   },
   settings: [
     {
@@ -74,7 +74,7 @@ export const definition: TrackerDefinition = {
       details: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
       download: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
       date: {
-        selector: 'td:nth-child(2):not(:contains("ago")):not(:contains("Yesterday")):not(:contains("Today"))',
+        selector: 'td:nth-child(2):not(:contains("ago")):not(:contains("day"))',
         optional: true,
         filters: [{ name: 'dateparse', args: '2 Jan' }],
       },

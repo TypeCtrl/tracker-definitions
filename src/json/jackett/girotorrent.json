@@ -8,7 +8,7 @@
   "links": ["http://girotorrent.org/"],
   "caps": {
     "categorymappings": [
-      { "id": "13", "cat": "Books/Magazines", "desc": "Giornali e Riviste" },
+      { "id": "13", "cat": "Books/Mags", "desc": "Giornali e Riviste" },
       { "id": "15", "cat": "Books/Ebook", "desc": "E-Book" },
       { "id": "16", "cat": "Books/Comics", "desc": "Fumetti" },
       { "id": "70", "cat": "Books", "desc": "Manuali e Guide" },
@@ -59,8 +59,8 @@
       { "id": "55", "cat": "PC/Mac", "desc": "PC Mac" },
       { "id": "69", "cat": "PC", "desc": "PC Portable" },
       { "id": "56", "cat": "PC", "desc": "PC Linux" },
-      { "id": "68", "cat": "PC/Phone-IOS", "desc": "IPhone-IPad" },
-      { "id": "71", "cat": "PC/Phone-Android", "desc": "Android APP" },
+      { "id": "68", "cat": "PC/Mobile-iOS", "desc": "IPhone-IPad" },
+      { "id": "71", "cat": "PC/Mobile-Android", "desc": "Android APP" },
       { "id": "74", "cat": "Other", "desc": "Varie" },
       { "id": "75", "cat": "Other", "desc": "Immagini Wallpaper" }
     ],
@@ -214,7 +214,7 @@
         "selector": "a[href^=\"index.php?page=downloadcheck&id=\"]",
         "attribute": "href"
       },
-      "banner": {
+      "poster": {
         "optional": true,
         "selector": "a[onmouseover][href^=\"index.php?page=torrent-details&id=\"]",
         "attribute": "onmouseover",

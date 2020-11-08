@@ -53,7 +53,7 @@ export const definition: TrackerDefinition = {
       { id: 'eng-music', cat: 'Audio', desc: 'Eng Музыка (eng-music)' },
       { id: 'rus-music', cat: 'Audio', desc: 'Rus Музыка (rus-music)' },
       { id: 'books', cat: 'Books', desc: 'Книги (books)' },
-      { id: 'phone', cat: 'PC/Phone-Other', desc: 'Телефон (phone)' },
+      { id: 'phone', cat: 'PC/Mobile-Other', desc: 'Телефон (phone)' },
     ],
     modes: {
       search: ['q'],
@@ -150,12 +150,12 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'split', args: ['/', 2] }],
       },
       torrent_id: {
-        selector: 'td:nth-last-child(8) a',
+        selector: 'td:nth-child(2) a',
         attribute: 'href',
         filters: [{ name: 'split', args: ['/', 3] }],
       },
       title: {
-        selector: 'td:nth-last-child(8) a',
+        selector: 'td:nth-child(2)',
         filters: [
           { name: 'replace', args: [' [/|:|\\||\\.] ', ' '] },
           { name: 'replace', args: ['Кураж-Бамбей', 'kurazh'] },
@@ -196,13 +196,16 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
       },
-      details: { selector: 'td:nth-last-child(8) a', attribute: 'href' },
+      details: { selector: 'td:nth-child(2) a', attribute: 'href' },
       download: {
         text: '{{ .Config.sitelink }}download.php?id={{ .Result.torrent_id }}',
       },
       date: {
         selector: 'td:nth-child(4)',
-        filters: [{ name: 'dateparse', args: '02/01/06' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02/01/06 -07:00' },
+        ],
       },
       size: {
         selector: 'td:nth-child(5)',

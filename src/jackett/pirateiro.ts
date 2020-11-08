@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://pirateiro.com/', 'https://pirateiro.eu/', 'https://pirateiro.unblockit.lat/'],
+  links: ['https://pirateiro.com/', 'https://pirateiro.eu/', 'https://pirateiro.unblockit.app/'],
   legacylinks: [
     'http://pirateiro.com/',
     'https://pirateiro.unblockit.pro/',
@@ -18,24 +18,25 @@ export const definition: TrackerDefinition = {
     'https://pirateiro.unblockit.id/',
     'https://pirateiro.unblockit.win/',
     'https://pirateiro.unblockit.top/',
+    'https://pirateiro.unblockit.lat/',
   ],
   caps: {
+    categorymappings: [
+      { id: 'cat100', cat: 'TV/Anime', desc: 'Anime' },
+      { id: 'cat200', cat: 'PC', desc: 'Software' },
+      { id: 'cat300', cat: 'Movies', desc: 'Movies' },
+      { id: 'cat400', cat: 'Console', desc: 'Games' },
+      { id: 'cat500', cat: 'Audio', desc: 'Music' },
+      { id: 'cat600', cat: 'Other', desc: 'Other' },
+      { id: 'cat700', cat: 'TV', desc: 'TV' },
+      { id: 'cat800', cat: 'XXX', desc: 'Adult' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
     },
-    categorymappings: [
-      { id: 'cat100', cat: 'TV/Anime' },
-      { id: 'cat200', cat: 'PC' },
-      { id: 'cat300', cat: 'Movies' },
-      { id: 'cat400', cat: 'Console' },
-      { id: 'cat500', cat: 'Audio' },
-      { id: 'cat600', cat: 'Other' },
-      { id: 'cat700', cat: 'TV' },
-      { id: 'cat800', cat: 'XXX' },
-    ],
   },
   settings: [
     {

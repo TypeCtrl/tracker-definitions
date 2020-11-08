@@ -11,7 +11,7 @@
     "https://torrentsmirror.com/",
     "https://torrentz.pl/",
     "https://torrentz2.unblockninja.com/",
-    "https://torrentz.unblockit.lat/",
+    "https://torrentz.unblockit.app/",
     "https://torrentz2.unblocked.rest/"
   ],
   "legacylinks": [
@@ -30,55 +30,80 @@
     "https://torrentz2.unblocked.bar/",
     "https://torrentz2.proxyportal.pw/",
     "https://torrentz2.uk-unblock.pro/",
-    "https://torrentz.unblockit.top/"
+    "https://torrentz.unblockit.top/",
+    "https://torrentz.unblockit.lat/"
   ],
   "caps": {
+    "categorymappings": [
+      { "id": "video tv", "cat": "TV", "desc": "video tv" },
+      { "id": "video anime", "cat": "TV/Anime", "desc": "video anime" },
+      { "id": "video", "cat": "Movies", "desc": "video" },
+      { "id": "movies divx xvid", "cat": "Movies", "desc": "movies divx xvid" },
+      { "id": "video movie dvd", "cat": "Movies", "desc": "video movie dvd" },
+      {
+        "id": "video movie dvdrip",
+        "cat": "Movies",
+        "desc": "video movie dvdrip"
+      },
+      { "id": "video movie hd", "cat": "Movies/HD", "desc": "video movie hd" },
+      { "id": "ebook", "cat": "Books/Ebook", "desc": "ebook" },
+      { "id": "ebook comics", "cat": "Books/Comics", "desc": "ebook comics" },
+      { "id": "ebook magazine", "cat": "Books/Mags", "desc": "ebook magazine" },
+      {
+        "id": "ebook tutorial",
+        "cat": "Books/Technical",
+        "desc": "ebook tutorial"
+      },
+      {
+        "id": "ebook audio book",
+        "cat": "Audio/Audiobook",
+        "desc": "ebook audio book"
+      },
+      { "id": "audio", "cat": "Audio", "desc": "audio" },
+      {
+        "id": "audio music lossless",
+        "cat": "Audio/Lossless",
+        "desc": "audio music lossless"
+      },
+      {
+        "id": "audio music mp3",
+        "cat": "Audio/MP3",
+        "desc": "audio music mp3"
+      },
+      { "id": "application", "cat": "PC/0day", "desc": "application" },
+      { "id": "game", "cat": "PC/Games", "desc": "game" },
+      { "id": "game pc", "cat": "PC/Games", "desc": "game pc" },
+      { "id": "game xbox", "cat": "Console/Xbox", "desc": "game xbox" },
+      {
+        "id": "game nintendo",
+        "cat": "Console/NDS",
+        "desc": "game nintendo\""
+      },
+      { "id": "adult", "cat": "XXX", "desc": "adult" },
+      { "id": "adult amateur", "cat": "XXX", "desc": "adult amateur" },
+      { "id": "adult anal", "cat": "XXX", "desc": "adult anal" },
+      { "id": "adult asian", "cat": "XXX", "desc": "adult asian" },
+      { "id": "adult blowjobs", "cat": "XXX", "desc": "adult blowjobs" },
+      { "id": "adult creampie", "cat": "XXX", "desc": "adult creampie" },
+      { "id": "adult double p", "cat": "XXX", "desc": "adult double p" },
+      { "id": "adult fisting", "cat": "XXX", "desc": "adult fisting" },
+      { "id": "adult hairy", "cat": "XXX", "desc": "adult hairy" },
+      { "id": "adult hentai", "cat": "XXX", "desc": "adult hentai" },
+      { "id": "adult interracial", "cat": "XXX", "desc": "adult interracial" },
+      { "id": "adult lesbian", "cat": "XXX", "desc": "adult lesbian" },
+      { "id": "adult milf", "cat": "XXX", "desc": "adult milf" },
+      { "id": "adult squirting", "cat": "XXX", "desc": "adult squirting" },
+      { "id": "adult tattoo", "cat": "XXX", "desc": "adult tattoo" },
+      { "id": "other", "cat": "Other", "desc": "other" },
+      { "id": "images", "cat": "Other", "desc": "images" }
+    ],
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"],
       "music-search": ["q"],
       "book-search": ["q"]
-    },
-    "categorymappings": [
-      { "id": "video tv", "cat": "TV" },
-      { "id": "video anime", "cat": "TV/Anime" },
-      { "id": "video", "cat": "Movies" },
-      { "id": "movies divx xvid", "cat": "Movies" },
-      { "id": "video movie dvd", "cat": "Movies" },
-      { "id": "video movie dvdrip", "cat": "Movies" },
-      { "id": "video movie hd", "cat": "Movies/HD" },
-      { "id": "ebook", "cat": "Books/Ebook" },
-      { "id": "ebook comics", "cat": "Books/Comics" },
-      { "id": "ebook magazine", "cat": "Books/Magazines" },
-      { "id": "ebook tutorial", "cat": "Books/Technical" },
-      { "id": "ebook audio book", "cat": "Audio/Audiobook" },
-      { "id": "audio", "cat": "Audio" },
-      { "id": "audio music lossless", "cat": "Audio/Lossless" },
-      { "id": "audio music mp3", "cat": "Audio/MP3" },
-      { "id": "application", "cat": "PC/0day" },
-      { "id": "game", "cat": "PC/Games" },
-      { "id": "game pc", "cat": "PC/Games" },
-      { "id": "game xbox", "cat": "Console/Xbox" },
-      { "id": "game nintendo", "cat": "Console/NDS" },
-      { "id": "adult", "cat": "XXX" },
-      { "id": "adult amateur", "cat": "XXX" },
-      { "id": "adult anal", "cat": "XXX" },
-      { "id": "adult asian", "cat": "XXX" },
-      { "id": "adult blowjobs", "cat": "XXX" },
-      { "id": "adult creampie", "cat": "XXX" },
-      { "id": "adult double p", "cat": "XXX" },
-      { "id": "adult fisting", "cat": "XXX" },
-      { "id": "adult hairy", "cat": "XXX" },
-      { "id": "adult hentai", "cat": "XXX" },
-      { "id": "adult interracial", "cat": "XXX" },
-      { "id": "adult lesbian", "cat": "XXX" },
-      { "id": "adult milf", "cat": "XXX" },
-      { "id": "adult squirting", "cat": "XXX" },
-      { "id": "adult tattoo", "cat": "XXX" },
-      { "id": "other", "cat": "Other" },
-      { "id": "images", "cat": "Other" }
-    ]
+    }
   },
   "settings": [
     {
@@ -134,21 +159,10 @@
       "download": {
         "text": "{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{ else }}{{ end }}"
       },
-      "magfile": {
-        "text": "{{ .Result.title }}",
-        "filters": [{ "name": "validfilename" }, { "name": "urlencode" }]
-      },
-      "magnet": {
+      "infohash": {
         "selector": "dt a",
         "attribute": "href",
-        "filters": [
-          { "name": "regexp", "args": "/(\\w+)" },
-          { "name": "prepend", "args": "magnet:?xt=urn:btih:" },
-          {
-            "name": "append",
-            "args": "&dn={{ .Result.magfile }}.torrent&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.leechers-paradise.org:6969&tr=udp://tracker.opentrackr.org:1337"
-          }
-        ]
+        "filters": [{ "name": "regexp", "args": "/(\\w+)" }]
       },
       "category": { "text": "other" },
       "category|noappend": {

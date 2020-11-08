@@ -141,7 +141,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         optional: true,
       },
-      banner: {
+      poster: {
         selector: 'div[id^="details-"] div div img',
         attribute: 'src',
         optional: true,

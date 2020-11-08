@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
     'https://www.magnetdl.com/',
     'https://www.magnetdl.org/',
     'https://magnetdl.unblockninja.com/',
-    'https://magnetdl.unblockit.lat/',
+    'https://magnetdl.unblockit.app/',
   ],
   legacylinks: [
     'http://www.magnetdl.com/',
@@ -24,8 +24,18 @@ export const definition: TrackerDefinition = {
     'https://magnetdl.unblockit.id/',
     'https://magnetdl.unblockit.win/',
     'https://magnetdl.unblockit.top/',
+    'https://magnetdl.unblockit.lat/',
   ],
   caps: {
+    categorymappings: [
+      { id: 'TV', cat: 'TV', desc: 'TV' },
+      { id: 'Movie', cat: 'Movies', desc: 'Movies' },
+      { id: 'Music', cat: 'Audio', desc: 'Music' },
+      { id: 'E-Book', cat: 'Books/Ebook', desc: 'Ebooks' },
+      { id: 'Game', cat: 'PC/Games', desc: 'Games' },
+      { id: 'Software', cat: 'PC', desc: 'Software' },
+      { id: 'Other', cat: 'Other', desc: 'Other' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -33,15 +43,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'TV', cat: 'TV' },
-      { id: 'Movie', cat: 'Movies' },
-      { id: 'Music', cat: 'Audio' },
-      { id: 'E-Book', cat: 'Books/Ebook' },
-      { id: 'Game', cat: 'PC/Games' },
-      { id: 'Software', cat: 'PC' },
-      { id: 'Other', cat: 'Other' },
-    ],
   },
   settings: [
     {
@@ -67,18 +68,18 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}2/{{ .Today.Year }}/{{end}}{{ .Config.sort }}/{{ .Config.type }}/',
+          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{ else }}2/{{ .Today.Year }}/{{ end }}{{ .Config.sort }}/{{ .Config.type }}/',
       },
       {
         path:
-          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{else}}2/{{ .Today.Year }}/{{end}}{{ .Config.sort }}/{{ .Config.type }}/2/',
+          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{ else }}2/{{ .Today.Year }}/{{ end }}{{ .Config.sort }}/{{ .Config.type }}/2/',
       },
     ],
     rows: { selector: 'tr:has(td.m)' },
     fields: {
-      title: { selector: 'td.n a', attribute: 'title' },
       category: { text: 'Other' },
       'category|noappend': { optional: true, selector: 'td[class^="t"]' },
+      title: { selector: 'td.n a', attribute: 'title' },
       details: { selector: 'td.n a', attribute: 'href' },
       magnet: { selector: 'td.m a', attribute: 'href' },
       date: {

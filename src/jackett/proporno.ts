@@ -72,7 +72,7 @@ export const definition: TrackerDefinition = {
       title: { selector: 'div.news_text > a' },
       details: { selector: 'div.news_text > a', attribute: 'href' },
       download: { selector: 'div.news_text > a', attribute: 'href' },
-      banner: {
+      poster: {
         selector: 'img[src*="/uploads/posts/"]',
         attribute: 'src',
         optional: true,

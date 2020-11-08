@@ -7,7 +7,7 @@ export type Categories =
   | 'Console/Wii'
   | 'Console/Xbox'
   | 'Console/Xbox360'
-  | 'Console/Wiiware/VC'
+  | 'Console/Wiiware'
   | 'Console/XBOX360DLC'
   | 'Console/PS3'
   | 'Console/Other'
@@ -26,7 +26,7 @@ export type Categories =
   | 'Movies/3D'
   | 'Movies/BluRay'
   | 'Movies/DVD'
-  | 'Movies/WEBDL'
+  | 'Movies/WEB-DL'
   | 'Audio'
   | 'Audio/MP3'
   | 'Audio/Video'
@@ -38,10 +38,10 @@ export type Categories =
   | 'PC/0day'
   | 'PC/ISO'
   | 'PC/Mac'
-  | 'PC/Phone-Other'
   | 'PC/Games'
-  | 'PC/Phone-IOS'
-  | 'PC/Phone-Android'
+  | 'PC/Mobile-iOS'
+  | 'PC/Mobile-Android'
+  | 'PC/Mobile-Other'
   | 'TV'
   | 'TV/WEB-DL'
   | 'TV/Foreign'
@@ -59,14 +59,14 @@ export type Categories =
   | 'XXX/x264'
   | 'XXX/Other'
   | 'XXX/Imageset'
-  | 'XXX/Packs'
+  | 'XXX/Pack'
   | 'Other'
   | 'Other/Misc'
   | 'Other/Hashed'
   | 'Books'
   | 'Books/Ebook'
   | 'Books/Comics'
-  | 'Books/Magazines'
+  | 'Books/Mags'
   | 'Books/Technical'
   | 'Books/Other'
   | 'Books/Foreign';
@@ -78,7 +78,7 @@ export const TORZNAB_CATEGORIES: Record<Categories, number> = {
   'Console/Wii': 1030,
   'Console/Xbox': 1040,
   'Console/Xbox360': 1050,
-  'Console/Wiiware/VC': 1060,
+  'Console/Wiiware': 1060,
   'Console/XBOX360DLC': 1070,
   'Console/PS3': 1080,
   'Console/Other': 1090,
@@ -97,7 +97,7 @@ export const TORZNAB_CATEGORIES: Record<Categories, number> = {
   'Movies/3D': 2050,
   'Movies/BluRay': 2060,
   'Movies/DVD': 2070,
-  'Movies/WEBDL': 2080,
+  'Movies/WEB-DL': 2080,
   Audio: 3000,
   'Audio/MP3': 3010,
   'Audio/Video': 3020,
@@ -109,10 +109,10 @@ export const TORZNAB_CATEGORIES: Record<Categories, number> = {
   'PC/0day': 4010,
   'PC/ISO': 4020,
   'PC/Mac': 4030,
-  'PC/Phone-Other': 4040,
+  'PC/Mobile-Other': 4040,
   'PC/Games': 4050,
-  'PC/Phone-IOS': 4060,
-  'PC/Phone-Android': 4070,
+  'PC/Mobile-iOS': 4060,
+  'PC/Mobile-Android': 4070,
   TV: 5000,
   'TV/WEB-DL': 5010,
   'TV/Foreign': 5020,
@@ -130,14 +130,14 @@ export const TORZNAB_CATEGORIES: Record<Categories, number> = {
   'XXX/x264': 6040,
   'XXX/Other': 6050,
   'XXX/Imageset': 6060,
-  'XXX/Packs': 6070,
+  'XXX/Pack': 6070,
   Other: 7000,
   'Other/Misc': 7010,
   'Other/Hashed': 7020,
   Books: 8000,
   'Books/Ebook': 8010,
   'Books/Comics': 8020,
-  'Books/Magazines': 8030,
+  'Books/Mags': 8030,
   'Books/Technical': 8040,
   'Books/Other': 8050,
   'Books/Foreign': 8060,

@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
     'https://www.demonoid.is/',
     'https://www.dnoid.to/',
     'https://www.dnoid.pw/',
-    'https://demonoid.unblockit.lat/',
+    'https://demonoid.unblockit.app/',
   ],
   legacylinks: [
     'https://demonoid.unblockit.pro/',
@@ -27,20 +27,21 @@ export const definition: TrackerDefinition = {
     'https://demonoid.unblockit.id/',
     'https://demonoid.unblockit.win/',
     'https://demonoid.unblockit.top/',
+    'https://demonoid.unblockit.lat/',
   ],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'PC/Phone-Android', desc: 'Applications Android' },
+      { id: '1', cat: 'PC/Mobile-Android', desc: 'Applications Android' },
       {
         id: '2',
-        cat: 'PC/Phone-IOS',
+        cat: 'PC/Mobile-iOS',
         desc: 'Applications Iphone / Ipod touch',
       },
       { id: '3', cat: 'PC', desc: 'Applications Linux' },
       { id: '4', cat: 'PC/Mac', desc: 'Applications Mac' },
       {
         id: '5',
-        cat: 'PC/Phone-Other',
+        cat: 'PC/Mobile-Other',
         desc: 'Applications Mobile phone',
       },
       { id: '6', cat: 'PC', desc: 'Applications PocketPC' },
@@ -142,7 +143,7 @@ export const definition: TrackerDefinition = {
       { id: '54', cat: 'Books/Ebook', desc: 'Books Horror' },
       { id: '55', cat: 'Books/Ebook', desc: 'Books Humor' },
       { id: '56', cat: 'Books/Ebook', desc: 'Books Literary' },
-      { id: '57', cat: 'Books/Magazines', desc: 'Books Magazine' },
+      { id: '57', cat: 'Books/Mags', desc: 'Books Magazine' },
       { id: '58', cat: 'Books/Ebook', desc: 'Books Mainstream' },
       { id: '59', cat: 'Books/Ebook', desc: 'Books Medicine and Health' },
       {
@@ -191,7 +192,7 @@ export const definition: TrackerDefinition = {
       { id: '91', cat: 'Console/Other', desc: 'Games GameCube' },
       { id: '92', cat: 'PC', desc: 'Games Linux' },
       { id: '93', cat: 'PC/Mac', desc: 'Games Mac' },
-      { id: '94', cat: 'PC/Phone-Other', desc: 'Games Mobile phone' },
+      { id: '94', cat: 'PC/Mobile-Other', desc: 'Games Mobile phone' },
       { id: '95', cat: 'Console/NDS', desc: 'Games Nintendo DS' },
       { id: '96', cat: 'Console/Other', desc: 'Games Palm' },
       { id: '97', cat: 'Console/PS3', desc: 'Games Playstation' },

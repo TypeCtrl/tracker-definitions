@@ -8,14 +8,17 @@
   "links": ["https://fou-du-cinema.net/"],
   "caps": {
     "categorymappings": [
+      { "id": "65", "cat": "TV/Documentary", "desc": "Documentaires Divers" },
+      { "id": "66", "cat": "TV/Documentary", "desc": "Documentaires audio" },
       { "id": "2", "cat": "Movies/DVD", "desc": "Film DVD" },
       { "id": "4", "cat": "Movies/HD", "desc": "Film 1080P" },
       { "id": "15", "cat": "Movies/BluRay", "desc": "Film Bluray" },
-      { "id": "16", "cat": "Movies/WEBDL", "desc": "Film Web" },
+      { "id": "16", "cat": "Movies/WEB-DL", "desc": "Film Web" },
       { "id": "17", "cat": "Movies/Other", "desc": "Film Iso" },
       { "id": "19", "cat": "Movies/HD", "desc": "Film 720P" },
       { "id": "59", "cat": "Movies/Other", "desc": "Film Divers" },
-      { "id": "64", "cat": "Movies/Other", "desc": "Film Rip" },
+      { "id": "67", "cat": "Movies/Other", "desc": "Film Vob" },
+      { "id": "69", "cat": "Movies/DVD", "desc": "Film DVD-r" },
       { "id": "46", "cat": "TV/HD", "desc": "Série 1080P" },
       { "id": "48", "cat": "TV/HD", "desc": "Série Bluray" },
       { "id": "60", "cat": "TV/Other", "desc": "Série Divers" },
@@ -30,8 +33,8 @@
       { "id": "10", "cat": "XXX", "desc": "XxX Film" },
       { "id": "13", "cat": "PC/0day", "desc": "Apps Win" },
       { "id": "14", "cat": "PC/Mac", "desc": "Apps Mac" },
-      { "id": "52", "cat": "PC/Phone-IOS", "desc": "Apps Iphone" },
-      { "id": "53", "cat": "PC/Phone-Android", "desc": "Apps android" },
+      { "id": "52", "cat": "PC/Mobile-iOS", "desc": "Apps Iphone" },
+      { "id": "53", "cat": "PC/Mobile-Android", "desc": "Apps android" },
       { "id": "5", "cat": "Audio/MP3", "desc": "Music Mp3" },
       { "id": "6", "cat": "Audio/Lossless", "desc": "Music FLAC" },
       { "id": "7", "cat": "PC/Games", "desc": "Jeux Win" },
@@ -114,6 +117,17 @@
     "error": [{ "selector": "div#login_error" }],
     "test": { "path": "index.php", "selector": "a[href=\"logout.php\"]" }
   },
+  "download": {
+    "before": {
+      "path": "ajax_det_poll.php",
+      "method": "post",
+      "inputs": {
+        "set_thanks": "Merci",
+        "det_id": "{{ .DownloadUri.Query.torrent }}",
+        "ajax": "yes"
+      }
+    }
+  },
   "search": {
     "paths": [{ "path": "selection.php" }],
     "inputs": {
@@ -129,8 +143,10 @@
     "fields": {
       "category": {
         "selector": "div.kat_cat_pic",
-        "filters": [{ "name": "strdump", "args": "cat" }],
+        "filters": null,
         "case": {
+          ":contains(\"Documentaires\"):contains(\"Divers\")": 65,
+          ":contains(\"Documentaires\"):contains(\"audio\")": 66,
           ":contains(\"Film\"):contains(\"DVD\")": 2,
           ":contains(\"Film\"):contains(\"1080P\")": 4,
           ":contains(\"Film\"):contains(\"Bluray\")": 15,
@@ -138,18 +154,19 @@
           ":contains(\"Film\"):contains(\"Iso\")": 17,
           ":contains(\"Film\"):contains(\"720P\")": 19,
           ":contains(\"Film\"):contains(\"Divers\")": 59,
-          ":contains(\"Film\"):contains(\"Rip\")": 64,
-          ":contains(\"Séries\"):contains(\"1080P\")": 44,
-          ":contains(\"Séries\"):contains(\"intégrale\")": 38,
-          ":contains(\"Séries\"):contains(\"Web\")": 41,
-          ":contains(\"Séries\"):contains(\"720P\")": 45,
-          ":contains(\"Séries\"):contains(\"Divers\")": 63,
+          ":contains(\"Film\"):contains(\"Vob\")": 67,
+          ":contains(\"Film\"):contains(\"DVD-r\")": 69,
           ":contains(\"Série\"):contains(\"1080P\")": 46,
           ":contains(\"Série\"):contains(\"Bluray\")": 48,
           ":contains(\"Série\"):contains(\"Divers\")": 60,
           ":contains(\"Série\"):contains(\"DVDRip\")": 12,
           ":contains(\"Série\"):contains(\"720P\")": 30,
           ":contains(\"Série\"):contains(\"Web\")": 23,
+          ":contains(\"Séries\"):contains(\"1080P\")": 44,
+          ":contains(\"Séries\"):contains(\"intégrale\")": 38,
+          ":contains(\"Séries\"):contains(\"Web\")": 41,
+          ":contains(\"Séries\"):contains(\"720P\")": 45,
+          ":contains(\"Séries\"):contains(\"Divers\")": 63,
           ":contains(\"XxX\"):contains(\"Film\")": 10,
           ":contains(\"Apps\"):contains(\"Win\")": 13,
           ":contains(\"Apps\"):contains(\"Mac\")": 14,
@@ -164,11 +181,6 @@
           ":contains(\"Jeux\"):contains(\"XBOX 360\")": 56,
           ":contains(\"Jeux\"):contains(\"androïd\")": 57
         }
-      },
-      "id": {
-        "selector": "a[href^=\"details.php?id=\"]",
-        "attribute": "href",
-        "filters": [{ "name": "querystring", "args": "id" }]
       },
       "title_phase1": { "selector": "a[href^=\"details.php?id=\"]" },
       "title_multilang": {
@@ -206,7 +218,16 @@
         "selector": "a[href^=\"details.php?id=\"]",
         "attribute": "href"
       },
-      "download": { "text": "download.php?torrent={{ .Result.id }}" },
+      "download": {
+        "selector": "a[href^=\"details.php?id=\"]",
+        "attribute": "href",
+        "filters": [
+          {
+            "name": "replace",
+            "args": ["details.php?id=", "download.php?torrent="]
+          }
+        ]
+      },
       "seeders": { "selector": "div.selection_unter_aa > b" },
       "leechers": { "selector": "div.selection_unter_aaa > b" },
       "date": {
@@ -229,8 +250,8 @@
       },
       "downloadvolumefactor": { "text": 1 },
       "uploadvolumefactor": { "text": 1 },
-      "minimumratio": { "text": 1 },
-      "minimumseedtime": { "text": 432000 }
+      "minimumratio": { "text": 0.5 },
+      "minimumseedtime": { "text": 216000 }
     }
   },
   "source": "jackett"

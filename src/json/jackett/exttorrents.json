@@ -8,52 +8,112 @@
   "links": ["https://ext.to/", "https://torrent.extto.com/"],
   "legacylinks": ["https://ext.unblockninja.com/", "https://t.extto.com/"],
   "caps": {
+    "categorymappings": [
+      { "id": "/anime/", "cat": "TV/Anime", "desc": "Anime" },
+      {
+        "id": "/anime/english-translated/",
+        "cat": "TV/Anime",
+        "desc": "Anime English Translated"
+      },
+      { "id": "/applications/", "cat": "PC", "desc": "Apps" },
+      {
+        "id": "/applications/android/",
+        "cat": "PC/Mobile-Android",
+        "desc": "Apps Android"
+      },
+      {
+        "id": "/applications/ios/",
+        "cat": "PC/Mobile-iOS",
+        "desc": "Apps iOS"
+      },
+      { "id": "/applications/linux/", "cat": "PC", "desc": "Apps Linux" },
+      { "id": "/applications/mac/", "cat": "PC/Mac", "desc": "Apps Mac" },
+      {
+        "id": "/applications/other-applications/",
+        "cat": "PC/Mobile-Other",
+        "desc": "Apps Other"
+      },
+      {
+        "id": "/applications/windows/",
+        "cat": "PC/0day",
+        "desc": "Apps Windows"
+      },
+      { "id": "/books/", "cat": "Books", "desc": "Books" },
+      {
+        "id": "/books/audio-books/",
+        "cat": "Audio/Audiobook",
+        "desc": "Books Audiobooks"
+      },
+      { "id": "/books/comics/", "cat": "Books/Comics", "desc": "Books Comics" },
+      { "id": "/books/ebooks/", "cat": "Books/Ebook", "desc": "Books Ebooks" },
+      { "id": "/games/", "cat": "PC/Games", "desc": "Games" },
+      { "id": "/games/nds/", "cat": "Console/NDS", "desc": "Games NDS" },
+      {
+        "id": "/games/other-games/",
+        "cat": "Console/Other",
+        "desc": "Games Other"
+      },
+      { "id": "/games/pc-games/", "cat": "PC/Games", "desc": "Games PC" },
+      { "id": "/games/ps3/", "cat": "Console/PS3", "desc": "Games PS3" },
+      { "id": "/games/ps4/", "cat": "Console/PS4", "desc": "Games PS4" },
+      { "id": "/games/psp/", "cat": "Console/PSP", "desc": "Games PSP" },
+      { "id": "/games/wii/", "cat": "Console/Wii", "desc": "Games Wii" },
+      {
+        "id": "/games/xbox360/",
+        "cat": "Console/Xbox360",
+        "desc": "Games Xbox360"
+      },
+      { "id": "/movies/", "cat": "Movies", "desc": "Movies" },
+      { "id": "/movies/3d-movies/", "cat": "Movies/3D", "desc": "Movies 3D" },
+      {
+        "id": "/movies/bollywood/",
+        "cat": "Movies",
+        "desc": "Movies Bollywood"
+      },
+      {
+        "id": "/movies/dubbed-movies/",
+        "cat": "Movies",
+        "desc": "Movies Dubbed"
+      },
+      {
+        "id": "/movies/highres-movies/",
+        "cat": "Movies/HD",
+        "desc": "Movies Highres"
+      },
+      { "id": "/movies/mp4/", "cat": "Movies", "desc": "Movies MP4" },
+      {
+        "id": "/movies/ultrahd/",
+        "cat": "Movies/UHD",
+        "desc": "Movies UltraHD"
+      },
+      { "id": "/music/", "cat": "Audio", "desc": "Music" },
+      { "id": "/music/aac/", "cat": "Audio", "desc": "Music AAC" },
+      {
+        "id": "/music/lossless/",
+        "cat": "Audio/Lossless",
+        "desc": "Music Lossless"
+      },
+      { "id": "/music/mp3/", "cat": "Audio/MP3", "desc": "Music MP3" },
+      {
+        "id": "/music/other-music/",
+        "cat": "Audio/Other",
+        "desc": "Music Other"
+      },
+      {
+        "id": "/music/radio-shows/",
+        "cat": "Audio",
+        "desc": "Music Radio Shows"
+      },
+      { "id": "/other/", "cat": "Other", "desc": "Other" },
+      { "id": "/tv/", "cat": "TV", "desc": "TV" }
+    ],
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"],
       "music-search": ["q"],
       "book-search": ["q"]
-    },
-    "categorymappings": [
-      { "id": "/anime/", "cat": "TV/Anime" },
-      { "id": "/anime/english-translated/", "cat": "TV/Anime" },
-      { "id": "/applications/", "cat": "PC" },
-      { "id": "/applications/android/", "cat": "PC/Phone-Android" },
-      { "id": "/applications/ios/", "cat": "PC/Phone-IOS" },
-      { "id": "/applications/linux/", "cat": "PC" },
-      { "id": "/applications/mac/", "cat": "PC/Mac" },
-      { "id": "/applications/other-applications/", "cat": "PC/Phone-Other" },
-      { "id": "/applications/windows/", "cat": "PC/0day" },
-      { "id": "/books/", "cat": "Books" },
-      { "id": "/books/audio-books/", "cat": "Audio/Audiobook" },
-      { "id": "/books/comics/", "cat": "Books/Comics" },
-      { "id": "/books/ebooks/", "cat": "Books/Ebook" },
-      { "id": "/games/", "cat": "PC/Games" },
-      { "id": "/games/nds/", "cat": "Console/NDS" },
-      { "id": "/games/other-games/", "cat": "Console/Other" },
-      { "id": "/games/pc-games/", "cat": "PC/Games" },
-      { "id": "/games/ps3/", "cat": "Console/PS3" },
-      { "id": "/games/ps4/", "cat": "Console/PS4" },
-      { "id": "/games/psp/", "cat": "Console/PSP" },
-      { "id": "/games/wii/", "cat": "Console/Wii" },
-      { "id": "/games/xbox360/", "cat": "Console/Xbox360" },
-      { "id": "/movies/", "cat": "Movies" },
-      { "id": "/movies/3d-movies/", "cat": "Movies/3D" },
-      { "id": "/movies/bollywood/", "cat": "Movies" },
-      { "id": "/movies/dubbed-movies/", "cat": "Movies" },
-      { "id": "/movies/highres-movies/", "cat": "Movies/HD" },
-      { "id": "/movies/mp4/", "cat": "Movies" },
-      { "id": "/movies/ultrahd/", "cat": "Movies/UHD" },
-      { "id": "/music/", "cat": "Audio" },
-      { "id": "/music/aac/", "cat": "Audio" },
-      { "id": "/music/lossless/", "cat": "Audio/Lossless" },
-      { "id": "/music/mp3/", "cat": "Audio/MP3" },
-      { "id": "/music/other-music/", "cat": "Audio/Other" },
-      { "id": "/music/radio-shows/", "cat": "Audio" },
-      { "id": "/other/", "cat": "Other" },
-      { "id": "/tv/", "cat": "TV" }
-    ]
+    }
   },
   "settings": [
     {
@@ -75,7 +135,7 @@
   "search": {
     "paths": [
       {
-        "path": "{{ if .Keywords }}search/?order={{ .Config.sort }}&sort={{ .Config.type }}&q={{ .Keywords }}{{ else }}latest/?order={{ .Config.sort }}&sort={{ .Config.type }}{{ end }}"
+        "path": "{{ if .Keywords }}search/?q={{ .Keywords }}&{{ else }}latest/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}"
       }
     ],
     "rows": { "selector": "table.table-striped > tbody > tr" },

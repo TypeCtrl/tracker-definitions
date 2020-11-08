@@ -53,7 +53,7 @@ export const definition: TrackerDefinition = {
         desc: 'Comics & Manga - Hentai',
       },
       { id: '4000', cat: 'XXX', desc: 'Hardcore - All' },
-      { id: '8000', cat: 'Books/Magazines', desc: 'Magazines - All' },
+      { id: '8000', cat: 'Books/Mags', desc: 'Magazines - All' },
       { id: '1090', cat: 'Movies', desc: 'Movies - Comedy' },
       { id: '1190', cat: 'Movies', desc: 'Movies - Drama' },
       { id: '1290', cat: 'Movies', desc: 'Movies - Fantasy' },
@@ -128,10 +128,6 @@ export const definition: TrackerDefinition = {
       },
       details: {
         selector: 'a[href^="torrents-details.php?id="]',
-        attribute: 'href',
-      },
-      comments: {
-        selector: 'a[href^="comments.php?type=torrent&id="]',
         attribute: 'href',
       },
       download: {

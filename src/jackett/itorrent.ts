@@ -11,6 +11,15 @@ export const definition: TrackerDefinition = {
   links: ['https://itorrent.ws/'],
   legacylinks: ['https://itorrent.unblockit.pro/', 'https://itorrent.unblockit.one/', 'https://itorrent.unblockit.me/'],
   caps: {
+    categorymappings: [
+      { id: 'app', cat: 'PC', desc: 'Apps' },
+      { id: 'book', cat: 'Books', desc: 'Books' },
+      { id: 'game', cat: 'PC/Games', desc: 'Games' },
+      { id: 'movies', cat: 'Movies', desc: 'Movies' },
+      { id: 'music', cat: 'Audio', desc: 'Music' },
+      { id: 'heart', cat: 'XXX', desc: 'XXX' },
+      { id: 'tv', cat: 'TV', desc: 'TV' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -18,15 +27,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'app', cat: 'PC' },
-      { id: 'book', cat: 'Books' },
-      { id: 'game', cat: 'PC/Games' },
-      { id: 'movies', cat: 'Movies' },
-      { id: 'music', cat: 'Audio' },
-      { id: 'heart', cat: 'XXX' },
-      { id: 'tv', cat: 'TV' },
-    ],
   },
   settings: [
     {
@@ -72,7 +72,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(4):not(:has(span))',
         optional: true,
-        filters: [{ name: 'dateparse', args: '2006.01.02' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2006.01.02 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(5)' },
       grabs: {

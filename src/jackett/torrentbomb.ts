@@ -112,7 +112,7 @@ export const definition: TrackerDefinition = {
       { path: 'search.php', inputs: { page: 5 } },
     ],
     inputs: {
-      keyword: '{{ if .Keywords }}{{ .Keywords }}{{else}}-{{end}}',
+      keyword: '{{ if .Keywords }}{{ .Keywords }}{{ else }}-{{ end }}',
     },
     rows: {
       selector: 'section.sch_res_list > ul > li:has(span.sch_datetime:contains(":"))',
@@ -134,7 +134,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'span.sch_datetime',
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +09:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       cat: {
         selector: 'a[href^="bbs/./board.php?"]',
@@ -143,7 +146,7 @@ export const definition: TrackerDefinition = {
       },
       size: {
         text:
-          '{{ if or eq .Result.cat "torrent_movie" (or eq .Result.cat "torrent_movie_etc" eq .Result.cat "torrent_movie_eng") }}2 GB{{else}}512 MB{{end}}',
+          '{{ if or eq .Result.cat "torrent_movie" (or eq .Result.cat "torrent_movie_etc" eq .Result.cat "torrent_movie_eng") }}2 GB{{ else }}512 MB{{ end }}',
       },
       seeders: { text: 1 },
       leechers: { text: 1 },

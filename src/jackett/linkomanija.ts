@@ -33,7 +33,7 @@ export const definition: TrackerDefinition = {
       { id: '42', cat: 'Console/Xbox', desc: 'XBOX' },
       { id: '66', cat: 'Audio/Lossless', desc: 'Music Lossless' },
       { id: '41', cat: 'PC/Mac', desc: 'MAC' },
-      { id: '69', cat: 'PC/Phone-Android', desc: 'Android' },
+      { id: '69', cat: 'PC/Mobile-Android', desc: 'Android' },
       { id: '46', cat: 'TV/Sport', desc: 'Sports' },
       { id: '58', cat: 'TV/Documentary', desc: 'Documentaries' },
       { id: '38', cat: 'TV/Anime', desc: 'Anime' },

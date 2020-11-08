@@ -1,6 +1,3 @@
 [submodule "upstream/jackett"]
 	path = upstream/jackett
 	url = https://github.com/Jackett/Jackett.git
-[submodule "upstream/cardigann"]
-	path = upstream/cardigann
-	url = https://github.com/cardigann/cardigann.git

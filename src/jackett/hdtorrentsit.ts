@@ -99,7 +99,7 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(2) a:nth-child(1)',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'td:nth-child(2)[onmousemove]',
         attribute: 'onmousemove',
         filters: [{ name: 'regexp', args: ".*\\(.*,.*,.*,'(.*?)'\\)" }],

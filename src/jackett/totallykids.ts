@@ -82,7 +82,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       page: 'torrents',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
-      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
+      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0{{ end }}',
       options: '{{ if .Query.IMDBID }}2{{ else }}0{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',
@@ -93,15 +93,15 @@ export const definition: TrackerDefinition = {
         'table.lista tr td table.lista tr:has(a[href^="index.php?page=torrent-details"]){{ if .Config.freeleech }}:has(img[src="gold/gold.gif"]){{ else }}{{ end }}',
     },
     fields: {
-      title: { selector: 'td a[href^="index.php?page=torrent-details"]' },
-      details: {
-        selector: 'td a[href^="index.php?page=torrent-details"]',
-        attribute: 'href',
-      },
       category: {
         selector: 'td a[href^="index.php?page=torrents&category="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
+      },
+      title: { selector: 'td a[href^="index.php?page=torrent-details"]' },
+      details: {
+        selector: 'td a[href^="index.php?page=torrent-details"]',
+        attribute: 'href',
       },
       download: {
         selector: 'td a[href^="download.php"]',
@@ -119,7 +119,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ["');", ''] },
         ],
       },
-      banner: {
+      poster: {
         selector: 'td a[href^="index.php?page=torrent-details"]',
         attribute: 'onmouseover',
         filters: [

@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
       { id: '91', cat: 'PC/Games', desc: 'เกมส์ (PC) [games]' },
       {
         id: '100',
-        cat: 'PC/Phone-Other',
+        cat: 'PC/Mobile-Other',
         desc: 'โปรแกรมที่ใช้บน (มือถือ) [mobiles]',
       },
       { id: '82', cat: 'PC', desc: 'โปรแกรมที่ใช้บน (Linux)' },

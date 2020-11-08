@@ -166,16 +166,11 @@
         "selector": "a[onmouseover][href^=\"details.php?id=\"]",
         "attribute": "href"
       },
-      "banner": {
+      "poster": {
         "selector": "a[onmouseover][href^=\"details.php?id=\"]",
         "optional": true,
         "attribute": "onmouseover",
         "filters": [{ "name": "regexp", "args": "src=\"(.*?)\"" }]
-      },
-      "comments": {
-        "selector": "td:nth-child(7) a",
-        "attribute": "href",
-        "optional": true
       },
       "download": {
         "selector": "a[href^=\"download.php\"]",

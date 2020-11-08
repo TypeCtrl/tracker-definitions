@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
       { id: '25', cat: 'TV/SD', desc: 'TV SD' },
       { id: '1', cat: 'PC', desc: 'Aplikacje' },
       { id: '15', cat: 'PC/Games', desc: 'Gry' },
-      { id: '16', cat: 'PC/Phone-Other', desc: 'Mobile' },
+      { id: '16', cat: 'PC/Mobile-Other', desc: 'Mobile' },
       { id: '17', cat: 'Other', desc: 'Inne' },
       { id: '19', cat: 'Audio', desc: 'Muzyka' },
       { id: '21', cat: 'Books', desc: 'Book' },
@@ -117,7 +117,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php/"]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],

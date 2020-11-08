@@ -9,6 +9,18 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['http://bitru.org/'],
   caps: {
+    categorymappings: [
+      { id: 'movie', cat: 'Movies', desc: 'Movie' },
+      { id: 'serial', cat: 'TV', desc: 'Serial' },
+      { id: 'music', cat: 'Audio', desc: 'Music' },
+      { id: 'game', cat: 'PC/Games', desc: 'Game' },
+      { id: 'soft', cat: 'PC', desc: 'Software' },
+      { id: 'literature', cat: 'Books', desc: 'Literature' },
+      { id: 'audiobook', cat: 'Audio/Audiobook', desc: 'Audiobook' },
+      { id: 'video', cat: 'Movies', desc: 'Movies' },
+      { id: 'image', cat: 'Other', desc: 'Image' },
+      { id: 'xxx', cat: 'XXX', desc: 'xxx' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q'],
@@ -16,18 +28,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'movie', cat: 'Movies' },
-      { id: 'serial', cat: 'TV' },
-      { id: 'music', cat: 'Audio' },
-      { id: 'game', cat: 'PC/Games' },
-      { id: 'soft', cat: 'PC' },
-      { id: 'literature', cat: 'Books' },
-      { id: 'audiobook', cat: 'Audio/Audiobook' },
-      { id: 'video', cat: 'Movies' },
-      { id: 'image', cat: 'Other' },
-      { id: 'xxx', cat: 'XXX' },
-    ],
   },
   settings: [
     {
@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      banner: {
+      poster: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],
@@ -103,7 +103,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['октября', 'October'] },
           { name: 'replace', args: ['ноября', 'November'] },
           { name: 'replace', args: ['декабря', 'December'] },
-          { name: 'dateparse', args: '02 January 2006 15:04' },
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02 January 2006 15:04 -07:00' },
         ],
       },
       size: {

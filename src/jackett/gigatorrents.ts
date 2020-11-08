@@ -33,7 +33,7 @@ export const definition: TrackerDefinition = {
       { id: '52', cat: 'Books', desc: 'Könyvek/Hun' },
       { id: '33', cat: 'Console', desc: 'Konzol' },
       { id: '1', cat: 'Audio/Lossless', desc: 'Lossless' },
-      { id: '55', cat: 'PC/Phone-Other', desc: 'Mobil/PDA' },
+      { id: '55', cat: 'PC/Mobile-Other', desc: 'Mobil/PDA' },
       { id: '77', cat: 'PC/ISO', desc: 'PC/ISO' },
       { id: '78', cat: 'PC/0day', desc: 'PC/Rip' },
       { id: '85', cat: 'TV/HD', desc: 'Sorozat HD/Eng' },
@@ -120,7 +120,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'img.imdb-info',
         optional: true,
         attribute: 'data-url',

@@ -10,16 +10,20 @@ export const definition: TrackerDefinition = {
   links: ['https://wwv.epizod.tv/'],
   legacylinks: ['https://www.epizod.tv/'],
   caps: {
+    categorymappings: [
+      { id: 'series', cat: 'TV', desc: 'SÉRIES' },
+      { id: 'films', cat: 'Movies', desc: 'FILMS' },
+      { id: 'musique', cat: 'Audio', desc: 'MUSIQUE' },
+      { id: 'ebook', cat: 'Books', desc: 'EBOOK' },
+      { id: 'other', cat: 'Other', desc: 'OTHER' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'series', cat: 'TV' },
-      { id: 'films', cat: 'Movies' },
-      { id: 'other', cat: 'Other' },
-    ],
   },
   settings: [
     {
@@ -121,7 +125,7 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'div.post-cover > a', attribute: 'href' },
       download: { selector: 'div.post-cover > a', attribute: 'href' },
-      banner: {
+      poster: {
         selector: 'img[data-lazy-src]',
         attribute: 'data-lazy-src',
       },
@@ -134,13 +138,11 @@ export const definition: TrackerDefinition = {
         ],
       },
       cat: {
-        selector: 'a[href*="/category/"]',
-        attribute: 'href',
-        optional: true,
-        filters: [{ name: 'split', args: ['/', 4] }],
+        text: '{{ if .Result.cat }}{{ .Result.cat }}{{ else }}other{{ end }}',
       },
       size: {
-        text: '{{ if eq .Result.cat "series" }}512 MB{{else}}2 GB{{end}}',
+        text:
+          '{{ if eq .Result.cat "ebook" }}1 MB{{ else }}{{ end }}{{ if eq .Result.cat "musique" }}128 MB{{ else }}{{ end }}{{ if or (eq .Result.cat "series") (eq .Result.cat "other") }}512 MB{{ else }}{{ end }}{{ if eq .Result.cat "films" }}2 GB{{ else }}{{ end }}',
       },
       seeders: { text: 1 },
       leechers: { text: 1 },

@@ -127,7 +127,7 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'h1 > a', attribute: 'href' },
       download: { selector: 'h1 > a', attribute: 'href' },
-      size: { text: '500 MB' },
+      size: { text: '512 MB' },
       seeders: { text: 1 },
       leechers: { text: 1 },
       date: {
@@ -138,7 +138,8 @@ export const definition: TrackerDefinition = {
             args: '(\\d{1,2}\\-\\d{2}\\-\\d{4}\\, \\d{1,2}\\:\\d{2})',
           },
           { name: 'replace', args: [',', ''] },
-          { name: 'dateparse', args: '2-01-2006 15:04' },
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2-01-2006 15:04 -07:00' },
         ],
       },
       downloadvolumefactor: { text: 0 },

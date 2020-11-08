@@ -1,0 +1,56 @@
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
+  id: 'mixtapetorrent',
+  name: 'MixtapeTorrent',
+  description: 'MixtapeTorrent is a Public Music site for MixTapes',
+  language: 'en-US',
+  type: 'public',
+  encoding: 'UTF-8',
+  links: ['http://www.mixtapetorrent.com/'],
+  caps: {
+    modes: { search: ['q'], 'music-search': ['q'] },
+    categorymappings: [{ id: '1', cat: 'Audio' }],
+  },
+  settings: [],
+  download: {
+    selector: 'table#attachments > tbody > tr.odd > td > a',
+    attribute: 'href',
+  },
+  search: {
+    paths: [
+      {
+        path: 'search/node/{{ if .Keywords }}{{ .Keywords }}{{ else }}2020{{ end }} type:story',
+      },
+    ],
+    rows: {
+      selector: 'dl.search-results > dt, dl.search-results > dd',
+      after: 1,
+      filters: [{ name: 'andmatch' }],
+    },
+    fields: {
+      category: { text: 1 },
+      title: { selector: 'a' },
+      details: { selector: 'a', attribute: 'href' },
+      download: { selector: 'a', attribute: 'href' },
+      description: { selector: 'p' },
+      date: {
+        selector: 'p.search-info',
+        filters: [
+          {
+            name: 'regexp',
+            args: '(\\w{3} \\d{1,2} \\d{4} - \\d{1,2}:\\d{2}[a|p]m)',
+          },
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 - 3:04pm -07:00' },
+        ],
+      },
+      size: { text: '128 MB' },
+      seeders: { text: 1 },
+      leechers: { text: 1 },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
+    },
+  },
+  source: 'jackett',
+};

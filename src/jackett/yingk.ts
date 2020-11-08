@@ -90,7 +90,7 @@ export const definition: TrackerDefinition = {
       incldead: 0,
       spstate: '{{ if .Config.freeleech }}8{{ else }}0{{ end }}',
       picktype: 0,
-      search_area: '{{ if .Query.IMDBID }}5{{else}}0{{end}}',
+      search_area: '{{ if .Query.IMDBID }}5{{ else }}0{{ end }}',
       search_mode: 0,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
@@ -158,8 +158,8 @@ export const definition: TrackerDefinition = {
       },
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },
       title_english: {
-        remove: 'a, img, b, span',
         selector: 'td:nth-child(2)',
+        remove: 'a, img, b, span',
       },
       title: {
         text:

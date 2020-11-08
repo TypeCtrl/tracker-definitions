@@ -14,22 +14,17 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q', 'imdbid'],
     },
-    categorymappings: [
-      { id: '1', cat: 'TV' },
-      { id: '2', cat: 'Movies' },
-      { id: '3', cat: 'Other' },
-    ],
+    categorymappings: [{ id: 'Other', cat: 'Other' }],
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
-      name: 'category-id',
-      type: 'select',
-      label:
-        'The BrasilTracker web site does not provide categories. Select the category you want Jackett to set on all results returned.',
-      default: 3,
-      options: { '1': 'TV', '2': 'Movies', '3': 'Other' },
+      name: 'info_8000',
+      type: 'info',
+      label: 'About BrasilTracker Categories',
+      default:
+        "BrasilTracker does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other).",
     },
     {
       name: 'freeleech',
@@ -83,7 +78,7 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
     fields: {
-      category: { text: '{{ .Config.category-id }}' },
+      category: { text: 'Other' },
       details: {
         selector: 'a[href^="torrents.php?id="]',
         attribute: 'href',
@@ -93,7 +88,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       description: { selector: 'div.tags' },
-      banner: {
+      poster: {
         selector: 'img[alt="Cover"]',
         attribute: 'src',
         optional: true,

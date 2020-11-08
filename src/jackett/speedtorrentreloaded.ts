@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'login.php',
+    path: 'sessioncheck.php?session=1',
     method: 'form',
     form: 'form',
     inputs: {
@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'tr:has(a[href^="details.php?id="])' },
     fields: {
       title: { selector: 'a[href^="details.php?id="]' },
-      banner: {
+      poster: {
         selector: 'a[href^="details.php?id="][onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: '<img src=(.*) width=' }],

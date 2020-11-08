@@ -96,7 +96,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      comments: {
+      details: {
         selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(4) > a',
         attribute: 'href',
       },

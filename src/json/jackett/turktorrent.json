@@ -19,7 +19,7 @@
       { "id": "26", "cat": "Movies/UHD", "desc": "4Film K UHD Disk" },
       { "id": "28", "cat": "Movies/HD", "desc": "Film X265" },
       { "id": "30", "cat": "Movies/HD", "desc": "Film X264" },
-      { "id": "69", "cat": "Movies/WEBDL", "desc": "Film H264 WEB-DL" },
+      { "id": "69", "cat": "Movies/WEB-DL", "desc": "Film H264 WEB-DL" },
       { "id": "63", "cat": "Movies/SD", "desc": "Film XviD" },
       { "id": "51", "cat": "Other", "desc": "Diğer" },
       { "id": "62", "cat": "Other", "desc": "Diğer Eğitim" },
@@ -164,7 +164,7 @@
       "seeders": { "selector": "a[rel=\"torrent_seeders\"]" },
       "leechers": { "selector": "a[rel=\"torrent_leechers\"]" },
       "grabs": { "selector": "a[rel=\"times_completed\"]" },
-      "banner": {
+      "poster": {
         "optional": true,
         "selector": "a[rel=\"fancybox\"]",
         "attribute": "href"

@@ -86,27 +86,27 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Keywords}}advsearch.php?&category={{range .Categories}}{{.}};{{end}}&search={{ .Keywords}}&order=data&by=DESC&page=0{{else}}/browse/0{{end}}',
+          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=0{{ else }}/browse/0{{ end }}',
       },
       {
         path:
-          '{{if .Keywords}}advsearch.php?&category={{range .Categories}}{{.}};{{end}}&search={{ .Keywords}}&order=data&by=DESC&page=1{{else}}/browse/1{{end}}',
+          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=1{{ else }}/browse/1{{ end }}',
       },
       {
         path:
-          '{{if .Keywords}}advsearch.php?&category={{range .Categories}}{{.}};{{end}}&search={{ .Keywords}}&order=data&by=DESC&page=2{{else}}/browse/2{{end}}',
+          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=2{{ else }}/browse/2{{ end }}',
       },
       {
         path:
-          '{{if .Keywords}}advsearch.php?&category={{range .Categories}}{{.}};{{end}}&search={{ .Keywords}}&order=data&by=DESC&page=3{{else}}/browse/3{{end}}',
+          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=3{{ else }}/browse/3{{ end }}',
       },
       {
         path:
-          '{{if .Keywords}}advsearch.php?&category={{range .Categories}}{{.}};{{end}}&search={{ .Keywords}}&order=data&by=DESC&page=4{{else}}/browse/4{{end}}',
+          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=4{{ else }}/browse/4{{ end }}',
       },
       {
         path:
-          '{{if .Keywords}}advsearch.php?&category={{range .Categories}}{{.}};{{end}}&search={{ .Keywords}}&order=data&by=DESC&page=5{{else}}/browse/5{{end}}',
+          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=5{{ else }}/browse/5{{ end }}',
       },
     ],
     keywordsfilters: [
@@ -121,6 +121,11 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
+      category: {
+        selector: 'td:nth-child(1) a',
+        attribute: 'href',
+        filters: [{ name: 'split', args: ['/', -1] }],
+      },
       title: {
         selector: 'td:nth-child(2) a.tab',
         attribute: 'href',
@@ -164,11 +169,6 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      category: {
-        selector: 'td:nth-child(1) a',
-        attribute: 'href',
-        filters: [{ name: 'split', args: ['/', -1] }],
-      },
       description: {
         selector: 'td:nth-child(1) a',
         attribute: 'href',
@@ -187,24 +187,16 @@ export const definition: TrackerDefinition = {
         ],
       },
       download: {
-        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
+        text: '{{ if .Config.itorrents-links }}{{ .Result.download-itorrents }}{{ else }}{{ end }}',
       },
-      magnet: {
-        selector: 'input.downarrow',
-        attribute: 'value',
-        filters: [
-          { name: 'prepend', args: 'magnet:?xt=urn:btih:' },
-          {
-            name: 'append',
-            args:
-              '&dn={{ .Result.title }}.torrent&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.leechers-paradise.org:6969&tr=udp://tracker.opentrackr.org:1337',
-          },
-        ],
-      },
+      infohash: { selector: 'input.downarrow', attribute: 'value' },
       size: { selector: 'td:nth-child(3) font' },
       date: {
         selector: 'td:nth-child(5) font',
-        filters: [{ name: 'dateparse', args: '02.01.06' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02.01.06 -07:00' },
+        ],
       },
       seeders: {
         selector: 'td:nth-child(6) font',

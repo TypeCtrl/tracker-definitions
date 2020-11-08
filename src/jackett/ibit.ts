@@ -10,6 +10,17 @@ export const definition: TrackerDefinition = {
   links: ['https://ibit.to/', 'https://ibit.uno/', 'https://ibit.am/'],
   legacylinks: ['https://ibit.ws/'],
   caps: {
+    categorymappings: [
+      { id: 'Movies', cat: 'Movies', desc: 'Movies' },
+      { id: 'TV', cat: 'TV', desc: 'TV' },
+      { id: 'Music', cat: 'Audio', desc: 'Music' },
+      { id: 'Games', cat: 'PC/Games', desc: 'Games' },
+      { id: 'Software', cat: 'PC', desc: 'Software' },
+      { id: 'Anime', cat: 'TV/Anime', desc: 'Anime' },
+      { id: 'Books', cat: 'Books', desc: 'Books' },
+      { id: 'Other', cat: 'Other', desc: 'Other' },
+      { id: 'Tutorials', cat: 'Other', desc: 'Tutorials' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -17,17 +28,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'Movies', cat: 'Movies' },
-      { id: 'TV', cat: 'TV' },
-      { id: 'Music', cat: 'Audio' },
-      { id: 'Games', cat: 'PC/Games' },
-      { id: 'Software', cat: 'PC' },
-      { id: 'Anime', cat: 'TV/Anime' },
-      { id: 'Books', cat: 'Books' },
-      { id: 'Other', cat: 'Other' },
-      { id: 'Tutorials', cat: 'Other' },
-    ],
   },
   settings: [
     {
@@ -66,7 +66,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'torrent-search/{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}/all/{{ .Config.sortby }}:{{ .Config.order }}/1/',
+          'torrent-search/{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}/all/{{ .Config.sortby }}:{{ .Config.order }}/1/',
       },
     ],
     rows: {

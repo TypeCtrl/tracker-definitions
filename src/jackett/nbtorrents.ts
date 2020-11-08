@@ -18,8 +18,8 @@ export const definition: TrackerDefinition = {
       { id: '7', cat: 'Movies/DVD', desc: 'Movies DVDRip' },
       { id: '8', cat: 'Movies', desc: 'Movies Pre' },
       { id: '2', cat: 'Movies', desc: 'Movies Remux' },
-      { id: '4', cat: 'Movies/WEBDL', desc: 'Movies Web' },
-      { id: '5', cat: 'Movies/WEBDL', desc: 'Movies WebRip' },
+      { id: '4', cat: 'Movies/WEB-DL', desc: 'Movies Web' },
+      { id: '5', cat: 'Movies/WEB-DL', desc: 'Movies WebRip' },
       { id: '15', cat: 'Audio/Lossless', desc: 'Music FLAC' },
       { id: '17', cat: 'Audio/MP3', desc: 'Music MP3' },
       { id: '18', cat: 'Audio', desc: 'Music Pack' },
@@ -109,7 +109,7 @@ export const definition: TrackerDefinition = {
         selector: 'td a[href^="details.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'td a[href^="details.php?id="]',
         optional: true,
         attribute: 'onmouseover',

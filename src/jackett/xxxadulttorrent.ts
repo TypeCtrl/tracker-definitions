@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       title: { selector: 'h1' },
       details: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
       download: { selector: 'a[href^="/torrent/"]', attribute: 'href' },
-      banner: {
+      poster: {
         selector: 'img.content__item-img-wrapper',
         attribute: 'src',
         optional: true,

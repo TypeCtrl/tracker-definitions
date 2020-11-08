@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       { id: '47', cat: 'Books', desc: 'Languages' },
       { id: '49', cat: 'Books', desc: 'Linux CBTs' },
       { id: '43', cat: 'Books', desc: 'Lynda.com' },
-      { id: '57', cat: 'Books/Magazines', desc: 'Magazines' },
+      { id: '57', cat: 'Books/Mags', desc: 'Magazines' },
       { id: '71', cat: 'Books', desc: 'Pluralsight' },
       { id: '60', cat: 'Books', desc: 'Medical' },
       { id: '44', cat: 'Books', desc: 'Misc Learning' },

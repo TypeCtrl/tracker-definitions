@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://newkatcr.co/', 'https://kat.unblockit.lat/', 'https://katcr.unblocked.rest/'],
+  links: ['https://newkatcr.co/', 'https://kat.unblockit.app/', 'https://katcr.unblocked.rest/'],
   legacylinks: [
     'https://kickasstorrent.cr/',
     'https://katcr.to/',
@@ -30,6 +30,7 @@ export const definition: TrackerDefinition = {
     'https://katcr.uk-unblock.pro/',
     'https://kat.unblockit.top/',
     'https://kat.root.yt/',
+    'https://kat.unblockit.lat/',
   ],
   caps: {
     categorymappings: [
@@ -37,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '133', cat: 'TV/Anime', desc: 'Anime - Other' },
       {
         id: '144',
-        cat: 'PC/Phone-Other',
+        cat: 'PC/Mobile-Other',
         desc: 'Applications - Handheld',
       },
       { id: '142', cat: 'PC/0day', desc: 'Applications - Linux' },

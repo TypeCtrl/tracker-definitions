@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.torrentfunk.com/', 'https://www.torrentfunk2.com/', 'https://torrentfunk.unblockit.lat/'],
+  links: ['https://www.torrentfunk.com/', 'https://www.torrentfunk2.com/', 'https://torrentfunk.unblockit.app/'],
   legacylinks: [
     'https://torrentfunk.unblockit.pro/',
     'https://torrentfunk.unblockit.one/',
@@ -17,28 +17,29 @@ export const definition: TrackerDefinition = {
     'https://torrentfunk.unblockit.id/',
     'https://torrentfunk.unblockit.win/',
     'https://torrentfunk.unblockit.top/',
+    'https://torrentfunk.unblockit.lat/',
   ],
   caps: {
+    categorymappings: [
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'Audio', desc: 'Music' },
+      { id: '3', cat: 'TV', desc: 'Television' },
+      { id: '4', cat: 'PC/Games', desc: 'Games' },
+      { id: '5', cat: 'PC', desc: 'Software' },
+      { id: '6', cat: 'TV/Anime', desc: 'Anime' },
+      { id: '7', cat: 'XXX', desc: 'Adult' },
+      { id: '8', cat: 'Other', desc: 'Other(tbd)' },
+      { id: '9', cat: 'Other', desc: 'Other(tbd)' },
+      { id: '0', cat: 'Other', desc: 'Other(tbd)' },
+      { id: '10', cat: 'Other', desc: 'Other(tbd)' },
+      { id: '11', cat: 'Other', desc: 'Other(tbd)' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
     },
-    categorymappings: [
-      { id: '0', cat: 'Other' },
-      { id: '1', cat: 'Movies' },
-      { id: '2', cat: 'Audio' },
-      { id: '3', cat: 'TV' },
-      { id: '4', cat: 'PC/Games' },
-      { id: '5', cat: 'PC' },
-      { id: '6', cat: 'TV/Anime' },
-      { id: '7', cat: 'XXX' },
-      { id: '8', cat: 'Other' },
-      { id: '9', cat: 'Other' },
-      { id: '10', cat: 'Other' },
-      { id: '11', cat: 'Other' },
-    ],
   },
   settings: [],
   search: {
@@ -49,12 +50,12 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      title: { selector: 'div a[href^="/torrent/"]' },
       category: {
         selector: 'td[class^="tv"], td[class^="tn"]',
         attribute: 'class',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
+      title: { selector: 'div a[href^="/torrent/"]' },
       details: {
         selector: 'div a[href^="/torrent/"]',
         attribute: 'href',
@@ -71,7 +72,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(2):not(:contains("day"))',
         optional: true,
-        filters: [{ name: 'dateparse', args: '2 Jan' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '2 Jan -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(3)' },
       seeders: { selector: 'td:nth-child(4)' },

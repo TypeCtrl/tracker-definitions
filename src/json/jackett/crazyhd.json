@@ -12,7 +12,11 @@
       { "id": "16", "cat": "Movies/BluRay", "desc": "Movies English Bluray" },
       { "id": "11", "cat": "Movies/DVD", "desc": "Movies English DVD-RIP" },
       { "id": "14", "cat": "Movies", "desc": "Movies English CAM" },
-      { "id": "60", "cat": "Movies/WEBDL", "desc": "Movies English HD/WEBRIP" },
+      {
+        "id": "60",
+        "cat": "Movies/WEB-DL",
+        "desc": "Movies English HD/WEBRIP"
+      },
       { "id": "19", "cat": "Movies/DVD", "desc": "Movies Hindi DVDRIP" },
       { "id": "52", "cat": "Movies/BluRay", "desc": "Movies Hindi Blu Ray" },
       { "id": "18", "cat": "Movies/DVD", "desc": "Movies Hindi PreDVD" },
@@ -20,7 +24,7 @@
       { "id": "42", "cat": "Movies", "desc": "Movies Tamil" },
       {
         "id": "65",
-        "cat": "Movies/WEBDL",
+        "cat": "Movies/WEB-DL",
         "desc": "Movies Hindi Webrip/HDrip"
       },
       { "id": "24", "cat": "Movies", "desc": "Movies UNRATED" },
@@ -38,9 +42,9 @@
       { "id": "29", "cat": "TV/Documentary", "desc": "TV Documentary" },
       { "id": "95", "cat": "TV", "desc": "TV Other Language" },
       { "id": "3", "cat": "PC/Games", "desc": "Games PC" },
-      { "id": "75", "cat": "PC/Phone-Android", "desc": "Games Android" },
-      { "id": "77", "cat": "PC/Phone-IOS", "desc": "Games Ipad/Iphone" },
-      { "id": "79", "cat": "PC/Phone-Other", "desc": "Games Other Platforms" },
+      { "id": "75", "cat": "PC/Mobile-Android", "desc": "Games Android" },
+      { "id": "77", "cat": "PC/Mobile-iOS", "desc": "Games Ipad/Iphone" },
+      { "id": "79", "cat": "PC/Mobile-Other", "desc": "Games Other Platforms" },
       { "id": "61", "cat": "PC/Games", "desc": "Games trailer" },
       { "id": "90", "cat": "Console/PS4", "desc": "Games Ps4" },
       { "id": "86", "cat": "Console/PS3", "desc": "Games xbox / ps3" },
@@ -48,10 +52,10 @@
       { "id": "7", "cat": "PC/0day", "desc": "Software Windows" },
       {
         "id": "20",
-        "cat": "PC/Phone-Android",
+        "cat": "PC/Mobile-Android",
         "desc": "Software Android Apps"
       },
-      { "id": "83", "cat": "PC/Phone-IOS", "desc": "Software Iphone Apps" },
+      { "id": "83", "cat": "PC/Mobile-iOS", "desc": "Software Iphone Apps" },
       { "id": "39", "cat": "PC", "desc": "Software Tutorials" },
       { "id": "63", "cat": "PC", "desc": "Software Linux" },
       { "id": "89", "cat": "PC/Mac", "desc": "Software MAC OSX" },
@@ -74,7 +78,7 @@
       { "id": "4", "cat": "Other", "desc": "Other" },
       { "id": "44", "cat": "Other", "desc": "Food & Recipes" },
       { "id": "38", "cat": "Other", "desc": "Pictures" },
-      { "id": "54", "cat": "Books/Magazines", "desc": "Magazine" },
+      { "id": "54", "cat": "Books/Mags", "desc": "Magazine" },
       { "id": "88", "cat": "Books/Comics", "desc": "Comics" }
     ],
     "modes": {
@@ -149,7 +153,7 @@
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "category" }]
       },
-      "banner": {
+      "poster": {
         "selector": "div.list-name a.tlink",
         "optional": true,
         "attribute": "onmouseover",

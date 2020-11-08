@@ -9,16 +9,17 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://eztv.io/',
+    'https://eztv.re/',
+    'https://eztv.wf/',
+    'https://eztv.tf/',
     'https://eztv.yt/',
     'https://eztv.root.yt/',
     'https://eztv.unblockninja.com/',
-    'https://eztv.unblockit.lat/',
+    'https://eztv.unblockit.app/',
     'https://eztv.unblocked.rest/',
   ],
   legacylinks: [
     'https://eztv.ag/',
-    'https://eztv.re/',
     'https://eztv.it/',
     'https://eztv.ch/',
     'https://eztv.unblockit.pro/',
@@ -36,6 +37,8 @@ export const definition: TrackerDefinition = {
     'https://eztv.proxyportal.pw/',
     'https://eztv.uk-unblock.pro/',
     'https://eztv.unblockit.top/',
+    'https://eztv.unblockit.lat/',
+    'https://eztv.io/',
   ],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
@@ -43,7 +46,7 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   search: {
-    paths: [{ path: '{{ if .Keywords }}search/{{ .Keywords }}{{else}}/{{end}}' }],
+    paths: [{ path: '{{ if .Keywords }}search/{{ .Keywords }}{{ else }}/{{ end }}' }],
     keywordsfilters: [{ name: 're_replace', args: ['S[0-9]{2}([^E]|$)', ''] }],
     rows: {
       selector: "table.forum_header_border tr[name='hover'].forum_header_border:has(a.magnet)",

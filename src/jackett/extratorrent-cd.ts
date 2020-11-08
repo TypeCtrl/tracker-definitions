@@ -16,21 +16,18 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
     },
-    categorymappings: [
-      { id: '1', cat: 'TV' },
-      { id: '2', cat: 'Movies' },
-      { id: '3', cat: 'Other' },
-    ],
+    categorymappings: [{ id: 'Other', cat: 'Other' }],
   },
   settings: [
     {
-      name: 'category-id',
-      type: 'select',
-      label:
-        'The ExtraTorrent web site does not provide categories. Select the category you want Jackett to set on all results returned.',
-      default: 3,
-      options: { '1': 'TV', '2': 'Movies', '3': 'Other' },
+      name: 'info_8000',
+      type: 'info',
+      label: 'About ExtraTorrent Categories',
+      default:
+        "ExtraTorrent does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other).",
     },
   ],
   search: {
@@ -41,7 +38,7 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      category: { text: '{{ .Config.category-id }}' },
+      category: { text: 'Other' },
       title: { selector: 'a[href*="/torrent/"][title^="view"]' },
       details: {
         selector: 'a[href*="/torrent/"]',
@@ -53,13 +50,9 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'td:nth-last-of-type(5):not(:contains(":")):not(:contains("day"))',
+        selector: 'td:nth-last-of-type(5):contains("ago")',
         optional: true,
-        filters: [
-          { name: 'replace', args: [' ', '-'] },
-          { name: 'append', args: ' -07:00' },
-          { name: 'dateparse', args: '01-02-2006 -07:00' },
-        ],
+        filters: [{ name: 'replace', args: [' ', '-'] }, { name: 'replace', args: ['-', ' '] }, { name: 'timeago' }],
       },
       size: { selector: 'td:nth-last-of-type(4)' },
       seeders: { optional: true, selector: 'td.sy, td.sn' },

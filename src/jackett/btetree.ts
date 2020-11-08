@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: {
-      searchzzzz: '{{ if .Query.Artist }}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      searchzzzz: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       cat: 0,
       sort: '{{ .Config.sort }}',
     },
@@ -42,7 +42,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       files: { selector: 'td:nth-child(4)' },
-      comments: { selector: 'td:nth-child(5) a', attribute: 'href' },
       date: {
         selector: 'td:nth-child(6)',
         filters: [{ name: 'dateparse', args: '01/02 15:04' }],

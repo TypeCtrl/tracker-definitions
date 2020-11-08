@@ -12,10 +12,6 @@ const SOURCES = [
     dir: path.join(__dirname, '../upstream/jackett/src/Jackett.Common/Definitions/'),
     name: 'jackett',
   },
-  {
-    dir: path.join(__dirname, '../upstream/cardigann/definitions/'),
-    name: 'cardigann',
-  },
 ];
 
 const PRETTIER_TYPESCRIPT: prettier.Options = {

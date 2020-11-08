@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '42', cat: 'Movies/BluRay', desc: 'Blu-ray' },
-      { id: '36', cat: 'PC/Phone-Other', desc: 'Mobile/GSM' },
+      { id: '36', cat: 'PC/Mobile-Other', desc: 'Mobile/GSM' },
       { id: '50', cat: 'TV', desc: 'TV' },
       { id: '9', cat: 'XXX', desc: 'XXX' },
       { id: '48', cat: 'XXX', desc: 'XXX/3D' },
@@ -132,7 +132,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
-      banner: {
+      poster: {
         selector: 'td:nth-child(2) > a:nth-child(1)',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=([^\\s]+)' }],

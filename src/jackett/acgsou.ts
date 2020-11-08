@@ -57,6 +57,7 @@ export const definition: TrackerDefinition = {
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
+      'music-search': ['q'],
       'book-search': ['q'],
     },
   },
@@ -72,11 +73,6 @@ export const definition: TrackerDefinition = {
       selector: 'table tbody tr[class^="alt"]:has(td:nth-child(3) a)',
     },
     fields: {
-      date: {
-        selector: 'td:nth-child(1):not(:contains(":"))',
-        optional: true,
-        filters: [{ name: 'dateparse', args: '2006/01/02' }],
-      },
       category: {
         selector: 'td:nth-child(2) a',
         attribute: 'href',
@@ -85,6 +81,14 @@ export const definition: TrackerDefinition = {
       title: { selector: 'td:nth-child(3) a' },
       details: { selector: 'td:nth-child(3) a', attribute: 'href' },
       download: { selector: 'td:nth-child(3) a', attribute: 'href' },
+      date: {
+        selector: 'td:nth-child(1):not(:contains(":"))',
+        optional: true,
+        filters: [
+          { name: 'append', args: ' +08:00' },
+          { name: 'dateparse', args: '2006/01/02 -07:00' },
+        ],
+      },
       size: { selector: 'td:nth-child(4)' },
       seeders: { text: 1 },
       leechers: { text: 1 },

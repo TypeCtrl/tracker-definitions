@@ -142,7 +142,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      comments: {
+      details: {
         selector: 'a[href^="/details.php"]:has(b)',
         attribute: 'href',
       },

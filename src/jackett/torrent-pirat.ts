@@ -567,21 +567,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'span.seed' },
       leechers: { selector: 'span.leech' },
       grabs: { selector: 'span.complet' },
-      find_date: {
-        selector: 'a.topictitle',
-        optional: true,
-        filters: [
-          {
-            name: 'regexp',
-            args: '(\\d{2}[\\.|\\/]\\d{2}[\\.|\\/]\\d{4})',
-          },
-          { name: 're_replace', args: ['\\/', '.'] },
-          { name: 'dateparse', args: '02.01.2006' },
-        ],
-      },
-      date: {
-        text: '{{ if .Result.find_date }}{{ .Result.find_date}}{{ else }}now{{ end }}',
-      },
+      date: { text: 'now' },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

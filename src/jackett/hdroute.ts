@@ -73,7 +73,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         optional: true,
       },
-      banner: {
+      poster: {
         selector: 'div.introForPic img',
         attribute: 'src',
         optional: true,

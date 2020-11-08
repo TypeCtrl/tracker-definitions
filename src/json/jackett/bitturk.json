@@ -39,7 +39,7 @@
       { "id": "41", "cat": "Movies", "desc": "ViP" },
       { "id": "42", "cat": "Movies/SD", "desc": "XviD" },
       { "id": "43", "cat": "Movies/SD", "desc": "XviD BoX" },
-      { "id": "55", "cat": "Movies/WEBDL", "desc": "WEB-DL" },
+      { "id": "55", "cat": "Movies/WEB-DL", "desc": "WEB-DL" },
       { "id": "7", "cat": "Audio", "desc": "Müzik" },
       { "id": "20", "cat": "Audio", "desc": "Türkçe MüziK" },
       { "id": "46", "cat": "Audio", "desc": "Yab@ncı MüziK" },
@@ -162,7 +162,7 @@
       "seeders": { "selector": "a[rel=\"torrent_seeders\"]" },
       "leechers": { "selector": "a[rel=\"torrent_leechers\"]" },
       "grabs": { "selector": "a[rel=\"times_completed\"]" },
-      "banner": {
+      "poster": {
         "selector": "a[rel=\"fancybox\"]",
         "optional": true,
         "attribute": "href"

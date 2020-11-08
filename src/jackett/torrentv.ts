@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
       title: { selector: 'h3 a' },
       details: { selector: 'h3 a', attribute: 'href' },
       download: { selector: 'h3 a', attribute: 'href' },
-      banner: { selector: 'img[src^="/pic/"]', attribute: 'src' },
+      poster: { selector: 'img[src^="/pic/"]', attribute: 'src' },
       subcat: { selector: 'div.box ul li:first-child' },
       year: { selector: 'div.box ul li:contains("Year:")' },
       quality: { selector: 'div.box ul li:contains("Quality:")' },

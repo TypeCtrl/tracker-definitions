@@ -95,7 +95,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['</b', ''] },
         ],
       },
-      banner: {
+      poster: {
         selector: 'a[href^="details.php?id="]',
         optional: true,
         attribute: 'onmouseover',

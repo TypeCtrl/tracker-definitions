@@ -104,11 +104,10 @@ export const definition: TrackerDefinition = {
         selector: 'td.name > div > a[href*="-torrent-"][title]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'td.name > a.poster-preview img',
         attribute: 'src',
       },
-      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       download: {
         selector: 'td.name > div > a[href*="-torrent-"][title]',
         attribute: 'href',

@@ -39,7 +39,7 @@
       { "id": "10", "cat": "Console", "desc": "Games - Console" },
       { "id": "11", "cat": "PC/Games", "desc": "Games - PC" },
       { "id": "26", "cat": "Movies", "desc": "Kids" },
-      { "id": "9", "cat": "PC/Phone-Other", "desc": "Mobile" },
+      { "id": "9", "cat": "PC/Mobile-Other", "desc": "Mobile" },
       { "id": "12", "cat": "Movies", "desc": "Movie Pack" },
       { "id": "13", "cat": "Movies/DVD", "desc": "Movies DVD-r" },
       { "id": "14", "cat": "Movies/HD", "desc": "Movies HD" },

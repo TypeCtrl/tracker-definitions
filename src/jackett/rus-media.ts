@@ -95,14 +95,14 @@ export const definition: TrackerDefinition = {
       { id: '479', cat: 'PC', desc: 'Разное' },
       {
         id: '511',
-        cat: 'PC/Phone-Other',
+        cat: 'PC/Mobile-Other',
         desc: 'Всё для мобильных телефонов, КПК и Iphone',
       },
-      { id: '983', cat: 'PC/Phone-Other', desc: 'Мобильное видео' },
+      { id: '983', cat: 'PC/Mobile-Other', desc: 'Мобильное видео' },
       { id: '606', cat: 'Other', desc: 'Книги, аудиокниги, журналы' },
       { id: '607', cat: 'Books', desc: 'Книги' },
       { id: '629', cat: 'Audio/Audiobook', desc: 'Аудиокниги' },
-      { id: '662', cat: 'Books/Magazines', desc: 'Журналы' },
+      { id: '662', cat: 'Books/Mags', desc: 'Журналы' },
       { id: '312', cat: 'XXX', desc: 'Э[ротика] и Pr[o]n' },
       { id: '536', cat: 'XXX', desc: 'Pr[o]n' },
       {

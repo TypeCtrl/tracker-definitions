@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'pl-PL',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://nitro.to/'],
-  legacylinks: ['https://nitro.to/'],
+  links: ['https://nitro.to/'],
+  legacylinks: ['http://nitro.to/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV', desc: 'Seriale' },
@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
       { id: '6', cat: 'PC', desc: 'Programy' },
       { id: '7', cat: 'Books', desc: 'E-Booki/Książki' },
       { id: '8', cat: 'Audio/Audiobook', desc: 'Audio Booki' },
-      { id: '9', cat: 'PC/Phone-Other', desc: 'GSM/PDA' },
+      { id: '9', cat: 'PC/Mobile-Other', desc: 'GSM/PDA' },
       { id: '10', cat: 'Other', desc: 'Inne' },
       { id: '11', cat: 'XXX', desc: 'XXX' },
       { id: '144', cat: 'Other', desc: 'Nieposortowane' },

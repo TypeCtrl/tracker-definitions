@@ -67,10 +67,6 @@ export const definition: TrackerDefinition = {
         selector: 'td a[href^="details.php?id="]',
         attribute: 'href',
       },
-      comments: {
-        selector: 'td a[href^="details.php?id="]',
-        attribute: 'href',
-      },
       download: {
         selector: 'td a[href^="download.php?id="]',
         attribute: 'href',

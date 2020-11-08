@@ -86,14 +86,7 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'tracker.php' }],
-    keywordsfilters: [
-      { name: 'diacritics', args: 'replace' },
-      { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', 'сезон $1'] },
-      {
-        name: 're_replace',
-        args: ['(?i)\\bS0*(\\d+)E0*(\\d+)\\b', 'сезон $1 серии $2'],
-      },
-    ],
+    keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     inputs: {
       $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
       prev_allw: 0,

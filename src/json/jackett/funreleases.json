@@ -48,12 +48,12 @@
       { "id": "47", "cat": "Console/Other", "desc": "Games Sonstiges" },
       { "id": "48", "cat": "PC/0day", "desc": "Software Windows" },
       { "id": "49", "cat": "PC/Mac", "desc": "Software Macintosh" },
-      { "id": "50", "cat": "PC/Phone-Other", "desc": "Software Handy-PDA" },
+      { "id": "50", "cat": "PC/Mobile-Other", "desc": "Software Handy-PDA" },
       { "id": "51", "cat": "PC", "desc": "Software Linux" },
       { "id": "52", "cat": "PC", "desc": "Software Sonstiges" },
       { "id": "53", "cat": "Books/Ebook", "desc": "Ebook Buch" },
       { "id": "54", "cat": "Books/Comics", "desc": "Ebook Comic" },
-      { "id": "55", "cat": "Books/Magazines", "desc": "Ebook Magazin" },
+      { "id": "55", "cat": "Books/Mags", "desc": "Ebook Magazin" },
       { "id": "56", "cat": "Books", "desc": "Ebook Zeitung" },
       { "id": "57", "cat": "Books/Other", "desc": "Ebook Sonstiges" },
       { "id": "58", "cat": "TV/Sport", "desc": "Sport Fußball" },
@@ -162,7 +162,7 @@
         "selector": "a[href^=\"index.php?page=downloadcheck&id=\"]",
         "attribute": "href"
       },
-      "banner": {
+      "poster": {
         "selector": "a[href^=\"index.php?page=torrent-details&id=\"]",
         "attribute": "onmouseover",
         "optional": true,

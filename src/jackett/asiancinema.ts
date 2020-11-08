@@ -95,7 +95,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'div.torrent-poster img',
         attribute: 'src',
@@ -106,7 +106,6 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },

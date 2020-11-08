@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://torrentseed.cl/'],
   caps: {
     categorymappings: [
-      { id: '3', cat: 'PC/Phone-Android', desc: 'Android' },
+      { id: '3', cat: 'PC/Mobile-Android', desc: 'Android' },
       { id: '4', cat: 'TV/Anime', desc: 'Anime' },
       { id: '5', cat: 'Books/Comics', desc: 'Comic' },
       { id: '7', cat: 'TV/Documentary', desc: 'Documentales' },
@@ -116,7 +116,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="torrent-details-"]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'div[id^="port-content-"] img',
         attribute: 'src',
       },
@@ -132,7 +132,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
-      comments: { selector: 'td:nth-child(4) a', attribute: 'href' },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-child(7)' },

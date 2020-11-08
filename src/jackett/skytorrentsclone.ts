@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://skytorrents.to/', 'https://skytorrents.org/', 'https://skytorrents.net/'],
+  links: ['https://www.skytorrents.lol/'],
   legacylinks: [
     'https://www.skytorrents.to/',
     'https://skytorrents.black-mirror.xyz/',
@@ -18,9 +18,22 @@ export const definition: TrackerDefinition = {
     'https://skytorrents.unblocked.bar/',
     'https://skytorrents.proxyportal.pw/',
     'https://skytorrents.uk-unblock.pro/',
-    'https://www.skytorrents.lol/',
+    'https://skytorrents.to/',
+    'https://skytorrents.org/',
+    'https://skytorrents.net/',
   ],
   caps: {
+    categorymappings: [
+      { id: 'other', cat: 'Other', desc: 'Other' },
+      { id: 'album', cat: 'Audio', desc: 'Album' },
+      { id: 'ebook', cat: 'Books', desc: 'Ebook' },
+      { id: 'movie', cat: 'Movies', desc: 'Movie' },
+      { id: 'show', cat: 'TV', desc: 'Show' },
+      { id: 'audio', cat: 'Audio', desc: 'Audio' },
+      { id: 'doc', cat: 'Books', desc: 'Doc' },
+      { id: 'games', cat: 'PC/Games', desc: 'Games' },
+      { id: 'software', cat: 'PC', desc: 'Software' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -28,17 +41,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'other', cat: 'Other' },
-      { id: 'album', cat: 'Audio' },
-      { id: 'ebook', cat: 'Books' },
-      { id: 'movie', cat: 'Movies' },
-      { id: 'show', cat: 'TV' },
-      { id: 'audio', cat: 'Audio' },
-      { id: 'doc', cat: 'Books' },
-      { id: 'games', cat: 'PC/Games' },
-      { id: 'software', cat: 'PC' },
-    ],
   },
   settings: [
     {
@@ -53,26 +55,26 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}{{else}}top100?sort={{ .Config.sort }}{{end}}',
+          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}{{ else }}top100?sort={{ .Config.sort }}{{ end }}',
       },
       {
-        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{ else }}{{ end }}',
       },
       {
-        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{ else }}{{ end }}',
       },
       {
-        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{else}}{{end}}',
+        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{ else }}{{ end }}',
       },
     ],
     rows: { selector: 'tr.result' },
     fields: {
-      title: { selector: 'td a' },
       category: { text: 'other' },
       'category|noappend': {
         selector: 'a.label[href*="type="]',
         optional: true,
       },
+      title: { selector: 'td a' },
       details: { selector: 'td a', attribute: 'href' },
       magnet: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
       size: { selector: 'td:nth-child(2)' },

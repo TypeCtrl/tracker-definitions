@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: '12', cat: 'PC/0day', desc: 'App Win' },
       { id: '10', cat: 'PC/Mac', desc: 'App Mac' },
-      { id: '127', cat: 'PC/Phone-Android', desc: 'App Android' },
+      { id: '127', cat: 'PC/Mobile-Android', desc: 'App Android' },
       { id: '177', cat: 'TV/Documentary', desc: 'Doku HD ' },
       { id: '178', cat: 'TV/Documentary', desc: 'Doku SD ' },
       { id: '263', cat: 'Console/Other', desc: 'Game Sonstiege' },
@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
       { id: '62', cat: 'TV/Sport', desc: 'Sport SD ' },
       { id: '282', cat: 'TV/Sport', desc: 'Sport HD' },
       { id: '216', cat: 'Books', desc: 'Sonstiges Pdf' },
-      { id: '202', cat: 'Books/Magazines', desc: 'Sonstiges Magazine' },
+      { id: '202', cat: 'Books/Mags', desc: 'Sonstiges Magazine' },
       { id: '217', cat: 'Books', desc: 'Sonstiges EPaper' },
       { id: '269', cat: 'Books', desc: 'Sonstiges Hörspiel' },
       { id: '63', cat: 'Audio/Audiobook', desc: 'Sonstiges A-Book' },
@@ -180,7 +180,7 @@ export const definition: TrackerDefinition = {
           ':has(div.kat_cat_pic_name:contains("XXX")):has(div.kat_cat_pic_name_b:contains("DVD"))': '302',
         },
       },
-      banner: { selector: 'div[id^="details"] img', attribute: 'src' },
+      poster: { selector: 'div[id^="details"] img', attribute: 'src' },
       size: {
         selector: 'div.selection_unter_ad',
         filters: [

@@ -10,6 +10,19 @@ export const definition: TrackerDefinition = {
   links: ['https://torrentz2k.xyz/'],
   legacylinks: ['https://torrentz2k.pw/'],
   caps: {
+    categorymappings: [
+      { id: 'book', cat: 'Books', desc: 'Books' },
+      { id: 'film', cat: 'Movies', desc: 'Movies' },
+      { id: 'gamepad', cat: 'Console', desc: 'Games' },
+      { id: 'list', cat: 'Other', desc: 'Other' },
+      { id: 'male', cat: 'XXX', desc: 'XXX' },
+      { id: 'music', cat: 'Audio', desc: 'Music MP3' },
+      { id: 'sellsy', cat: 'Audio/Lossless', desc: 'Music Lossless' },
+      { id: 'play-circle', cat: 'TV', desc: 'WEBTV' },
+      { id: 'smile-o', cat: 'TV/Anime', desc: 'Anime' },
+      { id: 'television', cat: 'TV', desc: 'TV' },
+      { id: 'wrench', cat: 'PC', desc: 'Software' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -17,19 +30,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'book', cat: 'Books' },
-      { id: 'film', cat: 'Movies' },
-      { id: 'gamepad', cat: 'Console' },
-      { id: 'list', cat: 'Other' },
-      { id: 'male', cat: 'XXX' },
-      { id: 'music', cat: 'Audio' },
-      { id: 'sellsy', cat: 'Audio/Lossless' },
-      { id: 'play-circle', cat: 'TV' },
-      { id: 'smile-o', cat: 'TV/Anime' },
-      { id: 'television', cat: 'TV' },
-      { id: 'wrench', cat: 'PC' },
-    ],
   },
   settings: [],
   search: {
@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { path: 'search/', method: 'post', inputs: { page: 2 } },
     ],
     inputs: {
-      q: '{{ if .Keywords }}{{ .Keywords }}{{else}}:latest:{{end}}',
+      q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}:latest:{{ end }}',
       category: 'all',
       x: 0,
       y: 0,

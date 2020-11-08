@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}search.php?keyword={{ .Keywords }}{{else}}{{end}}',
+        path: '{{ if .Keywords }}search.php?keyword={{ .Keywords }}{{ else }}{{ end }}',
       },
     ],
     rows: {

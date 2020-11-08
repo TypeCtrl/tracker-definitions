@@ -34,13 +34,13 @@
       { "id": "Windows", "cat": "PC/0day", "desc": " Applications Windows" },
       {
         "id": "APK",
-        "cat": "PC/Phone-Android",
+        "cat": "PC/Mobile-Android",
         "desc": " Applications Android"
       },
-      { "id": "GPS", "cat": "PC/Phone-Other", "desc": " Applications GPS" },
+      { "id": "GPS", "cat": "PC/Mobile-Other", "desc": " Applications GPS" },
       { "id": "Ebooks", "cat": "Books/Ebook", "desc": "Books Ebooks" },
       { "id": "BDs", "cat": "Books/Ebook", "desc": "Books BDs" },
-      { "id": "Presse", "cat": "Books/Magazines", "desc": "Books Presse" },
+      { "id": "Presse", "cat": "Books/Mags", "desc": "Books Presse" },
       { "id": "Mangas", "cat": "Books/Comics", "desc": "Books Mangas" },
       { "id": "Comics", "cat": "Books/Comics", "desc": "Books Comics" },
       { "id": "Nintendo", "cat": "Console/NDS", "desc": "Jeux Nintendo" },

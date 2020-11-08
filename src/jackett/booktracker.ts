@@ -63,6 +63,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector: 'tr[id^="tor_"]:has(a[href^="./download.php?id="])',
+      filters: [{ name: 'andmatch' }],
     },
     fields: {
       category: { text: 1 },

@@ -89,6 +89,8 @@ export const definition: TrackerDefinition = {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
     },
     categorymappings: [{ id: '1', cat: 'Other' }],
   },
@@ -96,7 +98,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'search/', method: 'post', followredirect: true }],
     inputs: {
-      keyword: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
+      keyword: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
     },
     rows: {
       selector: 'div.list-area > dl.item',
@@ -112,7 +114,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'dd.attr span:nth-child(1) b',
-        filters: [{ name: 'dateparse', args: '2006-01-02' }],
+        filters: [
+          { name: 'append', args: ' +08:00' },
+          { name: 'dateparse', args: '2006-01-02 -07:00' },
+        ],
       },
       size: { selector: 'dd.attr span:nth-child(2) b' },
       seeders: { text: 1 },

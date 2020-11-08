@@ -30,7 +30,7 @@ export const definition: TrackerDefinition = {
       { id: 'Erotyka', cat: 'XXX', desc: 'Erotyka' },
       { id: 'Muzyka', cat: 'Audio', desc: 'Muzyka' },
       { id: 'Programy', cat: 'PC', desc: 'Programy' },
-      { id: 'GSM', cat: 'PC/Phone-Other', desc: 'GSM/PDA' },
+      { id: 'GSM', cat: 'PC/Mobile-Other', desc: 'GSM/PDA' },
       { id: 'Konsole', cat: 'Console', desc: 'Konsole' },
       { id: 'Gry PC', cat: 'PC/Games', desc: 'Gry PC' },
       { id: 'Dla Dzieci', cat: 'Movies', desc: 'Dla Dzieci' },
@@ -86,7 +86,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'img.browse_poster',
         attribute: 'src',

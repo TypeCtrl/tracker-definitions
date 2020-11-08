@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
       { id: '42', cat: 'TV/SD', desc: 'TV/SD X264 Episodes' },
       { id: '33', cat: 'TV/HD', desc: 'TV/HD Episodes' },
       { id: '22', cat: 'Other', desc: 'Misc' },
-      { id: '24', cat: 'PC/Phone-Other', desc: 'Mobile' },
+      { id: '24', cat: 'PC/Mobile-Other', desc: 'Mobile' },
       { id: '6', cat: 'Audio', desc: 'Music' },
       { id: '39', cat: 'TV', desc: 'TV/Seasons' },
       { id: '4', cat: 'PC/Games', desc: 'Games/PC' },
@@ -110,7 +110,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[rel="gallery"]',
         optional: true,
         attribute: 'href',

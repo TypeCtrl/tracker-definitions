@@ -148,6 +148,9 @@ export const jblutopia = jjblutopia;
 import { definition as jjbooktracker } from './booktracker';
 export const jbooktracker = jjbooktracker;
 
+import { definition as jjbootytape } from './bootytape';
+export const jbootytape = jjbootytape;
+
 import { definition as jjborgzelle } from './borgzelle';
 export const jborgzelle = jjborgzelle;
 
@@ -319,6 +322,9 @@ export const jempornium = jjempornium;
 import { definition as jjempornium2Fa } from './empornium2fa';
 export const jempornium2Fa = jjempornium2Fa;
 
+import { definition as jjemtrek } from './emtrek';
+export const jemtrek = jjemtrek;
+
 import { definition as jjeniahd } from './eniahd';
 export const jeniahd = jjeniahd;
 
@@ -426,6 +432,9 @@ export const jgaytorrentru = jjgaytorrentru;
 
 import { definition as jjgenerationfree } from './generationfree';
 export const jgenerationfree = jjgenerationfree;
+
+import { definition as jjgenesismovement } from './genesismovement';
+export const jgenesismovement = jjgenesismovement;
 
 import { definition as jjgfxpeers } from './gfxpeers';
 export const jgfxpeers = jjgfxpeers;
@@ -595,6 +604,9 @@ export const jkickasstorrentKathow = jjkickasstorrentKathow;
 import { definition as jjkickasstorrent } from './kickasstorrent';
 export const jkickasstorrent = jjkickasstorrent;
 
+import { definition as jjkickasstorrentsTo } from './kickasstorrents-to';
+export const jkickasstorrentsTo = jjkickasstorrentsTo;
+
 import { definition as jjkinonavse100 } from './kinonavse100';
 export const jkinonavse100 = jjkinonavse100;
 
@@ -675,6 +687,9 @@ export const jmetaltracker = jjmetaltracker;
 
 import { definition as jjmicrobit } from './microbit';
 export const jmicrobit = jjmicrobit;
+
+import { definition as jjmixtapetorrent } from './mixtapetorrent';
+export const jmixtapetorrent = jjmixtapetorrent;
 
 import { definition as jjmmaTorrents } from './mma-torrents';
 export const jmmaTorrents = jjmmaTorrents;
@@ -973,6 +988,9 @@ export const jsktorrent = jjsktorrent;
 import { definition as jjskytorrentsclone } from './skytorrentsclone';
 export const jskytorrentsclone = jjskytorrentsclone;
 
+import { definition as jjskytorrentsclone2 } from './skytorrentsclone2';
+export const jskytorrentsclone2 = jjskytorrentsclone2;
+
 import { definition as jjsnowpt } from './snowpt';
 export const jsnowpt = jjsnowpt;
 
@@ -1072,9 +1090,6 @@ export const jtlfbits = jjtlfbits;
 import { definition as jjtokyotosho } from './tokyotosho';
 export const jtokyotosho = jjtokyotosho;
 
-import { definition as jjtopnow } from './topnow';
-export const jtopnow = jjtopnow;
-
 import { definition as jjtorlock } from './torlock';
 export const jtorlock = jjtorlock;
 
@@ -1161,6 +1176,9 @@ export const jtorrentsectorcrew = jjtorrentsectorcrew;
 
 import { definition as jjtorrentslocal } from './torrentslocal';
 export const jtorrentslocal = jjtorrentslocal;
+
+import { definition as jjtorrentsurf } from './torrentsurf';
+export const jtorrentsurf = jjtorrentsurf;
 
 import { definition as jjtorrentv } from './torrentv';
 export const jtorrentv = jjtorrentv;
@@ -1363,6 +1381,7 @@ export const definitions = [
   jjbluebird,
   jjblutopia,
   jjbooktracker,
+  jjbootytape,
   jjborgzelle,
   jjboxingtorrents,
   jjbrasiltracker,
@@ -1420,6 +1439,7 @@ export const definitions = [
   jjehentai,
   jjempornium,
   jjempornium2Fa,
+  jjemtrek,
   jjeniahd,
   jjepizod,
   jjerzsebet,
@@ -1456,6 +1476,7 @@ export const definitions = [
   jjgayTorrentsorg,
   jjgaytorrentru,
   jjgenerationfree,
+  jjgenesismovement,
   jjgfxpeers,
   jjgigatorrents,
   jjgirotorrent,
@@ -1512,6 +1533,7 @@ export const definitions = [
   jjkeepfriends,
   jjkickasstorrentKathow,
   jjkickasstorrent,
+  jjkickasstorrentsTo,
   jjkinonavse100,
   jjkinorun,
   jjkinozal,
@@ -1539,6 +1561,7 @@ export const definitions = [
   jjmarinetracker,
   jjmetaltracker,
   jjmicrobit,
+  jjmixtapetorrent,
   jjmmaTorrents,
   jjmnv,
   jjmononokebt,
@@ -1638,6 +1661,7 @@ export const definitions = [
   jjsktorrentOrg,
   jjsktorrent,
   jjskytorrentsclone,
+  jjskytorrentsclone2,
   jjsnowpt,
   jjsosulki,
   jjsoulvoice,
@@ -1671,7 +1695,6 @@ export const definitions = [
   jjtjupt,
   jjtlfbits,
   jjtokyotosho,
-  jjtopnow,
   jjtorlock,
   jjtoros,
   jjtorrentExplosiv,
@@ -1701,6 +1724,7 @@ export const definitions = [
   jjtorrentquest,
   jjtorrentsectorcrew,
   jjtorrentslocal,
+  jjtorrentsurf,
   jjtorrentv,
   jjtorrentview,
   jjtorrentz2,

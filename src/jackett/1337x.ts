@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
     'https://x1337x.eu/',
     'https://x1337x.se/',
     'https://1337.root.yt/',
-    'https://1337x.unblockit.lat/',
+    'https://1337x.unblockit.app/',
     'https://1337x.unblocked.rest/',
   ],
   legacylinks: [
@@ -38,6 +38,7 @@ export const definition: TrackerDefinition = {
     'https://1337x.proxyportal.pw/',
     'https://1337x.uk-unblock.pro/',
     'https://1337x.unblockit.top/',
+    'https://1337x.unblockit.lat/',
   ],
   caps: {
     categorymappings: [
@@ -81,20 +82,20 @@ export const definition: TrackerDefinition = {
       { id: '19', cat: 'PC/Mac', desc: 'Apps/Mac' },
       { id: '20', cat: 'PC', desc: 'Apps/Linux' },
       { id: '21', cat: 'PC', desc: 'Apps/Other' },
-      { id: '56', cat: 'PC/Phone-Android', desc: 'Apps/Android' },
-      { id: '57', cat: 'PC/Phone-IOS', desc: 'Apps/iOS' },
+      { id: '56', cat: 'PC/Mobile-Android', desc: 'Apps/Android' },
+      { id: '57', cat: 'PC/Mobile-iOS', desc: 'Apps/iOS' },
       { id: '10', cat: 'PC/Games', desc: 'Games/PC Game' },
-      { id: '11', cat: 'Console/Other', desc: 'Games/PS2' },
+      { id: '11', cat: 'Console/PS3', desc: 'Games/PS2' },
       { id: '12', cat: 'Console/PSP', desc: 'Games/PSP' },
       { id: '13', cat: 'Console/Xbox', desc: 'Games/Xbox' },
       { id: '14', cat: 'Console/Xbox360', desc: 'Games/Xbox360' },
-      { id: '15', cat: 'Console/Other', desc: 'Games/PS1' },
+      { id: '15', cat: 'Console/PS3', desc: 'Games/PS1' },
       { id: '16', cat: 'Console/Other', desc: 'Games/Dreamcast' },
-      { id: '17', cat: 'PC/Phone-Other', desc: 'Games/Other' },
+      { id: '17', cat: 'PC/Mobile-Other', desc: 'Games/Other' },
       { id: '43', cat: 'Console/PS3', desc: 'Games/PS3' },
       { id: '44', cat: 'Console/Wii', desc: 'Games/Wii' },
       { id: '45', cat: 'Console/NDS', desc: 'Games/DS' },
-      { id: '46', cat: 'Console', desc: 'Games/GameCube' },
+      { id: '46', cat: 'Console/Other', desc: 'Games/GameCube' },
       { id: '72', cat: 'Console/3DS', desc: 'Games/3DS' },
       { id: '77', cat: 'Console/PS4', desc: 'Games/PS4' },
       { id: '82', cat: 'Console/Other', desc: 'Games/Switch' },
@@ -158,15 +159,15 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}sort-search{{else}}cat/Movies{{end}}{{if or (.Query.Album) (.Query.Artist) }}/{{ or (.Query.Album) (.Query.Artist) }}{{else}}/{{ .Keywords }}{{end}}{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}/{{else}}{{end}}{{ .Config.sort }}/{{ .Config.type }}/1/',
+          '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/Movies{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/1/',
       },
       {
         path:
-          '{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}sort-search{{else}}cat/TV{{end}}{{if or (.Query.Album) (.Query.Artist) }}/{{ or (.Query.Album) (.Query.Artist) }}{{else}}/{{ .Keywords }}{{end}}{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}/{{else}}{{end}}{{ .Config.sort }}/{{ .Config.type }}/{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}2{{else}}1{{end}}/',
+          '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/TV{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/{{ if or .Query.Album .Query.Artist .Keywords }}2{{ else }}1{{ end }}/',
       },
       {
         path:
-          '{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}sort-search{{else}}cat/Music{{end}}{{if or (.Query.Album) (.Query.Artist) }}/{{ or (.Query.Album) (.Query.Artist) }}{{else}}/{{ .Keywords }}{{end}}{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}/{{else}}{{end}}{{ .Config.sort }}/{{ .Config.type }}/{{if or (.Query.Album) (.Query.Artist) (.Keywords) }}3{{else}}1{{end}}/',
+          '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/Music{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/{{ if or .Query.Album .Query.Artist .Keywords }}3{{ else }}1{{ end }}/',
       },
     ],
     keywordsfilters: [{ name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] }],

@@ -72,7 +72,7 @@
         "selector": "a[href^=\"torrents.php?id=\"]",
         "attribute": "href"
       },
-      "banner": { "selector": "div.group_image img", "attribute": "src" },
+      "poster": { "selector": "div.group_image img", "attribute": "src" },
       "download": {
         "selector": "a[href^=\"torrents.php?action=download&id=\"]",
         "attribute": "href"

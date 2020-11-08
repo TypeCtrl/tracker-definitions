@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
     'https://torrentgalaxy.su/',
     'https://torrentgalaxy.root.yt/',
     'https://torrentgalaxy.unblockninja.com/',
-    'https://torrentgalaxy.unblockit.lat/',
+    'https://torrentgalaxy.unblockit.app/',
     'https://tgx.unblocked.rest/',
   ],
   legacylinks: [
@@ -35,21 +35,22 @@ export const definition: TrackerDefinition = {
     'https://tgx.proxyportal.pw/',
     'https://tgx.uk-unblock.pro/',
     'https://torrentgalaxy.unblockit.top/',
+    'https://torrentgalaxy.unblockit.lat/',
   ],
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime - All' },
-      { id: '20', cat: 'PC/Phone-Other', desc: 'Apps - Mobile' },
+      { id: '20', cat: 'PC/Mobile-Other', desc: 'Apps - Mobile' },
       { id: '19', cat: 'PC/Mac', desc: 'Apps - OS' },
       { id: '21', cat: 'PC', desc: 'Apps - Other' },
       { id: '18', cat: 'PC/0day', desc: 'Apps - Windows' },
       { id: '13', cat: 'Audio/Audiobook', desc: 'Books - Audiobooks' },
       { id: '12', cat: 'Books/Ebook', desc: 'Books - Ebooks' },
       { id: '14', cat: 'Books/Technical', desc: 'Books - Education' },
-      { id: '15', cat: 'Books/Magazines', desc: 'Books - Magazine' },
+      { id: '15', cat: 'Books/Mags', desc: 'Books - Magazine' },
       { id: '9', cat: 'TV/Documentary', desc: 'Documentaries - All' },
       { id: '11', cat: 'Console', desc: 'Games - Console' },
-      { id: '43', cat: 'PC/Phone-Other', desc: 'Games - Mobile' },
+      { id: '43', cat: 'PC/Mobile-Other', desc: 'Games - Mobile' },
       { id: '17', cat: 'Console/Other', desc: 'Games - Other' },
       { id: '10', cat: 'PC/Games', desc: 'Games - Windows' },
       { id: '3', cat: 'Movies/UHD', desc: 'Movies - 2K/4K UHD' },
@@ -126,6 +127,11 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'div[class="tgxtablerow"]' },
     fields: {
+      category: {
+        selector: 'div a[href^="/torrents.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
       title_full: {
         selector: 'div a[href^="/torrent/"]',
         attribute: 'title',
@@ -143,11 +149,6 @@ export const definition: TrackerDefinition = {
         text:
           '{{ if or .Result.title_full .Result.title_text }}{{ or .Result.title_full .Result.title_text }}{{ else }}{{ .Result.href }}{{ end }}',
       },
-      category: {
-        selector: 'div a[href^="/torrents.php?cat="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
-      },
       details: {
         selector: 'div a[href^="/torrent/"]',
         attribute: 'href',
@@ -164,7 +165,10 @@ export const definition: TrackerDefinition = {
       date: {
         optional: true,
         selector: 'div.tgxtablecell:last-of-type small:contains(":")',
-        filters: [{ name: 'dateparse', args: '02/01/06 15:04' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '02/01/06 15:04 -07:00' },
+        ],
       },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },

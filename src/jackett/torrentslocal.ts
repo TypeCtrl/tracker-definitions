@@ -947,7 +947,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'tracker.php', method: 'post' }],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       prev_allw: 1,
       prev_a: 0,
       prev_dla: 0,
@@ -973,7 +973,9 @@ export const definition: TrackerDefinition = {
       srg: -1,
       nm: '{{ .Keywords }}',
       pn: '',
+      allw: 1,
     },
+    keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     rows: { selector: 'tr[id^="tor_"]' },
     fields: {
       category: {

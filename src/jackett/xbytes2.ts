@@ -44,7 +44,7 @@ export const definition: TrackerDefinition = {
       { id: '65', cat: 'Console', desc: 'Juegos Retro' },
       { id: '33', cat: 'Books', desc: 'Libros' },
       { id: '7', cat: 'PC/0day', desc: 'Software' },
-      { id: '40', cat: 'PC/Phone-Other', desc: 'Telefonos y tablets' },
+      { id: '40', cat: 'PC/Mobile-Other', desc: 'Telefonos y tablets' },
       { id: '12', cat: 'XXX', desc: 'Adult' },
       { id: '32', cat: 'Other', desc: 'Otros' },
       { id: '19', cat: 'Movies/HD', desc: 'Video - 720p' },
@@ -136,7 +136,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'td[valign="middle"] a',
         attribute: 'onmouseover',
@@ -148,7 +148,10 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(9) a', optional: true },
       date: {
         selector: 'td:nth-child(6)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       download: {
         selector: 'a[href^="download.php"]',

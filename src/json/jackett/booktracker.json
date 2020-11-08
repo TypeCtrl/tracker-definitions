@@ -60,7 +60,8 @@
       "sns": -1
     },
     "rows": {
-      "selector": "tr[id^=\"tor_\"]:has(a[href^=\"./download.php?id=\"])"
+      "selector": "tr[id^=\"tor_\"]:has(a[href^=\"./download.php?id=\"])",
+      "filters": [{ "name": "andmatch" }]
     },
     "fields": {
       "category": { "text": 1 },

@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
       { id: '11', cat: 'Audio', desc: 'Koncerti/Spotovi' },
       { id: '28', cat: 'Console/Wii', desc: 'Igre/Wii' },
       { id: '30', cat: 'Books/Comics', desc: 'Stripovi' },
-      { id: '38', cat: 'PC/Phone-Other', desc: 'Smartphone' },
+      { id: '38', cat: 'PC/Mobile-Other', desc: 'Smartphone' },
       { id: '40', cat: 'Movies/BluRay', desc: 'Filmovi/BD' },
       { id: '3', cat: 'Audio/MP3', desc: 'Glazba/MP3' },
       { id: '26', cat: 'Console/Xbox', desc: 'Igre/Xbox' },
@@ -68,6 +68,11 @@ export const definition: TrackerDefinition = {
       selector: 'div.glavni_txt table > tbody > tr[id^="record-"]',
     },
     fields: {
+      category: {
+        selector: 'td.kategorije > a[href^="browse.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
       title: {
         optional: true,
         selector: 'a[href^="details.php?id="][onmousemove]',
@@ -77,11 +82,6 @@ export const definition: TrackerDefinition = {
       details: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-      },
-      category: {
-        selector: 'td.kategorije > a[href^="browse.php?cat="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
       },
       download: {
         selector: 'a[href^="download.php?id="]',
@@ -104,7 +104,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'a[href^="details.php?id="][onmousemove]',
         attribute: 'onmousemove',

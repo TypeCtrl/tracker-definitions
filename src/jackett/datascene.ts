@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '43', cat: 'Console', desc: 'Games | Console' },
       { id: '29', cat: 'Other', desc: 'Images' },
       { id: '2', cat: 'Other', desc: 'MiSC' },
-      { id: '5', cat: 'PC/Phone-Other', desc: 'Mobile' },
+      { id: '5', cat: 'PC/Mobile-Other', desc: 'Mobile' },
       { id: '27', cat: 'Movies', desc: 'Movies | Pack' },
       { id: '63', cat: 'Movies', desc: 'Movies | Pack-Ro' },
       { id: '46', cat: 'Movies/3D', desc: 'Movies | 3D' },
@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
     fields: {
       title: { selector: 'a.tname' },
       details: { selector: 'a.tname', attribute: 'href' },
-      banner: {
+      poster: {
         selector: 'a.tname',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=([^\\s]+)' }],

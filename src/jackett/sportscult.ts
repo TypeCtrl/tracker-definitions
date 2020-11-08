@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
       { id: '48', cat: 'TV/Sport', desc: 'Uncategorised' },
       { id: '53', cat: 'TV/Sport', desc: 'Cricket' },
     ],
-    modes: { search: ['q'] },
+    modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
@@ -109,7 +109,8 @@ export const definition: TrackerDefinition = {
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table[cellspacing!="1"].lista > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
+      selector:
+        'table.lista:last-of-type:not(:has(td.block:contains("Our Team Recommend"))) > tbody > tr:has(a[href^="index.php?page=torrents&category="])',
     },
     fields: {
       category: {
@@ -118,18 +119,17 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'category' }],
       },
       title: {
-        remove: 'span',
-        selector: 'td:nth-child(2)',
+        selector: 'a[href^="index.php?page=torrent-details&id="]',
         filters: [{ name: 're_replace', args: ['( \\| )+', ' '] }],
+      },
+      details: {
+        selector: 'a[href^="index.php?page=torrent-details&id="]',
+        attribute: 'href',
       },
       download: {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
         filters: [{ name: 're_replace', args: ['(\\+%7C\\+)+', '+'] }],
-      },
-      details: {
-        selector: 'a[href^="index.php?page=torrent-details&id="]',
-        attribute: 'href',
       },
       size: { selector: 'td:nth-child(4)' },
       seeders: { selector: 'td:nth-child(6)' },

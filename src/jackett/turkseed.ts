@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: '46', cat: 'Movies/3D', desc: '3D' },
       { id: '47', cat: 'Movies/UHD', desc: '4K' },
-      { id: '61', cat: 'PC/Phone-Android', desc: 'Android' },
+      { id: '61', cat: 'PC/Mobile-Android', desc: 'Android' },
       { id: '48', cat: 'TV/Anime', desc: 'Animasyon' },
       { id: '59', cat: 'PC', desc: 'İşletim Sistemi' },
       { id: '40', cat: 'TV/Documentary', desc: 'Belgesel' },
@@ -105,7 +105,7 @@ export const definition: TrackerDefinition = {
       do: 'search',
       keywords: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       search_type: '{{ if .Query.IMDBID }}t_genre{{ else }}t_name{{ end }}',
-      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
+      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0{{ end }}',
       include_dead_torrents: 'yes',
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
@@ -129,7 +129,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/details.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'img[src*="/torrents/images/"]',
         attribute: 'src',
       },

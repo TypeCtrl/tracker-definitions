@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
       { id: '70', cat: 'PC', desc: 'software AntiVirus / Antispyware' },
       {
         id: '100',
-        cat: 'PC/Phone-Other',
+        cat: 'PC/Mobile-Other',
         desc: 'software Mobile / Theme / Ringtone / mv',
       },
       { id: '85', cat: 'PC/Mac', desc: 'Mac software' },
@@ -31,7 +31,7 @@ export const definition: TrackerDefinition = {
       { id: '56', cat: 'Other', desc: 'Dictionary / map' },
       { id: '19', cat: 'TV', desc: 'Talk show / comedy / radio' },
       { id: '20', cat: 'TV', desc: 'general' },
-      { id: '55', cat: 'PC/Phone-IOS', desc: 'Tablet / iPhone' },
+      { id: '55', cat: 'PC/Mobile-iOS', desc: 'Tablet / iPhone' },
       { id: '21', cat: 'TV', desc: 'Dharma' },
       { id: '2', cat: 'Audio/MP3', desc: 'Music' },
       {

@@ -32,7 +32,7 @@
       { "id": "23", "cat": "XXX", "desc": "Pr0n XviD (xxx)" },
       { "id": "36", "cat": "XXX", "desc": "Pr0n Muut (xxx)" },
       { "id": "47", "cat": "XXX", "desc": "Pr0n HD (xxx)" },
-      { "id": "24", "cat": "PC/Phone-Other", "desc": "Puhelimeen (phone)" },
+      { "id": "24", "cat": "PC/Mobile-Other", "desc": "Puhelimeen (phone)" },
       { "id": "1", "cat": "TV/SD", "desc": "Sarjat DVD (series)" },
       { "id": "30", "cat": "TV", "desc": "Sarjat (series)" },
       { "id": "41", "cat": "TV/HD", "desc": "Sarjat HD (series)" },

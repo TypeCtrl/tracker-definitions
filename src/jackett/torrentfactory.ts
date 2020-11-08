@@ -37,7 +37,7 @@ export const definition: TrackerDefinition = {
       { id: '35', cat: 'PC/0day', desc: 'Software - Linux' },
       { id: '36', cat: 'PC/Mac', desc: 'Software - Mac' },
       { id: '37', cat: 'PC/0day', desc: 'Software - Windows' },
-      { id: '89', cat: 'PC/Phone-Android', desc: 'Software - Android' },
+      { id: '89', cat: 'PC/Mobile-Android', desc: 'Software - Android' },
       { id: '52', cat: 'Movies/HD', desc: 'HDrip DVDrip - Peliculas' },
       { id: '53', cat: 'TV', desc: 'HDrip DVDrip - Series' },
       { id: '62', cat: 'Audio/Video', desc: 'HDrip DVDrip - Musica' },
@@ -60,23 +60,19 @@ export const definition: TrackerDefinition = {
       { id: '55', cat: 'Books/Ebook', desc: 'Ebooks - LIBROS' },
       {
         id: '63',
-        cat: 'Books/Magazines',
+        cat: 'Books/Mags',
         desc: 'Ebooks - Publicacion Semanal',
       },
-      {
-        id: '64',
-        cat: 'Books/Magazines',
-        desc: 'Ebooks - Prensa Diaria',
-      },
+      { id: '64', cat: 'Books/Mags', desc: 'Ebooks - Prensa Diaria' },
       { id: '79', cat: 'Books/Other', desc: 'Ebooks - Adultos Ebooks' },
       {
         id: '83',
-        cat: 'Books/Magazines',
+        cat: 'Books/Mags',
         desc: 'Ebooks - Publicacion Quincena',
       },
       {
         id: '88',
-        cat: 'Books/Magazines',
+        cat: 'Books/Mags',
         desc: 'Ebooks - Publicacion Mensual',
       },
       { id: '97', cat: 'Books/Comics', desc: 'Ebooks - Comic eBooks' },
@@ -155,7 +151,11 @@ export const definition: TrackerDefinition = {
       },
       title: { selector: 'td[valign="middle"] a' },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },
-      banner: {
+      download: {
+        selector: 'a[href^="download.php"]',
+        attribute: 'href',
+      },
+      poster: {
         optional: true,
         selector: 'td[valign="middle"] a',
         attribute: 'onmouseover',
@@ -167,11 +167,10 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td:nth-child(7) a', optional: true },
       date: {
         selector: 'td:nth-child(4)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
-      },
-      download: {
-        selector: 'a[href^="download.php"]',
-        attribute: 'href',
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       downloadvolumefactor: {
         case: {

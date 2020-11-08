@@ -298,7 +298,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'td[valign="middle"] a',
         attribute: 'onmouseover',

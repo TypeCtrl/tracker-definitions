@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '65', cat: 'Movies/HD', desc: 'BD: BD' },
-      { id: '68', cat: 'Books/Magazines', desc: 'Ebooks:  Presse' },
+      { id: '68', cat: 'Books/Mags', desc: 'Ebooks:  Presse' },
       { id: '90', cat: 'Audio/Audiobook', desc: 'Ebooks: Audio books' },
       { id: '56', cat: 'Books/Ebook', desc: 'Ebooks: Ebooks' },
       { id: '95', cat: 'Books/Comics', desc: 'Ebooks: Mangas' },
@@ -38,8 +38,8 @@ export const definition: TrackerDefinition = {
       { id: '98', cat: 'Movies', desc: 'Films: VFSTFR' },
       { id: '89', cat: 'Movies', desc: 'Films: VO' },
       { id: '55', cat: 'Movies', desc: 'Films: VOSTFR' },
-      { id: '58', cat: 'Movies/WEBDL', desc: 'Films: Web - DL' },
-      { id: '57', cat: 'Movies/WEBDL', desc: 'Films: WebRip' },
+      { id: '58', cat: 'Movies/WEB-DL', desc: 'Films: Web - DL' },
+      { id: '57', cat: 'Movies/WEB-DL', desc: 'Films: WebRip' },
       { id: '72', cat: 'Movies/HD', desc: 'Films: x265' },
       { id: '1', cat: 'XXX', desc: 'Films: XXX' },
       { id: '97', cat: 'Console', desc: 'Jeux : Android' },
@@ -190,7 +190,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'img[src*="/uploads/images/"]',
         attribute: 'src',
       },

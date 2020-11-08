@@ -37,7 +37,7 @@ export const definition: TrackerDefinition = {
       { id: '18', cat: 'Audio/MP3', desc: 'Zene/Eng' },
       { id: '26', cat: 'Audio/Lossless', desc: 'Lossless/Eng' },
       { id: '11', cat: 'PC/Games', desc: 'Játék/Rip' },
-      { id: '13', cat: 'PC/Phone-Other', desc: 'Mobil' },
+      { id: '13', cat: 'PC/Mobile-Other', desc: 'Mobil' },
     ],
     modes: {
       search: ['q'],
@@ -118,7 +118,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[title="IMDb link"]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'a.cover',
         attribute: 'href',

@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
       { id: '36', cat: 'TV/Anime', desc: 'Anime /Μεταγλωτισμένα' },
       { id: '37', cat: 'TV/Anime', desc: 'Anime /Subtitled' },
       { id: '40', cat: 'Books/Comics', desc: 'Comics' },
-      { id: '41', cat: 'Books/Magazines', desc: 'Magazines' },
+      { id: '41', cat: 'Books/Mags', desc: 'Magazines' },
       { id: '42', cat: 'Books/Ebook', desc: 'E-books' },
       { id: '43', cat: 'Books/Ebook', desc: 'PDF' },
       { id: '44', cat: 'Other', desc: 'Images' },
@@ -49,7 +49,7 @@ export const definition: TrackerDefinition = {
       { id: '48', cat: 'PC/0day', desc: 'Apps Win' },
       { id: '8', cat: 'PC', desc: 'Apps Linux' },
       { id: '9', cat: 'PC/Mac', desc: 'Apps Mac' },
-      { id: '49', cat: 'PC/Phone-Other', desc: 'Apps Mobile' },
+      { id: '49', cat: 'PC/Mobile-Other', desc: 'Apps Mobile' },
     ],
     modes: {
       search: ['q'],
@@ -133,7 +133,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],

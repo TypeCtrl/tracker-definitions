@@ -31,7 +31,7 @@ export const definition: TrackerDefinition = {
       { id: '90', cat: 'Audio/MP3', desc: 'Mp3/Eng' },
       { id: '50', cat: 'Audio/MP3', desc: 'Mp3/Hun' },
       { id: '100', cat: 'Audio/Video', desc: 'Music-Video' },
-      { id: '180', cat: 'PC/Phone-Other', desc: 'Program/Mobil' },
+      { id: '180', cat: 'PC/Mobile-Other', desc: 'Program/Mobil' },
       { id: '170', cat: 'PC/0day', desc: 'Program/PC' },
       { id: '80', cat: 'TV', desc: 'Sorozat/Eng' },
       { id: '40', cat: 'TV', desc: 'Sorozat/Hun' },
@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[rel^="prettyPhoto["]',
         optional: true,
         attribute: 'href',

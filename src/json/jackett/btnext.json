@@ -26,7 +26,7 @@
       { "id": "91", "cat": "Movies/Other", "desc": "Movies Kids Inglês" },
       { "id": "113", "cat": "Movies/Other", "desc": "Movies Kids PT-BR" },
       { "id": "114", "cat": "Movies/Other", "desc": "Movies Kids PT-PT" },
-      { "id": "77", "cat": "Movies/WEBDL", "desc": "Movies WEB-DL" },
+      { "id": "77", "cat": "Movies/WEB-DL", "desc": "Movies WEB-DL" },
       { "id": "85", "cat": "Movies/DVD", "desc": "Movies Custom-DVDR" },
       { "id": "14", "cat": "Movies/SD", "desc": "Movies DVDRip/XViD" },
       { "id": "98", "cat": "Movies/Other", "desc": "Movies Juvenil" },
@@ -75,15 +75,11 @@
       { "id": "57", "cat": "Books/Ebook", "desc": "Books E-Books" },
       { "id": "58", "cat": "Books/Comics", "desc": "Books Comics" },
       { "id": "59", "cat": "Books", "desc": "Books Educational" },
-      {
-        "id": "60",
-        "cat": "Books/Magazines",
-        "desc": "Books Magazines/Journals"
-      },
+      { "id": "60", "cat": "Books/Mags", "desc": "Books Magazines/Journals" },
       { "id": "61", "cat": "Other", "desc": "Pics/Wallpapers" },
-      { "id": "62", "cat": "PC/Phone-Android", "desc": "Android" },
-      { "id": "63", "cat": "PC/Phone-IOS", "desc": "iOS" },
-      { "id": "66", "cat": "PC/Phone-Other", "desc": "WindowsPhone" },
+      { "id": "62", "cat": "PC/Mobile-Android", "desc": "Android" },
+      { "id": "63", "cat": "PC/Mobile-iOS", "desc": "iOS" },
+      { "id": "66", "cat": "PC/Mobile-Other", "desc": "WindowsPhone" },
       { "id": "90", "cat": "Other", "desc": "GPS" },
       { "id": "68", "cat": "Other", "desc": "Others" },
       { "id": "100", "cat": "Other", "desc": "Revistas" },
@@ -94,7 +90,7 @@
       { "id": "41", "cat": "XXX", "desc": "XXX" },
       { "id": "64", "cat": "XXX", "desc": "XXX-Magazines" },
       { "id": "65", "cat": "XXX", "desc": "XXX-Movies" },
-      { "id": "67", "cat": "XXX/Packs", "desc": "XXX-Packs" },
+      { "id": "67", "cat": "XXX/Pack", "desc": "XXX-Packs" },
       { "id": "69", "cat": "XXX/Imageset", "desc": "XXX-Pics/Wallpapers" }
     ],
     "modes": {
@@ -196,7 +192,7 @@
       "seeders": { "selector": "a[rel=\"torrent_seeders\"]" },
       "leechers": { "selector": "a[rel=\"torrent_leechers\"]" },
       "grabs": { "selector": "a[rel=\"times_completed\"]" },
-      "banner": {
+      "poster": {
         "selector": "a[rel=\"fancybox\"]",
         "optional": true,
         "attribute": "href"

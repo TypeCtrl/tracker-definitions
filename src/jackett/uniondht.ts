@@ -149,11 +149,7 @@ export const definition: TrackerDefinition = {
       { id: '103', cat: 'Console/NDS', desc: 'Nintendo ' },
       { id: '113', cat: 'Console/NDS', desc: ' |- NDS | Игры' },
       { id: '112', cat: 'Console/Wii', desc: ' |- Wii | Игры' },
-      {
-        id: '111',
-        cat: 'Console/Wiiware/VC',
-        desc: ' |- WiiWare | Игры',
-      },
+      { id: '111', cat: 'Console/Wiiware', desc: ' |- WiiWare | Игры' },
       { id: '110', cat: 'Console', desc: ' |- GameCube | Игры' },
       { id: '104', cat: 'Console', desc: 'Sega ' },
       { id: '108', cat: 'Console', desc: ' |- Dreamcast | Игры' },
@@ -1520,7 +1516,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       prev_a: 0,
       prev_dla: 0,
       prev_dlc: 0,

@@ -118,7 +118,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ["');", ''] },
         ],
       },
-      banner: {
+      poster: {
         selector: 'td a[href^="index.php?page=torrent-details"]',
         attribute: 'onmouseover',
         filters: [

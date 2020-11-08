@@ -10,6 +10,20 @@ export const definition: TrackerDefinition = {
   links: ['https://yourbittorrent.com/', 'https://yourbittorrent2.com/'],
   legacylinks: ['https://yourbittorrent.host/'],
   caps: {
+    categorymappings: [
+      { id: 'anime', cat: 'TV/Anime', desc: 'Anime' },
+      { id: 'software', cat: 'PC', desc: 'Software' },
+      { id: 'ebooks', cat: 'Books', desc: 'Ebooks' },
+      { id: 'adult', cat: 'XXX', desc: 'Adult' },
+      { id: 'games', cat: 'PC/Games', desc: 'Games' },
+      { id: 'movies', cat: 'Movies', desc: 'Movies' },
+      { id: 'music', cat: 'Audio', desc: 'Music' },
+      { id: 'television', cat: 'TV', desc: 'TV' },
+      { id: 'other', cat: 'Other', desc: 'Other' },
+      { id: 'photos', cat: 'Other', desc: 'Photos' },
+      { id: 'pictures', cat: 'Other', desc: 'Pictures' },
+      { id: 'unknown', cat: 'Other', desc: 'Unknown' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -17,20 +31,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'anime', cat: 'TV/Anime' },
-      { id: 'software', cat: 'PC' },
-      { id: 'ebooks', cat: 'Books' },
-      { id: 'adult', cat: 'XXX' },
-      { id: 'games', cat: 'PC/Games' },
-      { id: 'movies', cat: 'Movies' },
-      { id: 'music', cat: 'Audio' },
-      { id: 'television', cat: 'TV' },
-      { id: 'other', cat: 'Other' },
-      { id: 'photos', cat: 'Other' },
-      { id: 'pictures', cat: 'Other' },
-      { id: 'unknown', cat: 'Other' },
-    ],
   },
   settings: [],
   search: {
@@ -62,7 +62,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(4):contains("/")',
         optional: true,
-        filters: [{ name: 'dateparse', args: '02/01/06' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '02/01/06 -07:00' },
+        ],
       },
       seeders: { selector: 'td:nth-child(5)' },
       leechers: { selector: 'td:nth-child(6)' },

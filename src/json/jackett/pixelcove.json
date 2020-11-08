@@ -28,9 +28,9 @@
       { "id": "68", "cat": "Console/NDS", "desc": "3DS" },
       { "id": "69", "cat": "Console/PSP", "desc": "PSP" },
       { "id": "70", "cat": "Console/PS Vita", "desc": "PSVita" },
-      { "id": "65", "cat": "PC/Phone-IOS", "desc": "iOS" },
-      { "id": "49", "cat": "PC/Phone-Android", "desc": "Android" },
-      { "id": "66", "cat": "PC/Phone-Other", "desc": "Windows Mobile" },
+      { "id": "65", "cat": "PC/Mobile-iOS", "desc": "iOS" },
+      { "id": "49", "cat": "PC/Mobile-Android", "desc": "Android" },
+      { "id": "66", "cat": "PC/Mobile-Other", "desc": "Windows Mobile" },
       { "id": "53", "cat": "Books", "desc": "Books/Mags" },
       { "id": "60", "cat": "Books", "desc": "Comics" },
       { "id": "17", "cat": "Books", "desc": "Guides" },
@@ -114,7 +114,7 @@
         "selector": "a[href^=\"/torrents.php?id=\"]",
         "attribute": "href"
       },
-      "banner": {
+      "poster": {
         "optional": true,
         "selector": "td:nth-child(2) > script",
         "filters": [

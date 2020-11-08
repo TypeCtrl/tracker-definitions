@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://tsctracker.net/'],
   caps: {
     categorymappings: [
-      { id: '65', cat: 'PC/Phone-Android', desc: 'Apps Android' },
+      { id: '65', cat: 'PC/Mobile-Android', desc: 'Apps Android' },
       { id: '107', cat: 'PC/0day', desc: 'Apps Linux' },
       { id: '48', cat: 'PC/Mac', desc: 'Apps MAC' },
       { id: '109', cat: 'PC', desc: 'Apps Sonstige' },
@@ -131,21 +131,24 @@ export const definition: TrackerDefinition = {
         'table.tablebrowse > tbody > tr:has(a[href^="download_ssl.php"]){{ if .Config.freeleech }}:has(font[color="#730d1e"]:contains("[OnlyUpload]")){{ else }}{{ end }}',
     },
     fields: {
-      title: {
-        selector: 'a[title][href^="details.php"]',
-        attribute: 'title',
-      },
       category: {
         selector: 'a[href*="cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      comments: { selector: 'a[href*="&tocomm="]', attribute: 'href' },
+      title: {
+        selector: 'a[title][href^="details.php"]',
+        attribute: 'title',
+      },
+      details: {
+        selector: 'a[title][href^="details.php"]',
+        attribute: 'href',
+      },
       download: {
         selector: 'a[href^="download_ssl.php"]',
         attribute: 'href',
       },
-      banner: { selector: 'a.thumbnail > span > img', attribute: 'src' },
+      poster: { selector: 'a.thumbnail > span > img', attribute: 'src' },
       grabs: {
         selector: 'td:nth-child(9)',
         filters: [{ name: 'regexp', args: '(\\d+)' }],

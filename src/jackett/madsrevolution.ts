@@ -32,7 +32,7 @@ export const definition: TrackerDefinition = {
       { id: '44', cat: 'PC/0day', desc: 'Software Windows' },
       { id: '42', cat: 'PC/Mac', desc: 'Software Mac' },
       { id: '41', cat: 'PC', desc: 'Software Linux' },
-      { id: '43', cat: 'PC/Phone-Other', desc: 'Software Mobile' },
+      { id: '43', cat: 'PC/Mobile-Other', desc: 'Software Mobile' },
       { id: '11', cat: 'PC', desc: 'Software Unsorted' },
       { id: '12', cat: 'PC/Games', desc: 'Spiele PC' },
       { id: '13', cat: 'Console', desc: 'Spiele Konsole' },
@@ -144,7 +144,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="torrents.php?action=download&id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="torrents.php?id="]',
         attribute: 'onmouseover',
         optional: true,

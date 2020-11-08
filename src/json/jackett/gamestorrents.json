@@ -11,18 +11,22 @@
     "https://www.gamestorrents.tv/"
   ],
   "caps": {
-    "modes": { "search": ["q"] },
     "categorymappings": [
-      { "id": "juegos-pc", "cat": "PC/Games" },
-      { "id": "juegos-psp", "cat": "Console/PSP" },
-      { "id": "juegos-ps3", "cat": "Console/PS3" },
-      { "id": "juegos-ps4", "cat": "Console/PS4" },
-      { "id": "juegos-ps2", "cat": "Console/PS Vita" },
-      { "id": "juegos-mac", "cat": "PC/Mac" },
-      { "id": "juegos-xbox360", "cat": "Console/Xbox360" },
-      { "id": "juegos-wii", "cat": "Console/Wii" },
-      { "id": "juegos-nds", "cat": "Console/NDS" }
-    ]
+      { "id": "juegos-pc", "cat": "PC/Games", "desc": "Games PC" },
+      { "id": "juegos-psp", "cat": "Console/PSP", "desc": "Games PSP" },
+      { "id": "juegos-ps3", "cat": "Console/PS3", "desc": "Games PS3" },
+      { "id": "juegos-ps4", "cat": "Console/PS4", "desc": "Games PS4" },
+      { "id": "juegos-ps2", "cat": "Console/PS Vita", "desc": "Games PS2" },
+      { "id": "juegos-mac", "cat": "PC/Mac", "desc": "Games Mac" },
+      {
+        "id": "juegos-xbox360",
+        "cat": "Console/Xbox360",
+        "desc": "Games Xbox 360"
+      },
+      { "id": "juegos-wii", "cat": "Console/Wii", "desc": "Games Wii" },
+      { "id": "juegos-nds", "cat": "Console/NDS", "desc": "Games NDS" }
+    ],
+    "modes": { "search": ["q"] }
   },
   "settings": [],
   "download": { "selector": "a#download_torrent", "attribute": "href" },
@@ -44,7 +48,10 @@
       "download": { "selector": "td:nth-child(1) a", "attribute": "href" },
       "date": {
         "selector": "td:nth-child(2)",
-        "filters": [{ "name": "dateparse", "args": "02-01-2006" }]
+        "filters": [
+          { "name": "append", "args": " +01:00" },
+          { "name": "dateparse", "args": "02-01-2006 -07:00" }
+        ]
       },
       "size": {
         "selector": "td:nth-child(3)",

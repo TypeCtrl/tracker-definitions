@@ -28,7 +28,7 @@ export const definition: TrackerDefinition = {
       'title|append': { text: 'DVDRiP XViD' },
       details: { selector: 'a', attribute: 'href' },
       download: { selector: 'a', attribute: 'href' },
-      banner: {
+      poster: {
         selector: 'img.attachment-post-thumbnail',
         attribute: 'src',
       },

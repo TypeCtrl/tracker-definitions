@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '28', cat: 'TV/Anime', desc: 'Anime - All' },
-      { id: '65', cat: 'PC/Phone-Android', desc: 'Apps - Android' },
+      { id: '65', cat: 'PC/Mobile-Android', desc: 'Apps - Android' },
       { id: '18', cat: 'PC', desc: 'Apps - PC' },
       { id: '19', cat: 'PC/Mac', desc: 'Apps - Mac' },
       { id: '20', cat: 'PC', desc: 'Apps - Linux' },
@@ -50,7 +50,7 @@ export const definition: TrackerDefinition = {
       { id: '25', cat: 'Audio/Video', desc: 'Music - Video' },
       { id: '64', cat: 'Audio', desc: 'Music - Concerts | Live Shows' },
       { id: '26', cat: 'Audio', desc: 'Music - Radio' },
-      { id: '38', cat: 'PC/Phone-Other', desc: 'Other - Mobile Phone' },
+      { id: '38', cat: 'PC/Mobile-Other', desc: 'Other - Mobile Phone' },
       { id: '44', cat: 'Other', desc: 'Religious  - Islam' },
       { id: '37', cat: 'Other', desc: 'Other - Images' },
       { id: '40', cat: 'Other', desc: 'Other - Other | Misc' },
@@ -135,7 +135,6 @@ export const definition: TrackerDefinition = {
           { name: 'timeago' },
         ],
       },
-      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },

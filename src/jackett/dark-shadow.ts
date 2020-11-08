@@ -33,7 +33,7 @@ export const definition: TrackerDefinition = {
       { id: '120', cat: 'Audio/Video', desc: 'Musik Video' },
       { id: '12', cat: 'PC/0day', desc: 'App PC' },
       { id: '125', cat: 'PC/Mac', desc: 'App MacOS' },
-      { id: '11', cat: 'PC/Phone-Other', desc: 'App Mobil' },
+      { id: '11', cat: 'PC/Mobile-Other', desc: 'App Mobil' },
       { id: '61', cat: 'TV/Sport', desc: 'Sport HD' },
       { id: '62', cat: 'TV/Sport', desc: 'Sport SD' },
       { id: '128', cat: 'Movies/HD', desc: 'Internal Film HD' },
@@ -46,7 +46,7 @@ export const definition: TrackerDefinition = {
       { id: '63', cat: 'Audio/Audiobook', desc: 'Hörbuch' },
       { id: '71', cat: 'Other', desc: 'Anderes' },
       { id: '73', cat: 'XXX/x264', desc: 'XXX HD' },
-      { id: '75', cat: 'XXX/Packs', desc: 'XXX Pack' },
+      { id: '75', cat: 'XXX/Pack', desc: 'XXX Pack' },
       { id: '76', cat: 'XXX/XviD', desc: 'XXX SD' },
       { id: '124', cat: 'XXX/Other', desc: 'XXX Clips' },
       { id: '133', cat: 'XXX/Other', desc: 'XXX A/E-book' },
@@ -193,7 +193,7 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      banner: {
+      poster: {
         selector: 'div[id^="details"] img',
         attribute: 'src',
         optional: true,

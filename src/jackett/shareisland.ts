@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'Movies', desc: 'Movie' },
       { id: '2', cat: 'TV', desc: 'Serie TV' },
       { id: '15', cat: 'Books/Ebook', desc: 'Ebook' },
-      { id: '17', cat: 'Books/Magazines', desc: 'Riviste e Giornali' },
+      { id: '17', cat: 'Books/Mags', desc: 'Riviste e Giornali' },
       { id: '19', cat: 'XXX', desc: 'XXX' },
       { id: '3', cat: 'Audio', desc: 'Music' },
       { id: '7', cat: 'PC/Games', desc: 'Games' },
@@ -149,7 +149,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'div.torrent-poster img',
         attribute: 'src',
@@ -160,7 +160,6 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      comments: { selector: 'a[href*="#comments"]', attribute: 'href' },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },

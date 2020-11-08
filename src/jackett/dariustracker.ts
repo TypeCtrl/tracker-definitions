@@ -39,7 +39,7 @@ export const definition: TrackerDefinition = {
       { id: '84', cat: 'Audio/Lossless', desc: 'Lossless/Hun' },
       { id: '68', cat: 'Movies/DVD', desc: 'Mese/DVD' },
       { id: '69', cat: 'Movies/SD', desc: 'Mese/XviD' },
-      { id: '67', cat: 'PC/Phone-Other', desc: 'Mobiltelefon' },
+      { id: '67', cat: 'PC/Mobile-Other', desc: 'Mobiltelefon' },
       { id: '26', cat: 'Audio/MP3', desc: 'Mp3/Eng' },
       { id: '25', cat: 'Audio/MP3', desc: 'Mp3/Hun' },
       { id: '14', cat: 'PC', desc: 'Program/Egyéb' },
@@ -120,7 +120,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a.preview',
         attribute: 'href',
         optional: true,

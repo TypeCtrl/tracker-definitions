@@ -19,6 +19,47 @@ export const definition: TrackerDefinition = {
     'http://firebit.biz/',
   ],
   caps: {
+    categorymappings: [
+      { id: 'Мультфильмы', cat: 'TV/Anime', desc: 'Мультфильмы' },
+      { id: 'Программы', cat: 'PC', desc: 'Программы' },
+      { id: 'Программы Видео', cat: 'PC', desc: 'Программы Видео' },
+      { id: 'Программы FAQ', cat: 'PC', desc: 'Программы FAQ' },
+      {
+        id: 'Программы Web Оформление',
+        cat: 'PC',
+        desc: 'Программы Web Оформление',
+      },
+      { id: 'Linux', cat: 'PC', desc: 'Linux' },
+      { id: 'Мобилка', cat: 'PC/Mobile-Other', desc: 'Мобилка' },
+      {
+        id: 'Мобилка Игры',
+        cat: 'PC/Mobile-Other',
+        desc: 'Мобилка Игры',
+      },
+      { id: 'Литература', cat: 'Books', desc: 'Литература' },
+      { id: 'Игры', cat: 'PC/Games', desc: 'Игры' },
+      { id: 'Игры Мобилка', cat: 'PC/Games', desc: 'Игры Мобилка' },
+      { id: 'Фильмы', cat: 'Movies', desc: 'Фильмы' },
+      { id: 'Фильмы Видео', cat: 'Movies', desc: 'Фильмы Видео' },
+      { id: 'Фильмы Сериалы', cat: 'Movies', desc: 'Фильмы Сериалы' },
+      {
+        id: 'Фильмы Скоро на трекере',
+        cat: 'Movies',
+        desc: 'Фильмы Скоро на трекере',
+      },
+      { id: 'Видео', cat: 'Movies', desc: 'Видео' },
+      { id: 'Музыка', cat: 'Audio', desc: 'Музыка' },
+      { id: 'Музыка Фильмы', cat: 'Audio', desc: 'Музыка Фильмы' },
+      { id: 'Видео Музыка', cat: 'Audio/Video', desc: 'Видео Музыка' },
+      {
+        id: 'Фильмы Музыка Видео',
+        cat: 'Audio/Video',
+        desc: 'Фильмы Музыка Видео',
+      },
+      { id: 'Музыка Видео', cat: 'Audio/Video', desc: 'Музыка Видео' },
+      { id: 'Другие категории', cat: 'Other', desc: 'Другие категории' },
+      { id: 'Сериалы', cat: 'TV', desc: 'Сериалы' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q'],
@@ -26,31 +67,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'Мультфильмы', cat: 'TV/Anime' },
-      { id: 'Программы', cat: 'PC' },
-      { id: 'Программы Видео', cat: 'PC' },
-      { id: 'Программы FAQ', cat: 'PC' },
-      { id: 'Программы Web Оформление', cat: 'PC' },
-      { id: 'Linux', cat: 'PC' },
-      { id: 'Мобилка', cat: 'PC/Phone-Other' },
-      { id: 'Мобилка Игры', cat: 'PC/Phone-Other' },
-      { id: 'Литература', cat: 'Books' },
-      { id: 'Игры', cat: 'PC/Games' },
-      { id: 'Игры Мобилка', cat: 'PC/Games' },
-      { id: 'Фильмы', cat: 'Movies' },
-      { id: 'Фильмы Видео', cat: 'Movies' },
-      { id: 'Фильмы Сериалы', cat: 'Movies' },
-      { id: 'Фильмы Скоро на трекере', cat: 'Movies' },
-      { id: 'Видео', cat: 'Movies' },
-      { id: 'Музыка', cat: 'Audio' },
-      { id: 'Музыка Фильмы', cat: 'Audio' },
-      { id: 'Видео Музыка', cat: 'Audio/Video' },
-      { id: 'Фильмы Музыка Видео', cat: 'Audio/Video' },
-      { id: 'Музыка Видео', cat: 'Audio/Video' },
-      { id: 'Другие категории', cat: 'Other' },
-      { id: 'Сериалы', cat: 'TV' },
-    ],
   },
   settings: [],
   download: {
@@ -61,11 +77,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}index.php?do=search&type=simple&q={{ .Keywords }}{{else}}%D1%84%D0%B8%D0%BB%D1%8C%D0%BC/{{end}}',
+          '{{ if .Keywords }}index.php?do=search&type=simple&q={{ .Keywords }}{{ else }}%D1%84%D0%B8%D0%BB%D1%8C%D0%BC/{{ end }}',
       },
       {
         path:
-          '{{ if .Keywords }}index.php?do=search&type=simple&q=abcd1234{{else}}%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB/{{end}}',
+          '{{ if .Keywords }}index.php?do=search&type=simple&q=abcd1234{{ else }}%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB/{{ end }}',
       },
     ],
     rows: {
@@ -96,7 +112,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(5), li.meta-date',
-        filters: [{ name: 'dateparse', args: '02.01.2006 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
+        ],
       },
       seeders: { selector: 'td.l1, li.meta-sead' },
       leechers: { selector: 'td.l2, li.meta-leech' },

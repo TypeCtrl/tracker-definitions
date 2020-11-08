@@ -56,7 +56,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site (Applies only to search with Keywords)',
-      default: '-3',
+      default: -3,
       options: {
         '1': 'seeders asc',
         '2': 'size asc',
@@ -71,16 +71,15 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}torrent-list/{{ .Keywords }}?o={{ .Config.sort }}&c={{ range .Categories }}{{.}}{{end}}{{else}}browse.html{{end}}',
+          '{{ if .Keywords }}torrent-list/{{ .Keywords }}?o={{ .Config.sort }}&c={{ range .Categories }}{{.}}{{end}}{{ else }}browse.html{{ end }}',
       },
       {
         path:
-          '{{ if .Keywords }}torrent-list/{{ .Keywords }}?p=2&o={{ .Config.sort }}&c={{ range .Categories }}{{.}}{{end}}{{else}}browse.html?&p=2{{end}}',
+          '{{ if .Keywords }}torrent-list/{{ .Keywords }}?p=2&o={{ .Config.sort }}&c={{ range .Categories }}{{.}}{{end}}{{ else }}browse.html?&p=2{{ end }}',
       },
     ],
     rows: { selector: 'div.resultdiv' },
     fields: {
-      title: { selector: 'div.resultdivtop a div.resultdivtopname' },
       category: { text: 0 },
       'category|noappend': {
         optional: true,
@@ -98,6 +97,7 @@ export const definition: TrackerDefinition = {
           ':contains("Books")': 9,
         },
       },
+      title: { selector: 'div.resultdivtop a div.resultdivtopname' },
       details: { selector: 'div.resultdivtop a', attribute: 'href' },
       'download-itorrents': {
         selector: 'div.resultdivbotton div.hideinfohash',
@@ -108,24 +108,9 @@ export const definition: TrackerDefinition = {
         ],
       },
       download: {
-        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{else}}{{end}}',
+        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{ else }}{{ end }}',
       },
-      magfile: {
-        text: '{{ .Result.title }}',
-        filters: [{ name: 'validfilename' }, { name: 'urlencode' }],
-      },
-      magnet: {
-        selector: 'div.resultdivbotton div.hideinfohash',
-        filters: [
-          { name: 'prepend', args: 'magnet:?xt=urn:btih:' },
-          { name: 'append', args: '&dn={{ .Result.magfile }}.torrent' },
-          {
-            name: 'append',
-            args:
-              '&tr=http://tracker.trackerfix.com:80/announce&tr=udp://9.rarbg.com:2710/announce&tr=udp://9.rarbg.me:2710/announce&tr=udp://9.rarbg.to:2710/announce&tr=udp://coppersurfer.tk:6969/announce&tr=udp://eddie4.nl:6969/announce&tr=udp://exodus.desync.com:6969&tr=udp://glotorrents.pw:6969/announce&tr=udp://open.demonii.com:1337&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://p4p.arenabg.com:1337&tr=udp://torrent.gresille.org:80/announce&tr=udp://tracker.aletorrenty.pl:2710/announce&tr=udp://tracker.coppersurfer.tk:6969/announce&tr=udp://tracker.glotorrents.com:6969/announce&tr=udp://tracker.internetwarriors.net:1337&tr=udp://tracker.leechers-paradise.org:6969/announce&tr=udp://tracker.openbittorrent.com:80/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://zer0day.ch:1337/announce',
-          },
-        ],
-      },
+      infohash: { selector: 'div.resultdivbotton div.hideinfohash' },
       date: {
         selector: 'div.resultdivbotton div.resulttime div.resultdivbottontime',
         filters: [{ name: 'timeago' }],
@@ -133,13 +118,13 @@ export const definition: TrackerDefinition = {
       size: {
         selector: 'div.resultdivbotton div.resultlength div.resultdivbottonlength',
       },
+      files: {
+        selector: 'div.resultdivbotton div.resultfile div.resultdivbottonfiles',
+      },
       seeders: {
         selector: 'div.resultdivbotton div.resultseed div.resultdivbottonseed',
       },
       leechers: { text: 0 },
-      files: {
-        selector: 'div.resultdivbotton div.resultfile div.resultdivbottonfiles',
-      },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

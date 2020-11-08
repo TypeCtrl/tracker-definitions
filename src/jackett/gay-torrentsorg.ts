@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'gay-torrentsorg',
   name: 'gay-torrents.org',
-  description: 'Gay-Torrents.org is a Private Torrent Tracker for GAY XXX',
+  description: 'Gay-Torrents.org is a Private Torrent Tracker for GAY 3X',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
@@ -12,17 +12,10 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
-      name: 'active',
-      type: 'select',
-      label: 'Status',
-      default: 0,
-      options: { '0': 'Active and Inactive', '1': 'Active', '2': 'Inactive' },
-    },
-    {
       name: 'info_categories',
       type: 'info',
       label: 'Hidden categories',
-      default: 'Results for categories hidden in profile will not be visible.',
+      default: 'Results for categories hidden in account profile will not be visible.',
     },
     {
       name: 'info_results',
@@ -94,8 +87,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents_beta.php', method: 'get' }],
     inputs: {
       $raw: '{{range .Categories}}category[]={{.}}&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      active: '{{ .Config.active }}',
+      search: '{{ .Keywords }}',
+      active: 0,
     },
     rows: { selector: 'div.torrent' },
     fields: {
@@ -111,7 +104,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'a.screenshot',
         attribute: 'rel',
@@ -122,10 +115,6 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['No downloads yet', '0'] },
           { name: 'regexp', args: '([\\d,]+)' },
         ],
-      },
-      comments: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
       },
       download: {
         selector: 'a[href^="download.php?id="]',
@@ -153,7 +142,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

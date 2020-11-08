@@ -9,6 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://casstudio.tk/'],
   legacylinks: ['https://casstudio.tv/'],
+  certificates: ['71fe2295b57e6287ce36a39823bee752cbbd9d42'],
   caps: {
     categorymappings: [
       { id: '259', cat: 'TV', desc: 'Сериалы' },

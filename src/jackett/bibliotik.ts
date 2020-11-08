@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
       { id: '3', cat: 'Audio/Audiobook', desc: 'Audiobooks' },
       { id: '4', cat: 'Books/Comics', desc: 'Comics' },
       { id: '5', cat: 'Books/Ebook', desc: 'eBooks' },
-      { id: '7', cat: 'Books/Magazines', desc: 'Magazines' },
+      { id: '7', cat: 'Books/Mags', desc: 'Magazines' },
     ],
     modes: { search: ['q'], 'book-search': ['q', 'title', 'author'] },
   },

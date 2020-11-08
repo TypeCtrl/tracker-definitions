@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'Movies', desc: 'Movies SATRip / DVDRip / HDRip' },
       {
         id: '21',
-        cat: 'Movies/WEBDL',
+        cat: 'Movies/WEB-DL',
         desc: 'Movies WEB-DLRip / WEB-DL',
       },
       { id: '2', cat: 'Movies/HD', desc: 'Movies x264' },
@@ -101,7 +101,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'i',
-        filters: [{ name: 'dateparse', args: '2006-01-02 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
+        ],
       },
       files: { selector: 'td:nth-last-child(5)' },
       size: { selector: 'td:nth-last-child(3)' },

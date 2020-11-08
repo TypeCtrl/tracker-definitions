@@ -27,20 +27,15 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [
-      { id: '1', cat: 'TV' },
-      { id: '2', cat: 'Movies' },
-      { id: '3', cat: 'Other' },
-    ],
+    categorymappings: [{ id: 'Other', cat: 'Other' }],
   },
   settings: [
     {
-      name: 'category-id',
-      type: 'select',
-      label:
-        'The cpasbien clone web site does not provide categories. Select the category you want Jackett to set on all results returned.',
-      default: 3,
-      options: { '1': 'TV', '2': 'Movies', '3': 'Other' },
+      name: 'info_8000',
+      type: 'info',
+      label: 'About cpasbienclone Categories',
+      default:
+        "cpasbienclone does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other).",
     },
     {
       name: 'multilang',
@@ -89,12 +84,12 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}search_torrent/{{ .Keywords }}{{ .Config.sort }}{{else}}home/{{end}}',
+        path: '{{ if .Keywords }}search_torrent/{{ .Keywords }}{{ .Config.sort }}{{ else }}home/{{ end }}',
       },
     ],
     rows: { selector: 'table.table-corps > tbody > tr:has(a)' },
     fields: {
-      category: { text: '{{ .Config.category-id }}' },
+      category: { text: 'Other' },
       site_date: {
         selector: 'a',
         filters: [{ name: 'regexp', args: '(19|20\\d{2})$' }],

@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://btsow.online/'],
+  links: ['https://btsow.work/'],
   legacylinks: [
     'https://btos.pw/',
     'https://btio.pw/',
@@ -20,39 +20,37 @@ export const definition: TrackerDefinition = {
     'https://btsow.monster/',
     'https://btsow.casa/',
     'https://btsow.website/',
+    'https://btsow.online/',
   ],
   caps: {
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'tv', cat: 'TV' },
-      { id: 'movies', cat: 'Movies' },
-      { id: 'other', cat: 'Other' },
-    ],
+    categorymappings: [{ id: 'Other', cat: 'Other' }],
   },
   settings: [
     {
-      name: 'category-id',
-      type: 'select',
-      label:
-        'The BTSOW web site does not provide categories. Select the category you want Jackett to set on all results returned.',
-      default: 'other',
-      options: { tv: 'TV', movies: 'Movies', other: 'Other' },
+      name: 'info_8000',
+      type: 'info',
+      label: 'About BTSOW Categories',
+      default:
+        "BTSOW does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other).",
     },
   ],
   download: { selector: 'a#magnetOpen', attribute: 'href' },
   search: {
     paths: [
       {
-        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
+        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       },
     ],
     rows: { selector: 'div.row:has(a[href*="/detail/hash/"])' },
     fields: {
-      category: { text: '{{ .Config.category-id }}' },
+      category: { text: 'Other' },
       title: {
         selector: 'a[href*="/detail/hash/"]',
         attribute: 'title',
@@ -67,7 +65,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'div.date',
-        filters: [{ name: 'dateparse', args: '2006-01-02' }],
+        filters: [
+          { name: 'append', args: ' -00:00' },
+          { name: 'dateparse', args: '2006-01-02 -07:00' },
+        ],
       },
       size: { selector: 'div.size' },
       seeders: { text: 1 },

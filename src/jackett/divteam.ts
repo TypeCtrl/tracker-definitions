@@ -17,8 +17,8 @@ export const definition: TrackerDefinition = {
       { id: '65', cat: 'TV/HD', desc: 'Pack Series VOSE' },
       { id: '80', cat: 'Movies/BluRay', desc: 'BDRip X265 1080p' },
       { id: '81', cat: 'Movies/UHD', desc: 'UHDRip x265 4K' },
-      { id: '82', cat: 'Movies/WEBDL', desc: 'Pelis Web-DL 1080' },
-      { id: '83', cat: 'Movies/WEBDL', desc: 'Pelis Web-DL 720' },
+      { id: '82', cat: 'Movies/WEB-DL', desc: 'Pelis Web-DL 1080' },
+      { id: '83', cat: 'Movies/WEB-DL', desc: 'Pelis Web-DL 720' },
       { id: '84', cat: 'Movies/UHD', desc: 'UHD Remux x265' },
       { id: '23', cat: 'TV/Sport', desc: 'Deportes' },
       { id: '20', cat: 'TV/HD', desc: 'Series' },
@@ -129,7 +129,7 @@ export const definition: TrackerDefinition = {
           { name: 're_replace', args: ['^\\.', ''] },
         ],
       },
-      banner: {
+      poster: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details"]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],

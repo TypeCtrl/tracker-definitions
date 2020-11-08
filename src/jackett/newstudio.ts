@@ -69,7 +69,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="./download.php?id="]',
         attribute: 'href',
       },
-      banner: { selector: 'td:nth-child(3) > a > img', attribute: 'src' },
+      poster: { selector: 'td:nth-child(3) > a > img', attribute: 'src' },
       size: { selector: 'td:nth-child(5) > a' },
       category: { text: 6 },
       date: {

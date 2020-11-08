@@ -17,10 +17,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: 'torrents.php{{ if .Keywords }}?search={{ .Keywords }}{{else}}{{end}}',
+        path: 'torrents.php{{ if .Keywords }}?search={{ .Keywords }}{{ else }}{{ end }}',
       },
       {
-        path: 'torrents.php{{ if .Keywords }}?search={{ .Keywords }}&page=1{{else}}?page=1{{end}}',
+        path: 'torrents.php{{ if .Keywords }}?search={{ .Keywords }}&page=1{{ else }}?page=1{{ end }}',
       },
     ],
     rows: { selector: 'table.itg > tbody > tr:has(td)' },

@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '14', cat: 'Movies', desc: 'Screener' },
-      { id: '39', cat: 'Movies/WEBDL', desc: 'BDRip - Download WEB' },
+      { id: '39', cat: 'Movies/WEB-DL', desc: 'BDRip - Download WEB' },
       { id: '15', cat: 'Movies/HD', desc: 'Rip H264' },
       { id: '16', cat: 'Movies/HD', desc: 'Rip H265' },
       { id: '24', cat: 'Movies/UHD', desc: 'Rip 4K' },
@@ -117,7 +117,7 @@ export const definition: TrackerDefinition = {
           { name: 're_replace', args: ['(\\d{1})x(\\d{2})', 'S0$1E$2'] },
         ],
       },
-      banner: {
+      poster: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],

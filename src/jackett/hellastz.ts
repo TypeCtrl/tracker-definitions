@@ -31,14 +31,14 @@ export const definition: TrackerDefinition = {
       { id: '236', cat: 'Movies/SD', desc: 'Movies Cam - HDcam-HDts' },
       {
         id: '235',
-        cat: 'Movies/WEBDL',
+        cat: 'Movies/WEB-DL',
         desc: 'Movies WEB-720-1080p -HDrip',
       },
       { id: '90', cat: 'TV', desc: 'TV Ελληνικές Σειρές (Greek)' },
       { id: '96', cat: 'TV', desc: 'TV Ξένες Σειρές (Foreign)' },
       { id: '219', cat: 'Audio', desc: 'Music Ξένη μουσική (Foreign)' },
       { id: '220', cat: 'Audio', desc: 'Music Ελληνική Μουσική (Greek)' },
-      { id: '240', cat: 'PC/Phone-Other', desc: 'Android - Linux' },
+      { id: '240', cat: 'PC/Mobile-Other', desc: 'Android - Linux' },
       {
         id: '230',
         cat: 'TV/Anime',
@@ -149,7 +149,7 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
       },
-      banner: {
+      poster: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],

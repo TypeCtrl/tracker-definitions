@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="browse2.php?cat="] > img',
         attribute: 'src',
       },

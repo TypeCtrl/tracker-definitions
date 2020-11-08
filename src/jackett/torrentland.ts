@@ -85,7 +85,7 @@ export const definition: TrackerDefinition = {
       { id: '25', cat: 'Books/Ebook', desc: 'Ebook' },
       { id: '0', cat: 'Books/Ebook', desc: 'Ebook' },
       { id: '24', cat: 'XXX', desc: 'Adultos' },
-      { id: '64', cat: 'PC/Phone-Android', desc: 'PC Android' },
+      { id: '64', cat: 'PC/Mobile-Android', desc: 'PC Android' },
       { id: '21', cat: 'TV/Documentary', desc: 'Documentales' },
     ],
     modes: {
@@ -165,7 +165,7 @@ export const definition: TrackerDefinition = {
           { name: 'append', args: ' [Spanish]' },
         ],
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'td:nth-child(2) a',
         attribute: 'onmouseover',

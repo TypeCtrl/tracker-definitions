@@ -41,7 +41,8 @@
           { "name": "replace", "args": ["Окт", "Oct"] },
           { "name": "replace", "args": ["Ноя", "Nov"] },
           { "name": "replace", "args": ["Дек", "Dec"] },
-          { "name": "dateparse", "args": "02 Jan 06" }
+          { "name": "append", "args": " +03:00" },
+          { "name": "dateparse", "args": "02 Jan 06 -07:00" }
         ]
       },
       "size": { "selector": "td:nth-of-type(3)" },

@@ -230,16 +230,12 @@ export const definition: TrackerDefinition = {
         text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
       description: { selector: 'div.group_info' },
-      banner: {
+      poster: {
         selector: 'div.group_image img',
         attribute: 'src',
         optional: true,
       },
       details: {
-        selector: 'a[href^="torrents.php?id="]',
-        attribute: 'href',
-      },
-      comments: {
         selector: 'a[href^="torrents.php?id="]',
         attribute: 'href',
       },

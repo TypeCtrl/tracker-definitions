@@ -36,7 +36,7 @@ export const definition: TrackerDefinition = {
       { id: '155', cat: 'Other', desc: 'MeseHun' },
       { id: '176', cat: 'Other', desc: 'Mikro HDEng' },
       { id: '174', cat: 'Other', desc: 'Mikro HDHun' },
-      { id: '37', cat: 'PC/Phone-Other', desc: 'MobilPDA' },
+      { id: '37', cat: 'PC/Mobile-Other', desc: 'MobilPDA' },
       { id: '35', cat: 'PC', desc: 'ProgramEgyéb' },
       { id: '170', cat: 'PC/ISO', desc: 'ProgramIso' },
       { id: '24', cat: 'TV', desc: 'Sorozat Eng' },
@@ -126,7 +126,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'urldecode' }],
       },
-      banner: {
+      poster: {
         selector: 'a[onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) width=' }],

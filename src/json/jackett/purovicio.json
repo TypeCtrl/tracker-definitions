@@ -17,7 +17,8 @@
       { "id": "6", "cat": "PC/0day", "desc": "Soft" },
       { "id": "7", "cat": "Other", "desc": "Various" },
       { "id": "8", "cat": "XXX", "desc": "XXX" },
-      { "id": "9", "cat": "Other", "desc": "Cursos" }
+      { "id": "9", "cat": "Other", "desc": "Cursos" },
+      { "id": "10", "cat": "PC/ISO", "desc": "Sistemas Operativos" }
     ],
     "modes": {
       "search": ["q"],
@@ -101,7 +102,7 @@
         "attribute": "href"
       },
       "details": { "selector": "a.view-torrent", "attribute": "href" },
-      "banner": {
+      "poster": {
         "optional": true,
         "selector": "div.torrent-poster img",
         "attribute": "src",
@@ -111,11 +112,6 @@
             "args": ["https://via.placeholder.com/600x900", ""]
           }
         ]
-      },
-      "comments": {
-        "selector": "a[href*=\"#comments\"]",
-        "attribute": "href",
-        "optional": true
       },
       "imdb": {
         "optional": true,

@@ -67,6 +67,11 @@ export const definition: TrackerDefinition = {
       selector: 'div.tbList table tbody tr:has(a[href^="download.php?torrent="])',
     },
     fields: {
+      category: {
+        selector: 'a[href^="/list.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
       title: { selector: 'a[href^="item.php?id="]' },
       details: {
         selector: 'a[href^="item.php?id="]',
@@ -76,27 +81,17 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="item.php?id="]',
         attribute: 'onmouseover',
         optional: true,
         filters: [{ name: 'regexp', args: 'src="(.+?)"' }],
-      },
-      category: {
-        selector: 'a[href^="/list.php?cat="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
       },
       imdb: {
         optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
-      seeders: {
-        selector: 'td:last-child',
-        filters: [{ name: 'regexp', args: '(\\d+) Peers' }],
-      },
-      leechers: { text: 0 },
       size: {
         selector: 'td:last-child',
         filters: [
@@ -116,6 +111,11 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
         ],
       },
+      seeders: {
+        selector: 'td:last-child',
+        filters: [{ name: 'regexp', args: '(\\d+) Peers' }],
+      },
+      leechers: { text: 0 },
       downloadvolumefactor: { text: 1 },
       uploadvolumefactor: { text: 1 },
       minimumratio: { text: 0.7 },

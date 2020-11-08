@@ -26,7 +26,7 @@ export const definition: TrackerDefinition = {
       { id: '28', cat: 'PC/Games', desc: 'Játék/ISO' },
       { id: '30', cat: 'PC/Games', desc: 'Játék/Rip' },
       { id: '32', cat: 'Console', desc: 'Konzol' },
-      { id: '34', cat: 'PC/Phone-Other', desc: 'Mobil' },
+      { id: '34', cat: 'PC/Mobile-Other', desc: 'Mobil' },
       { id: '44', cat: 'Books', desc: 'Könyv/Hun' },
       { id: '33', cat: 'Books', desc: 'Könyv/Eng' },
       { id: '31', cat: 'Other', desc: 'Képek' },
@@ -116,7 +116,7 @@ export const definition: TrackerDefinition = {
         attribute: 'id',
         filters: [{ name: 'replace', args: ['torrent_', 'download.php?id='] }],
       },
-      banner: {
+      poster: {
         selector: 'img[onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'borito\\("(.*?) +?",' }],

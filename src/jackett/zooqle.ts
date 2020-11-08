@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://zooqle.com/',
     'https://zooqle.unblockninja.com/',
-    'https://zooqle.unblockit.lat/',
+    'https://zooqle.unblockit.app/',
     'https://zooqle.unblocked.rest/',
   ],
   legacylinks: [
@@ -30,8 +30,20 @@ export const definition: TrackerDefinition = {
     'https://zooqle.proxyportal.pw/',
     'https://zooqle.uk-unblock.pro/',
     'https://zooqle.unblockit.top/',
+    'https://zooqle.unblockit.lat/',
   ],
   caps: {
+    categorymappings: [
+      { id: 'anime', cat: 'TV/Anime', desc: 'Anime' },
+      { id: 'app', cat: 'PC', desc: 'App' },
+      { id: 'book', cat: 'Books', desc: 'Book' },
+      { id: 'files', cat: 'Other/Misc', desc: 'Files' },
+      { id: 'game', cat: 'PC/Games', desc: 'Game' },
+      { id: 'movies', cat: 'Movies', desc: 'Movies' },
+      { id: 'music', cat: 'Audio', desc: 'Music' },
+      { id: 'other', cat: 'Other', desc: 'Other' },
+      { id: 'tv', cat: 'TV', desc: 'TV' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -39,17 +51,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'anime', cat: 'TV/Anime' },
-      { id: 'app', cat: 'PC' },
-      { id: 'book', cat: 'Books' },
-      { id: 'files', cat: 'Other/Misc' },
-      { id: 'game', cat: 'PC/Games' },
-      { id: 'movies', cat: 'Movies' },
-      { id: 'music', cat: 'Audio' },
-      { id: 'other', cat: 'Other' },
-      { id: 'tv', cat: 'TV' },
-    ],
   },
   settings: [
     {
@@ -71,7 +72,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'search?{{ if .Keywords }}s={{ .Config.sort }}&v=t&sd={{ .Config.type }}&q={{ .Keywords }}{{else}}s={{ .Config.sort }}&v=t&sd={{ .Config.type }}&q= *{{end}}{{ if .Categories }} category:{{ range .Categories }}{{.}},{{end}}{{else}}{{end}}',
+          'search?s={{ .Config.sort }}&v=t&sd={{ .Config.type }}&q={{ if .Keywords }}{{ .Keywords }}{{ else }} *{{ end }}{{ if .Categories }} category:{{ range .Categories }}{{.}},{{end}}{{ else }}{{ end }}',
       },
     ],
     rows: {

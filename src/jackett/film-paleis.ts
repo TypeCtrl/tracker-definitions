@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
       { id: '5', cat: 'Movies/DVD', desc: ' DVD Films' },
       { id: '7', cat: 'Movies/UHD', desc: ' 4K films' },
       { id: '8', cat: 'XXX', desc: ' Erotiek' },
-      { id: '9', cat: 'PC/Phone-Other', desc: ' GSM/Navigatie' },
+      { id: '9', cat: 'PC/Mobile-Other', desc: ' GSM/Navigatie' },
       { id: '10', cat: 'Audio', desc: ' Muziek Album' },
       { id: '11', cat: 'Audio/Other', desc: ' Muziek Diverse' },
       { id: '12', cat: 'Console/NDS', desc: ' Nintendo' },
@@ -117,7 +117,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
-      banner: { selector: 'img[src*="/covers/"]', attribute: 'src' },
+      poster: { selector: 'img[src*="/covers/"]', attribute: 'src' },
       size: {
         selector: 'td:nth-child(4) table tr td:nth-child(2)',
         filters: [{ name: 'regexp', args: '(.+?) in' }],

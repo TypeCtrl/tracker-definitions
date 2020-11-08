@@ -34,7 +34,7 @@ export const definition: TrackerDefinition = {
       title: { selector: 'div.d3-title' },
       details: { selector: 'a', attribute: 'href' },
       download: { selector: 'a', attribute: 'href' },
-      banner: { selector: 'img', attribute: 'src', optional: true },
+      poster: { selector: 'img', attribute: 'src', optional: true },
       date: { text: 'now' },
       size: { selector: 'div.d3-raz' },
       seeders: { text: 1 },

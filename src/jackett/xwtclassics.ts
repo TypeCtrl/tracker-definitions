@@ -24,7 +24,11 @@ export const definition: TrackerDefinition = {
       { id: '13', cat: 'TV/Sport', desc: 'WWE Network' },
       { id: '2', cat: 'TV/Sport', desc: 'WWF' },
     ],
-    modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+    },
   },
   settings: [
     { name: 'username', type: 'text', label: 'Username' },

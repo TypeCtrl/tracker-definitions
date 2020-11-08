@@ -368,11 +368,6 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       category: { selector: ':nth-child(1) > div.hidden' },
-      comments: {
-        optional: true,
-        selector: 'td:nth-child(1) > a[href$="#comments"]',
-        attribute: 'href',
-      },
       download: {
         text: 'https://{{ .Config.searchanddlurl }}/engine/download_torrent?id={{ .Result._id }}',
       },

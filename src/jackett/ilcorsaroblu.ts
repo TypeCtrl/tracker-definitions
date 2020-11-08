@@ -12,8 +12,8 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '12', cat: 'XXX', desc: 'Adult' },
-      { id: '5', cat: 'PC/Phone-Android', desc: 'Android' },
-      { id: '30', cat: 'PC/Phone-IOS', desc: 'iOS / iPhone' },
+      { id: '5', cat: 'PC/Mobile-Android', desc: 'Android' },
+      { id: '30', cat: 'PC/Mobile-iOS', desc: 'iOS / iPhone' },
       { id: '7', cat: 'PC/0day', desc: 'Windows' },
       { id: '8', cat: 'PC', desc: 'Linux' },
       { id: '9', cat: 'PC/Mac', desc: 'Mac' },
@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
       { id: '33', cat: 'Books/Ebook', desc: 'Romanzi' },
       {
         id: '26',
-        cat: 'Books/Magazines',
+        cat: 'Books/Mags',
         desc: 'Edicola: Giornali/Quotidiani',
       },
       { id: '3', cat: 'PC/Games', desc: 'Games PC' },
@@ -123,7 +123,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       page: 'torrents',
       search: '{{ .Keywords }}',
-      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
+      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0{{ end }}',
       options: '{{ if .Config.freeleech }}5{{ else }}0{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',
@@ -135,6 +135,11 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
+      category: {
+        selector: 'a[href^="index.php?page=torrents&category="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'category' }],
+      },
       title: {
         selector: 'td:nth-child(2) > a',
         filters: [
@@ -175,6 +180,7 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
+      details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       download: {
         optional: true,
         selector: 'a[href^="download.php?id="]',
@@ -186,21 +192,17 @@ export const definition: TrackerDefinition = {
           { name: 'append', args: '.torrent' },
         ],
       },
-      _magnetfilename: {
-        text: '{{ .Result.title }}',
-        filters: [{ name: 'validfilename' }, { name: 'urlencode' }],
+      infohash: {
+        optional: true,
+        selector: 'a[href^="download.php?id="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'id' }],
       },
       magnet: {
         optional: true,
         selector: 'a[href^="magnet:?xt="]',
         attribute: 'href',
       },
-      category: {
-        selector: 'a[href^="index.php?page=torrents&category="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'category' }],
-      },
-      details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       size: { selector: 'td:nth-last-child(2)' },
       date: {
         selector: "td:nth-last-child(7):contains('/')",

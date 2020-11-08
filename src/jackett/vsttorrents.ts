@@ -17,13 +17,16 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },
-    rows: { selector: 'article:has(h3)' },
+    rows: {
+      selector: 'article:has(h3)',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       category: { text: 'Audio' },
       title: { selector: 'h3' },
       details: { selector: 'h3 > a', attribute: 'href' },
       download: { selector: 'h3 > a', attribute: 'href' },
-      banner: { selector: 'img', attribute: 'src' },
+      poster: { selector: 'img', attribute: 'src' },
       description: { selector: 'div.cat-links' },
       date: {
         selector: 'time',

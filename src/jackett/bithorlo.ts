@@ -30,7 +30,7 @@ export const definition: TrackerDefinition = {
       { id: '12', cat: 'Audio', desc: 'Zene/Eng' },
       { id: '13', cat: 'Audio', desc: 'Zene/Hun' },
       { id: '20', cat: 'Other', desc: 'Képek' },
-      { id: '21', cat: 'PC/Phone-Other', desc: 'Mobil' },
+      { id: '21', cat: 'PC/Mobile-Other', desc: 'Mobil' },
       { id: '22', cat: 'PC/0day', desc: 'Win/Program/ISO' },
       { id: '23', cat: 'PC/0day', desc: 'Win/Program/Rip' },
       { id: '9', cat: 'XXX', desc: 'XXX/Film' },
@@ -110,7 +110,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'a[href^="torrent.php?id="][onmouseover]',
         attribute: 'onmouseover',

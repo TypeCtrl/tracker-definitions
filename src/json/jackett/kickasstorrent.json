@@ -8,7 +8,7 @@
   "followredirect": true,
   "links": [
     "https://newkatcr.co/",
-    "https://kat.unblockit.lat/",
+    "https://kat.unblockit.app/",
     "https://katcr.unblocked.rest/"
   ],
   "legacylinks": [
@@ -30,7 +30,8 @@
     "https://katcr.proxyportal.pw/",
     "https://katcr.uk-unblock.pro/",
     "https://kat.unblockit.top/",
-    "https://kat.root.yt/"
+    "https://kat.root.yt/",
+    "https://kat.unblockit.lat/"
   ],
   "caps": {
     "categorymappings": [
@@ -38,7 +39,7 @@
       { "id": "133", "cat": "TV/Anime", "desc": "Anime - Other" },
       {
         "id": "144",
-        "cat": "PC/Phone-Other",
+        "cat": "PC/Mobile-Other",
         "desc": "Applications - Handheld"
       },
       { "id": "142", "cat": "PC/0day", "desc": "Applications - Linux" },

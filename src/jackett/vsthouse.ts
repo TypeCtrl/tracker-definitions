@@ -18,8 +18,13 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'search' }],
     inputs: {
       q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
+      m: 'load',
+      t: 0,
     },
-    rows: { selector: 'table.eBlock:has(div.eDetails:contains(":"))' },
+    rows: {
+      selector: 'table.eBlock:has(div.eDetails:contains(":"))',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       category: { text: 'Audio' },
       title: { selector: 'div.eTitle a' },

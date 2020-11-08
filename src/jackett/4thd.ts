@@ -109,7 +109,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       description: { selector: 'div.tags' },
-      banner: {
+      poster: {
         selector: 'td:nth-child(2) script',
         optional: true,
         filters: [

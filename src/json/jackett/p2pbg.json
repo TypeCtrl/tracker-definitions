@@ -43,8 +43,8 @@
       { "id": "37", "cat": "Other/Misc", "desc": "Pictures" },
       { "id": "4", "cat": "Other", "desc": "Other" },
       { "id": "6", "cat": "Books", "desc": "Books" },
-      { "id": "52", "cat": "PC/Phone-Other", "desc": "Mobile-GSM" },
-      { "id": "40", "cat": "PC/Phone-IOS", "desc": "Mobile-iPhone" },
+      { "id": "52", "cat": "PC/Mobile-Other", "desc": "Mobile-GSM" },
+      { "id": "40", "cat": "PC/Mobile-iOS", "desc": "Mobile-iPhone" },
       { "id": "51", "cat": "TV/Sport", "desc": "Sport" },
       { "id": "5", "cat": "TV/Sport", "desc": "Sport F1" },
       { "id": "13", "cat": "XXX", "desc": "XXX" },
@@ -135,7 +135,7 @@
           { "name": "append", "args": "&f={{.Result.title}}.torrent" }
         ]
       },
-      "banner": {
+      "poster": {
         "selector": "td img[src=\"/torrentimg/pic.png\"]",
         "attribute": "onmouseover",
         "filters": [{ "name": "regexp", "args": "src=(.+?) width=" }]

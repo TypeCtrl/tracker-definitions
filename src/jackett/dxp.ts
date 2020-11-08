@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'PC', desc: 'Приложения Windows' },
       { id: '3', cat: 'PC', desc: 'Приложения Unix/Linux' },
       { id: '4', cat: 'PC/Mac', desc: 'Приложения Mac' },
-      { id: '2', cat: 'PC/Phone-Other', desc: 'Приложения PDA' },
+      { id: '2', cat: 'PC/Mobile-Other', desc: 'Приложения PDA' },
       { id: '5', cat: 'PC/Games', desc: 'Игры PC' },
       { id: '23', cat: 'PC/Games', desc: 'Игры Unix/Linux' },
       { id: '6', cat: 'Console/PS3', desc: 'Игры PlayStation 3' },

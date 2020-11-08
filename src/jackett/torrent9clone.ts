@@ -92,6 +92,13 @@ export const definition: TrackerDefinition = {
       label: 'Replace VOSTFR with ENGLISH',
       default: false,
     },
+    {
+      name: 'info_145469',
+      type: 'info',
+      label: 'About Torrent9clone Categories',
+      default:
+        "Torrent9clone only returns category <b>Movies</b> in its <i>Keywordless</i> search results page.</br>To pass your apps' indexer TEST you will need to include the 145469(Movies) category.",
+    },
   ],
   download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {

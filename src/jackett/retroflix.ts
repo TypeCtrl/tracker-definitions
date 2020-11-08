@@ -113,7 +113,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'tr[onmouseover]',
         attribute: 'onmouseover',

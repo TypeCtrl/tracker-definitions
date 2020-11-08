@@ -145,7 +145,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'img[alt="torrent thumbnail"]',
         attribute: 'src',
         filters: [{ name: 'replace', args: ['pic/nopic.jpg', ''] }],

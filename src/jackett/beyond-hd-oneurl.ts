@@ -85,7 +85,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.torrent-name', attribute: 'href' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'div.torrent-poster img',
         attribute: 'src',

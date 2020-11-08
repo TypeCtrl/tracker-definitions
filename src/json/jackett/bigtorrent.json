@@ -26,7 +26,7 @@
       { "id": "63", "cat": "Books", "desc": "English Books" },
       { "id": "62", "cat": "Books", "desc": "Hungarian Books" },
       { "id": "74", "cat": "Audio/Lossless", "desc": "Lossless" },
-      { "id": "56", "cat": "PC/Phone-Other", "desc": "Mobile" },
+      { "id": "56", "cat": "PC/Mobile-Other", "desc": "Mobile" },
       { "id": "57", "cat": "PC", "desc": "Programs" },
       { "id": "24545", "cat": "TV/HD", "desc": "English HD Series" },
       { "id": "24544", "cat": "TV/HD", "desc": "Hungarian HD Series" },

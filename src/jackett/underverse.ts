@@ -1632,7 +1632,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       prev_allw: 0,
       prev_a: 0,
       prev_dla: 0,
@@ -1662,6 +1662,11 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'tr[id^="tor_"]:has(a[href^="magnet:?xt="])' },
     fields: {
+      category: {
+        selector: 'a.gen',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'f' }],
+      },
       title: {
         selector: 'a.genmed:nth-child(2), a.seedmed:nth-child(2)',
         filters: [
@@ -1688,11 +1693,6 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'a.tLink', attribute: 'href' },
       magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
-      category: {
-        selector: 'a.gen',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'f' }],
-      },
       size: { selector: 'td:nth-child(7) > u' },
       seeders: { selector: 'td.seedmed > b' },
       leechers: { selector: 'td.leechmed > b' },

@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
       { id: '153', cat: 'Movies/DVD', desc: 'Movies/Turkish/DVD5-DVD9' },
       {
         id: '154',
-        cat: 'Movies/WEBDL',
+        cat: 'Movies/WEB-DL',
         desc: 'Movies/Turkish/BRRip-HDRip-DVDRip-WebDL',
       },
       { id: '155', cat: 'Movies/Other', desc: 'Movies/Turkish/Boxset' },
@@ -28,7 +28,7 @@ export const definition: TrackerDefinition = {
       { id: '161', cat: 'Movies/DVD', desc: 'Movies/Foreign/DVD5-DVD9' },
       {
         id: '162',
-        cat: 'Movies/WEBDL',
+        cat: 'Movies/WEB-DL',
         desc: 'Movies/Foreign/BRRip-HDRip-DVDRip-WebDL',
       },
       { id: '163', cat: 'Movies/Other', desc: 'Movies/Foreign/Boxset' },
@@ -146,12 +146,12 @@ export const definition: TrackerDefinition = {
         'table#torrents_table_classic > tbody > tr:has(td.torrent_name){{ if .Config.freeleech }}:has(img[title="FREE!"]){{ else }}{{ end }}',
     },
     fields: {
-      title: { selector: 'a[href*="?p=torrents&pid=10&action=details"]' },
       category: {
         selector: 'div.category_image > a',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cid' }],
       },
+      title: { selector: 'a[href*="?p=torrents&pid=10&action=details"]' },
       details: {
         selector: 'a[href*="?p=torrents&pid=10&action=details"]',
         attribute: 'href',
@@ -172,7 +172,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'a[rel="torrent_seeders"]' },
       leechers: { selector: 'a[rel="torrent_leechers"]' },
       grabs: { selector: 'a[rel="times_completed"]' },
-      banner: {
+      poster: {
         selector: 'a[rel="fancybox"]',
         optional: true,
         attribute: 'href',

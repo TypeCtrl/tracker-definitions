@@ -198,7 +198,7 @@ export const definition: TrackerDefinition = {
       title: {
         text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
-      banner: {
+      poster: {
         selector: 'a.torrentlink > img.img-responsive',
         attribute: 'src',
       },

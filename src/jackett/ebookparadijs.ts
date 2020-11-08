@@ -99,7 +99,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      banner: { selector: 'img[src*="/covers/"]', attribute: 'src' },
+      poster: { selector: 'img[src*="/covers/"]', attribute: 'src' },
       title: { selector: 'a[href^="details.php?id="]' },
       details: {
         selector: 'a[href^="details.php?id="]',

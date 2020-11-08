@@ -27,7 +27,7 @@ export const definition: TrackerDefinition = {
         attribute: 'class',
         optional: true,
       },
-      banner: { selector: 'img', attribute: 'src' },
+      poster: { selector: 'img', attribute: 'src' },
       date: { text: 'now' },
       size: { text: '512 MB' },
       seeders: { text: 1 },

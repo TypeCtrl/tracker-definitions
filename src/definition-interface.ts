@@ -20,7 +20,7 @@ export interface TrackerDefinition {
   /**
    * upstream origin of the tracker definition
    */
-  source: 'jackett' | 'cardigann' | 'custom';
+  source: 'jackett' | 'custom';
   /**
    * Internal name of the indexer (all lower case, typically the
    * display name without any special characters, same as filename)
@@ -46,7 +46,7 @@ export interface TrackerDefinition {
    */
   caps: {
     /**
-     * Mapping between the tracker categories and the Newznab categories. Not supported by Cardigann.
+     * Mapping between the tracker categories and the Newznab categories
      */
     categorymappings?: Categorymapping[];
     /**
@@ -91,7 +91,7 @@ export interface TrackerDefinition {
 }
 
 /**
- * Mapping between the tracker categories and the Newznab categories. Not supported by Cardigann.
+ * Mapping between the tracker categories and the Newznab categories
  */
 export interface Categorymapping {
   [key: string]: any;

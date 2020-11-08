@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.gtdb.to/',
     'https://glodls.to/',
-    'https://glotorrents.unblockit.lat/',
+    'https://glotorrents.unblockit.app/',
     'https://glodls.unblocked.rest/',
   ],
   legacylinks: [
@@ -32,11 +32,12 @@ export const definition: TrackerDefinition = {
     'https://glodls.uk-unblock.pro/',
     'https://gtdb.to/',
     'https://glotorrents.unblockit.top/',
+    'https://glotorrents.unblockit.lat/',
   ],
   caps: {
     categorymappings: [
       { id: '50', cat: 'XXX', desc: 'XXX' },
-      { id: '5', cat: 'PC/Phone-Android', desc: 'Android' },
+      { id: '5', cat: 'PC/Mobile-Android', desc: 'Android' },
       { id: '28', cat: 'TV/Anime', desc: 'Anime' },
       { id: '18', cat: 'PC', desc: 'Apps' },
       { id: '51', cat: 'Books/Ebook', desc: 'Books' },
@@ -44,7 +45,7 @@ export const definition: TrackerDefinition = {
       { id: '75', cat: 'Audio/Lossless', desc: 'FLAC' },
       { id: '10', cat: 'PC/Games', desc: 'Games' },
       { id: '55', cat: 'PC/Mac', desc: 'Macintosh' },
-      { id: '52', cat: 'PC/Phone-Other', desc: 'Mobile' },
+      { id: '52', cat: 'PC/Mobile-Other', desc: 'Mobile' },
       { id: '1', cat: 'Movies', desc: 'Movies' },
       { id: '22', cat: 'Audio', desc: 'Music' },
       { id: '33', cat: 'Other', desc: 'Other' },

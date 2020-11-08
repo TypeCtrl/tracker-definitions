@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: '13', cat: 'Movies/BluRay', desc: 'Films BD-Rip / BRRip' },
-      { id: '19', cat: 'Movies/WEBDL', desc: 'Films WEB-DL / WEB-Rip' },
+      { id: '19', cat: 'Movies/WEB-DL', desc: 'Films WEB-DL / WEB-Rip' },
       { id: '15', cat: 'Movies/DVD', desc: 'Films DVD-Rip' },
       { id: '18', cat: 'Movies/HD', desc: 'Films HD 720p' },
       { id: '20', cat: 'Movies/HD', desc: 'Films HD 1080p' },
@@ -63,8 +63,8 @@ export const definition: TrackerDefinition = {
       { id: '60', cat: 'Console', desc: 'Jeux Consoles' },
       { id: '61', cat: 'Books/Ebook', desc: 'Livres epub' },
       { id: '62', cat: 'Books/Ebook', desc: 'Livres pdf' },
-      { id: '63', cat: 'Books/Magazines', desc: 'Livres Journaux' },
-      { id: '64', cat: 'Books/Magazines', desc: 'Livres Magazines' },
+      { id: '63', cat: 'Books/Mags', desc: 'Livres Journaux' },
+      { id: '64', cat: 'Books/Mags', desc: 'Livres Magazines' },
       { id: '65', cat: 'Books/Comics', desc: 'Livres Bandes Dessinées' },
       { id: '66', cat: 'Books/Other', desc: 'Livres Multi-Format' },
       { id: '68', cat: 'PC/0day', desc: 'Logiciels Windows' },
@@ -194,7 +194,7 @@ export const definition: TrackerDefinition = {
         selector: 'td a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="index.php?page=torrent-details"][onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],

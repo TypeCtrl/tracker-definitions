@@ -39,7 +39,7 @@ export const definition: TrackerDefinition = {
       { id: '116', cat: 'PC/Games', desc: 'Linux/Spiele' },
       {
         id: '53',
-        cat: 'PC/Phone-Android',
+        cat: 'PC/Mobile-Android',
         desc: 'Android/Appz/Games/Navi',
       },
       { id: '126', cat: 'PC', desc: 'Win/Mac/linux' },
@@ -52,11 +52,7 @@ export const definition: TrackerDefinition = {
       { id: '9', cat: 'Other/Misc', desc: 'Sonstiges' },
       { id: '115', cat: 'TV/Sport', desc: 'Sport' },
       { id: '69', cat: 'XXX', desc: 'XXX' },
-      {
-        id: '122',
-        cat: 'Books/Magazines',
-        desc: 'Zeitschriften/Zeitungen',
-      },
+      { id: '122', cat: 'Books/Mags', desc: 'Zeitschriften/Zeitungen' },
     ],
     modes: {
       search: ['q'],

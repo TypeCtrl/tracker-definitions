@@ -61,7 +61,7 @@
           "div.cats_xxx": 5
         }
       },
-      "comments": {
+      "details": {
         "selector": "a[href^=\"torrents.php?id=\"]",
         "attribute": "href"
       },
@@ -70,7 +70,7 @@
         "optional": true,
         "attribute": "href"
       },
-      "banner": {
+      "poster": {
         "selector": "img[alt=\"Cover\"]",
         "optional": true,
         "attribute": "src"

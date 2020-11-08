@@ -2,13 +2,22 @@ import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
   id: 'kickasstorrent-kathow',
-  name: 'KickAssTorrent (kat.li)',
-  description: 'kat.li is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
+  name: 'kickasstorrents (kickass.ws)',
+  description: 'kickasstorrents (kickass.ws) is a Public KickAssTorrent clone for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://kickass.ws/', 'https://kickasstorrents.unblockninja.com/'],
+  links: [
+    'https://kickass.ws/',
+    'https://kickasstorrents.bz/',
+    'https://kkickass.com/',
+    'https://kkat.net/',
+    'https://kickass-kat.com/',
+    'https://kickasst.net/',
+    'https://kickasstorrents.id/',
+    'https://thekat.cc/',
+  ],
   legacylinks: [
     'https://kickass.gg/',
     'https://katcr.io/',
@@ -25,8 +34,19 @@ export const definition: TrackerDefinition = {
     'https://kickass.unblockit.id/',
     'https://kickass.unblockit.win/',
     'https://kickass.unblockit.top/',
+    'https://kickasstorrents.unblockninja.com/',
   ],
   caps: {
+    categorymappings: [
+      { id: 'applications', cat: 'PC', desc: 'Apps' },
+      { id: 'books', cat: 'Books', desc: 'Books' },
+      { id: 'games', cat: 'Console', desc: 'Games' },
+      { id: 'movies', cat: 'Movies', desc: 'Movies' },
+      { id: 'music', cat: 'Audio', desc: 'Music' },
+      { id: 'other', cat: 'Other', desc: 'Other' },
+      { id: 'tv', cat: 'TV', desc: 'TV' },
+      { id: 'xxx', cat: 'XXX', desc: 'XXX' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -34,19 +54,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'movies', cat: 'Movies' },
-      { id: 'tv', cat: 'TV' },
-      { id: 'music', cat: 'Audio' },
-      { id: 'books', cat: 'Books' },
-      { id: 'games', cat: 'Console' },
-      { id: 'applications', cat: 'PC' },
-      { id: 'xxx', cat: 'XXX' },
-      { id: 'other', cat: 'Other' },
-      { id: 'video', cat: 'TV' },
-      { id: 'porn', cat: 'XXX' },
-      { id: 'audio', cat: 'Audio' },
-    ],
   },
   settings: [
     {
@@ -68,50 +75,43 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{else}}new/{{end}}?field={{ .Config.sort }}&sorder={{ .Config.type }}',
+          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}?field={{ .Config.sort }}&sorder={{ .Config.type }}',
       },
     ],
-    rows: { selector: 'table[class="data"] tr[id]' },
+    rows: { selector: 'table.data tr[id]' },
     fields: {
-      category: {
-        optional: true,
-        selector: 'span[id^="cat_"] > strong > a:contains("Video")',
-        filters: [{ name: 'replace', args: ['Video', 'movies'] }],
-      },
+      category: { text: 'other' },
       'category|noappend': {
-        optional: true,
         selector: 'span[id^="cat_"] > strong > a',
         attribute: 'href',
+        optional: true,
         filters: [{ name: 'tolower' }, { name: 'trim', args: '/' }],
       },
-      title: {
-        selector: 'td:nth-child(1) > div > div > a[class="cellMainLink"]',
-      },
+      title: { selector: 'a[class="cellMainLink"]' },
       details: {
-        selector: 'td:nth-child(1) > div > div > a[class="cellMainLink"]',
+        selector: 'a[class="cellMainLink"]',
         attribute: 'href',
       },
       download: {
-        optional: true,
-        selector: 'a[href^="magnet:?xt="]',
+        selector: 'td:nth-child(1) > div > a[data-download=""]',
         attribute: 'href',
+        filters: [{ name: 'querystring', args: 'url' }],
       },
       size: {
         selector: 'td:nth-child(2)',
-        filters: [
-          { name: 'replace', args: ['N/A', '0 Bytes'] },
-          { name: 're_replace', args: ['[.](?=.*[.])', ''] },
-        ],
+        filters: [{ name: 're_replace', args: ['\\.([0-9]{3})', '$1'] }],
       },
-      date: { selector: 'td:nth-child(3)' },
+      date: {
+        selector: 'td:nth-child(3)',
+        filters: [{ name: 'timeago' }],
+      },
       seeders: {
         selector: 'td:nth-child(4)',
-        filters: [{ name: 'replace', args: ['N/A', '0'] }],
+        filters: [{ name: 'replace', args: ['N/A', 0] }],
       },
       leechers: {
-        optional: true,
         selector: 'td:nth-child(5)',
-        filters: [{ name: 'replace', args: ['N/A', '0'] }],
+        filters: [{ name: 'replace', args: ['N/A', 0] }],
       },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },

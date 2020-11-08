@@ -49,7 +49,7 @@
       { "id": "39", "cat": "Console/Xbox", "desc": "Játék / Xbox" },
       { "id": "40", "cat": "Console/Other", "desc": "Játék / Egyéb" },
       { "id": "16", "cat": "PC/ISO", "desc": "Programok / PC" },
-      { "id": "24", "cat": "PC/Phone-Other", "desc": "Programok / Mobil" },
+      { "id": "24", "cat": "PC/Mobile-Other", "desc": "Programok / Mobil" },
       { "id": "53", "cat": "PC/0day", "desc": "Programok / Egyéb" },
       { "id": "17", "cat": "XXX/XviD", "desc": "Pornó / XviD" },
       { "id": "34", "cat": "XXX/DVD", "desc": "Pornó / DVD-R" },
@@ -111,7 +111,7 @@
         ]
       },
       "size": { "selector": "div.box_size" },
-      "banner": {
+      "poster": {
         "optional": true,
         "selector": "a.cover_a",
         "attribute": "title",

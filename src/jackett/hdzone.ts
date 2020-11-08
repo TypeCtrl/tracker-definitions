@@ -148,7 +148,6 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
-      comments: { selector: 'td:nth-child(3) a', attribute: 'href' },
       date: {
         selector: 'td:nth-child(4):not(:has(span))',
         optional: true,

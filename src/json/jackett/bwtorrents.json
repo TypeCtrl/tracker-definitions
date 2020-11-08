@@ -32,30 +32,38 @@
       { "id": "118", "cat": "Movies", "desc": "Bollywood-Remuxes BluRay" },
       {
         "id": "119",
-        "cat": "Movies/WEBDL",
+        "cat": "Movies/WEB-DL",
         "desc": "Bollywood-Untouched WEB-DLs"
       },
       {
         "id": "120",
-        "cat": "Movies/WEBDL",
+        "cat": "Movies/WEB-DL",
         "desc": "Bollywood-1080p WEB-Rips"
       },
-      { "id": "188", "cat": "Movies/WEBDL", "desc": "Bollywood-720p WEB-Rips" },
+      {
+        "id": "188",
+        "cat": "Movies/WEB-DL",
+        "desc": "Bollywood-720p WEB-Rips"
+      },
       { "id": "121", "cat": "Movies/DVD", "desc": "Bollywood-Untouched DVDs" },
       { "id": "189", "cat": "Movies/DVD", "desc": "Bollywood-Encoded DVDs" },
       {
         "id": "122",
-        "cat": "Movies/WEBDL",
+        "cat": "Movies/WEB-DL",
         "desc": "Bollywood-DVDRips 1080p/720p"
       },
       {
         "id": "123",
-        "cat": "Movies/WEBDL",
+        "cat": "Movies/WEB-DL",
         "desc": "Bollywood-SDRips WEB/DVD"
       },
       { "id": "124", "cat": "Movies/3D", "desc": "Bollywood-3D-Movies" },
       { "id": "190", "cat": "Movies", "desc": "Bollywood-Movies packs" },
-      { "id": "125", "cat": "Movies/WEBDL", "desc": "Bollywood-WEB Originals" },
+      {
+        "id": "125",
+        "cat": "Movies/WEB-DL",
+        "desc": "Bollywood-WEB Originals"
+      },
       {
         "id": "126",
         "cat": "Movies/UHD",
@@ -75,15 +83,15 @@
       { "id": "130", "cat": "Movies", "desc": "Hollywood-BluRay Remuxes" },
       {
         "id": "131",
-        "cat": "Movies/WEBDL",
+        "cat": "Movies/WEB-DL",
         "desc": "Hollywood-Untouched WEB-DLs"
       },
       { "id": "132", "cat": "Movies", "desc": "Hollywood-WEB-Rips" },
       { "id": "133", "cat": "Movies/DVD", "desc": "Hollywood-Untouched DVDs" },
-      { "id": "191", "cat": "Movies/WEBDL", "desc": "Hollywood-Encoded DVDs" },
+      { "id": "191", "cat": "Movies/WEB-DL", "desc": "Hollywood-Encoded DVDs" },
       {
         "id": "134",
-        "cat": "Movies/WEBDL",
+        "cat": "Movies/WEB-DL",
         "desc": "Hollywood-DVDRips 1080p/720p"
       },
       { "id": "193", "cat": "Movies/SD", "desc": "Hollywood-SDRips - WEB/DVD" },
@@ -141,7 +149,7 @@
       { "id": "177", "cat": "Console", "desc": "Games Console" },
       { "id": "178", "cat": "TV/Anime", "desc": "Anime" },
       { "id": "179", "cat": "PC", "desc": "Appz" },
-      { "id": "180", "cat": "PC/Phone-Other", "desc": "Mobile Stuff" },
+      { "id": "180", "cat": "PC/Mobile-Other", "desc": "Mobile Stuff" },
       { "id": "181", "cat": "Other", "desc": "Pics/Wallpapers" },
       { "id": "187", "cat": "XXX", "desc": "Adult XXX 18+" }
     ],

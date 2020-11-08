@@ -78,7 +78,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="torrents.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'img[src^="static/images/torrents/"]',
         attribute: 'src',
         optional: true,

@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '45', cat: 'Console', desc: 'Game/Konzol' },
       { id: '18', cat: 'Other', desc: 'Képek' },
       { id: '17', cat: 'XXX', desc: 'Képek/XXX' },
-      { id: '24', cat: 'PC/Phone-Other', desc: 'Program/Mobil' },
+      { id: '24', cat: 'PC/Mobile-Other', desc: 'Program/Mobil' },
       { id: '1', cat: 'PC/0day', desc: 'Program/PC' },
       { id: '44', cat: 'TV/HD', desc: 'Sorozat/HD-HUN' },
       { id: '46', cat: 'TV/HD', desc: 'Sorozat/HD' },
@@ -62,7 +62,7 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: '4',
+      default: 4,
       options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
@@ -100,8 +100,8 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      keywords: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
-      search_type: '{{ if .Query.IMDBID }}t_description{{else}}t_name{{end}}',
+      keywords: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      search_type: '{{ if .Query.IMDBID }}t_description{{ else }}t_name{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
@@ -109,6 +109,11 @@ export const definition: TrackerDefinition = {
       selector: 'table[border="1"] > tbody > tr:has(a[href*="details.php?id="])',
     },
     fields: {
+      category: {
+        selector: 'a[href^="/browse_old.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
       title: {
         selector: 'a[href*="details.php?id="][onmouseover]',
         attribute: 'onmouseover',
@@ -119,7 +124,16 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      banner: {
+      details: {
+        selector: 'a[href*="details.php?id="][onmouseover]',
+        attribute: 'href',
+      },
+      download: {
+        selector: 'a[href*="details.php?id="]',
+        attribute: 'href',
+        filters: [{ name: 'replace', args: ['details.php', 'download.php'] }],
+      },
+      poster: {
         selector: 'a[href*="details.php?id="][onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'img src=\\"(.*?)\\"' }],
@@ -129,28 +143,14 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
-      details: {
-        selector: 'a[href*="details.php?id="][onmouseover]',
-        attribute: 'href',
-      },
-      category: {
-        selector: 'a[href^="/browse_old.php?cat="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
-      },
-      download: {
-        selector: 'a[href*="details.php?id="]',
-        attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php', 'download.php'] }],
-      },
-      seeders: { selector: 'td:nth-child(7)' },
-      leechers: { selector: 'td:nth-child(8)' },
       files: { selector: 'td:nth-child(5)' },
       size: {
         selector: 'td:nth-child(11):has(b)',
         optional: true,
         remove: 'b',
       },
+      seeders: { selector: 'td:nth-child(7)' },
+      leechers: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: {
           'img[src="./pic/freedownload.gif"]': 0,

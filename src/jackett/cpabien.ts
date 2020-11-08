@@ -48,11 +48,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [
-      { id: '1', cat: 'TV' },
-      { id: '2', cat: 'Movies' },
-      { id: '3', cat: 'Other' },
-    ],
+    categorymappings: [{ id: 'Other', cat: 'Other' }],
   },
   settings: [
     { name: 'cookie', type: 'text', label: 'Cookie' },
@@ -72,12 +68,11 @@ export const definition: TrackerDefinition = {
         "<ol><li>From the same place you fetched the cookie,<li>Find <b>'user-agent:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole user-agent string <i>(everything after 'user-agent: ')</i> and <b>Paste</b> here.</ol>",
     },
     {
-      name: 'category-id',
-      type: 'select',
-      label:
-        'The cpabien web site does not provide categories. Select the category you want Jackett to set on all results returned.',
-      default: 3,
-      options: { '1': 'TV', '2': 'Movies', '3': 'Other' },
+      name: 'info_8000',
+      type: 'info',
+      label: 'About cpasbien Categories',
+      default:
+        "cpasbien does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other).",
     },
     {
       name: 'multilang',
@@ -130,7 +125,7 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: 'div#gauche > table > tbody > tr:has(a)' },
     fields: {
-      category: { text: '{{ .Config.category-id }}' },
+      category: { text: 'Other' },
       site_date: {
         selector: 'a',
         filters: [{ name: 'regexp', args: '(19|20\\d{2})$' }],

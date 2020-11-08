@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
       { id: '10', cat: 'PC/0day', desc: 'Apps 0day' },
       { id: '26', cat: 'PC', desc: 'Apps Linux' },
       { id: '30', cat: 'PC/Mac', desc: 'Apps Mac' },
-      { id: '39', cat: 'PC/Phone-Other', desc: 'Apps Mobile' },
+      { id: '39', cat: 'PC/Mobile-Other', desc: 'Apps Mobile' },
       { id: '9', cat: 'PC', desc: 'Apps PC' },
       { id: '56', cat: 'Console/PSP', desc: 'Games PSP' },
       { id: '52', cat: 'Console/NDS', desc: 'Games DS' },
@@ -37,7 +37,7 @@ export const definition: TrackerDefinition = {
       { id: '71', cat: 'Movies', desc: 'Movies Packs' },
       { id: '73', cat: 'Movies', desc: 'Movies Remux' },
       { id: '15', cat: 'Movies/SD', desc: 'Movies SD' },
-      { id: '65', cat: 'Movies/WEBDL', desc: 'Movies WEB-DL' },
+      { id: '65', cat: 'Movies/WEB-DL', desc: 'Movies WEB-DL' },
       { id: '77', cat: 'TV', desc: 'TV Movies' },
       { id: '19', cat: 'Audio/Lossless', desc: 'Music FLAC' },
       { id: '72', cat: 'Audio/Lossless', desc: 'Music FLAC Packs' },
@@ -137,7 +137,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
         optional: true,

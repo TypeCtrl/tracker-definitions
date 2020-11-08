@@ -9,6 +9,15 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://torrentquest.com/'],
   caps: {
+    categorymappings: [
+      { id: 'TV', cat: 'TV', desc: 'TV Shows' },
+      { id: 'Movie', cat: 'Movies', desc: 'Movies' },
+      { id: 'Music', cat: 'Audio', desc: 'Music' },
+      { id: 'E-Book', cat: 'Books/Ebook', desc: 'E-Books' },
+      { id: 'Game', cat: 'PC/Games', desc: 'Games' },
+      { id: 'Software', cat: 'PC', desc: 'Software' },
+      { id: 'Other', cat: 'Other', desc: 'Other' },
+    ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep'],
@@ -16,15 +25,6 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
       'book-search': ['q'],
     },
-    categorymappings: [
-      { id: 'TV', cat: 'TV' },
-      { id: 'Movie', cat: 'Movies' },
-      { id: 'Music', cat: 'Audio' },
-      { id: 'E-Book', cat: 'Books/Ebook' },
-      { id: 'Game', cat: 'PC/Games' },
-      { id: 'Software', cat: 'PC' },
-      { id: 'Other', cat: 'Other' },
-    ],
   },
   settings: [
     {
@@ -58,9 +58,9 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: 'tr:has(td.m)' },
     fields: {
-      title: { selector: 'td.n a', attribute: 'title' },
       category: { text: 'Other' },
       'category|noappend': { optional: true, selector: 'td[class^="t"]' },
+      title: { selector: 'td.n a', attribute: 'title' },
       details: { selector: 'td.n a', attribute: 'href' },
       magnet: { selector: 'td.m a', attribute: 'href' },
       date: {

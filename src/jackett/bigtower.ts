@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '7', cat: 'PC/Games', desc: 'Giochi' },
       { id: '8', cat: 'Audio', desc: 'Musica' },
       { id: '9', cat: 'PC/0day', desc: 'Software' },
-      { id: '12', cat: 'PC/Phone-Other', desc: 'Applicazioni' },
+      { id: '12', cat: 'PC/Mobile-Other', desc: 'Applicazioni' },
       { id: '14', cat: 'Other', desc: 'Varie & Altro' },
       { id: '13', cat: 'Books', desc: 'Libri & Edicola' },
     ],
@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         filters: [{ name: 're_replace', args: ['(?i)(\\[Richiesta\\])', ''] }],
       },
-      banner: {
+      poster: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],

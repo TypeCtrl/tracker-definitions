@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '4', cat: 'Books/Ebook', desc: 'Hobby/Pastimes' },
       { id: '29', cat: 'Books/Ebook', desc: 'Horror' },
       { id: '5', cat: 'Books/Ebook', desc: 'Language Learning' },
-      { id: '7', cat: 'Books/Magazines', desc: 'Magazines' },
+      { id: '7', cat: 'Books/Mags', desc: 'Magazines' },
       { id: '13', cat: 'Books/Other', desc: 'Misc' },
       { id: '34', cat: 'Audio', desc: 'Music' },
       { id: '37', cat: 'Books/Ebook', desc: 'New Adult' },
@@ -128,7 +128,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
         filters: [

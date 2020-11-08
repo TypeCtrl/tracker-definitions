@@ -80,13 +80,13 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: '.tlist tr:not(:first-child)' },
     fields: {
-      title: { selector: 'td:nth-child(2) a' },
-      details: { selector: 'td:nth-child(2) a', attribute: 'href' },
       category: {
         selector: 'td:nth-child(1) a',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
+      title: { selector: 'td:nth-child(2) a' },
+      details: { selector: 'td:nth-child(2) a', attribute: 'href' },
       download: {
         selector: 'td:nth-child(2) a',
         attribute: 'href',

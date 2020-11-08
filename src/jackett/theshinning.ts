@@ -102,7 +102,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      banner: {
+      poster: {
         optional: true,
         selector: 'div.torrent-poster img',
         attribute: 'src',
@@ -112,11 +112,6 @@ export const definition: TrackerDefinition = {
             args: ['https://theshinning.me/img/nocover.png', ''],
           },
         ],
-      },
-      comments: {
-        selector: 'a[href*="#comments"]',
-        attribute: 'href',
-        optional: true,
       },
       imdb: {
         optional: true,

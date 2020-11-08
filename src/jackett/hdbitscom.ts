@@ -63,7 +63,7 @@ export const definition: TrackerDefinition = {
           'div.cats_xxx': 5,
         },
       },
-      comments: {
+      details: {
         selector: 'a[href^="torrents.php?id="]',
         attribute: 'href',
       },
@@ -72,7 +72,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'img[alt="Cover"]',
         optional: true,
         attribute: 'src',

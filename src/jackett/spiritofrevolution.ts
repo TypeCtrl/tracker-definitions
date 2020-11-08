@@ -38,7 +38,7 @@ export const definition: TrackerDefinition = {
       { id: '150', cat: 'Console/Other', desc: 'Games Android' },
       { id: '49', cat: 'PC/0day', desc: 'APPZ Windows' },
       { id: '130', cat: 'PC/Mac', desc: 'APPZ Mac/Linux' },
-      { id: '153', cat: 'PC/Phone-Android', desc: 'APPZ Android' },
+      { id: '153', cat: 'PC/Mobile-Android', desc: 'APPZ Android' },
       { id: '132', cat: 'Books', desc: 'E-Book Epub' },
       { id: '131', cat: 'Books', desc: 'E-Book PDF' },
       { id: '173', cat: 'TV/Documentary', desc: 'Dokus Packs' },
@@ -131,7 +131,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         optional: true,
       },
-      banner: {
+      poster: {
         selector: 'div[id^="details-"] div div img',
         attribute: 'src',
         optional: true,

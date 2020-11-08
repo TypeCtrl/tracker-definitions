@@ -15,20 +15,15 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
     },
-    categorymappings: [
-      { id: '1', cat: 'TV' },
-      { id: '2', cat: 'Movies' },
-      { id: '3', cat: 'Other' },
-    ],
+    categorymappings: [{ id: 'Other', cat: 'Other' }],
   },
   settings: [
     {
-      name: 'category-id',
-      type: 'select',
-      label:
-        'The Torrent4You web site does not provide categories. Select the category you want Jackett to set on all results returned.',
-      default: 3,
-      options: { '1': 'TV', '2': 'Movies', '3': 'Other' },
+      name: 'info_8000',
+      type: 'info',
+      label: 'About Torrent4You Categories',
+      default:
+        "Torrent4You does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other).",
     },
     {
       name: 'sort',
@@ -56,7 +51,7 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: 'table.tb4 > tbody > tr:has(form)' },
     fields: {
-      category: { text: '{{ .Config.category-id }}' },
+      category: { text: 'Other' },
       title: { selector: 'td:nth-child(1) a' },
       details: { selector: 'td:nth-child(1) a', attribute: 'href' },
       download: { selector: 'td:nth-child(1) a', attribute: 'href' },

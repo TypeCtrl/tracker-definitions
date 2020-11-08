@@ -16,7 +16,7 @@
       { "id": "24", "cat": "PC/Games", "desc": "Games/PC" },
       { "id": "25", "cat": "Console/PSP", "desc": "Games/PlayStation" },
       { "id": "28", "cat": "Console/Xbox", "desc": "Games/XBOX" },
-      { "id": "22", "cat": "PC/Phone-Other", "desc": "Handy/PDA" },
+      { "id": "22", "cat": "PC/Mobile-Other", "desc": "Handy/PDA" },
       { "id": "32", "cat": "TV/Anime", "desc": "Hentai" },
       { "id": "4", "cat": "Audio/Audiobook", "desc": "Hörspiel/Hörbuch" },
       { "id": "31", "cat": "Movies/BluRay", "desc": "Movies/BluRay" },
@@ -28,7 +28,7 @@
       { "id": "19", "cat": "Audio/Video", "desc": "Musik Videos" },
       { "id": "30", "cat": "Other", "desc": "Sonstiges" },
       { "id": "21", "cat": "TV/Sport", "desc": "Sport" },
-      { "id": "5", "cat": "Books/Magazines", "desc": "Tageszeitung" },
+      { "id": "5", "cat": "Books/Mags", "desc": "Tageszeitung" },
       { "id": "14", "cat": "TV", "desc": "TV-Serien" },
       { "id": "29", "cat": "XXX", "desc": "XXX" }
     ],
@@ -128,7 +128,7 @@
         "selector": "a[href^=\"download.php\"]",
         "attribute": "href"
       },
-      "banner": {
+      "poster": {
         "selector": "a[href^=\"details.php\"]",
         "attribute": "onMouseover",
         "filters": [{ "name": "regexp", "args": "src=(.*?) width" }]

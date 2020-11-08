@@ -12,7 +12,7 @@
     "https://www.limetorrents.co/",
     "https://limetor.com/",
     "https://www.limetor.pro/",
-    "https://limetorrents.unblockit.lat/"
+    "https://limetorrents.unblockit.app/"
   ],
   "legacylinks": [
     "https://www.limetorrents.io/",
@@ -34,24 +34,25 @@
     "https://limetorrents.unblockit.pw/",
     "https://limetorrents.unblockit.id/",
     "https://limetorrents.unblockit.win/",
-    "https://limetorrents.unblockit.top/"
+    "https://limetorrents.unblockit.top/",
+    "https://limetorrents.unblockit.lat/"
   ],
   "caps": {
+    "categorymappings": [
+      { "id": "TV shows", "cat": "TV", "desc": "TV shows" },
+      { "id": "Movies", "cat": "Movies", "desc": "Movies" },
+      { "id": "Music", "cat": "Audio", "desc": "Music" },
+      { "id": "Games", "cat": "Console", "desc": "Games" },
+      { "id": "Applications", "cat": "PC/0day", "desc": "Applications" },
+      { "id": "Other", "cat": "Other", "desc": "Other" },
+      { "id": "Anime", "cat": "TV/Anime", "desc": "Anime" }
+    ],
     "modes": {
       "search": ["q"],
       "tv-search": ["q", "season", "ep"],
       "movie-search": ["q"],
       "music-search": ["q"]
-    },
-    "categorymappings": [
-      { "id": "TV shows", "cat": "TV" },
-      { "id": "Movies", "cat": "Movies" },
-      { "id": "Music", "cat": "Audio" },
-      { "id": "Games", "cat": "Console" },
-      { "id": "Applications", "cat": "PC/0day" },
-      { "id": "Other", "cat": "Other/Misc" },
-      { "id": "Anime", "cat": "TV/Anime" }
-    ]
+    }
   },
   "settings": [
     {
@@ -70,6 +71,12 @@
       "label": "Sort requested from site",
       "default": "date",
       "options": { "date": "created", "seeds": "seeders", "size": "size" }
+    },
+    {
+      "name": "info_8000",
+      "type": "info",
+      "label": "About LimeTorrents Categories",
+      "default": "LimeTorrents only returns category <b>Other</b> in its <i>Keywordless</i> search results page.</br>To pass your apps' indexer TEST you will need to include the 8000(Other) category."
     }
   ],
   "download": {
@@ -79,7 +86,7 @@
   "search": {
     "paths": [
       {
-        "path": "{{ if .Keywords }}search/all/{{ .Keywords }}/{{ .Config.sort }}/1/{{else}}/latest100{{end}}"
+        "path": "{{ if .Keywords }}search/all/{{ .Keywords }}/{{ .Config.sort }}/1/{{ else }}/latest100{{ end }}"
       }
     ],
     "keywordsfilters": [
@@ -87,6 +94,16 @@
     ],
     "rows": { "selector": ".table2 > tbody > tr[bgcolor]" },
     "fields": {
+      "category": { "text": "Other" },
+      "category|noappend": {
+        "optional": true,
+        "selector": "td:nth-child(2)",
+        "filters": [
+          { "name": "split", "args": ["-", 1] },
+          { "name": "replace", "args": [" in ", ""] },
+          { "name": "replace", "args": [".", ""] }
+        ]
+      },
       "title": {
         "selector": "div.tt-name > a[href^=\"/\"]",
         "attribute": "href",
@@ -99,9 +116,10 @@
         "selector": "div.tt-name > a[href^=\"/\"]",
         "attribute": "href"
       },
-      "size": { "selector": "td:nth-child(3)" },
-      "seeders": { "selector": ".tdseed" },
-      "leechers": { "selector": ".tdleech" },
+      "download": {
+        "selector": "div.tt-name > a[href^=\"/\"]",
+        "attribute": "href"
+      },
       "date": {
         "selector": "td:nth-child(2)",
         "filters": [
@@ -110,20 +128,9 @@
           { "name": "replace", "args": ["+", " ago"] }
         ]
       },
-      "download": {
-        "selector": "div.tt-name > a[href^=\"/\"]",
-        "attribute": "href"
-      },
-      "category": { "text": "Other" },
-      "category|noappend": {
-        "optional": true,
-        "selector": "td:nth-child(2)",
-        "filters": [
-          { "name": "split", "args": ["-", 1] },
-          { "name": "replace", "args": [" in ", ""] },
-          { "name": "replace", "args": [".", ""] }
-        ]
-      },
+      "size": { "selector": "td:nth-child(3)" },
+      "seeders": { "selector": ".tdseed" },
+      "leechers": { "selector": ".tdleech" },
       "downloadvolumefactor": { "text": 0 },
       "uploadvolumefactor": { "text": 1 }
     }

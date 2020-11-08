@@ -127,7 +127,7 @@ export const definition: TrackerDefinition = {
         attribute: 'alt',
         optional: true,
       },
-      banner: {
+      poster: {
         selector: 'td[onmouseover]',
         attribute: 'onmouseover',
         optional: true,

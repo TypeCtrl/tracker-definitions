@@ -104,7 +104,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
-      banner: { selector: 'div[id^="Style"] img', attribute: 'src' },
+      poster: { selector: 'div[id^="Style"] img', attribute: 'src' },
       size: {
         selector: 'a[href^="details_bestanden.php?torrent_id="]',
         filters: [{ name: 'regexp', args: '(.+?) in' }],

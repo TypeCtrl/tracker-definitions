@@ -118,8 +118,14 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'tv-search': ['q'] },
   },
   settings: [
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
+    { name: 'cookie', type: 'text', label: 'Cookie' },
+    {
+      name: 'info',
+      type: 'info',
+      label: 'How to get the Cookie',
+      default:
+        "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
+    },
     {
       name: 'sort',
       type: 'select',
@@ -136,16 +142,8 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'ucp.php?mode=login',
-    method: 'form',
-    form: 'form#login',
-    inputs: {
-      username: '{{ .Config.username }}',
-      password: '{{ .Config.password }}',
-      autologin: 'on',
-      viewonline: 'on',
-    },
-    error: [{ selector: 'fieldset:has(div.error)' }],
+    method: 'cookie',
+    inputs: { cookie: '{{ .Config.cookie }}' },
     test: {
       path: '/',
       selector: ':has(a[href^="./ucp.php?mode=logout&"])',

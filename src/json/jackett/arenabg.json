@@ -68,16 +68,16 @@
       { "id": "pc-iso", "cat": "PC/ISO", "desc": "Software / PC ISO" },
       {
         "id": "pdasmartphone",
-        "cat": "PC/Phone-Other",
+        "cat": "PC/Mobile-Other",
         "desc": "Software / Smartphone"
       },
       { "id": "tutorial", "cat": "PC", "desc": "Software / Tutorial" },
       {
         "id": "android",
-        "cat": "PC/Phone-Android",
+        "cat": "PC/Mobile-Android",
         "desc": "Software / Android"
       },
-      { "id": "ios", "cat": "PC/Phone-IOS", "desc": "Software / iOS" },
+      { "id": "ios", "cat": "PC/Mobile-iOS", "desc": "Software / iOS" },
       { "id": "misc", "cat": "Other/Misc", "desc": "Misc" },
       { "id": "other", "cat": "Other", "desc": "Misc / Other" },
       { "id": "e-books", "cat": "Books/Ebook", "desc": "Misc / e-Books" },
@@ -175,7 +175,7 @@
         "selector": "td:nth-child(8)",
         "filters": [{ "name": "replace", "args": ["-", "0"] }]
       },
-      "banner": {
+      "poster": {
         "selector": "td.filename div:nth-child(2) a",
         "attribute": "onmouseover",
         "filters": [{ "name": "regexp", "args": "src=\\\\'([^\\s\\\\]+)" }]

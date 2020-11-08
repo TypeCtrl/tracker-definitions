@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   links: ['https://moviezone.ws/'],
   caps: {
     categorymappings: [
-      { id: '76', cat: 'PC/Phone-Android', desc: 'Android' },
+      { id: '76', cat: 'PC/Mobile-Android', desc: 'Android' },
       { id: '68', cat: 'Movies/DVD', desc: 'DVD-9' },
       { id: '60', cat: 'Books/Ebook', desc: 'eBook/Eng' },
       { id: '61', cat: 'Books/Ebook', desc: 'eBook/Hun' },
@@ -37,8 +37,8 @@ export const definition: TrackerDefinition = {
       { id: '49', cat: 'Audio/MP3', desc: 'Mp3/Hun' },
       { id: '45', cat: 'PC/ISO', desc: 'Program/ISO' },
       { id: '44', cat: 'PC', desc: 'Program/Misc' },
-      { id: '36', cat: 'PC/Phone-Other', desc: 'Program/Mobil' },
-      { id: '46', cat: 'PC/Phone-Other', desc: 'Program/PDA' },
+      { id: '36', cat: 'PC/Mobile-Other', desc: 'Program/Mobil' },
+      { id: '46', cat: 'PC/Mobile-Other', desc: 'Program/PDA' },
       { id: '42', cat: 'TV/Anime', desc: 'Rajzfilm/Eng' },
       { id: '43', cat: 'TV/Anime', desc: 'Rajzfilm/Hun' },
       { id: '57', cat: 'TV', desc: 'Sorozat/Eng' },
@@ -131,7 +131,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[onmouseover]',
         optional: true,
         attribute: 'onmouseover',

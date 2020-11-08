@@ -36,7 +36,7 @@ export const definition: TrackerDefinition = {
       { id: '19', cat: 'Audio', desc: 'Musik' },
       { id: '20', cat: 'Audio/Audiobook', desc: 'Hörbuch' },
       { id: '21', cat: 'PC/0day', desc: 'Software Windows' },
-      { id: '23', cat: 'PC/Phone-Other', desc: 'Software PDA/Handy' },
+      { id: '23', cat: 'PC/Mobile-Other', desc: 'Software PDA/Handy' },
       { id: '22', cat: 'PC/Mac', desc: 'Software MAC' },
       { id: '24', cat: 'PC', desc: 'Software Linux' },
     ],
@@ -130,7 +130,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="torrents.php?action=download&id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         selector: 'a[href^="torrents.php?torrentid="] span img',
         attribute: 'src',
       },

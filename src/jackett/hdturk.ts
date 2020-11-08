@@ -127,7 +127,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
-      banner: {
+      poster: {
         selector: 'div[id^="port-content-"] img',
         attribute: 'src',
       },
@@ -139,7 +139,6 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="download.php?id="]',
         attribute: 'href',
       },
-      comments: { selector: 'td:nth-child(4) a', attribute: 'href' },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-child(7)' },

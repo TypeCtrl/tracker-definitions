@@ -9,33 +9,37 @@
   "certificates": ["ba7fb6290a9d7d821e73efb0eac4ed95a7fd2d11"],
   "settings": [],
   "caps": {
+    "categorymappings": [
+      { "id": "影视", "cat": "Movies", "desc": "影视(Movie)" },
+      {
+        "id": "安装包",
+        "cat": "PC/ISO",
+        "desc": "安装包(Installation Package)"
+      },
+      { "id": "其他", "cat": "Other", "desc": "其他(Other)" },
+      { "id": "音乐", "cat": "Audio", "desc": "音乐(Music)" },
+      { "id": "文档书籍", "cat": "Books", "desc": "文档书籍(Documents Book)" },
+      { "id": "压缩文件", "cat": "PC", "desc": "压缩文件(Compressed Files)" },
+      { "id": "图像", "cat": "Other/Misc", "desc": "图像(Image)" }
+    ],
     "modes": {
       "search": ["q"],
       "movie-search": ["q"],
       "music-search": ["q"],
       "book-search": ["q"]
-    },
-    "categorymappings": [
-      { "id": "影视", "cat": "Movies" },
-      { "id": "安装包", "cat": "PC/ISO" },
-      { "id": "其他", "cat": "Other" },
-      { "id": "音乐", "cat": "Audio" },
-      { "id": "文档书籍", "cat": "Books" },
-      { "id": "压缩文件", "cat": "PC" },
-      { "id": "图像", "cat": "Other/Misc" }
-    ]
+    }
   },
   "search": {
     "paths": [
-      { "path": "{{ if .Keywords }}/search/{{ .Keywords }}{{else}}{{end}}" }
+      { "path": "{{ if .Keywords }}/search/{{ .Keywords }}{{ else }}{{ end }}" }
     ],
     "rows": {
       "selector": "div:has(a[href^=\"magnet:?\"])",
       "filters": [{ "name": "andmatch" }]
     },
     "fields": {
-      "title": { "selector": "a[href^=\"/post/\"]" },
       "category": { "selector": "p:has(img) span:nth-last-child(4)" },
+      "title": { "selector": "a[href^=\"/post/\"]" },
       "details": { "selector": "a[href^=\"/post/\"]", "attribute": "href" },
       "download": { "selector": "a[href^=\"magnet:?\"]", "attribute": "href" },
       "size": { "selector": "p:has(img) span:nth-last-child(2)" },

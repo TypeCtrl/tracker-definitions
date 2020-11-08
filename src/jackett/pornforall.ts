@@ -35,7 +35,7 @@ export const definition: TrackerDefinition = {
           { name: 'prepend', args: 'download.php?id=' },
         ],
       },
-      banner: { selector: 'img.im', attribute: 'src' },
+      poster: { selector: 'img.im', attribute: 'src' },
       date: {
         selector: 'a[href^="browse.php?date="]',
         attribute: 'href',

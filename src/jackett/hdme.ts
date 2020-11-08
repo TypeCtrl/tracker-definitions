@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
       { id: '48', cat: 'Movies/HD', desc: 'iCandy' },
       { id: '45', cat: 'Movies/HD', desc: 'INtL' },
       { id: '29', cat: 'Other', desc: 'Misc' },
-      { id: '49', cat: 'PC/Phone-Other', desc: 'Mobile' },
+      { id: '49', cat: 'PC/Mobile-Other', desc: 'Mobile' },
       { id: '30', cat: 'Movies/HD', desc: 'Movie 1080i' },
       { id: '31', cat: 'Movies/HD', desc: 'Movie 1080p' },
       { id: '32', cat: 'Movies/HD', desc: 'Movie 720p' },
@@ -111,7 +111,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'cat' }],
       },
       title: { selector: 'td:nth-child(3) > a', attribute: 'title' },
-      comments: { selector: 'td:nth-child(3) > a', attribute: 'href' },
+      details: { selector: 'td:nth-child(3) > a', attribute: 'href' },
       download: {
         selector: 'td:nth-child(11) > a',
         attribute: 'href',

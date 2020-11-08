@@ -12,10 +12,10 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: '18', cat: 'PC/0day', desc: 'Application - PC' },
       { id: '19', cat: 'PC/Mac', desc: 'Application - Mac' },
-      { id: '21', cat: 'PC/Phone-Other', desc: 'Application - Other' },
+      { id: '21', cat: 'PC/Mobile-Other', desc: 'Application - Other' },
       {
         id: '47',
-        cat: 'PC/Phone-Android',
+        cat: 'PC/Mobile-Android',
         desc: 'Application - Android',
       },
       { id: '61', cat: 'Audio/Audiobook', desc: 'Audio - Audio books' },
@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
       { id: '35', cat: 'Audio', desc: 'Music - Album' },
       { id: '36', cat: 'Books/Ebook', desc: 'Other - E-books' },
       { id: '53', cat: 'Other', desc: 'Other - Other' },
-      { id: '51', cat: 'Books/Magazines', desc: 'Other - Magazines' },
+      { id: '51', cat: 'Books/Mags', desc: 'Other - Magazines' },
       { id: '50', cat: 'Books', desc: 'Other - Books' },
       { id: '56', cat: 'XXX/WMV', desc: 'Porn - Video' },
       { id: '55', cat: 'XXX', desc: 'Porn - Movie' },
@@ -113,6 +113,7 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
     },
+    keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     rows: { selector: 'tr.t-row' },
     fields: {
       category: {

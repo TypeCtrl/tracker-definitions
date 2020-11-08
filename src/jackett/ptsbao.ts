@@ -109,7 +109,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      banner: {
+      poster: {
         optional: true,
         selector: 'img.tooltip',
         attribute: 'src',
