@@ -193,15 +193,10 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      poster: {
-        selector: 'div[id^="details"] img',
-        attribute: 'src',
-        optional: true,
-      },
+      poster: { selector: 'div[id^="details"] img', attribute: 'src' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
-        optional: true,
       },
       size: {
         selector: 'div.selection_unter_ad',

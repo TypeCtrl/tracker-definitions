@@ -236,7 +236,8 @@
           { "name": "replace", "args": ["окт", "Oct"] },
           { "name": "replace", "args": ["ноя", "Nov"] },
           { "name": "replace", "args": ["дек", "Dec"] },
-          { "name": "dateparse", "args": "2 Jan 2006 15:04" }
+          { "name": "append", "args": " +03:00" },
+          { "name": "dateparse", "args": "2 Jan 2006 15:04 -07:00" }
         ]
       },
       "size": {

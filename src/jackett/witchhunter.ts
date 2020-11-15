@@ -119,12 +119,10 @@ export const definition: TrackerDefinition = {
       details: { text: 'details.php?id={{ .Result.id }}' },
       download: { text: 'download.php?id={{ .Result.id }}' },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'a[onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) width' }],

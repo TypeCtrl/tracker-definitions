@@ -68,7 +68,7 @@ export const definition: TrackerDefinition = {
       do: 'search',
       keywords: '{{ .Keywords }}',
       search_type: 't_name',
-      category: '0',
+      category: 0,
       include_dead_torrents: 'yes',
     },
     rows: {
@@ -76,6 +76,11 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch', args: 66 }],
     },
     fields: {
+      category: {
+        selector: 'a[href*="/browse.php?category="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'category' }],
+      },
       title: { optional: true, selector: 'div.tooltip-content > div' },
       details: {
         selector: 'a[href*="/details.php?id="]',
@@ -86,11 +91,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       magnet: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
-      category: {
-        selector: 'a[href*="/browse.php?category="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'category' }],
-      },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-child(7)' },
@@ -110,12 +110,12 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'img[alt^="Free Torrent "]': '0',
-          'img[alt^="Silver Torrent "]': '0.5',
-          '*': '1',
+          'img[alt^="Free Torrent "]': 0,
+          'img[alt^="Silver Torrent "]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

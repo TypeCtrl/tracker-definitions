@@ -80,7 +80,6 @@ export const definition: TrackerDefinition = {
       description: { selector: 'img[width="60"]', attribute: 'title' },
       poster: {
         selector: 'a[onmouseover]',
-        optional: true,
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) width' }],
       },

@@ -142,7 +142,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'selection.php' }],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}scat[]={{.}}&{{end}}{{else}}{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}scat[]={{.}}&{{end}}{{ else }}{{ end }}',
       search: '{{ .Keywords }}',
       blah: 0,
       orderby: '{{ .Config.sort }}',
@@ -152,7 +152,6 @@ export const definition: TrackerDefinition = {
       selector: 'div.content_wrap > div.selection_wrap:has(a[href^="details.php?id="])',
     },
     fields: {
-      title: { selector: 'a[href^="details.php?id="]' },
       category: {
         selector: 'a[href^="selection.php?cat="]',
         attribute: 'href',
@@ -161,6 +160,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['#2', ''] },
         ],
       },
+      title: { selector: 'a[href^="details.php?id="]' },
       details: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
@@ -182,8 +182,8 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'div.selection_unter_ab',
         filters: [
-          { name: 'append', args: ' +01:00' },
           { name: 'replace', args: ['um ', ''] },
+          { name: 'append', args: ' +01:00' },
           { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
         ],
       },

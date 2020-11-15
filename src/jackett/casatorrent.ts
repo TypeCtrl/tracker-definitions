@@ -207,7 +207,8 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [
           { name: 'regexp', args: 'le: </b>(.*?)<br' },
-          { name: 'dateparse', args: '02-01-2006' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02-01-2006 -07:00' },
         ],
       },
       downloadvolumefactor: {

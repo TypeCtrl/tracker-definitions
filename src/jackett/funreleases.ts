@@ -169,7 +169,6 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'a[href^="index.php?page=torrent-details&id="]',
         attribute: 'onmouseover',
-        optional: true,
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
       },
       date: {

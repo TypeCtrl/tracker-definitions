@@ -130,7 +130,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       page: 'torrents',
       search: '{{ .Keywords }}',
-      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
+      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0{{ end }}',
       active: 0,
       internel: 0,
       order: '{{ .Config.sort }}',

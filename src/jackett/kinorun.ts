@@ -130,7 +130,6 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'td[onmouseover]',
         attribute: 'onmouseover',
-        optional: true,
         filters: [{ name: 'regexp', args: 'src=(.+?) width' }],
       },
       date: {

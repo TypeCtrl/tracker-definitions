@@ -70,7 +70,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
     },
     rows: {
@@ -79,6 +79,10 @@ export const definition: TrackerDefinition = {
     fields: {
       description: { optional: true, selector: 'td:nth-child(2) > font' },
       title: { selector: 'td:nth-child(2)', remove: 'font' },
+      details: {
+        selector: 'a[href^="details.php?id="]',
+        attribute: 'href',
+      },
       category: {
         optional: true,
         case: {
@@ -86,18 +90,11 @@ export const definition: TrackerDefinition = {
           'a[href="/browse.php?ext=1&format=MP3"]': 3010,
         },
       },
-      details: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
-      },
       download: {
         selector: 'a[href^="download.php"]',
         attribute: 'href',
       },
       files: { selector: 'td:nth-child(5)' },
-      size: { selector: 'td:nth-child(8)' },
-      seeders: { selector: 'td:nth-child(10)' },
-      leechers: { selector: 'td:nth-child(11)' },
       date: {
         selector: 'td:nth-child(7)',
         filters: [
@@ -105,7 +102,10 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
+      size: { selector: 'td:nth-child(8)' },
       grabs: { selector: 'td:nth-child(9)' },
+      seeders: { selector: 'td:nth-child(10)' },
+      leechers: { selector: 'td:nth-child(11)' },
       downloadvolumefactor: {
         case: { 'img[alt="Free Leech"]': 0, '*': 1 },
       },

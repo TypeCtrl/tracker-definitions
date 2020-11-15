@@ -140,7 +140,6 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
-        optional: true,
         filters: [
           { name: 'regexp', args: 'src="(.*?)"' },
           { name: 'replace', args: ['./pic/noposter.png', ''] },
@@ -149,7 +148,6 @@ export const definition: TrackerDefinition = {
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
-        optional: true,
       },
       files: { selector: 'td:nth-last-child(8)' },
       date: {

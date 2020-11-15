@@ -112,7 +112,8 @@ export const definition: TrackerDefinition = {
       by: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table.table.table-bordered > tbody > tr:has(a[href^="download.php?id="])',
+      selector:
+        'table.table.table-bordered > tbody > tr:has(a[href^="download.php?id="]):not(:has(td[style*="background-color"]))',
     },
     fields: {
       download: {
@@ -127,6 +128,7 @@ export const definition: TrackerDefinition = {
           { name: 'append', args: '.Spanish-DivTeam' },
           { name: 're_replace', args: ['\\.+', '.'] },
           { name: 're_replace', args: ['^\\.', ''] },
+          { name: 're_replace', args: ['UHDRip', 'BDRip'] },
         ],
       },
       poster: {

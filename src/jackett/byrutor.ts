@@ -287,7 +287,7 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'div.short_titles > a', attribute: 'href' },
       download: { selector: 'div.short_titles > a', attribute: 'href' },
-      poster: { selector: 'img', attribute: 'src', optional: true },
+      poster: { selector: 'img', attribute: 'src' },
       description: { selector: 'div.shor_desc', optional: true },
       date: { text: 'now' },
       seeders: { text: 1 },

@@ -66,7 +66,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}search.php?keyword={{ .Keywords }}{{else}}1.html{{end}}',
+        path: '{{ if .Keywords }}search.php?keyword={{ .Keywords }}{{ else }}1.html{{ end }}',
       },
     ],
     rows: {

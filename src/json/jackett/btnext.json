@@ -160,8 +160,8 @@
       "p": "torrents",
       "pid": 32,
       "$raw": "{{ range .Categories }}cid[]={{.}}&{{end}}",
-      "keywords": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
-      "search_type": "{{ if .Query.IMDBID }}description{{else}}name{{end}}",
+      "keywords": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
+      "search_type": "{{ if .Query.IMDBID }}description{{ else }}name{{ end }}",
       "sortOptions[sortBy]": "{{ .Config.sort }}",
       "sortOptions[sortOrder]": "{{ .Config.type }}"
     },
@@ -174,12 +174,12 @@
       "selector": "table#torrents_table_classic > tbody > tr:has(td.torrent_name)"
     },
     "fields": {
-      "title": { "selector": "a[href*=\"?p=torrents&pid=10&action=details\"]" },
       "category": {
         "selector": "div.category_image > a",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "cid" }]
       },
+      "title": { "selector": "a[href*=\"?p=torrents&pid=10&action=details\"]" },
       "details": {
         "selector": "a[href*=\"?p=torrents&pid=10&action=details\"]",
         "attribute": "href"
@@ -192,13 +192,8 @@
       "seeders": { "selector": "a[rel=\"torrent_seeders\"]" },
       "leechers": { "selector": "a[rel=\"torrent_leechers\"]" },
       "grabs": { "selector": "a[rel=\"times_completed\"]" },
-      "poster": {
-        "selector": "a[rel=\"fancybox\"]",
-        "optional": true,
-        "attribute": "href"
-      },
+      "poster": { "selector": "a[rel=\"fancybox\"]", "attribute": "href" },
       "imdb": {
-        "optional": true,
         "selector": "a[href*=\"/imdb/tt\"]",
         "attribute": "href",
         "filters": [

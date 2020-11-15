@@ -111,7 +111,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'a[href^="details.php?id="]',
         attribute: 'onmouseover',
         filters: [

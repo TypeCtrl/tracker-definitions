@@ -40,7 +40,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      timeout: '1',
+      timeout: 1,
     },
     error: [{ selector: 'div#error-text' }],
     test: { path: 'torrents.php' },
@@ -49,7 +49,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
-      searchstr: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      searchstr: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
     },
     rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
     fields: {

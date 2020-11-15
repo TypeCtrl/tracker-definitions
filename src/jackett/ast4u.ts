@@ -56,7 +56,7 @@ export const definition: TrackerDefinition = {
       type: 'info',
       label: 'Results Per Page',
       default:
-        'For best results, change the \'Torrentliste\' setting to "Platzsparendes Layout mit PopUp für zusätzliche Informationen" in your profile.',
+        'For best results, change the <b>Torrentliste</b> setting to <i>Platzsparendes Layout mit PopUp für zusätzliche Informationen</i> in your profile.',
     },
   ],
   login: {
@@ -73,8 +73,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      incldead: '0',
+      search: '{{ .Keywords }}',
+      incldead: 0,
       orderby: 'added',
       sort: 'desc',
     },
@@ -134,9 +134,9 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: {
-        case: { 'img[src="/pic/free.gif"]': '0', '*': '1' },
+        case: { 'img[src="/pic/free.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

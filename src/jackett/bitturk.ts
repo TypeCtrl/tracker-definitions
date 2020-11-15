@@ -165,11 +165,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'a[rel="torrent_seeders"]' },
       leechers: { selector: 'a[rel="torrent_leechers"]' },
       grabs: { selector: 'a[rel="times_completed"]' },
-      poster: {
-        selector: 'a[rel="fancybox"]',
-        optional: true,
-        attribute: 'href',
-      },
+      poster: { selector: 'a[rel="fancybox"]', attribute: 'href' },
       downloadvolumefactor: {
         case: {
           'img[src$="/silver.gif"]': 0.5,

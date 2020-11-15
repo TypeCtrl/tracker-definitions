@@ -76,9 +76,9 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
-      fullsearch: '{{ if .Query.IMDBID }}1{{else}}{{end}}',
+      fullsearch: '{{ if .Query.IMDBID }}1{{ else }}{{ end }}',
       sort: '{{ .Config.sort }}',
       d: '{{ .Config.sort }}',
     },
@@ -105,7 +105,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

@@ -97,7 +97,6 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       grabs: { selector: 'td:nth-last-child(1)' },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

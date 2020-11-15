@@ -10,11 +10,11 @@ export const definition: TrackerDefinition = {
   links: ['https://desireleasers.be/'],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'Movies', desc: 'Movies' },
-      { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '3', cat: 'Audio', desc: 'Music' },
-      { id: '4', cat: 'Audio/Video', desc: 'Music Videos' },
-      { id: '5', cat: 'Console', desc: 'Game' },
+      {
+        id: '1',
+        cat: 'Other',
+        desc: 'Movies, TV, Music, MV, Game, Blockbuster',
+      },
     ],
     modes: {
       search: ['q'],
@@ -69,8 +69,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents/filter' }],
     inputs: {
-      $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
@@ -78,60 +77,52 @@ export const definition: TrackerDefinition = {
       tmdb: '{{ .Query.TMDBID }}',
       mal: '',
       igdb: '',
+      start_year: '',
+      end_year: '',
       sorting: '{{ .Config.sort }}',
-      sort: '{{ .Config.sort }}',
       direction: '{{ .Config.type }}',
-      qty: 50,
+      qty: 100,
+      page: 0,
+      view: 'list',
       freeleech: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
     },
-    rows: { selector: 'table > tbody > tr' },
+    rows: { selector: 'table > tbody > tr:has(a[href^="magnet:?dn="])' },
     fields: {
-      category: {
-        selector: 'a[href*="/categories/"]',
-        attribute: 'href',
-        filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
-      },
-      title: { selector: 'a.view-torrent' },
+      category: { text: 1 },
+      title: { selector: 'a[href*="/torrents/"]' },
+      details: { selector: 'a[href*="/torrents/"]', attribute: 'href' },
       download: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      details: { selector: 'a.view-torrent', attribute: 'href' },
+      magnet: { selector: 'a[href^="magnet:?dn="]', attribute: 'href' },
       poster: {
-        optional: true,
-        selector: 'div.torrent-poster img',
+        selector: 'img.tps',
         attribute: 'src',
         filters: [
+          { name: 'prepend', args: 'https://images.weserv.nl/?url=' },
+          { name: 'append', args: '&w=180&h=270' },
           {
             name: 'replace',
-            args: ['https://via.placeholder.com/600x900', ''],
+            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/600x900&w=180&h=270', ''],
           },
         ],
       },
-      size: { selector: 'td:nth-last-child(4)' },
-      seeders: { selector: 'td:nth-last-child(3)' },
-      leechers: { selector: 'td:nth-last-child(2)' },
-      grabs: {
-        selector: 'td:nth-last-child(1)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       tmdbid: {
-        optional: true,
         selector: 'a[href*="themoviedb.org/movie/"]',
         attribute: 'href',
       },
       date: {
-        selector: 'time',
+        selector: 'td:nth-last-child(6)',
         filters: [
           {
             name: 're_replace',
             args: [
-              '(?i)(önce|tagasi|geleden|fa|temu|siden|há|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前)',
+              '(?i)(önce|tagasi|geleden|fa|temu|siden|há|atrás|nazpět|назад|acum|în urmă|hace|il y a|vor|преди|前|sedan)',
               ' ago',
             ],
           },
@@ -144,7 +135,10 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: ['(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten)', 'minutes'],
+            args: [
+              '(?i)(minutit|minutter|minuti|minuty|minutos|минуты|минут|Minuten|минути|minuten|minuter)',
+              'minutes',
+            ],
           },
           {
             name: 're_replace',
@@ -152,15 +146,15 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: ['(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden)', 'hours'],
+            args: ['(?i)(tundi|timer|ore|godziny|horas|hodiny|hoden|часа|часов|ore|heures|Stunden|timmar)', 'hours'],
           },
           {
             name: 're_replace',
-            args: ['(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时|時間)', ' hour'],
+            args: ['(?i)(saat|tund|time|ora|godzina|hora|hodina|час|oră|heure|Stunde|uur|小时|時間|timme)', ' hour'],
           },
           {
             name: 're_replace',
-            args: ['(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen)', 'days'],
+            args: ['(?i)(päeva|dage|giorni|dni|dias|dny|дня|дней|zile|días|jours|Tagen|дни|dagen|dagar)', 'days'],
           },
           {
             name: 're_replace',
@@ -169,14 +163,14 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(nädalat|uger|settimane|tygodnie|uker|semanas|týdny|недели|недель|săptămâni|semaines|Wochen|седмици|weken)',
+              '(?i)(nädalat|uger|settimane|tygodnie|uker|semanas|týdny|недели|недель|săptămâni|semaines|Wochen|седмици|weken|veckor)',
               'weeks',
             ],
           },
           {
             name: 're_replace',
             args: [
-              '(?i)(hafta|nädal|uge|settimana|tydzień|uke|semana|týden|неделю|săptămână|semaine|Woche|седмица|周|週間)',
+              '(?i)(hafta|nädal|uge|settimana|tydzień|uke|semana|týden|неделю|săptămână|semaine|Woche|седмица|周|週間|vecka)',
               ' week',
             ],
           },
@@ -184,13 +178,13 @@ export const definition: TrackerDefinition = {
           {
             name: 're_replace',
             args: [
-              '(?i)(kuud|måneder|mesi|miesiące|meses|měsíce|месяца|месяцев|luni|meses|mois|Monaten|месеца|maanden)',
+              '(?i)(kuud|måneder|mesi|miesiące|meses|měsíce|месяца|месяцев|luni|meses|mois|Monaten|месеца|maanden|månader)',
               'months',
             ],
           },
           {
             name: 're_replace',
-            args: ['(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月|ヶ月)', ' month'],
+            args: ['(?i)(kuu|måned|mese|miesiąc|mês|měsíc|месяц|lună|mes|Monat|месец|maand|个月|ヶ月|månad)', ' month'],
           },
           {
             name: 're_replace',
@@ -201,8 +195,14 @@ export const definition: TrackerDefinition = {
             args: ['(?i)(yil|aasta|år|anno|rok|ano|год|año|Jahr|година|jaar|年)', ' year'],
           },
           { name: 're_replace', args: ['(?i) (an)', 'year'] },
+          { name: 're_replace', args: ['(?i)(För |und)', ''] },
+          { name: 'timeago' },
         ],
       },
+      size: { selector: 'td:nth-last-child(5)' },
+      seeders: { selector: 'td:nth-last-child(4)' },
+      leechers: { selector: 'td:nth-last-child(3)' },
+      grabs: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {
         case: {
           'i[class*="fa-id-badge text-orange"]': 0,

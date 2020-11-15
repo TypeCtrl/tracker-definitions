@@ -144,11 +144,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'regexp', args: 'cats\\[\\]=(\\d+)$' }],
       },
-      poster: {
-        optional: true,
-        selector: 'img.tooltip-poster',
-        attribute: 'src',
-      },
+      poster: { selector: 'img.tooltip-poster', attribute: 'src' },
       download: {
         selector: 'a[href*="download.php?torrent="]',
         attribute: 'href',

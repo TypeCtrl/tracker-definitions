@@ -211,11 +211,11 @@ export const definition: TrackerDefinition = {
         ],
       },
       'title|append': {
-        selector: 'td:nth-child(2) a:contains("Xvid"),a:contains("XVID"),a:contains("xvid")',
+        selector: 'td:nth-child(2) a:contains("480"),a:contains("Xvid"),a:contains("XVID"),a:contains("xvid")',
         optional: true,
         filters: [
           { name: 're_replace', args: ['.', ''] },
-          { name: 'append', args: '480.Spanish-PuntoTorrent' },
+          { name: 'append', args: '480p.Spanish-PuntoTorrent' },
         ],
       },
       details: {

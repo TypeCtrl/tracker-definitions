@@ -136,7 +136,7 @@ export const definition: TrackerDefinition = {
       gold: '{{ if .Config.freeleech }}4{{ else }}0{{ end }}',
       options: 0,
       active: 0,
-      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
+      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0{{ end }}',
       search: '{{ .Keywords }}',
     },
     rows: { selector: 'div.inf-table-row' },
@@ -158,7 +158,6 @@ export const definition: TrackerDefinition = {
       },
       poster: {
         selector: 'div.list-name a.tlink',
-        optional: true,
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) width=' }],
       },

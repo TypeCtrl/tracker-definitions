@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      poster: { selector: 'img', attribute: 'src', optional: true },
+      poster: { selector: 'img', attribute: 'src' },
       actress: {
         selector: 'a[href^="/actress/"]',
         optional: true,

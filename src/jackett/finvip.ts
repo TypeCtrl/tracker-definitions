@@ -101,7 +101,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       page: 'torrents',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
-      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}',
+      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0{{ end }}',
       options: '{{ if .Query.IMDBID }}1{{ else }}0{{ end }}',
       active: 0,
       gold: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
@@ -127,7 +127,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
         filters: [

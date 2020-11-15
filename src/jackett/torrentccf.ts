@@ -122,11 +122,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      imdb: {
-        optional: true,
-        selector: 'div.imdb_100 > a',
-        attribute: 'href',
-      },
+      imdb: { selector: 'div.imdb_100 > a', attribute: 'href' },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(8)' },
       seeders: { selector: 'td:nth-child(6)' },

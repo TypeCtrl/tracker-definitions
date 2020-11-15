@@ -96,15 +96,10 @@ export const definition: TrackerDefinition = {
       title: { selector: 'div.short-title > a' },
       details: { selector: 'div.short-title > a', attribute: 'href' },
       download: { selector: 'div.short-title > a', attribute: 'href' },
-      poster: {
-        selector: 'img.poster',
-        attribute: 'src',
-        optional: true,
-      },
+      poster: { selector: 'img.poster', attribute: 'src' },
       imdb: {
-        selector: 'a[href*="www.imdb.com/title/tt"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
-        optional: true,
       },
       description: { selector: 'span.noimg' },
       date: {

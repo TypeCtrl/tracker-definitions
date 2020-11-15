@@ -110,7 +110,7 @@
       { "name": "re_replace", "args": ["(?i)\\bS0*(\\d+)E0*(\\d+)\\b", ""] }
     ],
     "inputs": {
-      "$raw": "{{ if .Categories }}{{ range .Categories }}c{{.}}=1&{{end}}{{else}}cat=0{{end}}",
+      "$raw": "{{ if .Categories }}{{ range .Categories }}c{{.}}=1&{{end}}{{ else }}cat=0{{ end }}",
       "incldead": 1,
       "search": "{{ .Keywords }}",
       "sort": "{{ .Config.sort }}",

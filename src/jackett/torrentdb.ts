@@ -19,8 +19,8 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q'],
-      'tv-search': ['q', 'imdbid'],
-      'movie-search': ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
+      'movie-search': ['q', 'imdbid', 'tmdbid'],
       'music-search': ['q'],
     },
   },
@@ -72,7 +72,8 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw:
         '{{ range .Categories }}categories[]={{.}}&{{end}}{{ if .Config.freeleech }}freeleech=1&{{ else }}{{ end }}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
+      search:
+        '{{ if or .Query.IMDBID .Query.TVDBID .Query.TMDBID }}{{ or .Query.IMDBIDShort .Query.TVDBID .Query.TMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       tags: '',
       sorting: '{{ .Config.sort }}',
       direction: '{{ .Config.type }}',
@@ -103,8 +104,11 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
+        attribute: 'href',
+      },
+      tmdbid: {
+        selector: 'a[href*="themoviedb.org/movie/"]',
         attribute: 'href',
       },
       downloadvolumefactor: {

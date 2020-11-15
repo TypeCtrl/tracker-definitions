@@ -46,7 +46,10 @@ export const definition: TrackerDefinition = {
   search: {
     keywordsfilters: [
       { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', 'T$1'] },
-      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
+      {
+        name: 're_replace',
+        args: ['(?i)S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'],
+      },
     ],
     inputs: {
       sec: 'listado',

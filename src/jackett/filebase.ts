@@ -145,12 +145,12 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'table#torrents_list > tbody > tr[data-fid]' },
     fields: {
       category: {
-        selector: 'td:nth-child(1) a',
+        selector: 'td:nth-child(1) > a',
         attribute: 'href',
         filters: [{ name: 'split', args: ['/', 2] }],
       },
       torrent_id: {
-        selector: 'td:nth-child(2) a',
+        selector: 'td:nth-child(2) > a',
         attribute: 'href',
         filters: [{ name: 'split', args: ['/', 3] }],
       },
@@ -196,7 +196,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['HDTVRip', 'HDTV'] },
         ],
       },
-      details: { selector: 'td:nth-child(2) a', attribute: 'href' },
+      details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       download: {
         text: '{{ .Config.sitelink }}download.php?id={{ .Result.torrent_id }}',
       },

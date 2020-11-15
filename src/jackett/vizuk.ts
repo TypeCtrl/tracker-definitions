@@ -137,7 +137,10 @@ export const definition: TrackerDefinition = {
     test: { path: '?p=home&pid=1', selector: 'div#member_info_bar' },
   },
   search: {
-    keywordsfilters: [{ name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] }],
+    keywordsfilters: [
+      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
+      { name: 're_replace', args: ['\\s*(19|20)\\d{2}$', ''] },
+    ],
     inputs: {
       p: 'torrents',
       page: 1,
@@ -160,7 +163,7 @@ export const definition: TrackerDefinition = {
       },
       title: {
         selector: 'td.torrent_name > a, .newIndicator > a',
-        filters: [{ name: 'append', args: ' [spanish]' }],
+        filters: [{ name: 'append', args: ' SPANiSH' }],
       },
       details: {
         selector: 'td.torrent_name > a, .newIndicator > a',
@@ -171,12 +174,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'td.torrent_image div.relativeDiv div:not(.category_image) a, .previewImage a',
         attribute: 'href',
       },
       imdb: {
-        optional: true,
         selector: '.torrentFlags a[href*="www.imdb.com/title/tt"]',
         attribute: 'href',
       },

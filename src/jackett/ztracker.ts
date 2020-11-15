@@ -139,7 +139,6 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'img src=\\"(.*?)\\"' }],
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

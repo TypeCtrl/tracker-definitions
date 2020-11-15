@@ -162,11 +162,11 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [
           { name: 're_replace', args: ['(?i)\\bT(\\d+)', 'S$1'] },
-          { name: 'append', args: ' [Spanish]' },
+          { name: 're_replace', args: ['UHDRip', 'BDRip'] },
+          { name: 'append', args: ' SPANiSH' },
         ],
       },
       poster: {
-        optional: true,
         selector: 'td:nth-child(2) a',
         attribute: 'onmouseover',
         filters: [

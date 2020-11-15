@@ -104,11 +104,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
-      poster: {
-        optional: true,
-        selector: 'a.screenshot',
-        attribute: 'rel',
-      },
+      poster: { selector: 'a.screenshot', attribute: 'rel' },
       grabs: {
         selector: 'div.downloadTimes',
         filters: [

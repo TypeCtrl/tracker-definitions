@@ -16,7 +16,7 @@ export const definition: TrackerDefinition = {
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid'],
-      'movie-search': ['q', 'imdbid'],
+      'movie-search': ['q', 'imdbid', 'tmdbid'],
     },
   },
   settings: [
@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
       search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
-      tmdb: '',
+      tmdb: '{{ .Query.TMDBID }}',
       sorting: '{{ .Config.sort }}',
       direction: '{{ .Config.type }}',
       qty: 100,
@@ -86,7 +86,6 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'a.torrent-name', attribute: 'href' },
       poster: {
-        optional: true,
         selector: 'div.torrent-poster img',
         attribute: 'src',
         filters: [{ name: 'replace', args: ['/img/person.png', ''] }],
@@ -100,8 +99,11 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'a[href$="/peers"] span.text-red' },
       grabs: { selector: 'a[href$="/history"]' },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
+        attribute: 'href',
+      },
+      tmdbid: {
+        selector: 'a[href*="themoviedb.org/movie/"]',
         attribute: 'href',
       },
       downloadvolumefactor: {

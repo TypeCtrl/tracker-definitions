@@ -110,7 +110,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'img.tooltip',
         attribute: 'src',
         filters: [{ name: 'replace', args: ['pic/imdb_pic/nophoto.gif', ''] }],

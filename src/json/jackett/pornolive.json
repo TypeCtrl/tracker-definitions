@@ -5,8 +5,8 @@
   "language": "ru-RU",
   "type": "public",
   "encoding": "WINDOWS-1251",
-  "links": ["https://pornolive.org/"],
-  "legacylinks": ["http://pornolive.org/"],
+  "links": ["https://www.pornolive.org/"],
+  "legacylinks": ["http://pornolive.org/", "https://pornolive.org/"],
   "caps": {
     "categorymappings": [{ "id": "XXX", "cat": "XXX", "desc": "XXX" }],
     "modes": { "search": ["q"] }

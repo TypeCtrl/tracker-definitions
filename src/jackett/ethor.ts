@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'ethor',
   name: "Ethor.net (Thor's Land)",
-  description: 'A French gerneral tracker',
+  description: 'A French general tracker',
   language: 'fr-FR',
   type: 'private',
   encoding: 'UTF-8',
@@ -79,7 +79,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      secure_cookie: '0',
+      secure_cookie: 0,
     },
     error: [{ selector: ':contains("\\"status\\":\\"error\\"")' }],
     test: { path: 'browse.php' },
@@ -88,7 +88,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       advcat: 0,
       incldead: 1,
       stype: 'b',
@@ -117,8 +117,14 @@ export const definition: TrackerDefinition = {
       _title_normalized: {
         text: '{{ .Result._title_original }}',
         filters: [
-          { name: 're_replace', args: ['S(\\d{2}) E(\\d{2})', 'S$1E$2'] },
-          { name: 're_replace', args: ['S(\\d{1}) E(\\d{2})', 'S0$1E$2'] },
+          {
+            name: 're_replace',
+            args: ['(?i)S(\\d{2}) E(\\d{2})', 'S$1E$2'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)S(\\d{1}) E(\\d{2})', 'S0$1E$2'],
+          },
         ],
       },
       _title_multilang: {
@@ -135,7 +141,8 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: {
-        text: '{{if .Config.multilang }}{{ .Result._title_multilang }}{{else}}{{ .Result._title_normalized }}{{end}}',
+        text:
+          '{{if .Config.multilang }}{{ .Result._title_multilang }}{{ else }}{{ .Result._title_normalized }}{{ end }}',
       },
       category: {
         selector: 'a[href^="/browse.php?cat="]',

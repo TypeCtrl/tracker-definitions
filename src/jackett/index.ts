@@ -10,9 +10,6 @@ export const j1Ptbar = jj1Ptbar;
 import { definition as jj2Fast4You } from './2fast4you';
 export const j2Fast4You = jj2Fast4You;
 
-import { definition as jj32Pages } from './32pages';
-export const j32Pages = jj32Pages;
-
 import { definition as jj3Changtrai } from './3changtrai';
 export const j3Changtrai = jj3Changtrai;
 
@@ -57,6 +54,9 @@ export const jaither = jjaither;
 
 import { definition as jjamigosshare } from './amigosshare';
 export const jamigosshare = jjamigosshare;
+
+import { definition as jjanimeclipse } from './animeclipse';
+export const janimeclipse = jjanimeclipse;
 
 import { definition as jjanirena } from './anirena';
 export const janirena = jjanirena;
@@ -1335,7 +1335,6 @@ export const definitions = [
   jj1337X,
   jj1Ptbar,
   jj2Fast4You,
-  jj32Pages,
   jj3Changtrai,
   jj3Dtorrents,
   jj3Evils,
@@ -1351,6 +1350,7 @@ export const definitions = [
   jjaidoruonline,
   jjaither,
   jjamigosshare,
+  jjanimeclipse,
   jjanirena,
   jjanisource,
   jjarabafenice,

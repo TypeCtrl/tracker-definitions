@@ -122,11 +122,7 @@ export const definition: TrackerDefinition = {
         optional: true,
         selector: 'div.torrent_name_col > a',
       },
-      poster: {
-        optional: true,
-        selector: 'img#poster',
-        attribute: 'data-src',
-      },
+      poster: { selector: 'img#poster', attribute: 'data-src' },
       date: {
         selector: 'div.time_col:not(:has(span))',
         optional: true,

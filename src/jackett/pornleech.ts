@@ -65,11 +65,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      poster: {
-        optional: true,
-        selector: 'a[href^="torrentimg/"]',
-        attribute: 'href',
-      },
+      poster: { selector: 'a[href^="torrentimg/"]', attribute: 'href' },
       size: {
         selector: 'td[valign="middle"] > p:nth-child(3)',
         filters: [{ name: 'regexp', args: 'Size:\\s* \\s*(.+?)$' }],

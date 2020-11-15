@@ -107,7 +107,6 @@
         "attribute": "href"
       },
       "poster": {
-        "optional": true,
         "selector": "img.tooltip",
         "attribute": "src",
         "filters": [

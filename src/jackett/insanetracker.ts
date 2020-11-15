@@ -113,16 +113,8 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/download.php/"]',
         attribute: 'href',
       },
-      imdb: {
-        optional: true,
-        selector: 'a[title="IMDb link"]',
-        attribute: 'href',
-      },
-      poster: {
-        optional: true,
-        selector: 'a.cover',
-        attribute: 'href',
-      },
+      imdb: { selector: 'a[title="IMDb link"]', attribute: 'href' },
+      poster: { selector: 'a.cover', attribute: 'href' },
       files: {
         selector: 'div.files > a.button.small',
         filters: [{ name: 'replace', args: ['.', ''] }],

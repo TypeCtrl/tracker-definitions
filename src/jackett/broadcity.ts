@@ -73,6 +73,11 @@ export const definition: TrackerDefinition = {
       selector: 'table#sortabletable tbody tr:has(div[id^="port-target-"])',
     },
     fields: {
+      category: {
+        selector: 'a[href*="browse.php?category="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'category' }],
+      },
       title: {
         selector: 'div[id^="port-target-"] a',
         filters: [{ name: 're_replace', args: ['(?i)\\bBL(\\d+)\\b', ' E$1 '] }],
@@ -81,10 +86,9 @@ export const definition: TrackerDefinition = {
         selector: 'div[id^="port-target-"] a',
         attribute: 'href',
       },
-      category: {
-        selector: 'a[href*="browse.php?category="]',
+      download: {
+        selector: 'a[href*="download.php?id="]',
         attribute: 'href',
-        filters: [{ name: 'querystring', args: 'category' }],
       },
       poster: {
         selector: 'div[id^="port-content-"] img',
@@ -92,11 +96,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(2)',
-        filters: [{ name: 'dateparse', args: '02-01-2006 15:04' }],
-      },
-      download: {
-        selector: 'a[href*="download.php?id="]',
-        attribute: 'href',
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02-01-2006 15:04 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(6)' },

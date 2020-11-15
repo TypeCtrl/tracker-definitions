@@ -49,18 +49,18 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar{{else}}descargas{{end}}',
+          '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar{{ else }}descargas{{ end }}',
       },
       {
         path:
-          '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar&page=2{{else}}descargas{{end}}',
+          '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar&page=2{{ else }}descargas{{ end }}',
       },
     ],
     keywordsfilters: [
-      { name: 're_replace', args: ['(S1)', ''] },
-      { name: 're_replace', args: ['(S2)', 'segunda temporada'] },
-      { name: 're_replace', args: ['(S3)', 'tercera temporada'] },
-      { name: 're_replace', args: ['E([0-9]+)', '$1'] },
+      { name: 're_replace', args: ['(?i)(S1)', ''] },
+      { name: 're_replace', args: ['(?i)(S2)', 'segunda temporada'] },
+      { name: 're_replace', args: ['(?i)(S3)', 'tercera temporada'] },
+      { name: 're_replace', args: ['(?i)E([0-9]+)', '$1'] },
     ],
     rows: {
       selector: 'table#descargas > tbody > tr:has(td:has(a[href^="magnet:?"]))',

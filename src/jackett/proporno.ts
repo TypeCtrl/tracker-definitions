@@ -75,7 +75,6 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'img[src*="/uploads/posts/"]',
         attribute: 'src',
-        optional: true,
       },
       date: {
         selector: 'div.mini:contains("-")',

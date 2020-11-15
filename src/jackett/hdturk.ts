@@ -105,7 +105,7 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: ['(?i)\\bE(\\d+)\\b', 'E$1'] }],
     inputs: {
       do: 'search',
-      keywords: '{{.Keywords}}',
+      keywords: '{{ .Keywords }}',
       category: 0,
       search_type: 't_name',
       include_dead_torrents: 'yes',
@@ -133,7 +133,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(2)',
-        filters: [{ name: 'dateparse', args: '02-01-2006 15:04' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02-01-2006 15:04 -07:00' },
+        ],
       },
       download: {
         selector: 'a[href*="download.php?id="]',
@@ -145,14 +148,12 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: {
-          'img[src$="/freedownload.gif"]': '0',
-          'img[src$="/silverdownload.gif"]': '0.5',
-          '*': '1',
+          'img[src$="/freedownload.gif"]': 0,
+          'img[src$="/silverdownload.gif"]': 0.5,
+          '*': 1,
         },
       },
-      uploadvolumefactor: {
-        case: { 'img[src$="/x2.gif"]': '2', '*': '1' },
-      },
+      uploadvolumefactor: { case: { 'img[src$="/x2.gif"]': 2, '*': 1 } },
     },
   },
   source: 'jackett',

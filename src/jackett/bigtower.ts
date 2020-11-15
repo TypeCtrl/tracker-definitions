@@ -70,9 +70,22 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table > tbody > tr > td > table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]){{if .Config.donor }}{{else}}:not(:has(img[src*="keditbookmarks.png"])){{end}}',
+        'table > tbody > tr > td > table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]){{ if .Config.donor }}{{ else }}:not(:has(img[src*="keditbookmarks.png"])){{ end }}',
     },
     fields: {
+      category: {
+        selector: 'a[href^="index.php?page=torrents&category="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'category' }],
+      },
+      title: {
+        selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
+        filters: [{ name: 're_replace', args: ['(?i)(\\[Richiesta\\])', ''] }],
+      },
+      details: {
+        selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
+        attribute: 'href',
+      },
       download: {
         selector: 'a[href^="index.php?page=torrent-details&id="]',
         attribute: 'href',
@@ -83,23 +96,10 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      title: {
-        selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
-        filters: [{ name: 're_replace', args: ['(?i)(\\[Richiesta\\])', ''] }],
-      },
       poster: {
         selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],
-      },
-      category: {
-        selector: 'a[href^="index.php?page=torrents&category="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'category' }],
-      },
-      details: {
-        selector: 'a[onmouseover][href^="index.php?page=torrent-details&id="]',
-        attribute: 'href',
       },
       size: { selector: 'td:nth-last-child(2)' },
       date: {

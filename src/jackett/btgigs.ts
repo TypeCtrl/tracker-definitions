@@ -8,16 +8,6 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'ISO-8859-2',
   links: ['https://btgigs.info/'],
-  settings: [
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
-    {
-      name: 'lang',
-      type: 'checkbox',
-      label: 'Add POLISH to title if is in polish category',
-      default: false,
-    },
-  ],
   caps: {
     categorymappings: [
       { id: '36', cat: 'Audio/Audiobook', desc: 'aBooki' },
@@ -52,6 +42,16 @@ export const definition: TrackerDefinition = {
       'book-search': ['q'],
     },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'lang',
+      type: 'checkbox',
+      label: 'Add POLISH to title if is in polish category',
+      default: false,
+    },
+  ],
   login: {
     path: 'takelogin_action.php',
     method: 'post',
@@ -73,7 +73,7 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'a.altlink' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
       incldead: 1,
       tyt: 0,
       lang: 0,
@@ -83,6 +83,11 @@ export const definition: TrackerDefinition = {
       selector: 'table[border="1"][cellpadding=5] > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
+      category: {
+        selector: 'a[href^="browse.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
       is_polish: {
         optional: true,
         selector: 'img[src*="cat_pl"]',
@@ -95,16 +100,11 @@ export const definition: TrackerDefinition = {
       },
       title: {
         text:
-          '{{ if and (.Config.lang) (.Result.is_polish) }}{{ .Result.title_polish }}{{else}}{{ .Result.title_phase1 }}{{end}}',
+          '{{ if and (.Config.lang) (.Result.is_polish) }}{{ .Result.title_polish }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
       },
       details: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
-      },
-      category: {
-        selector: 'a[href^="browse.php?cat="]',
-        attribute: 'href',
-        filters: [{ name: 'querystring', args: 'cat' }],
       },
       download: {
         selector: 'a[href^="download.php/"]',
@@ -120,8 +120,8 @@ export const definition: TrackerDefinition = {
         ],
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
+        attribute: 'href',
       },
       date: {
         selector: 'td:nth-child(5)',
@@ -144,7 +144,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

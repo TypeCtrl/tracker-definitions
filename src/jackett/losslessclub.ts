@@ -39,11 +39,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      poster: {
-        optional: true,
-        selector: 'img.thumbnail',
-        attribute: 'src',
-      },
+      poster: { selector: 'img.thumbnail', attribute: 'src' },
       size: { selector: 'td:nth-child(5)' },
       grabs: { optional: true, selector: 'td:nth-child(6) br + span' },
       seeders: {

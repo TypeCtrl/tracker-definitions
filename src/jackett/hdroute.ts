@@ -41,7 +41,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      s: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      s: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       dp: 0,
       add: 0,
       or: 1,
@@ -66,17 +66,15 @@ export const definition: TrackerDefinition = {
       size: { selector: 'div.torrent_size' },
       date: {
         selector: 'div.torrent_added',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' +08:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
-      imdb: {
-        selector: 'div.torrent-imdb',
-        attribute: 'href',
-        optional: true,
-      },
+      imdb: { selector: 'div.torrent-imdb', attribute: 'href' },
       poster: {
         selector: 'div.introForPic img',
         attribute: 'src',
-        optional: true,
         filters: [{ name: 'replace', args: ['./img/theme1/default.jpg', ''] }],
       },
       seeders: { selector: 'div.torrent-content-right div:nth-child(5)' },

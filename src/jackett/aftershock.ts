@@ -132,8 +132,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'src=(.*?) width=' }],
       },
       imdb: {
-        optional: true,
-        selector: 'a[href^="https://www.imdb.com/title"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       files: { selector: 'td:nth-last-child(6)' },
@@ -145,7 +144,8 @@ export const definition: TrackerDefinition = {
         selector: 'td font',
         filters: [
           { name: 're_replace', args: ['\\s', ' '] },
-          { name: 'dateparse', args: '2006-01-02 15:04:05' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
       downloadvolumefactor: { case: { 'span.icon_gift': 0, '*': 1 } },

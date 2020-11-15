@@ -139,12 +139,10 @@ export const definition: TrackerDefinition = {
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
-        optional: true,
       },
       poster: {
         selector: 'div[id^="details-"] div div img',
         attribute: 'src',
-        optional: true,
         filters: [
           {
             name: 'replace',

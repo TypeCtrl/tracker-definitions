@@ -79,7 +79,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}c{{.}}=1&{{end}}{{else}}cat=0{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}c{{.}}=1&{{end}}{{ else }}cat=0{{ end }}',
       incldead: 1,
       free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
       search: '{{ .Keywords }}',

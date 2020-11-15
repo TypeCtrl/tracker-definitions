@@ -106,12 +106,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'div.trp:not(:has(img[src$="poster.jpg"])) img',
         attribute: 'src',
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

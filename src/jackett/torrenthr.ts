@@ -105,7 +105,6 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
       poster: {
-        optional: true,
         selector: 'a[href^="details.php?id="][onmousemove]',
         attribute: 'onmousemove',
         filters: [{ name: 'regexp', args: "return overlibImage\\('.*','(.*)'\\);" }],

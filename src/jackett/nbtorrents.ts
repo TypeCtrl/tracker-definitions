@@ -111,7 +111,6 @@ export const definition: TrackerDefinition = {
       },
       poster: {
         selector: 'td a[href^="details.php?id="]',
-        optional: true,
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src="(.*?)" ' }],
       },
@@ -120,8 +119,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       imdb: {
-        selector: 'td a[href*="www.imdb.com/title/tt"]',
-        optional: true,
+        selector: 'td a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       files: { selector: 'td:nth-of-type(5)' },

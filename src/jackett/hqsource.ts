@@ -58,7 +58,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
       incldead: 1,
       polish: 0,
       blah: 0,
@@ -89,10 +89,7 @@ export const definition: TrackerDefinition = {
           { name: 'prepend', args: '{{ .Result.description }}' },
         ],
       },
-      imdb: {
-        optional: true,
-        selector: 'a[href*="imdb.com/title/tt"]',
-      },
+      imdb: { selector: 'a[href*="imdb.com/title/tt"]' },
       grabs: {
         selector: 'td:nth-child(6)',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
@@ -101,7 +98,7 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'tr, br',
         filters: [
-          { name: 'append', args: ' +00:00' },
+          { name: 'append', args: ' +01:00' },
           { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },

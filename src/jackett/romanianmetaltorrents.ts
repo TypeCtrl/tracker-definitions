@@ -65,7 +65,6 @@ export const definition: TrackerDefinition = {
         ],
       },
       poster: {
-        optional: true,
         selector: 'td:nth-child(2) a',
         attribute: 'onmouseover',
         filters: [

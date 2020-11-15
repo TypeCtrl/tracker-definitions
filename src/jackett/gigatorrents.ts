@@ -116,15 +116,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       imdb: {
-        selector: 'a[href^="http://anonym.to/?http://imdb.com/title/"]',
-        optional: true,
+        selector: 'a[href^="imdb.com/title/tt"]',
         attribute: 'href',
       },
-      poster: {
-        selector: 'img.imdb-info',
-        optional: true,
-        attribute: 'data-url',
-      },
+      poster: { selector: 'img.imdb-info', attribute: 'data-url' },
       category: {
         selector: 'a[href^="/torrentek.php?cat="]',
         attribute: 'href',

@@ -114,7 +114,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'td:nth-child(2) > script',
         filters: [
           { name: 'regexp', args: 'src=\\\\"(.*?)\\\\"' },

@@ -133,11 +133,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         optional: true,
       },
-      poster: {
-        selector: 'div.film-img a img',
-        attribute: 'src',
-        optional: true,
-      },
+      poster: { selector: 'div.film-img a img', attribute: 'src' },
       date: {
         selector: 'span:has(i.fa-calendar-o)',
         filters: [

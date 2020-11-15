@@ -49,7 +49,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
     },
     rows: {
       selector: 'table.torrenttable > tbody > tr:has(a[href*="browse.php?cat="])',
@@ -70,13 +70,15 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       imdb: {
-        optional: true,
-        selector: 'a[href*="www.imdb.com/title/"]',
+        selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       date: {
         selector: 'td:nth-child(4)',
-        filters: [{ name: 'dateparse', args: '2006-01-0215:04:05' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
       },
       size: {
         selector: 'td:nth-child(5)',

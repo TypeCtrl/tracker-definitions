@@ -111,7 +111,6 @@ export const definition: TrackerDefinition = {
       description: { selector: 'div.tags' },
       poster: {
         selector: 'td:nth-child(2) script',
-        optional: true,
         filters: [
           { name: 'regexp', args: 'src=(.*?)>' },
           { name: 're_replace', args: ['\\\\', ''] },

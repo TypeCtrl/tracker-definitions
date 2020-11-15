@@ -137,7 +137,6 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },
       poster: {
-        optional: true,
         selector: 'td[valign="middle"] a',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],

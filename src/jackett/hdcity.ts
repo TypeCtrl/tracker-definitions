@@ -259,8 +259,11 @@ export const definition: TrackerDefinition = {
   },
   search: {
     keywordsfilters: [
-      { name: 're_replace', args: ['S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'] },
-      { name: 're_replace', args: ['S0?(\\d{1,2})', ' $1 '] },
+      {
+        name: 're_replace',
+        args: ['(?i)S0?(\\d{1,2})E(\\d{1,2})', '$1x$2'],
+      },
+      { name: 're_replace', args: ['(?i)S0?(\\d{1,2})', ' $1 '] },
       { name: 're_replace', args: ['[^a-zA-Z0-9]+', ' '] },
     ],
     inputs: {
@@ -299,7 +302,6 @@ export const definition: TrackerDefinition = {
       },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },
       poster: {
-        optional: true,
         selector: 'td[valign="middle"] a',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
@@ -313,7 +315,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(5)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       download: {
         selector: 'a[href^="download.php"]',

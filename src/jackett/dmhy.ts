@@ -56,10 +56,6 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'table tbody tr:has(a[href^="magnet:?"])' },
     fields: {
-      date: {
-        selector: 'td:nth-child(1) span',
-        filters: [{ name: 'dateparse', args: '2006/01/02 15:04' }],
-      },
       category: {
         selector: 'td:nth-child(2) a',
         attribute: 'href',
@@ -71,6 +67,13 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
+      date: {
+        selector: 'td:nth-child(1) span',
+        filters: [
+          { name: 'append', args: ' +08:00' },
+          { name: 'dateparse', args: '2006/01/02 15:04 -07:00' },
+        ],
+      },
       size: { selector: 'td:nth-child(5)' },
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },

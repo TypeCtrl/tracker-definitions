@@ -81,7 +81,6 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'img[src^="static/images/torrents/"]',
         attribute: 'src',
-        optional: true,
       },
       files: { selector: 'td:nth-last-child(6)' },
       date: {

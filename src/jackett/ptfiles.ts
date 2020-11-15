@@ -107,14 +107,9 @@ export const definition: TrackerDefinition = {
       details: { selector: 'a.torrentlink', attribute: 'href' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
-        optional: true,
         attribute: 'href',
       },
-      poster: {
-        selector: 'a[rel="gallery"]',
-        optional: true,
-        attribute: 'href',
-      },
+      poster: { selector: 'a[rel="gallery"]', attribute: 'href' },
       files: { selector: 'td:nth-last-child(5)' },
       grabs: {
         selector: 'td:nth-last-child(3) > span',

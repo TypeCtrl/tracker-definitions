@@ -124,7 +124,6 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'div.entry_content a.entry__content-image img',
         attribute: 'src',
-        optional: true,
       },
       date: {
         selector: 'span.entry__date:contains("-")',

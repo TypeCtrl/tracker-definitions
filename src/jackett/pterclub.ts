@@ -125,13 +125,8 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      poster: {
-        selector: 'img[data-orig]',
-        attribute: 'data-orig',
-        optional: true,
-      },
+      poster: { selector: 'img[data-orig]', attribute: 'data-orig' },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

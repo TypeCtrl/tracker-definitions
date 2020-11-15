@@ -107,10 +107,7 @@ export const definition: TrackerDefinition = {
           { name: 'prepend', args: '{{ .Result.description }}' },
         ],
       },
-      imdb: {
-        optional: true,
-        selector: 'a[href*="imdb.com/title/tt"]',
-      },
+      imdb: { selector: 'a[href*="imdb.com/title/tt"]' },
       date: {
         selector: 'td:nth-child(4)',
         filters: [

@@ -110,9 +110,9 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '([\\d\\.]+)' }],
       },
       downloadvolumefactor: {
-        case: { ':root div#notice_ratioBoostingMadness': '0', '*': '1' },
+        case: { ':root div#notice_ratioBoostingMadness': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
       date: {
         selector: 'td.torrent_table_dateAdded',
         filters: [

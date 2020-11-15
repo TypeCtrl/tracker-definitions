@@ -94,9 +94,13 @@ export const definition: TrackerDefinition = {
       },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
+      leechers: { text: 0 },
       date: {
         selector: 'td:nth-last-child(5)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       downloadvolumefactor: {
         case: {

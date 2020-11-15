@@ -130,7 +130,6 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'a[href*="data/torrents/torrent_images/"]',
         attribute: 'href',
       },

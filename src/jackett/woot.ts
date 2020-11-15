@@ -84,11 +84,9 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'a[href^="item.php?id="]',
         attribute: 'onmouseover',
-        optional: true,
         filters: [{ name: 'regexp', args: 'src="(.+?)"' }],
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

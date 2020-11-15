@@ -153,7 +153,6 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['pic/nopic.jpg', ''] }],
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

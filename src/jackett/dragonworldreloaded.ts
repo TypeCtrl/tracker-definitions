@@ -111,6 +111,8 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'div.selection_wrap' },
     fields: {
+      title: { selector: 'a.selection_a' },
+      details: { selector: 'a.selection_a', attribute: 'href' },
       download: {
         selector: 'a.selection_a',
         attribute: 'href',
@@ -121,8 +123,6 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      title: { selector: 'a.selection_a' },
-      details: { selector: 'a.selection_a', attribute: 'href' },
       category: {
         selector: 'div.kat_cat_pic',
         case: {
@@ -205,19 +205,20 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: [',', '.'] },
         ],
       },
-      downloadvolumefactor: {
-        case: { ':root:has(div.onlyup)': '0', '*': '1' },
-      },
-      uploadvolumefactor: { case: { '*': '1' } },
       date: {
         selector: 'div.selection_unter_ab:contains(".")',
         optional: true,
         filters: [
           { name: 'replace', args: [' um', ''] },
-          { name: 'dateparse', args: '02.01.2006 15:04:05' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
         ],
       },
       description: { selector: 'selection_unter_af', optional: true },
+      downloadvolumefactor: {
+        case: { ':root:has(div.onlyup)': 0, '*': 1 },
+      },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

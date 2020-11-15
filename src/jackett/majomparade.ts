@@ -134,12 +134,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'img[src="pic/borito.png"], a[href^="details.php?id="] > b[title*="Torrent neve:"]',
         attribute: 'title',
         filters: [{ name: 'regexp', args: "src='(.*?)'" }],

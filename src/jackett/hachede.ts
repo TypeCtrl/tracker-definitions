@@ -194,6 +194,9 @@ export const definition: TrackerDefinition = {
           { name: 'append', args: '.Spanish-HacheDe' },
           { name: 're_replace', args: ['\\.+', '.'] },
           { name: 're_replace', args: ['^\\.', ''] },
+          { name: 're_replace', args: ['.BR.', '.BDRip.'] },
+          { name: 're_replace', args: ['(?i)m720p', 'MicroHD.720p'] },
+          { name: 're_replace', args: ['(?i)m1080p', 'MicroHD.1080p'] },
         ],
       },
       details: {
@@ -205,13 +208,11 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'td.torrent_image div.relativeDiv div:not(.category_image) a, .previewImage a',
         attribute: 'href',
       },
       imdb: {
-        optional: true,
-        selector: '.torrentFlags a[href*="www.imdb.com/title/tt"]',
+        selector: '.torrentFlags a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       date: {

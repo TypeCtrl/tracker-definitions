@@ -46,8 +46,8 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [
       { name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] },
       { name: 'diacritics', args: 'replace' },
-      { name: 're_replace', args: ['(S\\d{1,2}E\\d{1,2})', ''] },
-      { name: 're_replace', args: ['(S\\d{1,2})', ''] },
+      { name: 're_replace', args: ['(?i)(S\\d{1,2}E\\d{1,2})', ''] },
+      { name: 're_replace', args: ['(?i)(S\\d{1,2})', ''] },
     ],
     inputs: { ajax: false, search: '{{ .Keywords }}', incldead: 0 },
     rows: { selector: 'tbody#highlighted tr' },
@@ -143,9 +143,9 @@ export const definition: TrackerDefinition = {
         },
       },
       downloadvolumefactor: {
-        case: { 'img[src="pic/freedownload.gif"]': '0', '*': '1' },
+        case: { 'img[src="pic/freedownload.gif"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { text: '1' },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

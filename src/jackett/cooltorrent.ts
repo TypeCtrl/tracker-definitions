@@ -86,11 +86,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      poster: {
-        optional: true,
-        selector: 'img.browse_poster',
-        attribute: 'src',
-      },
+      poster: { selector: 'img.browse_poster', attribute: 'src' },
       date: {
         selector: 'td.descr3',
         remove: 'br',

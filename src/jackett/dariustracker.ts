@@ -120,15 +120,10 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
       },
-      poster: {
-        selector: 'a.preview',
-        attribute: 'href',
-        optional: true,
-      },
+      poster: { selector: 'a.preview', attribute: 'href' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
-        optional: true,
       },
       files: {
         selector: 'td:nth-last-child(7)',

@@ -137,7 +137,6 @@
       "poster": {
         "selector": "a[href^=\"details.php?id=\"]",
         "attribute": "onmouseover",
-        "optional": true,
         "filters": [
           { "name": "regexp", "args": "src=\"(.*?)\"" },
           { "name": "replace", "args": ["./pic/noposter.png", ""] }
@@ -145,8 +144,7 @@
       },
       "imdb": {
         "selector": "a[href*=\"imdb.com/title/tt\"]",
-        "attribute": "href",
-        "optional": true
+        "attribute": "href"
       },
       "files": { "selector": "td:nth-last-child(8)" },
       "date": {

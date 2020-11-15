@@ -121,8 +121,7 @@
       "download": { "selector": "div.h2 > a", "attribute": "href" },
       "poster": {
         "selector": "div.entry_content a.entry__content-image img",
-        "attribute": "src",
-        "optional": true
+        "attribute": "src"
       },
       "date": {
         "selector": "span.entry__date:contains(\"-\")",

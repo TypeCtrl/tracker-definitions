@@ -93,14 +93,14 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'div.torrent_row, div.torrent_details', after: 1 },
     fields: {
-      download: { selector: 'div.box_download > a', attribute: 'href' },
-      title: { selector: 'a.box_name_a > span' },
-      details: { selector: 'a.box_name_a', attribute: 'href' },
       category: {
         selector: 'div.box_category > img',
         attribute: 'onclick',
         filters: [{ name: 'regexp', args: 'category\\((\\d+),\\d+\\);' }],
       },
+      title: { selector: 'a.box_name_a > span' },
+      details: { selector: 'a.box_name_a', attribute: 'href' },
+      download: { selector: 'div.box_download > a', attribute: 'href' },
       seeders: { selector: 'div.box_seeders' },
       leechers: { selector: 'div.box_leechers' },
       grabs: { selector: 'div.box_completed' },
@@ -114,13 +114,11 @@ export const definition: TrackerDefinition = {
       },
       size: { selector: 'div.box_size' },
       poster: {
-        optional: true,
         selector: 'a.cover_a',
         attribute: 'title',
         filters: [{ name: 'regexp', args: "src='(.*?)'" }],
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },

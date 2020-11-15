@@ -32,7 +32,6 @@ export const definition: TrackerDefinition = {
       poster: {
         selector: 'img.content__item-img-wrapper',
         attribute: 'src',
-        optional: true,
       },
       date: { text: 'now' },
       size: { selector: 'div#torrent_info > div' },

@@ -130,10 +130,10 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      search: '{{if .Query.IMDBID}}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
       page: 'torrents',
       category: '{{ range .Categories }}{{.}};{{end}}',
-      options: '{{ if .Query.IMDBID }}4{{else}}0{{end}}',
+      options: '{{ if .Query.IMDBID }}4{{ else }}0{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',

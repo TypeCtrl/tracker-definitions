@@ -126,13 +126,11 @@
       },
       "imdb": {
         "selector": "a[href*=\"imdb.com/title/tt\"]",
-        "attribute": "href",
-        "optional": true
+        "attribute": "href"
       },
       "poster": {
         "selector": "div[id^=\"details-\"] div div img",
-        "attribute": "src",
-        "optional": true
+        "attribute": "src"
       },
       "description": {
         "selector": "div[class^=\"flag_pic_\"]",

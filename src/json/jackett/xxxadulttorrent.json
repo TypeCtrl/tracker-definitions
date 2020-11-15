@@ -28,8 +28,7 @@
       "download": { "selector": "a[href^=\"/torrent/\"]", "attribute": "href" },
       "poster": {
         "selector": "img.content__item-img-wrapper",
-        "attribute": "src",
-        "optional": true
+        "attribute": "src"
       },
       "date": { "text": "now" },
       "size": { "selector": "div#torrent_info > div" },

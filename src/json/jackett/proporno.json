@@ -72,8 +72,7 @@
       "download": { "selector": "div.news_text > a", "attribute": "href" },
       "poster": {
         "selector": "img[src*=\"/uploads/posts/\"]",
-        "attribute": "src",
-        "optional": true
+        "attribute": "src"
       },
       "date": {
         "selector": "div.mini:contains(\"-\")",

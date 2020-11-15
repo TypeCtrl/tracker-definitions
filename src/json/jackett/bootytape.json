@@ -86,11 +86,7 @@
         "attribute": "href"
       },
       "description": { "selector": "div.specg" },
-      "poster": {
-        "selector": "img[src*=\"/thbx/imgx/\"]",
-        "attribute": "src",
-        "optional": true
-      },
+      "poster": { "selector": "img[src*=\"/thbx/imgx/\"]", "attribute": "src" },
       "files": { "selector": "a[href$=\"filelist=1\"]", "optional": true },
       "size": { "selector": "td:nth-child(3)" },
       "seeders": { "selector": "a[href$=\"toseeders=1\"]", "optional": true },

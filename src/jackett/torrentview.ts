@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://torrentview21.net/'],
+  links: ['https://torrentview23.net/'],
   legacylinks: [
     'https://torrentview.net/',
     'https://torrentview3.net/',
@@ -29,6 +29,8 @@ export const definition: TrackerDefinition = {
     'https://torrentview18.net/',
     'https://torrentview19.net/',
     'https://torrentview20.net/',
+    'https://torrentview21.net/',
+    'https://torrentview22.net/',
   ],
   caps: {
     categorymappings: [

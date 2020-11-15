@@ -124,12 +124,10 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['/details', '/download'] }],
       },
       imdb: {
-        optional: true,
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
       poster: {
-        optional: true,
         selector: 'a[onmouseover]',
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?) width' }],
@@ -139,7 +137,7 @@ export const definition: TrackerDefinition = {
         remove: 'font',
         filters: [
           { name: 'replace', args: [' ', ' '] },
-          { name: 'append', args: ' +02:00' },
+          { name: 'append', args: ' +01:00' },
           { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },

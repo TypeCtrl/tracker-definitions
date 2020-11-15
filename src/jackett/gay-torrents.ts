@@ -116,7 +116,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       downloadvolumefactor: {
-        case: { '.TorrentList2 > a:contains("[FFL]")': '0', '*': 1 },
+        case: { '.TorrentList2 > a:contains("[FFL]")': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
     },

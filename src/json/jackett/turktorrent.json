@@ -164,11 +164,7 @@
       "seeders": { "selector": "a[rel=\"torrent_seeders\"]" },
       "leechers": { "selector": "a[rel=\"torrent_leechers\"]" },
       "grabs": { "selector": "a[rel=\"times_completed\"]" },
-      "poster": {
-        "optional": true,
-        "selector": "a[rel=\"fancybox\"]",
-        "attribute": "href"
-      },
+      "poster": { "selector": "a[rel=\"fancybox\"]", "attribute": "href" },
       "downloadvolumefactor": {
         "case": {
           "img[src$=\"/freedownload.gif\"]": 0,

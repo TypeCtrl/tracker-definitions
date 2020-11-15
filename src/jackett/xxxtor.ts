@@ -9,6 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://xxxtor.com/'],
   legacylinks: ['https://xxxtor.org/', 'https://xxxtor.info/'],
+  certificates: ['49538cc58d5b5e7b70b4a3b2454f952103701342'],
   caps: {
     categorymappings: [{ id: 'XXX', cat: 'XXX', desc: 'XXX' }],
     modes: { search: ['q'] },
