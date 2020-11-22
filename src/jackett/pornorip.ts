@@ -300,7 +300,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'search.php' }],
     inputs: {
       tracker_search: 'torrent',
-      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
+      keywords: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       terms: 'all',
       author: '',
       sc: 1,
@@ -312,7 +312,7 @@ export const definition: TrackerDefinition = {
       ch: 300,
       t: 0,
       submit: 'Search',
-      $raw: '{{range .Categories}}&fid[]={{.}}{{end}}',
+      $raw: '{{ range .Categories }}&fid[]={{.}}{{end}}',
     },
     rows: {
       selector: 'div.forumbg > div.inner > ul.topiclist > li.row > dl.icon:has(a[href^="./download/file.php?id="])',
@@ -362,7 +362,8 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['окт', 'Oct'] },
           { name: 'replace', args: ['ноя', 'Nov'] },
           { name: 'replace', args: ['дек', 'Dec'] },
-          { name: 'dateparse', args: '02 Jan 2006, 15:04' },
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02 Jan 2006, 15:04 -07:00' },
         ],
       },
       downloadvolumefactor: { text: 0 },

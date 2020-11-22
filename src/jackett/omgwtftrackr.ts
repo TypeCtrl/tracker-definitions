@@ -179,7 +179,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(4) span',
         attribute: 'title',
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006, 15:04' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: 'Jan 2 2006, 15:04 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(5)' },
       grabs: { selector: 'td:nth-child(6)' },

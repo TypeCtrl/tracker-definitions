@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
+      search: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
     },
     rows: {
       selector: 'table.mainouter table > tbody > tr:has(a[href^="details.php?id="])',

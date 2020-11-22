@@ -170,7 +170,7 @@ export const definition: TrackerDefinition = {
       p: 'torrents',
       page: 1,
       pid: 10,
-      $raw: '{{range .Categories}}&cid[]={{.}}{{end}}',
+      $raw: '{{ range .Categories }}&cid[]={{.}}{{end}}',
       keywords: '{{ .Keywords }}',
       search_type: 'name',
       'sortOptions[sortBy]': '{{ .Config.sort }}',

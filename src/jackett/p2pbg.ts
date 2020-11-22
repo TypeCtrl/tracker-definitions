@@ -103,7 +103,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'index.php' }],
     inputs: {
       page: 'torrents',
-      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0;{{end}}',
+      category: '{{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0;{{ end }}',
       search: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ end }}',
       active: 0,
       order: '{{ .Config.sort }}',

@@ -60,7 +60,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
-      search: '{{if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 0,
       spstate: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
       search_area: '{{ if .Query.IMDBID }}4{{ else }}0{{ end }}',

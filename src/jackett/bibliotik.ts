@@ -63,7 +63,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents/' }],
     inputs: {
       search:
-        '{{ if .Query.Author }} @authors {{ .Query.Author }}{{else}}{{end}}{{ if .Query.Title }} @title {{ .Query.Title }}{{else}}{{end}}{{ .Keywords }}',
+        '{{ if .Query.Author }} @authors {{ .Query.Author }}{{ else }}{{ end }}{{ if .Query.Title }} @title {{ .Query.Title }}{{ else }}{{ end }}{{ .Keywords }}',
       $raw: '{{ range .Categories }}cat[]={{.}}&{{end}}',
       orderby: '{{ .Config.orderby }}',
       order: '{{ .Config.order }}',
@@ -88,12 +88,12 @@ export const definition: TrackerDefinition = {
       _retail: { selector: '.torRetail', optional: true },
       booktitle: { selector: '.title a' },
       title: {
-        text: '{{.Result.booktitle}}',
+        text: '{{ .Result.booktitle }}',
         filters: [
           {
             name: 'append',
             args:
-              '{{ if .Result.author }} by {{ .Result.author }}{{else}}{{end}}{{ if .Result._year }} {{ .Result._year }}{{else}}{{end}}{{ if .Result._filetype }} {{ .Result._filetype }}{{else}}{{end}}{{ if .Result._retail }} {{ .Result._retail }}{{else}}{{end}}',
+              '{{ if .Result.author }} by {{ .Result.author }}{{ else }}{{ end }}{{ if .Result._year }} {{ .Result._year }}{{ else }}{ {end }}{{ if .Result._filetype }} {{ .Result._filetype }}{{ else }}{{ end }}{{ if .Result._retail }} {{ .Result._retail }}{{ else }}{{ end }}',
           },
         ],
       },
@@ -115,8 +115,8 @@ export const definition: TrackerDefinition = {
       seeders: { optional: true, selector: '.seeders' },
       leechers: { optional: true, selector: '.leechers' },
       grabs: { optional: true, selector: '.snatches' },
-      downloadvolumefactor: { case: { '*': 1 } },
-      uploadvolumefactor: { case: { '*': 1 } },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

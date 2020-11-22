@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
       search: '{{ .Keywords }}',
     },
     rows: {
@@ -93,14 +93,20 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'cat' }],
       },
       title: { filters: null, selector: 'td:nth-child(2) b' },
-      download: {
-        selector: 'a[href^="download.php/"]',
-        attribute: 'href',
-      },
       details: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
       },
+      download: {
+        selector: 'a[href^="download.php/"]',
+        attribute: 'href',
+      },
+      files: { selector: 'td:nth-child(4)' },
+      date: {
+        selector: 'td:nth-child(6)',
+        filters: [{ name: 'regexp', args: '(\\d{4}-\\d{2}-\\d{2})' }],
+      },
+      size: { selector: 'td:nth-child(7)' },
       grabs: {
         selector: 'td:nth-child(8)',
         filters: [
@@ -108,24 +114,16 @@ export const definition: TrackerDefinition = {
           { name: 'regexp', args: '(\\d+)' },
         ],
       },
-      files: { selector: 'td:nth-child(4)' },
-      size: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
-      date: {
-        selector: 'td:nth-child(6)',
-        filters: [{ name: 'regexp', args: '(\\d{4}-\\d{2}-\\d{2})' }],
-      },
       downloadvolumefactor: {
         case: {
-          'font[color="green"]': '0',
-          'font[color="blue"]': '0',
-          '*': '1',
+          'font[color="green"]': 0,
+          'font[color="blue"]': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: {
-        case: { 'font[color="green"]': '0', '*': '1' },
-      },
+      uploadvolumefactor: { case: { 'font[color="green"]': 0, '*': 1 } },
     },
   },
   source: 'jackett',

@@ -65,8 +65,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{if .Keywords}}{{ .Keywords }}{{else}}  {{end}}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      search: '{{ if .Keywords }}{{ .Keywords }}{{ else }}  {{ end }}',
     },
     rows: {
       selector: 'table#torrent_table > tbody > tr:has(a[href^="browse.php?cat="])',
@@ -91,8 +91,8 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       date: { selector: 'td:nth-child(4)' },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

@@ -112,7 +112,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents-search.php', method: 'get' }],
     keywordsfilters: [{ name: 're_replace', args: ['(?<=^| )(?!-|\\+)[^ ]+(?= |$)', '+$&'] }],
     inputs: {
-      $raw: '{{range .Categories}}&c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}&c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
     },

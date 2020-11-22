@@ -38,22 +38,23 @@
   "search": {
     "paths": [{ "path": "browse.php", "method": "get" }],
     "inputs": {
-      "$raw": "{{range .Categories}}c{{.}}=1&{{end}}",
-      "search": "{{ .Query.Keywords }}",
-      "incldead": "1",
-      "title": "0"
+      "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
+      "search": "{{ .Keywords }}",
+      "incldead": 1,
+      "title": 0
     },
     "rows": { "selector": "table#main-torrents > tbody > tr" },
     "fields": {
-      "title": { "selector": "td.tor-name > a", "attribute": "title" },
       "category": {
         "selector": "td[class^=\"cat-\"] > a",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "cat" }]
       },
+      "title": { "selector": "td.tor-name > a", "attribute": "title" },
       "details": { "selector": "td.tor-name > a", "attribute": "href" },
       "download": { "selector": "td.tor-down > a", "attribute": "href" },
       "files": { "selector": "td:nth-child(5)" },
+      "date": { "selector": "td:nth-child(7)" },
       "size": { "selector": "td:nth-child(8)" },
       "grabs": {
         "selector": "td:nth-child(9)",
@@ -67,16 +68,15 @@
         "selector": "td:nth-child(11)",
         "filters": [{ "name": "regexp", "args": "^(\\d+)" }]
       },
-      "date": { "selector": "td:nth-child(7)" },
       "downloadvolumefactor": {
         "case": {
-          "span.star": "0",
-          "span.fltime": "0",
+          "span.star": 0,
+          "span.fltime": 0,
           ":root li[id=\"alert-fl\"][class=\"alert\"]:contains(\"Freeleech ends in \")": 0,
-          "*": "1"
+          "*": 1
         }
       },
-      "uploadvolumefactor": { "case": { "*": "1" } }
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

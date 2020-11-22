@@ -57,7 +57,7 @@ export const definition: TrackerDefinition = {
       b: '{{ .Keywords }}',
       ver: 0,
       relanz: 0,
-      $raw: '{{range .Categories}}&cat[]={{.}}{{end}}',
+      $raw: '{{ range .Categories }}&cat[]={{.}}{{end}}',
     },
     rows: { selector: 'table.listatorrents tr:not(:first-child)' },
     fields: {

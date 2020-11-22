@@ -108,7 +108,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       download: {
-        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{ else }}{{ end }}',
+        text: '{{ if .Config.itorrents-links }}{{ .Result.download-itorrents }}{{ else }}{{ end }}',
       },
       infohash: { selector: 'div.resultdivbotton div.hideinfohash' },
       date: {

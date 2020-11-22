@@ -106,7 +106,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        text: '{{if .Config.seedbox}}{{ .Result.download2 }}{{ else }}{{ .Result.download1 }}{{ end }}',
+        text: '{{ if .Config.seedbox }}{{ .Result.download2 }}{{ else }}{{ .Result.download1 }}{{ end }}',
       },
       details: {
         selector: 'a[href^="details.php?id="]',

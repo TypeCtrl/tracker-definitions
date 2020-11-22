@@ -149,7 +149,7 @@ export const definition: TrackerDefinition = {
       downloadvolumefactor: {
         case: { 'img[src$="/torrent_free.png"]': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': 1 } },
+      uploadvolumefactor: { text: 1 },
       minimumratio: { text: 1 },
     },
   },

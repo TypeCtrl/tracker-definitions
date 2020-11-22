@@ -70,11 +70,11 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       searchin: 'title',
       incldead: 1,
-      only_free: '{{ if .Config.onlyfree }}1{{else}}0{{end}}',
+      only_free: '{{ if .Config.onlyfree }}1{{ else }}0{{ end }}',
     },
     keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     rows: {
@@ -112,7 +112,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-of-type(7):not(:contains("day"))',
         optional: true,
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       size: { selector: 'td:nth-of-type(8)' },
       grabs: {

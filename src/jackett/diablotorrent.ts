@@ -86,7 +86,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse' }],
     inputs: {
-      $raw: '{{range .Categories}}category[]={{.}}&{{end}}',
+      $raw: '{{ range .Categories }}category[]={{.}}&{{end}}',
       search: '{{ .Keywords }}',
       s_alapjan: 7,
       s_sorrend: 'desc',

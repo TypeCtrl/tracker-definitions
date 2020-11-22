@@ -8,7 +8,12 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.oxtorrent.me/', 'https://www.torrent9.gg/', 'https://torrent9.to/'],
+  links: [
+    'https://torrent9.to/',
+    'https://www.torrent9.gg/',
+    'https://torrent9.unblockninja.com/',
+    'https://www.oxtorrent.me/',
+  ],
   legacylinks: [
     'http://www.torrent9.ec/',
     'http://www.torrent9.red/',
@@ -30,7 +35,6 @@ export const definition: TrackerDefinition = {
     'https://www4.torrent9.to/',
     'https://www.torrent9.cat/',
     'https://www.torrent09.uno/',
-    'https://torrent9.unblockninja.com/',
     'https://www.torrent9.pl/',
     'https://torrent9.black-mirror.xyz/',
     'https://torrent9.unblocked.casa/',
@@ -40,6 +44,7 @@ export const definition: TrackerDefinition = {
     'https://ww1.torrent9.is/',
     'https://ww1.torrent9.to/',
     'https://www.torrent9.is/',
+    'https://torrent9.li/',
   ],
   caps: {
     categorymappings: [
@@ -91,6 +96,23 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site (Only works for searches with Keywords)',
+      default: '.html',
+      options: {
+        '.html': 'best',
+        '.html,trie-date-d': 'created desc',
+        '.html,trie-date-a': 'created asc',
+        '.html,trie-seeds-d': 'seeders desc',
+        '.html,trie-seeds-a': 'seeders asc',
+        '.html,trie-poid-d': 'size desc',
+        '.html,trie-poid-a': 'size asc',
+        '.html,trie-nom-d': 'title desc',
+        '.html,trie-nom-a': 'title asc',
+      },
+    },
+    {
       name: 'info_131681',
       type: 'info',
       label: 'About Torrent9 Categories',
@@ -102,12 +124,13 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}/search_torrent/{{ .Keywords }}{{ else }}/top_torrent/{{ end }}',
+        path: '{{ if .Keywords }}/search_torrent/{{ .Keywords }}{{ .Config.sort }}{{ else }}/top_torrent.html{{ end }}',
       },
     ],
     keywordsfilters: [
       { name: 're_replace', args: ['(?i)(S0)(\\d{1,2})$', 'saison $2'] },
       { name: 're_replace', args: ['(?i)(S)(\\d{1,3})$', 'saison $2'] },
+      { name: 'replace', args: [' ', '-'] },
     ],
     rows: {
       selector: 'table.table-striped > tbody > tr',
@@ -184,7 +207,15 @@ export const definition: TrackerDefinition = {
       details: { selector: 'td:nth-child(1) a', attribute: 'href' },
       download: { selector: 'td:nth-child(1) a', attribute: 'href' },
       date: { text: 'now' },
-      size: { selector: 'td:nth-child(2)' },
+      size: {
+        selector: 'td:nth-child(2)',
+        filters: [
+          { name: 'replace', args: ['Ko', 'KB'] },
+          { name: 'replace', args: ['Mo', 'MB'] },
+          { name: 'replace', args: ['Go', 'GB'] },
+          { name: 'replace', args: ['To', 'TB'] },
+        ],
+      },
       seeders: { selector: 'td:nth-child(3)', optional: true },
       leechers: { selector: 'td:nth-child(4)', optional: true },
       downloadvolumefactor: { text: 0 },

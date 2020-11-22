@@ -307,7 +307,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'tracker.php', method: 'post' }],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       nm: '{{ .Keywords }}',
       allw: 1,
       o: '{{ .Config.sort }}',

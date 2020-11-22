@@ -7,9 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://skytorrents.to/', 'https://skytorrents.org/', 'https://skytorrents.net/'],
+  links: ['https://www.skytorrents.to/', 'https://skytorrents.org/', 'https://skytorrents.net/'],
   legacylinks: [
-    'https://www.skytorrents.to/',
     'https://skytorrents.black-mirror.xyz/',
     'https://skytorrents.unblocked.casa/',
     'https://skytorrents.proxyportal.fun/',
@@ -19,6 +18,7 @@ export const definition: TrackerDefinition = {
     'https://skytorrents.proxyportal.pw/',
     'https://skytorrents.uk-unblock.pro/',
     'https://www.skytorrents.lol/',
+    'https://skytorrents.to/',
   ],
   caps: {
     categorymappings: [

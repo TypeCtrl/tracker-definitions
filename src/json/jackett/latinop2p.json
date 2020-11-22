@@ -91,8 +91,8 @@
       "do": "search",
       "category": 0,
       "include_dead_torrents": "yes",
-      "keywords": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
-      "search_type": "{{ if .Query.IMDBID }}t_genre{{else}}t_name{{end}}",
+      "keywords": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
+      "search_type": "{{ if .Query.IMDBID }}t_genre{{ else }}t_name{{ end }}",
       "sort": "{{ .Config.sort }}",
       "order": "{{ .Config.type }}"
     },

@@ -88,7 +88,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'tracker.php' }],
     keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       prev_allw: 0,
       prev_a: 0,
       prev_dla: 0,

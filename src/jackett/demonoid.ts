@@ -13,6 +13,7 @@ export const definition: TrackerDefinition = {
     'https://www.dnoid.to/',
     'https://www.dnoid.pw/',
     'https://demonoid.unblockit.app/',
+    'https://demonoid.torrentbay.to/',
   ],
   legacylinks: [
     'https://demonoid.unblockit.pro/',

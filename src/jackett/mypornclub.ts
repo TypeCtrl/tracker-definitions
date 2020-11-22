@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}search/{{ re_replace .Keywords "\\s+" "-" }}{{else}}torrents{{end}}',
+        path: '{{ if .Keywords }}search/{{ re_replace .Keywords "\\s+" "-" }}{{ else }}torrents{{ end }}',
       },
     ],
     rows: {

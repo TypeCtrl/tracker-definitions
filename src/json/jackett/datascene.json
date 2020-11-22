@@ -95,7 +95,7 @@
   "search": {
     "paths": [{ "path": "browse.php" }],
     "inputs": {
-      "$raw": "{{ if .Categories}}{{ range .Categories }}c{{.}}=1&{{end}}{{else}}cat=0{{end}}",
+      "$raw": "{{ if .Categories}}{{ range .Categories }}c{{.}}=1&{{end}}{{ else }}cat=0{{ end }}",
       "search": "{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
       "incldead": 2,
       "blah": "{{ if .Query.IMDBID }}3{{ else }}0{{ end }}",

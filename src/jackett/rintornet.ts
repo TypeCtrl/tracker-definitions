@@ -128,7 +128,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'span.entry__date:contains("-")',
         optional: true,
-        filters: [{ name: 'dateparse', args: '2-01-2006, 15:04' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2-01-2006, 15:04 -07:00' },
+        ],
       },
       size: { text: '1 GB' },
       seeders: { text: 1 },

@@ -142,7 +142,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'index.php' }],
     inputs: {
       page: 'torrents',
-      search: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ end }}',
+      search: '{{ .Keywords }}',
       parentcategory: 0,
       category: 0,
       genre: 0,
@@ -201,7 +201,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(7)',
-        filters: [{ name: 'dateparse', args: '02/01/2006 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02/01/2006 15:04:05 -07:00' },
+        ],
       },
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },

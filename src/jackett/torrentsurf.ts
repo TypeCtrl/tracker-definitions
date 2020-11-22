@@ -119,7 +119,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       download: {
-        text: '{{if .Config.seedbox}}{{ .Result.download2 }}{{else}}{{ .Result.download1 }}{{end}}',
+        text: '{{ if .Config.seedbox }}{{ .Result.download2 }}{{ else }}{{ .Result.download1 }}{{ end }}',
       },
       date: {
         selector: 'td:nth-child(4)',

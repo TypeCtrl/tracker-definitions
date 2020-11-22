@@ -22,7 +22,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}{{else}}{{end}}',
+          '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}{{ else }}{{ end }}',
       },
     ],
     rows: {

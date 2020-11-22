@@ -90,7 +90,10 @@
   },
   "search": {
     "keywordsfilters": [
-      { "name": "re_replace", "args": ["S(\\d{1,2})E(\\d{1,2})", "S$1/E$2"] }
+      {
+        "name": "re_replace",
+        "args": ["(?i)S(\\d{1,2})E(\\d{1,2})", "S$1/E$2"]
+      }
     ],
     "inputs": {
       "page": "torrents",
@@ -115,7 +118,7 @@
           { "name": "re_replace", "args": ["\\/", " "] },
           {
             "name": "re_replace",
-            "args": ["S(\\d{1,2}) E(\\d{1,2})", "S$1E$2"]
+            "args": ["(?i)S(\\d{1,2}) E(\\d{1,2})", "S$1E$2"]
           },
           { "name": "re_replace", "args": ["\\(", ""] },
           { "name": "re_replace", "args": ["\\)", ""] },

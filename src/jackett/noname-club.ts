@@ -1418,7 +1418,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'forum/tracker.php', method: 'post' }],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       o: '{{ .Config.sort }}',
       s: '{{ .Config.type }}',
       tm: -1,

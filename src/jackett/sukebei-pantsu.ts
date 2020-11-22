@@ -175,7 +175,10 @@ export const definition: TrackerDefinition = {
       grabs: { selector: 'td.tr-dl', optional: true },
       date: {
         selector: 'td.date-short',
-        filters: [{ name: 'dateparse', args: '2006-01-02T15:04:05Z' }],
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2, 2006 -07:00' },
+        ],
       },
       size: {
         selector: 'td.tr-size',

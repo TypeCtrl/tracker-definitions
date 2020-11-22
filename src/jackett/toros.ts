@@ -76,7 +76,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(2):not(:contains("ago")):not(:contains("day"))',
         optional: true,
-        filters: [{ name: 'dateparse', args: '2 Jan' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '2 Jan -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(3)' },
       seeders: { selector: 'td:nth-child(4)' },

@@ -114,7 +114,7 @@ export const definition: TrackerDefinition = {
       { path: 'music.php', categories: [406, 408, 434] },
     ],
     inputs: {
-      $raw: '{{range .Categories}}cat{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 0,
       spstate: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',

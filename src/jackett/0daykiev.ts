@@ -134,7 +134,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
       where: 0,

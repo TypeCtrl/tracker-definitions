@@ -39,7 +39,8 @@
         "attribute": "href",
         "filters": [
           { "name": "querystring", "args": "date" },
-          { "name": "dateparse", "args": "2006-01-02" }
+          { "name": "append", "args": " +03:00" },
+          { "name": "dateparse", "args": "2006-01-02 -07:00" }
         ]
       },
       "size": {

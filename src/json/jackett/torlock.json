@@ -64,7 +64,7 @@
   "search": {
     "paths": [
       {
-        "path": "{{if .Keywords}}/all/torrents/{{ .Keywords }}.html?sort={{ .Config.sort }}&order={{ .Config.type }}{{else}}/fresh.html{{end}}"
+        "path": "{{ if .Keywords }}/all/torrents/{{ .Keywords }}.html?sort={{ .Config.sort }}&order={{ .Config.type }}{{ else }}/fresh.html{{ end }}"
       }
     ],
     "keywordsfilters": [

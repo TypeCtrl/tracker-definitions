@@ -91,7 +91,12 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   search: {
-    keywordsfilters: [{ name: 're_replace', args: ['S(\\d{1,2})E(\\d{1,2})', 'S$1/E$2'] }],
+    keywordsfilters: [
+      {
+        name: 're_replace',
+        args: ['(?i)S(\\d{1,2})E(\\d{1,2})', 'S$1/E$2'],
+      },
+    ],
     inputs: {
       page: 'torrents',
       $raw: '&category={{ range .Categories }}{{.}};{{end}}',
@@ -116,7 +121,7 @@ export const definition: TrackerDefinition = {
           { name: 're_replace', args: ['\\/', ' '] },
           {
             name: 're_replace',
-            args: ['S(\\d{1,2}) E(\\d{1,2})', 'S$1E$2'],
+            args: ['(?i)S(\\d{1,2}) E(\\d{1,2})', 'S$1E$2'],
           },
           { name: 're_replace', args: ['\\(', ''] },
           { name: 're_replace', args: ['\\)', ''] },

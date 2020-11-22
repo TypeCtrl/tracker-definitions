@@ -8,7 +8,12 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'WINDOWS-1252',
   followredirect: true,
-  links: ['https://ilcorsaronero.link/', 'https://ilcorsaronero.fun/', 'https://ilcorsaronero.pro/'],
+  links: [
+    'https://ilcorsaronero.link/',
+    'https://ilcorsaronero.fun/',
+    'https://ilcorsaronero.pro/',
+    'https://ilcorsaronero.torrentbay.to/',
+  ],
   legacylinks: [
     'https://ilcorsaronero.live/',
     'https://ilcorsaronero.vip/',
@@ -95,18 +100,6 @@ export const definition: TrackerDefinition = {
       {
         path:
           '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=2{{ else }}/browse/2{{ end }}',
-      },
-      {
-        path:
-          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=3{{ else }}/browse/3{{ end }}',
-      },
-      {
-        path:
-          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=4{{ else }}/browse/4{{ end }}',
-      },
-      {
-        path:
-          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=5{{ else }}/browse/5{{ end }}',
       },
     ],
     keywordsfilters: [

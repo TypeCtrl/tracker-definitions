@@ -166,7 +166,7 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [
       {
         name: 're_replace',
-        args: ['S01E01', '{{ if .Config.stripS01E01 }}{{ else }}S01E01{{ end }}'],
+        args: ['(?i)S01E01', '{{ if .Config.stripS01E01 }}{{ else }}S01E01{{ end }}'],
       },
     ],
     rows: { selector: 'tr:has(a.magnetlink)' },

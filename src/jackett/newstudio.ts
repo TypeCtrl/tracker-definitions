@@ -40,6 +40,7 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
+      category: { text: 6 },
       title: {
         selector: 'a[href^="./viewtopic.php?t="] > b',
         filters: [
@@ -71,7 +72,6 @@ export const definition: TrackerDefinition = {
       },
       poster: { selector: 'td:nth-child(3) > a > img', attribute: 'src' },
       size: { selector: 'td:nth-child(5) > a' },
-      category: { text: 6 },
       date: {
         selector: 'td:nth-child(6)',
         filters: [
@@ -89,7 +89,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['Окт', 'Oct'] },
           { name: 'replace', args: ['Ноя', 'Nov'] },
           { name: 'replace', args: ['Дек', 'Dec'] },
-          { name: 'append', args: ':00 +05:00' },
+          { name: 'append', args: ':00 +03:00' },
           { name: 'dateparse', args: '2 Jan 06 15:04:05 -07:00' },
         ],
       },

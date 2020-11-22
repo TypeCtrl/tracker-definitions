@@ -27,8 +27,8 @@
   "search": {
     "paths": [{ "path": "torrents-search.php" }],
     "inputs": {
-      "$raw": "{{range .Categories}}filter_cat[{{.}}]=1&{{end}}",
-      "search": "{{if .Keywords}}\"{{.Keywords}}\"{{else}}{{end}}"
+      "$raw": "{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}",
+      "search": "{{ if .Keywords }}\"{{ .Keywords }}\"{{ else }}{{ end }}"
     },
     "rows": {
       "selector": "table > tbody > tr:has(a[href^=\"torrents.php?cat=\"])"
@@ -53,8 +53,8 @@
       "size": { "selector": "td:nth-child(7)" },
       "seeders": { "selector": "td:nth-child(8)" },
       "leechers": { "selector": "td:nth-child(9)" },
-      "downloadvolumefactor": { "case": { "*": "1" } },
-      "uploadvolumefactor": { "case": { "*": "1" } }
+      "downloadvolumefactor": { "text": 1 },
+      "uploadvolumefactor": { "text": 1 }
     }
   },
   "source": "jackett"

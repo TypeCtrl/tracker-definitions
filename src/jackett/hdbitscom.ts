@@ -38,8 +38,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      searchstr: '{{ .Query.Keywords }}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      searchstr: '{{ .Keywords }}',
       order_by: 'time',
       order_way: 'desc',
       action: 'basic',
@@ -47,12 +47,6 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
     fields: {
-      download: {
-        selector: 'a[href^="torrents.php?action=download&id="]',
-        attribute: 'href',
-      },
-      description: { selector: 'div.group_info div.tags' },
-      title: { selector: 'div.group_info a[href^="torrents.php?id="]' },
       category: {
         selector: 'td.cats_col',
         case: {
@@ -63,10 +57,16 @@ export const definition: TrackerDefinition = {
           'div.cats_xxx': 5,
         },
       },
+      title: { selector: 'div.group_info a[href^="torrents.php?id="]' },
       details: {
         selector: 'a[href^="torrents.php?id="]',
         attribute: 'href',
       },
+      download: {
+        selector: 'a[href^="torrents.php?action=download&id="]',
+        attribute: 'href',
+      },
+      description: { selector: 'div.group_info div.tags' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
@@ -79,9 +79,9 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
-        case: { "div.freeleech:contains('Freeleech!')": '0', '*': '1' },
+        case: { "div.freeleech:contains('Freeleech!')": 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

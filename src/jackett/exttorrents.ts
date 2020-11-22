@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://ext.to/', 'https://torrent.extto.com/'],
+  links: ['https://ext.to/', 'https://torrent.extto.com/', 'https://ext.torrentbay.to/'],
   legacylinks: ['https://ext.unblockninja.com/', 'https://t.extto.com/'],
   caps: {
     categorymappings: [
@@ -139,6 +139,18 @@ export const definition: TrackerDefinition = {
       {
         path:
           '{{ if .Keywords }}search/?q={{ .Keywords }}&{{ else }}latest/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
+      },
+      {
+        path:
+          '{{ if .Keywords }}search/?q={{ .Keywords }}/2/&{{ else }}latest/2/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
+      },
+      {
+        path:
+          '{{ if .Keywords }}search/?q={{ .Keywords }}/3/&{{ else }}latest/3/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
+      },
+      {
+        path:
+          '{{ if .Keywords }}search/?q={{ .Keywords }}/4/&{{ else }}latest/4/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
       },
     ],
     rows: { selector: 'table.table-striped > tbody > tr' },

@@ -83,7 +83,7 @@ export const definition: TrackerDefinition = {
   },
   search: {
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
     },
@@ -126,7 +126,7 @@ export const definition: TrackerDefinition = {
         selector: '.tablea tr:nth-child(2) td:nth-child(2) b:nth-child(3) font',
       },
       downloadvolumefactor: {
-        case: { 'img[src="pic/oupic.gif"]': '0', '*': '1' },
+        case: { 'img[src="pic/oupic.gif"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
     },

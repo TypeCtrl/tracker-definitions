@@ -1287,7 +1287,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       prev_allw: 1,
       prev_a: 0,
       prev_dla: 0,

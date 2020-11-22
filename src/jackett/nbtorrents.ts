@@ -125,7 +125,10 @@ export const definition: TrackerDefinition = {
       files: { selector: 'td:nth-of-type(5)' },
       date: {
         selector: 'td:nth-of-type(7)',
-        filters: [{ name: 'dateparse', args: 'Jan 2 2006 03:04 PM' }],
+        filters: [
+          { name: 'append', args: ' +05:30' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
       },
       size: { selector: 'td:nth-of-type(8)' },
       grabs: {

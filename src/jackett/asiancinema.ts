@@ -68,7 +68,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents/filter' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',

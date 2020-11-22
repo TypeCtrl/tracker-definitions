@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php', method: 'get' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
     },
     rows: {
       selector: 'table.torrents_table tbody tr:has(a[href^="download2.php?id="])',
@@ -89,13 +89,13 @@ export const definition: TrackerDefinition = {
       category: { text: 'Music' },
       downloadvolumefactor: {
         case: {
-          'img[src$="pic/freedownload.gif"]': '0',
-          'img[src$="pic/half.gif"]': '0.5',
-          '*': '1',
+          'img[src$="pic/freedownload.gif"]': 0,
+          'img[src$="pic/half.gif"]': 0.5,
+          '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: { 'img[src$="pic/sticky2.gif"]': '1.5', '*': '1' },
+        case: { 'img[src$="pic/sticky2.gif"]': 1.5, '*': 1 },
       },
     },
   },

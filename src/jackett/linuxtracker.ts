@@ -314,7 +314,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'index.php' }, { path: 'index.php', inputs: { pages: 2 } }],
     inputs: {
-      $raw: 'category={{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{else}}0{{end}}&',
+      $raw: 'category={{ if .Categories }}{{ range .Categories }}{{.}};{{end}}{{ else }}0{{ end }}&',
       search: '{{ .Keywords }}',
       page: 'torrents',
       active: 1,

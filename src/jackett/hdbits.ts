@@ -40,8 +40,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
+      search: '{{ .Keywords }}',
     },
     rows: {
       selector: 'table#torrent-list > tbody > tr:has(a[href^="/details.php?id="])',
@@ -71,13 +71,13 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: {
         case: {
-          'a[title="25% Free Leech: only 75% of the download is counted."]': '0.25',
-          'a[title="50% Free Leech: only half the download is counted."]': '0.5',
-          'a[title="100% FL: no download is counted."]': '0',
-          '*': '1',
+          'a[title="25% Free Leech: only 75% of the download is counted."]': 0.25,
+          'a[title="50% Free Leech: only half the download is counted."]': 0.5,
+          'a[title="100% FL: no download is counted."]': 0,
+          '*': 1,
         },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

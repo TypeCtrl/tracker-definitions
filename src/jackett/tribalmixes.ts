@@ -66,7 +66,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
+      search: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       sort: '{{ re_replace .Config.sort "_" "" }}',
       type: '{{ .Config.type }}',
     },

@@ -102,7 +102,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'tfiles.php' }],
     inputs: {
       showsearch: 1,
-      $raw: '{{ if .Categories }}{{ range .Categories }}c{{.}}=1&{{end}}{{else}}{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}c{{.}}=1&{{end}}{{ else }}{{ end }}',
       search: '{{ .Keywords }}',
       orderby: '{{ .Config.sort }}',
       sort: '{{ .Config.type }}',
@@ -110,17 +110,12 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'tr:has(a[href^="details.php?id="])' },
     fields: {
-      title: { selector: 'a[href^="details.php?id="]' },
-      poster: {
-        selector: 'a[href^="details.php?id="][onmouseover]',
-        attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: '<img src=(.*) width=' }],
-      },
       category: {
         selector: 'a[href^="tfiles.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
+      title: { selector: 'a[href^="details.php?id="]' },
       details: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
@@ -128,6 +123,11 @@ export const definition: TrackerDefinition = {
       download: {
         selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
+      },
+      poster: {
+        selector: 'a[href^="details.php?id="][onmouseover]',
+        attribute: 'onmouseover',
+        filters: [{ name: 'regexp', args: '<img src=(.*) width=' }],
       },
       grabs: {
         selector: 'tr > th > span:nth-child(5)',

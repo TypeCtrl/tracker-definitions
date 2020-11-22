@@ -86,7 +86,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents_beta.php', method: 'get' }],
     inputs: {
-      $raw: '{{range .Categories}}category[]={{.}}&{{end}}',
+      $raw: '{{ range .Categories }}category[]={{.}}&{{end}}',
       search: '{{ .Keywords }}',
       active: 0,
     },

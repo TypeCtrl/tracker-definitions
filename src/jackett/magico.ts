@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'el-GR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://magico.club/'],
-  legacylinks: ['https://magico.info/', 'https://magico.one/'],
+  links: ['https://magico.fun/'],
+  legacylinks: ['https://magico.info/', 'https://magico.one/', 'https://magico.club/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },

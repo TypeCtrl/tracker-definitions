@@ -74,7 +74,7 @@
     "paths": [{ "path": "browse.php" }],
     "inputs": {
       "$raw": "{{ range .Categories }}c{{.}}=1&{{end}}",
-      "search": "{{ if .Query.IMDBID }}https://www.imdb.com/title/{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}",
+      "search": "{{ if .Query.IMDBID }}https://www.imdb.com/title/{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
       "incldead": 0,
       "onlyname": 1,
       "onlyname2": true,

@@ -113,8 +113,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'selection.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{ .Keywords }}{{end}}',
-      blah: '{{ if .Query.IMDBID }}3{{else}}0{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}',
+      blah: '{{ if .Query.IMDBID }}3{{ else }}0{{ end }}',
       orderby: '{{ .Config.sort }}',
       sort: '{{ .Config.type }}',
     },

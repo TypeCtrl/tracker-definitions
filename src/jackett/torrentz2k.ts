@@ -59,7 +59,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: { selector: 'span.btntitle', attribute: 'title' },
-      details: { text: '/' },
+      details: { text: '{{ .Config.sitelink }}' },
       download: {
         selector: 'a[href^="magnet:?xt="]',
         attribute: 'href',
@@ -76,7 +76,7 @@ export const definition: TrackerDefinition = {
       },
       _size: { selector: 'td:nth-child(6)' },
       size: {
-        text: '{{ if .Result._size }}{{ .Result._size }}{{else}}0 B{{end}}',
+        text: '{{ if .Result._size }}{{ .Result._size }}{{ else }}0 B{{ end }}',
       },
       seeders: { selector: 'td:nth-child(3)' },
       leechers: { selector: 'td:nth-child(4)' },

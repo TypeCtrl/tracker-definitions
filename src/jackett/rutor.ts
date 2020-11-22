@@ -57,7 +57,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}search/0/0/100/{{ .Config.sort }}/{{ .Keywords }}/{{else}}top/{{end}}',
+        path: '{{ if .Keywords }}search/0/0/100/{{ .Config.sort }}/{{ .Keywords }}/{{ else }}top/{{ end }}',
       },
     ],
     rows: { selector: 'tr:has(td:has(a.downgif))' },

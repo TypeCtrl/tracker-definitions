@@ -45,7 +45,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}&titleonly=3catlist[]=0&searchdate=0&resorder=desc{{else}}lastnews/{{end}}',
+          '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}&titleonly=3catlist[]=0&searchdate=0&resorder=desc{{ else }}lastnews/{{ end }}',
       },
     ],
     rows: { selector: 'tr.fr_viewn_in:has(td.frs:contains("B"))' },
@@ -60,7 +60,10 @@ export const definition: TrackerDefinition = {
       download: { selector: 'td.titlelast a', attribute: 'href' },
       date: {
         selector: 'i',
-        filters: [{ name: 'dateparse', args: '02-01-2006 15:04:05' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '02-01-2006 15:04:05 -07:00' },
+        ],
       },
       size: { selector: 'td.frs' },
       seeders: { selector: 'td.frsl_s' },

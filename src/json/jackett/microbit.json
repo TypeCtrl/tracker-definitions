@@ -129,7 +129,10 @@
       "size": { "selector": "td:nth-child(8)" },
       "date": {
         "selector": "td:nth-child(9)",
-        "filters": [{ "name": "dateparse", "args": "2006.01.02. 15:04" }]
+        "filters": [
+          { "name": "append", "args": " +01:00" },
+          { "name": "dateparse", "args": "2006.01.02. 15:04 -07:00" }
+        ]
       },
       "downloadvolumefactor": {
         "optional": true,

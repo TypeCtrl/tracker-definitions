@@ -50,7 +50,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td.date',
-        filters: [{ name: 'dateparse', args: '2006-01-02' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '2006-01-02 -07:00' },
+        ],
       },
       size: { selector: 'td.size' },
       seeders: { text: 1 },

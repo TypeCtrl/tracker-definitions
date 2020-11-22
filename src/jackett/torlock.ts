@@ -67,7 +67,7 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{if .Keywords}}/all/torrents/{{ .Keywords }}.html?sort={{ .Config.sort }}&order={{ .Config.type }}{{else}}/fresh.html{{end}}',
+          '{{ if .Keywords }}/all/torrents/{{ .Keywords }}.html?sort={{ .Config.sort }}&order={{ .Config.type }}{{ else }}/fresh.html{{ end }}',
       },
     ],
     keywordsfilters: [{ name: 'tolower' }, { name: 're_replace', args: ['[^a-zA-Z0-9]+', '-'] }],

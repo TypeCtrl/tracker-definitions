@@ -159,8 +159,8 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(5)',
         filters: [
-          { name: 'append', args: ' -00' },
-          { name: 'dateparse', args: '2006-01-02 15:04 -07' },
+          { name: 'append', args: ' -00:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04 -07:00' },
         ],
       },
       seeders: {

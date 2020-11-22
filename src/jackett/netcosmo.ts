@@ -88,8 +88,8 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'index.php' }],
     keywordsfilters: [
-      { name: 're_replace', args: ['S0?(\\d{1,2})', ' $1 '] },
-      { name: 're_replace', args: ['E(\\d{2,3})', ' $1 '] },
+      { name: 're_replace', args: ['(?i)S0?(\\d{1,2})', ' $1 '] },
+      { name: 're_replace', args: ['(?i)E(\\d{2,3})', ' $1 '] },
       { name: 'replace', args: ['-', ''] },
     ],
     inputs: {

@@ -25,7 +25,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}search/{{ .Keywords }}/{{ .Config.sort }}/{{else}}new.html{{end}}',
+        path: '{{ if .Keywords }}search/{{ .Keywords }}/{{ .Config.sort }}/{{ else }}new.html{{ end }}',
       },
     ],
     rows: { selector: 'div.grid_4' },

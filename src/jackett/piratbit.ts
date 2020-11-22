@@ -1727,7 +1727,7 @@ export const definition: TrackerDefinition = {
       },
     ],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       prev_a: 0,
       prev_gold: 0,
       prev_silver: 0,
@@ -1791,7 +1791,10 @@ export const definition: TrackerDefinition = {
         optional: true,
         selector:
           'td[title="Добавлен"] p:first-of-type:contains("-"), td[title="Доданий"] p:first-of-type:contains("-"), td[title="Added"] p:first-of-type:contains("-")',
-        filters: [{ name: 'dateparse', args: '15:04 2-01-06' }],
+        filters: [
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '15:04 2-01-06 -07:00' },
+        ],
       },
       grabs: {
         selector: 'td[title^="Ответов"], td[title^="Відповідей"], td[title^="Replies"]',

@@ -15,9 +15,11 @@ export const definition: TrackerDefinition = {
   settings: [],
   search: {
     paths: [
-      { path: '{{ if .Keywords }}search/{{ .Keywords }}{{else}}new{{end}}' },
       {
-        path: '{{ if .Keywords }}search/{{ .Keywords }}{{else}}new{{end}}?page=2',
+        path: '{{ if .Keywords }}search/{{ .Keywords }}{{ else }}new{{ end }}',
+      },
+      {
+        path: '{{ if .Keywords }}search/{{ .Keywords }}{{ else }}new{{ end }}?page=2',
       },
     ],
     rows: { selector: 'div.mb-3' },
@@ -47,7 +49,10 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'p.is-6 > a',
         attribute: 'href',
-        filters: [{ name: 'dateparse', args: '/2006/01/02' }],
+        filters: [
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '/2006/01/02 -07:00' },
+        ],
       },
       size: { selector: 'span.is-size-6' },
       seeders: { text: 1 },

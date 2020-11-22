@@ -175,7 +175,7 @@ export const definition: TrackerDefinition = {
       nm: '{{ .Keywords }}',
       pn: '',
       allw: 1,
-      $raw: '{{ if .Categories }}{{range .Categories}}&f[]={{.}}{{end}}{{else}}&f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}&f[]={{.}}{{end}}{{ else }}&f[]=-1{{ end }}',
     },
     keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
     rows: { selector: 'tr[id^="tor_"]' },

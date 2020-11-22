@@ -202,7 +202,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'search.php' }],
     inputs: {
       tracker_search: 'torrent',
-      keywords: '{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}',
+      keywords: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       terms: 'all',
       fp: 1,
       author: '',
@@ -253,7 +253,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       date: {
-        text: '{{ if .Result.find_date }}{{ .Result.find_date}}{{else}}now{{end}}',
+        text: '{{ if .Result.find_date }}{{ .Result.find_date }}{{ else }}now{{ end }}',
       },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },

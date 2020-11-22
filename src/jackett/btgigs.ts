@@ -72,7 +72,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     error: [{ selector: 'a.altlink' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
       tyt: 0,

@@ -412,7 +412,7 @@
       "sf": "titleonly",
       "fp": 1,
       "tracker_search": "torrent",
-      "keywords": "{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}",
+      "keywords": "{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}",
       "sk": "{{ .Config.sort }}",
       "sd": "{{ .Config.type }}",
       "$raw": "{{ range .Categories }}&fid[]={{.}}{{end}}"
@@ -456,7 +456,8 @@
           { "name": "replace", "args": ["ноя", "Nov"] },
           { "name": "replace", "args": ["дек", "Dec"] },
           { "name": "replace", "args": [",", ""] },
-          { "name": "dateparse", "args": "02 Jan 2006 15:04" }
+          { "name": "append", "args": " +03:00" },
+          { "name": "dateparse", "args": "02 Jan 2006 15:04 -07:00" }
         ]
       },
       "downloadvolumefactor": { "text": 0 },

@@ -164,7 +164,7 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [
       { name: 're_replace', args: ['(?i)S(\\d+)', ' $1 '] },
       { name: 're_replace', args: ['(?i)E(\\d+)', ' $1 '] },
-      { name: 're_replace', args: ['[^a-zA-Z0-9]+', ' '] },
+      { name: 're_replace', args: ['[\\.\\-,_\\[\\]\\(\\)]+', ' '] },
     ],
     inputs: {
       page: 'torrents',
@@ -243,7 +243,10 @@ export const definition: TrackerDefinition = {
       },
       date: {
         selector: 'td:nth-child(5)',
-        filters: [{ name: 'dateparse', args: '02/01/2006' }],
+        filters: [
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
+        ],
       },
       download: {
         selector: 'a[href^="download.php"]',

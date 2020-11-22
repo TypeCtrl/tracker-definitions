@@ -36,6 +36,13 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
+      name: 'info_token',
+      type: 'info',
+      label: 'About the Freeleech token',
+      default:
+        'If you <b>do not</b> have any <i>Freeleech tokens</i> then do not tick this box.</br>Attempting a token download when you have no tokens will generate an <b>error</b>.',
+    },
+    {
       name: 'multilang',
       type: 'checkbox',
       label: 'Replace MULTI by another language in release name',
@@ -99,7 +106,7 @@ export const definition: TrackerDefinition = {
   },
   search: {
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
       groupname: '{{ .Keywords }}',
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
@@ -131,7 +138,8 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'append', args: '&usetoken=1' }],
       },
       download: {
-        text: '{{if .Config.usetoken}}{{ .Result.download-usetoken }}{{else}}{{ .Result.download-regular }}{{end}}',
+        text:
+          '{{ if .Config.usetoken }}{{ .Result.download-usetoken }}{{ else }}{{ .Result.download-regular }}{{ end }}',
       },
       title_phase1: {
         selector: 'div.group_info',

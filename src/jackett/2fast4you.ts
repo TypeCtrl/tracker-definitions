@@ -164,7 +164,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'torrents-search.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
       freeleech: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',

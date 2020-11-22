@@ -46,7 +46,7 @@ export const definition: TrackerDefinition = {
       add: 0,
       or: 1,
       action: 's',
-      imdb: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{else}}{{end}}',
+      imdb: '{{ if .Query.IMDBID }}{{ .Query.IMDBIDShort }}{{ else }}{{ end }}',
     },
     rows: {
       selector: 'div#unsticky-torrent-table dl, div#sticky-torrent-table dl',

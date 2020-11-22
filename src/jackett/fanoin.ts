@@ -91,7 +91,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse_old.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       incldead: 1,
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',

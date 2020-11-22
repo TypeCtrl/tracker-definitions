@@ -137,7 +137,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path: '{{if .Config.filter-verified }}verified{{ else }}search{{ end }}{{ re_replace .Config.sort "_" "" }}',
+        path: '{{ if .Config.filter-verified }}verified{{ else }}search{{ end }}{{ re_replace .Config.sort "_" "" }}',
       },
     ],
     inputs: {
@@ -159,7 +159,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       download: {
-        text: '{{if .Config.itorrents-links}}{{ .Result.download-itorrents }}{{ else }}{{ end }}',
+        text: '{{ if .Config.itorrents-links }}{{ .Result.download-itorrents }}{{ else }}{{ end }}',
       },
       infohash: {
         selector: 'dt a',

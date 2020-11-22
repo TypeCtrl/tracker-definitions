@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       loginfield: 'username',
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      cookietime: '2592000',
+      cookietime: 2592000,
     },
     error: [{ selector: 'div#messagetext:contains("登录失败") p' }],
     test: { path: '/', selector: 'a[href*="action=logout&formhash="]' },

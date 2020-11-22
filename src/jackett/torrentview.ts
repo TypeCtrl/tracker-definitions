@@ -87,7 +87,7 @@ export const definition: TrackerDefinition = {
         attribute: 'datetime',
         filters: [
           { name: 'replace', args: ['T', ' '] },
-          { name: 'dateparse', args: '2006-01-02 15:04:05+09:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05-07:00' },
         ],
       },
       cat: {

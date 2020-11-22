@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.torrent9.so/', 'https://torrent9.unblocked.rest/', 'https://torrent9.unblockninja.com/'],
+  links: ['https://www.torrent9.so/', 'https://torrent9.unblocked.rest/'],
   legacylinks: [
     'https://www.torrents9.pw/',
     'https://www.torrent9.ch/',
@@ -41,6 +41,7 @@ export const definition: TrackerDefinition = {
     'https://torrent9.unblocked.bar/',
     'https://torrent9.proxyportal.pw/',
     'https://torrent9.uk-unblock.pro/',
+    'https://torrent9.unblockninja.com/',
   ],
   caps: {
     categorymappings: [

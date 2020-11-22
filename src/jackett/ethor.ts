@@ -142,7 +142,7 @@ export const definition: TrackerDefinition = {
       },
       title: {
         text:
-          '{{if .Config.multilang }}{{ .Result._title_multilang }}{{ else }}{{ .Result._title_normalized }}{{ end }}',
+          '{{ if .Config.multilang }}{{ .Result._title_multilang }}{{ else }}{{ .Result._title_normalized }}{{ end }}',
       },
       category: {
         selector: 'a[href^="/browse.php?cat="]',

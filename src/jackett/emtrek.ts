@@ -382,7 +382,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'tracker.php' }],
     inputs: {
-      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{else}}f[]=-1{{end}}',
+      $raw: '{{ if .Categories }}{{ range .Categories }}f[]={{.}}&{{end}}{{ else }}f[]=-1{{ end }}',
       prev_allw: 1,
       prev_a: 0,
       prev_dla: 0,

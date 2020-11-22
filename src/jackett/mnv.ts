@@ -103,7 +103,7 @@ export const definition: TrackerDefinition = {
   },
   search: {
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
       blah: 0,
       incldead: 1,

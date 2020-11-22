@@ -70,13 +70,13 @@
       "selector": "table[width=\"100%\"] > tbody > tr:has(a[onclick=\"getMagnet(this)\"])"
     },
     "fields": {
-      "title": { "selector": "a[href^=\"/torrent/\"]" },
-      "details": { "selector": "a[href^=\"/torrent/\"]", "attribute": "href" },
       "category": {
         "selector": "a[href^=\"/tags.php?tags=\"]",
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "tags" }]
       },
+      "title": { "selector": "a[href^=\"/torrent/\"]" },
+      "details": { "selector": "a[href^=\"/torrent/\"]", "attribute": "href" },
       "download": {
         "selector": "a[onclick=\"getMagnet(this)\"]",
         "attribute": "title",
@@ -90,7 +90,10 @@
       },
       "date": {
         "selector": "td:nth-child(1)",
-        "filters": [{ "name": "dateparse", "args": "02/01/2006" }]
+        "filters": [
+          { "name": "append", "args": " +01:00" },
+          { "name": "dateparse", "args": "02/01/2006 -07:00" }
+        ]
       },
       "size": { "selector": "td:nth-child(4)" },
       "seeders": { "selector": "td:nth-child(6)" },

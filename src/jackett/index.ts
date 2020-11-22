@@ -355,6 +355,9 @@ export const jexkinoray = jjexkinoray;
 import { definition as jjextratorrentCd } from './extratorrent-cd';
 export const jextratorrentCd = jjextratorrentCd;
 
+import { definition as jjextratorrentIt } from './extratorrent-it';
+export const jextratorrentIt = jjextratorrentIt;
+
 import { definition as jjextremebits } from './extremebits';
 export const jextremebits = jjextremebits;
 
@@ -601,9 +604,6 @@ export const jkeepfriends = jjkeepfriends;
 import { definition as jjkickasstorrentKathow } from './kickasstorrent-kathow';
 export const jkickasstorrentKathow = jjkickasstorrentKathow;
 
-import { definition as jjkickasstorrent } from './kickasstorrent';
-export const jkickasstorrent = jjkickasstorrent;
-
 import { definition as jjkickasstorrentsTo } from './kickasstorrents-to';
 export const jkickasstorrentsTo = jjkickasstorrentsTo;
 
@@ -615,9 +615,6 @@ export const jkinorun = jjkinorun;
 
 import { definition as jjkinozal } from './kinozal';
 export const jkinozal = jjkinozal;
-
-import { definition as jjkorsar } from './korsar';
-export const jkorsar = jjkorsar;
 
 import { definition as jjlastfiles } from './lastfiles';
 export const jlastfiles = jjlastfiles;
@@ -681,6 +678,9 @@ export const jmajomparade = jjmajomparade;
 
 import { definition as jjmarinetracker } from './marinetracker';
 export const jmarinetracker = jjmarinetracker;
+
+import { definition as jjmesevilag } from './mesevilag';
+export const jmesevilag = jjmesevilag;
 
 import { definition as jjmetaltracker } from './metaltracker';
 export const jmetaltracker = jjmetaltracker;
@@ -1165,6 +1165,9 @@ export const jtorrentoyunindir = jjtorrentoyunindir;
 import { definition as jjtorrentparadise } from './torrentparadise';
 export const jtorrentparadise = jjtorrentparadise;
 
+import { definition as jjtorrentproject } from './torrentproject';
+export const jtorrentproject = jjtorrentproject;
+
 import { definition as jjtorrentproject2 } from './torrentproject2';
 export const jtorrentproject2 = jjtorrentproject2;
 
@@ -1281,9 +1284,6 @@ export const jxIteMe = jjxIteMe;
 
 import { definition as jjxbytes2 } from './xbytes2';
 export const jxbytes2 = jjxbytes2;
-
-import { definition as jjxfsub } from './xfsub';
-export const jxfsub = jjxfsub;
 
 import { definition as jjxwtclassics } from './xwtclassics';
 export const jxwtclassics = jjxwtclassics;
@@ -1450,6 +1450,7 @@ export const definitions = [
   jjettv,
   jjexkinoray,
   jjextratorrentCd,
+  jjextratorrentIt,
   jjextremebits,
   jjextremetorrents,
   jjextremlymtorrents,
@@ -1532,12 +1533,10 @@ export const definitions = [
   jjkaragarga,
   jjkeepfriends,
   jjkickasstorrentKathow,
-  jjkickasstorrent,
   jjkickasstorrentsTo,
   jjkinonavse100,
   jjkinorun,
   jjkinozal,
-  jjkorsar,
   jjlastfiles,
   jjlatinop2P,
   jjleaguehd,
@@ -1559,6 +1558,7 @@ export const definitions = [
   jjmagnetdl,
   jjmajomparade,
   jjmarinetracker,
+  jjmesevilag,
   jjmetaltracker,
   jjmicrobit,
   jjmixtapetorrent,
@@ -1720,6 +1720,7 @@ export const definitions = [
   jjtorrentlt,
   jjtorrentoyunindir,
   jjtorrentparadise,
+  jjtorrentproject,
   jjtorrentproject2,
   jjtorrentquest,
   jjtorrentsectorcrew,
@@ -1759,7 +1760,6 @@ export const definitions = [
   jjwoot,
   jjxIteMe,
   jjxbytes2,
-  jjxfsub,
   jjxwtclassics,
   jjxwtorrents,
   jjxxxadulttorrent,

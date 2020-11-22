@@ -74,30 +74,30 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
-      showsearch: '1',
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      showsearch: 1,
       orderby: 'added',
       sort: 'desc',
-      incldead: '1',
+      incldead: 1,
     },
     rows: {
       selector: 'table.tableinborder[summary] > tbody > tr',
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      download: {
-        selector: 'a[href^="download.php?torrent="]',
-        attribute: 'href',
-      },
-      title: { selector: 'a[href^="details.php?id="]:has(b)' },
       category: {
         selector: 'a[href^="browse.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
+      title: { selector: 'a[href^="details.php?id="]:has(b)' },
       details: {
         selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(4) > a',
+        attribute: 'href',
+      },
+      download: {
+        selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
       },
       size: {
@@ -119,16 +119,14 @@ export const definition: TrackerDefinition = {
         selector: 'td.tablea > table > tbody > tr:nth-child(2) > td:nth-child(5)',
         filters: [
           { name: 'replace', args: [' ', ' '] },
-          { name: 'dateparse', args: '02.01.2006 15:04:05' },
+          { name: 'append', args: ' +01:00' },
+          { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
         ],
       },
       downloadvolumefactor: {
-        case: {
-          'font[color="red"]:contains("Only Upload")': '0',
-          '*': '1',
-        },
+        case: { 'font[color="red"]:contains("Only Upload")': 0, '*': 1 },
       },
-      uploadvolumefactor: { case: { '*': '1' } },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

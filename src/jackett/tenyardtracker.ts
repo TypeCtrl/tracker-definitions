@@ -26,7 +26,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw: '{{range .Categories}}filter_cat[{{.}}]=1&{{end}}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
       search: '{{ .Keywords }}',
     },
     rows: { selector: 'table[border="1"] tr:not(:first-child)' },

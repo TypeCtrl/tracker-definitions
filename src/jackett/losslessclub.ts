@@ -25,15 +25,15 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      search: '{{if .Query.Artist}}{{ .Query.Artist }}{{else}}{{ .Keywords }}{{end}}',
+      search: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       t: 'all',
     },
     rows: {
       selector: 'div#releases-table > table > tbody > tr:has(a.browselink)',
     },
     fields: {
+      category: { text: 1 },
       title: { selector: 'a.browselink' },
-      category: { text: '1' },
       details: { selector: 'a.browselink', attribute: 'href' },
       download: {
         selector: 'a[href^="download.php?id="]',
@@ -57,12 +57,13 @@ export const definition: TrackerDefinition = {
         remove: 'a, i',
         filters: [
           { name: 'replace', args: ['by', ''] },
-          { name: 'dateparse', args: '2/01/06' },
+          { name: 'append', args: ' +03:00' },
+          { name: 'dateparse', args: '2/01/06 -07:00' },
         ],
       },
-      downloadvolumefactor: { case: { '*': '1' } },
-      uploadvolumefactor: { case: { '*': '1' } },
       description: { selector: 'div.tag_list_browse' },
+      downloadvolumefactor: { text: 1 },
+      uploadvolumefactor: { text: 1 },
     },
   },
   source: 'jackett',

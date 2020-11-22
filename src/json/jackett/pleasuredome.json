@@ -135,7 +135,10 @@
       },
       "date": {
         "selector": "td:nth-last-child(9)",
-        "filters": [{ "name": "dateparse", "args": "02/01/2006" }]
+        "filters": [
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "02/01/2006 -07:00" }
+        ]
       },
       "size": { "selector": "td:nth-last-child(8)" },
       "seeders": { "selector": "td:nth-last-child(6)" },

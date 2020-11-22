@@ -1189,7 +1189,7 @@
       "tracker_search": "torrent",
       "sk": "{{ .Config.sort }}",
       "sd": "{{ .Config.type }}",
-      "keywords": "{{ if .Keywords }}{{ .Keywords }}{{else}}{{ .Today.Year }}{{end}}",
+      "keywords": "{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}",
       "$raw": "{{ range .Categories }}&fid[]={{.}}{{end}}"
     },
     "rows": { "selector": "table.tablebg tr.col_line" },
@@ -1228,7 +1228,8 @@
           { "name": "replace", "args": ["окт", "Oct"] },
           { "name": "replace", "args": ["ноя", "Nov"] },
           { "name": "replace", "args": ["дек", "Dec"] },
-          { "name": "dateparse", "args": "02 Jan 2006" }
+          { "name": "append", "args": " +03:00" },
+          { "name": "dateparse", "args": "02 Jan 2006 -07:00" }
         ]
       },
       "downloadvolumefactor": { "text": 0 },

@@ -163,15 +163,15 @@ export const definition: TrackerDefinition = {
         'table[width="100%"][border=1][cellspacing=0][cellpadding=5] > tbody > tr:has(a[href*="hashinfo="]){{ if .Config.freeleech }}:has(td:nth-child(3):contains("100%")){{ else }}{{ end }}',
     },
     fields: {
-      title: { selector: 'a[href^="details.php?id="]' },
-      details: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
-      },
       category: {
         selector: 'a[href^="viewno18.php?cat="], a[href^="viewbr.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
+      },
+      title: { selector: 'a[href^="details.php?id="]' },
+      details: {
+        selector: 'a[href^="details.php?id="]',
+        attribute: 'href',
       },
       download: {
         selector: 'a[href^="details.php?id="]',
@@ -184,7 +184,10 @@ export const definition: TrackerDefinition = {
       files: { selector: 'td:nth-child(5)' },
       date: {
         selector: 'td:nth-child(7)',
-        filters: [{ name: 'dateparse', args: '02-01-200615:04:05' }],
+        filters: [
+          { name: 'append', args: ' +07:00' },
+          { name: 'dateparse', args: '02-01-200615:04:05 -07:00' },
+        ],
       },
       size: { selector: 'td:nth-child(8)' },
       grabs: {

@@ -149,7 +149,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrent/ajaxfiltertorrent/{{ .Keywords }}' }],
     keywordsfilters: [{ name: 're_replace', args: ['^$', 'null'] }],
     inputs: {
-      $raw: '{{range .Categories}}subcat[]={{.}}&{{end}}',
+      $raw: '{{ range .Categories }}subcat[]={{.}}&{{end}}',
       exclu: 0,
       freeleech: '{{ if .Config.freeleech }}1{{ else }}0{{ end }}',
       reseed: 0,

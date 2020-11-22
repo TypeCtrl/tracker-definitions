@@ -13,9 +13,9 @@ export const definition: TrackerDefinition = {
     'https://monova.to/',
     'https://monova.unblockit.app/',
     'https://monova.unblocked.rest/',
+    'https://monova.unblockninja.com/',
   ],
   legacylinks: [
-    'https://monova.unblockninja.com/',
     'https://monova.unblockit.pro/',
     'https://monova.unblockit.one/',
     'https://monova.black-mirror.xyz/',

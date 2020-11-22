@@ -139,24 +139,24 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],
       },
       date: {
-        selector: 'td:nth-last-of-type(11)',
+        selector: 'td:nth-last-of-type(12)',
         filters: [
           { name: 'append', args: ' +00:00' },
           { name: 'dateparse', args: '02/01/2006 -07:00' },
         ],
       },
-      seeders: { selector: 'td:nth-last-of-type(9)' },
-      leechers: { selector: 'td:nth-last-of-type(8)' },
+      seeders: { selector: 'td:nth-last-of-type(10)' },
+      leechers: { selector: 'td:nth-last-of-type(9)' },
       grabs: {
-        selector: 'td:nth-last-of-type(7)',
+        selector: 'td:nth-last-of-type(8)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
       size: {
-        selector: 'td:nth-last-of-type(5)',
+        selector: 'td:nth-last-of-type(6)',
         filters: [{ name: 'replace', args: [',', ''] }],
       },
       description: {
-        selector: 'td:nth-last-of-type(3) img',
+        selector: 'td:nth-last-of-type(4) img',
         attribute: 'title',
         filters: [{ name: 'prepend', args: 'Language: ' }],
       },

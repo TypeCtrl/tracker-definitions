@@ -74,7 +74,8 @@ export const definition: TrackerDefinition = {
         selector: 'td[valign="middle"] > p:nth-child(4)',
         filters: [
           { name: 'regexp', args: 'AddDate:\\s* \\s*(.+?)$' },
-          { name: 'dateparse', args: '15:04:05 02/01/2006' },
+          { name: 'append', args: ' -07:00' },
+          { name: 'dateparse', args: '15:04:05 02/01/2006 -07:00' },
         ],
       },
       seeders: {

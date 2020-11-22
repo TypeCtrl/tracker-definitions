@@ -97,9 +97,7 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
-    rows: {
-      selector: 'div.torrent_panel > div.torrent_group > div.group_content',
-    },
+    rows: { selector: 'div.group_content' },
     fields: {
       category: {
         selector: 'a[href^="?cat="]',

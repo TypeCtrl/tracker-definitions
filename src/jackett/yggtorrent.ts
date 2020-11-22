@@ -252,12 +252,12 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{else}}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{end}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{ else }}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{else}}engine{{end}}/search?category={{ .Config.category }}&name={{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
     ],
@@ -336,7 +336,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title_phase2: {
-        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{else}}{{ .Result.title_phase1 }}{{end}}',
+        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
       },
       title_vostfr: {
         text: '{{ .Result.title_phase2 }}',
@@ -352,7 +352,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title_phase3: {
-        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{else}}{{ .Result.title_phase2 }}{{end}}',
+        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
       },
       title_anime: {
         text: '{{ .Result.title_phase3 }}',
@@ -364,7 +364,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: {
-        text: '{{ if .Config.enhancedAnime }}{{ .Result.title_anime }}{{else}}{{ .Result.title_phase3 }}{{end}}',
+        text: '{{ if .Config.enhancedAnime }}{{ .Result.title_anime }}{{ else }}{{ .Result.title_phase3 }}{{ end }}',
       },
       details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       category: { selector: ':nth-child(1) > div.hidden' },
