@@ -355,6 +355,7 @@ export const definition: TrackerDefinition = {
       { id: '146', cat: 'Books', desc: ' |- Ноты' },
       { id: '121', cat: 'Other', desc: 'Обои / Рисунки / Картинки' },
       { id: '2', cat: 'Other', desc: 'Для пробных раздач' },
+      { id: '20', cat: 'Other', desc: 'Архив' },
     ],
     modes: {
       search: ['q'],

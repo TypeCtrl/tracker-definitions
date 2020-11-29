@@ -177,6 +177,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1.2 },
       description: { selector: 'td:nth-child(2)', remove: 'a, img' },
     },
   },

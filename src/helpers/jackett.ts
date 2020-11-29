@@ -114,7 +114,6 @@ export const jackettSites = [
   'erzsebetpl',
   'esharenet',
   'estone',
-  'ethor',
   'ettv',
   'exkinoray',
   'extratorrent-cd',

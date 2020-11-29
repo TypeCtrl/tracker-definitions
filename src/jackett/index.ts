@@ -343,9 +343,6 @@ export const jesharenet = jjesharenet;
 import { definition as jjestone } from './estone';
 export const jestone = jjestone;
 
-import { definition as jjethor } from './ethor';
-export const jethor = jjethor;
-
 import { definition as jjettv } from './ettv';
 export const jettv = jjettv;
 
@@ -1446,7 +1443,6 @@ export const definitions = [
   jjerzsebetpl,
   jjesharenet,
   jjestone,
-  jjethor,
   jjettv,
   jjexkinoray,
   jjextratorrentCd,

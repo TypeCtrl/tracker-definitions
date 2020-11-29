@@ -170,6 +170,7 @@ export const definition: TrackerDefinition = {
       },
       uploadvolumefactor: { text: 1 },
       minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

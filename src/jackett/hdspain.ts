@@ -78,7 +78,7 @@ export const definition: TrackerDefinition = {
         selector: 'td.titulo a[id]',
         filters: [
           { name: 'prepend', args: '{{ .Result.extras }} ' },
-          { name: 'append', args: ' [Spanish]' },
+          { name: 'append', args: ' Spanish' },
           { name: 're_replace', args: ['(?i)T(\\d{1,2})\\b', 'S$1'] },
         ],
       },

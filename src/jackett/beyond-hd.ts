@@ -86,8 +86,7 @@ export const definition: TrackerDefinition = {
       qty: 100,
     },
     rows: {
-      selector: 'div.table-torrents > table > tbody > tr',
-      after: 1,
+      selector: 'div.table-torrents > table > tbody > tr[id^="torrentposter"]',
     },
     fields: {
       _category: {
@@ -100,15 +99,10 @@ export const definition: TrackerDefinition = {
         text: '{{ if .Result._category }}{{ .Result._category }}{{ else }}1{{ end }}',
       },
       title: { selector: 'a.torrent-name' },
+      details: { selector: 'a.torrent-name', attribute: 'href' },
       download: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
-      },
-      details: { selector: 'a.torrent-name', attribute: 'href' },
-      poster: {
-        selector: 'div.torrent-poster img',
-        attribute: 'src',
-        filters: [{ name: 'replace', args: ['/img/person.png', ''] }],
       },
       date: {
         selector: 'td:not(a[href$="/history"]) span.text-orange',

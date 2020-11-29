@@ -148,6 +148,8 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [{ name: 'trim', args: 'x' }],
       },
+      minimumratio: { text: 0.5 },
+      minimumseedtime: { text: 172800 },
       date: {
         selector: 'td:nth-child(2)',
         remove: 'a',

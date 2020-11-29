@@ -111,8 +111,8 @@
           { "name": "append", "args": " {{ .Result.title_details }}" }
         ]
       },
-      "minimumratio": { "text": 0.6 },
-      "minimumseedtime": { "text": 259200 }
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 172800 }
     }
   },
   "source": "jackett"

@@ -285,7 +285,7 @@ export const definition: TrackerDefinition = {
         selector: 'td[valign="middle"] a:not(:contains("VOSE"))',
         optional: true,
         filters: [
-          { name: 'append', args: ' [Spanish]' },
+          { name: 'append', args: ' Spanish' },
           {
             name: 're_replace',
             args: ['(?i)T[\\s-_]?(\\d{1,2})\\b', ' S$1 '],

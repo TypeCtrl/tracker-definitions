@@ -3,9 +3,9 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'fouducinema',
   name: 'Fou-Du-Cinema',
-  description: 'Fou-Du-Cinema (FdC) is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Fou-Du-Cinema (FdC) is a FRENCH Semi-Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'fr-FR',
-  type: 'private',
+  type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://fou-du-cinema.net/'],
   caps: {
