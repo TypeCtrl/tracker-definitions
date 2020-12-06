@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
             args: ['S([0-9]+) - Episodio ([0-9]+)', '$2'],
           },
           { name: 're_replace', args: ['- Episodio ([0-9]*)', '$1'] },
-          { name: 'append', args: ' [spanish]' },
+          { name: 'append', args: ' Spanish' },
         ],
       },
       details: { selector: 'td.tit a', attribute: 'href' },

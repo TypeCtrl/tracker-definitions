@@ -30,10 +30,9 @@
   "settings": [
     {
       "name": "adverts",
-      "type": "select",
+      "type": "checkbox",
       "label": "Include Advertising",
-      "default": "_",
-      "options": { "_": "yes", "no": "no" }
+      "default": true
     },
     {
       "name": "sort",
@@ -47,8 +46,8 @@
     "paths": [{ "path": "browse.php" }],
     "inputs": {
       "s": "{{ .Keywords }}",
-      "rek": "{{ re_replace .Config.adverts \"_\" \"\" }}",
-      "sort": "{{ re_replace .Config.sort \"_\" \"\" }}"
+      "sort": "{{ re_replace .Config.sort \"_\" \"\" }}",
+      "$raw": "{{ if .Config.adverts }}{{ else }}&rek=no{{ end}}"
     },
     "rows": { "selector": "table.browse-list > tbody > tr" },
     "fields": {

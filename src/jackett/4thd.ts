@@ -17,6 +17,7 @@ export const definition: TrackerDefinition = {
       { id: '27', cat: 'Movies/HD', desc: 'MoviesHD' },
       { id: '29', cat: 'Movies/SD', desc: 'Movies/SD' },
       { id: '26', cat: 'Movies/SD', desc: 'Movies/XviD' },
+      { id: '45', cat: 'Movies', desc: 'Movies/Kids' },
       { id: '41', cat: 'TV/Foreign', desc: 'Foreign tv' },
       { id: '40', cat: 'TV', desc: 'Mini-Series' },
       { id: '43', cat: 'TV/HD', desc: 'TV H265' },

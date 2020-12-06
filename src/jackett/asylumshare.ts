@@ -174,7 +174,10 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
     },
-    keywordsfilters: [{ name: 're_replace', args: ['(19|20[0-9]{2})', ''] }],
+    keywordsfilters: [
+      { name: 're_replace', args: ['(19|20[0-9]{2})', ''] },
+      { name: 're_replace', args: ['(\\w+)', '+$1'] },
+    ],
     rows: { selector: 'tr.t-row:has(a[href^="download.php?id="])' },
     fields: {
       category: {

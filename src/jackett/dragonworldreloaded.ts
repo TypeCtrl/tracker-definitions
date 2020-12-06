@@ -219,6 +219,8 @@ export const definition: TrackerDefinition = {
         case: { ':root:has(div.onlyup)': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 43200 },
     },
   },
   source: 'jackett',

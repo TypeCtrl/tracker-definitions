@@ -140,7 +140,7 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'td:nth-child(2) a:last-of-type:contains("[PuyaSubs!] ")',
         optional: true,
-        filters: [{ name: 'append', args: ' [Spanish]' }],
+        filters: [{ name: 'append', args: ' Spanish' }],
       },
       details: {
         selector: 'td:nth-child(2) a:last-of-type',

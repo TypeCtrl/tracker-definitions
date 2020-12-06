@@ -667,9 +667,6 @@ export const jmagico = jjmagico;
 import { definition as jjmagnet4You } from './magnet4you';
 export const jmagnet4You = jjmagnet4You;
 
-import { definition as jjmagnetdl } from './magnetdl';
-export const jmagnetdl = jjmagnetdl;
-
 import { definition as jjmajomparade } from './majomparade';
 export const jmajomparade = jjmajomparade;
 
@@ -997,9 +994,6 @@ export const jsosulki = jjsosulki;
 import { definition as jjsoulvoice } from './soulvoice';
 export const jsoulvoice = jjsoulvoice;
 
-import { definition as jjspacetorrent } from './spacetorrent';
-export const jspacetorrent = jjspacetorrent;
-
 import { definition as jjspeedmasterhd } from './speedmasterhd';
 export const jspeedmasterhd = jjspeedmasterhd;
 
@@ -1167,9 +1161,6 @@ export const jtorrentproject = jjtorrentproject;
 
 import { definition as jjtorrentproject2 } from './torrentproject2';
 export const jtorrentproject2 = jjtorrentproject2;
-
-import { definition as jjtorrentquest } from './torrentquest';
-export const jtorrentquest = jjtorrentquest;
 
 import { definition as jjtorrentsectorcrew } from './torrentsectorcrew';
 export const jtorrentsectorcrew = jjtorrentsectorcrew;
@@ -1551,7 +1542,6 @@ export const definitions = [
   jjmadsrevolution,
   jjmagico,
   jjmagnet4You,
-  jjmagnetdl,
   jjmajomparade,
   jjmarinetracker,
   jjmesevilag,
@@ -1661,7 +1651,6 @@ export const definitions = [
   jjsnowpt,
   jjsosulki,
   jjsoulvoice,
-  jjspacetorrent,
   jjspeedmasterhd,
   jjspeedtorrentreloaded,
   jjspiritofrevolution,
@@ -1718,7 +1707,6 @@ export const definitions = [
   jjtorrentparadise,
   jjtorrentproject,
   jjtorrentproject2,
-  jjtorrentquest,
   jjtorrentsectorcrew,
   jjtorrentslocal,
   jjtorrentsurf,

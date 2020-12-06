@@ -32,10 +32,9 @@ export const definition: TrackerDefinition = {
   settings: [
     {
       name: 'adverts',
-      type: 'select',
+      type: 'checkbox',
       label: 'Include Advertising',
-      default: '_',
-      options: { _: 'yes', no: 'no' },
+      default: true,
     },
     {
       name: 'sort',
@@ -49,8 +48,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       s: '{{ .Keywords }}',
-      rek: '{{ re_replace .Config.adverts "_" "" }}',
       sort: '{{ re_replace .Config.sort "_" "" }}',
+      $raw: '{{ if .Config.adverts }}{{ else }}&rek=no{{ end}}',
     },
     rows: { selector: 'table.browse-list > tbody > tr' },
     fields: {

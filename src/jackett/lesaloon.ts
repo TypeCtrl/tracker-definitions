@@ -128,7 +128,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
-      rememberme: 'forever',
+      rememberme: '',
     },
     captcha: {
       type: 'image',

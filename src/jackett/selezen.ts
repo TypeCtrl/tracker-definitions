@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.selezen.net/'],
+  links: ['https://www.selezen.site/'],
+  legacylinks: ['https://www.selezen.net/'],
   caps: {
     categorymappings: [
       { id: '0', cat: 'Movies', desc: 'Movies' },

@@ -94,8 +94,8 @@ export const definition: TrackerDefinition = {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',
     },
-    error: [{ selector: 'span:contains("Password Incorrect")' }],
-    test: { path: 'index.php' },
+    error: [{ selector: 'span:contains("Password Incorrect")' }, { selector: 'span:contains("Username Incorrect")' }],
+    test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   search: {
     paths: [{ path: 'index.php' }],
