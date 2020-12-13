@@ -160,6 +160,8 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'img[src="./pic/x2.gif"]': 2, '*': 1 },
       },
+      minimumratio: { text: 0.8 },
+      minimumseedtime: { text: 259200 },
       date: {
         selector: 'td:nth-child(2)',
         remove: 'a, img',

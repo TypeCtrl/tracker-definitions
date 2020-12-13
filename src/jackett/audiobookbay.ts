@@ -7,8 +7,12 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://audiobookbay.nl/', 'https://audiobookbay.unblockit.app/'],
-  legacylinks: ['https://audiobookbay.la/', 'https://audiobookbay.unblockit.lat/'],
+  links: ['http://audiobookbay.nl/', 'https://audiobookbay.unblockit.dev/'],
+  legacylinks: [
+    'https://audiobookbay.la/',
+    'https://audiobookbay.unblockit.lat/',
+    'https://audiobookbay.unblockit.app/',
+  ],
   caps: {
     categorymappings: [
       {

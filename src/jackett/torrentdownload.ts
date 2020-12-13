@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.torrentdownload.info/',
-    'https://torrentdownload.unblockit.app/',
+    'https://torrentdownload.unblockit.dev/',
     'https://torrentdownload.unblocked.rest/',
   ],
   legacylinks: [
@@ -30,11 +30,17 @@ export const definition: TrackerDefinition = {
     'https://torrentdownload.uk-unblock.pro/',
     'https://torrentdownload.unblockit.top/',
     'https://torrentdownload.unblockit.lat/',
+    'https://torrentdownload.unblockit.app/',
   ],
   caps: {
     categorymappings: [
       { id: 'Adult', cat: 'XXX', desc: 'Adult' },
       { id: 'AdultPornHDVideo', cat: 'XXX', desc: 'Adult Porn HD Video' },
+      {
+        id: 'AdultPornPictures',
+        cat: 'XXX',
+        desc: 'Adult Porn Pictures',
+      },
       { id: 'AdultPornVideo', cat: 'XXX', desc: 'Adult Porn Video' },
       { id: 'Anime', cat: 'TV/Anime', desc: 'Anime' },
       {
@@ -110,6 +116,7 @@ export const definition: TrackerDefinition = {
       { id: 'XXX', cat: 'XXX', desc: 'XXX' },
       { id: 'XXXVideo', cat: 'XXX', desc: 'XXX Video' },
       { id: 'XXXHDVideo', cat: 'XXX', desc: 'XXX HD Video' },
+      { id: 'XXXPictures', cat: 'XXX', desc: 'XXX Pictures' },
     ],
     modes: {
       search: ['q'],

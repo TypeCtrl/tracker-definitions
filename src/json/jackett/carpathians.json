@@ -137,7 +137,9 @@
           "img[src=\"pic/doubledouble2.png\"]": 4,
           "*": 1
         }
-      }
+      },
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 172800 }
     }
   },
   "source": "jackett"

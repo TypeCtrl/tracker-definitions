@@ -1431,6 +1431,13 @@ export const definition: TrackerDefinition = {
       pn: '',
       submit: 'Поиск',
     },
+    keywordsfilters: [
+      { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', ' сезон $1'] },
+      {
+        name: 're_replace',
+        args: ['(?i)\\bS0*(\\d+)E0*(\\d+)\\b', ' сезон $1 серии $2'],
+      },
+    ],
     rows: {
       selector:
         'table.forumline.tablesorter > tbody > tr:has(a[href^="viewtopic.php?t="]):has(a[href^="download.php?id="])',

@@ -84,6 +84,8 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: ['(?i)(Zobrazit detaily: |View details: )', ''],
           },
+          { name: 're_replace', args: ['(Detaily: )', ''] },
+          { name: 're_replace', args: ['(\\w)\\.(\\w)', '$1 $2'] },
           { name: 're_replace', args: ['.*? / ', ''] },
           { name: 'diacritics', args: 'replace' },
         ],

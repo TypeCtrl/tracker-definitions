@@ -44,20 +44,6 @@ export const definition: TrackerDefinition = {
   },
   settings: [
     {
-      name: 'downloadlink',
-      type: 'select',
-      label: 'Download link',
-      default: 'magnet:?xt=',
-      options: { get_torrents: '.torrent', 'magnet:?xt=': 'magnet' },
-    },
-    {
-      name: 'info_downloadlink',
-      type: 'info',
-      label: 'About the Download Link',
-      default:
-        'Note that only <b>www.oxtorrent.cc</b> supports the use of the <b>.torrent</b> download link.<br />All sites support <b>magnet</b> links.',
-    },
-    {
       name: 'multilang',
       type: 'checkbox',
       label: 'Replace MULTI by another language in release name',
@@ -84,10 +70,7 @@ export const definition: TrackerDefinition = {
       default: false,
     },
   ],
-  download: {
-    selector: 'a[href*="{{ .Config.downloadlink }}"]',
-    attribute: 'href',
-  },
+  download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
   search: {
     paths: [
       {

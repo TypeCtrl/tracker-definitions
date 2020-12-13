@@ -82,10 +82,10 @@
       },
       "title": {
         "selector": "a[href^=\"details.php?name=\"]",
-        "attribute": "title",
         "filters": [
           { "name": "re_replace", "args": [".*? / ", ""] },
           { "name": "diacritics", "args": "replace" },
+          { "name": "re_replace", "args": ["( = CSFD \\d+\\%)", ""] },
           { "name": "re_replace", "args": ["(?i)serie", ""] },
           { "name": "re_replace", "args": ["(\\d{2})\\.", "S$1"] },
           { "name": "re_replace", "args": ["(\\d{1})\\.", "S0$1"] }

@@ -8,14 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: [
-    'https://torrentz2.is/',
-    'https://torrentsmirror.com/',
-    'https://torrentz.pl/',
-    'https://torrentz2.unblockninja.com/',
-    'https://torrentz.unblockit.app/',
-    'https://torrentz2.unblocked.rest/',
-  ],
+  links: ['https://torrentzwealmisr.onion.ly/', 'https://torrentz.unblockit.dev/'],
   legacylinks: [
     'https://torrentz.unblockit.pro/',
     'https://torrentz.unblockit.one/',
@@ -34,6 +27,12 @@ export const definition: TrackerDefinition = {
     'https://torrentz2.uk-unblock.pro/',
     'https://torrentz.unblockit.top/',
     'https://torrentz.unblockit.lat/',
+    'https://torrentz2.is/',
+    'https://torrentsmirror.com/',
+    'https://torrentz.pl/',
+    'https://torrentz2.unblockninja.com/',
+    'https://torrentz.unblockit.app/',
+    'https://torrentz2.unblocked.rest/',
   ],
   caps: {
     categorymappings: [

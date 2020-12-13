@@ -53,13 +53,6 @@ export const definition: TrackerDefinition = {
   },
   settings: [
     {
-      name: 'downloadlink',
-      type: 'select',
-      label: 'Download link',
-      default: 'magnet:?xt=',
-      options: { get_torrent: '.torrent', 'magnet:?xt=': 'magnet' },
-    },
-    {
       name: 'multilang',
       type: 'checkbox',
       label: 'Replace MULTI by another language in release name',
@@ -86,10 +79,7 @@ export const definition: TrackerDefinition = {
       default: false,
     },
   ],
-  download: {
-    selector: 'a[href*="{{ .Config.downloadlink }}"]',
-    attribute: 'href',
-  },
+  download: { selector: 'a[href*="magnet:?xt="]', attribute: 'href' },
   search: {
     paths: [
       {

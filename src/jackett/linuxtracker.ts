@@ -293,6 +293,7 @@ export const definition: TrackerDefinition = {
       { id: '2160', cat: 'PC/ISO', desc: 'Zeroshell' },
       { id: '2193', cat: 'PC/ISO', desc: 'Zevenet' },
       { id: '1233', cat: 'PC/ISO', desc: 'Zorin' },
+      { id: '531', cat: 'PC/ISO', desc: 'Super Grub2 Disk' },
     ],
     modes: { search: ['q'] },
   },

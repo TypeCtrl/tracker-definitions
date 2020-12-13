@@ -289,6 +289,7 @@ export const jackettSites = [
   'pthome',
   'ptmsg',
   'ptsbao',
+  'pttime',
   'puntotorrent',
   'purovicio',
   'pussytorrents',

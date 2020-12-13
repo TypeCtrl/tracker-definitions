@@ -10,10 +10,10 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: [
     'https://extratorrents.it/',
-    'https://extratorrent.unblockit.app/',
+    'https://extratorrent.unblockit.dev/',
     'https://extratorrent2.unblockninja.com/',
   ],
-  legacylinks: ['https://extratorrent.ag/'],
+  legacylinks: ['https://extratorrent.ag/', 'https://extratorrent.unblockit.app/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'TV/Anime', desc: 'Anime' },
@@ -1096,6 +1096,7 @@ export const definition: TrackerDefinition = {
       download: {
         selector: 'td a[href^="magnet:?xt="]',
         attribute: 'href',
+        filters: [{ name: 'replace', args: [';', '&'] }],
       },
       date: {
         selector: 'td:nth-last-of-type(5)',

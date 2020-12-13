@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
     'https://www.limetorrents.co/',
     'https://limetor.com/',
     'https://www.limetor.pro/',
-    'https://limetorrents.unblockit.app/',
+    'https://limetorrents.unblockit.dev/',
     'https://limetorrents.unblockninja.com/',
   ],
   legacylinks: [
@@ -38,6 +38,7 @@ export const definition: TrackerDefinition = {
     'https://limetorrents.unblockit.win/',
     'https://limetorrents.unblockit.top/',
     'https://limetorrents.unblockit.lat/',
+    'https://limetorrents.unblockit.app/',
   ],
   caps: {
     categorymappings: [

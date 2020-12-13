@@ -140,6 +140,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

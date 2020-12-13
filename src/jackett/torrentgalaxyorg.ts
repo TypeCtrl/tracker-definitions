@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
     'https://torrentgalaxy.su/',
     'https://torrentgalaxy.root.yt/',
     'https://torrentgalaxy.unblockninja.com/',
-    'https://torrentgalaxy.unblockit.app/',
+    'https://torrentgalaxy.unblockit.dev/',
     'https://tgx.unblocked.rest/',
   ],
   legacylinks: [
@@ -36,6 +36,7 @@ export const definition: TrackerDefinition = {
     'https://tgx.uk-unblock.pro/',
     'https://torrentgalaxy.unblockit.top/',
     'https://torrentgalaxy.unblockit.lat/',
+    'https://torrentgalaxy.unblockit.app/',
   ],
   caps: {
     categorymappings: [
@@ -125,7 +126,9 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       order: '{{ .Config.type }}',
     },
-    rows: { selector: 'div[class="tgxtablerow"]' },
+    rows: {
+      selector: 'div.tgxtable > div:has(div[class="tgxtablecell shrink"])',
+    },
     fields: {
       category: {
         selector: 'div a[href^="/torrents.php?cat="]',
@@ -164,7 +167,7 @@ export const definition: TrackerDefinition = {
       },
       date: {
         optional: true,
-        selector: 'div.tgxtablecell:last-of-type small:contains(":")',
+        selector: 'div td:last-of-type small:contains(":")',
         filters: [
           { name: 'append', args: ' -07:00' },
           { name: 'dateparse', args: '02/01/06 15:04 -07:00' },

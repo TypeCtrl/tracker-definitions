@@ -68,8 +68,7 @@ export const definition: TrackerDefinition = {
       title: '{{ .Keywords }}',
       order_by: '{{ .Config.sort }}',
       order_way: '{{ .Config.type }}',
-      action: 'basic',
-      searchsubmit: 1,
+      action: 'advanced',
     },
     rows: {
       selector: 'table#torrent_table > tbody > tr[class^="torrent row"]',
@@ -105,6 +104,7 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(5) > span',
         attribute: 'title',
+        optional: true,
         filters: [
           { name: 'append', args: ' +00:00' },
           { name: 'dateparse', args: 'Jan 02 2006, 15:04 -07:00' },

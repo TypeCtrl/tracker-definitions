@@ -868,6 +868,9 @@ export const jptmsg = jjptmsg;
 import { definition as jjptsbao } from './ptsbao';
 export const jptsbao = jjptsbao;
 
+import { definition as jjpttime } from './pttime';
+export const jpttime = jjpttime;
+
 import { definition as jjpuntotorrent } from './puntotorrent';
 export const jpuntotorrent = jjpuntotorrent;
 
@@ -1609,6 +1612,7 @@ export const definitions = [
   jjpthome,
   jjptmsg,
   jjptsbao,
+  jjpttime,
   jjpuntotorrent,
   jjpurovicio,
   jjpussytorrents,

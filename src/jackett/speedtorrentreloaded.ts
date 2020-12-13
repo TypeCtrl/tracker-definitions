@@ -96,7 +96,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       secure_code: '{{ .Config.secure_code }}',
     },
-    test: { path: 'sessioncheck.php' },
+    test: { path: 'index.php' },
   },
   search: {
     paths: [{ path: 'tfiles.php' }],

@@ -78,6 +78,7 @@ export const definition: TrackerDefinition = {
       action: 'advanced',
       searchsubmit: 1,
     },
+    keywordsfilters: [{ name: 're_replace', args: ['(?i)(S)(\\d{1,3})$', 'season $2'] }],
     rows: { selector: 'table#torrent_table > tbody > tr.torrent' },
     fields: {
       category: {
@@ -106,6 +107,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: [' / 2x Free', ''] },
           { name: 'replace', args: [' / 2x', ''] },
           { name: 're_replace', args: [' / ', ' '] },
+          { name: 're_replace', args: ['(?i)(season )', 'S'] },
         ],
       },
       details: {
