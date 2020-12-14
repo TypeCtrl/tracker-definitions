@@ -51,14 +51,14 @@ export const definition: TrackerDefinition = {
       type: 'select',
       label: 'Sort requested from site',
       default: 4,
-      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+      options: { '4': 'created', '5': 'size', '7': 'seeders' },
     },
     {
       name: 'type',
       type: 'select',
       label: 'Order requested from site',
-      default: 2,
-      options: { '1': 'asc', '2': 'desc' },
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
     },
     {
       name: 'info',
@@ -88,7 +88,7 @@ export const definition: TrackerDefinition = {
     },
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
     rows: {
-      selector: 'table[cellpadding="3"] > tbody > tr:has(a[onmouseover])',
+      selector: 'table[cellpadding="5"] > tbody > tr:has(a[onmouseover])',
     },
     fields: {
       category: {
@@ -96,18 +96,16 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      title: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'title',
-      },
+      title: { selector: 'a[href^="javascript:"]', attribute: 'title' },
       details: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
+        selector: 'span',
+        attribute: 'id',
+        filters: [{ name: 'replace', args: ['span_bookmark_', 'details.php?id='] }],
       },
       download: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
-        filters: [{ name: 'replace', args: ['details.php?', 'download.php?'] }],
+        selector: 'span',
+        attribute: 'id',
+        filters: [{ name: 'replace', args: ['span_bookmark_', 'download.php?id='] }],
       },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
