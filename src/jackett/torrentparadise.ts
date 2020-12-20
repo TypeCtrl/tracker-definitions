@@ -33,6 +33,7 @@ export const definition: TrackerDefinition = {
       { id: 'ANDROID', cat: 'PC' },
       { id: 'ANIME', cat: 'TV/Anime' },
       { id: 'ANIMEDUBBEDSUBBED', cat: 'TV/Anime' },
+      { id: 'ANIMEOTHERS', cat: 'TV/Anime' },
       { id: 'APPLICATIONS', cat: 'PC' },
       { id: 'APPLICATIONSANDROID', cat: 'PC' },
       { id: 'APPLICATIONSHANDHELD', cat: 'PC/Mobile-Other' },

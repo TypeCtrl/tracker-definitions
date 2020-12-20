@@ -1,15 +1,17 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'noname-club',
-  name: 'NoNaMe Club',
-  description: 'NoNaMe Club (NNM-Club) is a RUSSIAN Public Tracker for TV / MOVIES / MUSIC',
+  id: 'noname-clubl',
+  name: 'NoNaMe ClubL',
+  description: 'This is the NoNaMe Club indexer with Login enabled in the config.',
   language: 'ru-RU',
-  type: 'public',
+  type: 'semi-private',
   encoding: 'WINDOWS-1251',
   links: ['https://nnmclub.to/'],
   legacylinks: ['https://nnm-club.name/', 'https://nnm-club.me/', 'http://nnmclub.to/'],
   settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
     {
       name: 'striprussian',
       type: 'checkbox',
@@ -1439,6 +1441,22 @@ export const definition: TrackerDefinition = {
       'book-search': ['q'],
     },
   },
+  login: {
+    path: 'forum/login.php',
+    method: 'form',
+    form: 'form#loginFrm',
+    inputs: {
+      username: '{{ .Config.username }}',
+      password: '{{ .Config.password }}',
+      autologin: 1,
+      redirect: 'index.php',
+    },
+    error: [{ selector: 'span.gen:contains("Вы ввели")' }],
+    test: {
+      path: 'forum/index.php',
+      selector: 'table.menutable a.mainmenu:contains("Выход")',
+    },
+  },
   search: {
     paths: [{ path: 'forum/tracker.php', method: 'post' }],
     inputs: {
@@ -1509,7 +1527,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(6) > u' },
       grabs: { selector: 'td:nth-child(9)' },
       date: {
-        selector: 'td:nth-child(10)',
+        selector: 'td:nth-child(11)',
         filters: [
           {
             name: 're_replace',
@@ -1521,7 +1539,15 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td.seedmed > b' },
       leechers: { selector: 'td.leechmed > b' },
-      downloadvolumefactor: { text: 0 },
+      downloadvolumefactor: {
+        case: {
+          'img[src$="/gold.gif"]': 0,
+          'img[src$="/silver.gif"]': 0.5,
+          'img[src$="/bronze.gif"]': 0.75,
+          'img[src$="/platinum.gif"]': 0,
+          '*': 1,
+        },
+      },
       uploadvolumefactor: { text: 1 },
     },
   },

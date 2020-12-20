@@ -31,7 +31,15 @@ export const definition: TrackerDefinition = {
       'book-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
+  ],
   search: {
     paths: [
       { path: 'search/', method: 'post' },

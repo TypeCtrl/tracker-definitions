@@ -251,7 +251,8 @@
           "i[class*=\"fa-star text-bold\"]": 0,
           "i[class*=\"fa-coins text-bold\"]": 0,
           "i[class*=\"fa-globe text-blue\"]": 0,
-          "i[class*=\"fa-star text-gold\"]": 0,
+          "i[class*=\"fas fa-star text-gold\"]": 0,
+          "i[class*=\"fal fa-star text-gold\"]": 0.5,
           "i[class*=\"fa-certificate text-pink\"]": 0,
           "*": 1
         }
@@ -263,7 +264,8 @@
           "i[class*=\"fa-certificate text-pink\"]": 2,
           "*": 1
         }
-      }
+      },
+      "minimumseedtime": { "text": 345600 }
     }
   },
   "source": "jackett"

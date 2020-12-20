@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ko-KR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrent.movie/'],
-  legacylinks: ['https://torrent.vet/'],
+  links: ['https://torrentb.site/'],
+  legacylinks: ['https://torrent.vet/', 'https://torrent.movie/'],
   caps: {
     categorymappings: [
       {
@@ -97,7 +97,15 @@ export const definition: TrackerDefinition = {
       'music-search': ['q'],
     },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
+  ],
   download: {
     selector: 'a[href*="magnet:?xt="]',
     attribute: 'href',
@@ -115,7 +123,8 @@ export const definition: TrackerDefinition = {
       keyword: '{{ if .Keywords }}{{ .Keywords }}{{ else }}-{{ end }}',
     },
     rows: {
-      selector: 'section.sch_res_list > ul > li:has(span.sch_datetime:contains(":"))',
+      selector:
+        'section.sch_res_list > ul > li:has(span.sch_datetime:contains(":")):not(:has(a[href^="bbs/./board.php?bo_table=out_"]))',
     },
     fields: {
       category: {

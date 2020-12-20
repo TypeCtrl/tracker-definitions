@@ -1,13 +1,14 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'leaguehd',
-  name: 'LeagueHD',
-  description: 'LeagueHD is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
+  id: 'lemonhd',
+  name: 'LemonHD',
+  description: 'LemonHD is a CHINESE Private Torrent Tracker for HD MOVIES / TV',
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://leaguehd.com/'],
+  links: ['https://lemonhd.org/'],
+  legacylinks: ['https://leaguehd.com/'],
   caps: {
     categorymappings: [
       { id: '300', cat: 'Movies/UHD', desc: 'Movies UHD-4K' },

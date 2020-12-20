@@ -112,7 +112,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table.sortable tr:has(a[href*="/download.php?id="]){{ if .Config.freeleech }}:has(img[src$="/freedownload.gif"]){{ else }}{{ end }}',
+        'table.sortable tr:has(a[href*="/details.php?id="]){{ if .Config.freeleech }}:has(img[src$="/freedownload.gif"]){{ else }}{{ end }}',
     },
     fields: {
       category: {
@@ -120,7 +120,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
-      title: { selector: 'div.tooltip-content > div', optional: true },
+      title: { selector: 'a[href*="/details.php?id="]' },
       details: {
         selector: 'a[href*="/details.php?id="]',
         attribute: 'href',

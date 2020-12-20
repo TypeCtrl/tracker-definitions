@@ -214,6 +214,11 @@ export const definition: TrackerDefinition = {
         desc: 'Наши фильмы, Советское кино (DVDrip, WEB-DLRip, HDrip)',
       },
       {
+        id: '1858',
+        cat: 'Movies',
+        desc: ' |- Наши новые фильмы 2020 - 2021',
+      },
+      {
         id: '1846',
         cat: 'Movies',
         desc: ' |- Наши фильмы (мультфильмы) cо спонсором показа (Новинки AVI/M..',

@@ -619,9 +619,6 @@ export const jlastfiles = jjlastfiles;
 import { definition as jjlatinop2P } from './latinop2p';
 export const jlatinop2P = jjlatinop2P;
 
-import { definition as jjleaguehd } from './leaguehd';
-export const jleaguehd = jjleaguehd;
-
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
 
@@ -633,6 +630,9 @@ export const jlegacyhd = jjlegacyhd;
 
 import { definition as jjlegittorrents } from './legittorrents';
 export const jlegittorrents = jjlegittorrents;
+
+import { definition as jjlemonhd } from './lemonhd';
+export const jlemonhd = jjlemonhd;
 
 import { definition as jjlepornoinfo } from './lepornoinfo';
 export const jlepornoinfo = jjlepornoinfo;
@@ -756,6 +756,9 @@ export const jnntt = jjnntt;
 
 import { definition as jjnonameClub } from './noname-club';
 export const jnonameClub = jjnonameClub;
+
+import { definition as jjnonameClubl } from './noname-clubl';
+export const jnonameClubl = jjnonameClubl;
 
 import { definition as jjnyaaPantsu } from './nyaa-pantsu';
 export const jnyaaPantsu = jjnyaaPantsu;
@@ -1020,9 +1023,6 @@ export const jsukebeiPantsu = jjsukebeiPantsu;
 
 import { definition as jjsukebeinyaasi } from './sukebeinyaasi';
 export const jsukebeinyaasi = jjsukebeinyaasi;
-
-import { definition as jjtakeabyte } from './takeabyte';
-export const jtakeabyte = jjtakeabyte;
 
 import { definition as jjtapochek } from './tapochek';
 export const jtapochek = jjtapochek;
@@ -1529,11 +1529,11 @@ export const definitions = [
   jjkinozal,
   jjlastfiles,
   jjlatinop2P,
-  jjleaguehd,
   jjlearnflakes,
   jjlechaudron,
   jjlegacyhd,
   jjlegittorrents,
+  jjlemonhd,
   jjlepornoinfo,
   jjlesaloon,
   jjlibranet,
@@ -1575,6 +1575,7 @@ export const definitions = [
   jjnitro,
   jjnntt,
   jjnonameClub,
+  jjnonameClubl,
   jjnyaaPantsu,
   jjnyaasi,
   jjomgwtftrackr,
@@ -1663,7 +1664,6 @@ export const definitions = [
   jjspringsunday,
   jjsukebeiPantsu,
   jjsukebeinyaasi,
-  jjtakeabyte,
   jjtapochek,
   jjtasmanit,
   jjteamhd,

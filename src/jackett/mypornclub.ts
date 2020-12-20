@@ -12,7 +12,15 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'XXX', cat: 'XXX', desc: 'XXX' }],
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },
-  settings: [],
+  settings: [
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
+  ],
   download: {
     selector: 'a[href^="magnet:?xt="]',
     attribute: 'href',

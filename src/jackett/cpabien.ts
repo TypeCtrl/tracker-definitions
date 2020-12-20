@@ -68,6 +68,13 @@ export const definition: TrackerDefinition = {
         "<ol><li>From the same place you fetched the cookie,<li>Find <b>'user-agent:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole user-agent string <i>(everything after 'user-agent: ')</i> and <b>Paste</b> here.</ol>",
     },
     {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
+    {
       name: 'info_8000',
       type: 'info',
       label: 'About cpasbien Categories',

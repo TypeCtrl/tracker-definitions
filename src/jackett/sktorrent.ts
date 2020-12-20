@@ -74,7 +74,7 @@ export const definition: TrackerDefinition = {
     },
     keywordsfilters: [{ name: 'diacritics', args: 'replace' }],
     rows: {
-      selector: 'table.lista > tbody > tr > td:has(a[href^="details.php?name="])',
+      selector: 'table.lista > tbody > tr > td > table.lista > tbody > tr > td:has(a[href^="details.php?name="])',
     },
     fields: {
       category: {
@@ -103,10 +103,7 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'div > div',
-        filters: [
-          { name: 'split', args: ['|', 0] },
-          { name: 'regexp', args: 'Velkost (.+?) ?$' },
-        ],
+        filters: [{ name: 'regexp', args: 'Velkost (.+?) \\|' }],
       },
       date: {
         selector: 'div > div',
