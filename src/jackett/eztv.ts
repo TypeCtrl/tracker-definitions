@@ -13,7 +13,6 @@ export const definition: TrackerDefinition = {
     'https://eztv.wf/',
     'https://eztv.tf/',
     'https://eztv.yt/',
-    'https://eztv.root.yt/',
     'https://eztv.unblockninja.com/',
     'https://eztv.unblockit.dev/',
     'https://eztv.unblocked.rest/',
@@ -40,6 +39,7 @@ export const definition: TrackerDefinition = {
     'https://eztv.unblockit.lat/',
     'https://eztv.io/',
     'https://eztv.unblockit.app/',
+    'https://eztv.root.yt/',
   ],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },

@@ -12,8 +12,8 @@ export const definition: TrackerDefinition = {
     'https://kickasstorrent.cr/',
     'https://katcr.to/',
     'https://kickasstorrents.unblockninja.com/',
-    'https://kat.root.yt/',
   ],
+  legacylinks: ['https://kat.root.yt/'],
   caps: {
     categorymappings: [
       { id: 'anime', cat: 'TV/Anime', desc: 'Anime' },

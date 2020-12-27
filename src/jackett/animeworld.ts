@@ -1,13 +1,14 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'ast4u',
-  name: 'AST4u',
-  description: 'AST4u is a GERMAN Private site for TV / MOVIES / ANIME / HENTAI',
+  id: 'animeworld',
+  name: 'AnimeWorld',
+  description: 'AnimeWorld (AST4u) is a GERMAN Private site for TV / MOVIES / ANIME / HENTAI',
   language: 'de-DE',
   type: 'private',
   encoding: 'ISO-8859-1',
-  links: ['https://www.ast4u.me/'],
+  links: ['https://animeworld.cx/'],
+  legacylinks: ['https://www.ast4u.me/'],
   caps: {
     categorymappings: [
       { id: '35', cat: 'TV/Anime', desc: 'Anime Movie' },

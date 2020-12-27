@@ -110,6 +110,7 @@ export const definition: TrackerDefinition = {
         case: { 'img[alt="Free Leech"]': 0, '*': 1 },
       },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 0.6 },
     },
   },
   source: 'jackett',

@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
     'https://kickasstorrents.bz/',
     'https://kkickass.com/',
     'https://kkat.net/',
-    'https://kickass-kat.com/',
+    'https://kick4ss.com/',
     'https://kickasst.net/',
     'https://kickasstorrents.id/',
     'https://thekat.cc/',
@@ -35,6 +35,7 @@ export const definition: TrackerDefinition = {
     'https://kickass.unblockit.win/',
     'https://kickass.unblockit.top/',
     'https://kickasstorrents.unblockninja.com/',
+    'https://kickass-kat.com/',
   ],
   caps: {
     categorymappings: [

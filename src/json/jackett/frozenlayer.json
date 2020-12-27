@@ -6,6 +6,7 @@
   "type": "public",
   "encoding": "UTF-8",
   "links": ["https://www.frozen-layer.com/"],
+  "certificates": ["5fc6a320560295f0d7589c9dd8738bfaed36c3aa"],
   "settings": [
     {
       "name": "category",

@@ -125,6 +125,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 259200 },
       description: {
         selector: 'td.rowfollow:nth-child(2)',
         remove: 'a, img',

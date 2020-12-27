@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentproject.to', 'https://torrentproject.torrentbay.to/'],
+  links: ['https://torrentproject.to/', 'https://torrentproject.torrentbay.to/'],
   caps: {
     categorymappings: [
       { id: 'adult', cat: 'XXX', desc: 'Adult' },

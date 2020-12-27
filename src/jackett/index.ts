@@ -58,6 +58,9 @@ export const jamigosshare = jjamigosshare;
 import { definition as jjanimeclipse } from './animeclipse';
 export const janimeclipse = jjanimeclipse;
 
+import { definition as jjanimeworld } from './animeworld';
+export const janimeworld = jjanimeworld;
+
 import { definition as jjanirena } from './anirena';
 export const janirena = jjanirena;
 
@@ -78,9 +81,6 @@ export const jasgaard = jjasgaard;
 
 import { definition as jjasiancinema } from './asiancinema';
 export const jasiancinema = jjasiancinema;
-
-import { definition as jjast4U } from './ast4u';
-export const jast4U = jjast4U;
 
 import { definition as jjasylumshare } from './asylumshare';
 export const jasylumshare = jjasylumshare;
@@ -964,9 +964,6 @@ export const jsexypics = jjsexypics;
 import { definition as jjshareisland } from './shareisland';
 export const jshareisland = jjshareisland;
 
-import { definition as jjshareuniversity } from './shareuniversity';
-export const jshareuniversity = jjshareuniversity;
-
 import { definition as jjsharewood } from './sharewood';
 export const jsharewood = jjsharewood;
 
@@ -1041,9 +1038,6 @@ export const jtekno3D = jjtekno3D;
 
 import { definition as jjtellytorrent } from './tellytorrent';
 export const jtellytorrent = jjtellytorrent;
-
-import { definition as jjtenyardtracker } from './tenyardtracker';
-export const jtenyardtracker = jjtenyardtracker;
 
 import { definition as jjtheaudioscene } from './theaudioscene';
 export const jtheaudioscene = jjtheaudioscene;
@@ -1342,6 +1336,7 @@ export const definitions = [
   jjaither,
   jjamigosshare,
   jjanimeclipse,
+  jjanimeworld,
   jjanirena,
   jjanisource,
   jjarabafenice,
@@ -1349,7 +1344,6 @@ export const definitions = [
   jjarenabg,
   jjasgaard,
   jjasiancinema,
-  jjast4U,
   jjasylumshare,
   jjaudiobookbay,
   jjaudiobooktorrents,
@@ -1644,7 +1638,6 @@ export const definitions = [
   jjselezen,
   jjsexypics,
   jjshareisland,
-  jjshareuniversity,
   jjsharewood,
   jjshellife,
   jjshokweb,
@@ -1670,7 +1663,6 @@ export const definitions = [
   jjteamos,
   jjtekno3D,
   jjtellytorrent,
-  jjtenyardtracker,
   jjtheaudioscene,
   jjtheempire,
   jjthefallingangels,
