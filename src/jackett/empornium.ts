@@ -103,7 +103,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="/torrents.php?action=download&id="]',
         attribute: 'href',
       },
-      description: { selector: 'div.tags' },
+      description: { optional: true, selector: 'div.tags' },
       title: { selector: 'a[href^="/torrents.php?id="]' },
       category: {
         selector: 'a[href*="filter_cat"]',

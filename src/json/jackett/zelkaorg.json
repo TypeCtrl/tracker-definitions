@@ -115,6 +115,7 @@
         "attribute": "href"
       },
       "magnet": {
+        "optional": true,
         "selector": "a:has(img[src$=\"/pic/magnet-icon-12w-12h.gif\"])",
         "attribute": "href"
       },

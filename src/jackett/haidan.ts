@@ -159,6 +159,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
+      minimumratio: { text: 1 },
     },
   },
   source: 'jackett',

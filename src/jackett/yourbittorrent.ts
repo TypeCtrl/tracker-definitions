@@ -35,7 +35,11 @@ export const definition: TrackerDefinition = {
   settings: [],
   search: {
     paths: [{ path: '/' }],
-    inputs: { v: '', c: '', q: '{{ .Keywords }}' },
+    inputs: {
+      v: '',
+      c: '',
+      q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
+    },
     keywordsfilters: [{ name: 're_replace', args: ['[\\s]+', '-'] }, { name: 'tolower' }],
     rows: {
       selector: 'tr.table-default',

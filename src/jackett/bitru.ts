@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://bitru.org/'],
+  links: ['https://bitru.org/'],
+  legacylinks: ['http://bitru.org/'],
   caps: {
     categorymappings: [
       { id: 'movie', cat: 'Movies', desc: 'Movie' },

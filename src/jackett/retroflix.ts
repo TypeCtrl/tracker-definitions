@@ -65,10 +65,10 @@ export const definition: TrackerDefinition = {
   login: {
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
-    test: { path: 'torrents1.php' },
+    test: { path: 'torrents.php', selector: 'a[href*="/logout?"]' },
   },
   search: {
-    paths: [{ path: 'torrents1.php' }],
+    paths: [{ path: 'torrents.php' }],
     inputs: {
       $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',

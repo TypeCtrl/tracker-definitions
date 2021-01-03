@@ -11,6 +11,11 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       {
+        id: '27',
+        cat: 'XXX',
+        desc: 'Фильмы UHD 2160 4K | Movies UHD 2160p 4K',
+      },
+      {
         id: '20',
         cat: 'XXX',
         desc: 'Сайтрипы UHD 2160 4K | Porn Video UHD 2160p 4K',
@@ -54,6 +59,7 @@ export const definition: TrackerDefinition = {
         desc: 'БДСМ, Фистинг, Дилдо | BDSM, Fisting, Dildo',
       },
       { id: '19', cat: 'XXX', desc: 'Беременные | Pregnant' },
+      { id: '28', cat: 'XXX', desc: 'Буккаке | Bukkake' },
       {
         id: '16',
         cat: 'XXX',
@@ -98,9 +104,10 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'div.entry__info',
         case: {
-          'a:last-of-type:contains("2160p")': 20,
+          'a:last-of-type:contains("Movies UHD")': 27,
+          'a:last-of-type:contains("Video UHD")': 20,
           'a:last-of-type:contains("HD")': 1,
-          'a:last-of-type:contains("SiteRip")': 9,
+          'a:last-of-type:contains("SiteRips")': 9,
           'a:last-of-type:contains("WEBRip")': 12,
           'a:last-of-type:contains("Amateur")': 10,
           'a:last-of-type:contains("Incest")': 24,
@@ -110,6 +117,7 @@ export const definition: TrackerDefinition = {
           'a:last-of-type:contains("Femdom")': 21,
           'a:last-of-type:contains("BDSM")': 17,
           'a:last-of-type:contains("Pregnant")': 19,
+          'a:last-of-type:contains("Bukkake")': 28,
           'a:last-of-type:contains("Shemale")': 16,
           'a:last-of-type:contains("Peeing")': 25,
           'a:last-of-type:contains("Picture")': 11,

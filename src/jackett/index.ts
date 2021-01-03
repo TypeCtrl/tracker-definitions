@@ -76,9 +76,6 @@ export const jarabp2P = jjarabp2P;
 import { definition as jjarenabg } from './arenabg';
 export const jarenabg = jjarenabg;
 
-import { definition as jjasgaard } from './asgaard';
-export const jasgaard = jjasgaard;
-
 import { definition as jjasiancinema } from './asiancinema';
 export const jasiancinema = jjasiancinema;
 
@@ -237,9 +234,6 @@ export const jconcen = jjconcen;
 
 import { definition as jjconcertos } from './concertos';
 export const jconcertos = jjconcertos;
-
-import { definition as jjcooltorrent } from './cooltorrent';
-export const jcooltorrent = jjcooltorrent;
 
 import { definition as jjcpabien } from './cpabien';
 export const jcpabien = jjcpabien;
@@ -1342,7 +1336,6 @@ export const definitions = [
   jjarabafenice,
   jjarabp2P,
   jjarenabg,
-  jjasgaard,
   jjasiancinema,
   jjasylumshare,
   jjaudiobookbay,
@@ -1396,7 +1389,6 @@ export const definitions = [
   jjclassix,
   jjconcen,
   jjconcertos,
-  jjcooltorrent,
   jjcpabien,
   jjcpasbienclone,
   jjcrazyhd,

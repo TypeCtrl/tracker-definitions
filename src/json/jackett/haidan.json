@@ -155,7 +155,8 @@
           "img.pro_2up": 2,
           "*": 1
         }
-      }
+      },
+      "minimumratio": { "text": 1 }
     }
   },
   "source": "jackett"
