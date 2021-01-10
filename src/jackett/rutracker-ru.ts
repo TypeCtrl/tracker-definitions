@@ -10,44 +10,63 @@ export const definition: TrackerDefinition = {
   links: ['http://rutracker.ru/'],
   caps: {
     categorymappings: [
-      { id: '1564', cat: 'Movies', desc: 'Новинки кинопроката 2020' },
+      { id: '1656', cat: 'Movies', desc: 'Новинки (2021)' },
       {
-        id: '1573',
+        id: '1662',
         cat: 'Movies',
-        desc: ' |- Зарубежные новинки (2020)',
+        desc: ' |- Зарубежные новинки (2021)',
       },
       {
-        id: '1572',
+        id: '1661',
         cat: 'Movies',
-        desc: ' |- Отечественные новинки (2020)',
+        desc: ' |- Российские новинки (2021)',
       },
+      {
+        id: '1660',
+        cat: 'Movies/HD',
+        desc: ' |- Зарубежные новинки в 720p (2021)',
+      },
+      {
+        id: '1659',
+        cat: 'Movies/HD',
+        desc: ' |- Российские новинки в 720p (2021)',
+      },
+      {
+        id: '1658',
+        cat: 'Movies/HD',
+        desc: ' |- Зарубежные новинки в 1080p (2021)',
+      },
+      {
+        id: '1657',
+        cat: 'Movies/HD',
+        desc: ' |- Российские новинки в 1080р (2021)',
+      },
+      { id: '1564', cat: 'Movies', desc: 'фильмы 2020 года' },
+      { id: '1573', cat: 'Movies', desc: ' |- Зарубежные фильмы (2020)' },
+      { id: '1572', cat: 'Movies', desc: ' |- Российские фильмы (2020)' },
       {
         id: '1571',
         cat: 'Movies/HD',
-        desc: ' |- Зарубежные новинки в 720p (2020)',
+        desc: ' |- Зарубежные фильмы в 720p (2020)',
       },
       {
         id: '1570',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные новинки в 720p (2020)',
+        desc: ' |- Российские фильмы в 720p (2020)',
       },
       {
         id: '1569',
         cat: 'Movies/HD',
-        desc: ' |- Зарубежные новинки в 1080p (2020)',
+        desc: ' |- Зарубежные фильмы в 1080p (2020)',
       },
       {
         id: '1568',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные новинки в 1080р (2020)',
+        desc: ' |- Российские фильмы в 1080р (2020)',
       },
       { id: '1543', cat: 'Movies', desc: 'Фильмы 2019 года' },
       { id: '1544', cat: 'Movies', desc: ' |- Зарубежные фильмы (2019)' },
-      {
-        id: '1545',
-        cat: 'Movies',
-        desc: ' |- Отечественные фильмы (2019)',
-      },
+      { id: '1545', cat: 'Movies', desc: ' |- Российские фильмы (2019)' },
       {
         id: '1546',
         cat: 'Movies',
@@ -56,7 +75,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1547',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные фильмы в 720p (2019)',
+        desc: ' |- Российские фильмы в 720p (2019)',
       },
       {
         id: '1548',
@@ -66,15 +85,11 @@ export const definition: TrackerDefinition = {
       {
         id: '1549',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные фильмы в 1080р (2019)',
+        desc: ' |- Российские фильмы в 1080р (2019)',
       },
       { id: '1450', cat: 'Movies', desc: 'Фильмы 2018 года' },
       { id: '1451', cat: 'Movies', desc: ' |- Зарубежные фильмы (2018)' },
-      {
-        id: '1452',
-        cat: 'Movies',
-        desc: ' |- Отечественные фильмы (2018)',
-      },
+      { id: '1452', cat: 'Movies', desc: ' |- Российские фильмы (2018)' },
       {
         id: '1453',
         cat: 'Movies/HD',
@@ -83,7 +98,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1454',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные фильмы в 720p (2018)',
+        desc: ' |- Российские фильмы в 720p (2018)',
       },
       {
         id: '1455',
@@ -93,15 +108,11 @@ export const definition: TrackerDefinition = {
       {
         id: '1456',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные фильмы в 1080р (2018)',
+        desc: ' |- Российские фильмы в 1080р (2018)',
       },
       { id: '1324', cat: 'Movies', desc: 'Фильмы 2017 года' },
       { id: '1325', cat: 'Movies', desc: ' |- Зарубежные фильмы (2017)' },
-      {
-        id: '1326',
-        cat: 'Movies',
-        desc: ' |- Отечественные фильмы (2017)',
-      },
+      { id: '1326', cat: 'Movies', desc: ' |- Российские фильмы (2017)' },
       {
         id: '1327',
         cat: 'Movies/HD',
@@ -110,7 +121,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1328',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные фильмы в 720p (2017)',
+        desc: ' |- Российские фильмы в 720p (2017)',
       },
       {
         id: '1329',
@@ -120,7 +131,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1330',
         cat: 'Movies/HD',
-        desc: ' |- Отечественные фильмы в 1080р (2017)',
+        desc: ' |- Российские фильмы в 1080р (2017)',
       },
       { id: '820', cat: 'Movies/HD', desc: 'Зарубежные фильмы' },
       {
@@ -210,7 +221,7 @@ export const definition: TrackerDefinition = {
       { id: '807', cat: 'Movies', desc: ' |- Мистика , Фэнтези' },
       { id: '806', cat: 'Movies', desc: ' |- Ужасы , Триллер' },
       { id: '805', cat: 'Movies', desc: ' |- Фантастика' },
-      { id: '810', cat: 'Movies', desc: 'Кино СССР' },
+      { id: '810', cat: 'Movies', desc: '| - Кино СССР' },
       { id: '1609', cat: 'Movies', desc: ' |- Кино СССР (720p, 1080p)' },
       {
         id: '1318',
@@ -339,12 +350,12 @@ export const definition: TrackerDefinition = {
       {
         id: '776',
         cat: 'Audio/Audiobook',
-        desc: ' |- Фантастика Фэнтези',
+        desc: ' |- Фантастика Фэнтези Ужасы Мистика (Аудио)',
       },
       {
         id: '777',
         cat: 'Audio/Audiobook',
-        desc: ' |- Детективы триллеры боевики',
+        desc: ' |- Детективы приключения триллеры боевики (Аудио)',
       },
       {
         id: '1164',
@@ -354,28 +365,32 @@ export const definition: TrackerDefinition = {
       {
         id: '1156',
         cat: 'Audio/Audiobook',
-        desc: ' |- Историческая литература биографии мемуары',
+        desc: ' |- Историческая литература биографии мемуары (Аудио)',
       },
       {
         id: '1158',
         cat: 'Audio/Audiobook',
-        desc: ' |- Зарубежная проза',
+        desc: ' |- Зарубежная литература (Аудио)',
       },
       {
         id: '1233',
         cat: 'Audio/Audiobook',
-        desc: ' |- Отечественная проза',
+        desc: ' |- Русская литература (Аудио)',
       },
-      { id: '1159', cat: 'Audio/Audiobook', desc: ' |- Любовные романы' },
+      {
+        id: '1159',
+        cat: 'Audio/Audiobook',
+        desc: ' |- Современные любовные романы (Аудио)',
+      },
       {
         id: '1315',
         cat: 'Audio/Audiobook',
-        desc: ' |- Детская аудиокнига',
+        desc: ' |- Детская литература (Аудио)',
       },
       {
         id: '1223',
         cat: 'Audio/Audiobook',
-        desc: ' |- Аудиокниги Учебная, Научная и Техническая литература',
+        desc: ' |- Учебная и научно-популярная литература (Аудио)',
       },
       {
         id: '1635',
@@ -430,7 +445,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1177',
         cat: 'Audio/MP3',
-        desc: 'Неофициальные и внежанровые сборники',
+        desc: 'Отечественная поп музыка, шансон и авторская песня',
       },
       {
         id: '1642',
@@ -462,7 +477,7 @@ export const definition: TrackerDefinition = {
         cat: 'Audio/MP3',
         desc: ' |- Сборники Русского шансона',
       },
-      { id: '1168', cat: 'Audio/MP3', desc: 'Рок музыка' },
+      { id: '1168', cat: 'Audio/MP3', desc: 'Зарубежный ROCK' },
       {
         id: '1652',
         cat: 'Audio/Lossless',
@@ -471,28 +486,20 @@ export const definition: TrackerDefinition = {
       {
         id: '1200',
         cat: 'Audio/MP3',
-        desc: ' |- Зарубежный Classic Rock&Hard Rock',
+        desc: ' |- Classic Rock&Hard Rock',
       },
-      {
-        id: '1552',
-        cat: 'Audio/MP3',
-        desc: ' |- Зарубежный Progressive&Art-Rock',
-      },
+      { id: '1552', cat: 'Audio/MP3', desc: ' |- Progressive&Art-Rock' },
       {
         id: '1565',
         cat: 'Audio/MP3',
-        desc: ' |- Зарубежный Folk-Rock, Folk-Punk, Songwriter',
+        desc: ' |- Folk-Rock, Folk-Punk, Songwriter',
       },
       {
         id: '1554',
         cat: 'Audio/MP3',
-        desc: ' |- Зарубежный Melodic Rock, Arena rock',
+        desc: ' |- Melodic Rock, Arena rock',
       },
-      {
-        id: '1553',
-        cat: 'Audio/MP3',
-        desc: ' |- Зарубежный Pop-Rock&Soft Rock',
-      },
+      { id: '1553', cat: 'Audio/MP3', desc: ' |- Pop-Rock&Soft Rock' },
       {
         id: '1567',
         cat: 'Audio/MP3',
@@ -501,7 +508,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1566',
         cat: 'Audio/MP3',
-        desc: " |- Зарубежный Rockabilly, Rock'n'Roll",
+        desc: " |- Rockabilly, Rock'n'Roll",
       },
       {
         id: '1556',
@@ -571,9 +578,21 @@ export const definition: TrackerDefinition = {
         cat: 'Audio/Lossless',
         desc: ' |- Отечественный Rock, Metal (Lossless)',
       },
-      { id: '1599', cat: 'Audio/MP3', desc: ' |- Отечественный Rock' },
-      { id: '1600', cat: 'Audio/MP3', desc: ' |- Отечественный Metal' },
-      { id: '1601', cat: 'Audio/MP3', desc: ' |- Сборники Rock, Metal' },
+      {
+        id: '1599',
+        cat: 'Audio/MP3',
+        desc: ' |- Отечественный Rock (mp3)',
+      },
+      {
+        id: '1600',
+        cat: 'Audio/MP3',
+        desc: ' |- Отечественный Metal (mp3)',
+      },
+      {
+        id: '1601',
+        cat: 'Audio/MP3',
+        desc: ' |- Сборники Rock, Metal (mp3)',
+      },
       { id: '1626', cat: 'Audio/MP3', desc: ' |- Зарубежный джаз (mp3)' },
       {
         id: '1625',
@@ -660,7 +679,11 @@ export const definition: TrackerDefinition = {
         desc: ' |- Electronic music (разные стили)',
       },
       { id: '1630', cat: 'Audio/MP3', desc: "Рэп, Хип-Хоп, R'n'B" },
-      { id: '1631', cat: 'Audio/MP3', desc: " |- Рэп, Хип-Хоп, R'n'B" },
+      {
+        id: '1631',
+        cat: 'Audio/MP3',
+        desc: " |- Отечественный Рэп, Хип-Хоп, R'n'B (mp3)",
+      },
       {
         id: '1632',
         cat: 'Audio/Lossless',
@@ -679,9 +702,13 @@ export const definition: TrackerDefinition = {
       {
         id: '1540',
         cat: 'Audio/MP3',
-        desc: 'Остальные муз. жанры, + Видео',
+        desc: 'Остальные музыкальные жанры, + Видеоклипы и концерты',
       },
-      { id: '1604', cat: 'Audio/MP3', desc: ' |- Reggae, Ska, Dub' },
+      {
+        id: '1604',
+        cat: 'Audio/MP3',
+        desc: ' |- Reggae, Ska, Dub (mp3)',
+      },
       {
         id: '1651',
         cat: 'Audio/Lossless',
@@ -690,12 +717,12 @@ export const definition: TrackerDefinition = {
       {
         id: '1562',
         cat: 'Audio/MP3',
-        desc: ' |- Инструментальная и классическая музыка',
+        desc: ' |- Инструментальная и классическая музыка (mp3)',
       },
       {
         id: '1185',
         cat: 'Audio/MP3',
-        desc: ' |- New Age, Relax, Meditative',
+        desc: ' |- New Age, Relax, Meditative (mp3)',
       },
       {
         id: '1649',

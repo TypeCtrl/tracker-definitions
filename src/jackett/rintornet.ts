@@ -126,9 +126,15 @@ export const definition: TrackerDefinition = {
           'a:last-of-type:contains("Gay")': 15,
         },
       },
-      title: { selector: 'div.h2 > a' },
-      details: { selector: 'div.h2 > a', attribute: 'href' },
-      download: { selector: 'div.h2 > a', attribute: 'href' },
+      title: { selector: 'div.entry__title > h3 > a' },
+      details: {
+        selector: 'div.entry__title > h3 > a',
+        attribute: 'href',
+      },
+      download: {
+        selector: 'div.entry__title > h3 > a',
+        attribute: 'href',
+      },
       poster: {
         selector: 'div.entry_content a.entry__content-image img',
         attribute: 'src',

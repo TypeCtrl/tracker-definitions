@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
     'https://monova.org/',
     'https://monova.to/',
     'https://monova.unblockit.dev/',
-    'https://monova.unblocked.rest/',
+    'https://monova.unblocked.monster/',
     'https://monova.unblockninja.com/',
   ],
   legacylinks: [
@@ -31,6 +31,7 @@ export const definition: TrackerDefinition = {
     'https://monova.unblockit.id/',
     'https://monova.unblockit.lat/',
     'https://monova.unblockit.app/',
+    'https://monova.unblocked.rest/',
   ],
   caps: {
     categorymappings: [

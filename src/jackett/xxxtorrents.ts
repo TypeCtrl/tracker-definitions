@@ -14,7 +14,7 @@ export const definition: TrackerDefinition = {
       {
         id: '19',
         cat: 'XXX',
-        desc: 'Эротическое видео / Erotic&Softcore',
+        desc: 'Эротическое видео / Erotic & Softcore',
       },
       {
         id: '123',
@@ -29,7 +29,7 @@ export const definition: TrackerDefinition = {
       {
         id: '122',
         cat: 'XXX',
-        desc: ' |- Документальные фильмы / Documentary&Reality',
+        desc: ' |- Документальные фильмы / Documentary & Reality',
       },
       { id: '121', cat: 'XXX', desc: ' |- Нудизм-Натуризм / Nudity' },
       {
@@ -51,6 +51,11 @@ export const definition: TrackerDefinition = {
         id: '162',
         cat: 'XXX',
         desc: ' |- Фильмы студии Marc Dorcel (франция)',
+      },
+      {
+        id: '176',
+        cat: 'XXX',
+        desc: ' |- Фильмы без сюжета 2021 года / Films without a plot in 2021',
       },
       {
         id: '171',
@@ -79,7 +84,11 @@ export const definition: TrackerDefinition = {
         cat: 'XXX',
         desc: ' |- Этнические фильмы / Ethnic-Themed',
       },
-      { id: '113', cat: 'XXX', desc: ' |- Лесбо-фильмы / All Girl&Solo' },
+      {
+        id: '113',
+        cat: 'XXX',
+        desc: ' |- Лесбо-фильмы / All Girl & Solo',
+      },
       {
         id: '119',
         cat: 'XXX',
@@ -104,12 +113,14 @@ export const definition: TrackerDefinition = {
       {
         id: '142',
         cat: 'XXX',
-        desc: ' |- 3D video&Virtual Reality Videos (VR',
+        desc: ' |- 3D video & Virtual Reality Videos (VR',
       },
       { id: '24', cat: 'XXX', desc: 'Зарубежные порноролики / Clips' },
+      { id: '177', cat: 'XXX', desc: ' |- Сайтрипы 2021 (HD Video' },
       { id: '172', cat: 'XXX', desc: ' |- Сайтрипы 2020 (HD Video' },
       { id: '168', cat: 'XXX', desc: ' |- Сайтрипы 2019 (HD Video' },
       { id: '94', cat: 'XXX', desc: ' |- Сайтрипы 2010-2018 (HD Video' },
+      { id: '178', cat: 'XXX', desc: ' |- Сайтрипы 2021 (480p, 540p' },
       { id: '173', cat: 'XXX', desc: ' |- Сайтрипы 2020 (480p, 540p' },
       { id: '167', cat: 'XXX', desc: ' |- Сайтрипы 2019 (480p, 540p' },
       {
@@ -186,7 +197,7 @@ export const definition: TrackerDefinition = {
       {
         id: '30',
         cat: 'XXX',
-        desc: 'Нетрадиционное порно / Special Interest Movies&Clips',
+        desc: 'Нетрадиционное порно / Special Interest Movies & Clips',
       },
       {
         id: '48',
@@ -196,7 +207,7 @@ export const definition: TrackerDefinition = {
       {
         id: '52',
         cat: 'XXX',
-        desc: ' |- Женское доминирование и страпон / Femdom&Strapon',
+        desc: ' |- Женское доминирование и страпон / Femdom & Strapon',
       },
       {
         id: '53',
@@ -221,7 +232,7 @@ export const definition: TrackerDefinition = {
       {
         id: '50',
         cat: 'XXX',
-        desc: ' |- Фистинг и дилдо / Fisting&Dildo',
+        desc: ' |- Фистинг и дилдо / Fisting & Dildo',
       },
       { id: '54', cat: 'XXX', desc: ' |- Транссексуалы / Transsexual' },
       { id: '47', cat: 'XXX', desc: ' |- Мочеиспускание / Peeing' },
@@ -231,12 +242,12 @@ export const definition: TrackerDefinition = {
       {
         id: '28',
         cat: 'XXX',
-        desc: 'Мультфильмы, Игры, Фото / Games&Picture Gallery',
+        desc: 'Мультфильмы, Игры, Фото / Games & Picture Gallery',
       },
       {
         id: '77',
         cat: 'XXX',
-        desc: ' |- Мультфильмы&Хентай / Cartoons&Hentai',
+        desc: ' |- Мультфильмы & Хентай / Cartoons & Hentai',
       },
       {
         id: '75',
@@ -251,7 +262,7 @@ export const definition: TrackerDefinition = {
       {
         id: '73',
         cat: 'XXX',
-        desc: ' |- Тематическое и нетрадиционное фото / Misc&Special...',
+        desc: ' |- Тематическое и нетрадиционное фото / Misc & Special...',
       },
       { id: '139', cat: 'XXX', desc: ' |- Игры / Games' },
       { id: '166', cat: 'XXX', desc: ' |- Временный раздел' },

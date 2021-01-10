@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://torrentv.org/'],
-  legacylinks: ['https://torrentv.org/'],
+  links: ['https://torrentv.org/'],
+  legacylinks: ['http://torrentv.org/'],
   caps: {
     modes: { search: ['q'], 'movie-search': ['q'] },
     categorymappings: [{ id: '1', cat: 'Movies' }],

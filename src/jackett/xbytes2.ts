@@ -61,6 +61,12 @@ export const definition: TrackerDefinition = {
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -101,6 +107,7 @@ export const definition: TrackerDefinition = {
       page: 'torrents',
       $raw: '&category={{ range .Categories }}{{.}};{{end}}',
       active: 1,
+      options: '{{ if .Config.freeleech }}5{{ else }}0{{ end }}',
       search: '{{ .Keywords }}',
       order: '{{ .Config.sort }}',
       by: '{{ .Config.type }}',
@@ -118,6 +125,8 @@ export const definition: TrackerDefinition = {
       title: {
         selector: 'td[valign="middle"] a',
         filters: [
+          { name: 're_replace', args: ['\\.+', '.'] },
+          { name: 're_replace', args: ['^\\.', ''] },
           { name: 're_replace', args: ['\\/', ' '] },
           {
             name: 're_replace',
@@ -133,11 +142,15 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['ESP', 'Spanish'] },
           { name: 're_replace', args: ['[EI]NG', 'English'] },
           { name: 'replace', args: ['CAT', 'Catalan'] },
-          { name: 'replace', args: ['FRA', 'French'] },
+          { name: 'replace', args: ['FR[AE]', 'French'] },
           { name: 'replace', args: ['JAP', 'Japanese'] },
           { name: 'replace', args: ['ITA', 'Italian'] },
           { name: 'replace', args: ['RUS', 'Russian'] },
           { name: 'replace', args: ['DUAL', 'Spanish English'] },
+          { name: 're_replace', args: ['MHD', 'MHD.BDRip'] },
+          { name: 're_replace', args: ['WEB.DL', 'WEBDL'] },
+          { name: 're_replace', args: ['WEBDL.MHD.BDRip', 'WEBDL'] },
+          { name: 're_replace', args: ['WEBRIP.MHD.BDRip', 'WEBRIP'] },
         ],
       },
       details: { selector: 'td[valign="middle"] a', attribute: 'href' },

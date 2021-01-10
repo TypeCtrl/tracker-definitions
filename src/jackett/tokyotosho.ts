@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.tokyotosho.info/', 'https://tokyotosho.unblocked.rest/'],
+  links: ['https://www.tokyotosho.info/', 'https://tokyotosho.unblocked.monster/'],
   legacylinks: [
     'https://tokyotosho.black-mirror.xyz/',
     'https://tokyotosho.unblocked.casa/',
@@ -17,6 +17,7 @@ export const definition: TrackerDefinition = {
     'https://tokyotosho.unblocked.bar/',
     'https://tokyotosho.proxyportal.pw/',
     'https://tokyotosho.uk-unblock.pro/',
+    'https://tokyotosho.unblocked.rest/',
   ],
   settings: [
     {

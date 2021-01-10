@@ -17,6 +17,7 @@ export const definition: TrackerDefinition = {
     'https://x1337x.eu/',
     'https://x1337x.se/',
     'https://1337x.unblockit.dev/',
+    'https://1337x.unblocked.monster/',
   ],
   legacylinks: [
     'https://1337x.unblocked.earth/',

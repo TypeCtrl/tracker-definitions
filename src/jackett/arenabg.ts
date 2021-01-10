@@ -164,11 +164,14 @@ export const definition: TrackerDefinition = {
         ],
       },
       date: {
-        selector: 'div.row',
+        selector: 'small',
         filters: [
-          { name: 'regexp', args: '(.+?, [0-9]{2}:[0-9]{2})' },
+          { name: 'regexp', args: '(.+?, .+? @ [0-9]{2}:[0-9]{2})' },
           { name: 'append', args: ' +02:00' },
-          { name: 'dateparse', args: '2 January 2006, 15:04 -07:00' },
+          {
+            name: 'dateparse',
+            args: '2 January 2006, Monday @ 15:04 -07:00',
+          },
         ],
       },
       size: { selector: 'td:nth-child(3)' },

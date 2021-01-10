@@ -264,7 +264,7 @@ export const definition: TrackerDefinition = {
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
     ],

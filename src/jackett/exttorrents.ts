@@ -59,6 +59,11 @@ export const definition: TrackerDefinition = {
       { id: '/games/ps3/', cat: 'Console/PS3', desc: 'Games PS3' },
       { id: '/games/ps4/', cat: 'Console/PS4', desc: 'Games PS4' },
       { id: '/games/psp/', cat: 'Console/PSP', desc: 'Games PSP' },
+      {
+        id: '/games/switch/',
+        cat: 'Console/Other',
+        desc: 'Games Switch',
+      },
       { id: '/games/wii/', cat: 'Console/Wii', desc: 'Games Wii' },
       {
         id: '/games/xbox360/',
@@ -73,10 +78,16 @@ export const definition: TrackerDefinition = {
         desc: 'Movies Bollywood',
       },
       {
+        id: '/movies/documentary/',
+        cat: 'Movies',
+        desc: 'Movies Documentary',
+      },
+      {
         id: '/movies/dubbed-movies/',
         cat: 'Movies',
         desc: 'Movies Dubbed',
       },
+      { id: '/movies/dvd/', cat: 'Movies/DVD', desc: 'Movies DVD' },
       {
         id: '/movies/highres-movies/',
         cat: 'Movies/HD',
@@ -108,6 +119,12 @@ export const definition: TrackerDefinition = {
       },
       { id: '/other/', cat: 'Other', desc: 'Other' },
       { id: '/tv/', cat: 'TV', desc: 'TV' },
+      { id: '/xxx/', cat: 'XXX', desc: 'XXX' },
+      { id: '/xxx/games/', cat: 'XXX/Other', desc: 'XXX Games' },
+      { id: '/xxx/hentai/', cat: 'XXX/Other', desc: 'XXX Hentai' },
+      { id: '/xxx/magazines/', cat: 'XXX/Other', desc: 'XXX Magazines' },
+      { id: '/xxx/pictures/', cat: 'XXX/Imageset', desc: 'XXX Pictures' },
+      { id: '/xxx/video/', cat: 'XXX', desc: 'XXX Video' },
     ],
     modes: {
       search: ['q'],

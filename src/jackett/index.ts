@@ -169,9 +169,6 @@ export const jbtdigg = jjbtdigg;
 import { definition as jjbtetree } from './btetree';
 export const jbtetree = jjbtetree;
 
-import { definition as jjbtgigs } from './btgigs';
-export const jbtgigs = jjbtgigs;
-
 import { definition as jjbtnext } from './btnext';
 export const jbtnext = jjbtnext;
 
@@ -486,9 +483,6 @@ export const jhdchina = jjhdchina;
 
 import { definition as jjhdcity } from './hdcity';
 export const jhdcity = jjhdcity;
-
-import { definition as jjhddisk } from './hddisk';
-export const jhddisk = jjhddisk;
 
 import { definition as jjhddolby } from './hddolby';
 export const jhddolby = jjhddolby;
@@ -1367,7 +1361,6 @@ export const definitions = [
   jjbtdb,
   jjbtdigg,
   jjbtetree,
-  jjbtgigs,
   jjbtnext,
   jjbtschool,
   jjbtsow,
@@ -1473,7 +1466,6 @@ export const definitions = [
   jjhdcenter,
   jjhdchina,
   jjhdcity,
-  jjhddisk,
   jjhddolby,
   jjhdforever,
   jjhdhome,
