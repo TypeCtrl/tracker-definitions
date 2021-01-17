@@ -65,6 +65,7 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    { name: 'pin', type: 'text', label: 'Pin' },
   ],
   login: {
     path: 'login.php',
@@ -73,10 +74,11 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      pin: '{{ .Config.pin }}',
     },
     error: [
       {
-        selector: '.tablea:contains("Benutzername oder Passwort ungültig")',
+        selector: '.tablea:contains("Benutzername, Passwort oder Pin ungültig")',
       },
     ],
     test: { path: 'browse.php' },

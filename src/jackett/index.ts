@@ -16,9 +16,6 @@ export const j3Changtrai = jj3Changtrai;
 import { definition as jj3Dtorrents } from './3dtorrents';
 export const j3Dtorrents = jj3Dtorrents;
 
-import { definition as jj3Evils } from './3evils';
-export const j3Evils = jj3Evils;
-
 import { definition as jj4Thd } from './4thd';
 export const j4Thd = jj4Thd;
 
@@ -226,6 +223,9 @@ export const jcinematik = jjcinematik;
 import { definition as jjclassix } from './classix';
 export const jclassix = jjclassix;
 
+import { definition as jjcoastalcrew } from './coastalcrew';
+export const jcoastalcrew = jjcoastalcrew;
+
 import { definition as jjconcen } from './concen';
 export const jconcen = jjconcen;
 
@@ -246,6 +246,9 @@ export const jcrazyspirits = jjcrazyspirits;
 
 import { definition as jjcrnaberza } from './crnaberza';
 export const jcrnaberza = jjcrnaberza;
+
+import { definition as jjdanishbytes } from './danishbytes';
+export const jdanishbytes = jjdanishbytes;
 
 import { definition as jjdariustracker } from './dariustracker';
 export const jdariustracker = jjdariustracker;
@@ -282,9 +285,6 @@ export const jdivteam = jjdivteam;
 
 import { definition as jjdmhy } from './dmhy';
 export const jdmhy = jjdmhy;
-
-import { definition as jjdocumentarytorrents } from './documentarytorrents';
-export const jdocumentarytorrents = jjdocumentarytorrents;
 
 import { definition as jjdragonworldreloaded } from './dragonworldreloaded';
 export const jdragonworldreloaded = jjdragonworldreloaded;
@@ -450,9 +450,6 @@ export const jgreekteam = jjgreekteam;
 
 import { definition as jjgtorrent } from './gtorrent';
 export const jgtorrent = jjgtorrent;
-
-import { definition as jjhachede } from './hachede';
-export const jhachede = jjhachede;
 
 import { definition as jjhaidan } from './haidan';
 export const jhaidan = jjhaidan;
@@ -762,9 +759,6 @@ export const jonejav = jjonejav;
 
 import { definition as jjonlineselfeducation } from './onlineselfeducation';
 export const jonlineselfeducation = jjonlineselfeducation;
-
-import { definition as jjonlyscene } from './onlyscene';
-export const jonlyscene = jjonlyscene;
 
 import { definition as jjoshenpt } from './oshenpt';
 export const joshenpt = jjoshenpt;
@@ -1310,7 +1304,6 @@ export const definitions = [
   jj2Fast4You,
   jj3Changtrai,
   jj3Dtorrents,
-  jj3Evils,
   jj4Thd,
   jj52Pt,
   jj7Torrents,
@@ -1380,6 +1373,7 @@ export const definitions = [
   jjcinemamovies,
   jjcinematik,
   jjclassix,
+  jjcoastalcrew,
   jjconcen,
   jjconcertos,
   jjcpabien,
@@ -1387,6 +1381,7 @@ export const definitions = [
   jjcrazyhd,
   jjcrazyspirits,
   jjcrnaberza,
+  jjdanishbytes,
   jjdariustracker,
   jjdarkShadow,
   jjdarktracker,
@@ -1399,7 +1394,6 @@ export const definitions = [
   jjdimeadozen,
   jjdivteam,
   jjdmhy,
-  jjdocumentarytorrents,
   jjdragonworldreloaded,
   jjdxdhd,
   jjdxp,
@@ -1455,7 +1449,6 @@ export const definitions = [
   jjgreekdiamond,
   jjgreekteam,
   jjgtorrent,
-  jjhachede,
   jjhaidan,
   jjhamsterstudio,
   jjhd4Fans,
@@ -1559,7 +1552,6 @@ export const definitions = [
   jjomgwtftrackr,
   jjonejav,
   jjonlineselfeducation,
-  jjonlyscene,
   jjoshenpt,
   jjourbits,
   jjoxtorrent,

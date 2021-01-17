@@ -42,7 +42,7 @@ export const definition: TrackerDefinition = {
     captcha: {
       type: 'image',
       selector: 'img#captcha_img',
-      input: 'imagestring',
+      input: 'captcha',
     },
     error: [{ selector: 'table:contains("Login failed!")' }],
     test: { path: 'index.php' },

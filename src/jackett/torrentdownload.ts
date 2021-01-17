@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.torrentdownload.info/',
-    'https://torrentdownload.unblockit.dev/',
+    'https://torrentdownload.unblockit.ltd/',
     'https://torrentdownload.unblocked.monster/',
   ],
   legacylinks: [
@@ -32,6 +32,7 @@ export const definition: TrackerDefinition = {
     'https://torrentdownload.unblockit.lat/',
     'https://torrentdownload.unblockit.app/',
     'https://torrentdownload.unblocked.rest/',
+    'https://torrentdownload.unblockit.dev/',
   ],
   caps: {
     categorymappings: [

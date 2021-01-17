@@ -1,30 +1,33 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'onlyscene',
-  name: 'ONLYscene',
-  description: 'ONLYscene is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'fr-FR',
+  id: 'danishbytes',
+  name: 'DANISH BYTES',
+  description: 'DANISH BYTES is a Private Danish Tracker',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.onlyscene.org/'],
+  links: ['https://danishbytes.org/'],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'Movies', desc: 'Movies' },
-      { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '3', cat: 'Audio', desc: 'Music' },
-      { id: '5', cat: 'TV/Anime', desc: 'Anime' },
-      { id: '9', cat: 'TV/Anime', desc: 'TV Anime' },
-      { id: '10', cat: 'TV/Documentary', desc: 'DOC' },
-      { id: '12', cat: 'Other', desc: 'Attente-Classement' },
-      { id: '13', cat: 'PC/Games', desc: 'jeux' },
-      { id: '14', cat: 'Other', desc: 'Dox' },
-      { id: '15', cat: 'PC/0day', desc: 'APPS' },
-      { id: '16', cat: 'Books/Mags', desc: 'Journaux-Mags' },
-      { id: '17', cat: 'Books/Ebook', desc: 'Ebooks' },
-      { id: '18', cat: 'TV', desc: 'Spectacles' },
-      { id: '19', cat: 'TV', desc: 'TV Spectacles' },
-      { id: '20', cat: 'TV/Documentary', desc: 'TV DOC' },
+      { id: '7', cat: 'TV', desc: 'Dansk / TV & Serier' },
+      { id: '6', cat: 'Movies', desc: 'Dansk / Film' },
+      { id: '2', cat: 'TV', desc: 'TV & Serier' },
+      { id: '1', cat: 'Movies', desc: 'Film' },
+      { id: '10', cat: 'Movies', desc: 'Film Boxset' },
+      {
+        id: '13',
+        cat: 'TV/Anime',
+        desc: 'Cartoon & Anime / TV & Serier',
+      },
+      { id: '12', cat: 'TV/Anime', desc: 'Cartoon & Anime / Film' },
+      { id: '5', cat: 'PC/0day', desc: 'Applikationer' },
+      { id: '4', cat: 'PC/Games', desc: 'Spil' },
+      { id: '3', cat: 'Audio', desc: 'Musik' },
+      { id: '14', cat: 'Audio/Video', desc: 'Musik / Videoer' },
+      { id: '9', cat: 'Audio/Audiobook', desc: 'Lydbøger' },
+      { id: '8', cat: 'Books', desc: 'E    -Books, Magasiner, osv.' },
+      { id: '11', cat: 'XXX', desc: 'XXX' },
     ],
     modes: {
       search: ['q'],
@@ -41,32 +44,6 @@ export const definition: TrackerDefinition = {
       name: 'freeleech',
       type: 'checkbox',
       label: 'Search freeleech only',
-      default: false,
-    },
-    {
-      name: 'multilang',
-      type: 'checkbox',
-      label: 'Replace MULTI by another language in release name',
-      default: false,
-    },
-    {
-      name: 'multilanguage',
-      type: 'select',
-      label: 'Replace MULTI by this language',
-      default: 'FRENCH',
-      options: {
-        FRENCH: 'FRENCH',
-        'MULTI.FRENCH': 'MULTI.FRENCH',
-        ENGLISH: 'ENGLISH',
-        'MULTI.ENGLISH': 'MULTI.ENGLISH',
-        VOSTFR: 'VOSTFR',
-        'MULTI.VOSTFR': 'MULTI.VOSTFR',
-      },
-    },
-    {
-      name: 'vostfr',
-      type: 'checkbox',
-      label: 'Replace VOSTFR with ENGLISH',
       default: false,
     },
     {
@@ -131,66 +108,19 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
-      title_phase1: {
-        selector: 'a.view-torrent',
-        filters: [{ name: 're_replace', args: ['([\\.]+)', ' '] }],
-      },
-      title_multilang: {
-        text: '{{ .Result.title_phase1 }}',
-        filters: [
-          {
-            name: 're_replace',
-            args: ['(?i)(\\smulti\\s)', ' {{ .Config.multilanguage }} '],
-          },
-        ],
-      },
-      title_phase2: {
-        text: '{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_phase1 }}{{ end }}',
-      },
-      title_vostfr: {
-        text: '{{ .Result.title_phase2 }}',
-        filters: [
-          { name: 're_replace', args: ['(?i)(\\svostfr\\s)', ' ENGLISH '] },
-          {
-            name: 're_replace',
-            args: ['(?i)(\\ssubfrench\\s)', ' ENGLISH '],
-          },
-        ],
-      },
-      title: {
-        text: '{{ if .Config.vostfr }}{{ .Result.title_vostfr }}{{ else }}{{ .Result.title_phase2 }}{{ end }}',
-      },
+      title: { selector: 'a.view-torrent' },
       download: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
+      magnet: { selector: 'a[href^="magnet"]', attribute: 'href' },
       details: { selector: 'a.view-torrent', attribute: 'href' },
-      poster: {
-        selector: 'div.torrent-poster img',
-        attribute: 'src',
-        filters: [
-          { name: 'prepend', args: 'https://images.weserv.nl/?url=' },
-          { name: 'append', args: '&w=180&h=270' },
-          {
-            name: 'replace',
-            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/600x900&w=180&h=270', ''],
-          },
-        ],
-      },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
         selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
-      imdb: {
-        selector: 'a[href*="imdb.com/title/tt"]',
-        attribute: 'href',
-      },
-      tmdbid: {
-        selector: 'a[href*="themoviedb.org/movie/"]',
-        attribute: 'href',
       },
       date: {
         selector: 'time',
@@ -296,7 +226,7 @@ export const definition: TrackerDefinition = {
         },
       },
       minimumratio: { text: 1 },
-      minimumseedtime: { text: 259200 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

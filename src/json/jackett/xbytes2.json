@@ -136,18 +136,20 @@
             "name": "re_replace",
             "args": ["20[0-2][0-9] (S[0-9][0-9])", "$1"]
           },
-          { "name": "replace", "args": ["ESP", "Spanish"] },
+          { "name": "replace", "args": ["SPA", "SPANiSH"] },
+          { "name": "replace", "args": ["ESP", "SPANiSH"] },
           { "name": "re_replace", "args": ["[EI]NG", "English"] },
           { "name": "replace", "args": ["CAT", "Catalan"] },
-          { "name": "replace", "args": ["FR[AE]", "French"] },
+          { "name": "re_replace", "args": ["FR[AE]", "French"] },
           { "name": "replace", "args": ["JAP", "Japanese"] },
           { "name": "replace", "args": ["ITA", "Italian"] },
           { "name": "replace", "args": ["RUS", "Russian"] },
-          { "name": "replace", "args": ["DUAL", "Spanish English"] },
-          { "name": "re_replace", "args": ["MHD", "MHD.BDRip"] },
-          { "name": "re_replace", "args": ["WEB.DL", "WEBDL"] },
-          { "name": "re_replace", "args": ["WEBDL.MHD.BDRip", "WEBDL"] },
-          { "name": "re_replace", "args": ["WEBRIP.MHD.BDRip", "WEBRIP"] }
+          { "name": "replace", "args": ["DUAL", "MULTi/SPANiSH"] },
+          { "name": "replace", "args": ["BDRIP 2160P", "Bluray-2160P"] },
+          { "name": "re_replace", "args": ["MHD", "MHD BDRIP"] },
+          { "name": "re_replace", "args": ["WEB DL", "WEBDL"] },
+          { "name": "re_replace", "args": ["WEBDL MHD BDRIP", "WEBDL"] },
+          { "name": "re_replace", "args": ["WEBRIP MHD BDRIP", "WEBRIP"] }
         ]
       },
       "details": { "selector": "td[valign=\"middle\"] a", "attribute": "href" },
@@ -175,6 +177,7 @@
         "case": {
           "img[src$=\"gold.png\"]": 0,
           "img[src$=\"silver.png\"]": 0.5,
+          "img[src$=\"bronze.png\"]": 0.25,
           "*": 1
         }
       },

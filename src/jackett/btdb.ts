@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://btdb.eu/', 'https://btdb.unblockit.dev/'],
+  links: ['https://btdb.eu/', 'https://btdb.unblockit.ltd/'],
   legacylinks: [
     'https://btdb.to/',
     'https://btdb.unblocked.app/',
@@ -30,6 +30,7 @@ export const definition: TrackerDefinition = {
     'https://btdb.unblockit.top/',
     'https://btdb.unblockit.lat/',
     'https://btdb.unblockit.app/',
+    'https://btdb.unblockit.dev/',
   ],
   caps: {
     modes: {
@@ -42,6 +43,13 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'Other', cat: 'Other' }],
   },
   settings: [
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
     {
       name: 'info_8000',
       type: 'info',

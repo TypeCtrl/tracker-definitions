@@ -10,18 +10,18 @@
     "categorymappings": [
       { "id": "60", "cat": "Movies/HD", "desc": "MicroHD 720p" },
       { "id": "77", "cat": "Movies/HD", "desc": "MicroHD 1080p" },
-      { "id": "78", "cat": "Movies/HD", "desc": "MicroHD 4K" },
+      { "id": "78", "cat": "Movies/UHD", "desc": "MicroHD 4K" },
       { "id": "64", "cat": "TV/HD", "desc": "Pack Series" },
       { "id": "65", "cat": "TV/HD", "desc": "Pack Series VOSE" },
-      { "id": "80", "cat": "Movies/BluRay", "desc": "BDRip X265 1080p" },
+      { "id": "80", "cat": "Movies/HD", "desc": "BDRip X265 1080p" },
       { "id": "81", "cat": "Movies/UHD", "desc": "UHDRip x265 4K" },
       { "id": "82", "cat": "Movies/WEB-DL", "desc": "Pelis Web-DL 1080" },
       { "id": "83", "cat": "Movies/WEB-DL", "desc": "Pelis Web-DL 720" },
       { "id": "84", "cat": "Movies/UHD", "desc": "UHD Remux x265" },
       { "id": "91", "cat": "Movies/HD", "desc": "BDRip x264" },
       { "id": "89", "cat": "Movies/HD", "desc": "BDRemux" },
-      { "id": "88", "cat": "Movies/HD", "desc": "Full HD" },
-      { "id": "90", "cat": "Movies/UHD", "desc": "UHD Full" },
+      { "id": "88", "cat": "Movies/BluRay", "desc": "Full HD" },
+      { "id": "90", "cat": "Movies/BluRay", "desc": "UHD Full" },
       { "id": "23", "cat": "TV/Sport", "desc": "Deportes" },
       { "id": "20", "cat": "TV/HD", "desc": "Series" },
       { "id": "31", "cat": "TV/HD", "desc": "Series VOSE" },
@@ -36,11 +36,11 @@
       { "id": "76", "cat": "Movies", "desc": "x-men saga" },
       { "id": "85", "cat": "Movies", "desc": "Sean Connery" },
       { "id": "6", "cat": "Books/Ebook", "desc": "EBooks" },
-      { "id": "58", "cat": "Books/Ebook", "desc": "Kiosko" },
+      { "id": "58", "cat": "Books/Mags", "desc": "Kiosko" },
       { "id": "24", "cat": "TV/Documentary", "desc": "Documentales" },
       { "id": "32", "cat": "TV/Documentary", "desc": "Documentales VOSE" },
-      { "id": "49", "cat": "Books/Ebook", "desc": "eLearning" },
-      { "id": "68", "cat": "Books/Ebook", "desc": "eLearning Multimedia" },
+      { "id": "49", "cat": "Books/Technical", "desc": "eLearning" },
+      { "id": "68", "cat": "Books/Technical", "desc": "eLearning Multimedia" },
       { "id": "87", "cat": "Audio/Audiobook", "desc": "Audiolibros" }
     ],
     "modes": {
@@ -114,11 +114,11 @@
         "selector": "a[href^=\"index.php?page=torrent-details\"][onmouseover]:not(:contains(\"VOSE\"))",
         "optional": true,
         "filters": [
-          { "name": "re_replace", "args": ["\\W", "."] },
-          { "name": "append", "args": ".Spanish-DivTeam" },
+          { "name": "append", "args": " MULTi/SPANiSH" },
           { "name": "re_replace", "args": ["\\.+", "."] },
           { "name": "re_replace", "args": ["^\\.", ""] },
-          { "name": "re_replace", "args": ["UHDRip", "BDRip"] }
+          { "name": "replace", "args": ["UHDRip", "Bluray-2160p"] },
+          { "name": "replace", "args": ["2160p BDRip", "Bluray-2160p"] }
         ]
       },
       "poster": {

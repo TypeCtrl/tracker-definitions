@@ -67,6 +67,13 @@ export const definition: TrackerDefinition = {
         '-2': 'size desc',
       },
     },
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
   ],
   search: {
     paths: [

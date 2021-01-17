@@ -53,8 +53,8 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q'],
-      'tv-search': ['q', 'season', 'ep', 'imdbid'],
-      'movie-search': ['q', 'imdbid'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
       'music-search': ['q'],
       'book-search': ['q'],
     },
@@ -128,8 +128,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'selection.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
-      blah: '{{ if .Query.IMDBID }}4{{ else }}0{{ end }}',
+      search: '{{ .Keywords }}}',
+      blah: '0',
       orderby: '{{ .Config.sort }}',
       sort: '{{ .Config.type }}',
     },

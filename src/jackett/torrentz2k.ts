@@ -7,13 +7,13 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentz2k.xyz/'],
-  legacylinks: ['https://torrentz2k.pw/'],
+  links: ['https://torrentz2k.pw/'],
+  legacylinks: ['https://torrentz2k.xyz/'],
   caps: {
     categorymappings: [
       { id: 'book', cat: 'Books', desc: 'Books' },
       { id: 'film', cat: 'Movies', desc: 'Movies' },
-      { id: 'gamepad', cat: 'Console', desc: 'Games' },
+      { id: 'gamepad', cat: 'PC/Games', desc: 'Games' },
       { id: 'list', cat: 'Other', desc: 'Other' },
       { id: 'male', cat: 'XXX', desc: 'XXX' },
       { id: 'music', cat: 'Audio', desc: 'Music MP3' },
@@ -21,7 +21,7 @@ export const definition: TrackerDefinition = {
       { id: 'play-circle', cat: 'TV', desc: 'WEBTV' },
       { id: 'smile-o', cat: 'TV/Anime', desc: 'Anime' },
       { id: 'television', cat: 'TV', desc: 'TV' },
-      { id: 'wrench', cat: 'PC', desc: 'Software' },
+      { id: 'wrench', cat: 'PC', desc: 'Apps' },
     ],
     modes: {
       search: ['q'],
@@ -48,8 +48,6 @@ export const definition: TrackerDefinition = {
     inputs: {
       q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}:latest:{{ end }}',
       category: 'all',
-      x: 0,
-      y: 0,
     },
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
     rows: {
@@ -67,10 +65,11 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: { selector: 'span.btntitle', attribute: 'title' },
-      details: { text: '{{ .Config.sitelink }}' },
-      download: {
-        selector: 'a[href^="magnet:?xt="]',
+      details: { selector: 'a', attribute: 'href' },
+      infohash: {
+        selector: 'a',
         attribute: 'href',
+        filters: [{ name: 'trim', args: '/' }],
       },
       date: {
         selector: 'td:nth-child(5)',

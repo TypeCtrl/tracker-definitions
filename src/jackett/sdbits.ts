@@ -16,6 +16,7 @@ export const definition: TrackerDefinition = {
       { id: '1', cat: 'Movies', desc: 'Movies' },
       { id: '4', cat: 'Audio', desc: 'Music' },
       { id: '5', cat: 'TV/Sport', desc: 'Sports' },
+      { id: '7', cat: 'TV/Other', desc: 'Stand-up Comedy' },
       { id: '2', cat: 'TV', desc: 'TV' },
     ],
     modes: {
@@ -40,7 +41,7 @@ export const definition: TrackerDefinition = {
     },
   },
   search: {
-    paths: [{ path: 'browse.php', method: 'post' }],
+    paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
