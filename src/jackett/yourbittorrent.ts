@@ -42,7 +42,7 @@ export const definition: TrackerDefinition = {
     },
     keywordsfilters: [{ name: 're_replace', args: ['[\\s]+', '-'] }, { name: 'tolower' }],
     rows: {
-      selector: 'tr.table-default',
+      selector: 'tr.table-default:has(a[href^="/torrent/"])',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

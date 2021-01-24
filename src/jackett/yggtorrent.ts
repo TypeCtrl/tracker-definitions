@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.yggtorrent.si/'],
+  links: ['https://www2.yggtorrent.si/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -34,6 +34,7 @@ export const definition: TrackerDefinition = {
     'https://www5.yggtorrent.pe/',
     'https://yggtorrent.ws/',
     'https://yggtorrent.se/',
+    'https://www.yggtorrent.si/',
   ],
   caps: {
     categorymappings: [
@@ -103,12 +104,6 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
-    {
-      name: 'searchanddlurl',
-      label: 'Search and download URL',
-      type: 'text',
-      default: 'www2.yggtorrent.si',
-    },
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
     {
@@ -259,13 +254,11 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{ else }}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
-        followredirect: true,
+          '{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{ else }}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
       },
       {
         path:
-          'https://{{ .Config.searchanddlurl }}/{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
-        followredirect: true,
+          '{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },
@@ -376,7 +369,7 @@ export const definition: TrackerDefinition = {
       details: { selector: 'td:nth-child(2) > a', attribute: 'href' },
       category: { selector: ':nth-child(1) > div.hidden' },
       download: {
-        text: 'https://{{ .Config.searchanddlurl }}/engine/download_torrent?id={{ .Result._id }}',
+        text: '{{ .Config.sitelink }}engine/download_torrent?id={{ .Result._id }}',
       },
       date: {
         selector: 'td:nth-child(5)',

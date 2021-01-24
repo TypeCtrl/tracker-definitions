@@ -63,10 +63,11 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
       search: '{{ .Keywords }}',
+      titleonly: 1,
+      nonboolean: 0,
     },
     rows: {
       selector: 'table[border="0"] > tbody > tr.ttable:has(a[href^="browse.php?cat="])',
-      filters: [{ name: 'andmatch' }],
     },
     fields: {
       category: {

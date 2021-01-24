@@ -124,7 +124,7 @@ export const definition: TrackerDefinition = {
   login: {
     path: 'yupy_login.php',
     method: 'form',
-    form: 'form[action^="index.php?page=login"]',
+    form: 'form[action^="login"]',
     inputs: {
       uid: '{{ .Config.username }}',
       pwd: '{{ .Config.password }}',

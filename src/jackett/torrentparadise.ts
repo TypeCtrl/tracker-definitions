@@ -7,12 +7,12 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentparadise.la/'],
+  links: ['https://torrentparadise.cl/'],
   legacylinks: [
     'https://torrentparadise.org/',
-    'https://torrentparadise.cl/',
     'https://torrentparadise.to/',
     'https://torrentparadise.cc/',
+    'https://torrentparadise.la/',
   ],
   caps: {
     modes: {

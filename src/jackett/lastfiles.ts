@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'WINDOWS-1252',
   links: ['http://last-torrents.org/'],
+  legacylinks: ['http://last-torrents.org/'],
   caps: {
     categorymappings: [
       { id: '31', cat: 'Movies/UHD', desc: 'Movies/4K' },
@@ -74,6 +75,13 @@ export const definition: TrackerDefinition = {
       type: 'checkbox',
       label: 'Search freeleech only',
       default: false,
+    },
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
     },
     {
       name: 'sort',

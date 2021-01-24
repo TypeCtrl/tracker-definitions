@@ -11,6 +11,7 @@
       { "id": "1", "cat": "XXX/XviD", "desc": "Videos SD" },
       { "id": "2", "cat": "XXX/x264", "desc": "Videos HD" },
       { "id": "3", "cat": "XXX/WMV", "desc": "Movies" },
+      { "id": "17", "cat": "XXX/Imageset", "desc": "SiteRip's Picture Packs" },
       { "id": "6", "cat": "XXX/Other", "desc": "Porn (Other)" },
       { "id": "4", "cat": "XXX", "desc": "AV CENSORED (JAV)" },
       { "id": "5", "cat": "XXX", "desc": "AV UNCENSORED (JAV)" },
@@ -23,7 +24,8 @@
       { "id": "14", "cat": "XXX", "desc": "Fisting & Dildo" },
       { "id": "15", "cat": "XXX", "desc": "Pregnant" },
       { "id": "16", "cat": "XXX", "desc": "Fetish" },
-      { "id": "9", "cat": "XXX", "desc": "Gay Forum" }
+      { "id": "9", "cat": "XXX", "desc": "Gay Forum" },
+      { "id": "18", "cat": "XXX", "desc": "Incest and Taboo" }
     ],
     "modes": { "search": ["q"], "tv-search": ["q"], "movie-search": ["q"] }
   },

@@ -109,6 +109,8 @@ export const definition: TrackerDefinition = {
       $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}',
       search: '{{ .Keywords }}',
       incldead: 1,
+      titleonly: 1,
+      nonboolean: 0,
     },
     rows: {
       selector: 'table[border="0"] > tbody > tr.ttable:has(a[href^="browse.php?cat="])',

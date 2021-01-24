@@ -33,7 +33,8 @@
       { "id": "47", "cat": "Other", "desc": "Różne" },
       { "id": "60", "cat": "TV/Sport", "desc": "Sport" },
       { "id": "53", "cat": "TV", "desc": "TV Seriale" },
-      { "id": "56", "cat": "XXX", "desc": "XXX" }
+      { "id": "56", "cat": "XXX", "desc": "XXX" },
+      { "id": "70", "cat": "TV/Anime", "desc": "Anime" }
     ],
     "modes": {
       "search": ["q"],
