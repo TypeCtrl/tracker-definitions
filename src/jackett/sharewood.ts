@@ -11,11 +11,7 @@ export const definition: TrackerDefinition = {
   caps: {
     categorymappings: [
       { id: 'Films', cat: 'Movies', desc: 'Films' },
-      {
-        id: 'Films_Animations',
-        cat: 'TV/Anime',
-        desc: 'Films Animation',
-      },
+      { id: 'Films_Animations', cat: 'Movies', desc: 'Films Animation' },
       { id: 'Animes', cat: 'TV/Anime', desc: ' Séries Animations' },
       { id: 'Series', cat: 'TV', desc: 'TV Series' },
       {

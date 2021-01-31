@@ -35,6 +35,9 @@ export const definition: TrackerDefinition = {
     'https://yggtorrent.ws/',
     'https://yggtorrent.se/',
     'https://www.yggtorrent.si/',
+    'https://ww3.yggtorrent.si/',
+    'https://yggtorrent.si/',
+    'http://www2.yggtorrent.si/',
   ],
   caps: {
     categorymappings: [
@@ -255,10 +258,12 @@ export const definition: TrackerDefinition = {
       {
         path:
           '{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{ else }}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+        followredirect: true,
       },
       {
         path:
           '{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+        followredirect: true,
       },
     ],
     rows: { selector: 'table.table > tbody > tr' },

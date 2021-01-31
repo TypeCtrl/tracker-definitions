@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://eniahd.com/'],
+  links: ['https://eniatv.com/'],
+  legacylinks: ['https://eniahd.com/'],
   caps: {
     categorymappings: [
       { id: '13', cat: 'Movies/HD', desc: 'Зарубежное кино HD' },

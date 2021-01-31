@@ -100,7 +100,7 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 'replace',
-            args: ['https://btdb.io/assets/img/placeholder.png', ''],
+            args: ['https://btdb.eu/assets/img/placeholder.png', ''],
           },
         ],
       },

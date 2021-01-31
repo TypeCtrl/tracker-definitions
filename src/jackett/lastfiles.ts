@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'ro-RO',
   type: 'private',
   encoding: 'WINDOWS-1252',
-  links: ['http://last-torrents.org/'],
+  links: ['https://last-torrents.org/'],
   legacylinks: ['http://last-torrents.org/'],
   caps: {
     categorymappings: [

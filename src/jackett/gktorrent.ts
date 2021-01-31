@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://vww.gktorrent.pw/'],
+  links: ['https://www.gktorrent.cc/'],
   legacylinks: [
     'https://www.gktorrent.com/',
     'http://www.gktorrent.com/',
@@ -31,6 +31,7 @@ export const definition: TrackerDefinition = {
     'https://www.gktorrent.io/',
     'https://www.gktorrent.pw/',
     'https://wvw.gktorrent.pw/',
+    'https://vww.gktorrent.pw/',
   ],
   caps: {
     categorymappings: [

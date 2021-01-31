@@ -6,7 +6,14 @@
   "type": "public",
   "encoding": "UTF-8",
   "links": ["https://www.anirena.com/"],
-  "settings": [],
+  "settings": [
+    {
+      "name": "flaresolverr",
+      "type": "info",
+      "label": "FlareSolverr",
+      "default": "This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href=\"https://github.com/Jackett/Jackett#configuring-flaresolverr\" target=\"_blank\">FlareSolver</a> to access it."
+    }
+  ],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "TV/Anime", "desc": "Raw Animes" },

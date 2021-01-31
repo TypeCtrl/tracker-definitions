@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'vi-VN',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://nethd.org/'],
+  links: ['https://nethd.org/'],
+  legacylinks: ['http://nethd.org/'],
   caps: {
     categorymappings: [
       { id: '401', cat: 'Movies', desc: 'Movies' },

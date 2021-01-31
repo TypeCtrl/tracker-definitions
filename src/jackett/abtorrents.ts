@@ -1,9 +1,9 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'audiobooktorrents',
-  name: 'Audiobook Torrents',
-  description: 'Audiobook Torrents (ABT) is a Private Torrent Tracker for AUDIOBOOKS',
+  id: 'abtorrents',
+  name: 'ABtorrents',
+  description: 'ABtorrents (ABT) is a Private Torrent Tracker for AUDIOBOOKS',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',

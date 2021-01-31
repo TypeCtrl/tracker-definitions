@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentz2k.pw/'],
-  legacylinks: ['https://torrentz2k.xyz/'],
+  links: ['https://torrentz2k.xyz/'],
+  legacylinks: ['https://torrentz2k.pw/'],
   caps: {
     categorymappings: [
       { id: 'book', cat: 'Books', desc: 'Books' },
@@ -42,11 +42,18 @@ export const definition: TrackerDefinition = {
   ],
   search: {
     paths: [
-      { path: 'search/', method: 'post' },
-      { path: 'search/', method: 'post', inputs: { page: 2 } },
+      {
+        path: '{{ if .Keywords }}search/{{ else }}recent/{{ end }}',
+        method: 'post',
+      },
+      {
+        path: '{{ if .Keywords }}search/{{ else }}recent/{{ end }}',
+        method: 'post',
+        inputs: { page: 2 },
+      },
     ],
     inputs: {
-      q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}:latest:{{ end }}',
+      $raw: '{{ if .Keywords }}q={{ .Keywords }}{{ else }}recent=recent{{ end }}',
       category: 'all',
     },
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
@@ -65,11 +72,10 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: { selector: 'span.btntitle', attribute: 'title' },
-      details: { selector: 'a', attribute: 'href' },
-      infohash: {
-        selector: 'a',
+      details: { text: '{{ .Config.sitelink }}' },
+      download: {
+        selector: 'a[href^="magnet:?xt="]',
         attribute: 'href',
-        filters: [{ name: 'trim', args: '/' }],
       },
       date: {
         selector: 'td:nth-child(5)',

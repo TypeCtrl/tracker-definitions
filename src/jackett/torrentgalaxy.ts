@@ -1,9 +1,9 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'torrentgalaxyorg',
-  name: 'TorrentGalaxy.org',
-  description: 'TorrentGalaxy.org (TGx) is a Public site for TV / MOVIES / GENERAL',
+  id: 'torrentgalaxy',
+  name: 'TorrentGalaxy',
+  description: 'TorrentGalaxy (TGx) is a Public site for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',

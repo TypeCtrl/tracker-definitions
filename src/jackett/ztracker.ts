@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'hu-HU',
   type: 'semi-private',
   encoding: 'ISO-8859-2',
-  links: ['http://ztracker.org/'],
+  links: ['http://ztracker.cc/'],
+  legacylinks: ['http://ztracker.org/'],
   caps: {
     categorymappings: [
       { id: '30', cat: 'Movies/SD', desc: 'CAM/HUN' },
@@ -74,8 +75,9 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'belepes.php',
+    path: 'login.php',
     method: 'form',
+    form: 'form[action="takelogin.php"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',

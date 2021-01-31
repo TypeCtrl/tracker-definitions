@@ -1,15 +1,14 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'skytorrentsclone',
-  name: 'SkyTorrentsClone',
-  description: 'SkyTorrents.lol is a Public SkyTorrents clone for TV / MOVIES / GENERAL',
+  id: 'skytorrents-to',
+  name: 'SkyTorrents.to',
+  description: 'SkyTorrents.to is a Public SkyTorrents clone for TV / MOVIES / GENERAL',
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.skytorrents.lol/'],
+  links: ['https://www.skytorrents.to/', 'https://skytorrents.org/', 'https://skytorrents.net/'],
   legacylinks: [
-    'https://www.skytorrents.to/',
     'https://skytorrents.black-mirror.xyz/',
     'https://skytorrents.unblocked.casa/',
     'https://skytorrents.proxyportal.fun/',
@@ -18,9 +17,8 @@ export const definition: TrackerDefinition = {
     'https://skytorrents.unblocked.bar/',
     'https://skytorrents.proxyportal.pw/',
     'https://skytorrents.uk-unblock.pro/',
+    'https://www.skytorrents.lol/',
     'https://skytorrents.to/',
-    'https://skytorrents.org/',
-    'https://skytorrents.net/',
   ],
   caps: {
     categorymappings: [
@@ -50,21 +48,28 @@ export const definition: TrackerDefinition = {
       default: 'created',
       options: { created: 'created', seeders: 'seeders' },
     },
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
   ],
   search: {
     paths: [
       {
         path:
-          '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}{{ else }}top100?sort={{ .Config.sort }}{{ end }}',
+          '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}{{ else }}top100?sort={{ .Config.sort }}{{ end }}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{ else }}{{ end }}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=2{{ else }}{{ end }}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{ else }}{{ end }}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=3{{ else }}{{ end }}',
       },
       {
-        path: '{{ if .Keywords }}?query={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{ else }}{{ end }}',
+        path: '{{ if .Keywords }}?search={{ .Keywords }}&sort={{ .Config.sort }}&page=4{{ else }}{{ end }}',
       },
     ],
     rows: { selector: 'tr.result' },
