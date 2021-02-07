@@ -118,14 +118,18 @@ export const definition: TrackerDefinition = {
           'div[title="Misc"]': 12,
         },
       },
-      _title_artist: { selector: 'div.torrent_artists > a' },
+      _title_artist: {
+        selector: 'div.torrent_artists > a',
+        optional: true,
+        filters: [{ name: 'append', args: ' - ' }],
+      },
       _title_name: { selector: 'a.torrent_name' },
       _title_date: {
         selector: 'div.group_info.clear',
         filters: [{ name: 'regexp', args: '(\\[.+?\\])' }],
       },
       title: {
-        text: '{{ .Result._title_artist }} - {{ .Result._title_name }} {{ .Result._title_date }}',
+        text: '{{ .Result._title_artist }}{{ .Result._title_name }} {{ .Result._title_date }}',
       },
       details: {
         selector: 'a.torrent_name[href^="torrents.php?id="]',

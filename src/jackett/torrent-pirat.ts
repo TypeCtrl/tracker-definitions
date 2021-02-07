@@ -328,6 +328,7 @@ export const definition: TrackerDefinition = {
         cat: 'XXX',
         desc: '    Foot Fetish & Footjob - Ролики и сцены',
       },
+      { id: '690', cat: 'XXX', desc: '    Glory Hole - Сцены и ролики' },
       {
         id: '674',
         cat: 'XXX',

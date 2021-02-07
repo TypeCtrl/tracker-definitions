@@ -676,9 +676,6 @@ export const jmnv = jjmnv;
 import { definition as jjmononokebt } from './mononokebt';
 export const jmononokebt = jjmononokebt;
 
-import { definition as jjmonova } from './monova';
-export const jmonova = jjmonova;
-
 import { definition as jjmontorrent } from './montorrent';
 export const jmontorrent = jjmontorrent;
 
@@ -1524,7 +1521,6 @@ export const definitions = [
   jjmmaTorrents,
   jjmnv,
   jjmononokebt,
-  jjmonova,
   jjmontorrent,
   jjmovcr,
   jjmoviesdvdr,

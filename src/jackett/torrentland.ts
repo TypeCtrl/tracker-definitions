@@ -33,6 +33,11 @@ export const definition: TrackerDefinition = {
       { id: '14', cat: 'Movies/SD', desc: 'Peliculas - HDRip' },
       { id: '15', cat: 'Movies/DVD', desc: 'Peliculas - DVDRip' },
       {
+        id: '88',
+        cat: 'Audio/Video',
+        desc: 'Peliculas - Videos Musicales',
+      },
+      {
         id: '71',
         cat: 'Movies/Other',
         desc: 'Peliculas - Peliculas V.O.',

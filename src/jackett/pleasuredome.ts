@@ -9,7 +9,7 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://www.pleasuredome.org.uk/'],
   legacylinks: ['http://www.pleasuredome.org.uk/'],
-  certificates: ['eb27d56880fa073cd9ddd040d9a7f101d4868f53'],
+  certificates: ['50BC58CBC5B822A879E14EF59BA8EC0B92F63F2B'],
   caps: {
     categorymappings: [
       { id: '10', cat: 'Console', desc: 'MAME' },

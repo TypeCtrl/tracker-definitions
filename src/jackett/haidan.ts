@@ -97,7 +97,9 @@ export const definition: TrackerDefinition = {
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
-    rows: { selector: 'div.group_content' },
+    rows: {
+      selector: 'div.group_content:has(a[href^="download.php?id="])',
+    },
     fields: {
       category: {
         selector: 'a[href^="?cat="]',

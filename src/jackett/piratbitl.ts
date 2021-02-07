@@ -44,9 +44,14 @@ export const definition: TrackerDefinition = {
         desc: ' |- Фильмы (мультфильмы) cо спонсором показа (Новинки AVI/MKV)',
       },
       {
+        id: '1859',
+        cat: 'Movies',
+        desc: ' |- Фильмы 2021 [DVDrip, WEB-DLRip, HDrip] (DUB, MVO) ',
+      },
+      {
         id: '1856',
         cat: 'Movies',
-        desc: ' |- Фильмы 2019 [DVDrip, WEB-DLRip, HDrip] (DUB, MVO)',
+        desc: ' |- Фильмы 2019-2020 [DVDrip, WEB-DLRip, HDrip] (DUB, MVO)',
       },
       {
         id: '1849',

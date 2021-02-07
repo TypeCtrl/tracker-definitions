@@ -225,7 +225,6 @@ export const jackettSites = [
   'mma-torrents',
   'mnv',
   'mononokebt',
-  'monova',
   'montorrent',
   'movcr',
   'moviesdvdr',

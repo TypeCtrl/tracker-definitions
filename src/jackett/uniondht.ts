@@ -991,6 +991,11 @@ export const definition: TrackerDefinition = {
         cat: 'XXX',
         desc: ' |- Порно фильмы с сюжетом / Feature &Vignettes ',
       },
+      {
+        id: '1217',
+        cat: 'XXX',
+        desc: ' |- Гонзо-фильмы 1991-2010 / Gonzo 1991-2010 ',
+      },
       { id: '971', cat: 'XXX', desc: ' |- Гонзо-фильмы / Gonzo ' },
       {
         id: '870',
@@ -1000,7 +1005,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1158',
         cat: 'XXX',
-        desc: ' |- Фильмы без сюжета 2011-2020 / All Sex &Amateur 2011-202..',
+        desc: ' |- Фильмы без сюжета 2011-2021 / All Sex &Amateur 2011-202..',
       },
       {
         id: '873',
@@ -1072,12 +1077,12 @@ export const definition: TrackerDefinition = {
       {
         id: '1149',
         cat: 'XXX',
-        desc: ' |- Сайтрипы с русскими актрисами 2016-2020 / Russian SiteRip',
+        desc: ' |- Сайтрипы с русскими актрисами 2016-2021 / Russian SiteRip',
       },
       {
         id: '1150',
         cat: 'XXX',
-        desc: ' |- Сайтрипы с русскими актрисами 2016-2020 (HD Video) / Russian',
+        desc: ' |- Сайтрипы с русскими актрисами 2016-2021 (HD Video) / Russian',
       },
       {
         id: '1151',
@@ -1169,6 +1174,11 @@ export const definition: TrackerDefinition = {
         desc: " |- Сайтрипы 2020 (HD Video) / SiteRip's 2020 (HD Video)",
       },
       {
+        id: '1218',
+        cat: 'XXX',
+        desc: " |- Сайтрипы 2021 (HD Video) / SiteRip's 2021 (HD Video)",
+      },
+      {
         id: '867',
         cat: 'XXX',
         desc: " |- Сайтрипы 1991-2010 / SiteRip's 1991-2010 ",
@@ -1219,6 +1229,11 @@ export const definition: TrackerDefinition = {
         desc: " |- Сайтрипы 2020 / SiteRip's 2020 ",
       },
       {
+        id: '1219',
+        cat: 'XXX',
+        desc: " |- Сайтрипы 2021 / SiteRip's 2021 ",
+      },
+      {
         id: '1085',
         cat: 'XXX',
         desc: ' |- Сцены из порно фильмов / Movie Scenes ',
@@ -1256,7 +1271,7 @@ export const definition: TrackerDefinition = {
       {
         id: '1162',
         cat: 'XXX',
-        desc: ' |- Японские фильмы и сайтрипы 2015-2020 / Japanese Movies &..',
+        desc: ' |- Японские фильмы и сайтрипы 2015-2021 / Japanese Movies &..',
       },
       { id: '1161', cat: 'XXX', desc: ' |- Архив (Японское порно)' },
       { id: '848', cat: 'XXX', desc: 'Журналы и фотографии (порно)' },

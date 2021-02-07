@@ -95,6 +95,11 @@ export const definition: TrackerDefinition = {
       },
       { id: '/movies/mp4/', cat: 'Movies', desc: 'Movies MP4' },
       {
+        id: '/movies/other-movies/',
+        cat: 'Movies',
+        desc: 'Movies Other Movies',
+      },
+      {
         id: '/movies/ultrahd/',
         cat: 'Movies/UHD',
         desc: 'Movies UltraHD',
@@ -125,6 +130,7 @@ export const definition: TrackerDefinition = {
       { id: '/xxx/magazines/', cat: 'XXX/Other', desc: 'XXX Magazines' },
       { id: '/xxx/pictures/', cat: 'XXX/Imageset', desc: 'XXX Pictures' },
       { id: '/xxx/video/', cat: 'XXX', desc: 'XXX Video' },
+      { id: '/video/', cat: 'XXX', desc: 'XXX Video' },
     ],
     modes: {
       search: ['q'],

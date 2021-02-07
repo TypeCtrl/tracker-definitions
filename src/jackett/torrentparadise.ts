@@ -106,6 +106,7 @@ export const definition: TrackerDefinition = {
       { id: 'MISCELLANEOUS', cat: 'Other' },
       { id: 'MOBILE', cat: 'PC/Mobile-Other' },
       { id: 'MOVIES', cat: 'Movies' },
+      { id: 'MOVIES3D', cat: 'Movies/3D' },
       { id: 'MOVIESBLURAYDISCREMUX', cat: 'Movies/HD' },
       { id: 'MOVIESBOLLYWOOD', cat: 'Movies' },
       { id: 'MOVIESCAMTS', cat: 'Movies' },
