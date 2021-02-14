@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www2.yggtorrent.si/'],
+  links: ['https://www4.yggtorrent.li/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -38,6 +38,7 @@ export const definition: TrackerDefinition = {
     'https://ww3.yggtorrent.si/',
     'https://yggtorrent.si/',
     'http://www2.yggtorrent.si/',
+    'https://www2.yggtorrent.si/',
   ],
   caps: {
     categorymappings: [
@@ -166,12 +167,6 @@ export const definition: TrackerDefinition = {
       default: false,
     },
     {
-      name: 'betasearchengine',
-      type: 'checkbox',
-      label: 'Use Beta Search engine URL (Less restrictive) / SonarrV3 Full Series Search NEW',
-      default: false,
-    },
-    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -257,12 +252,12 @@ export const definition: TrackerDefinition = {
     paths: [
       {
         path:
-          '{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Config.betasearchengine }}{{ .Keywords }}{{ else }}{{ re_replace .Keywords "\\b[^\\s]+\\b"  ""$&""}}{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+          'engine/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
       {
         path:
-          '{{ if .Config.betasearchengine }}new_search{{ else }}engine{{ end }}/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+          'engine/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
     ],

@@ -13,6 +13,7 @@ export const definition: TrackerDefinition = {
       { id: '111', cat: 'Movies', desc: '1922' },
       { id: '135', cat: 'Movies', desc: 'Анон' },
       { id: '213', cat: 'Movies', desc: 'Борат 2' },
+      { id: '222', cat: 'Movies', desc: 'Траффик' },
       { id: '206', cat: 'Movies', desc: 'Брачная история' },
       { id: '201', cat: 'Movies', desc: 'Быстрая, как ветер' },
       {

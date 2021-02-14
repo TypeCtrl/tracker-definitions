@@ -327,6 +327,21 @@ export const definition: TrackerDefinition = {
       { id: '251', cat: 'Books', desc: 'Diving' },
       { id: '111', cat: 'Books', desc: 'Yachting, sailing, boating' },
       {
+        id: '298',
+        cat: 'Books',
+        desc: 'Yachting, sailing, boating-Cruising Guides',
+      },
+      {
+        id: '297',
+        cat: 'Books',
+        desc: 'Yachting, sailing, boating-Weather Sailing',
+      },
+      {
+        id: '296',
+        cat: 'Books',
+        desc: 'Yachting, sailing, boating-How to Buy a Boat?',
+      },
+      {
         id: '258',
         cat: 'Books',
         desc: 'Yachting, sailing, boating-Inflatable boats, boats, kayaks',
@@ -352,7 +367,7 @@ export const definition: TrackerDefinition = {
         desc: 'Yachting, sailing, boating-Repair and Restoration',
       },
       {
-        id: '253',
+        id: '255',
         cat: 'Books',
         desc: 'Yachting, sailing, boating-Sailing Alone',
       },
@@ -454,6 +469,7 @@ export const definition: TrackerDefinition = {
       { id: '247', cat: 'Books', desc: 'Rarity-1600 - 1700' },
       { id: '187', cat: 'Books', desc: 'Others (not maritime)' },
       { id: '162', cat: 'Books', desc: 'Archive' },
+      { id: '295', cat: 'Books', desc: 'Archive-Unregistered releases' },
     ],
     modes: { search: ['q'], 'movie-search': ['q'], 'book-search': ['q'] },
   },

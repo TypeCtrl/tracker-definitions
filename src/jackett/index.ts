@@ -43,6 +43,9 @@ export const jacgsou = jjacgsou;
 import { definition as jjacidlounge } from './acidlounge';
 export const jacidlounge = jjacidlounge;
 
+import { definition as jjacrossthetasman } from './acrossthetasman';
+export const jacrossthetasman = jjacrossthetasman;
+
 import { definition as jjaftershock } from './aftershock';
 export const jaftershock = jjaftershock;
 
@@ -366,6 +369,9 @@ export const jfanoin = jjfanoin;
 
 import { definition as jjfantasticheaven } from './fantasticheaven';
 export const jfantasticheaven = jjfantasticheaven;
+
+import { definition as jjfeedurneed } from './feedurneed';
+export const jfeedurneed = jjfeedurneed;
 
 import { definition as jjfemdomcult } from './femdomcult';
 export const jfemdomcult = jjfemdomcult;
@@ -958,9 +964,6 @@ export const jsktorrentOrg = jjsktorrentOrg;
 import { definition as jjsktorrent } from './sktorrent';
 export const jsktorrent = jjsktorrent;
 
-import { definition as jjskytorrentsLol } from './skytorrents-lol';
-export const jskytorrentsLol = jjskytorrentsLol;
-
 import { definition as jjskytorrentsTo } from './skytorrents-to';
 export const jskytorrentsTo = jjskytorrentsTo;
 
@@ -1310,6 +1313,7 @@ export const definitions = [
   jjacgrip,
   jjacgsou,
   jjacidlounge,
+  jjacrossthetasman,
   jjaftershock,
   jjaidoruonline,
   jjaither,
@@ -1418,6 +1422,7 @@ export const definitions = [
   jjeztv,
   jjfanoin,
   jjfantasticheaven,
+  jjfeedurneed,
   jjfemdomcult,
   jjfilebase,
   jjfilmPaleis,
@@ -1615,7 +1620,6 @@ export const definitions = [
   jjsiambit,
   jjsktorrentOrg,
   jjsktorrent,
-  jjskytorrentsLol,
   jjskytorrentsTo,
   jjsnowpt,
   jjsosulki,

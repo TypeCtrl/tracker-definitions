@@ -334,15 +334,15 @@
       { "id": "729", "cat": "Other", "desc": " |- Работа со звуком" },
       { "id": "766", "cat": "Other", "desc": " |- ZBrush" },
       { "id": "473", "cat": "Other", "desc": " |- Работа с видео" },
-      { "id": "426", "cat": "Other", "desc": " |- Autodesk 3ds Max" },
-      { "id": "425", "cat": "Other", "desc": " |- Adobe Photoshop" },
+      { "id": "726", "cat": "Other", "desc": " |- Autodesk 3ds Max" },
+      { "id": "725", "cat": "Other", "desc": " |- Adobe Photoshop" },
       {
-        "id": "427",
+        "id": "727",
         "cat": "Other",
         "desc": " |- Инженерные и научные программы (видеоуроки)"
       },
       {
-        "id": "424",
+        "id": "724",
         "cat": "Other",
         "desc": " |- WEB, SMM, SEO, интернет-маркетинг"
       },

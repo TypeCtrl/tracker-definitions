@@ -7,8 +7,14 @@ export const definition: TrackerDefinition = {
   language: 'ro-RO',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://www.last-torrents.org/'],
-  legacylinks: ['http://last-torrents.org/', 'https://last-torrents.org/', 'https://www.last-torrents.org/'],
+  followredirect: true,
+  links: [
+    'https://www.lastfiles.ro/',
+    'http://www.lastfiles.ro/',
+    'https://www.last-torrents.org/',
+    'http://www.last-torrents.org/',
+  ],
+  legacylinks: ['http://last-torrents.org/', 'https://last-torrents.org/'],
   caps: {
     categorymappings: [
       { id: '31', cat: 'Movies/UHD', desc: 'Movies: 4K' },
@@ -135,24 +141,24 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'td:nth-child(4) span:contains("day")',
+        selector: 'td:nth-child(5) span:contains("day")',
         optional: true,
         filters: [{ name: 'append', args: ' +00:00' }, { name: 'fuzzytime' }],
       },
-      size: { selector: 'td:nth-child(5)' },
+      size: { selector: 'td:nth-child(6)' },
       grabs: {
-        selector: 'td:nth-child(6)',
+        selector: 'td:nth-child(7)',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
-      seeders: { selector: 'td:nth-child(7)' },
-      leechers: { selector: 'td:nth-child(8)' },
+      seeders: { selector: 'td:nth-child(8)' },
+      leechers: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
-        case: { 'img[src*="freedownload.gif"]': 0, '*': 1 },
+        case: { 'a.info > b:contains("FREE")': 0, '*': 1 },
       },
       uploadvolumefactor: { case: { '*': 1 } },
       minimumratio: { text: 1 },
       minimumseedtime: {
-        case: { 'img[src*="freedownload.gif"]': 172800, '*': 129600 },
+        case: { 'a.info > b:contains("FREE")': 172800, '*': 129600 },
       },
     },
   },

@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://btdb.eu/', 'https://btdb.unblockit.ltd/'],
+  links: ['https://btdb.eu/', 'https://btdb.unblockit.link/'],
   legacylinks: [
     'https://btdb.to/',
     'https://btdb.unblocked.app/',
@@ -31,6 +31,7 @@ export const definition: TrackerDefinition = {
     'https://btdb.unblockit.lat/',
     'https://btdb.unblockit.app/',
     'https://btdb.unblockit.dev/',
+    'https://btdb.unblockit.ltd/',
   ],
   caps: {
     modes: {

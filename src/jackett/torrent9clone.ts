@@ -44,6 +44,7 @@ export const definition: TrackerDefinition = {
     'https://torrent9.unblockninja.com/',
     'https://torrent9.unblocked.rest/',
     'https://www.torrent9.so/',
+    'https://wvw.torrent9.sh/',
   ],
   caps: {
     categorymappings: [

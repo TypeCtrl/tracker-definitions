@@ -14,6 +14,16 @@
       { "id": "12", "cat": "Movies", "desc": "Наше кино" },
       { "id": "2", "cat": "TV/HD", "desc": "Зарубежные сериалы HD" },
       {
+        "id": "31",
+        "cat": "TV/HD",
+        "desc": "Американские боги / American Gods"
+      },
+      {
+        "id": "30",
+        "cat": "TV/HD",
+        "desc": "Агенты Щ.И.Т. / Agents of S.H.I.E.L.D."
+      },
+      {
         "id": "17",
         "cat": "TV/HD",
         "desc": "Зарубежные сериалы HD для Apple TV"

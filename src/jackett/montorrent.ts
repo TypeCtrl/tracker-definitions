@@ -142,7 +142,10 @@ export const definition: TrackerDefinition = {
           '{{ if .Keywords }}/recherche/?query={{ .Keywords }}&{{ else }}/torrents/?{{ end }}langue={{ .Config.langfilter }}&order={{ .Config.order }}&orderby={{ .Config.orderby }}&page=2',
       },
     ],
-    rows: { selector: 'div.t-details' },
+    rows: {
+      selector: 'div.t-details',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       category: {
         optional: true,

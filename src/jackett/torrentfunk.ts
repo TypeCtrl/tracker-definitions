@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.torrentfunk.com/', 'https://www.torrentfunk2.com/', 'https://torrentfunk.unblockit.ltd/'],
+  links: ['https://www.torrentfunk.com/', 'https://www.torrentfunk2.com/', 'https://torrentfunk.unblockit.link/'],
   legacylinks: [
     'https://torrentfunk.unblockit.pro/',
     'https://torrentfunk.unblockit.one/',
@@ -20,6 +20,7 @@ export const definition: TrackerDefinition = {
     'https://torrentfunk.unblockit.lat/',
     'https://torrentfunk.unblockit.app/',
     'https://torrentfunk.unblockit.dev/',
+    'https://torrentfunk.unblockit.ltd/',
   ],
   caps: {
     categorymappings: [

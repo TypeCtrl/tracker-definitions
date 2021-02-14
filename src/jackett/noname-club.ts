@@ -1450,7 +1450,7 @@ export const definition: TrackerDefinition = {
       sha: 1,
       ta: -1,
       sns: -1,
-      sds: -1,
+      sds: 4,
       nm: '{{ .Keywords }}',
       pn: '',
       submit: 'Поиск',
