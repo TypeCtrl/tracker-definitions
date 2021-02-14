@@ -141,17 +141,17 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'td:nth-child(5) span:contains("day")',
+        selector: 'td:nth-child(4) span:contains("day")',
         optional: true,
         filters: [{ name: 'append', args: ' +00:00' }, { name: 'fuzzytime' }],
       },
-      size: { selector: 'td:nth-child(6)' },
+      size: { selector: 'td:nth-child(5)' },
       grabs: {
-        selector: 'td:nth-child(7)',
+        selector: 'td:nth-child(6)',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
-      seeders: { selector: 'td:nth-child(8)' },
-      leechers: { selector: 'td:nth-child(9)' },
+      seeders: { selector: 'td:nth-child(7)' },
+      leechers: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: { 'a.info > b:contains("FREE")': 0, '*': 1 },
       },

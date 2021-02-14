@@ -25,6 +25,7 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: '', cat: 'Other' },
       { id: 'ADULT', cat: 'XXX' },
+      { id: 'ADULTHENTAI', cat: 'XXX' },
       { id: 'ADULTLATINA', cat: 'XXX' },
       { id: 'ADULTMILF', cat: 'XXX' },
       { id: 'ADULTHDMOVIES', cat: 'XXX' },
