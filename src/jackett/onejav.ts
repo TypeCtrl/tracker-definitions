@@ -12,7 +12,15 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
     categorymappings: [{ id: 'XXX', cat: 'XXX' }],
   },
-  settings: [],
+  settings: [
+    {
+      name: 'flaresolverr-onejav',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.<br><br>If you have issues downloading, perform a keyword search (e.g. <b>video</b>) so FlareSolverr can grab new cookies.',
+    },
+  ],
   search: {
     paths: [
       {

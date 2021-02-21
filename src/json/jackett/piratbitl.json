@@ -47,9 +47,14 @@
         "desc": " |- Фильмы (мультфильмы) cо спонсором показа (Новинки AVI/MKV)"
       },
       {
+        "id": "1860",
+        "cat": "Movies",
+        "desc": " |- Фильмы 2021 (Звук TS, Cam, VO, DVO)"
+      },
+      {
         "id": "1859",
         "cat": "Movies",
-        "desc": " |- Фильмы 2021 [DVDrip, WEB-DLRip, HDrip] (DUB, MVO) "
+        "desc": " |- Фильмы 2021 [DVDrip, WEB-DLRip, HDrip] (DUB, MVO)"
       },
       {
         "id": "1856",

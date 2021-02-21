@@ -44,11 +44,9 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'takelogin.php',
     method: 'cookie',
     inputs: { cookie: '{{ .Config.cookie }}' },
     test: { path: 'browse2.php' },
-    error: [{ selector: 'td.embedded:has(h2:contains("l\'authentification"))' }],
   },
   download: {
     before: {

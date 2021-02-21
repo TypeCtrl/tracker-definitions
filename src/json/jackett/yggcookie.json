@@ -230,7 +230,8 @@
       { "name": "re_replace", "args": ["(?i)(.*)s([1-9][0-9])$", "$1 S$2"] },
       { "name": "replace", "args": ["\"", ""] },
       { "name": "replace", "args": ["  ", " "] },
-      { "name": "trim" }
+      { "name": "trim" },
+      { "name": "re_replace", "args": ["(\\w+)", "\"$1\""] }
     ],
     "paths": [
       {

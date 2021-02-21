@@ -248,6 +248,7 @@ export const definition: TrackerDefinition = {
       { name: 'replace', args: ['"', ''] },
       { name: 'replace', args: ['  ', ' '] },
       { name: 'trim' },
+      { name: 're_replace', args: ['(\\w+)', '"$1"'] },
     ],
     paths: [
       {

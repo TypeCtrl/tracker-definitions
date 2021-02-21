@@ -96,7 +96,10 @@ export const definition: TrackerDefinition = {
       leechers: {
         selector: 'a[href^="/download.php?id="]',
         attribute: 'title',
-        filters: [{ name: 'regexp', args: ', (\\d+) leecher' }],
+        filters: [
+          { name: 'regexp', args: ', (\\d+) leecher' },
+          { name: 'replace', args: ['-1', '0'] },
+        ],
       },
       date: {
         selector: 'a[href^="/download.php?id="]',
