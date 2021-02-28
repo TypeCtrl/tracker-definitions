@@ -142,6 +142,7 @@ export const definition: TrackerDefinition = {
       { id: 'OTHEROTHER', cat: 'Other' },
       { id: 'OTHERPICTURES', cat: 'Other' },
       { id: 'OTHERSOUNDCLIPS', cat: 'Other' },
+      { id: 'PACKS', cat: 'TV' },
       { id: 'PELICULASCVCD', cat: 'TV/SD' },
       { id: 'PELICULASDIVX', cat: 'TV/SD' },
       { id: 'PELICULASHDRIP', cat: 'TV/HD' },

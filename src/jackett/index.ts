@@ -196,9 +196,6 @@ export const jcartoonchaos = jjcartoonchaos;
 import { definition as jjcasatorrent } from './casatorrent';
 export const jcasatorrent = jjcasatorrent;
 
-import { definition as jjcasstudiotv } from './casstudiotv';
-export const jcasstudiotv = jjcasstudiotv;
-
 import { definition as jjccfbits } from './ccfbits';
 export const jccfbits = jjccfbits;
 
@@ -684,9 +681,6 @@ export const jmononokebt = jjmononokebt;
 
 import { definition as jjmontorrent } from './montorrent';
 export const jmontorrent = jjmontorrent;
-
-import { definition as jjmovcr } from './movcr';
-export const jmovcr = jjmovcr;
 
 import { definition as jjmoviesdvdr } from './moviesdvdr';
 export const jmoviesdvdr = jjmoviesdvdr;
@@ -1364,7 +1358,6 @@ export const definitions = [
   jjcarphunter,
   jjcartoonchaos,
   jjcasatorrent,
-  jjcasstudiotv,
   jjccfbits,
   jjchannelx,
   jjchdbits,
@@ -1527,7 +1520,6 @@ export const definitions = [
   jjmnv,
   jjmononokebt,
   jjmontorrent,
-  jjmovcr,
   jjmoviesdvdr,
   jjmoviezone,
   jjmteamtp,

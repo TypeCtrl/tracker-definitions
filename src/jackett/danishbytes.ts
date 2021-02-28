@@ -225,7 +225,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      minimumratio: { text: 1 },
+      minimumratio: { text: 1.1 },
       minimumseedtime: { text: 172800 },
     },
   },

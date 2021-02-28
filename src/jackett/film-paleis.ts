@@ -95,6 +95,10 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 're_replace',
+            args: ['(?i)seizoen\\s*(\\d{1,2})\\s*(tot|t/m)\\s*(\\d{1,2})', 'S$1-$3'],
+          },
+          {
+            name: 're_replace',
             args: ['(?i)(seizoen\\s*)(\\d{1,2})', 'S$2'],
           },
           {
