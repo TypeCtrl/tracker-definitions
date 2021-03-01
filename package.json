@@ -28,8 +28,8 @@
     "test:ci": "jest --ci"
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "7.12.13",
-    "@babel/preset-typescript": "7.12.16",
+    "@babel/plugin-transform-modules-commonjs": "7.13.8",
+    "@babel/preset-typescript": "7.13.0",
     "@ctrl/eslint-config": "1.2.12",
     "@types/jest": "26.0.20",
     "@types/js-yaml": "4.0.0",
