@@ -142,6 +142,7 @@ export const definition: TrackerDefinition = {
       'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -178,7 +179,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'search.php' }],
     inputs: {
-      tracker_search: 'torrent',
+      tracker_search: '{{ if .Keywords }}torrent{{ else }}tracker{{ end }}',
       keywords: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       terms: 'all',
       author: '',

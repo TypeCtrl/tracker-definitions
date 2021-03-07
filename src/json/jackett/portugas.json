@@ -1,19 +1,21 @@
 {
-  "id": "danishbytes",
-  "name": "DANISH BYTES",
-  "description": "DANISH BYTES is a Private Danish Tracker",
-  "language": "en-US",
+  "id": "portugas",
+  "name": "Portugas",
+  "description": "Portugas is a Private Portoguese Tracker",
+  "language": "pt-PT",
   "type": "private",
   "encoding": "UTF-8",
-  "links": ["https://danishbytes.org/"],
+  "links": ["https://portugas.org/"],
   "caps": {
     "categorymappings": [
-      { "id": "1", "cat": "Movies", "desc": "Movies" },
+      { "id": "1", "cat": "Movies", "desc": "Filmes" },
       { "id": "2", "cat": "TV", "desc": "TV" },
+      { "id": "3", "cat": "Audio", "desc": "Músicas" },
+      { "id": "4", "cat": "PC/Games", "desc": "Jogos" },
       { "id": "5", "cat": "PC/0day", "desc": "Appz" },
-      { "id": "4", "cat": "PC/Games", "desc": "Games" },
-      { "id": "3", "cat": "Audio", "desc": "Music" },
-      { "id": "8", "cat": "Books", "desc": "Bookz" }
+      { "id": "7", "cat": "XXX", "desc": "XXX" },
+      { "id": "10", "cat": "TV/Anime", "desc": "Animação" },
+      { "id": "9", "cat": "Books", "desc": "E-Books" }
     ],
     "modes": {
       "search": ["q"],
@@ -258,7 +260,7 @@
         }
       },
       "minimumratio": { "text": 1.1 },
-      "minimumseedtime": { "text": 172800 }
+      "minimumseedtime": { "text": 259200 }
     }
   },
   "source": "jackett"

@@ -62,6 +62,22 @@ export const definition: TrackerDefinition = {
         path:
           '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}?sortby={{ .Config.sort }}&sort={{ .Config.type }}',
       },
+      {
+        path:
+          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}2/?sortby={{ .Config.sort }}&sort={{ .Config.type }}',
+      },
+      {
+        path:
+          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}3/?sortby={{ .Config.sort }}&sort={{ .Config.type }}',
+      },
+      {
+        path:
+          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}4/?sortby={{ .Config.sort }}&sort={{ .Config.type }}',
+      },
+      {
+        path:
+          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}5/?sortby={{ .Config.sort }}&sort={{ .Config.type }}',
+      },
     ],
     rows: {
       selector: 'table.data tr.odd:has(a[class="cellMainLink"]), table.data tr.even:has(a[class="cellMainLink"])',

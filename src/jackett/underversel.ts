@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'WINDOWS-1251',
-  links: ['https://underver.se/', 'https://underverse.su/'],
+  links: ['https://underver.se/'],
+  legacylinks: ['https://underverse.su/'],
   caps: {
     categorymappings: [
       { id: '797', cat: 'PC', desc: ' |- UV-Info - помощник релизера' },

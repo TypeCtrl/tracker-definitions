@@ -9,7 +9,13 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   links: ['https://gtorrent.org/'],
   caps: {
-    categorymappings: [{ id: '1', cat: 'Other', desc: 'Other' }],
+    categorymappings: [
+      { id: 'filmy', cat: 'Movies', desc: 'Фильмы (Movies)' },
+      { id: 'muzyka', cat: 'Audio', desc: 'Музыка (Music)' },
+      { id: 'igry', cat: 'Console', desc: 'Игры (Games)' },
+      { id: 'serialy', cat: 'TV', desc: 'Сериалы (TV series)' },
+      { id: 'programmy', cat: 'PC', desc: 'Программы (Software)' },
+    ],
     modes: { search: ['q'] },
   },
   settings: [],
@@ -32,7 +38,11 @@ export const definition: TrackerDefinition = {
       filters: [{ name: 'andmatch' }],
     },
     fields: {
-      category: { text: 1 },
+      category: {
+        selector: 'div.name a',
+        attribute: 'href',
+        filters: [{ name: 'split', args: ['/', 3] }],
+      },
       title: { selector: 'div.name' },
       details: { selector: 'div.name a', attribute: 'href' },
       download: { selector: 'div.name a', attribute: 'href' },

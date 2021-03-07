@@ -1,24 +1,30 @@
 import { TrackerDefinition } from '../definition-interface';
 
 export const definition: TrackerDefinition = {
-  id: 'blutopia',
-  name: 'Blutopia',
-  description: 'Blutopia (BLU) is a Private Torrent Tracker for HD MOVIES / TV',
-  language: 'en-US',
+  id: 'portugas',
+  name: 'Portugas',
+  description: 'Portugas is a Private Portoguese Tracker',
+  language: 'pt-PT',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://blutopia.xyz/'],
+  links: ['https://portugas.org/'],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '1', cat: 'Movies', desc: 'Filmes' },
       { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '3', cat: 'Movies/Other', desc: 'FANRES' },
-      { id: '5', cat: 'Movies/Other', desc: 'Trailer' },
+      { id: '3', cat: 'Audio', desc: 'Músicas' },
+      { id: '4', cat: 'PC/Games', desc: 'Jogos' },
+      { id: '5', cat: 'PC/0day', desc: 'Appz' },
+      { id: '7', cat: 'XXX', desc: 'XXX' },
+      { id: '10', cat: 'TV/Anime', desc: 'Animação' },
+      { id: '9', cat: 'Books', desc: 'E-Books' },
     ],
     modes: {
       search: ['q'],
       'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
       'movie-search': ['q', 'imdbid', 'tmdbid'],
+      'music-search': ['q'],
+      'book-search': ['q'],
     },
   },
   settings: [
@@ -93,12 +99,12 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
-      title: { selector: 'a[href*="/torrents/"]' },
+      title: { selector: 'a.view-torrent' },
       download: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      details: { selector: 'a[href*="/torrents/"]', attribute: 'href' },
+      details: { selector: 'a.view-torrent', attribute: 'href' },
       poster: {
         selector: 'div.torrent-poster img',
         attribute: 'src',
@@ -228,7 +234,8 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      minimumseedtime: { text: 604800 },
+      minimumratio: { text: 1.1 },
+      minimumseedtime: { text: 259200 },
     },
   },
   source: 'jackett',

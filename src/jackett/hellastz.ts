@@ -162,28 +162,20 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="index.php?page=downloadcheck&id="]',
         attribute: 'href',
       },
-      size: {
-        selector: 'p:contains("Μέγεθος:")',
-        filters: [{ name: 'replace', args: ['Μέγεθος: ', ''] }],
-      },
       date: {
-        selector: 'p:contains("Προστέθηκε:")',
+        selector: 'td:nth-child(4)',
         filters: [
-          { name: 'replace', args: ['Προστέθηκε: ', ''] },
           { name: 'append', args: ' +02:00' },
-          { name: 'dateparse', args: '15:04:05 02/01/2006 -07:00' },
+          { name: 'dateparse', args: '02/01/2006 -07:00' },
         ],
       },
-      seeders: {
-        selector: 'p:has(a[href^="index.php?page=peers&id="]) > a:first-child',
-      },
-      leechers: {
-        selector: 'p:has(a[href^="index.php?page=peers&id="]) > a:nth-child(2)',
-      },
+      seeders: { selector: 'td:nth-child(5)' },
+      leechers: { selector: 'td:nth-child(6)' },
       grabs: {
-        selector: 'p:has(a[href^="index.php?page=peers&id="]) > a:last-child',
+        selector: 'td:nth-child(7)',
         filters: [{ name: 'replace', args: ['---', '0'] }],
       },
+      size: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: {
           'img[alt="Gold 100% Free"]': 0,

@@ -10,24 +10,12 @@ export const definition: TrackerDefinition = {
   links: ['https://danishbytes.org/'],
   caps: {
     categorymappings: [
-      { id: '7', cat: 'TV', desc: 'Dansk / TV & Serier' },
-      { id: '6', cat: 'Movies', desc: 'Dansk / Film' },
-      { id: '2', cat: 'TV', desc: 'TV & Serier' },
-      { id: '1', cat: 'Movies', desc: 'Film' },
-      { id: '10', cat: 'Movies', desc: 'Film Boxset' },
-      {
-        id: '13',
-        cat: 'TV/Anime',
-        desc: 'Cartoon & Anime / TV & Serier',
-      },
-      { id: '12', cat: 'TV/Anime', desc: 'Cartoon & Anime / Film' },
-      { id: '5', cat: 'PC/0day', desc: 'Applikationer' },
-      { id: '4', cat: 'PC/Games', desc: 'Spil' },
-      { id: '3', cat: 'Audio', desc: 'Musik' },
-      { id: '14', cat: 'Audio/Video', desc: 'Musik / Videoer' },
-      { id: '9', cat: 'Audio/Audiobook', desc: 'Lydbøger' },
-      { id: '8', cat: 'Books', desc: 'E    -Books, Magasiner, osv.' },
-      { id: '11', cat: 'XXX', desc: 'XXX' },
+      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '2', cat: 'TV', desc: 'TV' },
+      { id: '5', cat: 'PC/0day', desc: 'Appz' },
+      { id: '4', cat: 'PC/Games', desc: 'Games' },
+      { id: '3', cat: 'Audio', desc: 'Music' },
+      { id: '8', cat: 'Books', desc: 'Bookz' },
     ],
     modes: {
       search: ['q'],
@@ -86,6 +74,7 @@ export const definition: TrackerDefinition = {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
       search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
+      keywords: '',
       uploader: '',
       imdb: '{{ .Query.IMDBIDShort }}',
       tvdb: '{{ .Query.TVDBID }}',
@@ -113,14 +102,32 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      magnet: { selector: 'a[href^="magnet"]', attribute: 'href' },
       details: { selector: 'a.view-torrent', attribute: 'href' },
+      poster: {
+        selector: 'div.torrent-poster img',
+        attribute: 'src',
+        filters: [
+          { name: 'replace', args: ['&w=52&h=80', '&w=180&h=270'] },
+          {
+            name: 'replace',
+            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/52x80&w=180&h=270', ''],
+          },
+        ],
+      },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
       grabs: {
         selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
+      },
+      imdb: {
+        selector: 'a[href*="imdb.com/title/tt"]',
+        attribute: 'href',
+      },
+      tmdbid: {
+        selector: 'a[href*="themoviedb.org/movie/"]',
+        attribute: 'href',
       },
       date: {
         selector: 'time',

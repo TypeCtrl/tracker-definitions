@@ -91,12 +91,12 @@
         "attribute": "href",
         "filters": [{ "name": "regexp", "args": "/categories/(\\d+)" }]
       },
-      "title": { "selector": "a.view-torrent" },
+      "title": { "selector": "a[href*=\"/torrents/\"]" },
       "download": {
         "selector": "a[href*=\"/download/\"]",
         "attribute": "href"
       },
-      "details": { "selector": "a.view-torrent", "attribute": "href" },
+      "details": { "selector": "a[href*=\"/torrents/\"]", "attribute": "href" },
       "poster": {
         "selector": "div.torrent-poster img",
         "attribute": "src",

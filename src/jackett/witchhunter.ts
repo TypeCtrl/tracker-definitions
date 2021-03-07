@@ -16,10 +16,6 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'Movies/SD', desc: 'Film/Cam/Hun' },
       { id: '8', cat: 'Movies/DVD', desc: 'Film/DVD/Eng' },
       { id: '7', cat: 'Movies/DVD', desc: 'Film/DVD/Hun' },
-      { id: '10', cat: 'Movies/DVD', desc: 'Film/DVD5/Eng' },
-      { id: '9', cat: 'Movies/DVD', desc: 'Film/DVD5/Hun' },
-      { id: '12', cat: 'Movies/DVD', desc: 'Film/DVD9/Eng' },
-      { id: '11', cat: 'Movies/DVD', desc: 'Film/DVD9/Hun' },
       { id: '16', cat: 'Movies/HD', desc: 'Film/HD1080P/Eng' },
       { id: '15', cat: 'Movies/HD', desc: 'Film/HD1080P/Hun' },
       { id: '14', cat: 'Movies/HD', desc: 'Film/HD720P/Eng' },
@@ -89,7 +85,7 @@ export const definition: TrackerDefinition = {
       returnto: '/',
     },
     error: [{ selector: 'td.embedded:contains("Sikertelen bejelentkezés!")' }],
-    test: { path: 'letoltes.php', selector: 'a[href="logout.php"]' },
+    test: { path: 'letoltes.php', selector: 'a[href^="logout.php?k="]' },
   },
   search: {
     paths: [{ path: 'letoltes.php' }],
@@ -97,12 +93,12 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
+      incldead: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table[width="800"] > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table[style="width: 930px"] > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       category: {
@@ -115,8 +111,14 @@ export const definition: TrackerDefinition = {
         attribute: 'onclick',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
-      title: { selector: 'a[onclick]', attribute: 'title' },
-      details: { text: 'details.php?id={{ .Result.id }}' },
+      title: {
+        selector: 'a[href^="/details.php"]',
+        attribute: 'title',
+      },
+      details: {
+        selector: 'a[href^="/details.php"]',
+        attribute: 'href',
+      },
       download: { text: 'download.php?id={{ .Result.id }}' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',

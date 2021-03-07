@@ -63,6 +63,11 @@ export const definition: TrackerDefinition = {
         cat: 'Audio/Audiobook',
         desc: 'Books Audiobooks',
       },
+      {
+        id: 'AudioLossless',
+        cat: 'Audio/Lossless',
+        desc: 'Audio Lossless',
+      },
       { id: 'BooksAcademic', cat: 'Books', desc: 'Books Academic' },
       { id: 'BooksEbooks', cat: 'Books', desc: 'Books Ebooks' },
       { id: 'BooksEducational', cat: 'Books', desc: 'Books Educational' },
@@ -72,11 +77,17 @@ export const definition: TrackerDefinition = {
       { id: 'Games', cat: 'Console', desc: 'Games' },
       { id: 'GamesWindows', cat: 'PC/Games', desc: 'Games Windows' },
       { id: 'Movies', cat: 'Movies', desc: 'Movies' },
+      { id: 'MoviesAction', cat: 'Movies', desc: 'Movies Action' },
       { id: 'MoviesConcerts', cat: 'Movies', desc: 'Movies Concerts' },
       {
         id: 'MoviesDocumentary',
         cat: 'TV/Documentary',
         desc: 'Movies Documentary',
+      },
+      {
+        id: 'MoviesDubbedMovies',
+        cat: 'Movies',
+        desc: 'Movies Dubbed Movies',
       },
       {
         id: 'MoviesMusicvideos',
