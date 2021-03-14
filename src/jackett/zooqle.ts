@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://zooqle.com/',
     'https://zooqle.unblockninja.com/',
-    'https://zooqle.unblockit.link/',
+    'https://zooqle.unblockit.buzz/',
     'https://zooqle.unblocked.monster/',
   ],
   legacylinks: [
@@ -35,6 +35,7 @@ export const definition: TrackerDefinition = {
     'https://zooqle.unblocked.rest/',
     'https://zooqle.unblockit.dev/',
     'https://zooqle.unblockit.ltd/',
+    'https://zooqle.unblockit.link/',
   ],
   caps: {
     categorymappings: [

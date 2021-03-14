@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.torrent9.one/', 'https://torrent9.unblocked.monster/'],
+  links: ['https://wvw.torrent9.one/', 'https://torrent9.unblocked.monster/'],
   legacylinks: [
     'https://www.torrents9.pw/',
     'https://www.torrent9.ch/',
@@ -46,6 +46,7 @@ export const definition: TrackerDefinition = {
     'https://www.torrent9.so/',
     'https://wvw.torrent9.sh/',
     'https://www.torrent9.sh/',
+    'https://www.torrent9.one/',
   ],
   caps: {
     categorymappings: [
@@ -71,6 +72,13 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [
+    {
+      name: 'flaresolverr',
+      type: 'info',
+      label: 'FlareSolverr',
+      default:
+        'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
+    },
     {
       name: 'multilang',
       type: 'checkbox',

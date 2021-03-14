@@ -61,6 +61,9 @@ export const jamigosshare = jjamigosshare;
 import { definition as jjanaschcc } from './anaschcc';
 export const janaschcc = jjanaschcc;
 
+import { definition as jjanimeFree } from './anime-free';
+export const janimeFree = jjanimeFree;
+
 import { definition as jjanimeclipse } from './animeclipse';
 export const janimeclipse = jjanimeclipse;
 
@@ -202,11 +205,11 @@ export const jcasatorrent = jjcasatorrent;
 import { definition as jjcasstudiotv } from './casstudiotv';
 export const jcasstudiotv = jjcasstudiotv;
 
+import { definition as jjcatorrent } from './catorrent';
+export const jcatorrent = jjcatorrent;
+
 import { definition as jjccfbits } from './ccfbits';
 export const jccfbits = jjccfbits;
-
-import { definition as jjchannelx } from './channelx';
-export const jchannelx = jjchannelx;
 
 import { definition as jjchdbits } from './chdbits';
 export const jchdbits = jjchdbits;
@@ -457,6 +460,9 @@ export const jgreekteam = jjgreekteam;
 import { definition as jjgtorrent } from './gtorrent';
 export const jgtorrent = jjgtorrent;
 
+import { definition as jjgtorrentpro } from './gtorrentpro';
+export const jgtorrentpro = jjgtorrentpro;
+
 import { definition as jjhaidan } from './haidan';
 export const jhaidan = jjhaidan;
 
@@ -540,9 +546,6 @@ export const jhellastz = jjhellastz;
 
 import { definition as jjhon3Yhd } from './hon3yhd';
 export const jhon3Yhd = jjhon3Yhd;
-
-import { definition as jjhorrorsite } from './horrorsite';
-export const jhorrorsite = jjhorrorsite;
 
 import { definition as jjhqsource } from './hqsource';
 export const jhqsource = jjhqsource;
@@ -691,6 +694,9 @@ export const jmontorrent = jjmontorrent;
 import { definition as jjmoviesdvdr } from './moviesdvdr';
 export const jmoviesdvdr = jjmoviesdvdr;
 
+import { definition as jjmovietorrent } from './movietorrent';
+export const jmovietorrent = jjmovietorrent;
+
 import { definition as jjmteamtp } from './mteamtp';
 export const jmteamtp = jjmteamtp;
 
@@ -759,9 +765,6 @@ export const joncesearch = jjoncesearch;
 
 import { definition as jjonejav } from './onejav';
 export const jonejav = jjonejav;
-
-import { definition as jjonlineselfeducation } from './onlineselfeducation';
-export const jonlineselfeducation = jjonlineselfeducation;
 
 import { definition as jjoshenpt } from './oshenpt';
 export const joshenpt = jjoshenpt;
@@ -1343,6 +1346,7 @@ export const definitions = [
   jjaither,
   jjamigosshare,
   jjanaschcc,
+  jjanimeFree,
   jjanimeclipse,
   jjanimeworld,
   jjanirena,
@@ -1390,8 +1394,8 @@ export const definitions = [
   jjcartoonchaos,
   jjcasatorrent,
   jjcasstudiotv,
+  jjcatorrent,
   jjccfbits,
-  jjchannelx,
   jjchdbits,
   jjchilebt,
   jjcilipro,
@@ -1475,6 +1479,7 @@ export const definitions = [
   jjgreekdiamond,
   jjgreekteam,
   jjgtorrent,
+  jjgtorrentpro,
   jjhaidan,
   jjhamsterstudio,
   jjhd4Fans,
@@ -1503,7 +1508,6 @@ export const definitions = [
   jjhdzone,
   jjhellastz,
   jjhon3Yhd,
-  jjhorrorsite,
   jjhqsource,
   jjhush,
   jjibit,
@@ -1553,6 +1557,7 @@ export const definitions = [
   jjmononokebt,
   jjmontorrent,
   jjmoviesdvdr,
+  jjmovietorrent,
   jjmteamtp,
   jjmteamtp2Fa,
   jjmuziekfabriek,
@@ -1576,7 +1581,6 @@ export const definitions = [
   jjomgwtftrackr,
   jjoncesearch,
   jjonejav,
-  jjonlineselfeducation,
   jjoshenpt,
   jjourbits,
   jjoxtorrent,

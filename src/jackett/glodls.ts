@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.gtdb.to/',
     'https://glodls.to/',
-    'https://glotorrents.unblockit.link/',
+    'https://glotorrents.unblockit.buzz/',
     'https://glodls.unblocked.monster/',
   ],
   legacylinks: [
@@ -37,6 +37,7 @@ export const definition: TrackerDefinition = {
     'https://glodls.unblocked.rest/',
     'https://glotorrents.unblockit.dev/',
     'https://glotorrents.unblockit.ltd/',
+    'https://glotorrents.unblockit.link/',
   ],
   caps: {
     categorymappings: [

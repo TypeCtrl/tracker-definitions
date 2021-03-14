@@ -10,7 +10,7 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://torrentzwealmisr.onion.ly/',
-    'https://torrentz.unblockit.link/',
+    'https://torrentz.unblockit.buzz/',
     'https://torrentz2.unblockninja.com/',
   ],
   legacylinks: [
@@ -38,6 +38,7 @@ export const definition: TrackerDefinition = {
     'https://torrentz2.unblocked.rest/',
     'https://torrentz.unblockit.dev/',
     'https://torrentz.unblockit.ltd/',
+    'https://torrentz.unblockit.link/',
   ],
   caps: {
     categorymappings: [

@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
     'https://www.demonoid.is/',
     'https://www.dnoid.to/',
     'https://www.dnoid.pw/',
-    'https://demonoid.unblockit.link/',
+    'https://demonoid.unblockit.buzz/',
     'https://demonoid.torrentbay.to/',
   ],
   legacylinks: [
@@ -32,6 +32,7 @@ export const definition: TrackerDefinition = {
     'https://demonoid.unblockit.app/',
     'https://demonoid.unblockit.dev/',
     'https://demonoid.unblockit.ltd/',
+    'https://demonoid.unblockit.link/',
   ],
   caps: {
     categorymappings: [

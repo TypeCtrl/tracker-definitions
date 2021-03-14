@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-EN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://telly.to/'],
-  legacylinks: ['https://tellytorrent.net/', 'https://telly.cc/'],
+  links: ['https://telly.wtf/'],
+  legacylinks: ['https://tellytorrent.net/', 'https://telly.cc/', 'https://telly.to/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
