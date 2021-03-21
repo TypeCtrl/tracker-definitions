@@ -142,6 +142,7 @@ export const definition: TrackerDefinition = {
       leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: { case: { 'a#free-btn': 0, '*': 1 } },
       uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
       minimumseedtime: { text: 172800 },
     },
   },

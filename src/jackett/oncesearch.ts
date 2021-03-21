@@ -92,8 +92,12 @@ export const definition: TrackerDefinition = {
     ],
     rows: { selector: 'table.table-striped > tbody > tr' },
     fields: {
+      category: { text: 'XXX' },
+      'category|noappend': {
+        optional: true,
+        selector: 'p > a:last-of-type',
+      },
       title: { selector: 'span' },
-      category: { selector: 'p > a:last-of-type' },
       details: { selector: 'a[href^="/details/"]', attribute: 'href' },
       download: {
         selector: 'a[href$=".torrent"]',

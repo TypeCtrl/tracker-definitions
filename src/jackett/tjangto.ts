@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.jjangtorrent.com/'],
+  links: ['https://www.jjangt.com/'],
+  legacylinks: ['https://www.jjangtorrent.com/'],
   caps: {
     categorymappings: [
       { id: 'tani', cat: 'TV/Anime', desc: '애니 (Animation)' },
@@ -18,6 +19,9 @@ export const definition: TrackerDefinition = {
       { id: 'tent', cat: 'TV', desc: '예능 (Entertainment)' },
       { id: 'tmusic', cat: 'Audio', desc: '음악 (Music)' },
       { id: 'util', cat: 'PC', desc: '유틸 (Software)' },
+      { id: 'torrent_amav', cat: 'XXX', desc: '서양 (Adult)' },
+      { id: 'torrent_nmav', cat: 'XXX', desc: '일본노모 (Adult)' },
+      { id: 'torrent_ymav', cat: 'XXX', desc: '일본유모 (Adult)' },
     ],
     modes: {
       search: ['q'],

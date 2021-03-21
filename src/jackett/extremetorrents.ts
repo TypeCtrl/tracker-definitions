@@ -36,7 +36,7 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      'tv-search': ['q'],
       'movie-search': ['q'],
       'music-search': ['q'],
       'book-search': ['q'],
@@ -95,7 +95,24 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      title: { selector: 'a[href^="details.php?id="]' },
+      title: {
+        selector: 'a[href^="details.php?id="]',
+        filters: [
+          {
+            name: 're_replace',
+            args: ['(?i)seizoen\\s*(\\d{1,2})\\s*(tot|t/m)\\s*(\\d{1,2})', 'S$1-$3'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(seizoen\\s*)(\\d{1,2})', 'S$2'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)(afl.\\s*|aflevering\\s*)(\\d{1,2})', 'E$2'],
+          },
+          { name: 're_replace', args: ['(?i)compleet', 'Complete'] },
+        ],
+      },
       details: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',

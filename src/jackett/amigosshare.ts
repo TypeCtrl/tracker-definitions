@@ -211,7 +211,7 @@ export const definition: TrackerDefinition = {
           },
           {
             name: 're_replace',
-            args: ['(Dual-Audio|Dublado)', 'Brazilian $1'],
+            args: ['(Dual|[Nn]acional|[Dd]ublado)', 'Brazilian $1'],
           },
         ],
       },
