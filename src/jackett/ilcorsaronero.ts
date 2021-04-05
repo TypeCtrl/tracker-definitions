@@ -124,12 +124,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [
           { name: 'split', args: ['/', -1] },
-          { name: 'diacritics', args: 'replace' },
-          { name: 'urldecode' },
-          {
-            name: 're_replace',
-            args: ['[\\[!"#$%&\'()*+,\\-.\\/:;<=>?@[\\]^_`{|}~]', ' '],
-          },
+          { name: 'replace', args: ['_', ' '] },
           { name: 're_replace', args: ['[ ]{2,}', ' '] },
           {
             name: 're_replace',
@@ -160,6 +155,29 @@ export const definition: TrackerDefinition = {
             name: 're_replace',
             args: ['(?i)(Serie completa|Completat?a?|in pausa)', ''],
           },
+          {
+            name: 're_replace',
+            args: ['(?i)\\sEP\\s(\\d{1,2})\\s(E?\\s?\\d{1,2})\\s', ' E$1-$2 '],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)\\sS(\\d{1,2})\\s?E\\s?(\\d{1,2})\\s(E?\\s?\\d{1,2})\\s', ' S$1E$2-$3 '],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i)AC3\\s?(\\d)\\s(\\d)', 'AC3 $1.$2'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i) DD\\s?(\\d)\\s(\\d)', ' DD $1.$2'],
+          },
+          {
+            name: 're_replace',
+            args: ['(?i) DDP\\s?(\\d)\\s(\\d)', ' DDP $1.$2'],
+          },
+          { name: 're_replace', args: ['(?i)\\sE\\s?AC3', ' EAC3'] },
+          { name: 're_replace', args: ['(?i)WEB\\sDL', 'WEB-DL'] },
+          { name: 're_replace', args: ['(?i)HDTVRIP', 'HDTV'] },
         ],
       },
       description: {

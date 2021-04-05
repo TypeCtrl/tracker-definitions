@@ -93,6 +93,8 @@ export const definition: TrackerDefinition = {
         desc: 'Порноролики / Porn Clips Паки по актрисам / Actresses Clips Packs',
       },
       { id: '3', cat: 'XXX', desc: 'Японское порно / Japan Porn' },
+      { id: '79', cat: 'XXX', desc: 'Chinese Movies' },
+      { id: '80', cat: 'XXX', desc: 'Japanese Movies' },
       { id: '18', cat: 'XXX', desc: 'Русское порно / Russian Porn' },
       {
         id: '36',

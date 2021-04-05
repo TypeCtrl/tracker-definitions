@@ -65,6 +65,7 @@
       { "id": "BOOKSNONFICTION", "cat": "Books" },
       { "id": "BOOKSTEXTBOOKS", "cat": "Books" },
       { "id": "BOOKSTUTORIALS", "cat": "Books" },
+      { "id": "COMIC", "cat": "Books/Comics" },
       { "id": "COMICSNEM43COMICS", "cat": "Books/Comics" },
       { "id": "DESIPORN", "cat": "XXX" },
       { "id": "DOCUMENTARIES", "cat": "TV/Documentary" },

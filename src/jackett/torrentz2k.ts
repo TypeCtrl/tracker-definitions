@@ -7,15 +7,15 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://torrentz2k.xyz/'],
-  legacylinks: ['https://torrentz2k.pw/'],
+  links: ['https://torrentz2is.me/'],
+  legacylinks: ['https://torrentz2k.xyz/', 'https://torrentz2k.pw/'],
   caps: {
     categorymappings: [
       { id: 'book', cat: 'Books', desc: 'Books' },
       { id: 'film', cat: 'Movies', desc: 'Movies' },
       { id: 'gamepad', cat: 'PC/Games', desc: 'Games' },
       { id: 'list', cat: 'Other', desc: 'Other' },
-      { id: 'male', cat: 'XXX', desc: 'XXX' },
+      { id: 'close', cat: 'XXX', desc: 'XXX' },
       { id: 'music', cat: 'Audio', desc: 'Music MP3' },
       { id: 'sellsy', cat: 'Audio/Lossless', desc: 'Music Lossless' },
       { id: 'play-circle', cat: 'TV', desc: 'WEBTV' },
@@ -42,23 +42,20 @@ export const definition: TrackerDefinition = {
   ],
   search: {
     paths: [
+      { path: 'search/', method: 'post' },
       {
-        path: '{{ if .Keywords }}search/{{ else }}recent/{{ end }}',
-        method: 'post',
-      },
-      {
-        path: '{{ if .Keywords }}search/{{ else }}recent/{{ end }}',
+        path: 'search/{{ if .Keywords }}{{ .Keywords }}{{ else }}:latest:{{ end }}/category/all/page/2',
         method: 'post',
         inputs: { page: 2 },
       },
     ],
     inputs: {
-      $raw: '{{ if .Keywords }}q={{ .Keywords }}{{ else }}recent=recent{{ end }}',
+      q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}:latest:{{ end }}',
       category: 'all',
     },
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
     rows: {
-      selector: 'table.table-striped > tbody > tr',
+      selector: 'table > tbody > tr:has(i)',
       filters: [{ name: 'andmatch' }],
     },
     fields: {
@@ -71,23 +68,22 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['fa-', ''] },
         ],
       },
-      title: { selector: 'span.btntitle', attribute: 'title' },
+      title: { selector: 'div.btntitle a', attribute: 'title' },
       details: { text: '{{ .Config.sitelink }}' },
-      download: {
-        selector: 'a[href^="magnet:?xt="]',
-        attribute: 'href',
-      },
+      infohash: { selector: 'input[name="id"]', attribute: 'value' },
       date: {
-        selector: 'td:nth-child(5)',
+        selector: 'td:nth-child(6)',
         filters: [
-          { name: 'replace', args: ['sec', 'seconds'] },
-          { name: 'replace', args: ['min', 'minutes'] },
-          { name: 'replace', args: ['hr', 'hours'] },
+          { name: 're_replace', args: ['(?i)sec', 'seconds'] },
+          { name: 're_replace', args: ['(?i)min', 'minutes'] },
+          { name: 're_replace', args: ['(?i)hr', 'hours'] },
+          { name: 're_replace', args: ['(?i)mon', 'months'] },
+          { name: 're_replace', args: ['(?i)yr', 'years'] },
           { name: 'append', args: ' ago' },
           { name: 'timeago' },
         ],
       },
-      _size: { selector: 'td:nth-child(6)' },
+      _size: { selector: 'td:nth-child(5)' },
       size: {
         text: '{{ if .Result._size }}{{ .Result._size }}{{ else }}0 B{{ end }}',
       },

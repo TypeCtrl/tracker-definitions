@@ -12,6 +12,41 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: '5', cat: 'Books', desc: 'Shipbuilding & Shiprepairing' },
       {
+        id: '314',
+        cat: 'Books',
+        desc: 'Shipbuilding & Shiprepairing-Ship supply (chemicals, paints, oils)',
+      },
+      {
+        id: '313',
+        cat: 'Books',
+        desc: 'Shipbuilding & Shiprepairing-Shipbuilding materials',
+      },
+      {
+        id: '312',
+        cat: 'Books',
+        desc: 'Shipbuilding & Shiprepairing-Shipbuilding Management',
+      },
+      {
+        id: '311',
+        cat: 'Books',
+        desc: 'Shipbuilding & Shiprepairing-Mathematical Modeling',
+      },
+      {
+        id: '310',
+        cat: 'Books',
+        desc: 'Shipbuilding & Shiprepairing-Hydrodynamics',
+      },
+      {
+        id: '309',
+        cat: 'Books',
+        desc: 'Shipbuilding & Shiprepairing-Naval Architecture & Marine Engineering',
+      },
+      {
+        id: '308',
+        cat: 'Books',
+        desc: 'Shipbuilding & Shiprepairing-Shipbuilding Standard @ Register',
+      },
+      {
         id: '196',
         cat: 'Books',
         desc: 'Shipbuilding & Shiprepairing-Welding',
@@ -114,6 +149,41 @@ export const definition: TrackerDefinition = {
         desc: "Deckofficer's Library-Navigation in the ice",
       },
       { id: '42', cat: 'Books', desc: 'Safety of Navigation' },
+      {
+        id: '307',
+        cat: 'Books',
+        desc: 'Safety of Navigation-Life Safety at Sea',
+      },
+      {
+        id: '306',
+        cat: 'Books',
+        desc: 'Safety of Navigation-Casualties and Incidents',
+      },
+      {
+        id: '305',
+        cat: 'Books',
+        desc: 'Safety of Navigation-Safety Digest, Lessons from Marine Accident Reports',
+      },
+      {
+        id: '304',
+        cat: 'Books',
+        desc: 'Safety of Navigation-Fire fighting at sea',
+      },
+      {
+        id: '303',
+        cat: 'Books',
+        desc: 'Safety of Navigation-Anti-Piracy Security',
+      },
+      {
+        id: '302',
+        cat: 'Books',
+        desc: 'Safety of Navigation-Emergency and life-saving equipment',
+      },
+      {
+        id: '301',
+        cat: 'Books',
+        desc: 'Safety of Navigation-Cybersecurity',
+      },
       { id: '8', cat: 'Movies', desc: 'Video for Seamen' },
       {
         id: '234',
@@ -291,6 +361,7 @@ export const definition: TrackerDefinition = {
       { id: '38', cat: 'Books', desc: 'Uncategorized' },
       { id: '190', cat: 'Books', desc: 'Catalogs' },
       { id: '113', cat: 'Books', desc: 'Medicine' },
+      { id: '299', cat: 'Books', desc: 'Sailing Kitchen' },
       { id: '39', cat: 'Books', desc: 'Purpose-built ships' },
       {
         id: '51',

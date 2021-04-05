@@ -90,7 +90,10 @@ export const definition: TrackerDefinition = {
         path: '{{ if .Keywords }}search/advanced/-/{{ .Keywords }}/0/any{{ else }}category/latest-torrents{{ end }}',
       },
     ],
-    rows: { selector: 'table.table-striped > tbody > tr' },
+    rows: {
+      selector: 'table.table-striped > tbody > tr',
+      filters: [{ name: 'andmatch' }],
+    },
     fields: {
       category: { text: 'XXX' },
       'category|noappend': {
@@ -100,7 +103,7 @@ export const definition: TrackerDefinition = {
       title: { selector: 'span' },
       details: { selector: 'a[href^="/details/"]', attribute: 'href' },
       download: {
-        selector: 'a[href$=".torrent"]',
+        selector: 'a[href^="/file/"][title="Download Torrent"]',
         attribute: 'href',
         optional: true,
       },

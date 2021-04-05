@@ -14,6 +14,7 @@ export const definition: TrackerDefinition = {
       { id: 'series', cat: 'TV', desc: 'SÉRIES' },
       { id: 'films', cat: 'Movies', desc: 'FILMS' },
       { id: 'musique', cat: 'Audio', desc: 'MUSIQUE' },
+      { id: 'albums', cat: 'Audio', desc: 'ALBUMS' },
       { id: 'ebook', cat: 'Books', desc: 'EBOOK' },
       { id: 'jeux', cat: 'Console', desc: 'GAMES' },
       { id: 'other', cat: 'Other', desc: 'OTHER' },
@@ -175,7 +176,7 @@ export const definition: TrackerDefinition = {
       },
       size: {
         text:
-          '{{ if eq .Result.sizecat "ebook" }}1 MB{{ else }}{{ end }}{{ if eq .Result.sizecat "musique" }}128 MB{{ else }}{{ end }}{{ if or (eq .Result.sizecat "series") (eq .Result.sizecat "other") }}512 MB{{ else }}{{ end }}{{ if eq .Result.sizecat "jeux" }}1 GB{{ else }}{{ end }}{{ if eq .Result.sizecat "films" }}2 GB{{ else }}{{ end }}',
+          '{{ if eq .Result.sizecat "ebook" }}1 MB{{ else }}{{ end }}{{ if or (eq .Result.sizecat "albums") (eq .Result.sizecat "musique") }}128 MB{{ else }}{{ end }}{{ if or (eq .Result.sizecat "series") (eq .Result.sizecat "other") }}512 MB{{ else }}{{ end }}{{ if eq .Result.sizecat "jeux" }}1 GB{{ else }}{{ end }}{{ if eq .Result.sizecat "films" }}2 GB{{ else }}{{ end }}',
       },
       seeders: { text: 1 },
       leechers: { text: 1 },

@@ -5,12 +5,7 @@
   "language": "ru-RU",
   "type": "public",
   "encoding": "UTF-8",
-  "links": [
-    "https://firebit.net/",
-    "https://firebit.info/",
-    "https://firebit.pro/",
-    "https://firebit.club/"
-  ],
+  "links": ["https://firebit.net/", "https://firebit.info/"],
   "legacylinks": [
     "https://firebit.name/",
     "https://firebit.biz/",
@@ -19,7 +14,9 @@
     "http://firebit.name/",
     "http://firebit.pro/",
     "http://firebit.club/",
-    "http://firebit.biz/"
+    "http://firebit.biz/",
+    "https://firebit.pro/",
+    "https://firebit.club/"
   ],
   "caps": {
     "categorymappings": [

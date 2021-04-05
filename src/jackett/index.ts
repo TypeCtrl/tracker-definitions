@@ -97,6 +97,9 @@ export const jaudiobookbay = jjaudiobookbay;
 import { definition as jjaudionews } from './audionews';
 export const jaudionews = jjaudionews;
 
+import { definition as jjaussierules } from './aussierules';
+export const jaussierules = jjaussierules;
+
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
 
@@ -297,9 +300,6 @@ export const jdmhy = jjdmhy;
 
 import { definition as jjdragonworldreloaded } from './dragonworldreloaded';
 export const jdragonworldreloaded = jjdragonworldreloaded;
-
-import { definition as jjdxdhd } from './dxdhd';
-export const jdxdhd = jjdxdhd;
 
 import { definition as jjdxp } from './dxp';
 export const jdxp = jjdxp;
@@ -549,6 +549,9 @@ export const jhon3Yhd = jjhon3Yhd;
 
 import { definition as jjhqsource } from './hqsource';
 export const jhqsource = jjhqsource;
+
+import { definition as jjhuntorrent } from './huntorrent';
+export const jhuntorrent = jjhuntorrent;
 
 import { definition as jjhush } from './hush';
 export const jhush = jjhush;
@@ -838,6 +841,9 @@ export const jpornotor = jjpornotor;
 import { definition as jjportugas } from './portugas';
 export const jportugas = jjportugas;
 
+import { definition as jjpotuk } from './potuk';
+export const jpotuk = jjpotuk;
+
 import { definition as jjproaudiotorrents } from './proaudiotorrents';
 export const jproaudiotorrents = jjproaudiotorrents;
 
@@ -1048,11 +1054,17 @@ export const jthehorrorcharnel = jjthehorrorcharnel;
 import { definition as jjtheleachzone } from './theleachzone';
 export const jtheleachzone = jjtheleachzone;
 
+import { definition as jjthemixingbowl } from './themixingbowl';
+export const jthemixingbowl = jjthemixingbowl;
+
 import { definition as jjtheoccult } from './theoccult';
 export const jtheoccult = jjtheoccult;
 
 import { definition as jjtheplace } from './theplace';
 export const jtheplace = jjtheplace;
+
+import { definition as jjthesceneplace } from './thesceneplace';
+export const jthesceneplace = jjthesceneplace;
 
 import { definition as jjtheshinning } from './theshinning';
 export const jtheshinning = jjtheshinning;
@@ -1071,6 +1083,9 @@ export const jtjupt = jjtjupt;
 
 import { definition as jjtlfbits } from './tlfbits';
 export const jtlfbits = jjtlfbits;
+
+import { definition as jjtntfork } from './tntfork';
+export const jtntfork = jjtntfork;
 
 import { definition as jjtokyotosho } from './tokyotosho';
 export const jtokyotosho = jjtokyotosho;
@@ -1358,6 +1373,7 @@ export const definitions = [
   jjasylumshare,
   jjaudiobookbay,
   jjaudionews,
+  jjaussierules,
   jjbackups,
   jjbaibako,
   jjbeitai,
@@ -1425,7 +1441,6 @@ export const definitions = [
   jjdivteam,
   jjdmhy,
   jjdragonworldreloaded,
-  jjdxdhd,
   jjdxp,
   jjebookparadijs,
   jjebooksShares,
@@ -1509,6 +1524,7 @@ export const definitions = [
   jjhellastz,
   jjhon3Yhd,
   jjhqsource,
+  jjhuntorrent,
   jjhush,
   jjibit,
   jjidope,
@@ -1605,6 +1621,7 @@ export const definitions = [
   jjpornorip,
   jjpornotor,
   jjportugas,
+  jjpotuk,
   jjproaudiotorrents,
   jjproporno,
   jjprostylex,
@@ -1675,14 +1692,17 @@ export const definitions = [
   jjthegeeks,
   jjthehorrorcharnel,
   jjtheleachzone,
+  jjthemixingbowl,
   jjtheoccult,
   jjtheplace,
+  jjthesceneplace,
   jjtheshinning,
   jjtheshow,
   jjthevault,
   jjtjangto,
   jjtjupt,
   jjtlfbits,
+  jjtntfork,
   jjtokyotosho,
   jjtorlock,
   jjtoros,

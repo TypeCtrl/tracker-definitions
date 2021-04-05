@@ -10,6 +10,10 @@ export const definition: TrackerDefinition = {
   links: ['https://fou-du-cinema.net/'],
   caps: {
     categorymappings: [
+      { id: '94', cat: 'TV/Sport', desc: 'sport catch' },
+      { id: '93', cat: 'TV/Sport', desc: 'sport catch' },
+      { id: '96', cat: 'TV/Sport', desc: 'sport sport' },
+      { id: '97', cat: 'TV/Sport', desc: 'sport divers' },
       { id: '65', cat: 'TV/Documentary', desc: 'Documentaires Divers' },
       { id: '66', cat: 'TV/Documentary', desc: 'Documentaires audio' },
       { id: '74', cat: 'Books/Ebook', desc: 'Documentaires Ebook' },
@@ -162,6 +166,9 @@ export const definition: TrackerDefinition = {
         selector: 'div.kat_cat_pic',
         filters: null,
         case: {
+          ':contains("sport"):contains("catch")': 93,
+          ':contains("sport"):contains("sport")': 96,
+          ':contains("sport"):contains("divers")': 97,
           ':contains("Documentaires"):contains("Divers")': 65,
           ':contains("Documentaires"):contains("audio")': 66,
           ':contains("Documentaires"):contains("Ebook")': 74,

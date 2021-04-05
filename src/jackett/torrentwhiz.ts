@@ -8,7 +8,8 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://torrentwiz22.me/'],
+  links: ['https://torrentwiz23.me/'],
+  legacylinks: ['https://torrentwiz22.me/'],
   caps: {
     categorymappings: [
       { id: 'netflix', cat: 'TV', desc: '넷플릭스 (Netflix)' },

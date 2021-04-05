@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://firebit.net/', 'https://firebit.info/', 'https://firebit.pro/', 'https://firebit.club/'],
+  links: ['https://firebit.net/', 'https://firebit.info/'],
   legacylinks: [
     'https://firebit.name/',
     'https://firebit.biz/',
@@ -17,6 +17,8 @@ export const definition: TrackerDefinition = {
     'http://firebit.pro/',
     'http://firebit.club/',
     'http://firebit.biz/',
+    'https://firebit.pro/',
+    'https://firebit.club/',
   ],
   caps: {
     categorymappings: [

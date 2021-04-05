@@ -78,9 +78,9 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'replace', args: ['?', ''] }],
       },
-      title: { selector: 'a[href^="/details.php?id="]' },
+      title: { selector: 'a[href^="/torrent.php?id="]' },
       details: {
-        selector: 'a[href^="/details.php?id="]',
+        selector: 'a[href^="/torrent.php?id="]',
         attribute: 'href',
       },
       download: {

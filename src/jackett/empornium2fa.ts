@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.empornium.me/'],
+  links: ['https://www.empornium.is/', 'https://empornium.sx/'],
+  legacylinks: ['https://www.empornium.me/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'XXX', desc: 'Amateur' },

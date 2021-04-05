@@ -17,6 +17,7 @@ export const definition: TrackerDefinition = {
       { id: '12', cat: 'XXX', desc: 'Porn' },
       { id: '29', cat: 'TV/Sport', desc: 'Sports' },
       { id: '37', cat: 'PC', desc: 'Software' },
+      { id: '38', cat: 'Console', desc: 'Games' },
     ],
     modes: {
       search: ['q'],
@@ -31,7 +32,7 @@ export const definition: TrackerDefinition = {
     {
       name: 'freeleech',
       type: 'checkbox',
-      label: 'Filter freeleech only',
+      label: 'Search freeleech only',
       default: false,
     },
     {

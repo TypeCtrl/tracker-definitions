@@ -12,7 +12,8 @@
       { "id": "muzyka", "cat": "Audio", "desc": "Музыка (Music)" },
       { "id": "igry", "cat": "Console", "desc": "Игры (Games)" },
       { "id": "serialy", "cat": "TV", "desc": "Сериалы (TV series)" },
-      { "id": "programmy", "cat": "PC", "desc": "Программы (Software)" }
+      { "id": "programmy", "cat": "PC", "desc": "Программы (Software)" },
+      { "id": "prilozheniya", "cat": "Other", "desc": "prilozheniya (Other)" }
     ],
     "modes": { "search": ["q"] }
   },

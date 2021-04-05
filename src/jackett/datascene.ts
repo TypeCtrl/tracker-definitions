@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ro-RO',
   type: 'private',
   encoding: 'WINDOWS-1252',
-  links: ['https://datascene.net/'],
-  legacylinks: ['http://datascene.net/'],
+  links: ['http://datascene.net/'],
+  legacylinks: ['https://datascene.net/'],
   caps: {
     categorymappings: [
       { id: '3', cat: 'TV/Anime', desc: 'Anime | Cartoon' },

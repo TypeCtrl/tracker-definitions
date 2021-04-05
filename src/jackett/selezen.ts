@@ -3,11 +3,11 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'selezen',
   name: 'seleZen',
-  description: 'seleZen is a RUSSIAN Public Torrent Tracker for MOVIES',
+  description: 'seleZen is a RUSSIAN Semi-Private Torrent Tracker for MOVIES',
   language: 'ru-RU',
-  type: 'public',
+  type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://mel.selezen.net/', 'https://s1.selezen.site/'],
+  links: ['https://mel.selezen.net/', 'https://selezen.org/', 'https://s1.selezen.site/'],
   legacylinks: ['https://www.selezen.site/', 'https://www.selezen.net/'],
   caps: {
     categorymappings: [
@@ -37,6 +37,8 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'], 'movie-search': ['q', 'imdbid'] },
   },
   settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
     {
       name: 'sort',
       type: 'select',
@@ -52,6 +54,19 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
+  login: {
+    path: '/',
+    method: 'form',
+    form: 'form[role="form"]',
+    inputs: {
+      login_name: '{{ .Config.username }}',
+      login_password: '{{ .Config.password }}',
+      login_not_save: '',
+      login: 'submit',
+    },
+    error: [{ selector: 'div.alert-warning:contains("Ошибка авторизации")' }],
+    test: { path: '/', selector: 'a[href$="/index.php?action=logout"]' },
+  },
   download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
   search: {
     paths: [{ path: 'index.php' }],

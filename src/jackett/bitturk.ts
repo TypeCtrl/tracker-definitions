@@ -132,11 +132,6 @@ export const definition: TrackerDefinition = {
       'sortOptions[sortBy]': '{{ .Config.sort }}',
       'sortOptions[sortOrder]': '{{ .Config.type }}',
     },
-    error: [
-      {
-        selector: 'div.error:not(:contains("Gösterilecek sonuç bulunamadı."))',
-      },
-    ],
     rows: {
       selector:
         'table#torrents_table_classic tr:has(td.torrent_name){{ if .Config.freeleech }}:has(img[src$="/torrent_free.png"]){{ else }}{{ end }}',

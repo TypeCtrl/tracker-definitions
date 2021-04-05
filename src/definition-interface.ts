@@ -151,7 +151,7 @@ export interface Req {
   path?: string;
   method?: 'cookie' | 'post' | 'form' | 'get' | 'oneurl';
   submitpath?: string;
-  inputs?: Record<string, string | number>;
+  inputs?: Record<string, string | number | boolean>;
   captcha?: Captcha;
   /**
    * multiple selectors for errors

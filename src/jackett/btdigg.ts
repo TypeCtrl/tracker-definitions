@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://btdig.com/'],
+  links: ['https://btdig.com/', 'http://btdiggwzoyrwwbiv.onion.ly/'],
   caps: {
     modes: {
       search: ['q'],
