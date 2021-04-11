@@ -238,6 +238,9 @@ export const jclassix = jjclassix;
 import { definition as jjcoastalcrew } from './coastalcrew';
 export const jcoastalcrew = jjcoastalcrew;
 
+import { definition as jjcomicat } from './comicat';
+export const jcomicat = jjcomicat;
+
 import { definition as jjconcen } from './concen';
 export const jconcen = jjconcen;
 
@@ -759,6 +762,9 @@ export const jnyaaPantsu = jjnyaaPantsu;
 
 import { definition as jjnyaasi } from './nyaasi';
 export const jnyaasi = jjnyaasi;
+
+import { definition as jjoasis } from './oasis';
+export const joasis = jjoasis;
 
 import { definition as jjomgwtftrackr } from './omgwtftrackr';
 export const jomgwtftrackr = jjomgwtftrackr;
@@ -1420,6 +1426,7 @@ export const definitions = [
   jjcinematik,
   jjclassix,
   jjcoastalcrew,
+  jjcomicat,
   jjconcen,
   jjconcertos,
   jjcpabien,
@@ -1594,6 +1601,7 @@ export const definitions = [
   jjnonameClubl,
   jjnyaaPantsu,
   jjnyaasi,
+  jjoasis,
   jjomgwtftrackr,
   jjoncesearch,
   jjonejav,

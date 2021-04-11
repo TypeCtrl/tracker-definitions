@@ -1,0 +1,66 @@
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
+  id: 'comicat',
+  name: 'comicat',
+  description: 'comicat is a CHINESE Public tracker for Anime / Hentai / Manga',
+  language: 'zh-CN',
+  type: 'public',
+  encoding: 'UTF-8',
+  links: ['https://www.comicat.org/'],
+  settings: [],
+  caps: {
+    categorymappings: [
+      { id: '1', cat: 'TV/Anime', desc: '动画(Anime)' },
+      { id: '2', cat: 'Books/Comics', desc: '漫画(Manga)' },
+      { id: '3', cat: 'Audio', desc: '音乐(Music)' },
+      { id: '4', cat: 'TV/Anime', desc: '周边(Peripheral)' },
+      { id: '5', cat: 'Other', desc: '其它(Other)' },
+      { id: '6', cat: 'TV/Anime', desc: 'Raw' },
+    ],
+    modes: {
+      search: ['q'],
+      'tv-search': ['q'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
+    },
+  },
+  search: {
+    paths: [
+      {
+        path: '{{ if .Keywords }}/search.php?keyword={{ .Keywords }}{{ else }}{{ end }}',
+      },
+      {
+        path: '{{ if .Keywords }}/search.php?keyword={{ .Keywords }}&page=2{{ else }}2.html{{ end }}',
+      },
+    ],
+    rows: { selector: 'tr[class^="alt"]:has(a[href^="sort"])' },
+    fields: {
+      category: {
+        selector: 'a[href^="sort"]',
+        attribute: 'href',
+        filters: [{ name: 'regexp', args: '-(\\d)-' }],
+      },
+      title: { selector: 'a[href^="show"]' },
+      details: { selector: 'a[href^="show"]', attribute: 'href' },
+      infohash: {
+        selector: 'a[href^="show"]',
+        attribute: 'href',
+        filters: [{ name: 'regexp', args: '-(\\w+).html' }],
+      },
+      size: { selector: 'td:nth-child(4)' },
+      grabs: { selector: 'td:nth-child(7) span' },
+      date: {
+        selector: 'td:nth-child(1):contains("前天")',
+        optional: true,
+        filters: [{ name: 're_replace', args: ['.+', '2 days'] }, { name: 'timeago' }],
+      },
+      seeders: { selector: 'td:nth-child(5) span' },
+      leechers: { selector: 'td:nth-child(6) span' },
+      downloadvolumefactor: { text: 0 },
+      uploadvolumefactor: { text: 1 },
+    },
+  },
+  source: 'jackett',
+};

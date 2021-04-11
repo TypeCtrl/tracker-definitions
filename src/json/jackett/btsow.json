@@ -5,7 +5,7 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://btsow.cam/"],
+  "links": ["https://btsow.digital"],
   "legacylinks": [
     "https://btos.pw/",
     "https://btio.pw/",
@@ -21,7 +21,9 @@
     "https://btsow.online/",
     "https://btsow.work/",
     "https://btsow.store/",
-    "https://btsow.surf/"
+    "https://btsow.surf/",
+    "https://btsow.com/",
+    "https://btsow.cam/"
   ],
   "caps": {
     "modes": {

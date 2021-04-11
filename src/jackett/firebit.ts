@@ -88,7 +88,8 @@ export const definition: TrackerDefinition = {
       },
     ],
     rows: {
-      selector: '{{ if .Keywords }}table.torrents tbody tr{{ else }}div[id^="post-id-"]{{ end }}',
+      selector:
+        '{{ if .Keywords }}table.torrents tbody tr:has(td.td-size){{ else }}div[id^="post-id-"]:has(li.meta-size){{ end }}',
       filters: [{ name: 'andmatch' }],
     },
     fields: {

@@ -176,6 +176,8 @@ export const definition: TrackerDefinition = {
       { id: '224', cat: 'Movies', desc: 'Чудо в камере №7' },
       { id: '227', cat: 'Movies', desc: 'Сначала убили моего отца' },
       { id: '228', cat: 'Movies', desc: 'Айла: Дочь войны' },
+      { id: '229', cat: 'TV', desc: 'Танцы с птицами' },
+      { id: '230', cat: 'TV', desc: 'Жизнь в цвете' },
     ],
     modes: { search: ['q'], 'tv-search': ['q'], 'movie-search': ['q'] },
   },

@@ -89,8 +89,8 @@ export const definition: TrackerDefinition = {
   ],
   search: {
     paths: [
-      { path: '?t={{ .Keywords }}&amp;orderby={{ .Config.sort }}' },
-      { path: '?t={{ .Keywords }}&amp;orderby={{ .Config.sort }}&amp;page=2' },
+      { path: '?t={{ .Keywords }}&orderby={{ .Config.sort }}' },
+      { path: '?t={{ .Keywords }}&orderby={{ .Config.sort }}&page=2' },
     ],
     rows: {
       selector: '#similarfiles div:has(a[href^="/"]):not(:has(a[class^="notpicked"]))',
