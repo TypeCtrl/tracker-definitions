@@ -757,6 +757,9 @@ export const jnonameClub = jjnonameClub;
 import { definition as jjnonameClubl } from './noname-clubl';
 export const jnonameClubl = jjnonameClubl;
 
+import { definition as jjnordicplus } from './nordicplus';
+export const jnordicplus = jjnordicplus;
+
 import { definition as jjnyaaPantsu } from './nyaa-pantsu';
 export const jnyaaPantsu = jjnyaaPantsu;
 
@@ -774,6 +777,9 @@ export const joncesearch = jjoncesearch;
 
 import { definition as jjonejav } from './onejav';
 export const jonejav = jjonejav;
+
+import { definition as jjopencd } from './opencd';
+export const jopencd = jjopencd;
 
 import { definition as jjoshenpt } from './oshenpt';
 export const joshenpt = jjoshenpt;
@@ -907,6 +913,9 @@ export const jrainbowtracker = jjrainbowtracker;
 import { definition as jjrapidzona } from './rapidzona';
 export const jrapidzona = jjrapidzona;
 
+import { definition as jjredbits } from './redbits';
+export const jredbits = jjredbits;
+
 import { definition as jjredstartorrent } from './redstartorrent';
 export const jredstartorrent = jjredstartorrent;
 
@@ -921,6 +930,9 @@ export const jriperam = jjriperam;
 
 import { definition as jjrockbox } from './rockbox';
 export const jrockbox = jjrockbox;
+
+import { definition as jjrofd } from './rofd';
+export const jrofd = jjrofd;
 
 import { definition as jjromanianmetaltorrents } from './romanianmetaltorrents';
 export const jromanianmetaltorrents = jjromanianmetaltorrents;
@@ -1599,12 +1611,14 @@ export const definitions = [
   jjnntt,
   jjnonameClub,
   jjnonameClubl,
+  jjnordicplus,
   jjnyaaPantsu,
   jjnyaasi,
   jjoasis,
   jjomgwtftrackr,
   jjoncesearch,
   jjonejav,
+  jjopencd,
   jjoshenpt,
   jjourbits,
   jjoxtorrent,
@@ -1649,11 +1663,13 @@ export const definitions = [
   jjracingforme,
   jjrainbowtracker,
   jjrapidzona,
+  jjredbits,
   jjredstartorrent,
   jjrintor,
   jjrintornet,
   jjriperam,
   jjrockbox,
+  jjrofd,
   jjromanianmetaltorrents,
   jjrptorrents,
   jjrusMedia,

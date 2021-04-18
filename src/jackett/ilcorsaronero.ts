@@ -74,7 +74,7 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q'],
-      'tv-search': ['q', 'season', 'ep'],
+      'tv-search': ['q'],
       'movie-search': ['q'],
       'music-search': ['q'],
       'book-search': ['q'],
@@ -103,11 +103,8 @@ export const definition: TrackerDefinition = {
       },
     ],
     keywordsfilters: [
-      { name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', '$1'] },
-      {
-        name: 're_replace',
-        args: ['(?i)\\bS0*(\\d+)E0*(\\d+)\\b', '$1 $2'],
-      },
+      { name: 're_replace', args: ['(?i)(\\s*s\\d+)', ''] },
+      { name: 're_replace', args: ['(?i)(\\s*e\\d+)', ''] },
     ],
     rows: {
       selector: 'tr.odd,tr.odd2',

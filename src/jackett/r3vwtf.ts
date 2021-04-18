@@ -106,6 +106,8 @@ export const definition: TrackerDefinition = {
       uploadvolumefactor: {
         case: { 'img[src="./pic/doubleseed.gif"]': 0, '*': 1 },
       },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 86400 },
     },
   },
   source: 'jackett',
