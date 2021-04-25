@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'nordicplus',
   name: 'Nordic+',
-  description: 'Nordic+ is a NORDIC Private Torrent Tracker for MOVIES / TV / GENERAL',
+  description: 'Nordic+ is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-EN',
   type: 'private',
   encoding: 'UTF-8',
@@ -34,6 +34,12 @@ export const definition: TrackerDefinition = {
   settings: [
     { name: 'username', type: 'text', label: 'Username' },
     { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'usemagnet',
+      type: 'checkbox',
+      label: 'Use Magnet Download Link',
+      default: false,
+    },
     {
       name: 'freeleech',
       type: 'checkbox',
@@ -104,20 +110,21 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
       title: { selector: 'a[href*="/torrents/"]' },
-      download: {
+      details: { selector: 'a[href*="/torrents/"]', attribute: 'href' },
+      download1: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      details: { selector: 'a[href*="/torrents/"]', attribute: 'href' },
+      download2: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
+      download: {
+        text: '{{ if .Config.usemagnet }}{{ .Result.download2 }}{{ else }}{{ .Result.download1 }}{{ end }}',
+      },
       poster: {
         selector: 'div.torrent-poster img',
         attribute: 'src',
         filters: [
           { name: 'replace', args: ['&w=60&h=90', '&w=180&h=270'] },
-          {
-            name: 'replace',
-            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/60x90&w=180&h=270', ''],
-          },
+          { name: 'replace', args: ['/img/NoPoster.png', ''] },
         ],
       },
       size: { selector: 'td:nth-last-child(4)' },

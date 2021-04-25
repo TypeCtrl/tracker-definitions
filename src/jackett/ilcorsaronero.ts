@@ -13,6 +13,7 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.fun/',
     'https://ilcorsaronero.pro/',
     'https://ilcorsaronero.torrentbay.to/',
+    'https://ilcorsaronero.nocensor.space/',
   ],
   legacylinks: [
     'https://ilcorsaronero.live/',

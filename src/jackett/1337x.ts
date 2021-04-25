@@ -17,7 +17,7 @@ export const definition: TrackerDefinition = {
     'https://x1337x.eu/',
     'https://x1337x.se/',
     'https://1337x.unblockit.club/',
-    'https://1337x.unblocked.monster/',
+    'https://1337x.nocensor.space/',
   ],
   legacylinks: [
     'https://1337x.unblocked.earth/',
@@ -45,6 +45,7 @@ export const definition: TrackerDefinition = {
     'https://1337x.unblockit.ltd/',
     'https://1337x.unblockit.link/',
     'https://1337x.unblockit.buzz/',
+    'https://1337x.unblocked.monster/',
   ],
   caps: {
     categorymappings: [

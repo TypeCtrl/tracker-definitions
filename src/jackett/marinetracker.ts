@@ -76,12 +76,17 @@ export const definition: TrackerDefinition = {
       },
       { id: '12', cat: 'PC', desc: 'Maritime Software-Answers to tests' },
       { id: '20', cat: 'PC', desc: 'Maritime Software-Calculation soft' },
-      { id: '188', cat: 'PC', desc: 'Maritime Software-Other soft' },
       {
         id: '179',
         cat: 'PC',
         desc: 'Maritime Software-Programming and SDK software',
       },
+      {
+        id: '317',
+        cat: 'PC',
+        desc: 'Maritime Software-Shareware (demo, trial)',
+      },
+      { id: '188', cat: 'PC', desc: 'Maritime Software-Other soft' },
       { id: '21', cat: 'Books', desc: "Deckofficer's Library" },
       {
         id: '283',

@@ -110,7 +110,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['&w=52&h=80', '&w=180&h=270'] },
           {
             name: 'replace',
-            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/52x80&w=180&h=270', ''],
+            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/600x900&w=180&h=270', ''],
           },
         ],
       },

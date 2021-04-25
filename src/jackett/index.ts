@@ -415,9 +415,6 @@ export const jfrozenlayer = jjfrozenlayer;
 import { definition as jjfunkytorrents } from './funkytorrents';
 export const jfunkytorrents = jjfunkytorrents;
 
-import { definition as jjfunreleases } from './funreleases';
-export const jfunreleases = jjfunreleases;
-
 import { definition as jjgaleriens } from './galeriens';
 export const jgaleriens = jjgaleriens;
 
@@ -660,6 +657,9 @@ export const jmactorrents = jjmactorrents;
 
 import { definition as jjmadsrevolution } from './madsrevolution';
 export const jmadsrevolution = jjmadsrevolution;
+
+import { definition as jjmagicheaven } from './magicheaven';
+export const jmagicheaven = jjmagicheaven;
 
 import { definition as jjmagico } from './magico';
 export const jmagico = jjmagico;
@@ -979,9 +979,6 @@ export const jshareisland = jjshareisland;
 import { definition as jjsharewood } from './sharewood';
 export const jsharewood = jjsharewood;
 
-import { definition as jjshellife } from './shellife';
-export const jshellife = jjshellife;
-
 import { definition as jjshokweb } from './shokweb';
 export const jshokweb = jjshokweb;
 
@@ -1213,9 +1210,6 @@ export const jtorrentview = jjtorrentview;
 import { definition as jjtorrentwhiz } from './torrentwhiz';
 export const jtorrentwhiz = jjtorrentwhiz;
 
-import { definition as jjtorrentz2 } from './torrentz2';
-export const jtorrentz2 = jjtorrentz2;
-
 import { definition as jjtorrentz2K } from './torrentz2k';
 export const jtorrentz2K = jjtorrentz2K;
 
@@ -1335,9 +1329,6 @@ export const jyggcookie = jjyggcookie;
 
 import { definition as jjyggtorrent } from './yggtorrent';
 export const jyggtorrent = jjyggtorrent;
-
-import { definition as jjyingk } from './yingk';
-export const jyingk = jjyingk;
 
 import { definition as jjyourbittorrent } from './yourbittorrent';
 export const jyourbittorrent = jjyourbittorrent;
@@ -1497,7 +1488,6 @@ export const definitions = [
   jjfreetorrent,
   jjfrozenlayer,
   jjfunkytorrents,
-  jjfunreleases,
   jjgaleriens,
   jjgamestorrents,
   jjgayTorrents,
@@ -1579,6 +1569,7 @@ export const definitions = [
   jjlosslessclub,
   jjmactorrents,
   jjmadsrevolution,
+  jjmagicheaven,
   jjmagico,
   jjmagnet4You,
   jjmajomparade,
@@ -1685,7 +1676,6 @@ export const definitions = [
   jjsexypics,
   jjshareisland,
   jjsharewood,
-  jjshellife,
   jjshokweb,
   jjsiambit,
   jjsktorrentOrg,
@@ -1763,7 +1753,6 @@ export const definitions = [
   jjtorrentv,
   jjtorrentview,
   jjtorrentwhiz,
-  jjtorrentz2,
   jjtorrentz2K,
   jjtotallykids,
   jjtotheglory,
@@ -1804,7 +1793,6 @@ export const definitions = [
   jjydypt,
   jjyggcookie,
   jjyggtorrent,
-  jjyingk,
   jjyourbittorrent,
   jjzamundanet,
   jjzelkaorg,

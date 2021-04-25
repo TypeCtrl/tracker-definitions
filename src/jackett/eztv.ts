@@ -15,7 +15,7 @@ export const definition: TrackerDefinition = {
     'https://eztv.yt/',
     'https://eztv.unblockninja.com/',
     'https://eztv.unblockit.club/',
-    'https://eztv.unblocked.monster/',
+    'https://eztv.nocensor.space/',
   ],
   legacylinks: [
     'https://eztv.ag/',
@@ -45,6 +45,7 @@ export const definition: TrackerDefinition = {
     'https://eztv.unblockit.ltd/',
     'https://eztv.unblockit.link/',
     'https://eztv.unblockit.buzz/',
+    'https://eztv.unblocked.monster/',
   ],
   caps: {
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },

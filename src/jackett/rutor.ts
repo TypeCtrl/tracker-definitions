@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['http://rutor.info/', 'http://rutor.is/', 'https://rutor.unblocked.monster/'],
+  links: ['http://rutor.info/', 'http://rutor.is/', 'https://rutor.nocensor.space/'],
   legacylinks: [
     'http://live-rutor.org/',
     'http://new-rutor.org/',
@@ -21,6 +21,7 @@ export const definition: TrackerDefinition = {
     'https://rutor.uk-unblock.pro/',
     'https://rutor.root.yt/',
     'https://rutor.unblocked.rest/',
+    'https://rutor.unblocked.monster/',
   ],
   caps: {
     categorymappings: [

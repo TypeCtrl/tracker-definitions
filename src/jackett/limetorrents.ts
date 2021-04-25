@@ -16,6 +16,7 @@ export const definition: TrackerDefinition = {
     'https://www.limetor.pro/',
     'https://limetorrents.unblockit.club/',
     'https://limetorrents.unblockninja.com/',
+    'https://limetorrents.nocensor.space/',
   ],
   legacylinks: [
     'https://www.limetorrents.io/',

@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://www.teamos-hkrg.com/'],
+  links: ['https://teamos-hkrg.com/'],
+  legacylinks: ['https://www.teamos-hkrg.com/'],
   caps: {
     categorymappings: [
       { id: '5', cat: 'PC', desc: 'Special OS' },

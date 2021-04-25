@@ -67,7 +67,9 @@
       "incldead": 1,
       "only_free": 0
     },
-    "rows": { "selector": "tr:has(a[href^=\"download.php?torrent=\"])" },
+    "rows": {
+      "selector": "table[cellpadding=\"3\"] > tbody > tr:has(a[href^=\"download.php?torrent=\"])"
+    },
     "fields": {
       "category": {
         "selector": "a[href^=\"browse.php?cat=\"]",

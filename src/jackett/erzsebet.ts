@@ -167,6 +167,7 @@ export const definition: TrackerDefinition = {
         cat: 'XXX',
         desc: 'Hentai, Manga & Cartoons  / Хентай, Манга и Мультфильм...',
       },
+      { id: '252', cat: 'XXX', desc: 'Chinese Porn / Китайское порно' },
       { id: '89', cat: 'XXX', desc: 'Japanese Porn / Японское порно' },
       {
         id: '188',
@@ -194,7 +195,17 @@ export const definition: TrackerDefinition = {
       { id: '213', cat: 'XXX', desc: 'Music (Video) / Музыка (Видео)' },
       { id: '212', cat: 'XXX', desc: 'Games / Игры' },
       { id: '211', cat: 'XXX', desc: 'Soft / Софт' },
+      {
+        id: '251',
+        cat: 'XXX',
+        desc: 'International Releases  / Иностранные релизы',
+      },
       { id: '210', cat: 'XXX', desc: 'Various / Разное' },
+      {
+        id: '250',
+        cat: 'XXX',
+        desc: 'Cinema (LGBT) / Кинематограф (ЛГБТ)',
+      },
       {
         id: '205',
         cat: 'XXX',

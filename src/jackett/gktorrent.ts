@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.gktorrent.cc/'],
+  links: ['https://www.gktorrent.cc/', 'https://gktorrent.nocensor.space/'],
   legacylinks: [
     'https://www.gktorrent.com/',
     'http://www.gktorrent.com/',
