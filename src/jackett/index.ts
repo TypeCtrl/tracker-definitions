@@ -364,9 +364,6 @@ export const jextremebits = jjextremebits;
 import { definition as jjextremetorrents } from './extremetorrents';
 export const jextremetorrents = jjextremetorrents;
 
-import { definition as jjextremlymtorrents } from './extremlymtorrents';
-export const jextremlymtorrents = jjextremlymtorrents;
-
 import { definition as jjexttorrents } from './exttorrents';
 export const jexttorrents = jjexttorrents;
 
@@ -1210,9 +1207,6 @@ export const jtorrentview = jjtorrentview;
 import { definition as jjtorrentwhiz } from './torrentwhiz';
 export const jtorrentwhiz = jjtorrentwhiz;
 
-import { definition as jjtorrentz2K } from './torrentz2k';
-export const jtorrentz2K = jjtorrentz2K;
-
 import { definition as jjtotallykids } from './totallykids';
 export const jtotallykids = jjtotallykids;
 
@@ -1471,7 +1465,6 @@ export const definitions = [
   jjextratorrentIt,
   jjextremebits,
   jjextremetorrents,
-  jjextremlymtorrents,
   jjexttorrents,
   jjeztv,
   jjfanoin,
@@ -1753,7 +1746,6 @@ export const definitions = [
   jjtorrentv,
   jjtorrentview,
   jjtorrentwhiz,
-  jjtorrentz2K,
   jjtotallykids,
   jjtotheglory,
   jjtotheglorycookie,

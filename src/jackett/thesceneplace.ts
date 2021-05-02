@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.thesceneplace.com/'],
+  legacylinks: ['http://www.thesceneplace.com/'],
   caps: {
     categorymappings: [
       { id: '13', cat: 'PC', desc: 'Apps' },

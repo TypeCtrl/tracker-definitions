@@ -7,8 +7,13 @@ export const definition: TrackerDefinition = {
   language: 'it-IT',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://ilcorsaroblu.org/'],
-  legacylinks: ['http://ilcorsaroblu.org/', 'https://www.ilcorsaroblu.info/', 'https://www.ilcorsaroblu.org/'],
+  links: ['https://ilcorsaroblu.online/'],
+  legacylinks: [
+    'http://ilcorsaroblu.org/',
+    'https://www.ilcorsaroblu.info/',
+    'https://www.ilcorsaroblu.org/',
+    'https://ilcorsaroblu.org/',
+  ],
   caps: {
     categorymappings: [
       { id: '12', cat: 'XXX', desc: 'Adult' },

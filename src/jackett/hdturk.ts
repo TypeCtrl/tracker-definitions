@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'tr-TR',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://hdturk.de/'],
-  legacylinks: ['http://hdturk.de/'],
+  links: ['https://hdturk.club/'],
+  legacylinks: ['http://hdturk.de/', 'https://hdturk.de/'],
   caps: {
     categorymappings: [
       { id: '37', cat: 'Other', desc: 'Diğer' },

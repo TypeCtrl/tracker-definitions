@@ -65,6 +65,7 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'torrents/filter' }],
+    keywordsfilters: [{ name: 're_replace', args: ['(?i)\\bS0*(\\d+)\\b', 'T$1'] }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
       search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
@@ -93,20 +94,22 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
       title: {
-        selector: 'a[href*="/torrents/"]',
+        selector: 'a.view-torrent:not(:contains("VOSE"))',
+        optional: true,
         filters: [
-          { name: 're_replace', args: ['\\[', ' '] },
-          { name: 're_replace', args: ['\\]', ' '] },
           { name: 're_replace', args: ['(?i)bdfull', 'BluRay'] },
           { name: 're_replace', args: ['(?i)RedBits', ''] },
           { name: 'append', args: ' Spanish' },
+          { name: 're_replace', args: ['\\[|\\]', ' '] },
+          { name: 're_replace', args: ['  ', ' '] },
+          { name: 're_replace', args: ['(?i)T(\\d{1,2})\\b', 'S$1'] },
         ],
       },
       download: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      details: { selector: 'a[href*="/torrents/"]', attribute: 'href' },
+      details: { selector: 'a.view-torrent', attribute: 'href' },
       poster: {
         selector: 'div.torrent-poster img',
         attribute: 'src',

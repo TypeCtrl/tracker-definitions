@@ -115,7 +115,7 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q'],
-      'tv-search': ['q'],
+      'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q'],
       'music-search': ['q'],
       'book-search': ['q'],

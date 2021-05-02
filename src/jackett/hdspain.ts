@@ -75,7 +75,8 @@ export const definition: TrackerDefinition = {
         ],
       },
       title: {
-        selector: 'td.titulo a[id]',
+        selector: 'td.titulo a[id]:not(:contains("VOSE"))',
+        optional: true,
         filters: [
           { name: 'prepend', args: '{{ .Result.extras }} ' },
           { name: 'append', args: ' Spanish' },
