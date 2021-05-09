@@ -93,7 +93,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]){{ if .Config.freeleech }}:has(img[src="images/freeleech.gif"]){{ else }}{{ end }}',
+        'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]){{ if .Config.freeleech }}:has(img[src="images/freeleech.gif"]){{ else }}{{ end }}{{ if .Config.freeleech }}, table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]):has(img[src="images/gold.gif"]){{ else }}{{ end }}',
     },
     fields: {
       category: {
@@ -143,7 +143,20 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      uploadvolumefactor: { text: 1 },
+      uploadvolumefactor: {
+        case: {
+          'img[src="images/2x.gif"]': 2,
+          'img[src="images/3x.gif"]': 3,
+          'img[src="images/4x.gif"]': 4,
+          'img[src="images/5x.gif"]': 5,
+          'img[src="images/6x.gif"]': 6,
+          'img[src="images/7x.gif"]': 7,
+          'img[src="images/8x.gif"]': 8,
+          'img[src="images/9x.gif"]': 9,
+          'img[src="images/10x.gif"]': 10,
+          '*': 1,
+        },
+      },
       minimumratio: { text: 1 },
       minimumseedtime: { text: 259200 },
     },

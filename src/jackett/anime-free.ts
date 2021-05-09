@@ -72,7 +72,7 @@ export const definition: TrackerDefinition = {
       showposts: 0,
       all_word_seach: 1,
       titleonly: '{{ if .Keywords }}3{{ else }}0{{ end }}',
-      searchdate: '{{ if .Keywords }}0{{ else }}1{{ end }}',
+      searchdate: 0,
       searchuser: '',
       story: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       sortby: 'date',

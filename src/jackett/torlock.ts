@@ -12,7 +12,8 @@ export const definition: TrackerDefinition = {
     'https://www.torlock.com/',
     'https://www.torlock2.com/',
     'https://www.torlock.icu/',
-    'https://torlock.unblockit.club/',
+    'https://torlock.unblockit.onl/',
+    'https://torlock.nocensor.space/',
   ],
   legacylinks: [
     'https://torlock.com/',
@@ -29,6 +30,7 @@ export const definition: TrackerDefinition = {
     'https://torlock.unblockit.ltd/',
     'https://torlock.unblockit.link/',
     'https://torlock.unblockit.buzz/',
+    'https://torlock.unblockit.club/',
   ],
   caps: {
     categorymappings: [

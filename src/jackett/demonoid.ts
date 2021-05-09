@@ -12,7 +12,7 @@ export const definition: TrackerDefinition = {
     'https://www.demonoid.is/',
     'https://www.dnoid.to/',
     'https://www.dnoid.pw/',
-    'https://demonoid.unblockit.club/',
+    'https://demonoid.unblockit.onl/',
     'https://demonoid.torrentbay.to/',
     'https://demonoid.nocensor.space/',
   ],
@@ -35,6 +35,7 @@ export const definition: TrackerDefinition = {
     'https://demonoid.unblockit.ltd/',
     'https://demonoid.unblockit.link/',
     'https://demonoid.unblockit.buzz/',
+    'https://demonoid.unblockit.club/',
   ],
   caps: {
     categorymappings: [

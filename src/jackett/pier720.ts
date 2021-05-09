@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
       {
         id: '102',
         cat: 'TV/Sport',
-        desc: 'Hockey - NHL Playoffs 2018-2019',
+        desc: 'Hockey - NHL Playoffs 2018-2020',
       },
       { id: '93', cat: 'TV/Sport', desc: 'Hockey - NHL Playoffs - 2017' },
       { id: '80', cat: 'TV/Sport', desc: 'Hockey - NHL Playoffs - 2016' },
@@ -96,6 +96,7 @@ export const definition: TrackerDefinition = {
       { id: '50', cat: 'TV/Sport', desc: 'Hockey - Other' },
       { id: '55', cat: 'TV/Sport', desc: 'Baseball' },
       { id: '71', cat: 'TV/Sport', desc: 'Baseball - MLB' },
+      { id: '107', cat: 'TV/Sport', desc: 'Baseball - MLB World Series' },
       { id: '72', cat: 'TV/Sport', desc: 'Baseball - Other' },
       {
         id: '85',
@@ -110,6 +111,11 @@ export const definition: TrackerDefinition = {
       { id: '75', cat: 'TV/Sport', desc: 'Other sports - Tennis' },
       { id: '74', cat: 'TV/Sport', desc: 'Other sports - Fighting' },
       { id: '94', cat: 'TV/Sport', desc: 'Other sports - Misc' },
+      {
+        id: '73',
+        cat: 'TV/Sport',
+        desc: 'Other sports - Auto, moto racing',
+      },
       { id: '100', cat: 'TV/Sport', desc: 'Soccer' },
       { id: '98', cat: 'TV/Sport', desc: 'Soccer - FIFA World Cup' },
       { id: '56', cat: 'TV/Sport', desc: 'Sports on tv' },

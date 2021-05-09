@@ -3,29 +3,11 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'cinematik',
   name: 'Cinematik',
-  description: 'Tracker for non-hollywood movies.',
+  description: 'A tracker for full BD and DVD discs of non-mainstream movies, niche cinema and arthouse.',
   language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.cinematik.net/'],
-  settings: [
-    { name: 'username', type: 'text', label: 'Username' },
-    { name: 'password', type: 'password', label: 'Password' },
-    {
-      name: 'incldead',
-      type: 'select',
-      label: 'Status',
-      default: 1,
-      options: { '0': 'Active', '1': 'Active and Inactive', '2': 'Inactive' },
-    },
-    { name: 'srchdtls', type: 'checkbox', label: 'Detailed search' },
-    {
-      name: 'info_results',
-      type: 'info',
-      label: 'Search results',
-      default: 'You can increase the number of search results in your profile.<br />Default is 15.',
-    },
-  ],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Comedy' },
@@ -49,9 +31,29 @@ export const definition: TrackerDefinition = {
     ],
     modes: { search: ['q'], 'movie-search': ['q'] },
   },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'incldead',
+      type: 'select',
+      label: 'Status',
+      default: 1,
+      options: { '0': 'Active', '1': 'Active and Inactive', '2': 'Inactive' },
+    },
+    { name: 'srchdtls', type: 'checkbox', label: 'Detailed search' },
+    {
+      name: 'info_results',
+      type: 'info',
+      label: 'Search results',
+      default: 'You can increase the number of search results in your profile.<br>Default is 15.',
+    },
+  ],
   login: {
-    path: 'takelogin.php',
-    method: 'post',
+    method: 'form',
+    path: 'login.php',
+    submitpath: 'takelogin.php',
+    form: 'form[action="takelogin.php"]',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
@@ -63,7 +65,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'browse.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Query.Keywords }}',
+      search: '{{ .Keywords }}',
       incldead: '{{ .Config.incldead }}',
       srchdtls: '{{ if .Config.srchdtls }}1{{ else }}0{{ end }}',
     },
@@ -71,37 +73,34 @@ export const definition: TrackerDefinition = {
     fields: {
       category: { text: 1 },
       title: { selector: 'td:nth-child(2) a' },
+      details: {
+        selector: 'a[href^="details.php?id="]',
+        attribute: 'href',
+      },
       download: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
         filters: [{ name: 'replace', args: ['details.php?id=', 'download.php?id='] }],
       },
-      details: {
-        selector: 'a[href^="details.php?id="]',
-        attribute: 'href',
-      },
+      files: { selector: 'td:nth-child(5)' },
+      size: { selector: 'td:nth-child(7)' },
       grabs: {
         selector: 'td:nth-child(8)',
         filters: [{ name: 'regexp', args: '([\\d,]+)' }],
       },
-      files: { selector: 'td:nth-child(5)' },
-      size: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
       date: { selector: 'td:nth-child(11) div.addedtor' },
       downloadvolumefactor: {
         case: {
-          'img[title="Golden Torrent: No Download Stats are Recorded"]': 0,
-          'img[title="Silver Torrent: Download Stats are 25% Recorded"]': 0.25,
-          'img[title="Platinum Torrent: No Download Stats are Recorded, Upload Stats are Doubled!"]': 0,
+          'img[title^="Golden Torrent"]': 0,
+          'img[title^="Silver Torrent"]': 0.25,
+          'img[title^="Platinum Torrent"]': 0,
           '*': 1,
         },
       },
       uploadvolumefactor: {
-        case: {
-          'img[title="Platinum Torrent: No Download Stats are Recorded, Upload Stats are Doubled!"]': 2,
-          '*': 1,
-        },
+        case: { 'img[title^="Platinum Torrent"]': 2, '*': 1 },
       },
     },
   },

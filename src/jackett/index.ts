@@ -1087,9 +1087,6 @@ export const jtheshow = jjtheshow;
 import { definition as jjthevault } from './thevault';
 export const jthevault = jjthevault;
 
-import { definition as jjtjangto } from './tjangto';
-export const jtjangto = jjtjangto;
-
 import { definition as jjtjupt } from './tjupt';
 export const jtjupt = jjtjupt;
 
@@ -1706,7 +1703,6 @@ export const definitions = [
   jjtheshinning,
   jjtheshow,
   jjthevault,
-  jjtjangto,
   jjtjupt,
   jjtlfbits,
   jjtntfork,

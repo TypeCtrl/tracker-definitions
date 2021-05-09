@@ -5,7 +5,7 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://www.toros.co/"],
+  "links": ["https://www.toros.co/", "https://toros.nocensor.space/"],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "Movies", "desc": "Movies" },

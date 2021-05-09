@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
     'http://audiobookbay.nl/',
     'http://audiobookbay.net/',
     'http://audiobookbayabb.com/',
-    'https://audiobookbay.unblockit.club/',
+    'https://audiobookbay.unblockit.onl/',
   ],
   legacylinks: [
     'https://audiobookbay.la/',
@@ -21,6 +21,7 @@ export const definition: TrackerDefinition = {
     'https://audiobookbay.unblockit.ltd/',
     'https://audiobookbay.unblockit.link/',
     'https://audiobookbay.unblockit.buzz/',
+    'https://audiobookbay.unblockit.club/',
   ],
   caps: {
     categorymappings: [

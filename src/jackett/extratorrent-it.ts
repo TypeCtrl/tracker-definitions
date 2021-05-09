@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://extratorrents.it/', 'https://extratorrent.unblockit.club/', 'https://extratorrent.nocensor.space/'],
+  links: ['https://extratorrents.it/', 'https://extratorrent.unblockit.onl/', 'https://extratorrent.nocensor.space/'],
   legacylinks: [
     'https://extratorrent.ag/',
     'https://extratorrent.unblockit.app/',
@@ -17,6 +17,7 @@ export const definition: TrackerDefinition = {
     'https://extratorrent.unblockit.link/',
     'https://extratorrent2.unblockninja.com/',
     'https://extratorrent.unblockit.buzz/',
+    'https://extratorrent.unblockit.club/',
   ],
   caps: {
     categorymappings: [
