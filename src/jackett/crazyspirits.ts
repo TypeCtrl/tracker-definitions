@@ -246,9 +246,21 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: 'src=(.*?)><' }],
       },
-      grabs: { selector: 'td:nth-last-child(4)' },
-      seeders: { selector: 'td:nth-last-child(3)' },
-      leechers: { selector: 'td:nth-last-child(2)' },
+      grabs: {
+        selector: 'a[onmouseover][href^="torrents-details.php?id="]',
+        attribute: 'onmouseover',
+        filters: [{ name: 'regexp', args: 'Completé : </b>(\\d+)<' }],
+      },
+      seeders: {
+        selector: 'a[onmouseover][href^="torrents-details.php?id="]',
+        attribute: 'onmouseover',
+        filters: [{ name: 'regexp', args: '=green>(\\d+)<' }],
+      },
+      leechers: {
+        selector: 'a[onmouseover][href^="torrents-details.php?id="]',
+        attribute: 'onmouseover',
+        filters: [{ name: 'regexp', args: '=red>(\\d+)<' }],
+      },
       size: {
         selector: 'a[onmouseover][href^="torrents-details.php?id="]',
         attribute: 'onmouseover',

@@ -128,8 +128,8 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'selection.php' }],
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
-      search: '{{ .Keywords }}}',
-      blah: '0',
+      search: '{{ .Keywords }}',
+      blah: 0,
       orderby: '{{ .Config.sort }}',
       sort: '{{ .Config.type }}',
     },

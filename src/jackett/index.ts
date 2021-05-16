@@ -331,9 +331,6 @@ export const jemtrek = jjemtrek;
 import { definition as jjeniahd } from './eniahd';
 export const jeniahd = jjeniahd;
 
-import { definition as jjepizod } from './epizod';
-export const jepizod = jjepizod;
-
 import { definition as jjerzsebet } from './erzsebet';
 export const jerzsebet = jjerzsebet;
 
@@ -970,6 +967,9 @@ export const jselezen = jjselezen;
 import { definition as jjsexypics } from './sexypics';
 export const jsexypics = jjsexypics;
 
+import { definition as jjsharefiles } from './sharefiles';
+export const jsharefiles = jjsharefiles;
+
 import { definition as jjshareisland } from './shareisland';
 export const jshareisland = jjshareisland;
 
@@ -1451,7 +1451,6 @@ export const definitions = [
   jjempornium2Fa,
   jjemtrek,
   jjeniahd,
-  jjepizod,
   jjerzsebet,
   jjerzsebetpl,
   jjesharenet,
@@ -1664,6 +1663,7 @@ export const definitions = [
   jjseedfile,
   jjselezen,
   jjsexypics,
+  jjsharefiles,
   jjshareisland,
   jjsharewood,
   jjshokweb,

@@ -292,7 +292,6 @@ export const definition: TrackerDefinition = {
       date: { text: 'now' },
       seeders: { text: 1 },
       leechers: { text: 1 },
-      grabs: { selector: 'li:has(img[alt="Скачиваний"])' },
       size: {
         selector: 'div.shor_subtitles span:nth-child(2)',
         filters: [

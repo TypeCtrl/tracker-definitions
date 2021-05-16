@@ -124,16 +124,11 @@
     "method": "form",
     "form": "form[action^=\"login\"]",
     "inputs": {
-      "uid": "{{ .Config.username }}",
-      "pwd": "{{ .Config.password }}",
-      "rememberme": ""
+      "username": "{{ .Config.username }}",
+      "password": "{{ .Config.password }}",
+      "loginButton": "X"
     },
-    "captcha": {
-      "type": "image",
-      "selector": "img[src^=\"access_code/\"]",
-      "input": "private_key"
-    },
-    "error": [{ "selector": "tr td span[style=\"color:#FF0000;\"]" }],
+    "error": [{ "selector": "p[style=\"color: #B73C38\"]" }],
     "test": { "path": "index.php", "selector": "a[href=\"logout.php\"]" }
   },
   "search": {

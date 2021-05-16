@@ -134,7 +134,7 @@ export const definition: TrackerDefinition = {
       order: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'div.tgxtable > div:has(div[class="tgxtablecell shrink"])',
+      selector: 'div.tgxtable > div:has(div[class^="tgxtablecell shrink"])',
     },
     fields: {
       category: {

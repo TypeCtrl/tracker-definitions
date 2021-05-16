@@ -12,9 +12,9 @@ export const definition: TrackerDefinition = {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
       { id: '2', cat: 'TV', desc: 'TV' },
-      { id: '5', cat: 'PC/0day', desc: 'Appz' },
-      { id: '4', cat: 'PC/Games', desc: 'Games' },
       { id: '3', cat: 'Audio', desc: 'Music' },
+      { id: '4', cat: 'PC/Games', desc: 'Games' },
+      { id: '5', cat: 'PC/0day', desc: 'Appz' },
       { id: '8', cat: 'Books', desc: 'Bookz' },
     ],
     modes: {
@@ -93,9 +93,16 @@ export const definition: TrackerDefinition = {
     rows: { selector: 'table > tbody > tr' },
     fields: {
       category: {
-        selector: 'a[href*="/categories/"]',
-        attribute: 'href',
-        filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
+        selector: 'i.torrent-icon',
+        attribute: 'class',
+        case: {
+          'i.fa-film': 1,
+          'i.fa-tv-retro': 2,
+          'i.fa-music': 3,
+          'i.fa-gamepad': 4,
+          'i.fa-compact-disc': 5,
+          'i.fa-book-open': 8,
+        },
       },
       title: { selector: 'a.view-torrent' },
       download: {
@@ -110,7 +117,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['&w=52&h=80', '&w=180&h=270'] },
           {
             name: 'replace',
-            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/600x900&w=180&h=270', ''],
+            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/52x80&w=180&h=270', ''],
           },
         ],
       },
