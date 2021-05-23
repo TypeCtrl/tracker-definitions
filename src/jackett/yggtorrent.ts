@@ -39,6 +39,7 @@ export const definition: TrackerDefinition = {
     'https://yggtorrent.si/',
     'http://www2.yggtorrent.si/',
     'https://www2.yggtorrent.si/',
+    'https://www.yggtorrent.li/',
   ],
   caps: {
     categorymappings: [

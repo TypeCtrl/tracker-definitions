@@ -78,6 +78,10 @@ export const definition: TrackerDefinition = {
   },
   search: {
     paths: [{ path: 'index.php' }],
+    keywordsfilters: [
+      { name: 're_replace', args: ['(?i)(S0)(\\d{1,2})$', 'season $2'] },
+      { name: 're_replace', args: ['(?i)(S)(\\d{1,3})$', 'season $2'] },
+    ],
     inputs: {
       page: 'torrents',
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
@@ -97,7 +101,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
-      title: { selector: 'td a[href^="index.php?page=torrent-details"]' },
+      title: {
+        selector: 'td a[href^="index.php?page=torrent-details"]',
+        filters: [{ name: 're_replace', args: ['(?i)(season )', 'S'] }],
+      },
       details: {
         selector: 'td a[href^="index.php?page=torrent-details"]',
         attribute: 'href',

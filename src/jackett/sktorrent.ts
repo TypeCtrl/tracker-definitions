@@ -59,7 +59,10 @@ export const definition: TrackerDefinition = {
       pwd: '{{ .Config.password }}',
     },
     error: [{ selector: 'font:contains("Incorrect")' }],
-    test: { path: 'torrent/index.php' },
+    test: {
+      path: 'torrent/index.php',
+      selector: 'a[href^="usercp.php"]',
+    },
   },
   download: {
     selector: 'a[href^="download.php?id="]',

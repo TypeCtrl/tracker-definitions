@@ -98,6 +98,7 @@ export const definition: TrackerDefinition = {
       date: {
         selector: 'td:nth-child(2)',
         filters: [
+          { name: 'regexp', args: '(\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2})' },
           { name: 'append', args: ' +03:00' },
           { name: 'dateparse', args: '02-01-2006 15:04 -07:00' },
         ],

@@ -96,10 +96,14 @@ export const definition: TrackerDefinition = {
       },
       size: { selector: 'td:nth-child(5)' },
       date: {
-        selector: 'tr, br',
+        selector: 'td:nth-child(2)',
         filters: [
+          {
+            name: 'regexp',
+            args: '(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})',
+          },
           { name: 'append', args: ' +01:00' },
-          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+          { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
       seeders: { selector: 'td:nth-child(7)' },
