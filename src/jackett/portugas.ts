@@ -100,12 +100,12 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'regexp', args: '/categories/(\\d+)' }],
       },
-      title: { selector: 'a.view-torrent' },
+      title: { selector: 'a.text-bright' },
       download: {
         selector: 'a[href*="/download/"]',
         attribute: 'href',
       },
-      details: { selector: 'a.view-torrent', attribute: 'href' },
+      details: { selector: 'a.text-bright', attribute: 'href' },
       poster: {
         selector: 'div.torrent-poster img',
         attribute: 'src',
@@ -123,14 +123,6 @@ export const definition: TrackerDefinition = {
       grabs: {
         selector: 'td:nth-last-child(1)',
         filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
-      imdb: {
-        selector: 'a[href*="imdb.com/title/tt"]',
-        attribute: 'href',
-      },
-      tmdbid: {
-        selector: 'a[href*="themoviedb.org/movie/"]',
-        attribute: 'href',
       },
       date: {
         selector: 'time',

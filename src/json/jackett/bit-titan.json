@@ -119,11 +119,11 @@
   "login": {
     "path": "login.php",
     "method": "form",
-    "form": "form[action=\"takelogin.php\"]",
+    "form": "form[action$=\"login.php\"]",
     "cookies": ["JAVA=OK"],
     "captcha": {
       "type": "image",
-      "selector": "img[src^=\"cap/captcha_math.php\"]",
+      "selector": "img[src*=\"captcha_math.php\"]",
       "input": "stringCaptcha"
     },
     "inputs": {
@@ -139,7 +139,7 @@
       "$raw": "{{ if .Categories }}{{ range .Categories }}categories[]={{.}}&{{end}}{{ else }}{{ end }}",
       "allCats": "",
       "search": "{{ .Keywords }}",
-      "limit": 1,
+      "limit": 4,
       "searchin": "{{ if .Config.freeleech }}11{{ else }}0{{ end }}",
       "orderBy": "{{ .Config.sort }}",
       "order": "{{ .Config.type }}"
@@ -165,6 +165,7 @@
           { "name": "prepend", "args": "download.php?torrent=" }
         ]
       },
+      "poster": { "selector": "div[data-image]", "attribute": "data-image" },
       "seeders": { "selector": "td.peers:has(i[title=\"Seeders\"])" },
       "leechers": { "selector": "td.peers:has(i[title=\"Leechers\"])" },
       "grabs": { "selector": "td.peers:has(i[title=\"Snatchers\"])" },
@@ -189,9 +190,9 @@
       },
       "uploadvolumefactor": {
         "case": {
-          "span:contains(\"2x\")": 2,
-          "span:contains(\"5x\")": 5,
-          "span:contains(\"10x\")": 10,
+          "span:contains(\"x2\")": 2,
+          "span:contains(\"x5\")": 5,
+          "span:contains(\"x10\")": 10,
           "span:contains(\"FL\")": 0,
           "*": 1
         }

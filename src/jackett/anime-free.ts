@@ -80,7 +80,9 @@ export const definition: TrackerDefinition = {
     },
     rows: { selector: 'article' },
     fields: {
-      category: {
+      category: { text: 54 },
+      'category|noappend': {
+        optional: true,
         selector: 'a[href*="category="]',
         attribute: 'href',
         case: {
@@ -117,7 +119,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { text: 1 },
       leechers: { text: 1 },
-      size: { selector: 'b.file_size' },
+      size: { optional: true, selector: 'b.file_size' },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

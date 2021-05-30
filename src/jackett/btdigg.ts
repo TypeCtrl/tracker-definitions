@@ -7,7 +7,12 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://btdig.com/', 'http://btdiggwzoyrwwbiv.onion.ly/'],
+  links: [
+    'https://btdig.com/',
+    'https://btdiggwzoyrwwbiv.onion.ly/',
+    'https://btdigggink2pdqzqrik3blmqemsbntpzwxottujilcdjfz56jumzfsyd.onion.ly/',
+  ],
+  legacylinks: ['http://btdiggwzoyrwwbiv.onion.ly/'],
   caps: {
     modes: {
       search: ['q'],
@@ -37,7 +42,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'search' }],
     inputs: {
-      q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}test{{ end }}',
+      q: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       order: '{{ .Config.sort }}',
     },
     rows: {

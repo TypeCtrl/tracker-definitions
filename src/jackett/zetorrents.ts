@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.zetorrents.org/'],
+  links: ['https://wvw.zetorrents.org/'],
   legacylinks: [
     'https://www.zetorrents.co/',
     'https://www.zetorrents.io/',
@@ -15,6 +15,7 @@ export const definition: TrackerDefinition = {
     'https://vww.zetorrents.io/',
     'https://wwv.zetorrents.io/',
     'https://ww1.zetorrents.io/',
+    'https://www.zetorrents.org/',
   ],
   caps: {
     modes: {

@@ -80,7 +80,7 @@ export const definition: TrackerDefinition = {
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table.torrents > tbody > tr:has(table.torrentname)',
+      selector: 'table.torrents > tbody > tr:has(a[href^="download.php?"])',
     },
     fields: {
       category: {

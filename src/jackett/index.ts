@@ -331,9 +331,6 @@ export const jemtrek = jjemtrek;
 import { definition as jjeniahd } from './eniahd';
 export const jeniahd = jjeniahd;
 
-import { definition as jjerzsebet } from './erzsebet';
-export const jerzsebet = jjerzsebet;
-
 import { definition as jjerzsebetpl } from './erzsebetpl';
 export const jerzsebetpl = jjerzsebetpl;
 
@@ -408,9 +405,6 @@ export const jfrozenlayer = jjfrozenlayer;
 
 import { definition as jjfunkytorrents } from './funkytorrents';
 export const jfunkytorrents = jjfunkytorrents;
-
-import { definition as jjgaleriens } from './galeriens';
-export const jgaleriens = jjgaleriens;
 
 import { definition as jjgamestorrents } from './gamestorrents';
 export const jgamestorrents = jjgamestorrents;
@@ -489,6 +483,9 @@ export const jhdchina = jjhdchina;
 
 import { definition as jjhdcity } from './hdcity';
 export const jhdcity = jjhdcity;
+
+import { definition as jjhdcztorrent } from './hdcztorrent';
+export const jhdcztorrent = jjhdcztorrent;
 
 import { definition as jjhddolby } from './hddolby';
 export const jhddolby = jjhddolby;
@@ -1174,9 +1171,6 @@ export const jtorrentoyunindir = jjtorrentoyunindir;
 import { definition as jjtorrentparadise } from './torrentparadise';
 export const jtorrentparadise = jjtorrentparadise;
 
-import { definition as jjtorrentproject } from './torrentproject';
-export const jtorrentproject = jjtorrentproject;
-
 import { definition as jjtorrentproject2 } from './torrentproject2';
 export const jtorrentproject2 = jjtorrentproject2;
 
@@ -1451,7 +1445,6 @@ export const definitions = [
   jjempornium2Fa,
   jjemtrek,
   jjeniahd,
-  jjerzsebet,
   jjerzsebetpl,
   jjesharenet,
   jjestone,
@@ -1477,7 +1470,6 @@ export const definitions = [
   jjfreetorrent,
   jjfrozenlayer,
   jjfunkytorrents,
-  jjgaleriens,
   jjgamestorrents,
   jjgayTorrents,
   jjgayTorrentsorg,
@@ -1504,6 +1496,7 @@ export const definitions = [
   jjhdcenter,
   jjhdchina,
   jjhdcity,
+  jjhdcztorrent,
   jjhddolby,
   jjhdforever,
   jjhdhome,
@@ -1732,7 +1725,6 @@ export const definitions = [
   jjtorrentmax,
   jjtorrentoyunindir,
   jjtorrentparadise,
-  jjtorrentproject,
   jjtorrentproject2,
   jjtorrentqq,
   jjtorrentsectorcrew,

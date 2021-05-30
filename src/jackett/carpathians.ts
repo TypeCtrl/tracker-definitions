@@ -130,7 +130,7 @@ export const definition: TrackerDefinition = {
           { name: 'timeago' },
         ],
       },
-      downloadvolumefactor: { text: 1 },
+      downloadvolumefactor: { text: 0 },
       uploadvolumefactor: {
         case: {
           'img[src="pic/double.png"]': 2,

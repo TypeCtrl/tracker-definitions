@@ -93,7 +93,7 @@ export const definition: TrackerDefinition = {
     },
     rows: {
       selector:
-        'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]){{ if .Config.freeleech }}:has(img[src="images/freeleech.gif"]){{ else }}{{ end }}{{ if .Config.freeleech }}, table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]):has(img[src="images/gold.gif"]){{ else }}{{ end }}',
+        'table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]):not(:has(a[href^="index.php?page=userdetails&id="])){{ if .Config.freeleech }}:has(img[src="images/freeleech.gif"]){{ else }}{{ end }}{{ if .Config.freeleech }}, table.lista > tbody > tr:has(a[href^="index.php?page=torrent-details&id="]):not(:has(a[href^="index.php?page=userdetails&id="])):has(img[src="images/gold.gif"]){{ else }}{{ end }}',
     },
     fields: {
       category: {

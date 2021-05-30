@@ -110,11 +110,7 @@
       "grabs": { "selector": "td:nth-child(7)" },
       "files": { "selector": "td:nth-child(3)" },
       "size": { "selector": "td:nth-child(6) > u" },
-      "downloadvolumefactor": {
-        "optional": true,
-        "selector": "td:nth-child(6) > nobr > font:contains(\" × \")",
-        "filters": [{ "name": "replace", "args": ["×", ""] }]
-      },
+      "downloadvolumefactor": { "text": 0 },
       "uploadvolumefactor": {
         "optional": true,
         "selector": "td:nth-child(5) > nobr > font:contains(\" × \")",
