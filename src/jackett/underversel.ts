@@ -305,6 +305,7 @@ export const definition: TrackerDefinition = {
         cat: 'TV/Documentary',
         desc: ' |- Наша Russia, Наша Belarussia, Файна Юкрайна',
       },
+      { id: '1143', cat: 'TV/Documentary', desc: ' |- Хорошие шутки ' },
       { id: '82', cat: 'TV/Documentary', desc: ' |- Телепередачи и шоу' },
       {
         id: '83',

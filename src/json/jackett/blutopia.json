@@ -8,7 +8,7 @@
   "links": ["https://blutopia.xyz/"],
   "caps": {
     "categorymappings": [
-      { "id": "1", "cat": "Movies", "desc": "Movies" },
+      { "id": "1", "cat": "Movies", "desc": "Movie" },
       { "id": "2", "cat": "TV", "desc": "TV" },
       { "id": "3", "cat": "Movies/Other", "desc": "FANRES" },
       { "id": "5", "cat": "Movies/Other", "desc": "Trailer" }
@@ -63,25 +63,24 @@
     "error": [{ "selector": "div#ERROR_COPY" }]
   },
   "search": {
-    "paths": [{ "path": "torrents/filter" }],
+    "paths": [{ "path": "torrents" }],
     "inputs": {
       "$raw": "{{ range .Categories }}categories[]={{.}}&{{end}}",
-      "search": "{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
+      "name": "{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
       "description": "",
+      "mediainfo": "",
       "keywords": "",
       "uploader": "",
-      "imdb": "{{ .Query.IMDBIDShort }}",
-      "tvdb": "{{ .Query.TVDBID }}",
-      "tmdb": "{{ .Query.TMDBID }}",
-      "mal": "",
-      "igdb": "",
-      "start_year": "",
-      "end_year": "",
-      "sorting": "{{ .Config.sort }}",
-      "direction": "{{ .Config.type }}",
-      "qty": 100,
-      "page": 0,
-      "view": "list",
+      "tmdbId": "{{ .Query.TMDBID }}",
+      "imdbId": "{{ .Query.IMDBIDShort }}",
+      "tvdbId": "{{ .Query.TVDBID }}",
+      "malId": "",
+      "startYear": "",
+      "endYear": "",
+      "sortField": "{{ .Config.sort }}",
+      "sortDirection": "{{ .Config.type }}",
+      "perPage": 100,
+      "page": 1,
       "freeleech": "{{ if .Config.freeleech }}1{{ else }}{{ end }}"
     },
     "rows": { "selector": "table > tbody > tr" },
@@ -91,43 +90,28 @@
         "attribute": "href",
         "filters": [{ "name": "regexp", "args": "/categories/(\\d+)" }]
       },
-      "title": { "selector": "a[href*=\"/torrents/\"]" },
+      "title": { "selector": "a.view-torrent" },
       "download": {
         "selector": "a[href*=\"/download/\"]",
         "attribute": "href"
       },
-      "details": { "selector": "a[href*=\"/torrents/\"]", "attribute": "href" },
+      "details": { "selector": "a.view-torrent", "attribute": "href" },
       "poster": {
         "selector": "div.torrent-poster img",
         "attribute": "src",
         "filters": [
-          { "name": "replace", "args": ["&w=52&h=80", "&w=180&h=270"] },
           {
             "name": "replace",
-            "args": [
-              "https://images.weserv.nl/?url=https://via.placeholder.com/52x80&w=180&h=270",
-              ""
-            ]
+            "args": ["https://via.placeholder.com/90x135", ""]
           }
         ]
       },
-      "size": { "selector": "td:nth-last-child(4)" },
-      "seeders": { "selector": "td:nth-last-child(3)" },
-      "leechers": { "selector": "td:nth-last-child(2)" },
-      "grabs": {
-        "selector": "td:nth-last-child(1)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
-      "imdb": {
-        "selector": "a[href*=\"imdb.com/title/tt\"]",
-        "attribute": "href"
-      },
-      "tmdbid": {
-        "selector": "a[href*=\"themoviedb.org/movie/\"]",
-        "attribute": "href"
-      },
+      "size": { "selector": "td:nth-last-child(5)" },
+      "seeders": { "selector": "td:nth-last-child(4)" },
+      "leechers": { "selector": "td:nth-last-child(3)" },
+      "grabs": { "selector": "td:nth-last-child(2)" },
       "date": {
-        "selector": "time",
+        "selector": "td:nth-last-child(1)",
         "filters": [
           {
             "name": "re_replace",

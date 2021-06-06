@@ -304,7 +304,15 @@
         "selector": "div.torrent-item__title a",
         "attribute": "href"
       },
-      "size": { "selector": "div.data-size" },
+      "size": {
+        "selector": "div.data-size",
+        "filters": [
+          {
+            "name": "re_replace",
+            "args": ["(\\d)\\.(\\d{3}\\.\\d{2})", "$1$2"]
+          }
+        ]
+      },
       "seeders": {
         "selector": "div.data-seeders",
         "filters": [{ "name": "regexp", "args": "(\\d+)" }]

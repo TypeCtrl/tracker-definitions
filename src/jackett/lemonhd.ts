@@ -46,8 +46,13 @@ export const definition: TrackerDefinition = {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
-      default: 4,
-      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+      default: 'added',
+      options: {
+        added: 'created',
+        seeders: 'seeders',
+        size: 'size',
+        name: 'title',
+      },
     },
     {
       name: 'type',
@@ -72,12 +77,10 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents.php' }],
     inputs: {
       search: '{{ if .Query.IMDBID }}{{ .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
-      incldead: 0,
-      spstate: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
-      search_area: '{{ if .Query.IMDBID }}4{{ else }}0{{ end }}',
-      search_mode: 0,
-      sort: '{{ .Config.sort }}',
-      type: '{{ .Config.type }}',
+      search_area: '{{ if .Query.IMDBID }}imdb{{ else }}name{{ end }}',
+      suggest: 0,
+      column: '{{ .Config.sort }}',
+      sort: '{{ .Config.type }}',
     },
     rows: {
       selector: 'table.torrents > tbody > tr:has(a[href^="download.php?"])',

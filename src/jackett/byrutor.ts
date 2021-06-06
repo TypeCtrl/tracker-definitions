@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://byrutor.org/'],
+  links: ['https://byrut.org/'],
+  legacylinks: ['https://byrutor.org/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'PC/Games', desc: 'Экшены' },
