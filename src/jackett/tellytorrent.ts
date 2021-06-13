@@ -84,6 +84,8 @@ export const definition: TrackerDefinition = {
       malId: '',
       startYear: '',
       endYear: '',
+      playlistId: '',
+      collectionId: '',
       sortField: '{{ .Config.sort }}',
       sortDirection: '{{ .Config.type }}',
       perPage: 100,
