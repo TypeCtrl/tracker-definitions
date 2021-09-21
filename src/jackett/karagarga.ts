@@ -123,10 +123,7 @@ export const definition: TrackerDefinition = {
       },
       files: { selector: 'td:nth-child(10)' },
       size: { selector: 'td:nth-child(11)' },
-      grabs: {
-        selector: 'td:nth-child(12)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(12)' },
       seeders: { selector: 'td:nth-child(13)' },
       leechers: { selector: 'td:nth-child(14)' },
       subs: { selector: 'span:contains("Subs:")', optional: true },

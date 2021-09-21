@@ -3,7 +3,7 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'piratbitl',
   name: 'PiratBitL',
-  description: 'this is the PiratBit indexer with Login enabled in the config.',
+  description: 'PirateBit is a RUSSIAN Public Torrent Tracker for MOVIES / TV / GENERAL. This supports login.',
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',

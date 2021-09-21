@@ -1286,6 +1286,7 @@ export const definition: TrackerDefinition = {
       { id: '1430', cat: 'PC', desc: ' |- Windows 7' },
       { id: '1429', cat: 'PC', desc: ' |- Windows 8' },
       { id: '1906', cat: 'PC', desc: ' |- Windows 10' },
+      { id: '2054', cat: 'PC', desc: ' |- Windows 11' },
       {
         id: '1428',
         cat: 'PC',

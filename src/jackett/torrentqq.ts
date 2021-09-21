@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://torrentqq91.com/'],
+  links: ['https://torrentqq107.com/'],
   legacylinks: [
     'https://torrentqq76.com/',
     'https://torrentqq77.com/',
@@ -25,6 +25,21 @@ export const definition: TrackerDefinition = {
     'https://torrentqq88.com/',
     'https://torrentqq89.com/',
     'https://torrentqq90.com/',
+    'https://torrentqq91.com/',
+    'https://torrentqq92.com/',
+    'https://torrentqq93.com/',
+    'https://torrentqq95.com/',
+    'https://torrentqq96.com/',
+    'https://torrentqq97.com/',
+    'https://torrentqq98.com/',
+    'https://torrentqq99.com/',
+    'https://torrentqq100.com/',
+    'https://torrentqq101.com/',
+    'https://torrentqq102.com/',
+    'https://torrentqq103.com/',
+    'https://torrentqq104.com/',
+    'https://torrentqq105.com/',
+    'https://torrentqq106.com/',
   ],
   caps: {
     categorymappings: [
@@ -54,17 +69,18 @@ export const definition: TrackerDefinition = {
       default:
         'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
     },
-    {
-      name: 'downloads',
-      type: 'info',
-      label: 'About Downloads',
-      default:
-        'Some download links on this site use a link to a direct file download service, instead of a .torrent link. Jackett does not support direct file downloads, so you will get a page-cannot-be-found error when you try them.',
-    },
   ],
   download: {
-    selector: 'a[href^="/torrent/download/"]',
-    attribute: 'href',
+    infohash: {
+      hash: {
+        selector: 'table.table-bordered > tbody > tr > td > ul > li',
+        filters: [{ name: 'regexp', args: '([A-F|a-f|0-9]{40})' }],
+      },
+      title: {
+        selector: 'table.table-bordered > thead > tr > th > strong',
+        filters: [{ name: 'trim' }, { name: 'validfilename' }],
+      },
+    },
   },
   search: {
     paths: [

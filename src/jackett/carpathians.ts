@@ -111,10 +111,7 @@ export const definition: TrackerDefinition = {
       poster: { selector: 'a[rel^="prettyPhoto["]', attribute: 'href' },
       files: { selector: 'td:nth-child(4)' },
       size: { selector: 'td:nth-child(6)' },
-      grabs: {
-        selector: 'td:nth-child(7)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(8)' },
       leechers: { selector: 'td:nth-child(9)' },
       date: {

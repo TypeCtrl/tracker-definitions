@@ -31,7 +31,7 @@ export const definition: TrackerDefinition = {
       password: '{{ .Config.password }}',
       returnto: '/',
     },
-    error: [{ selector: 'div#content:has(h2:contains("Login Failed"))' }],
+    error: [{ selector: 'div#content:has(h3:contains("Login Failed"))' }],
     test: {
       path: 'browse.php',
       selector: 'span.key:contains("Ratio") + span.value',

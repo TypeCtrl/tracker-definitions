@@ -19,7 +19,7 @@ export const definition: TrackerDefinition = {
     ],
     modes: {
       search: ['q'],
-      'tv-search': ['q', 'season', 'ep', 'imdbid', 'tvdbid'],
+      'tv-search': ['q', 'season', 'ep'],
       'movie-search': ['q', 'imdbid', 'tmdbid'],
       'music-search': ['q'],
     },
@@ -70,8 +70,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'filter/torrents' }],
     inputs: {
-      $raw:
-        '{{ range .Categories }}categories[]={{.}}&{{end}}{{ if .Config.freeleech }}freeleech=1&{{ else }}{{ end }}',
+      $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}{{ if .Config.freeleech }}freeleech=1&{{ else }}{{ end }}',
       search:
         '{{ if or .Query.IMDBID .Query.TVDBID .Query.TMDBID }}{{ or .Query.IMDBIDShort .Query.TVDBID .Query.TMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       tags: '',

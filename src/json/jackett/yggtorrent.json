@@ -6,7 +6,7 @@
   "type": "semi-private",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://www4.yggtorrent.li/"],
+  "links": ["https://www3.yggtorrent.nz/"],
   "legacylinks": [
     "https://yggtorrent.com/",
     "https://ww1.yggtorrent.com/",
@@ -37,7 +37,8 @@
     "https://yggtorrent.si/",
     "http://www2.yggtorrent.si/",
     "https://www2.yggtorrent.si/",
-    "https://www.yggtorrent.li/"
+    "https://www.yggtorrent.li/",
+    "https://www4.yggtorrent.li/"
   ],
   "caps": {
     "categorymappings": [
@@ -197,7 +198,7 @@
     "inputs": {
       "id": "{{ .Config.username }}",
       "pass": "{{ .Config.password }}",
-      "submit": ""
+      "ci_csrf_token": ""
     },
     "error": [
       { "selector": "#login_msg_pass[style=\"\"][style] > center" },
@@ -241,6 +242,13 @@
       },
       { "name": "re_replace", "args": ["(?i)(.*)s([1-9])$", "$1 S0$2"] },
       { "name": "re_replace", "args": ["(?i)(.*)s([1-9][0-9])$", "$1 S$2"] },
+      {
+        "name": "re_replace",
+        "args": [
+          "(.*)(\\.|\\s|\\-)(\\d{2,3})(\\.|\\s|\\-*)(.*)",
+          "{{ if .Config.enhancedAnime }}$1 E$3 $5{{ else }}$1$2$3$4$5{{ end }}"
+        ]
+      },
       { "name": "replace", "args": ["\"", ""] },
       { "name": "replace", "args": ["  ", " "] },
       { "name": "trim" },
@@ -357,7 +365,10 @@
         "filters": [
           {
             "name": "re_replace",
-            "args": ["(.*)(\\.| |\\-)(\\d{2,3})(\\.| |\\-)(.*)", "$1 E$3 $5"]
+            "args": [
+              "(.*)(\\.|\\s|\\-)(\\d{2,3})(\\.|\\s|\\-)(.*)",
+              "$1 E$3 $5"
+            ]
           }
         ]
       },

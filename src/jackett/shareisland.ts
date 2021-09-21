@@ -92,7 +92,7 @@ export const definition: TrackerDefinition = {
       sortDirection: '{{ .Config.type }}',
       perPage: 100,
       page: 1,
-      freeleech: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
     },
     keywordsfilters: [
       { name: 'diacritics', args: 'replace' },
@@ -161,6 +161,10 @@ export const definition: TrackerDefinition = {
           {
             name: 'replace',
             args: ['https://via.placeholder.com/90x135', ''],
+          },
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/400x600', ''],
           },
         ],
       },

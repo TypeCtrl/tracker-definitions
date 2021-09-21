@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'acrossthetasman',
   name: 'Across The Tasman',
   description: 'ATT is a torrent site for Rugby and other sports played in Australia',
-  language: 'en-EN',
+  language: 'en-AU',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://acrossthetasman.com/'],

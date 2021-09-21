@@ -88,20 +88,8 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       files: { selector: 'td:nth-child(5)' },
-      size: {
-        selector: 'td:nth-child(7)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
-      grabs: {
-        selector: 'td:nth-child(7)',
-        filters: [
-          { name: 'replace', args: [',', ''] },
-          { name: 'regexp', args: '(\\d+)' },
-        ],
-      },
+      size: { selector: 'td:nth-child(7)' },
+      grabs: { selector: 'td:nth-child(7)' },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
       poster: {

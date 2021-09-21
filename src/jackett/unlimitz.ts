@@ -144,11 +144,15 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   download: {
-    selector: 'a[href^="d.php?keyalert1="]',
-    attribute: 'href',
-    filters: [
-      { name: 'replace', args: ['d.php?keyalert1=', '/dI.php/'] },
-      { name: 'replace', args: ['&keyalert2=', '/'] },
+    selectors: [
+      {
+        selector: 'a[href^="d.php?keyalert1="]',
+        attribute: 'href',
+        filters: [
+          { name: 'replace', args: ['d.php?keyalert1=', '/dI.php/'] },
+          { name: 'replace', args: ['&keyalert2=', '/'] },
+        ],
+      },
     ],
   },
   search: {
@@ -189,10 +193,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-child(8)' },
-      grabs: {
-        selector: 'td:nth-child(9)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(9)' },
       seeders: { selector: 'td:nth-child(10)' },
       leechers: { selector: 'td:nth-child(11)' },
       downloadvolumefactor: {

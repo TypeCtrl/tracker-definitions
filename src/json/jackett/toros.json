@@ -5,7 +5,8 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://www.toros.co/", "https://toros.nocensor.space/"],
+  "links": ["https://www.toros.co/", "https://toros.nocensor.work/"],
+  "legacylinks": ["https://toros.nocensor.space/"],
   "caps": {
     "categorymappings": [
       { "id": "1", "cat": "Movies", "desc": "Movies" },
@@ -49,7 +50,11 @@
       "options": { "desc": "desc", "asc": "asc" }
     }
   ],
-  "download": { "selector": "a[href^=\"magnet:?xt=\"]", "attribute": "href" },
+  "download": {
+    "selectors": [
+      { "selector": "a[href^=\"magnet:?xt=\"]", "attribute": "href" }
+    ]
+  },
   "search": {
     "paths": [
       {

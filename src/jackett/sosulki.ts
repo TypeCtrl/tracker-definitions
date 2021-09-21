@@ -40,12 +40,13 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   settings: [],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}&titleonly=3catlist[]=0&searchdate=0&resorder=desc{{ else }}lastnews/{{ end }}',
+        path: '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}&titleonly=3catlist[]=0&searchdate=0&resorder=desc{{ else }}lastnews/{{ end }}',
       },
     ],
     rows: { selector: 'tr.fr_viewn_in:has(td.frs:contains("B"))' },

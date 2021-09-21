@@ -2,7 +2,7 @@
   "id": "thesceneplace",
   "name": "TheScenePlace",
   "description": "TheScenePlace (TSP) is a Private site for TV / MOVIES / GENERAL",
-  "language": "en-EN",
+  "language": "en-US",
   "type": "private",
   "encoding": "UTF-8",
   "links": ["https://www.thesceneplace.com/"],
@@ -129,10 +129,7 @@
       },
       "seeders": { "selector": "td:nth-last-child(7)" },
       "leechers": { "selector": "td:nth-last-child(6)" },
-      "grabs": {
-        "selector": "td:nth-last-child(5)",
-        "filters": [{ "name": "replace", "args": ["---", "0"] }]
-      },
+      "grabs": { "selector": "td:nth-last-child(5)" },
       "size": { "selector": "td:nth-last-child(4)" },
       "downloadvolumefactor": {
         "case": {

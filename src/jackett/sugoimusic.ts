@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'sugoimusic',
   name: 'SugoiMusic',
   description: 'SugoiMusic is a Private Torrent Tracker for Asian MUSIC / TV',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://sugoimusic.me/'],

@@ -139,10 +139,7 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '02/01/2006 -07:00' },
         ],
       },
-      grabs: {
-        selector: 'td:nth-last-child(4)',
-        filters: [{ name: 'replace', args: ['---', '0'] }],
-      },
+      grabs: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(6)' },
       leechers: { selector: 'td:nth-last-child(5)' },
       downloadvolumefactor: {

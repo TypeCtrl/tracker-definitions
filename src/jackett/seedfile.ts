@@ -26,12 +26,12 @@ export const definition: TrackerDefinition = {
       { id: '14', cat: 'PC/Games', desc: 'Jocuri PC' },
       { id: '15', cat: 'Audio', desc: 'Muzică' },
       { id: '16', cat: 'PC/Mobile-Other', desc: 'Mobile' },
-      { id: '17', cat: 'PC', desc: 'Programe\t' },
+      { id: '17', cat: 'PC', desc: 'Programe' },
       { id: '18', cat: 'TV/HD', desc: 'Seriale HD' },
-      { id: '19', cat: 'TV/HD', desc: 'Seriale HD-RO\t' },
+      { id: '19', cat: 'TV/HD', desc: 'Seriale HD-RO' },
       { id: '20', cat: 'TV/SD', desc: 'Seriale TV' },
-      { id: '21', cat: 'TV/SD', desc: 'Seriale TV-RO ' },
-      { id: '22', cat: 'TV/Sport', desc: 'Sport ' },
+      { id: '21', cat: 'TV/SD', desc: 'Seriale TV-RO' },
+      { id: '22', cat: 'TV/Sport', desc: 'Sport' },
       { id: '23', cat: 'Audio/Video', desc: 'Video Clip' },
       { id: '24', cat: 'XXX', desc: 'Adult 18+' },
       { id: '36', cat: 'Movies/3D', desc: 'Video 3D' },
@@ -65,7 +65,9 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.recover-error2' }],
     test: { path: 'profile.php' },
   },
-  download: { selector: 'a[href^="download.php/"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="download.php/"]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'download-torrents' }],
     inputs: {

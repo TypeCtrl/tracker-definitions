@@ -8,6 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['http://www.hd-cztorrent.cz/'],
+  legacylinks: ['https://www.hd-cztorrent.cz/'],
   caps: {
     categorymappings: [
       { id: '37', cat: 'Movies/DVD', desc: 'DVD' },

@@ -32,6 +32,13 @@ export const definition: TrackerDefinition = {
       default: 2,
       options: { '1': 'asc', '2': 'desc' },
     },
+    {
+      name: 'info_row',
+      type: 'info',
+      label: 'Search settings',
+      default:
+        'This Indexer requires specifc columns to be active on your account search settings.<br>Login to the web site and ensure that only the <b>Автор</b> (Author) and <b>Форум</b> (Forum) checkboxes are ticked in the <b>Показывать колонку</b> (Show Columns) section of the <b>Настройки поиска Torrent</b> (Torrent Search Settings) page.<br>Having other columns active may prevent the Indexer processing/displaying results correctly.',
+    },
   ],
   caps: {
     categorymappings: [
@@ -1556,17 +1563,7 @@ export const definition: TrackerDefinition = {
       },
       size: { selector: 'td:nth-child(6) > u' },
       grabs: { selector: 'td:nth-child(9)' },
-      date: {
-        selector: 'td:nth-child(11)',
-        filters: [
-          {
-            name: 're_replace',
-            args: ['.*(\\d{2}-\\d{2}-\\d{4})(\\d{2}:\\d{2})', '$1 $2'],
-          },
-          { name: 'append', args: ':00 +03:00' },
-          { name: 'dateparse', args: '02-01-2006 15:04:05 -07:00' },
-        ],
-      },
+      date: { selector: 'td:last-child > u' },
       seeders: { selector: 'td.seedmed > b' },
       leechers: { selector: 'td.leechmed > b' },
       downloadvolumefactor: {

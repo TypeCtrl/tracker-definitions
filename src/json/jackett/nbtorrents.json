@@ -129,10 +129,7 @@
         ]
       },
       "size": { "selector": "td:nth-of-type(8)" },
-      "grabs": {
-        "selector": "td:nth-of-type(9)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-of-type(9)" },
       "seeders": { "selector": "td:nth-of-type(10)" },
       "leechers": { "selector": "td:nth-of-type(11)" },
       "downloadvolumefactor": {

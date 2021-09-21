@@ -125,7 +125,9 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.myFrame:contains("Access Denied")' }],
     test: { path: 'search.php' },
   },
-  download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?"]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'search.php' }],
     inputs: {

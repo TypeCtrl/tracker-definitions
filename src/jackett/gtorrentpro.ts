@@ -21,8 +21,12 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   download: {
-    selector: 'a[href^="/engine/download.php?id="]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a[href^="/engine/download.php?id="]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [{ path: 'index.php' }],

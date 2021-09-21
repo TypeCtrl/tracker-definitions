@@ -63,10 +63,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?id="]',
         attribute: 'href',
       },
-      grabs: {
-        selector: 'a[href*="&snatched=1#snatched"]',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'a[href*="&snatched=1#snatched"]' },
       size: { selector: 'td:nth-child(7)', remove: 'a' },
       date: { selector: 'div#cleft > font' },
       seeders: { selector: 'td:nth-child(5)' },

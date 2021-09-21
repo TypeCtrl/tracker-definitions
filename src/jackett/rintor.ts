@@ -127,7 +127,7 @@ export const definition: TrackerDefinition = {
       name: 'type',
       type: 'select',
       label: 'Order requested from site',
-      default: 1,
+      default: 2,
       options: { '1': 'asc', '2': 'desc' },
     },
   ],

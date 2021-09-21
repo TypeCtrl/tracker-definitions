@@ -49,12 +49,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar{{ else }}descargas{{ end }}',
+        path: '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar{{ else }}descargas{{ end }}',
       },
       {
-        path:
-          '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar&page=2{{ else }}descargas{{ end }}',
+        path: '{{ if .Keywords }}buscar/descargas/{{ .Config.category }}/{{ .Keywords }}?search=Buscar&page=2{{ else }}descargas{{ end }}',
       },
     ],
     keywordsfilters: [

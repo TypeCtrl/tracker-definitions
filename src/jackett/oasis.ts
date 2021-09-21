@@ -210,8 +210,7 @@ export const definition: TrackerDefinition = {
         torrent: '{{ re_replace .DownloadUri.PathAndQuery "^(.+?)(\\d+)$" "$2" }}',
       },
     },
-    selector: 'a[href*="/Telechargement/"]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href*="/Telechargement/"]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'TTV3/Torrents/Recherche' }],

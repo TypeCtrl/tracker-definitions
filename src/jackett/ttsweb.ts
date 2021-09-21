@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'ttsweb',
   name: 'TTsWeb',
   description: 'TTsWeb is a Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://ttsweb.org/'],
@@ -159,10 +159,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-last-child(5)' },
-      grabs: {
-        selector: 'td:nth-last-child(4)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {

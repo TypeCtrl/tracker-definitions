@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'pornleech',
   name: 'PornLeech',
   description: 'PornLeech is a Public Tracker for 3X',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://pornleech.ch/'],
@@ -88,10 +88,7 @@ export const definition: TrackerDefinition = {
       },
       grabs: {
         selector: 'td[valign="middle"] > p:nth-child(5)',
-        filters: [
-          { name: 'regexp', args: 'Complete:\\s* \\s*(.+?)$' },
-          { name: 'replace', args: ['---', '0'] },
-        ],
+        filters: [{ name: 'regexp', args: 'Complete:\\s* \\s*(.+?)$' }],
       },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },

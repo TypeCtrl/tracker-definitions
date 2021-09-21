@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'lepornoinfo',
   name: 'LePorno.info',
   description: 'LePorno.info is a Public Tracker for 3X',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://leporno.info/'],

@@ -51,8 +51,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          'browse/{{ if or .Keywords .Config.freeleech }}search/{{ .Config.sort }}/{{ else }}index/{{ .Config.sort }}/{{ end }}{{ if .Config.freeleech }}free{{ else }}name{{ end }}{{ if .Keywords }}/{{ .Keywords }}{{ else }}{{ end }}',
+        path: 'browse/{{ if or .Keywords .Config.freeleech }}search/{{ .Config.sort }}/{{ else }}index/{{ .Config.sort }}/{{ end }}{{ if .Config.freeleech }}free{{ else }}name{{ end }}{{ if .Keywords }}/{{ .Keywords }}{{ else }}{{ end }}',
       },
     ],
     rows: { selector: 'tr.default, tr.danger, tr.success' },
@@ -76,14 +75,11 @@ export const definition: TrackerDefinition = {
         optional: true,
         filters: [
           { name: 'append', args: ' -07:00' },
-          { name: 'dateparse', args: '3:04pm 2006-01-02 -07:00' },
+          { name: 'dateparse', args: '3:04pm 2006-1-2 -07:00' },
         ],
       },
       size: { selector: 'td:nth-child(5) div:nth-child(1)' },
-      files: {
-        selector: 'td:nth-child(5) div:nth-child(2)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      files: { selector: 'td:nth-child(5) div:nth-child(2)' },
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },
       grabs: { selector: 'td:nth-child(8)' },

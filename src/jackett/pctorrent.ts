@@ -15,14 +15,17 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   download: {
-    selector: 'a[href*="/engine/download.php?id="]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a[href*="/engine/download.php?id="]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}{{ else }}{{ end }}',
+        path: '{{ if .Keywords }}?do=search&subaction=search&search_start=0&full_search=1&result_from=1&story={{ .Keywords }}{{ else }}{{ end }}',
       },
     ],
     rows: {

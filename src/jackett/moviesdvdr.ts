@@ -14,7 +14,9 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: '1', cat: 'Movies/DVD' }],
   },
   settings: [],
-  download: { selector: 'a.torrent_download', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a.torrent_download', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },

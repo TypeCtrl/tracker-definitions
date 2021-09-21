@@ -249,7 +249,7 @@ export const definition: TrackerDefinition = {
       },
       download: { selector: 'td a.torrentlink', attribute: 'href' },
       magnet: { selector: 'td a.magnetlink', attribute: 'href' },
-      size: { text: '500 MB' },
+      size: { text: '512 MB' },
       date: {
         selector: 'td:nth-of-type(3)',
         filters: [

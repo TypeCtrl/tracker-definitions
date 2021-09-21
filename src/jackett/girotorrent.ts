@@ -7,7 +7,9 @@ export const definition: TrackerDefinition = {
   language: 'it-IT',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['http://girotorrent.org/'],
+  testlinktorrent: false,
+  links: ['https://girotorrent.org/'],
+  legacylinks: ['http://girotorrent.org/'],
   caps: {
     categorymappings: [
       { id: '13', cat: 'Books/Mags', desc: 'Giornali e Riviste' },
@@ -117,17 +119,7 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   download: {
-    before: {
-      path: 'thanks.php',
-      method: 'post',
-      inputs: {
-        infohash: '{{ .DownloadUri.Query.id }}',
-        thanks: 1,
-        rndval: '1487013827343',
-      },
-    },
-    selector: 'a[href^="download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'index.php' }],
@@ -213,19 +205,16 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
       },
       date: {
-        selector: 'td:nth-last-child(8)',
+        selector: 'td:nth-last-child(9)',
         filters: [
           { name: 'append', args: ' +00:00' },
           { name: 'dateparse', args: '02/01/2006 -07:00' },
         ],
       },
-      seeders: { selector: 'td:nth-last-child(7)' },
-      leechers: { selector: 'td:nth-last-child(6)' },
-      grabs: {
-        selector: 'td:nth-last-child(5)',
-        filters: [{ name: 'replace', args: ['---', '0'] }],
-      },
-      size: { selector: 'td:nth-last-child(3)' },
+      seeders: { selector: 'td:nth-last-child(8)' },
+      leechers: { selector: 'td:nth-last-child(7)' },
+      grabs: { selector: 'td:nth-last-child(6)' },
+      size: { selector: 'td:nth-last-child(4)' },
       downloadvolumefactor: {
         case: {
           'img[alt="Free Leech"]': 0,

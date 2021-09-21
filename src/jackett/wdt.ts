@@ -113,8 +113,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
-      $raw:
-        'cats3[]=14&cats3[]=16&cats3[]=13&cats3[]=15&cats5[]=29&cats5[]=28&cats5[]=30&cats5[]=18&cats1[]=34&cats1[]=9&cats1[]=33&cats6[]=32&cats6[]=31&cats6[]=20&cats7[]=19&cats7[]=35&cats7[]=36&cats2[]=37&cats2[]=38&cats2[]=12&cats2[]=40&cats2[]=44&cats2[]=11&cats2[]=42&cats2[]=43&cats2[]=21&cats2[]=22&cats2[]=41&cats2[]=10&cats4[]=26&cats4[]=24&cats4[]=27&cats4[]=17&cats4[]=23&cats4[]=25',
+      $raw: 'cats3[]=14&cats3[]=16&cats3[]=13&cats3[]=15&cats5[]=29&cats5[]=28&cats5[]=30&cats5[]=18&cats1[]=34&cats1[]=9&cats1[]=33&cats6[]=32&cats6[]=31&cats6[]=20&cats7[]=19&cats7[]=35&cats7[]=36&cats2[]=37&cats2[]=38&cats2[]=12&cats2[]=40&cats2[]=44&cats2[]=11&cats2[]=42&cats2[]=43&cats2[]=21&cats2[]=22&cats2[]=41&cats2[]=10&cats4[]=26&cats4[]=24&cats4[]=27&cats4[]=17&cats4[]=23&cats4[]=25',
       search: '{{ .Keywords }}',
       searchin: 'title',
       incldead: 1,
@@ -153,10 +152,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-child(8)' },
-      grabs: {
-        selector: 'td:nth-child(9)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(9)' },
       seeders: { selector: 'td:nth-child(10)' },
       leechers: { selector: 'td:nth-child(11)' },
       downloadvolumefactor: {

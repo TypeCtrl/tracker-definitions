@@ -149,26 +149,11 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: { selector: 'a.thumbnail > span > img', attribute: 'src' },
-      grabs: {
-        selector: 'td:nth-child(9)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
-      size: {
-        selector: 'td:nth-child(6)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      grabs: { selector: 'td:nth-child(9)' },
+      size: { selector: 'td:nth-child(6)' },
       files: { selector: 'a[href*="&filelist=1"]' },
-      seeders: {
-        selector: 'td:has(a[href*="&toseeders="])',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
-      leechers: {
-        selector: 'td:has(a[href*="&todlers="])',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      seeders: { selector: 'td:has(a[href*="&toseeders="])' },
+      leechers: { selector: 'td:has(a[href*="&todlers="])' },
       date: {
         selector: 'td:nth-child(5)',
         filters: [

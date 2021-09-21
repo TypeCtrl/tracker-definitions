@@ -10,8 +10,8 @@ export const definition: TrackerDefinition = {
   followredirect: true,
   links: [
     'https://www.torrentdownload.info/',
-    'https://torrentdownload.unblockit.li/',
-    'https://torrentdownload.nocensor.space/',
+    'https://torrentdownload.unblockit.ws/',
+    'https://torrentdownload.nocensor.work/',
   ],
   legacylinks: [
     'https://torrentdownload.unblockit.pro/',
@@ -39,6 +39,10 @@ export const definition: TrackerDefinition = {
     'https://torrentdownload.unblocked.monster/',
     'https://torrentdownload.unblockit.club/',
     'https://torrentdownload.unblockit.onl/',
+    'https://torrentdownload.unblockit.li/',
+    'https://torrentdownload.unblockit.uno/',
+    'https://torrentdownload.unblockit.ch/',
+    'https://torrentdownload.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -169,7 +173,9 @@ export const definition: TrackerDefinition = {
       options: { d: 'created', s: 'seeders', _: 'size' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   login: { method: 'cookie', test: { path: '/' } },
   search: {
     paths: [

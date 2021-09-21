@@ -126,7 +126,10 @@ export const definition: TrackerDefinition = {
       type: '{{ .Config.type }}',
       free: '{{ if .Config.freeleech }}on{{ else }}{{ end }}',
     },
-    keywordsfilters: [{ name: 'replace', args: ['.', ' '] }],
+    keywordsfilters: [
+      { name: 'replace', args: ['.', ' '] },
+      { name: 're_replace', args: ['[^\\w\\d\\(\\)]+', '%'] },
+    ],
     rows: {
       selector: 'table> tbody > tr[class^="torrents-table__"]',
       filters: [{ name: 'andmatch', args: 50 }],

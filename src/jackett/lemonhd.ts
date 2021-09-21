@@ -93,7 +93,7 @@ export const definition: TrackerDefinition = {
       },
       title: {
         optional: true,
-        selector: 'a[title][href^="details_"] > b',
+        selector: 'a[title][href^="details_"]',
         attribute: 'title',
       },
       details: { selector: 'a[href^="details_"]', attribute: 'href' },
@@ -106,17 +106,17 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
-        selector: 'td:nth-child(4):not(:has(span[title])):not(:has(a))',
+        selector: 'td:nth-last-child(7):not(:has(span[title])):not(:has(a))',
         optional: true,
         filters: [
           { name: 'append', args: ' +08:00' },
           { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
-      size: { selector: 'td:nth-child(5)' },
-      seeders: { selector: 'td:nth-child(6)' },
-      leechers: { selector: 'td:nth-child(7)' },
-      grabs: { selector: 'td:nth-child(8)' },
+      size: { selector: 'td:nth-last-child(6)' },
+      seeders: { selector: 'td:nth-last-child(5)' },
+      leechers: { selector: 'td:nth-last-child(4)' },
+      grabs: { selector: 'td:nth-last-child(3)' },
       downloadvolumefactor: {
         case: {
           'img.pro_free': 0,
@@ -135,7 +135,7 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      description: { selector: 'td:nth-child(2)', remove: 'a, img' },
+      description: { selector: 'a[href^="details_"]', remove: 'a, img' },
     },
   },
   source: 'jackett',

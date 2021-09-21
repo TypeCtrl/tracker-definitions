@@ -7,6 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'fi-FI',
   type: 'private',
   encoding: 'UTF-8',
+  testlinktorrent: false,
   links: ['https://finvip.org/'],
   caps: {
     categorymappings: [
@@ -93,8 +94,7 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },
   },
   download: {
-    selector: 'a[href^="download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'index.php' }],

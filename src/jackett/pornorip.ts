@@ -119,56 +119,47 @@ export const definition: TrackerDefinition = {
       {
         id: '46',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Эротические студии видео / Erotic Video Library',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Эротические студии видео / Erotic Video Library',
       },
       {
         id: '47',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Эротические студии Фото / Erotic Picture Gallery',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Эротические студии Фото / Erotic Picture Gallery',
       },
       {
         id: '48',
         cat: 'XXX',
-        desc:
-          "Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Паки сайтрипов эротических студий / Erotic Picture SiteRip's",
+        desc: "Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Паки сайтрипов эротических студий / Erotic Picture SiteRip's",
       },
       {
         id: '49',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Любительское фото / Amateur Picture',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Любительское фото / Amateur Picture',
       },
       {
         id: '50',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Подборки по актрисам / Actresses Picture Packs',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Подборки по актрисам / Actresses Picture Packs',
       },
       {
         id: '51',
         cat: 'XXX',
-        desc:
-          "Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Подборки сайтрипов / SiteRip's Picture Packs",
+        desc: "Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Подборки сайтрипов / SiteRip's Picture Packs",
       },
       {
         id: '52',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Подборки сетов / Picture Sets',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Подборки сетов / Picture Sets',
       },
       {
         id: '53',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Нетрадиционное порно фото',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Нетрадиционное порно фото',
       },
       {
         id: '76',
         cat: 'XXX',
-        desc:
-          'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Комиксы и рисунки, Журналы / Magazines & Comix',
+        desc: 'Эротические студии и Фотосеты, Комиксы, Журналы / Erotic, Pictures, Magazines & Comix Комиксы и рисунки, Журналы / Magazines & Comix',
       },
       {
         id: '6',

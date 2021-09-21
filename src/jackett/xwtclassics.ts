@@ -88,8 +88,10 @@ export const definition: TrackerDefinition = {
       selector: 'table[border="0"][cellspacing="0"][cellpadding="5"] tr:has(a[href^="download.php?id="])',
     },
     fields: {
-      category: {
+      category: { text: 8 },
+      'category|noappend': {
         selector: 'a[href^="browse.php?cat="]',
+        optional: true,
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
@@ -113,10 +115,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       files: { selector: 'td:nth-child(3)' },
-      grabs: {
-        selector: 'td:nth-child(7)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(7)' },
       size: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },

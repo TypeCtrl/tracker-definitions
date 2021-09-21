@@ -48,10 +48,7 @@
       },
       "seeders": { "selector": "td:nth-child(9)" },
       "leechers": { "selector": "td:nth-child(10)" },
-      "grabs": {
-        "selector": "td:nth-child(8)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-child(8)" },
       "files": { "selector": "td:nth-child(4)" },
       "size": { "selector": "td:nth-child(7)" },
       "downloadvolumefactor": { "text": 1 },

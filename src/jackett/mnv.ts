@@ -151,11 +151,7 @@ export const definition: TrackerDefinition = {
       size: {
         selector: 'a[href^="details.php"]',
         attribute: 'onMouseover',
-        filters: [
-          { name: 'regexp', args: 'Größe: <b>(.*?)</b>' },
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
+        filters: [{ name: 'regexp', args: 'Größe: <b>(.*?)</b>' }],
       },
       seeders: {
         selector: 'a[href^="details.php"]',

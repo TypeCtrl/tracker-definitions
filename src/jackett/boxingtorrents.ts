@@ -75,7 +75,9 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'td.embedded:contains("Login failed!")' }],
     test: { path: 'browse.php', selector: 'a[href="logout.php"]' },
   },
-  download: { selector: 'a[href^="download.php"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="download.php"]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'browse.php' }],
     inputs: {
@@ -113,10 +115,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-last-child(5)' },
-      grabs: {
-        selector: 'td:nth-last-child(4)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
       downloadvolumefactor: {

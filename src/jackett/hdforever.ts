@@ -138,8 +138,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'append', args: '&usetoken=1' }],
       },
       download: {
-        text:
-          '{{ if .Config.usetoken }}{{ .Result.download-usetoken }}{{ else }}{{ .Result.download-regular }}{{ end }}',
+        text: '{{ if .Config.usetoken }}{{ .Result.download-usetoken }}{{ else }}{{ .Result.download-regular }}{{ end }}',
       },
       title_phase1: {
         selector: 'div.group_info',

@@ -1,8 +1,8 @@
 {
   "id": "greekteam",
   "name": "Greek Team",
-  "language": "el-GR",
   "description": "Greek Team is a GREEK Private site for TV / MOVIES / GENERAL",
+  "language": "el-GR",
   "type": "private",
   "encoding": "WINDOWS-1253",
   "links": ["https://www.greek-team.cc/"],
@@ -136,8 +136,7 @@
         "selector": "td:has(a[href$=\"filelist=1\"]) ~ td ~ td ~ td ~ td"
       },
       "grabs": {
-        "selector": "td:has(a[href$=\"filelist=1\"]) ~ td ~ td ~ td ~ td ~ td",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
+        "selector": "td:has(a[href$=\"filelist=1\"]) ~ td ~ td ~ td ~ td ~ td"
       },
       "seeders": {
         "selector": "td:has(a[href$=\"filelist=1\"]) ~ td ~ td ~ td ~ td ~ td ~ td"

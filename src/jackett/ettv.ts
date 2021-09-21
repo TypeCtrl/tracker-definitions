@@ -11,8 +11,8 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.ettvcentral.com/',
     'https://ettv.unblockninja.com/',
-    'https://ettv.unblockit.li/',
-    'https://ettv.nocensor.space/',
+    'https://ettv.unblockit.ws/',
+    'https://ettv.nocensor.work/',
   ],
   legacylinks: [
     'https://www.ettv.tv/',
@@ -45,6 +45,10 @@ export const definition: TrackerDefinition = {
     'https://ettv.unblocked.monster/',
     'https://ettv.unblockit.club/',
     'https://ettv.unblockit.onl/',
+    'https://ettv.unblockit.li/',
+    'https://ettv.unblockit.uno/',
+    'https://ettv.unblockit.ch/',
+    'https://ettv.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -134,7 +138,9 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',

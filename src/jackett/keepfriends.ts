@@ -165,8 +165,7 @@ export const definition: TrackerDefinition = {
         selector: 'table.torrentname > tbody > tr > td.embedded',
       },
       title: {
-        text:
-          '{{ if and .Config.english_title .Result.title_english }}{{ .Result.title_english }}{{ else }}{{ .Result.title_raw }}{{ end }}',
+        text: '{{ if and .Config.english_title .Result.title_english }}{{ .Result.title_english }}{{ else }}{{ .Result.title_raw }}{{ end }}',
       },
     },
   },

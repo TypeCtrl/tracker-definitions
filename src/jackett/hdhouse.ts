@@ -50,7 +50,9 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'index.php' }],
     keywordsfilters: [
@@ -70,6 +72,11 @@ export const definition: TrackerDefinition = {
       story: '{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Today.Year }}{{ end }}',
       sortby: '{{ .Config.sort }}',
       resorder: '{{ .Config.type }}',
+    },
+    headers: {
+      'User-Agent': [
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.35',
+      ],
     },
     rows: { selector: 'div.movie-item' },
     fields: {

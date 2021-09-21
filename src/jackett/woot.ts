@@ -92,11 +92,7 @@ export const definition: TrackerDefinition = {
       },
       size: {
         selector: 'td:last-child',
-        filters: [
-          { name: 'regexp', args: '/ (.+? [T|G|M|K]*B)' },
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
+        filters: [{ name: 'regexp', args: '/ (.+? [T|G|M|K]*B)' }],
       },
       date: {
         selector: 'td:last-child',

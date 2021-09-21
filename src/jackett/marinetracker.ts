@@ -401,6 +401,11 @@ export const definition: TrackerDefinition = {
       { id: '286', cat: 'Audio', desc: 'Audio-Fiction' },
       { id: '111', cat: 'Books', desc: 'Yachting, sailing, boating' },
       {
+        id: '318',
+        cat: 'Books',
+        desc: 'Yachting, sailing, boating-Sailing life',
+      },
+      {
         id: '298',
         cat: 'Books',
         desc: 'Yachting, sailing, boating-Cruising Guides',
@@ -535,6 +540,7 @@ export const definition: TrackerDefinition = {
         desc: 'Navy-Naval shipbuilding (1950 - 20??)',
       },
       { id: '220', cat: 'Books', desc: 'Fishing & Spearfishing' },
+      { id: '319', cat: 'Books', desc: 'Fishing tackle and knots' },
       { id: '294', cat: 'Books', desc: 'Environmental protection' },
       { id: '242', cat: 'Books', desc: 'Foreign language books' },
       { id: '243', cat: 'Books', desc: 'Rarity' },

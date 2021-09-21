@@ -62,23 +62,57 @@
     ],
     "modes": { "search": ["q"] }
   },
-  "login": {
-    "path": "login.php",
-    "method": "form",
-    "form": "form",
-    "inputs": {
-      "username": "{{ .Config.username }}",
-      "password": "{{ .Config.password }}"
+  "settings": [
+    { "name": "cookie", "type": "text", "label": "Cookie" },
+    {
+      "name": "info",
+      "type": "info",
+      "label": "How to get the Cookie",
+      "default": "<ol><li>Login to this tracker with your browser<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>"
     },
-    "captcha": { "type": "image", "selector": "img#freecap", "input": "word" },
-    "error": [{ "selector": "table:contains(\"Login failed!\")" }],
-    "test": { "path": "main.php" }
+    {
+      "name": "freeleech",
+      "type": "checkbox",
+      "label": "Search freeleech only",
+      "default": false
+    },
+    {
+      "name": "sort",
+      "type": "select",
+      "label": "Sort requested from site",
+      "default": "added",
+      "options": {
+        "added": "created",
+        "seeders": "seeders",
+        "size": "size",
+        "name": "title"
+      }
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "label": "Order requested from site",
+      "default": "DESC",
+      "options": { "DESC": "desc", "ASC": "asc" }
+    },
+    {
+      "name": "info_tpp",
+      "type": "info",
+      "label": "Results Per Page",
+      "default": "For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile."
+    }
+  ],
+  "login": {
+    "method": "cookie",
+    "inputs": { "cookie": "{{ .Config.cookie }}" },
+    "test": { "path": "main.php", "selector": "a[href^=\"logout.php?id=\"]" }
   },
   "search": {
     "paths": [{ "path": "browse.php" }],
     "inputs": {
       "$raw": "{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}",
       "search": "{{ .Keywords }}",
+      "incldead": "{{ if .Config.freeleech }}3{{ else }}1{{ end }}",
       "titleonly": 1,
       "nonboolean": 0
     },
@@ -91,7 +125,10 @@
         "attribute": "href",
         "filters": [{ "name": "querystring", "args": "cat" }]
       },
-      "title": { "filters": null, "selector": "td:nth-child(2) b" },
+      "title": {
+        "selector": "a[href^=\"details.php?id=\"]",
+        "attribute": "title"
+      },
       "details": {
         "selector": "a[href^=\"details.php?id=\"]",
         "attribute": "href"
@@ -103,15 +140,15 @@
       "files": { "selector": "td:nth-child(4)" },
       "date": {
         "selector": "td:nth-child(6)",
-        "filters": [{ "name": "regexp", "args": "(\\d{4}-\\d{2}-\\d{2})" }]
+        "filters": [
+          { "name": "append", "args": " +00:00" },
+          { "name": "dateparse", "args": "2006-01-0215:04:05 -07:00" }
+        ]
       },
       "size": { "selector": "td:nth-child(7)" },
       "grabs": {
         "selector": "td:nth-child(8)",
-        "filters": [
-          { "name": "replace", "args": ["Never", "0"] },
-          { "name": "regexp", "args": "(\\d+)" }
-        ]
+        "filters": [{ "name": "replace", "args": ["Never", "0"] }]
       },
       "seeders": { "selector": "td:nth-child(9)" },
       "leechers": { "selector": "td:nth-child(10)" },
@@ -122,7 +159,9 @@
           "*": 1
         }
       },
-      "uploadvolumefactor": { "case": { "font[color=\"green\"]": 0, "*": 1 } }
+      "uploadvolumefactor": { "case": { "font[color=\"green\"]": 0, "*": 1 } },
+      "minimumratio": { "text": 1 },
+      "minimumseedtime": { "text": 86400 }
     }
   },
   "source": "jackett"

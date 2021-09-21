@@ -181,7 +181,10 @@ export const definition: TrackerDefinition = {
           ':has(div.kat_cat_pic_name:contains("Internal")):has(div.kat_cat_pic_name_b:contains("Sonstiges"))': '132',
         },
       },
-      title: { selector: 'a.selection_a' },
+      title: {
+        selector: 'a.selection_a',
+        filters: [{ name: 're_replace', args: ['^(\\[.*\\])(.*)', '$2'] }],
+      },
       details: { selector: 'a.selection_a', attribute: 'href' },
       download: {
         selector: 'a.selection_a',
@@ -198,21 +201,8 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
-      size: {
-        selector: 'div.selection_unter_ad',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
-      grabs: {
-        selector: 'div.selection_unter_ae',
-        filters: [
-          { name: 'trim', args: 'x' },
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      size: { selector: 'div.selection_unter_ad' },
+      grabs: { selector: 'div.selection_unter_ae' },
       date: {
         selector: 'div.selection_unter_ab:contains(".")',
         optional: true,
@@ -223,20 +213,8 @@ export const definition: TrackerDefinition = {
         ],
       },
       description: { selector: 'selection_unter_af', optional: true },
-      seeders: {
-        selector: 'div.selection_unter_aa',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
-      leechers: {
-        selector: 'div.selection_unter_aaa',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      seeders: { selector: 'div.selection_unter_aa' },
+      leechers: { selector: 'div.selection_unter_aaa' },
       downloadvolumefactor: {
         case: { ':root:has(div.onlyup)': 0, '*': 1 },
       },

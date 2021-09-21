@@ -11,8 +11,8 @@ export const definition: TrackerDefinition = {
   links: [
     'https://www.torrentfunk.com/',
     'https://www.torrentfunk2.com/',
-    'https://torrentfunk.unblockit.li/',
-    'https://torrentfunk.nocensor.space/',
+    'https://torrentfunk.unblockit.ws/',
+    'https://torrentfunk.nocensor.work/',
   ],
   legacylinks: [
     'https://torrentfunk.unblockit.pro/',
@@ -30,6 +30,10 @@ export const definition: TrackerDefinition = {
     'https://torrentfunk.unblockit.buzz/',
     'https://torrentfunk.unblockit.club/',
     'https://torrentfunk.unblockit.onl/',
+    'https://torrentfunk.unblockit.li/',
+    'https://torrentfunk.unblockit.uno/',
+    'https://torrentfunk.unblockit.ch/',
+    'https://torrentfunk.nocensor.space/',
   ],
   caps: {
     categorymappings: [

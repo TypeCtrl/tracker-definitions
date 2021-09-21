@@ -8,9 +8,12 @@
   "links": [
     "https://yourbittorrent.com/",
     "https://yourbittorrent2.com/",
+    "https://yourbittorrent.nocensor.work/"
+  ],
+  "legacylinks": [
+    "https://yourbittorrent.host/",
     "https://yourbittorrent.nocensor.space/"
   ],
-  "legacylinks": ["https://yourbittorrent.host/"],
   "caps": {
     "categorymappings": [
       { "id": "anime", "cat": "TV/Anime", "desc": "Anime" },

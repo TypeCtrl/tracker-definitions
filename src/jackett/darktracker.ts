@@ -878,6 +878,11 @@ export const definition: TrackerDefinition = {
         desc: ' | Оригинальные образы восстановления ОС ноутбуков (нетбуков)',
       },
       {
+        id: '1116',
+        cat: 'PC/0day',
+        desc: ' | Windows 11 (оригинальные образы)',
+      },
+      {
         id: '1083',
         cat: 'PC/0day',
         desc: ' | Windows 10 (оригинальные образы)',

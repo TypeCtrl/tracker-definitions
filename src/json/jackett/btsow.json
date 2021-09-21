@@ -5,7 +5,7 @@
   "language": "en-US",
   "type": "public",
   "encoding": "UTF-8",
-  "links": ["https://btsow.digital"],
+  "links": ["https://btsow.one/"],
   "legacylinks": [
     "https://btos.pw/",
     "https://btio.pw/",
@@ -23,7 +23,10 @@
     "https://btsow.store/",
     "https://btsow.surf/",
     "https://btsow.com/",
-    "https://btsow.cam/"
+    "https://btsow.cam/",
+    "https://btsow.digital/",
+    "https://btsow.shop/",
+    "https://btsow.us/"
   ],
   "caps": {
     "modes": {
@@ -43,7 +46,9 @@
       "default": "BTSOW does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other)."
     }
   ],
-  "download": { "selector": "a#magnetOpen", "attribute": "href" },
+  "download": {
+    "selectors": [{ "selector": "a#magnetOpen", "attribute": "href" }]
+  },
   "search": {
     "paths": [
       {

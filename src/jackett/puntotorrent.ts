@@ -229,19 +229,10 @@ export const definition: TrackerDefinition = {
           },
         ],
       },
-      size: {
-        selector: 'td:nth-child(6)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      size: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'td:nth-child(8) a' },
       leechers: { selector: 'td:nth-child(9) a' },
-      grabs: {
-        selector: 'td:nth-child(10)',
-        filters: [{ name: 'replace', args: ['---', '0'] }],
-      },
+      grabs: { selector: 'td:nth-child(10)' },
       date: {
         selector: 'td:nth-child(5)',
         filters: [

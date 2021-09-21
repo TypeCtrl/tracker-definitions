@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'anaschcc',
   name: 'anasch.cc',
   description: 'anasch.cc is a Private Torrent Tracker for MOVIES / TV / GENERAL',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://anasch.cc/'],
@@ -135,10 +135,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
-      grabs: {
-        selector: 'td:nth-child(9)',
-        filters: [{ name: 'replace', args: ['---', '0'] }],
-      },
+      grabs: { selector: 'td:nth-child(9)' },
       downloadvolumefactor: {
         case: { 'img[src*="freeleech.png"]': 0, '*': 1 },
       },

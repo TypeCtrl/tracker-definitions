@@ -36,12 +36,10 @@ export const definition: TrackerDefinition = {
     keywordsfilters: [{ name: 're_replace', args: [' ', '-'] }, { name: 'tolower' }],
     paths: [
       {
-        path:
-          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{ else }}browse/all/{{ end }}{{ .Config.sort }}/{{ .Config.type }}/',
+        path: '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{ else }}browse/all/{{ end }}{{ .Config.sort }}/{{ .Config.type }}/',
       },
       {
-        path:
-          '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{ else }}browse/all/{{ end }}{{ .Config.sort }}/{{ .Config.type }}/2/',
+        path: '{{ if .Keywords }}{{ re_replace .Keywords "(.).*" "$1" }}/{{ .Keywords }}/{{ else }}browse/all/{{ end }}{{ .Config.sort }}/{{ .Config.type }}/2/',
       },
     ],
     rows: { selector: 'tr:has(td.m)' },

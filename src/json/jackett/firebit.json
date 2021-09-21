@@ -71,8 +71,9 @@
   },
   "settings": [],
   "download": {
-    "selector": "a[href^=\"/download.php?id=\"]",
-    "attribute": "href"
+    "selectors": [
+      { "selector": "a[href^=\"/download.php?id=\"]", "attribute": "href" }
+    ]
   },
   "search": {
     "paths": [
@@ -110,7 +111,8 @@
         "filters": [{ "name": "replace", "args": ["-", "0 B"] }]
       },
       "date": {
-        "selector": "td:nth-child(5), li.meta-date",
+        "selector": "td:nth-child(5):not(:contains(\",\")), li.meta-date:not(:contains(\",\"))",
+        "optional": true,
         "filters": [
           { "name": "append", "args": " +03:00" },
           { "name": "dateparse", "args": "02.01.2006 15:04:05 -07:00" }

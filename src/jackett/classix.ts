@@ -23,8 +23,7 @@ export const definition: TrackerDefinition = {
     test: { path: 'index.php' },
   },
   download: {
-    selector: 'a[href^="download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'torrents-search.php' }],

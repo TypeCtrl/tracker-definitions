@@ -284,10 +284,7 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },
         ],
       },
-      size: {
-        selector: 'div.selection_unter_ad',
-        filters: [{ name: 'replace', args: [',', '.'] }],
-      },
+      size: { selector: 'div.selection_unter_ad' },
       grabs: {
         selector: 'div.selection_unter_ae',
         filters: [{ name: 'replace', args: [' x', ''] }],

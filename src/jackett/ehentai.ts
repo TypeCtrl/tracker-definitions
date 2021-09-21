@@ -13,7 +13,9 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: '1', cat: 'TV/Anime', desc: 'Anime' }],
     modes: { search: ['q'], 'tv-search': ['q', 'season', 'ep'] },
   },
-  download: { selector: 'a[href*="/get/"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href*="/get/"]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

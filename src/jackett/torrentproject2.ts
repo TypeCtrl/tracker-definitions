@@ -61,23 +61,25 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: {
-    selector: '#download > div:nth-child(2) > div:nth-child(1) > a',
-    attribute: 'href',
-    filters: [
-      { name: 'replace', args: ['https://mylink.me.uk/?url=', ''] },
-      { name: 'replace', args: ['https://mylink.cx/?url=', ''] },
-      { name: 'urldecode' },
+    selectors: [
+      {
+        selector: '#download > div:nth-child(2) > div:nth-child(1) > a',
+        attribute: 'href',
+        filters: [
+          { name: 'replace', args: ['https://mylink.me.uk/?url=', ''] },
+          { name: 'replace', args: ['https://mylink.cx/?url=', ''] },
+          { name: 'urldecode' },
+        ],
+      },
     ],
   },
   search: {
     paths: [
       {
-        path:
-          'browse?t={{ if .Keywords }}{{ re_replace .Keywords " " "+" }}{{ else }}{{ end }}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{ else }}{{ end }}',
+        path: 'browse?t={{ if .Keywords }}{{ re_replace .Keywords " " "+" }}{{ else }}{{ end }}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{ else }}{{ end }}',
       },
       {
-        path:
-          'browse?t={{ if .Keywords }}{{ re_replace .Keywords " " "+" }}{{ else }}{{ end }}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{ else }}{{ end }}&p=1',
+        path: 'browse?t={{ if .Keywords }}{{ re_replace .Keywords " " "+" }}{{ else }}{{ end }}&orderby={{ .Config.sort }}{{ if .Config.filter-verified }}&safe=on{{ else }}{{ end }}&p=1',
       },
     ],
     rows: { selector: '#similarfiles div:has(a[href^="/t"])' },
@@ -98,10 +100,7 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-02 15:04:05 -07:00' },
         ],
       },
-      size: {
-        selector: 'div > span:nth-child(5)',
-        filters: [{ name: 're_replace', args: ['\\.([0-9]{3})', '$1'] }],
-      },
+      size: { selector: 'div > span:nth-child(5)' },
       seeders: {
         selector: 'div > span:nth-child(2)',
         filters: [{ name: 'replace', args: ['N/A', '0'] }],

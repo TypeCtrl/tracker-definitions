@@ -106,7 +106,7 @@
           { "name": "replace", "args": [" в ", " "] },
           { "name": "replace", "args": ["января", "January"] },
           { "name": "replace", "args": ["февраля", "February"] },
-          { "name": "replace", "args": ["марта ", "March"] },
+          { "name": "replace", "args": ["марта", "March"] },
           { "name": "replace", "args": ["апреля", "April"] },
           { "name": "replace", "args": ["мая", "May"] },
           { "name": "replace", "args": ["июня", "June"] },

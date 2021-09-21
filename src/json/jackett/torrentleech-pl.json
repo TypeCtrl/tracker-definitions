@@ -127,10 +127,7 @@
         ]
       },
       "size": { "selector": "td:nth-child(5)" },
-      "grabs": {
-        "selector": "td:nth-child(6)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-child(6)" },
       "seeders": {
         "selector": "td:nth-child(7)",
         "filters": [{ "name": "split", "args": ["/", 0] }]
@@ -140,7 +137,8 @@
         "filters": [{ "name": "split", "args": ["/", 1] }]
       },
       "downloadvolumefactor": { "case": { "tr.darmowy": 0, "*": 1 } },
-      "uploadvolumefactor": { "text": 1 }
+      "uploadvolumefactor": { "text": 1 },
+      "minimumseedtime": { "text": 172800 }
     }
   },
   "source": "jackett"

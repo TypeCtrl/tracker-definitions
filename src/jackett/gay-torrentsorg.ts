@@ -23,6 +23,31 @@ export const definition: TrackerDefinition = {
       label: 'Search results',
       default: 'You can increase the number of search results in your profile.<br />Default is 15.',
     },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 'data',
+      options: {
+        data: 'created',
+        seeds: 'seeders',
+        size: 'size',
+        filename: 'title',
+      },
+    },
+    {
+      name: 'order',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
   ],
   caps: {
     categorymappings: [
@@ -61,6 +86,7 @@ export const definition: TrackerDefinition = {
       { id: '41', cat: 'Movies', desc: 'Non-Porn' },
       { id: '41', cat: 'TV', desc: 'Non-Porn' },
       { id: '41', cat: 'Other', desc: 'Non-Porn' },
+      { id: '71', cat: 'XXX', desc: 'Fan Sites' },
     ],
     modes: {
       search: ['q'],
@@ -88,7 +114,9 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}category[]={{.}}&{{end}}',
       search: '{{ .Keywords }}',
-      active: 0,
+      active: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
+      order: '{{ .Config.sort }}',
+      by: '{{ .Config.order }}',
     },
     rows: { selector: 'div.torrent' },
     fields: {

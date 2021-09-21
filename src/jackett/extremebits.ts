@@ -119,10 +119,7 @@ export const definition: TrackerDefinition = {
       files: { selector: 'td:nth-of-type(5)' },
       seeders: { selector: 'td:nth-of-type(7)' },
       leechers: { selector: 'td:nth-of-type(8)' },
-      grabs: {
-        selector: 'td:nth-of-type(10) a',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-of-type(10) a' },
       size: { selector: 'td:nth-of-type(10)', remove: 'a' },
       cat: { selector: 'td:nth-of-type(1) a img', attribute: 'alt' },
       description: {

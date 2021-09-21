@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   links: ['https://torrents-local.xyz/'],
-  certificates: ['85f31ff50a1ee0dbc738a12015efe9ef8708505b'],
+  certificates: ['97aed6b77a962dd1a3f6ed3eb03801a74138f71c'],
   caps: {
     categorymappings: [
       { id: '8', cat: 'Movies', desc: 'Арт-хаус и авторское кино' },

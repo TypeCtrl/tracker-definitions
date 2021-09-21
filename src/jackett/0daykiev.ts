@@ -192,18 +192,13 @@ export const definition: TrackerDefinition = {
       size: {
         selector: 'td:nth-child(4)',
         filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
           { name: 'replace', args: ['ТБ', 'TB'] },
           { name: 'replace', args: ['ГБ', 'GB'] },
           { name: 'replace', args: ['МБ', 'MB'] },
           { name: 'replace', args: ['КБ', 'KB'] },
         ],
       },
-      grabs: {
-        selector: 'td:nth-child(5)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(5)' },
       seeders: {
         selector: 'td:nth-child(6)',
         filters: [{ name: 'split', args: ['|', 0] }],

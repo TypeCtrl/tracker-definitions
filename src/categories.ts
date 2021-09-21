@@ -53,6 +53,7 @@ export type Categories =
   | 'TV/Anime'
   | 'TV/Documentary'
   | 'XXX'
+  | 'XXX/SD'
   | 'XXX/DVD'
   | 'XXX/WMV'
   | 'XXX/XviD'
@@ -124,6 +125,7 @@ export const TORZNAB_CATEGORIES: Record<Categories, number> = {
   'TV/Anime': 5070,
   'TV/Documentary': 5080,
   XXX: 6000,
+  'XXX/SD': 6010,
   'XXX/DVD': 6010,
   'XXX/WMV': 6020,
   'XXX/XviD': 6030,

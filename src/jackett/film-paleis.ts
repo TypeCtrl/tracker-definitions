@@ -75,8 +75,7 @@ export const definition: TrackerDefinition = {
         submit: 'Opslaan',
       },
     },
-    selector: 'a[href^="download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'browse.php' }],
@@ -132,7 +131,6 @@ export const definition: TrackerDefinition = {
       },
       grabs: {
         selector: 'td:nth-child(4) table tr:nth-child(2) td:nth-child(1)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       date: {
         selector: 'td:nth-child(4) table tr:nth-child(2) td:nth-child(2)',

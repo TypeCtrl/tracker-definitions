@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.toros.co/', 'https://toros.nocensor.space/'],
+  links: ['https://www.toros.co/', 'https://toros.nocensor.work/'],
+  legacylinks: ['https://toros.nocensor.space/'],
   caps: {
     categorymappings: [
       { id: '1', cat: 'Movies', desc: 'Movies' },
@@ -51,12 +52,13 @@ export const definition: TrackerDefinition = {
       options: { desc: 'desc', asc: 'asc' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}all/torrents/{{ .Keywords }}.html?v=&smi=&sma=&i=100&sort={{ .Config.sort }}&o={{ .Config.type }}{{ else }}top100.html{{ end }}',
+        path: '{{ if .Keywords }}all/torrents/{{ .Keywords }}.html?v=&smi=&sma=&i=100&sort={{ .Config.sort }}&o={{ .Config.type }}{{ else }}top100.html{{ end }}',
       },
     ],
     keywordsfilters: [{ name: 're_replace', args: ['[\\s]+', '-'] }, { name: 'tolower' }],

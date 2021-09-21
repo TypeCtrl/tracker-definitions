@@ -50,8 +50,7 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: {
-    selector: 'a[href^="/torrentfiles/"]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="/torrentfiles/"]', attribute: 'href' }],
   },
   search: {
     paths: [

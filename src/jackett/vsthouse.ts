@@ -13,7 +13,9 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'Audio', cat: 'Audio' }],
   },
   settings: [],
-  download: { selector: 'a[title^="Скачать:"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[title^="Скачать:"]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'search' }],
     inputs: {

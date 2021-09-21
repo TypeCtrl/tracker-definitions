@@ -10,11 +10,12 @@ export const definition: TrackerDefinition = {
   links: ['https://pirata.digital/'],
   caps: {
     categorymappings: [
-      { id: '1', cat: 'Movies', desc: 'Movies' },
+      { id: '1', cat: 'Movies', desc: 'Filmes' },
       { id: '2', cat: 'TV', desc: 'TV' },
       { id: '6', cat: 'TV/Anime', desc: 'Animes' },
-      { id: '4', cat: 'Console', desc: 'Games' },
-      { id: '5', cat: 'PC', desc: 'Software' },
+      { id: '4', cat: 'Console', desc: 'Jogos' },
+      { id: '5', cat: 'PC', desc: 'Aplicativos' },
+      { id: '7', cat: 'Other', desc: 'Cursos' },
     ],
     modes: {
       search: ['q'],
@@ -110,10 +111,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
-      grabs: {
-        selector: 'td:nth-last-child(1)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(1)' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
@@ -225,7 +223,6 @@ export const definition: TrackerDefinition = {
           '*': 1,
         },
       },
-      minimumratio: { text: 0.4 },
       minimumseedtime: { text: 432000 },
     },
   },

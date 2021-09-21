@@ -136,19 +136,18 @@ export const definition: TrackerDefinition = {
     before: {
       path: 'ajax.php',
       method: 'get',
-      inputs: { _action: 'say_thank', id: '{{ .DownloadUri.Query.id }}' },
+      inputs: { action: 'say_thanks', id: '{{ .DownloadUri.Query.id }}' },
     },
-    selector: 'a[href^="downloadnew.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="downloadnew.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [
       {
-        path: 'viewno18.php',
+        path: 'viewno18sb.php',
         categories: ['!', 901, 902, 903, 904, 905, 906, 907, 908, 910, 911, 912],
       },
       {
-        path: 'viewbr.php',
+        path: 'viewbrsb.php',
         categories: [901, 902, 903, 904, 905, 906, 907, 908, 910, 911, 912],
       },
     ],
@@ -164,7 +163,7 @@ export const definition: TrackerDefinition = {
     },
     fields: {
       category: {
-        selector: 'a[href^="viewno18.php?cat="], a[href^="viewbr.php?cat="]',
+        selector: 'a[href^="viewno18sb.php?cat="], a[href^="viewbrsb.php?cat="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
@@ -190,10 +189,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-child(8)' },
-      grabs: {
-        selector: 'td:nth-child(9)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(9)' },
       seeders: { selector: 'td:nth-child(10)' },
       leechers: { selector: 'td:nth-child(11)' },
       downloadvolumefactor: {

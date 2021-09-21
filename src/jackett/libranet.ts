@@ -64,7 +64,11 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'cat' }],
       },
-      title: { selector: 'a[href^="details.php?id="]' },
+      description: { selector: 'img[width="60"]', attribute: 'title' },
+      title: {
+        selector: 'a[href^="details.php?id="]',
+        filters: [{ name: 'append', args: ' {{ .Result.description }}' }],
+      },
       details: {
         selector: 'a[href^="details.php?id="]',
         attribute: 'href',
@@ -77,7 +81,6 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['&hit=1', ''] },
         ],
       },
-      description: { selector: 'img[width="60"]', attribute: 'title' },
       poster: {
         selector: 'a[onmouseover]',
         attribute: 'onmouseover',

@@ -11,13 +11,12 @@ export const definition: TrackerDefinition = {
   links: [
     'https://1337x.to/',
     'https://1337x.gd/',
-    'https://1337x.is/',
     'https://1337x.st/',
     'https://x1337x.ws/',
     'https://x1337x.eu/',
     'https://x1337x.se/',
-    'https://1337x.unblockit.li/',
-    'https://1337x.nocensor.space/',
+    'https://1337x.unblockit.ws/',
+    'https://1337x.nocensor.work/',
   ],
   legacylinks: [
     'https://1337x.unblocked.earth/',
@@ -48,6 +47,11 @@ export const definition: TrackerDefinition = {
     'https://1337x.unblocked.monster/',
     'https://1337x.unblockit.club/',
     'https://1337x.unblockit.onl/',
+    'https://1337x.unblockit.li/',
+    'https://1337x.unblockit.uno/',
+    'https://1337x.is/',
+    'https://1337x.unblockit.ch/',
+    'https://1337x.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -140,8 +144,29 @@ export const definition: TrackerDefinition = {
       default: 'magnet:',
       options: {
         'http://itorrents.org/': 'iTorrents.org',
+        'http://torrage.info/': 'Torrage',
+        'http://btcache.me/': 'BTcache',
         'magnet:': 'magnet',
       },
+    },
+    {
+      name: 'downloadlink2',
+      type: 'select',
+      label: 'Download link (fallback)',
+      default: 'http://itorrents.org/',
+      options: {
+        'http://itorrents.org/': 'iTorrents.org',
+        'http://torrage.info/': 'Torrage',
+        'http://btcache.me/': 'BTcache',
+        'magnet:': 'magnet',
+      },
+    },
+    {
+      name: 'info_download',
+      type: 'info',
+      label: 'About the Download links',
+      default:
+        'As the .torrent download links on this site are known to fail from time to time, you can optionally set as a fallback an automatic alternate link. We suggest using the magnet link as a fallback.',
     },
     {
       name: 'sort',
@@ -159,22 +184,27 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: {
-    selector: 'ul li a[href^="{{ .Config.downloadlink }}"]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'ul li a[href^="{{ .Config.downloadlink }}"]',
+        attribute: 'href',
+      },
+      {
+        selector: 'ul li a[href^="{{ .Config.downloadlink2 }}"]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [
       {
-        path:
-          '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/Movies{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/1/',
+        path: '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/Movies{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/1/',
       },
       {
-        path:
-          '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/TV{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/{{ if or .Query.Album .Query.Artist .Keywords }}2{{ else }}1{{ end }}/',
+        path: '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/TV{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/{{ if or .Query.Album .Query.Artist .Keywords }}2{{ else }}1{{ end }}/',
       },
       {
-        path:
-          '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/Music{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/{{ if or .Query.Album .Query.Artist .Keywords }}3{{ else }}1{{ end }}/',
+        path: '{{ if or .Query.Album .Query.Artist .Keywords }}sort-search{{ else }}cat/Music{{ end }}{{ if or .Query.Album .Query.Artist }}/{{ or .Query.Album .Query.Artist }}{{ else }}/{{ .Keywords }}{{ end }}{{ if or .Query.Album .Query.Artist .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}/{{ if or .Query.Album .Query.Artist .Keywords }}3{{ else }}1{{ end }}/',
       },
     ],
     keywordsfilters: [{ name: 'replace', args: ['Greys Anatomy', "Grey's Anatomy"] }],
@@ -237,7 +267,7 @@ export const definition: TrackerDefinition = {
       date: {
         optional: true,
         selector: 'td[class^="coll-date"]:contains(":")',
-        filters: [{ name: 'dateparse', args: '3:04pm' }],
+        filters: [{ name: 'fuzzytime' }],
       },
       size: { selector: 'td[class^="coll-4"]' },
       seeders: { selector: 'td[class^="coll-2"]' },

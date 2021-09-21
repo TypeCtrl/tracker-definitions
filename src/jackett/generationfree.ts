@@ -164,8 +164,7 @@ export const definition: TrackerDefinition = {
         torrent: '{{ .DownloadUri.Query.id }}',
       },
     },
-    selector: 'a[href^="download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'torrents-search.php' }],

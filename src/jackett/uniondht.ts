@@ -1519,7 +1519,9 @@ export const definition: TrackerDefinition = {
       options: { '1': 'asc', '2': 'desc' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'tracker.php' }],
     keywordsfilters: [

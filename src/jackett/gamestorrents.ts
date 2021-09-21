@@ -7,8 +7,13 @@ export const definition: TrackerDefinition = {
   language: 'es-ES',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://www.gamestorrents.nu/', 'https://gamestorrents.nocensor.space/'],
-  legacylinks: ['https://www.gamestorrents.com/', 'https://www.gamestorrents.tv/'],
+  links: ['https://www.gamestorrents.fm/', 'https://gamestorrents.nocensor.work/'],
+  legacylinks: [
+    'https://www.gamestorrents.com/',
+    'https://www.gamestorrents.tv/',
+    'https://www.gamestorrents.nu/',
+    'https://gamestorrents.nocensor.space/',
+  ],
   caps: {
     categorymappings: [
       { id: 'juegos-pc', cat: 'PC/Games', desc: 'Games PC' },
@@ -28,7 +33,9 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   settings: [],
-  download: { selector: 'a#download_torrent', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a#download_torrent', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },

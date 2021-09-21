@@ -156,8 +156,7 @@ export const definition: TrackerDefinition = {
     },
   },
   download: {
-    selector: 'a[href*="/download/torrent?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href*="/download/torrent?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'search.php' }],
@@ -188,10 +187,13 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'f' }],
       },
       download: { selector: 'a.topictitle', attribute: 'href' },
-      size: { selector: 'div.list-inner div[style="float:right;"]' },
+      size: {
+        selector: 'div.list-inner div[style="float:right;"]',
+        optional: true,
+      },
       seeders: { selector: 'dd.posts span.my_tt.seed', optional: true },
       leechers: { selector: 'dd.posts span.my_tt.leech', optional: true },
-      grabs: { selector: 'dd.views span.my_tt.complet' },
+      grabs: { selector: 'dd.views span.my_tt.complet', optional: true },
       date: {
         selector: 'div.left-box time',
         filters: [{ name: 'replace', args: ['T', ' '] }],

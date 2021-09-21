@@ -43,8 +43,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [{ path: 'ajax.php' }],
     inputs: {
-      $raw:
-        '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}{{ if or .Query.Artist .Keywords }}{{ else }}searchtags=japanese&tags_type=0&{{ end }}',
+      $raw: '{{ range .Categories }}filter_cat[{{.}}]=1&{{end}}{{ if or .Query.Artist .Keywords }}{{ else }}searchtags=japanese&tags_type=0&{{ end }}',
       searchstr: '{{ if .Query.Artist }}{{ .Query.Artist }}{{ else }}{{ .Keywords }}{{ end }}',
       order_by: 's3',
       order_way: 'desc',

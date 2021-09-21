@@ -6,7 +6,7 @@
   "type": "public",
   "encoding": "UTF-8",
   "followredirect": true,
-  "links": ["https://www.gktorrent.cc/", "https://gktorrent.nocensor.space/"],
+  "links": ["https://www.gktorrents.com/", "https://gktorrent.nocensor.work/"],
   "legacylinks": [
     "https://www.gktorrent.com/",
     "http://www.gktorrent.com/",
@@ -29,7 +29,9 @@
     "https://www.gktorrent.io/",
     "https://www.gktorrent.pw/",
     "https://wvw.gktorrent.pw/",
-    "https://vww.gktorrent.pw/"
+    "https://vww.gktorrent.pw/",
+    "https://www.gktorrent.cc/",
+    "https://gktorrent.nocensor.space/"
   ],
   "caps": {
     "categorymappings": [
@@ -78,7 +80,11 @@
       "default": false
     }
   ],
-  "download": { "selector": "a[href*=\"magnet:?xt=\"]", "attribute": "href" },
+  "download": {
+    "selectors": [
+      { "selector": "a[href*=\"magnet:?xt=\"]", "attribute": "href" }
+    ]
+  },
   "search": {
     "paths": [
       {

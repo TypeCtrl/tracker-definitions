@@ -130,10 +130,7 @@
         "selector": "a[href^=\"/download.php\"]",
         "attribute": "href"
       },
-      "grabs": {
-        "selector": "td:nth-child(7)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-child(7)" },
       "size": { "selector": "td:nth-child(6)" },
       "date": {
         "selector": "td:nth-child(5)",

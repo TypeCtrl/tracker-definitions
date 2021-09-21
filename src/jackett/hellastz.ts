@@ -7,7 +7,9 @@ export const definition: TrackerDefinition = {
   language: 'el-GR',
   type: 'private',
   encoding: 'UTF-8',
+  testlinktorrent: false,
   links: ['https://hellastz.com/'],
+  certificates: ['d2e56574d77a5059c30883c221094f0556d99cb6'],
   caps: {
     categorymappings: [
       {
@@ -119,8 +121,7 @@ export const definition: TrackerDefinition = {
         rndval: '1487013827343',
       },
     },
-    selector: 'a[href^="download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'index.php' }],
@@ -167,10 +168,7 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-child(5)' },
       leechers: { selector: 'td:nth-child(6)' },
-      grabs: {
-        selector: 'td:nth-child(7)',
-        filters: [{ name: 'replace', args: ['---', '0'] }],
-      },
+      grabs: { selector: 'td:nth-child(7)' },
       size: { selector: 'td:nth-child(8)' },
       downloadvolumefactor: {
         case: {

@@ -116,7 +116,9 @@ export const definition: TrackerDefinition = {
         "Torrent9 only returns category <b>Movies</b> in its <i>Keywordless</i> search results page.</br>To pass your apps' indexer TEST you will need to include the 131681(Movies) category.",
     },
   ],
-  download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?"]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

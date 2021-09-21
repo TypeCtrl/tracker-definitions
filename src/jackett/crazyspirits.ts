@@ -182,8 +182,12 @@ export const definition: TrackerDefinition = {
         torrent: '{{ .DownloadUri.Query.id }}',
       },
     },
-    selector: 'a[href^="/{{ .DownloadUri.Query.id }}/"]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a[href^="/{{ .DownloadUri.Query.id }}/"]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [{ path: 'torrents-search.php' }],
@@ -259,7 +263,7 @@ export const definition: TrackerDefinition = {
       seeders: {
         selector: 'a[onmouseover][href^="torrents-details.php?id="]',
         attribute: 'onmouseover',
-        filters: [{ name: 'regexp', args: '=green>(\\d+)<' }],
+        filters: [{ name: 'regexp', args: '=greene>(\\d+)<' }],
       },
       leechers: {
         selector: 'a[onmouseover][href^="torrents-details.php?id="]',

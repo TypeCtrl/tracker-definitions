@@ -145,10 +145,7 @@
           { "name": "dateparse", "args": "2006-01-02 15:04:05 -07:00" }
         ]
       },
-      "size": {
-        "selector": "td:nth-last-child(5) > u",
-        "filters": [{ "name": "replace", "args": [",", "."] }]
-      },
+      "size": { "selector": "td:nth-last-child(5) > u" },
       "grabs": { "selector": "td:nth-last-child(4)" },
       "seeders": { "selector": "td:nth-last-child(3)" },
       "leechers": { "selector": "td:nth-last-child(2)" },

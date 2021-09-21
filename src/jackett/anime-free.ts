@@ -7,6 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'WINDOWS-1251',
+  testlinktorrent: false,
   links: ['https://anime-free.biz/'],
   legacylinks: ['https://anime-free.net/'],
   caps: {
@@ -57,8 +58,12 @@ export const definition: TrackerDefinition = {
     test: { path: '/', selector: 'a[href$="/index.php?action=logout"]' },
   },
   download: {
-    selector: 'a[href*="/engine/download.php?id="]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a[href*="/engine/download.php?id="]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [{ path: 'index.php' }],

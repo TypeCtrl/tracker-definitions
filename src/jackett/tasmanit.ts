@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'tasmanit',
   name: 'Tasmanit',
   description: 'Tasmanit.es is a AUSTRALIAN / NEW ZEALAND Private Torrent Tracker for AUS / NZ TV',
-  language: 'en-US',
+  language: 'en-AU',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://tasmanit.es/'],
@@ -77,16 +77,16 @@ export const definition: TrackerDefinition = {
     fields: {
       title: { optional: true, selector: 'div.tooltip-content > div' },
       category: {
-        selector: 'a[href^="https://tasmanit.es/browse.php?category="]',
+        selector: 'a[href*="/browse.php?category="]',
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'category' }],
       },
       details: {
-        selector: 'a[href^="https://tasmanit.es/details.php?id="]',
+        selector: 'a[href*="/details.php?id="]',
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="https://tasmanit.es/details.php?id="]',
+        selector: 'a[href*="/details.php?id="]',
         attribute: 'href',
         filters: [{ name: 'replace', args: ['details.php', 'download.php'] }],
       },

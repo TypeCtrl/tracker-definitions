@@ -125,10 +125,7 @@
       "size": { "selector": "td:nth-last-child(4)" },
       "seeders": { "selector": "td:nth-last-child(3)" },
       "leechers": { "selector": "td:nth-last-child(2)" },
-      "grabs": {
-        "selector": "td:nth-last-child(1)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-last-child(1)" },
       "imdb": {
         "selector": "a[href*=\"imdb.com/title/tt\"]",
         "attribute": "href"

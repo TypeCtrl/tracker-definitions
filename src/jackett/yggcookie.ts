@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'semi-private',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www4.yggtorrent.li/'],
+  links: ['https://www3.yggtorrent.nz/'],
   legacylinks: [
     'https://yggtorrent.com/',
     'https://ww1.yggtorrent.com/',
@@ -40,6 +40,7 @@ export const definition: TrackerDefinition = {
     'http://www2.yggtorrent.si/',
     'https://www2.yggtorrent.si/',
     'https://www.yggtorrent.li/',
+    'https://www4.yggtorrent.li/',
   ],
   caps: {
     categorymappings: [
@@ -235,6 +236,13 @@ export const definition: TrackerDefinition = {
       },
       { name: 're_replace', args: ['(?i)(.*)s([1-9])$', '$1 S0$2'] },
       { name: 're_replace', args: ['(?i)(.*)s([1-9][0-9])$', '$1 S$2'] },
+      {
+        name: 're_replace',
+        args: [
+          '(.*)(\\.|\\s|\\-)(\\d{2,3})(\\.|\\s|\\-*)(.*)',
+          '{{ if .Config.enhancedAnime }}$1 E$3 $5{{ else }}$1$2$3$4$5{{ end }}',
+        ],
+      },
       { name: 'replace', args: ['"', ''] },
       { name: 'replace', args: ['  ', ' '] },
       { name: 'trim' },
@@ -242,13 +250,11 @@ export const definition: TrackerDefinition = {
     ],
     paths: [
       {
-        path:
-          'engine/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+        path: 'engine/search?category={{ .Config.category }}&name={{ .Keywords }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
       {
-        path:
-          'engine/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
+        path: 'engine/search?category={{ .Config.category }}&name={{ if .Keywords }}{{ re_replace .Keywords "[sS]0(\\d{1,2})"  "Saison.$1"}}{{ else }}&page=50{{ end }}&description=&file=&uploader=&sub_category=&do=search&order={{ .Config.type }}&sort={{ .Config.sort }}',
         followredirect: true,
       },
     ],
@@ -350,7 +356,7 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 're_replace',
-            args: ['(.*)(\\.| |\\-)(\\d{2,3})(\\.| |\\-)(.*)', '$1 E$3 $5'],
+            args: ['(.*)(\\.|\\s|\\-)(\\d{2,3})(\\.|\\s|\\-)(.*)', '$1 E$3 $5'],
           },
         ],
       },

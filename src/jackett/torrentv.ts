@@ -22,7 +22,9 @@ export const definition: TrackerDefinition = {
       options: { 'td-1': 'created', 's-1': 'seeders', 'na-1': 'title' },
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

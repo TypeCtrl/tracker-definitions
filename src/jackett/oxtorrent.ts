@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.oxtorrent.ph/', 'https://www.oxtorrent.co/', 'https://oxtorrent.nocensor.space/'],
+  links: ['https://www.oxtorrent.nz/', 'https://oxtorrent.unblockit.ws/', 'https://oxtorrent.nocensor.work/'],
   legacylinks: [
     'https://wwv.oxtorrent.com/',
     'https://www.smartorrent.tv/',
@@ -29,6 +29,15 @@ export const definition: TrackerDefinition = {
     'https://wvw.oxtorrent.ws/',
     'https://oxtorrent.unblocked.monster/',
     'https://www.oxtorrent.tv/',
+    'https://www.oxtorrent.ph/',
+    'https://wvw.oxtorrent.pe/',
+    'https://www.oxtorrent.pe/',
+    'https://www.oxtorrent.co/',
+    'https://oxtorrent.unblockit.uno/',
+    'https://www.oxtorrent.io/',
+    'https://oxtorrent.unblockit.ch/',
+    'https://oxtorrent.nocensor.space/',
+    'https://www.oxtorrent.cx/',
   ],
   caps: {
     categorymappings: [
@@ -77,11 +86,13 @@ export const definition: TrackerDefinition = {
       default: false,
     },
   ],
-  download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?"]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {
-        path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{ else }}{{ end }}',
+        path: '{{ if .Keywords }}recherche/{{ .Keywords }}{{ else }}derniers{{ end }}',
       },
     ],
     keywordsfilters: [

@@ -2,7 +2,7 @@
   "id": "dimeadozen",
   "name": "DimeADozen",
   "description": "DimeADozen (EzTorrent) is a Semi-Private Torrent Tracker for BOOTLEG MUSIC",
-  "language": "en-EN",
+  "language": "en-GB",
   "type": "semi-private",
   "encoding": "UTF-8",
   "links": ["http://www.dimeadozen.org/"],
@@ -91,7 +91,11 @@
       "selector": "a[href=\"account-logout.php\"]"
     }
   },
-  "download": { "selector": "a[href^=\"download.php/\"]", "attribute": "href" },
+  "download": {
+    "selectors": [
+      { "selector": "a[href^=\"download.php/\"]", "attribute": "href" }
+    ]
+  },
   "search": {
     "paths": [{ "path": "torrents-browse.php" }],
     "inputs": { "search": "{{ .Keywords }}", "incldead": 1, "searchscope": 1 },
@@ -123,10 +127,7 @@
         ]
       },
       "size": { "selector": "td:nth-child(6)" },
-      "grabs": {
-        "selector": "td:nth-child(7)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-child(7)" },
       "seeders": { "selector": "td:nth-child(8)" },
       "leechers": { "selector": "td:nth-child(9)" },
       "downloadvolumefactor": { "text": 1 },

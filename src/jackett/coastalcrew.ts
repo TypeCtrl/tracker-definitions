@@ -37,7 +37,7 @@ export const definition: TrackerDefinition = {
       { id: '62', cat: 'TV/Sport', desc: 'Sport - Alles' },
       { id: '159', cat: 'Audio/Audiobook', desc: 'Sonstiges - Hörbuch' },
       { id: '64', cat: 'Books/Comics', desc: 'Sonstiges - Anime' },
-      { id: '63', cat: 'Audio/Audiobook', desc: 'Sonstiges - A-Book' },
+      { id: '63', cat: 'Books/Comics', desc: 'Sonstiges - Comic' },
       { id: '96', cat: 'Books/Ebook', desc: 'Sonstiges - E-Book' },
       { id: '69', cat: 'Books', desc: 'Sonstiges - Tutorial' },
       { id: '71', cat: 'Books/Other', desc: 'Sonstiges - Other' },
@@ -137,7 +137,7 @@ export const definition: TrackerDefinition = {
           ':has(div.kat_cat_pic_name:contains("Sport")):has(div.kat_cat_pic_name_b:contains("Alles"))': '62',
           ':has(div.kat_cat_pic_name:contains("Sonstiges")):has(div.kat_cat_pic_name_b:contains("Hörbuch"))': '159',
           ':has(div.kat_cat_pic_name:contains("Sonstiges")):has(div.kat_cat_pic_name_b:contains("Anime"))': '64',
-          ':has(div.kat_cat_pic_name:contains("Sonstiges")):has(div.kat_cat_pic_name_b:contains("A-Book"))': '63',
+          ':has(div.kat_cat_pic_name:contains("Sonstiges")):has(div.kat_cat_pic_name_b:contains("Comic"))': '63',
           ':has(div.kat_cat_pic_name:contains("Sonstiges")):has(div.kat_cat_pic_name_b:contains("E-Book"))': '96',
           ':has(div.kat_cat_pic_name:contains("Sonstiges")):has(div.kat_cat_pic_name_b:contains("Tutorial"))': '69',
           ':has(div.kat_cat_pic_name:contains("Sonstiges")):has(div.kat_cat_pic_name_b:contains("Other"))': '71',
@@ -149,28 +149,10 @@ export const definition: TrackerDefinition = {
         },
       },
       poster: { selector: 'div[id^="details"] img', attribute: 'src' },
-      size: {
-        selector: 'div.selection_unter_ag',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      size: { selector: 'div.selection_unter_ag' },
       grabs: { text: 0 },
-      seeders: {
-        selector: 'div.selection_unter_aa',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
-      leechers: {
-        selector: 'div.selection_unter_aaa',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      seeders: { selector: 'div.selection_unter_aa' },
+      leechers: { selector: 'div.selection_unter_aaa' },
       date: {
         selector: 'div.selection_unter_ab:contains(".")',
         optional: true,

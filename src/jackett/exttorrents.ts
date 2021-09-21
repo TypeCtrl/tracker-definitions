@@ -70,6 +70,7 @@ export const definition: TrackerDefinition = {
         cat: 'Console/Xbox360',
         desc: 'Games Xbox360',
       },
+      { id: '/games/mac/', cat: 'PC/Mac', desc: 'Games Mac' },
       { id: '/movies/', cat: 'Movies', desc: 'Movies' },
       { id: '/movies/3d-movies/', cat: 'Movies/3D', desc: 'Movies 3D' },
       {
@@ -103,6 +104,16 @@ export const definition: TrackerDefinition = {
         id: '/movies/ultrahd/',
         cat: 'Movies/UHD',
         desc: 'Movies UltraHD',
+      },
+      {
+        id: '/movies/music-videos/',
+        cat: 'Audio/Video',
+        desc: 'Movies Music videos',
+      },
+      {
+        id: '/movies/movie-clips/',
+        cat: 'Movies/Other',
+        desc: 'Movies Movie clips',
       },
       { id: '/music/', cat: 'Audio', desc: 'Music' },
       { id: '/music/aac/', cat: 'Audio', desc: 'Music AAC' },
@@ -163,24 +174,22 @@ export const definition: TrackerDefinition = {
         'This site may use Cloudflare DDoS Protection, therefore Jackett requires <a href="https://github.com/Jackett/Jackett#configuring-flaresolverr" target="_blank">FlareSolver</a> to access it.',
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}search/?q={{ .Keywords }}&{{ else }}latest/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
+        path: '{{ if .Keywords }}search/?q={{ .Keywords }}&{{ else }}latest/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
       },
       {
-        path:
-          '{{ if .Keywords }}search/?q={{ .Keywords }}/2/&{{ else }}latest/2/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
+        path: '{{ if .Keywords }}search/?q={{ .Keywords }}/2/&{{ else }}latest/2/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
       },
       {
-        path:
-          '{{ if .Keywords }}search/?q={{ .Keywords }}/3/&{{ else }}latest/3/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
+        path: '{{ if .Keywords }}search/?q={{ .Keywords }}/3/&{{ else }}latest/3/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
       },
       {
-        path:
-          '{{ if .Keywords }}search/?q={{ .Keywords }}/4/&{{ else }}latest/4/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
+        path: '{{ if .Keywords }}search/?q={{ .Keywords }}/4/&{{ else }}latest/4/?{{ end }}order={{ .Config.sort }}&sort={{ .Config.type }}',
       },
     ],
     headers: {

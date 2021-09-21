@@ -86,7 +86,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'src=(.*?) ' }],
       },
       date: {
-        selector: 'td:nth-child(2) div.b-info div span:nth-child(2):not(:contains("Сегодня")):not(:contains("Вчера"))',
+        selector: 'td:nth-child(2) div.b-info div span:nth-child(1):not(:contains("Сегодня")):not(:contains("Вчера"))',
         optional: true,
         filters: [
           { name: 'regexp', args: '(.*?) от ' },

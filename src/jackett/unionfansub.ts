@@ -99,13 +99,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       files: { selector: 'td:nth-last-child(8)' },
-      size: {
-        selector: 'td:nth-last-child(5)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      size: { selector: 'td:nth-last-child(5)' },
       grabs: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },

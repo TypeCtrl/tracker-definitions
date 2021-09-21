@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'mypornclub',
   name: 'MyPornClub',
   description: 'MyPornClub is a Public Torrent Tracker for 3X',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://myporn.club/'],
@@ -22,9 +22,13 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: {
-    selector: 'a[href^="magnet:?xt="]',
-    attribute: 'href',
-    filters: [{ name: 're_replace', args: ['\\s+', ' '] }],
+    selectors: [
+      {
+        selector: 'a[href^="magnet:?xt="]',
+        attribute: 'href',
+        filters: [{ name: 're_replace', args: ['\\s+', ' '] }],
+      },
+    ],
   },
   search: {
     paths: [

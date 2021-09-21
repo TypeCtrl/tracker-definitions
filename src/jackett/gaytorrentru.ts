@@ -143,10 +143,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'regexp', args: 'src=(.+?) ' }],
       },
       grabs: { selector: '.tsnatch' },
-      files: {
-        selector: '.tfiles',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      files: { selector: '.tfiles' },
       size: { selector: '.tsize' },
       seeders: {
         optional: true,

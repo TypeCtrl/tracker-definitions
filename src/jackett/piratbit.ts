@@ -1730,7 +1730,9 @@ export const definition: TrackerDefinition = {
       default: true,
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'tracker.php', method: 'post' }],
     keywordsfilters: [

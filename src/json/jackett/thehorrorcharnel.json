@@ -181,14 +181,11 @@
         "optional": true,
         "filters": [
           { "name": "append", "args": " +00:00" },
-          { "name": "dateparse", "args": "Jan 02 2006 03:04 PM -07:00" }
+          { "name": "dateparse", "args": "Jan 2 2006 03:04 PM -07:00" }
         ]
       },
       "size": { "selector": "td:nth-child(9)" },
-      "grabs": {
-        "selector": "td:nth-child(10)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-child(10)" },
       "seeders": { "selector": "td:nth-child(11)" },
       "leechers": { "selector": "td:nth-child(12)" },
       "description": { "selector": "td[colspan=\"13\"]", "remove": "a" },

@@ -1,0 +1,153 @@
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
+  id: 'devils-playground',
+  name: 'Devils-Playground',
+  description: 'Devils-Playground (Nbytez) is a Private Torrent Tracker for MOVIES / TV / GENERAL',
+  language: 'en-US',
+  type: 'private',
+  encoding: 'UTF-8',
+  links: ['https://devils-playground.org/'],
+  legacylinks: ['https://nbytez.me/'],
+  caps: {
+    categorymappings: [
+      { id: '82', cat: 'PC', desc: '0day' },
+      { id: '12', cat: 'PC', desc: 'Anime' },
+      { id: '1', cat: 'PC', desc: 'Apps' },
+      { id: '63', cat: 'Audio/Audiobook', desc: 'Audiobooks' },
+      { id: '24', cat: 'Books/Ebook', desc: 'E-Books' },
+      { id: '64', cat: 'PC/Games', desc: 'Games' },
+      { id: '30', cat: 'Movies/SD', desc: 'Movies/Cam-TS' },
+      { id: '31', cat: 'Movies', desc: 'Movies/FooKaS RG' },
+      { id: '70', cat: 'Movies/HD', desc: 'Movies/HD-Blu-Ray' },
+      { id: '84', cat: 'Movies/SD', desc: 'Movies/SD' },
+      { id: '71', cat: 'Movies/UHD', desc: 'Movies/UHD-Blu-Ray' },
+      { id: '55', cat: 'Movies/WEB-DL', desc: 'Movies/Web' },
+      { id: '26', cat: 'Audio/Lossless', desc: 'Music/FLAC' },
+      { id: '10', cat: 'Audio/MP3', desc: 'Music/MP3' },
+      { id: '29', cat: 'Movies', desc: 'Packs/Movies' },
+      { id: '19', cat: 'Audio', desc: 'Packs/MP3' },
+      { id: '61', cat: 'TV', desc: 'Packs/TV' },
+      { id: '45', cat: 'TV/HD', desc: 'TV/HD' },
+      { id: '36', cat: 'TV/SD', desc: 'TV/SD' },
+    ],
+    modes: {
+      search: ['q'],
+      'tv-search': ['q', 'season', 'ep'],
+      'movie-search': ['q'],
+      'music-search': ['q'],
+      'book-search': ['q'],
+    },
+  },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 4,
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
+  ],
+  login: {
+    path: 'takelogin.php',
+    method: 'post',
+    inputs: {
+      username: '{{ .Config.username }}',
+      password: '{{ .Config.password }}',
+      use_ssl: 1,
+      perm_ssl: '',
+      returnto: '/',
+    },
+    error: [
+      {
+        selector: 'table.main:contains("Login failed!")',
+        message: { selector: 'table tr td.colhead2' },
+      },
+    ],
+    test: {
+      path: 'index.php',
+      selector: 'a[href*="logout.php?hash_please="]',
+    },
+  },
+  search: {
+    paths: [{ path: 'browse.php' }],
+    inputs: {
+      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      searchin: 'title',
+      incldead: 1,
+      only_free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
+    },
+    keywordsfilters: [{ name: 're_replace', args: ['(\\w+)', ' +$1'] }],
+    rows: {
+      selector: 'table.table-bordered tr:has(a[href^="download.php?torrent="])',
+    },
+    fields: {
+      category: {
+        selector: 'a[href^="browse.php?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
+      title: {
+        selector: 'a[href^="details.php?id="]',
+        attribute: 'onmouseover',
+        filters: [{ name: 'regexp', args: "Tip\\('<b>(.+?)</b>" }],
+      },
+      details: {
+        selector: 'a[href^="details.php?id="]',
+        attribute: 'href',
+      },
+      download: {
+        selector: 'a[href^="download.php?torrent="]',
+        attribute: 'href',
+      },
+      files: { selector: 'td:nth-child(5)' },
+      date: {
+        selector: 'td:nth-child(7):not(:contains("day"))',
+        optional: true,
+        filters: [
+          { name: 'append', args: ' +00:00' },
+          { name: 'dateparse', args: 'Jan 2 2006 03:04 PM -07:00' },
+        ],
+      },
+      size: { selector: 'td:nth-child(8)' },
+      grabs: { selector: 'td:nth-child(9)' },
+      seeders: { selector: 'td:nth-child(10)' },
+      leechers: { selector: 'td:nth-child(11)' },
+      downloadvolumefactor: {
+        case: {
+          'a.info:contains("[FREE]")': 0,
+          'a.info:contains("[SILVER]")': 0.5,
+          '*': 1,
+        },
+      },
+      uploadvolumefactor: { text: 1 },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 172800 },
+    },
+  },
+  source: 'jackett',
+};

@@ -91,6 +91,23 @@ export const definition: TrackerDefinition = {
         'magnet:?xt=': 'magnet',
       },
     },
+    {
+      name: 'downloadlink2',
+      type: 'select',
+      label: 'Download link (fallback)',
+      default: '/en/torrents/download/?key=',
+      options: {
+        '/en/torrents/download/?key=': '.torrent',
+        'magnet:?xt=': 'magnet',
+      },
+    },
+    {
+      name: 'info_download',
+      type: 'info',
+      label: 'About the Download links',
+      default:
+        'You can optionally set as a fallback an automatic alternate link, so if the .torrent download link fails your download will still be successful.',
+    },
   ],
   login: {
     path: 'en/users/signin/',
@@ -109,8 +126,16 @@ export const definition: TrackerDefinition = {
     test: { path: 'en/', selector: 'a[href="/en/users/logout/"]' },
   },
   download: {
-    selector: 'a[href^="{{ .Config.downloadlink }}"]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a[href^="{{ .Config.downloadlink }}"]',
+        attribute: 'href',
+      },
+      {
+        selector: 'a[href^="{{ .Config.downloadlink2 }}"]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [{ path: 'en/torrents/' }],
@@ -142,8 +167,7 @@ export const definition: TrackerDefinition = {
         filters: [
           {
             name: 'append',
-            args:
-              '{{ if .Result.bulgarian }} {{ .Result.bulgarian }}{{ else }}{{ end }}{{ if .Result.english }} {{ .Result.english }}{{ else }}{{ end }}',
+            args: '{{ if .Result.bulgarian }} {{ .Result.bulgarian }}{{ else }}{{ end }}{{ if .Result.english }} {{ .Result.english }}{{ else }}{{ end }}',
           },
         ],
       },

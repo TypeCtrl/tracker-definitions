@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://yourbittorrent.com/', 'https://yourbittorrent2.com/', 'https://yourbittorrent.nocensor.space/'],
-  legacylinks: ['https://yourbittorrent.host/'],
+  links: ['https://yourbittorrent.com/', 'https://yourbittorrent2.com/', 'https://yourbittorrent.nocensor.work/'],
+  legacylinks: ['https://yourbittorrent.host/', 'https://yourbittorrent.nocensor.space/'],
   caps: {
     categorymappings: [
       { id: 'anime', cat: 'TV/Anime', desc: 'Anime' },

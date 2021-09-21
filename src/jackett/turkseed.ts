@@ -96,8 +96,7 @@ export const definition: TrackerDefinition = {
       method: 'post',
       inputs: { torrentid: '{{ .DownloadUri.Query.id }}' },
     },
-    selector: 'a[href*="/download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href*="/download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [{ path: 'browse.php' }],

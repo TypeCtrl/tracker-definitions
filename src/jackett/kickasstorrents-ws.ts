@@ -75,8 +75,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}?field={{ .Config.sort }}&sorder={{ .Config.type }}',
+        path: '{{ if .Keywords }}usearch/{{ .Keywords }}/{{ else }}new/{{ end }}?field={{ .Config.sort }}&sorder={{ .Config.type }}',
       },
     ],
     rows: { selector: 'table.data tr[id]' },
@@ -98,10 +97,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
         filters: [{ name: 'querystring', args: 'url' }],
       },
-      size: {
-        selector: 'td:nth-child(2)',
-        filters: [{ name: 're_replace', args: ['\\.([0-9]{3})', '$1'] }],
-      },
+      size: { selector: 'td:nth-child(2)' },
       date: {
         selector: 'td:nth-child(3)',
         filters: [{ name: 'timeago' }],

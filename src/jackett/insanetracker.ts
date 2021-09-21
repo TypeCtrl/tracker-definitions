@@ -119,13 +119,7 @@ export const definition: TrackerDefinition = {
         selector: 'div.files > a.button.small',
         filters: [{ name: 'replace', args: ['.', ''] }],
       },
-      size: {
-        selector: 'td.center.size',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      size: { selector: 'td.center.size' },
       seeders: {
         selector: 'td.center.data > a:first-child',
         filters: [{ name: 'replace', args: ['.', ''] }],

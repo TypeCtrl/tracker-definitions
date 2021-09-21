@@ -21,6 +21,7 @@ export const definition: TrackerDefinition = {
       { id: '8', cat: 'Movies', desc: 'Kids' },
       { id: '9', cat: 'TV/Sport', desc: 'Sport' },
       { id: '10', cat: 'TV/Documentary', desc: 'Doku' },
+      { id: '11', cat: 'TV/Anime', desc: 'Anime' },
     ],
     modes: {
       search: ['q'],
@@ -124,10 +125,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       size: { selector: 'td:nth-last-child(4)' },
-      grabs: {
-        selector: 'td:nth-last-child(3)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(3)' },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
       date: {

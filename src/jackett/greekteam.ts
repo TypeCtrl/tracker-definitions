@@ -3,8 +3,8 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'greekteam',
   name: 'Greek Team',
-  language: 'el-GR',
   description: 'Greek Team is a GREEK Private site for TV / MOVIES / GENERAL',
+  language: 'el-GR',
   type: 'private',
   encoding: 'WINDOWS-1253',
   links: ['https://www.greek-team.cc/'],
@@ -139,7 +139,6 @@ export const definition: TrackerDefinition = {
       },
       grabs: {
         selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td ~ td',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: {
         selector: 'td:has(a[href$="filelist=1"]) ~ td ~ td ~ td ~ td ~ td ~ td',

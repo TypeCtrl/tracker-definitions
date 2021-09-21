@@ -80,7 +80,9 @@ export const definition: TrackerDefinition = {
       },
     },
   ],
-  download: { selector: 'a[href^="magnet:"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:"]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

@@ -5,8 +5,8 @@ export const definition: TrackerDefinition = {
   name: 'HD-Bits.com',
   description: 'HD tracker',
   language: 'en-US',
-  encoding: 'UTF-8',
   type: 'private',
+  encoding: 'UTF-8',
   links: ['https://www.hd-bits.com/'],
   caps: {
     categorymappings: [

@@ -10,22 +10,18 @@ export const definition: TrackerDefinition = {
   links: ['https://www.rintor.net/'],
   caps: {
     categorymappings: [
-      {
-        id: '27',
-        cat: 'XXX',
-        desc: 'Фильмы UHD 2160 4K | Movies UHD 2160p 4K',
-      },
+      { id: '27', cat: 'XXX', desc: 'Фильмы 2160 4K | Movies 2160p 4K' },
       {
         id: '20',
         cat: 'XXX',
-        desc: 'Сайтрипы UHD 2160 4K | Porn Video UHD 2160p 4K',
+        desc: 'Сайтрипы 2160 4K | Porn Video 2160p 4K',
       },
       {
         id: '1',
         cat: 'XXX',
-        desc: "Сайтрипы, Фильмы HD | SiteRip's, Movies HD",
+        desc: 'Сайтрипы, Фильмы HD | SiteRips, Movies HD',
       },
-      { id: '9', cat: 'XXX', desc: "Сайтрипы | SiteRip's" },
+      { id: '9', cat: 'XXX', desc: 'Сайтрипы | SiteRips' },
       {
         id: '12',
         cat: 'XXX',
@@ -44,6 +40,11 @@ export const definition: TrackerDefinition = {
       { id: '22', cat: 'XXX', desc: 'Лесбиянки | Lesbians' },
       { id: '26', cat: 'XXX', desc: 'Порно Кастинг | Porno Casting' },
       {
+        id: '29',
+        cat: 'XXX',
+        desc: 'Японское Порно | Japanese Porn (Uncen)',
+      },
+      {
         id: '23',
         cat: 'XXX',
         desc: 'Ретро Порно, Классика | Classic Porn, Retro',
@@ -60,12 +61,12 @@ export const definition: TrackerDefinition = {
       },
       { id: '19', cat: 'XXX', desc: 'Беременные | Pregnant' },
       { id: '28', cat: 'XXX', desc: 'Буккаке | Bukkake' },
+      { id: '25', cat: 'XXX', desc: 'Мочеиспускание | Peeing' },
       {
         id: '16',
         cat: 'XXX',
         desc: 'Транссексуалы | Shemale Transsexual',
       },
-      { id: '25', cat: 'XXX', desc: 'Мочеиспускание | Peeing' },
       {
         id: '11',
         cat: 'XXX',
@@ -86,7 +87,9 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   settings: [],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {
@@ -104,22 +107,23 @@ export const definition: TrackerDefinition = {
       category: {
         selector: 'div.entry__info',
         case: {
-          'a:last-of-type:contains("Movies UHD")': 27,
-          'a:last-of-type:contains("Video UHD")': 20,
-          'a:last-of-type:contains("HD")': 1,
+          'a:last-of-type:contains("Movies 2160p")': 27,
+          'a:last-of-type:contains("Video 2160p")': 20,
+          'a:last-of-type:contains("Movies HD")': 1,
           'a:last-of-type:contains("SiteRips")': 9,
           'a:last-of-type:contains("WEBRip")': 12,
           'a:last-of-type:contains("Amateur")': 10,
           'a:last-of-type:contains("Incest")': 24,
           'a:last-of-type:contains("Lesbians")': 22,
           'a:last-of-type:contains("Casting")': 26,
+          'a:last-of-type:contains("Japanese")': 29,
           'a:last-of-type:contains("Classic")': 23,
           'a:last-of-type:contains("Femdom")': 21,
           'a:last-of-type:contains("BDSM")': 17,
           'a:last-of-type:contains("Pregnant")': 19,
           'a:last-of-type:contains("Bukkake")': 28,
-          'a:last-of-type:contains("Shemale")': 16,
           'a:last-of-type:contains("Peeing")': 25,
+          'a:last-of-type:contains("Shemale")': 16,
           'a:last-of-type:contains("Picture")': 11,
           'a:last-of-type:contains("Cartoons")': 14,
           'a:last-of-type:contains("Games")': 13,

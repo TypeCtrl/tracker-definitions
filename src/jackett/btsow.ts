@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://btsow.digital'],
+  links: ['https://btsow.one/'],
   legacylinks: [
     'https://btos.pw/',
     'https://btio.pw/',
@@ -26,6 +26,9 @@ export const definition: TrackerDefinition = {
     'https://btsow.surf/',
     'https://btsow.com/',
     'https://btsow.cam/',
+    'https://btsow.digital/',
+    'https://btsow.shop/',
+    'https://btsow.us/',
   ],
   caps: {
     modes: {
@@ -46,7 +49,9 @@ export const definition: TrackerDefinition = {
         "BTSOW does not return categories in its search results.</br>To add to your Apps' Torznab indexer, replace all categories with 8000(Other).",
     },
   ],
-  download: { selector: 'a#magnetOpen', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a#magnetOpen', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

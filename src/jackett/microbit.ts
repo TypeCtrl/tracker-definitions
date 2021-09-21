@@ -123,10 +123,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: { selector: 'a.poster', attribute: 'href' },
-      grabs: {
-        selector: 'td:nth-child(5)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(5)' },
       seeders: { selector: 'td:nth-child(6)' },
       leechers: { selector: 'td:nth-child(7)' },
       size: { selector: 'td:nth-child(8)' },

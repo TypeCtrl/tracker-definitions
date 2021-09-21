@@ -9,14 +9,10 @@ export const definition: TrackerDefinition = {
   encoding: 'UTF-8',
   followredirect: true,
   links: [
-    'https://www.limetorrents.info/',
-    'https://www.limetorrents.asia/',
-    'https://www.limetorrents.co/',
-    'https://limetor.com/',
-    'https://www.limetor.pro/',
-    'https://limetorrents.unblockit.li/',
+    'https://www.limetorrents.pro/',
+    'https://limetorrents.unblockit.ws/',
     'https://limetorrents.unblockninja.com/',
-    'https://limetorrents.nocensor.space/',
+    'https://limetorrents.nocensor.work/',
   ],
   legacylinks: [
     'https://www.limetorrents.io/',
@@ -46,6 +42,15 @@ export const definition: TrackerDefinition = {
     'https://limetorrents.unblockit.buzz/',
     'https://limetorrents.unblockit.club/',
     'https://limetorrents.unblockit.onl/',
+    'https://www.limetorrents.info/',
+    'https://www.limetorrents.asia/',
+    'https://www.limetorrents.co/',
+    'https://limetor.com/',
+    'https://www.limetor.pro/',
+    'https://limetorrents.unblockit.li/',
+    'https://limetorrents.unblockit.uno/',
+    'https://limetorrents.unblockit.ch/',
+    'https://limetorrents.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -76,6 +81,23 @@ export const definition: TrackerDefinition = {
       },
     },
     {
+      name: 'downloadlink2',
+      type: 'select',
+      label: 'Download link (fallback)',
+      default: 'http://itorrents.org/',
+      options: {
+        'http://itorrents.org/': 'iTorrents.org',
+        'magnet:': 'magnet',
+      },
+    },
+    {
+      name: 'info_download',
+      type: 'info',
+      label: 'About the Download links',
+      default:
+        'As the .torrent download links on this site are known to fail from time to time, you can optionally set as a fallback an automatic alternate link.',
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -91,8 +113,16 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: {
-    selector: 'a.csprite_dltorrent[href^="{{ .Config.downloadlink }}"]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a.csprite_dltorrent[href^="{{ .Config.downloadlink }}"]',
+        attribute: 'href',
+      },
+      {
+        selector: 'a.csprite_dltorrent[href^="{{ .Config.downloadlink2 }}"]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [

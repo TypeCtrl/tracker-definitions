@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'fr-FR',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://wvw.zetorrents.org/'],
+  links: ['https://www.zetorrents.tv/'],
   legacylinks: [
     'https://www.zetorrents.co/',
     'https://www.zetorrents.io/',
@@ -16,6 +16,8 @@ export const definition: TrackerDefinition = {
     'https://wwv.zetorrents.io/',
     'https://ww1.zetorrents.io/',
     'https://www.zetorrents.org/',
+    'https://wvw.zetorrents.org/',
+    'https://www.zetorrents.cc/',
   ],
   caps: {
     modes: {
@@ -60,7 +62,9 @@ export const definition: TrackerDefinition = {
       default: false,
     },
   ],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

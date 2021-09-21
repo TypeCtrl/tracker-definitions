@@ -12,9 +12,10 @@ export const definition: TrackerDefinition = {
     'https://www.demonoid.is/',
     'https://www.dnoid.to/',
     'https://www.dnoid.pw/',
-    'https://demonoid.unblockit.li/',
+    'https://demonoidevmsgasmojajlhikwetsr4pxzw6xkjt3dgdv6nr5yxvsamid.onion.ly/',
+    'https://demonoid.unblockit.ws/',
     'https://demonoid.torrentbay.to/',
-    'https://demonoid.nocensor.space/',
+    'https://demonoid.nocensor.work/',
   ],
   legacylinks: [
     'https://demonoid.unblockit.pro/',
@@ -37,6 +38,10 @@ export const definition: TrackerDefinition = {
     'https://demonoid.unblockit.buzz/',
     'https://demonoid.unblockit.club/',
     'https://demonoid.unblockit.onl/',
+    'https://demonoid.unblockit.li/',
+    'https://demonoid.unblockit.uno/',
+    'https://demonoid.unblockit.ch/',
+    'https://demonoid.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -390,6 +395,13 @@ export const definition: TrackerDefinition = {
         "<ol><li>Access this tracker with your browser<li>click on the <b>Apply Filter</b> button on the page to invoke the search and solve the challenge<li>Open the <b>DevTools</b> panel by pressing <b>F12</b><li>Select the <b>Network</b> tab<li>Click on the <b>Doc</b> button (Chrome Browser) or <b>HTML</b> button (FireFox)<li>Refresh the page by pressing <b>F5</b><li>Click on the first row entry<li>Select the <b>Headers</b> tab on the Right panel<li>Find <b>'cookie:'</b> in the <b>Request Headers</b> section<li><b>Select</b> and <b>Copy</b> the whole cookie string <i>(everything after 'cookie: ')</i> and <b>Paste</b> here.</ol>",
     },
     {
+      name: 'info_themes',
+      type: 'info',
+      label: 'About themes',
+      default:
+        'Only the default theme <b>Demonoid - v5</b> is supported. If you are using v3 then change it in your <i>User Control Panel</i> or you will get 0 results.',
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
@@ -404,7 +416,14 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: { method: 'cookie', test: { path: 'files/' } },
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [
+      {
+        selector: 'a[href^="/files/download/"]:has(i.fa-download)',
+        attribute: 'href',
+      },
+    ],
+  },
   search: {
     paths: [{ path: 'files/' }],
     inputs: {
@@ -417,10 +436,10 @@ export const definition: TrackerDefinition = {
       sort: '{{ re_replace .Config.sort "_" "" }}',
     },
     rows: {
-      selector: 'table.font_12px tr:has(td[class^="tone_1"])',
+      selector: 'table.table:has(td.torrent__table-today) > tbody > tr:has(td[class^="tone_"])',
       after: 1,
       dateheaders: {
-        selector: 'tr td.added_today:not(:contains("Sponsored links"))',
+        selector: 'tr td.torrent__table-today:not(:contains("Sponsored links"))',
         filters: [
           { name: 'replace', args: ['Added ', ''] },
           { name: 'replace', args: ['on ', ''] },
@@ -434,7 +453,7 @@ export const definition: TrackerDefinition = {
         attribute: 'title',
       },
       category: {
-        selector: 'span > a[href*="&subcategory="]',
+        selector: 'span.torrent__table-info > a:nth-child(2)',
         attribute: 'href',
         optional: true,
         filters: [{ name: 'querystring', args: 'subcategory' }],
@@ -447,11 +466,11 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="/files/details/"]',
         attribute: 'href',
       },
-      description: { selector: 'td:nth-last-child(9)' },
-      size: { selector: 'td:nth-last-child(6)' },
-      grabs: { selector: 'td:nth-last-child(4)' },
-      seeders: { selector: 'td:nth-last-child(3)' },
-      leechers: { selector: 'td:nth-last-child(2)' },
+      description: { selector: 'td:nth-last-child(7)' },
+      size: { selector: 'td:nth-last-child(5)' },
+      grabs: { selector: 'td:nth-last-child(3)' },
+      seeders: { selector: 'td:nth-last-child(2)' },
+      leechers: { selector: 'td:nth-last-child(1)' },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

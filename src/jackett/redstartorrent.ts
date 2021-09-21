@@ -98,10 +98,7 @@ export const definition: TrackerDefinition = {
           { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
         ],
       },
-      grabs: {
-        selector: 'td:nth-child(7)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(7)' },
       size: { selector: 'td:nth-child(6)' },
       seeders: {
         selector: 'td:nth-child(8)',

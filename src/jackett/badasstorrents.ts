@@ -7,7 +7,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://badasstorrents.com/'],
+  links: ['https://badasstorrents.com/', 'https://badasstorrents.nocensor.work/'],
   caps: {
     modes: {
       search: ['q'],
@@ -37,13 +37,27 @@ export const definition: TrackerDefinition = {
       options: { '/download/': '.torrent', 'magnet:?xt=': 'magnet' },
     },
     {
+      name: 'downloadlink2',
+      type: 'select',
+      label: 'Download link (fallback)',
+      default: '/download/',
+      options: { '/download/': '.torrent', 'magnet:?xt=': 'magnet' },
+    },
+    {
+      name: 'info_download',
+      type: 'info',
+      label: 'About the Download links',
+      default:
+        'You can optionally set as a fallback an automatic alternate link, so if the .torrent download link fails your download will still be successful.',
+    },
+    {
       name: 'sort',
       type: 'select',
       label: 'Sort requested from site',
       default: 'date',
       options: {
         date: 'created',
-        seeders: 'seeds',
+        seeds: 'seeders',
         size: 'size',
         title: 'title',
       },
@@ -57,26 +71,30 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: {
-    selector: 'a[href*="{{ .Config.downloadlink }}"]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a[href*="{{ .Config.downloadlink }}"]',
+        attribute: 'href',
+      },
+      {
+        selector: 'a[href*="{{ .Config.downloadlink2 }}"]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [
       {
-        path:
-          'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}',
+        path: 'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}{{ .Config.sort }}/{{ .Config.type }}',
       },
       {
-        path:
-          'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}26/{{ .Config.sort }}/{{ .Config.type }}',
+        path: 'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}26/{{ .Config.sort }}/{{ .Config.type }}',
       },
       {
-        path:
-          'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}51/{{ .Config.sort }}/{{ .Config.type }}',
+        path: 'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}51/{{ .Config.sort }}/{{ .Config.type }}',
       },
       {
-        path:
-          'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}76/{{ .Config.sort }}/{{ .Config.type }}',
+        path: 'torrents/{{ if .Keywords }}search/{{ .Keywords }}/{{ else }}{{ end }}76/{{ .Config.sort }}/{{ .Config.type }}',
       },
     ],
     rows: {

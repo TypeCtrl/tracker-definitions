@@ -169,14 +169,8 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php?torrent="]',
         attribute: 'href',
       },
-      grabs: {
-        selector: 'div.selection_unter_ae',
-        filters: [{ name: 'replace', args: [' x', ''] }],
-      },
-      size: {
-        selector: 'div.selection_unter_ad',
-        filters: [{ name: 'replace', args: [',', '.'] }],
-      },
+      grabs: { selector: 'div.selection_unter_ae' },
+      size: { selector: 'div.selection_unter_ad' },
       seeders: { selector: 'div.selection_unter_aa > b' },
       leechers: { selector: 'div.selection_unter_aaa > b' },
       date: {

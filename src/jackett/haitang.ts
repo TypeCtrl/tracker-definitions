@@ -1,0 +1,145 @@
+import { TrackerDefinition } from '../definition-interface';
+
+export const definition: TrackerDefinition = {
+  id: 'haitang',
+  name: 'Haitang',
+  description: '海棠PT (Hǎitáng PT) is a CHINESE Private Torrent Tracker for OPERA / CROSSTALK',
+  language: 'zh-CN',
+  type: 'private',
+  encoding: 'UTF-8',
+  links: ['https://www.htpt.cc/'],
+  caps: {
+    categorymappings: [
+      { id: '1', cat: 'Audio', desc: '相声 Crosstalk' },
+      { id: '4091', cat: 'Audio', desc: '评书 Storytelling' },
+      { id: '4097', cat: 'Audio', desc: '戏曲 Opera' },
+      { id: '4098', cat: 'Audio', desc: '鼓/琴 Drum / Piano' },
+      { id: '4099', cat: 'Audio', desc: '小曲 Small Song' },
+      { id: '4101', cat: 'Audio', desc: '小品 Sketch' },
+      { id: '4104', cat: 'Audio', desc: '二人转 Duets' },
+      { id: '4105', cat: 'TV', desc: '小剧种 Puppet shows' },
+      { id: '4103', cat: 'Audio/Audiobook', desc: '广播剧 Audiobooks' },
+    ],
+    modes: { search: ['q'], 'tv-search': ['q'], 'music-search': ['q'] },
+  },
+  settings: [
+    { name: 'username', type: 'text', label: 'Username' },
+    { name: 'password', type: 'password', label: 'Password' },
+    {
+      name: 'freeleech',
+      type: 'checkbox',
+      label: 'Search freeleech only',
+      default: false,
+    },
+    {
+      name: 'info_tpp',
+      type: 'info',
+      label: 'Results Per Page',
+      default: 'For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.',
+    },
+    {
+      name: 'sort',
+      type: 'select',
+      label: 'Sort requested from site',
+      default: 4,
+      options: { '1': 'title', '4': 'created', '5': 'size', '7': 'seeders' },
+    },
+    {
+      name: 'type',
+      type: 'select',
+      label: 'Order requested from site',
+      default: 'desc',
+      options: { desc: 'desc', asc: 'asc' },
+    },
+  ],
+  login: {
+    path: 'takelogin.php',
+    method: 'post',
+    inputs: {
+      username: '{{ .Config.username }}',
+      password: '{{ .Config.password }}',
+      logout: '',
+      securelogin: '',
+      ssl: 'yes',
+      trackerssl: 'yes',
+    },
+    error: [
+      { selector: 'td.embedded:has(h2:contains("失败"))' },
+      { selector: 'td.embedded:has(h2:contains("failed"))' },
+    ],
+    test: { path: 'index.php', selector: 'a[href="logout.php"]' },
+  },
+  search: {
+    paths: [
+      { path: 'torrents.php', categories: ['!', 4103] },
+      { path: 'live.php', categories: [4103] },
+    ],
+    inputs: {
+      $raw: '{{ range .Categories }}cat{{.}}=1&{{end}}',
+      search: '{{ .Keywords }}',
+      incldead: 0,
+      spstate: '{{ if .Config.freeleech }}2{{ else }}0{{ end }}',
+      search_area: 0,
+      search_mode: 0,
+      sort: '{{ .Config.sort }}',
+      type: '{{ .Config.type }}',
+    },
+    rows: {
+      selector: 'table.torrents > tbody > tr:has(table.torrentname)',
+    },
+    fields: {
+      category: {
+        selector: 'a[href^="?cat="]',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'cat' }],
+      },
+      title: {
+        optional: true,
+        selector: 'a[title][href^="details.php?id="]',
+        attribute: 'title',
+      },
+      details: {
+        selector: 'a[href^="details.php?id="]',
+        attribute: 'href',
+      },
+      download: {
+        selector: 'a[href^="download.php?id="]',
+        attribute: 'href',
+      },
+      date: {
+        selector: 'td:nth-child(4):not(:has(span))',
+        optional: true,
+        filters: [
+          { name: 'append', args: ' +08:00' },
+          { name: 'dateparse', args: '2006-01-0215:04:05 -07:00' },
+        ],
+      },
+      size: { selector: 'td:nth-child(5)' },
+      seeders: { selector: 'td:nth-child(6)' },
+      leechers: { selector: 'td:nth-child(7)' },
+      grabs: { selector: 'td:nth-child(8)' },
+      downloadvolumefactor: {
+        case: {
+          'img.pro_free': 0,
+          'img.pro_free2up': 0,
+          'img.pro_50pctdown': 0.5,
+          'img.pro_50pctdown2up': 0.5,
+          'img.pro_30pctdown': 0.3,
+          '*': 1,
+        },
+      },
+      uploadvolumefactor: {
+        case: {
+          'img.pro_50pctdown2up': 2,
+          'img.pro_free2up': 2,
+          'img.pro_2up': 2,
+          '*': 1,
+        },
+      },
+      description: { selector: 'td:nth-child(2)', remove: 'a, img' },
+      minimumratio: { text: 1 },
+      minimumseedtime: { text: 86400 },
+    },
+  },
+  source: 'jackett',
+};

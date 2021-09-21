@@ -99,8 +99,7 @@ export const definition: TrackerDefinition = {
       codec: { selector: 'td:nth-child(6)', optional: true },
       bit: { selector: 'td:nth-child(7)', optional: true },
       description: {
-        text:
-          'Artist=[{{ .Result.artist }}] , Tags={{ .Result.tag }} , Codec=[{{ .Result.codec }}] , BitRate=[{{ .Result.bit }}]',
+        text: 'Artist=[{{ .Result.artist }}] , Tags={{ .Result.tag }} , Codec=[{{ .Result.codec }}] , BitRate=[{{ .Result.bit }}]',
       },
       grabs: { selector: 'td:nth-child(8)' },
       seeders: { selector: 'td:nth-child(9)' },

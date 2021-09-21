@@ -119,7 +119,6 @@ export const definition: TrackerDefinition = {
       files: { selector: 'a[href*="&filelist=1"]' },
       grabs: {
         selector: 'td.rowcol:nth-child(7):has(br), td.clear:nth-child(4)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
       },
       seeders: { selector: 'td.rowcol:nth-last-child(3)' },
       leechers: { selector: 'td.rowcol:nth-last-child(2)' },

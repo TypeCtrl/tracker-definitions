@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'onejav',
   name: 'OneJAV',
   description: 'OneJAV is a Public tracker for Asian 3X (JAV)',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
   links: ['https://onejav.com/'],

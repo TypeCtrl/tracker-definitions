@@ -105,24 +105,20 @@ export const definition: TrackerDefinition = {
         selector: 'div.torrent-poster img',
         attribute: 'src',
         filters: [
-          { name: 'replace', args: ['&w=52&h=80', '&w=180&h=270'] },
           {
             name: 'replace',
-            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/52x80&w=180&h=270', ''],
+            args: ['https://via.placeholder.com/90x135', ''],
           },
           {
             name: 'replace',
-            args: ['https://images.weserv.nl/?url=https://via.placeholder.com/600x900&w=180&h=270', ''],
+            args: ['https://via.placeholder.com/400x600', ''],
           },
         ],
       },
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
-      grabs: {
-        selector: 'td:nth-last-child(1)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(1)' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',

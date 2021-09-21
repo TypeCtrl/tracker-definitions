@@ -61,9 +61,13 @@ export const definition: TrackerDefinition = {
     },
   ],
   download: {
-    selector: 'a.btn-magnet',
-    attribute: 'href',
-    filters: [{ name: 'querystring', args: 'url' }],
+    selectors: [
+      {
+        selector: 'a.btn-magnet',
+        attribute: 'href',
+        filters: [{ name: 'querystring', args: 'url' }],
+      },
+    ],
   },
   search: {
     paths: [{ path: 'torrents' }],
@@ -84,10 +88,7 @@ export const definition: TrackerDefinition = {
         selector: 'td.title-row > a[href^="/"]',
         attribute: 'href',
       },
-      size: {
-        selector: 'td.size-row',
-        filters: [{ name: 're_replace', args: ['(\\d+).(?=\\d{3}(\\D|$))', '$1'] }],
-      },
+      size: { selector: 'td.size-row' },
       seeders: { selector: 'td.sn' },
       date: { selector: 'td.date-row' },
       category: {

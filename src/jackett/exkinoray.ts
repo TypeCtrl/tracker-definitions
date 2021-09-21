@@ -7,7 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['http://exkinoray.tv/'],
+  links: ['http://exkinoray.fun/'],
+  legacylinks: ['http://exkinoray.tv/'],
   caps: {
     categorymappings: [
       { id: '92', cat: 'TV', desc: 'Кино Сериал' },

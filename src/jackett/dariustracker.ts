@@ -125,10 +125,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',
       },
-      files: {
-        selector: 'td:nth-last-child(7)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      files: { selector: 'td:nth-last-child(7)' },
       date: {
         selector: 'td:nth-last-child(5)',
         filters: [
@@ -137,10 +134,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-last-child(4) b' },
-      grabs: {
-        selector: 'td:nth-last-child(3)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(3)' },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
       downloadvolumefactor: {

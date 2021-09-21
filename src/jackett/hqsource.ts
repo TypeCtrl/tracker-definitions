@@ -90,10 +90,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       imdb: { selector: 'a[href*="imdb.com/title/tt"]' },
-      grabs: {
-        selector: 'td:nth-child(6)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(6)' },
       size: { selector: 'td:nth-child(5)' },
       date: {
         selector: 'td:nth-child(2)',

@@ -120,10 +120,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-child(5)' },
       seeders: { selector: 'td:nth-child(7)' },
       leechers: { selector: 'td:nth-child(8)' },
-      grabs: {
-        selector: 'td:nth-child(6)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(6)' },
       date: {
         selector: 'td:nth-child(2) > small:nth-last-child(2), td:nth-child(2) > small',
         filters: [

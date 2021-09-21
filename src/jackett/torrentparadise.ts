@@ -7,9 +7,10 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: [
-    'https://torrentparadise.to/',
+  links: ['https://torrentparadise.pm/'],
+  legacylinks: [
     'https://torrentparadise.cc/',
+    'https://torrentparadise.to/',
     'https://torrentparadise.la/',
     'https://torrentparadise.cl/',
     'https://torrentparadise.org/',
@@ -205,7 +206,9 @@ export const definition: TrackerDefinition = {
     ],
   },
   settings: [],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

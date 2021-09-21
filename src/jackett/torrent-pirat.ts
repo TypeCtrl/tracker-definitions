@@ -267,6 +267,11 @@ export const definition: TrackerDefinition = {
         desc: '    Rough Sex, BDSM / Bondage - Video Pack',
       },
       {
+        id: '691',
+        cat: 'XXX',
+        desc: '    Постановочные изнасилования / Rape Roleplay - Ролики и сцены',
+      },
+      {
         id: '397',
         cat: 'XXX',
         desc: '    Fisting & Dildo - Ролики и сцены',

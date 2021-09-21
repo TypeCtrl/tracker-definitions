@@ -121,9 +121,12 @@
       },
       "poster": { "selector": "img#poster", "attribute": "data-src" },
       "date": {
-        "selector": "div.time_col:not(:has(span))",
+        "selector": "div.time_col:contains(\"发布于\"):not(:has(span[title]))",
+        "remove": "a",
         "optional": true,
         "filters": [
+          { "name": "replace", "args": ["发布于", ""] },
+          { "name": "replace", "args": ["匿名", ""] },
           { "name": "append", "args": " +08:00" },
           { "name": "dateparse", "args": "2006-01-02 15:04:05 -07:00" }
         ]

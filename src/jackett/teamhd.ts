@@ -120,10 +120,7 @@ export const definition: TrackerDefinition = {
         selector: 'td:nth-child(4)',
         filters: [{ name: 'split', args: ['|', 1] }],
       },
-      grabs: {
-        selector: 'td:nth-child(5) strong',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(5) strong' },
       size: { selector: 'td:nth-child(5)', remove: 'strong' },
       downloadvolumefactor: {
         case: {

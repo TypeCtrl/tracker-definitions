@@ -71,34 +71,35 @@
     "error": [{ "selector": "div#ERROR_COPY" }]
   },
   "search": {
-    "paths": [{ "path": "torrents/filter" }],
+    "paths": [{ "path": "torrents" }],
     "inputs": {
       "$raw": "{{ range .Categories }}categories[]={{.}}&{{end}}",
-      "search": "{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
+      "name": "{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}",
       "description": "",
+      "mediainfo": "",
       "keywords": "",
       "uploader": "",
-      "imdb": "{{ .Query.IMDBIDShort }}",
-      "tvdb": "{{ .Query.TVDBID }}",
-      "tmdb": "{{ .Query.TMDBID }}",
-      "mal": "",
-      "igdb": "",
-      "start_year": "",
-      "end_year": "",
-      "sorting": "{{ .Config.sort }}",
-      "direction": "{{ .Config.type }}",
-      "qty": 100,
-      "page": 0,
-      "view": "list",
-      "freeleech": "{{ if .Config.freeleech }}1{{ else }}{{ end }}"
+      "tmdbId": "{{ .Query.TMDBID }}",
+      "imdbId": "{{ .Query.IMDBIDShort }}",
+      "tvdbId": "{{ .Query.TVDBID }}",
+      "malId": "",
+      "startYear": "",
+      "endYear": "",
+      "playlistId": "",
+      "collectionId": "",
+      "sortField": "{{ .Config.sort }}",
+      "sortDirection": "{{ .Config.type }}",
+      "perPage": 100,
+      "page": 1,
+      "free": "{{ if .Config.freeleech }}1{{ else }}{{ end }}"
     },
     "keywordsfilters": [
       { "name": "re_replace", "args": ["(?i)\\bS(\\d+)", "T$1"] }
     ],
-    "rows": { "selector": "table > tbody > tr" },
+    "rows": { "selector": "table > tbody > tr:has(a[href*=\"/download/\"])" },
     "fields": {
       "category": {
-        "selector": "td.category-col div:nth-child(2)",
+        "selector": "td:nth-child(2) div:last-child",
         "case": {
           "span:contains(\"Películas\")": 1,
           "span:contains(\"Series\")": 2,
@@ -113,9 +114,10 @@
         }
       },
       "title": {
-        "selector": "a[href*=\"/torrents/\"]:not(:contains(\"VOSE\"))",
+        "selector": "a.view-torrent:not(:contains(\"VOSE\"))",
         "optional": true,
         "filters": [
+          { "name": "re_replace", "args": ["^ *\\[[^\\]]*\\] *", ""] },
           { "name": "re_replace", "args": ["(?i)\\bT(\\d+)", "S$1"] },
           { "name": "re_replace", "args": ["UHDRip", "BDRip"] },
           { "name": "append", "args": " SPANiSH" }
@@ -125,45 +127,27 @@
         "selector": "a[href*=\"/download/\"]",
         "attribute": "href"
       },
-      "details": { "selector": "a[href*=\"/torrents/\"]", "attribute": "href" },
+      "details": { "selector": "a.view-torrent", "attribute": "href" },
       "poster": {
         "selector": "div.torrent-poster img",
         "attribute": "src",
         "filters": [
-          { "name": "replace", "args": ["&w=52&h=80", "&w=180&h=270"] },
           {
             "name": "replace",
-            "args": [
-              "https://images.weserv.nl/?url=https://via.placeholder.com/52x80&w=180&h=270",
-              ""
-            ]
+            "args": ["https://via.placeholder.com/90x135", ""]
           },
           {
             "name": "replace",
-            "args": [
-              "https://images.weserv.nl/?url=https://via.placeholder.com/600x900&w=180&h=270",
-              ""
-            ]
+            "args": ["https://via.placeholder.com/400x600", ""]
           }
         ]
       },
-      "size": { "selector": "td:nth-last-child(4)" },
-      "seeders": { "selector": "td:nth-last-child(3)" },
-      "leechers": { "selector": "td:nth-last-child(2)" },
-      "grabs": {
-        "selector": "td:nth-last-child(1)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
-      "imdb": {
-        "selector": "a[href*=\"imdb.com/title/tt\"]",
-        "attribute": "href"
-      },
-      "tmdbid": {
-        "selector": "a[href*=\"themoviedb.org/movie/\"]",
-        "attribute": "href"
-      },
+      "size": { "selector": "td:nth-last-child(5)" },
+      "seeders": { "selector": "td:nth-last-child(4)" },
+      "leechers": { "selector": "td:nth-last-child(3)" },
+      "grabs": { "selector": "td:nth-last-child(2)" },
       "date": {
-        "selector": "time",
+        "selector": "td:nth-last-child(1)",
         "filters": [
           {
             "name": "re_replace",

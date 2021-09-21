@@ -14,7 +14,9 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: 'Audio', cat: 'Audio' }],
   },
   settings: [],
-  download: { selector: 'div.wp-block-file a', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'div.wp-block-file a', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: '/' }],
     inputs: { s: '{{ .Keywords }}' },

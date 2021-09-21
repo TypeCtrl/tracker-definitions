@@ -6,12 +6,14 @@
   "type": "public",
   "encoding": "UTF-8",
   "links": [
-    "https://www.gamestorrents.nu/",
-    "https://gamestorrents.nocensor.space/"
+    "https://www.gamestorrents.fm/",
+    "https://gamestorrents.nocensor.work/"
   ],
   "legacylinks": [
     "https://www.gamestorrents.com/",
-    "https://www.gamestorrents.tv/"
+    "https://www.gamestorrents.tv/",
+    "https://www.gamestorrents.nu/",
+    "https://gamestorrents.nocensor.space/"
   ],
   "caps": {
     "categorymappings": [
@@ -32,7 +34,9 @@
     "modes": { "search": ["q"] }
   },
   "settings": [],
-  "download": { "selector": "a#download_torrent", "attribute": "href" },
+  "download": {
+    "selectors": [{ "selector": "a#download_torrent", "attribute": "href" }]
+  },
   "search": {
     "paths": [{ "path": "/" }],
     "inputs": { "s": "{{ .Keywords }}" },

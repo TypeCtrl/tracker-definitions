@@ -101,10 +101,7 @@ export const definition: TrackerDefinition = {
         selector: 'a[href^="download.php/"]',
         attribute: 'href',
       },
-      grabs: {
-        selector: 'a[href^="download.php/"]',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'a[href^="download.php/"]' },
       size: { selector: 'td:nth-child(6)' },
       date: {
         selector: 'td:nth-child(5)',
@@ -113,7 +110,7 @@ export const definition: TrackerDefinition = {
           { name: 'replace', args: ['фев', 'Feb'] },
           { name: 'replace', args: ['мар', 'Mar'] },
           { name: 'replace', args: ['апр', 'Apr'] },
-          { name: 'replace', args: ['май', 'May'] },
+          { name: 'replace', args: ['мая', 'May'] },
           { name: 'replace', args: ['июн', 'Jun'] },
           { name: 'replace', args: ['июл', 'Jul'] },
           { name: 'replace', args: ['авг', 'Aug'] },

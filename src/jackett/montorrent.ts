@@ -141,12 +141,10 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}/recherche/?query={{ .Keywords }}&{{ else }}/torrents/?{{ end }}langue={{ .Config.langfilter }}&order={{ .Config.order }}&orderby={{ .Config.orderby }}',
+        path: '{{ if .Keywords }}/recherche/?query={{ .Keywords }}&{{ else }}/torrents/?{{ end }}langue={{ .Config.langfilter }}&order={{ .Config.order }}&orderby={{ .Config.orderby }}',
       },
       {
-        path:
-          '{{ if .Keywords }}/recherche/?query={{ .Keywords }}&{{ else }}/torrents/?{{ end }}langue={{ .Config.langfilter }}&order={{ .Config.order }}&orderby={{ .Config.orderby }}&page=2',
+        path: '{{ if .Keywords }}/recherche/?query={{ .Keywords }}&{{ else }}/torrents/?{{ end }}langue={{ .Config.langfilter }}&order={{ .Config.order }}&orderby={{ .Config.orderby }}&page=2',
       },
     ],
     rows: {

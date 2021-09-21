@@ -113,26 +113,17 @@
       "seeders": {
         "selector": "div.trbo div:nth-last-child(7)",
         "optional": true,
-        "filters": [
-          { "name": "re_replace", "args": ["\\s", "0"] },
-          { "name": "regexp", "args": "(\\d+)" }
-        ]
+        "filters": [{ "name": "re_replace", "args": ["\\s", "0"] }]
       },
       "leechers": {
         "selector": "div.trbo div:nth-last-child(6)",
         "optional": true,
-        "filters": [
-          { "name": "re_replace", "args": ["\\s", "0"] },
-          { "name": "regexp", "args": "(\\d+)" }
-        ]
+        "filters": [{ "name": "re_replace", "args": ["\\s", "0"] }]
       },
       "grabs": {
         "selector": "div.trbo div:nth-last-child(5)",
         "optional": true,
-        "filters": [
-          { "name": "re_replace", "args": ["\\s", "0"] },
-          { "name": "regexp", "args": "(\\d+)" }
-        ]
+        "filters": [{ "name": "re_replace", "args": ["\\s", "0"] }]
       },
       "date": {
         "remove": "a, span",

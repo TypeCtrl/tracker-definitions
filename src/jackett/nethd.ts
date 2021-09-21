@@ -118,7 +118,8 @@ export const definition: TrackerDefinition = {
         ],
       },
       date: {
-        selector: 'td:nth-child(5)',
+        selector: 'td:nth-child(5):not(:contains("-"))',
+        optional: true,
         filters: [
           { name: 're_replace', args: ['năm', 'years '] },
           { name: 're_replace', args: ['tháng', 'months '] },

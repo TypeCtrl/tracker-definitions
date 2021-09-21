@@ -108,6 +108,23 @@
     ],
     "test": { "path": "userdetails.php" }
   },
+  "download": {
+    "before": {
+      "path": "get_srv_details.php",
+      "inputs": { "action": 2, "id": "{{ .DownloadUri.Query.id }}" }
+    },
+    "infohash": {
+      "before": true,
+      "hash": {
+        "selector": "li:first-child",
+        "filters": [{ "name": "regexp", "args": "([A-F|a-f|0-9]{40})" }]
+      },
+      "title": {
+        "selector": "div.b",
+        "filters": [{ "name": "trim" }, { "name": "validfilename" }]
+      }
+    }
+  },
   "search": {
     "paths": [{ "path": "browse.php" }],
     "keywordsfilters": [

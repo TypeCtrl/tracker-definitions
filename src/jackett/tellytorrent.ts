@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'tellytorrent',
   name: 'TellyTorrent',
   description: 'TellyTorrent is an INDIAN Private Tracker for MOVIES / TV',
-  language: 'en-EN',
+  language: 'en-US',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://telly.wtf/'],
@@ -18,6 +18,7 @@ export const definition: TrackerDefinition = {
       { id: '5', cat: 'PC/Games', desc: 'Games' },
       { id: '6', cat: 'PC/0day', desc: 'Application' },
       { id: '7', cat: 'PC/Mobile-Other', desc: 'Mobile App' },
+      { id: '8', cat: 'Movies', desc: 'Movies' },
     ],
     modes: {
       search: ['q'],
@@ -90,7 +91,7 @@ export const definition: TrackerDefinition = {
       sortDirection: '{{ .Config.type }}',
       perPage: 100,
       page: 1,
-      freeleech: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
+      free: '{{ if .Config.freeleech }}1{{ else }}{{ end }}',
     },
     rows: { selector: 'table > tbody > tr' },
     fields: {
@@ -112,6 +113,10 @@ export const definition: TrackerDefinition = {
           {
             name: 'replace',
             args: ['https://via.placeholder.com/90x135', ''],
+          },
+          {
+            name: 'replace',
+            args: ['https://via.placeholder.com/400x600', ''],
           },
         ],
       },

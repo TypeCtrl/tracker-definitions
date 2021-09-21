@@ -175,10 +175,7 @@ export const definition: TrackerDefinition = {
         attribute: 'onmouseover',
         filters: [{ name: 'regexp', args: "'(.+?)'" }],
       },
-      size: {
-        selector: 'div.selection_unter_ad',
-        filters: [{ name: 'replace', args: [',', '.'] }],
-      },
+      size: { selector: 'div.selection_unter_ad' },
       grabs: {
         selector: 'div.selection_unter_ae',
         filters: [{ name: 'replace', args: [' x', ''] }],

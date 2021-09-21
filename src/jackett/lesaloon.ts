@@ -128,7 +128,7 @@ export const definition: TrackerDefinition = {
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
-      loginButton: 'X',
+      loginButton: 'XZ',
     },
     error: [{ selector: 'p[style="color: #B73C38"]' }],
     test: { path: 'index.php', selector: 'a[href="logout.php"]' },

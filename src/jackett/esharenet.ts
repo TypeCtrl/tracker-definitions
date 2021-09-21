@@ -3,8 +3,8 @@ import { TrackerDefinition } from '../definition-interface';
 export const definition: TrackerDefinition = {
   id: 'esharenet',
   name: 'eShareNet',
-  description: 'eShareNet is a Private Tracker for Brittish MOVIE / TV',
-  language: 'en-EN',
+  description: 'eShareNet is a Private Tracker for British MOVIE / TV',
+  language: 'en-GB',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://esharenet.eu/'],
@@ -139,10 +139,7 @@ export const definition: TrackerDefinition = {
       size: { selector: 'td:nth-last-child(4)' },
       seeders: { selector: 'td:nth-last-child(3)' },
       leechers: { selector: 'td:nth-last-child(2)' },
-      grabs: {
-        selector: 'td:nth-last-child(1)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(1)' },
       imdb: {
         selector: 'a[href*="imdb.com/title/tt"]',
         attribute: 'href',

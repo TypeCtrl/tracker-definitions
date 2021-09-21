@@ -240,27 +240,19 @@
         ]
       },
       "size": {
-        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) b",
-        "filters": [
-          { "name": "replace", "args": [".", ""] },
-          { "name": "replace", "args": [",", "."] }
-        ]
+        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) b"
       },
       "files": {
-        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) a span",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
+        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(1) a span"
       },
       "seeders": {
-        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) a span",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
+        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) a span"
       },
       "leechers": {
-        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) a span:nth-child(2)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
+        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) a span:nth-child(2)"
       },
       "grabs": {
-        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(3) a span",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
+        "selector": "td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(3) a span"
       },
       "downloadvolumefactor": {
         "case": { "span:contains(\"[OnlyUpload]\")": 0, "*": 1 }

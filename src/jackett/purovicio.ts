@@ -128,10 +128,7 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       size: { selector: 'td:nth-last-child(4)' },
-      grabs: {
-        selector: 'td:nth-last-child(3)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-last-child(3)' },
       seeders: { selector: 'td:nth-last-child(2)' },
       leechers: { selector: 'td:nth-last-child(1)' },
       date: {

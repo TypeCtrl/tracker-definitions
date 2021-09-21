@@ -1,8 +1,9 @@
-import del from 'del';
 import fs from 'fs';
+import path from 'path';
+
+import del from 'del';
 import * as yaml from 'js-yaml';
 import { camelCase, isObjectLike } from 'lodash';
-import path from 'path';
 import prettier from 'prettier';
 
 import { TORZNAB_CATEGORIES } from '../src/categories';

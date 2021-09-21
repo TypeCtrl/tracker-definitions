@@ -96,10 +96,7 @@ export const definition: TrackerDefinition = {
       },
       size: { selector: 'td:nth-child(7)' },
       files: { selector: 'td:nth-child(4)' },
-      grabs: {
-        selector: 'td:nth-child(8)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(8)' },
       seeders: { selector: 'td:nth-child(9)' },
       leechers: { selector: 'td:nth-child(10)' },
       date: {

@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://torrentview34.com/'],
+  links: ['https://torrentview40.com/'],
   legacylinks: [
     'https://torrentview.net/',
     'https://torrentview3.net/',
@@ -42,6 +42,12 @@ export const definition: TrackerDefinition = {
     'https://torrentview31.com/',
     'https://torrentview32.com/',
     'https://torrentview33.com/',
+    'https://torrentview34.com/',
+    'https://torrentview35.com/',
+    'https://torrentview36.com/',
+    'https://torrentview37.com/',
+    'https://torrentview38.com/',
+    'https://torrentview39.com/',
   ],
   caps: {
     categorymappings: [
@@ -67,7 +73,9 @@ export const definition: TrackerDefinition = {
     },
   },
   settings: [],
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'bbs/search.php' }],
     inputs: {

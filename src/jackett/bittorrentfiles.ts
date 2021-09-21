@@ -163,13 +163,7 @@ export const definition: TrackerDefinition = {
       },
       grabs: { selector: 'a[title="Snatcher"]', optional: true },
       files: { selector: 'a[title="Files"]', optional: true },
-      size: {
-        selector: 'td:nth-child(6)',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      size: { selector: 'td:nth-child(6)' },
       seeders: { selector: 'a[title="Seeder"]', optional: true },
       leechers: { selector: 'a[title="Leecher"]', optional: true },
       date: {

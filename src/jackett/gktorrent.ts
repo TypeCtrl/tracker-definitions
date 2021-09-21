@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.gktorrent.cc/', 'https://gktorrent.nocensor.space/'],
+  links: ['https://www.gktorrents.com/', 'https://gktorrent.nocensor.work/'],
   legacylinks: [
     'https://www.gktorrent.com/',
     'http://www.gktorrent.com/',
@@ -32,6 +32,8 @@ export const definition: TrackerDefinition = {
     'https://www.gktorrent.pw/',
     'https://wvw.gktorrent.pw/',
     'https://vww.gktorrent.pw/',
+    'https://www.gktorrent.cc/',
+    'https://gktorrent.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -80,7 +82,9 @@ export const definition: TrackerDefinition = {
       default: false,
     },
   ],
-  download: { selector: 'a[href*="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href*="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {

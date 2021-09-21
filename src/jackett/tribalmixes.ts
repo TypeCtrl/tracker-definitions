@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'tribalmixes',
   name: 'TribalMixes',
   description: 'TribalMixes is a ratioless Semi-Private Torrent Tracker for DJ MIXES',
-  language: 'en-EN',
+  language: 'en-GB',
   type: 'semi-private',
   encoding: 'ISO-8859-1',
   links: ['https://www.tribalmixes.com/'],

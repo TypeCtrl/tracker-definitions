@@ -53,8 +53,12 @@ export const definition: TrackerDefinition = {
     test: { path: '/', selector: 'a[href$="/index.php?action=logout"]' },
   },
   download: {
-    selector: 'a[href*="/index.php?do=download&id="]',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'a[href*="/index.php?do=download&id="]',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [{ path: 'index.php' }],

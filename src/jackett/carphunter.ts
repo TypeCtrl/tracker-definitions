@@ -77,28 +77,30 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: 'takelogin.php',
+    path: 'login.php?takelogin',
     method: 'post',
     inputs: {
       username: '{{ .Config.username }}',
       password: '{{ .Config.password }}',
+      two_factor_auth_code: '',
+      inactivity_: '',
       returnto: '/',
     },
-    error: [{ selector: 'td.embedded:contains("Sikertelen bejelentkezés!")' }],
-    test: { path: 'letoltes.php', selector: 'a[href="logout.php"]' },
+    error: [{ selector: 'td.embedded:contains("Sikertelen bejelentkezés")' }],
+    test: { path: 'letoltes.php', selector: 'a[href^="logout.php"]' },
   },
   search: {
     paths: [{ path: 'letoltes.php' }],
     keywordsfilters: [{ name: 're_replace', args: ['[^a-zA-Z0-9]+', '%'] }],
     inputs: {
-      $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
+      $raw: '{{ range .Categories }}cat[]={{.}}&{{end}}',
       search: '{{ .Keywords }}',
       incldead: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table[width="920px"] > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table[width="920px"] > tbody > tr:has(a[href^="letoltes.php?cat="])',
     },
     fields: {
       category: {
@@ -107,15 +109,15 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'querystring', args: 'cat' }],
       },
       title: {
-        selector: 'a[href^="/details.php?id="]',
+        selector: 'a[href*="/details.php?id="]',
         attribute: 'title',
       },
       details: {
-        selector: 'a[href^="/details.php?id="]',
+        selector: 'a[href*="/details.php?id="]',
         attribute: 'href',
       },
       download: {
-        selector: 'a[href^="/details.php?id="]',
+        selector: 'a[href*="/details.php?id="]',
         attribute: 'href',
         filters: [{ name: 'replace', args: ['/details', '/download'] }],
       },

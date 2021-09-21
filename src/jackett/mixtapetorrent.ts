@@ -14,8 +14,12 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   download: {
-    selector: 'table#attachments > tbody > tr.odd > td > a',
-    attribute: 'href',
+    selectors: [
+      {
+        selector: 'table#attachments > tbody > tr.odd > td > a',
+        attribute: 'href',
+      },
+    ],
   },
   search: {
     paths: [

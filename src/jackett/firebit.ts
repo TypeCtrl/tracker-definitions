@@ -73,18 +73,15 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   download: {
-    selector: 'a[href^="/download.php?id="]',
-    attribute: 'href',
+    selectors: [{ selector: 'a[href^="/download.php?id="]', attribute: 'href' }],
   },
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}index.php?do=search&type=simple&q={{ .Keywords }}{{ else }}%D1%84%D0%B8%D0%BB%D1%8C%D0%BC/{{ end }}',
+        path: '{{ if .Keywords }}index.php?do=search&type=simple&q={{ .Keywords }}{{ else }}%D1%84%D0%B8%D0%BB%D1%8C%D0%BC/{{ end }}',
       },
       {
-        path:
-          '{{ if .Keywords }}index.php?do=search&type=simple&q=abcd1234{{ else }}%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB/{{ end }}',
+        path: '{{ if .Keywords }}index.php?do=search&type=simple&q=abcd1234{{ else }}%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB/{{ end }}',
       },
     ],
     rows: {
@@ -115,7 +112,8 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 'replace', args: ['-', '0 B'] }],
       },
       date: {
-        selector: 'td:nth-child(5), li.meta-date',
+        selector: 'td:nth-child(5):not(:contains(",")), li.meta-date:not(:contains(","))',
+        optional: true,
         filters: [
           { name: 'append', args: ' +03:00' },
           { name: 'dateparse', args: '02.01.2006 15:04:05 -07:00' },

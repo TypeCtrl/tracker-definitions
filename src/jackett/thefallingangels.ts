@@ -204,21 +204,8 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       poster: { selector: 'div[id^="details"] img', attribute: 'src' },
-      size: {
-        selector: 'div.selection_unter_ad',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
-      grabs: {
-        selector: 'div.selection_unter_ae',
-        filters: [
-          { name: 'trim', args: 'x' },
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      size: { selector: 'div.selection_unter_ad' },
+      grabs: { selector: 'div.selection_unter_ae' },
       date: {
         selector: 'div.selection_unter_ab:contains(".")',
         optional: true,
@@ -229,20 +216,8 @@ export const definition: TrackerDefinition = {
         ],
       },
       description: { selector: 'selection_unter_af', optional: true },
-      seeders: {
-        selector: 'div.selection_unter_aa',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
-      leechers: {
-        selector: 'div.selection_unter_aaa',
-        filters: [
-          { name: 'replace', args: ['.', ''] },
-          { name: 'replace', args: [',', '.'] },
-        ],
-      },
+      seeders: { selector: 'div.selection_unter_aa' },
+      leechers: { selector: 'div.selection_unter_aaa' },
       downloadvolumefactor: {
         case: {
           'div[onmouseover="return overlib(\'OnlyUp: Ja\');"]': 0,

@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'zh-CN',
   type: 'private',
   encoding: 'UTF-8',
-  links: ['https://pt.m-team.cc/'],
-  legacylinks: ['https://tp.m-team.cc/'],
+  links: ['https://kp.m-team.cc/'],
+  legacylinks: ['https://tp.m-team.cc/', 'https://pt.m-team.cc/'],
   caps: {
     categorymappings: [
       { id: '401', cat: 'Movies/SD', desc: 'Movie(電影)/SD' },

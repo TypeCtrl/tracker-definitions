@@ -147,14 +147,8 @@ export const definition: TrackerDefinition = {
       },
       seeders: { selector: 'td:nth-last-of-type(10)' },
       leechers: { selector: 'td:nth-last-of-type(9)' },
-      grabs: {
-        selector: 'td:nth-last-of-type(8)',
-        filters: [{ name: 'replace', args: ['---', '0'] }],
-      },
-      size: {
-        selector: 'td:nth-last-of-type(6)',
-        filters: [{ name: 'replace', args: [',', ''] }],
-      },
+      grabs: { selector: 'td:nth-last-of-type(8)' },
+      size: { selector: 'td:nth-last-of-type(6)' },
       description: {
         selector: 'td:nth-last-of-type(4) img',
         attribute: 'title',

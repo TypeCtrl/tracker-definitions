@@ -304,27 +304,10 @@
         "selector": "div.torrent-item__title a",
         "attribute": "href"
       },
-      "size": {
-        "selector": "div.data-size",
-        "filters": [
-          {
-            "name": "re_replace",
-            "args": ["(\\d)\\.(\\d{3}\\.\\d{2})", "$1$2"]
-          }
-        ]
-      },
-      "seeders": {
-        "selector": "div.data-seeders",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
-      "leechers": {
-        "selector": "div.data-leechers",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
-      "grabs": {
-        "selector": "div.data-completed",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "size": { "selector": "div.data-size" },
+      "seeders": { "selector": "div.data-seeders" },
+      "leechers": { "selector": "div.data-leechers" },
+      "grabs": { "selector": "div.data-completed" },
       "date": { "text": "now" },
       "downloadvolumefactor": { "text": 1 },
       "uploadvolumefactor": { "text": 1 },

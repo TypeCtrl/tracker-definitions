@@ -73,6 +73,7 @@ export interface TrackerDefinition {
    * Website encoding used by the tracker
    */
   encoding?: SiteEncoding;
+  testlinktorrent?: boolean;
   /**
    * If the tracker uses untrusted HTTPS certificates (self signed, expired) you can specify a list of thumbprint hashes which should be accepted as valid anyway.
    * This shouldn't be needed in most cases.
@@ -140,11 +141,13 @@ export interface Modes {
 }
 
 export interface Download {
-  before?: Req;
+  before?: Req | Record<string, Selector>;
   method?: string;
   selector?: string;
+  selectors?: Selector[] | null;
   filters?: Filters[];
   attribute?: string;
+  infohash?: Record<string, Selector | boolean>;
 }
 
 export interface Req {

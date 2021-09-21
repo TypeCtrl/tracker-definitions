@@ -13,7 +13,7 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.fun/',
     'https://ilcorsaronero.pro/',
     'https://ilcorsaronero.torrentbay.to/',
-    'https://ilcorsaronero.nocensor.space/',
+    'https://ilcorsaronero.nocensor.work/',
   ],
   legacylinks: [
     'https://ilcorsaronero.live/',
@@ -28,6 +28,7 @@ export const definition: TrackerDefinition = {
     'https://ilcorsaronero.xyz/',
     'https://ilcorsaronero.unblockit.me/',
     'https://ilcorsaronero.unblockit.pw/',
+    'https://ilcorsaronero.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -91,16 +92,13 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=0{{ else }}/browse/0{{ end }}',
+        path: '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=0{{ else }}/browse/0{{ end }}',
       },
       {
-        path:
-          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=1{{ else }}/browse/1{{ end }}',
+        path: '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=1{{ else }}/browse/1{{ end }}',
       },
       {
-        path:
-          '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=2{{ else }}/browse/2{{ end }}',
+        path: '{{ if .Keywords }}advsearch.php?&category={{ range .Categories }}{{.}};{{end}}&search={{ .Keywords }}&order=data&by=DESC&page=2{{ else }}/browse/2{{ end }}',
       },
     ],
     rows: {

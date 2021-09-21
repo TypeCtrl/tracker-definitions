@@ -11,7 +11,7 @@ export const definition: TrackerDefinition = {
     'http://audiobookbay.nl/',
     'http://audiobookbay.net/',
     'http://audiobookbayabb.com/',
-    'https://audiobookbay.unblockit.li/',
+    'https://audiobookbay.unblockit.ws/',
   ],
   legacylinks: [
     'https://audiobookbay.la/',
@@ -23,6 +23,9 @@ export const definition: TrackerDefinition = {
     'https://audiobookbay.unblockit.buzz/',
     'https://audiobookbay.unblockit.club/',
     'https://audiobookbay.unblockit.onl/',
+    'https://audiobookbay.unblockit.li/',
+    'https://audiobookbay.unblockit.uno/',
+    'https://audiobookbay.unblockit.ch/',
   ],
   caps: {
     categorymappings: [
@@ -109,15 +112,16 @@ export const definition: TrackerDefinition = {
   },
   settings: [],
   download: {
-    selector: 'td:contains("Info Hash:") ~ td',
-    filters: [
-      { name: 'prepend', args: 'magnet:?xt=urn:btih:' },
-      {
-        name: 'append',
-        args:
-          '&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.si%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Fipv4.tracker.harry.lu%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2Fdenis.stalker.upeer.me%3A6969%2Fannounce',
+    infohash: {
+      hash: {
+        selector: 'td:contains("Info Hash:") ~ td',
+        filters: [{ name: 'regexp', args: '([A-F|a-f|0-9]{40})' }],
       },
-    ],
+      title: {
+        selector: 'h1',
+        filters: [{ name: 'trim' }, { name: 'validfilename' }],
+      },
+    },
   },
   search: {
     paths: [

@@ -4,7 +4,7 @@ export const definition: TrackerDefinition = {
   id: 'pleasuredome',
   name: 'PleasureDome',
   description: 'PleasureDome is a private site for Arcade / Console / PC Games',
-  language: 'en-EN',
+  language: 'en-GB',
   type: 'private',
   encoding: 'UTF-8',
   links: ['https://www.pleasuredome.org.uk/'],

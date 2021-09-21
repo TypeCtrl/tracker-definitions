@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   language: 'en-US',
   type: 'public',
   encoding: 'UTF-8',
-  links: ['https://nyaa.si/'],
+  links: ['https://nyaa.si/', 'https://nyaa.lol/'],
   legacylinks: [
     'https://nyaa.black-mirror.xyz/',
     'https://nyaa.unblocked.casa/',
@@ -122,15 +122,18 @@ export const definition: TrackerDefinition = {
     },
   },
   search: {
-    paths: [{ path: '/' }],
-    inputs: {
-      q: '{{ .Keywords }}',
-      f: '{{ .Config.filter-id }}',
-      c: '{{ .Config.cat-id }}',
-      s: '{{ .Config.sort }}',
-      o: '{{ .Config.type }}',
+    paths: [
+      {
+        path: '?q={{ .Keywords }}&f={{ .Config.filter-id }}&c={{ .Config.cat-id }}&s={{ .Config.sort }}&o={{ .Config.type }}',
+      },
+      {
+        path: '?q={{ if .Keywords }}{{ re_replace .Keywords " 0(\\d{1})" " $1" }}{{ else }}&p=2{{ end }}&f={{ .Config.filter-id }}&c={{ .Config.cat-id }}&s={{ .Config.sort }}&o={{ .Config.type }}',
+      },
+    ],
+    rows: {
+      selector: 'tr.default,tr.danger,tr.success',
+      filters: [{ name: 'andmatch' }],
     },
-    rows: { selector: 'tr.default,tr.danger,tr.success' },
     fields: {
       category: {
         selector: 'td:nth-child(1) a',

@@ -11,8 +11,8 @@ export const definition: TrackerDefinition = {
   links: [
     'https://zooqle.com/',
     'https://zooqle.unblockninja.com/',
-    'https://zooqle.unblockit.li/',
-    'https://zooqle.nocensor.space/',
+    'https://zooqle.unblockit.ws/',
+    'https://zooqle.nocensor.work/',
   ],
   legacylinks: [
     'https://zooqle.unblockit.pro/',
@@ -40,6 +40,10 @@ export const definition: TrackerDefinition = {
     'https://zooqle.unblocked.monster/',
     'https://zooqle.unblockit.club/',
     'https://zooqle.unblockit.onl/',
+    'https://zooqle.unblockit.li/',
+    'https://zooqle.unblockit.uno/',
+    'https://zooqle.unblockit.ch/',
+    'https://zooqle.nocensor.space/',
   ],
   caps: {
     categorymappings: [
@@ -80,8 +84,7 @@ export const definition: TrackerDefinition = {
   search: {
     paths: [
       {
-        path:
-          'search?s={{ .Config.sort }}&v=t&sd={{ .Config.type }}&q={{ if .Keywords }}{{ .Keywords }}{{ else }} *{{ end }}{{ if .Categories }} category:{{ range .Categories }}{{.}},{{end}}{{ else }}{{ end }}',
+        path: 'search?s={{ .Config.sort }}&v=t&sd={{ .Config.type }}&q={{ if .Keywords }}{{ .Keywords }}{{ else }} *{{ end }}{{ if .Categories }} category:{{ range .Categories }}{{.}},{{end}}{{ else }}{{ end }}',
       },
     ],
     rows: {

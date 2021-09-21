@@ -13,7 +13,9 @@ export const definition: TrackerDefinition = {
     categorymappings: [{ id: '1', cat: 'PC/Games' }],
   },
   settings: [],
-  download: { selector: 'div.facepaylas a', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'div.facepaylas a', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: '{{ if .Keywords }}?s={{ .Keywords }}{{ else }}{{ end }}' }],
     rows: { selector: 'div.moviefilm' },

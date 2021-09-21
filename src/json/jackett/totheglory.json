@@ -116,6 +116,7 @@
   "login": {
     "path": "login.php?returnto=",
     "method": "form",
+    "form": "form[action=\"takelogin.php\"]",
     "inputs": {
       "username": "{{ .Config.username }}",
       "password": "{{ .Config.password }}",
@@ -124,7 +125,10 @@
       "passid": "{{ .Config.passid }}",
       "passan": "{{ .Config.passan }}"
     },
-    "error": [{ "selector": "form#loginform > span.warning" }],
+    "error": [
+      { "selector": "td.embedded:has(h2:contains(\"！\"))" },
+      { "selector": "td.embedded:has(h2:contains(\"!\"))" }
+    ],
     "test": { "path": "my.php" }
   },
   "search": {
@@ -133,40 +137,9 @@
       {
         "path": "browse.php",
         "categories": [
-          1000,
-          1010,
-          1020,
-          1030,
-          1040,
-          1050,
-          1060,
-          1070,
-          1080,
-          1090,
-          1100,
-          1110,
-          1120,
-          1130,
-          1140,
-          1150,
-          1160,
-          1170,
-          1180,
-          4000,
-          4010,
-          4020,
-          4030,
-          4040,
-          4050,
-          4060,
-          4070,
-          7000,
-          7010,
-          7020,
-          7030,
-          7040,
-          7050,
-          7060
+          1000, 1010, 1020, 1030, 1040, 1050, 1060, 1070, 1080, 1090, 1100,
+          1110, 1120, 1130, 1140, 1150, 1160, 1170, 1180, 4000, 4010, 4020,
+          4030, 4040, 4050, 4060, 4070, 7000, 7010, 7020, 7030, 7040, 7050, 7060
         ],
         "inputs": { "c": "G" }
       }
@@ -202,10 +175,7 @@
           { "name": "replace", "args": ["\n", ""] }
         ]
       },
-      "grabs": {
-        "selector": "td:nth-child(8)",
-        "filters": [{ "name": "regexp", "args": "(\\d+)" }]
-      },
+      "grabs": { "selector": "td:nth-child(8)" },
       "date": {
         "selector": "td:nth-child(5)",
         "filters": [

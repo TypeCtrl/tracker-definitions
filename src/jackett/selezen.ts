@@ -7,8 +7,8 @@ export const definition: TrackerDefinition = {
   language: 'ru-RU',
   type: 'semi-private',
   encoding: 'UTF-8',
-  links: ['https://mel.selezen.net/', 'https://selezen.org/', 'https://s1.selezen.site/'],
-  legacylinks: ['https://www.selezen.site/', 'https://www.selezen.net/'],
+  links: ['https://use.selezen.club/', 'https://mel.selezen.net/', 'https://selezen.org/'],
+  legacylinks: ['https://www.selezen.site/', 'https://www.selezen.net/', 'https://s1.selezen.site/'],
   caps: {
     categorymappings: [
       { id: '0', cat: 'Movies', desc: 'Movies' },
@@ -55,7 +55,7 @@ export const definition: TrackerDefinition = {
     },
   ],
   login: {
-    path: '/',
+    path: 'login.html',
     method: 'form',
     form: 'form[role="form"]',
     inputs: {
@@ -67,7 +67,9 @@ export const definition: TrackerDefinition = {
     error: [{ selector: 'div.alert-warning:contains("Ошибка авторизации")' }],
     test: { path: '/', selector: 'a[href$="/index.php?action=logout"]' },
   },
-  download: { selector: 'a[href^="magnet:?xt="]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?xt="]', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {
@@ -132,10 +134,7 @@ export const definition: TrackerDefinition = {
       seeders: { selector: 'i.fa-arrow-up ~ span' },
       leechers: { selector: 'i.fa-arrow-down ~ span' },
       grabs: { selector: 'i.fa-download ~ span' },
-      size: {
-        selector: 'i.fa-file-video-o ~ b',
-        filters: [{ name: 'replace', args: [',', '.'] }],
-      },
+      size: { selector: 'i.fa-file-video-o ~ b' },
       downloadvolumefactor: { text: 0 },
       uploadvolumefactor: { text: 1 },
     },

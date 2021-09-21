@@ -256,7 +256,9 @@ export const definition: TrackerDefinition = {
     modes: { search: ['q'] },
   },
   settings: [],
-  download: { selector: 'a.itemtop_game', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a.itemtop_game', attribute: 'href' }],
+  },
   search: {
     paths: [{ path: 'index.php' }],
     inputs: {
@@ -289,7 +291,6 @@ export const definition: TrackerDefinition = {
       details: { selector: 'div.short_titles > a', attribute: 'href' },
       download: { selector: 'div.short_titles > a', attribute: 'href' },
       poster: { selector: 'img', attribute: 'src' },
-      description: { selector: 'div.shor_desc', optional: true },
       date: { text: 'now' },
       seeders: { text: 1 },
       leechers: { text: 1 },

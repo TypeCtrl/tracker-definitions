@@ -52,6 +52,8 @@ export const definition: TrackerDefinition = {
       { id: '87', cat: 'TV', desc: 'Dijital Platform GAIN' },
       { id: '88', cat: 'TV', desc: 'Dijital Platform TV+' },
       { id: '89', cat: 'TV', desc: 'Dijital Platform Diger' },
+      { id: '90', cat: 'TV', desc: 'Dijital Platform MUBi' },
+      { id: '91', cat: 'TV', desc: 'Dijital Platform Vodafone' },
       { id: '31', cat: 'TV', desc: 'Dizi' },
       { id: '32', cat: 'TV', desc: 'Dizi Yerli' },
       {
@@ -146,12 +148,9 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       date: {
+        selector: 'abbr[data-time]',
+        attribute: 'data-time',
         optional: true,
-        selector: 'td.torrent_name:contains(" at ")',
-        filters: [
-          { name: 'regexp', args: 'Uploaded (.+?) by' },
-          { name: 'replace', args: [' at ', ' '] },
-        ],
       },
       download: {
         selector: 'a[href*="?p=torrents&pid=10&action=download"]',

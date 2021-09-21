@@ -11,6 +11,7 @@
   "rules": {
     "quote-props": 0,
     "@typescript-eslint/quotes": 0,
-    "no-script-url": 0
+    "no-script-url": 0,
+    "no-template-curly-in-string": 0
   }
 }

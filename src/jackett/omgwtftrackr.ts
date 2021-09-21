@@ -5,8 +5,8 @@ export const definition: TrackerDefinition = {
   name: 'oMg[WtF]trackr',
   description: 'oMg[WtF]trackr is a Private Torrent Tracker for MOVIES / TV / GENERAL',
   language: 'en-US',
-  encoding: 'UTF-8',
   type: 'private',
+  encoding: 'UTF-8',
   links: ['https://omg.wtftrackr.xyz/'],
   caps: {
     categorymappings: [

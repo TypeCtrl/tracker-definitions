@@ -95,8 +95,7 @@ export const definition: TrackerDefinition = {
         filters: [{ name: 're_replace', args: ['^(.*/)(.*)$', '$2'] }, { name: 'trim' }],
       },
       title: {
-        text:
-          '{{ if .Config.drop_polish_prefix }}{{ .Result.title_stripped }}{{ else }}{{ .Result.title_raw }}{{ end }}',
+        text: '{{ if .Config.drop_polish_prefix }}{{ .Result.title_stripped }}{{ else }}{{ .Result.title_raw }}{{ end }}',
       },
       details: {
         selector: 'a[href^="details.php?id="]',
@@ -126,10 +125,7 @@ export const definition: TrackerDefinition = {
         ],
       },
       size: { selector: 'td:nth-child(5)' },
-      grabs: {
-        selector: 'td:nth-child(6)',
-        filters: [{ name: 'regexp', args: '(\\d+)' }],
-      },
+      grabs: { selector: 'td:nth-child(6)' },
       seeders: {
         selector: 'td:nth-child(7)',
         filters: [{ name: 'split', args: ['/', 0] }],
@@ -140,6 +136,7 @@ export const definition: TrackerDefinition = {
       },
       downloadvolumefactor: { case: { 'tr.darmowy': 0, '*': 1 } },
       uploadvolumefactor: { text: 1 },
+      minimumseedtime: { text: 172800 },
     },
   },
   source: 'jackett',

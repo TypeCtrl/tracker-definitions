@@ -8,7 +8,7 @@ export const definition: TrackerDefinition = {
   type: 'public',
   encoding: 'UTF-8',
   followredirect: true,
-  links: ['https://www.torrent9.pw/', 'https://torrent9.nocensor.space/'],
+  links: ['https://www.torrent9.pw/', 'https://torrent9.nocensor.work/'],
   legacylinks: [
     'https://www.torrents9.pw/',
     'https://www.torrent9.ch/',
@@ -120,7 +120,9 @@ export const definition: TrackerDefinition = {
         "Torrent9clone only returns category <b>Movies</b> in its <i>Keywordless</i> search results page.</br>To pass your apps' indexer TEST you will need to include the 145469(Movies) category.",
     },
   ],
-  download: { selector: 'a[href^="magnet:?"]', attribute: 'href' },
+  download: {
+    selectors: [{ selector: 'a[href^="magnet:?"]', attribute: 'href' }],
+  },
   search: {
     paths: [
       {
