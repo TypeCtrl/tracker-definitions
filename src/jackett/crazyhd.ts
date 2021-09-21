@@ -11,6 +11,10 @@ export const definition: TrackerDefinition = {
   legacylinks: ['https://www.crazyhd.com/'],
   caps: {
     categorymappings: [
+      { id: '62', cat: 'Movies/3D', desc: 'Movies 3D' },
+      { id: '96', cat: 'Movies/UHD', desc: 'Movies 4k Hindi' },
+      { id: '94', cat: 'Movies/UHD', desc: 'Movies 4k' },
+      { id: '64', cat: 'Movies', desc: 'Movies Animated' },
       { id: '16', cat: 'Movies/BluRay', desc: 'Movies English Bluray' },
       { id: '11', cat: 'Movies/DVD', desc: 'Movies English DVD-RIP' },
       { id: '14', cat: 'Movies', desc: 'Movies English CAM' },
@@ -31,12 +35,9 @@ export const definition: TrackerDefinition = {
       },
       { id: '24', cat: 'Movies', desc: 'Movies UNRATED' },
       { id: '53', cat: 'Movies/Foreign', desc: 'Movies Other Foreign' },
-      { id: '64', cat: 'Movies', desc: 'Movies Animated' },
       { id: '45', cat: 'Movies', desc: 'Movies Trailers' },
       { id: '93', cat: 'Movies', desc: 'Movies Dual Movies' },
       { id: '59', cat: 'Movies', desc: 'Movies Pack' },
-      { id: '94', cat: 'Movies/UHD', desc: 'Movies 4k' },
-      { id: '62', cat: 'Movies/3D', desc: 'Movies 3D' },
       { id: '34', cat: 'TV', desc: 'TV English Series' },
       { id: '57', cat: 'TV', desc: 'TV Bangla series' },
       { id: '58', cat: 'TV', desc: 'TV Hindi series' },
@@ -50,7 +51,7 @@ export const definition: TrackerDefinition = {
       { id: '61', cat: 'PC/Games', desc: 'Games trailer' },
       { id: '90', cat: 'Console/PS4', desc: 'Games Ps4' },
       { id: '86', cat: 'Console/PS3', desc: 'Games xbox / ps3' },
-      { id: '92', cat: 'PC/Games', desc: 'Games nrated' },
+      { id: '92', cat: 'PC/Games', desc: 'Games unrated' },
       { id: '7', cat: 'PC/0day', desc: 'Software Windows' },
       {
         id: '20',

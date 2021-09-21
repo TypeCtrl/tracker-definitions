@@ -42,7 +42,8 @@
       { "id": "71", "cat": "PC/0day", "desc": "Applications/Tools" },
       { "id": "48", "cat": "Other", "desc": "Retro" },
       { "id": "72", "cat": "Other", "desc": "Board Games" },
-      { "id": "75", "cat": "Other", "desc": "Paper Crafting" }
+      { "id": "75", "cat": "Other", "desc": "Paper Crafting" },
+      { "id": "77", "cat": "Other", "desc": "Arcade" }
     ],
     "modes": { "search": ["q"], "music-search": ["q"], "book-search": ["q"] }
   },

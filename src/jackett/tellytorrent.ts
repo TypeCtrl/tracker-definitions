@@ -73,7 +73,7 @@ export const definition: TrackerDefinition = {
     paths: [{ path: 'torrents' }],
     inputs: {
       $raw: '{{ range .Categories }}categories[]={{.}}&{{end}}',
-      search: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
+      name: '{{ if .Query.IMDBID }}{{ else }}{{ .Keywords }}{{ end }}',
       description: '',
       mediainfo: '',
       keywords: '',
@@ -84,6 +84,8 @@ export const definition: TrackerDefinition = {
       malId: '',
       startYear: '',
       endYear: '',
+      playlistId: '',
+      collectionId: '',
       sortField: '{{ .Config.sort }}',
       sortDirection: '{{ .Config.type }}',
       perPage: 100,

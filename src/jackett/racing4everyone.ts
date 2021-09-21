@@ -44,6 +44,7 @@ export const definition: TrackerDefinition = {
       { id: '78', cat: 'TV/Sport', desc: 'Porsche Supercup' },
       { id: '79', cat: 'TV/Sport', desc: 'TV Series' },
       { id: '80', cat: 'TV/Sport', desc: 'Touring Cars' },
+      { id: '81', cat: 'TV/Sport', desc: 'Extreme E' },
     ],
     modes: {
       search: ['q'],

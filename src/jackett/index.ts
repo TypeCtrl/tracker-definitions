@@ -103,6 +103,9 @@ export const jaussierules = jjaussierules;
 import { definition as jjbackups } from './backups';
 export const jbackups = jjbackups;
 
+import { definition as jjbadasstorrents } from './badasstorrents';
+export const jbadasstorrents = jjbadasstorrents;
+
 import { definition as jjbaibako } from './baibako';
 export const jbaibako = jjbaibako;
 
@@ -609,9 +612,6 @@ export const jlatinop2P = jjlatinop2P;
 
 import { definition as jjlearnflakes } from './learnflakes';
 export const jlearnflakes = jjlearnflakes;
-
-import { definition as jjlechaudron } from './lechaudron';
-export const jlechaudron = jjlechaudron;
 
 import { definition as jjlegacyhd } from './legacyhd';
 export const jlegacyhd = jjlegacyhd;
@@ -1369,6 +1369,7 @@ export const definitions = [
   jjaudionews,
   jjaussierules,
   jjbackups,
+  jjbadasstorrents,
   jjbaibako,
   jjbeitai,
   jjbeyondHdOneurl,
@@ -1538,7 +1539,6 @@ export const definitions = [
   jjlastfiles,
   jjlatinop2P,
   jjlearnflakes,
-  jjlechaudron,
   jjlegacyhd,
   jjlegittorrents,
   jjlemonhd,

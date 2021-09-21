@@ -16,10 +16,6 @@ export const definition: TrackerDefinition = {
       { id: '2', cat: 'Movies/SD', desc: 'Film/Cam/Hun' },
       { id: '8', cat: 'Movies/DVD', desc: 'Film/DVD/Eng' },
       { id: '7', cat: 'Movies/DVD', desc: 'Film/DVD/Hun' },
-      { id: '10', cat: 'Movies/DVD', desc: 'Film/DVD5/Eng' },
-      { id: '9', cat: 'Movies/DVD', desc: 'Film/DVD5/Hun' },
-      { id: '12', cat: 'Movies/DVD', desc: 'Film/DVD9/Eng' },
-      { id: '11', cat: 'Movies/DVD', desc: 'Film/DVD9/Hun' },
       { id: '16', cat: 'Movies/HD', desc: 'Film/HD1080P/Eng' },
       { id: '15', cat: 'Movies/HD', desc: 'Film/HD1080P/Hun' },
       { id: '14', cat: 'Movies/HD', desc: 'Film/HD720P/Eng' },
@@ -97,12 +93,12 @@ export const definition: TrackerDefinition = {
     inputs: {
       $raw: '{{ range .Categories }}c{{.}}=1&{{end}}',
       search: '{{ .Keywords }}',
-      incldead: '{{ if .Config.freeleech }}3{{ else }}1{{ end }}',
+      incldead: '{{ if .Config.freeleech }}3{{ else }}0{{ end }}',
       sort: '{{ .Config.sort }}',
       type: '{{ .Config.type }}',
     },
     rows: {
-      selector: 'table[width="800"] > tbody > tr:has(a[href^="details.php?id="])',
+      selector: 'table[width="920px"] > tbody > tr:has(a[href^="details.php?id="])',
     },
     fields: {
       category: {

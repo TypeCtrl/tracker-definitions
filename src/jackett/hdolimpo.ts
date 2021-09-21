@@ -100,6 +100,7 @@ export const definition: TrackerDefinition = {
           { name: 're_replace', args: ['(?i)(full(bluray)?)', 'BRDISK'] },
           { name: 'replace', args: ['HDOlimpo', ''] },
           { name: 'replace', args: ['HD-Olimpo', ''] },
+          { name: 'replace', args: ['E-AC-3', 'EAC3'] },
           {
             name: 're_replace',
             args: ['[ -](?i)español[ -]', ' SPANiSH '],

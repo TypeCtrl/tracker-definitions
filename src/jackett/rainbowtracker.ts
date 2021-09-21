@@ -274,7 +274,10 @@ export const definition: TrackerDefinition = {
         attribute: 'href',
       },
       size: { selector: 'td:nth-child(7)' },
-      seeders: { selector: 'td.seedmed > b, td.icemed > b' },
+      seeders: {
+        selector: 'td.seedmed > b, td.icemed > b',
+        filters: [{ name: 'replace', args: ['X', '0'] }],
+      },
       leechers: { selector: 'td.leechmed > b' },
       grabs: { selector: 'td:nth-child(10)' },
       datetime: {
