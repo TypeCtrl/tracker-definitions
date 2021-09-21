@@ -60,15 +60,15 @@ workflows:
                 - master
           requires:
             - test
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 0 * * 0"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - update_upstream
+  # nightly:
+  #   triggers:
+  #     - schedule:
+  #         cron: "0 0 * * 0"
+  #         filters:
+  #           branches:
+  #             only:
+  #               - master
+  #   jobs:
+  #     - update_upstream
 
 
